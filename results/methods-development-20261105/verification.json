@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-05T09:19:41.370016+00:00",
+  "local_tests": {
+    "run": 59,
+    "skipped": 11,
+    "success": true,
+    "model_weights_loaded": false
+  },
+  "cloud_cpu_tests": {
+    "run": 59,
+    "skipped": 0,
+    "success": true,
+    "seconds": 7.433
+  },
+  "trainer_first_failure": "custom batch_sampler cleared DataLoader.batch_size required by pinned trainer",
+  "fix": "preserve batch_size metadata; iteration uses original full-batch sampler",
+  "trainer_end_to_end": "synthetic CPU one epoch, checkpoint/reload/original dev AP path passed; temporary weights cleaned",
+  "gpu_preflight": "queued after existing D-Fire100 epochs",
+  "teacher_pilot": "queued, fit-only four states x2 fixed selection",
+  "method_effectiveness_results": false,
+  "baseline_completed_epochs_at_snapshot": 44
+}

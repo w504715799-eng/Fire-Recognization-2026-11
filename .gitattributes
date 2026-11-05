@@ -1,0 +1,3 @@
+
+# Preserve raw runtime logs, including upstream terminal spacing.
+results/**/*.log -whitespace

@@ -1,0 +1,17 @@
+{
+  "status": "processor_and_class_import_passed",
+  "model_weights_loaded": false,
+  "environment": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+  "dependency_layer": "/FIRE_R2-runtime/teacher-site-packages",
+  "processor_class": "Qwen3VLProcessor",
+  "model_class": "Qwen3_5ForConditionalGeneration",
+  "model_type": "qwen3_5",
+  "versions": {
+    "torch": "2.12.1+cu130",
+    "torchvision": "0.27.1+cu130",
+    "transformers": "5.15.0",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "1.33.0",
+    "safetensors": "0.8.0"
+  }
+}

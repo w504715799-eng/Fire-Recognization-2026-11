@@ -1,0 +1,28 @@
+{
+  "source": "https://china.scidb.cn/download?fileId=9456106d26c5fc6b74143c3707115d39",
+  "archive_bytes": 14888184890,
+  "publisher_md5": "c5ea9651ca672fc128c6f17d0797c2f2",
+  "format": "sparse_partial_use_checkpoint_not_file_length",
+  "segments": [
+    {
+      "start": 0,
+      "length": 7444092445,
+      "written": 7444092445
+    },
+    {
+      "start": 7444092445,
+      "length": 7444092445,
+      "written": 7444092445
+    }
+  ],
+  "phase": "archive_verified",
+  "error": null,
+  "bytes_received": 14888184890,
+  "percent": 100.0,
+  "elapsed_seconds": 20143.57342747599,
+  "rate_limit_wait_until": 0.0,
+  "archive_md5": "c5ea9651ca672fc128c6f17d0797c2f2",
+  "archive_sha256": "7f4202a893e98f6ee3960f268aaeaf2fdeb277fa7305440125069cb158cbd0b2",
+  "archive_path": "/root/rivermind-data/shared/datasets/fasdd-uav/v9/raw/FASDD_UAV.zip",
+  "archive_retained": true
+}

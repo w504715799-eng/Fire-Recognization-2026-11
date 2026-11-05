@@ -1,0 +1,13 @@
+{
+  "revision": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+  "normalized_source_sha256": {
+    "ultralytics/data/dataset.py": "42f6c46bc88ab193fa3da9434a0b15f1164722d9c0fb1d9dcbf4816b9abec3c4",
+    "ultralytics/nn/tasks.py": "4dcf1e84f4dd87ec7a9d94b6365bb54fcf842c0e5267ab1bf02ccb31be197c18",
+    "ultralytics/engine/trainer.py": "d9d3961569800c0399538fb57bd562be50f5ef58bb3f7b322c8d8d0675ee2d27",
+    "ultralytics/models/yolo/detect/train.py": "584e9c89f73f4c4ff68e2870c9e0778d254d808c421746c7ad66163b143b36d6",
+    "ultralytics/nn/modules/head.py": "985f4593d5278042fcfa20abfe2546016276b8f997fe5a69acd49f3366fe0035",
+    "ultralytics/cfg/models/26/yolo26.yaml": "b1d1fa0c69eced64f9939536038bd8d697c32e72200b34187a767de431af7ef0",
+    "ultralytics/models/yolo/detect/val.py": "811a23927aab993fcc70e57ac189fdff5b373b27ddf3dd4301990e75f7b52f6d",
+    "ultralytics/utils/loss.py": "6d43e5e1a5f5b4e1598338f031819b5160631ba5384ac3df070c3bdfdb792859"
+  }
+}

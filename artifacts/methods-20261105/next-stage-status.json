@@ -1,0 +1,8 @@
+{
+  "status": "waiting_for_own_baseline",
+  "started_at": "2026-11-05T09:15:54.420226+00:00",
+  "baseline": "dfire_B_native_seed17_full_20261105",
+  "stages": [],
+  "last_checked_at": "2026-11-05T09:19:24.463873+00:00",
+  "completed_epochs": 44
+}

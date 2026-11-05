@@ -1,0 +1,65 @@
+{
+  "status": "verified",
+  "installed": false,
+  "environment": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+  "files": [
+    {
+      "name": "transformers",
+      "version": "5.15.0",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/transformers-5.15.0-py3-none-any.whl",
+      "bytes": 11749280,
+      "sha256": "d7f007736f67749ae9490c4f8cb5d30b452ae2d68c8675e50ba8d63ea7feb107",
+      "source": "https://files.pythonhosted.org/packages/d8/43/81355710a4c84e9420e11a86d41a5364deb561f2ef36dfdf254a07371bbb/transformers-5.15.0-py3-none-any.whl"
+    },
+    {
+      "name": "huggingface_hub",
+      "version": "1.33.0",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/huggingface_hub-1.33.0-py3-none-any.whl",
+      "bytes": 846435,
+      "sha256": "04e434b06e100eddbce9a6e817d72693a7884b10a79bd67ab48080d5c07eb899",
+      "source": "https://files.pythonhosted.org/packages/fc/16/963096d224b80909432dc16561a615fd33d2d13beef3ce4c63fa25e40867/huggingface_hub-1.33.0-py3-none-any.whl"
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "bytes": 807783,
+      "sha256": "39ab5894d971f9ac68baa6eca5c50387db579cfcacf36ae8df3feceb1815e6d0",
+      "source": "https://files.pythonhosted.org/packages/26/83/d2fbd2e4e3afb1167daa825187d196f313cbaa1a4768f311fb041bb0e3d2/regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 516040,
+      "sha256": "fd6f3f93c9a0a7cc2788ee63fb763353d4bd2e89b0751bc78fcf7dda00bea774",
+      "source": "https://files.pythonhosted.org/packages/28/50/f203ff3a3ddfe19308efc83c5a3a29ed02bf786732ec35e68bf9162f3365/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.22.2",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 3274982,
+      "sha256": "369cc9fc8cc10cb24143873a0d95438bb8ee257bb80c71989e3ee290e8d72c67",
+      "source": "https://files.pythonhosted.org/packages/2e/76/932be4b50ef6ccedf9d3c6639b056a967a86258c6d9200643f01269211ca/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/click-8.5.0-py3-none-any.whl",
+      "bytes": 125251,
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+      "source": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl"
+    },
+    {
+      "name": "hf-xet",
+      "version": "1.8.0",
+      "path": "/FIRE_R2-runtime/teacher-wheelhouse/hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "bytes": 4292483,
+      "sha256": "29dab7c904cd1914a0439c6e1306c12c7497c8bd32290fbe563ebf51ca4b6d6d",
+      "source": "https://files.pythonhosted.org/packages/f8/1e/1e8ecc05ef034e9a95c18ed32d2ec07905a7cd2ca611a9d88e25ee1f4850/hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    }
+  ],
+  "total_bytes": 21612254,
+  "relocated_from": "/root/FIRE_R2-support"
+}

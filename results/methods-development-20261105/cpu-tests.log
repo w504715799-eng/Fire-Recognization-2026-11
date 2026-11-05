@@ -1,0 +1,131 @@
+test_backend_archive_and_vcs_provenance (test_cloud.CloudContractTests.test_backend_archive_and_vcs_provenance) ... ok
+test_bundle_carries_configured_frozen_split (test_cloud.CloudContractTests.test_bundle_carries_configured_frozen_split) ... ok
+test_bundle_whitelist_and_upload_path_checks (test_cloud.CloudContractTests.test_bundle_whitelist_and_upload_path_checks) ... ok
+test_cloud_project_cannot_own_shared_dataset_root (test_cloud.CloudContractTests.test_cloud_project_cannot_own_shared_dataset_root) ... ok
+test_default_plan_has_no_model_import_or_network (test_cloud.CloudContractTests.test_default_plan_has_no_model_import_or_network) ... ok
+test_existing_server_window_allows_preparation_without_unknown_price (test_cloud.CloudContractTests.test_existing_server_window_allows_preparation_without_unknown_price) ... ok
+test_explicit_training_on_existing_server_with_unknown_price (test_cloud.CloudContractTests.test_explicit_training_on_existing_server_with_unknown_price) ... ok
+test_external_dataset_and_unimplemented_methods_rejected (test_cloud.CloudContractTests.test_external_dataset_and_unimplemented_methods_rejected) ... ok
+test_failed_remote_lock_acquisition_does_not_release_other_owner (test_cloud.CloudContractTests.test_failed_remote_lock_acquisition_does_not_release_other_owner) ... ok
+test_gpu_lock_mutual_exclusion_and_release (test_cloud.CloudContractTests.test_gpu_lock_mutual_exclusion_and_release) ... ok
+test_offline_training_preserves_dataloader_ipc (test_cloud.CloudContractTests.test_offline_training_preserves_dataloader_ipc) ... ok
+test_paid_phase_must_be_notified_and_local_mac_cannot_train (test_cloud.CloudContractTests.test_paid_phase_must_be_notified_and_local_mac_cannot_train) ... ok
+test_unapproved_execution_fails_before_models (test_cloud.CloudContractTests.test_unapproved_execution_fails_before_models) ... ok
+test_upload_never_overwrites_conflicting_remote_content (test_cloud.CloudContractTests.test_upload_never_overwrites_conflicting_remote_content) ... ok
+test_upload_reuses_existing_verified_content (test_cloud.CloudContractTests.test_upload_reuses_existing_verified_content) ... ok
+test_author_train_test_kept_and_partition_reproducible (test_data.DataContractTests.test_author_train_test_kept_and_partition_reproducible) ... ok
+test_coco_geometry_preserved_and_training_separated (test_data.DataContractTests.test_coco_geometry_preserved_and_training_separated) ... ok
+test_dfire_mapping_and_unknown_classes (test_data.DataContractTests.test_dfire_mapping_and_unknown_classes) ... ok
+test_dfire_rounding_and_external_all (test_data.DataContractTests.test_dfire_rounding_and_external_all) ... ok
+test_exif_display_dimensions_preserve_original_image_and_gt (test_data.DataContractTests.test_exif_display_dimensions_preserve_original_image_and_gt) ... ok
+test_exif_mismatch_retains_empty_background_but_rejects_labelled_image (test_data.DataContractTests.test_exif_mismatch_retains_empty_background_but_rejects_labelled_image) ... ok
+test_missing_and_corrupt_images_cannot_produce_ready_view (test_data.DataContractTests.test_missing_and_corrupt_images_cannot_produce_ready_view) ... ok
+test_output_cannot_point_to_shared_source_and_manifest_mismatch_fails (test_data.DataContractTests.test_output_cannot_point_to_shared_source_and_manifest_mismatch_fails) ... ok
+test_calibration_ties_threshold_and_test_leakage (test_research.EvaluationTests.test_calibration_ties_threshold_and_test_leakage) ... ok
+test_checkpoint_earliest_equal_dev_score (test_research.EvaluationTests.test_checkpoint_earliest_equal_dev_score) ... ok
+test_duplicate_detection_is_false_positive (test_research.EvaluationTests.test_duplicate_detection_is_false_positive) ... ok
+test_factor_menu_preserves_pairwise_and_ordinary_controls (test_research.EvaluationTests.test_factor_menu_preserves_pairwise_and_ordinary_controls) ... ok
+test_false_alarm_denominator_includes_smoke_only (test_research.EvaluationTests.test_false_alarm_denominator_includes_smoke_only) ... ok
+test_iou_zero_area_and_unclipped_border (test_research.EvaluationTests.test_iou_zero_area_and_unclipped_border) ... ok
+test_missing_prediction_image_is_error_not_silent_empty (test_research.EvaluationTests.test_missing_prediction_image_is_error_not_silent_empty) ... ok
+test_official_coco_perfect_and_empty_predictions (test_research.EvaluationTests.test_official_coco_perfect_and_empty_predictions) ... ok
+test_reference_size_small_metric_does_not_change_geometry (test_research.EvaluationTests.test_reference_size_small_metric_does_not_change_geometry) ... ok
+test_same_source_test_and_cross_source_all (test_research.EvaluationTests.test_same_source_test_and_cross_source_all) ... ok
+test_cache_rejects_test_leakage_and_stale_manifest (test_research.SupervisionTests.test_cache_rejects_test_leakage_and_stale_manifest) ... ok
+test_failure_is_neutral_and_uncertain_semantics_are_masked (test_research.SupervisionTests.test_failure_is_neutral_and_uncertain_semantics_are_masked) ... ok
+test_mock_teacher_pipeline_uses_images_only_and_keeps_failures (test_research.SupervisionTests.test_mock_teacher_pipeline_uses_images_only_and_keeps_failures) ... ok
+test_schedule_one_quarter_batches (test_research.SupervisionTests.test_schedule_one_quarter_batches) ... ok
+test_schema_does_not_accept_extra_fields (test_research.SupervisionTests.test_schema_does_not_accept_extra_fields) ... ok
+test_semantic_shuffle_keeps_presence_and_unknown_masks (test_research.SupervisionTests.test_semantic_shuffle_keeps_presence_and_unknown_masks) ... ok
+test_shuffle_preserves_weight_multiset_and_every_sample (test_research.SupervisionTests.test_shuffle_preserves_weight_multiset_and_every_sample) ... ok
+test_teacher_cache_image_digest_is_bound_to_verified_image (test_research.SupervisionTests.test_teacher_cache_image_digest_is_bound_to_verified_image) ... ok
+test_teacher_jobs_fit_only_and_degenerate_roi_not_queried (test_research.SupervisionTests.test_teacher_jobs_fit_only_and_degenerate_roi_not_queried) ... ok
+test_weights_positive_group_mass_and_no_gt_change (test_research.SupervisionTests.test_weights_positive_group_mass_and_no_gt_change) ... ok
+test_zero_weight_and_unknown_dimensions_refused (test_research.SupervisionTests.test_zero_weight_and_unknown_dimensions_refused) ... ok
+test_old_yolo_manifest_uses_header_without_rewriting_original (test_research_adapter.AdapterTests.test_old_yolo_manifest_uses_header_without_rewriting_original) ... ok
+test_pilot_cache_cannot_train_full_benchmark (test_research_adapter.AdapterTests.test_pilot_cache_cannot_train_full_benchmark) ... ok
+test_pilot_selection_is_before_predictions_fit_only_and_stratified (test_research_adapter.AdapterTests.test_pilot_selection_is_before_predictions_fit_only_and_stratified) ... ok
+test_r2_box_conversion_keeps_raw_geometry_and_zero_id (test_research_adapter.AdapterTests.test_r2_box_conversion_keeps_raw_geometry_and_zero_id) ... ok
+test_region_coverage_and_teacher_identity_are_enforced (test_research_adapter.AdapterTests.test_region_coverage_and_teacher_identity_are_enforced) ... ok
+test_teacher_crop_obeys_exif (test_research_adapter.AdapterTests.test_teacher_crop_obeys_exif) ... ok
+test_cpu_trainer_checkpoint_and_original_gt_validator (test_torch_modules.BackendTests.test_cpu_trainer_checkpoint_and_original_gt_validator) ... Ultralytics 8.4.183 🚀 Python-3.12.13 torch-2.12.1+cu130 CPU (Intel Xeon CPU E5-2680 v4 @ 2.40GHz)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=False, angle=1.0, augment=False, auto_augment=randaugment, batch=1, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=0, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/artifacts/data/demo/train.yaml, degrees=0.0, deterministic=True, device=cpu, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=1, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=64, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=/root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/model.yaml, momentum=0.937, mosaic=0.0, multi_scale=0.0, name=tiny, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=False, pose=12.0, pretrained=False, profile=False, project=/root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=/root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run/tiny, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=False, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+Overriding model.yaml nc=80 with nc=2
+WARNING ⚠️ no model scale passed. Assuming scale='n'.
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]      
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]     
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5, 3, True]        
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1    119808  ultralytics.nn.modules.block.C3k2            [384, 128, 1, True]           
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1     34304  ultralytics.nn.modules.block.C3k2            [256, 64, 1, True]            
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1     95232  ultralytics.nn.modules.block.C3k2            [192, 128, 1, True]           
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1    463104  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True, 0.5, True]
+ 23        [16, 19, 22]  1    241956  ultralytics.nn.modules.head.Detect           [2, 1, True, [64, 128, 256]]  
+model summary: 260 layers, 2,504,580 parameters, 2,504,580 gradients, 5.9 GFLOPs
+
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 24.7±0.0 MB/s, size: 0.6 KB)
+[K[34m[1mtrain: [0mScanning /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/artifacts/data/demo/labels/fit... 1 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1/1 632.1it/s 0.0s
+[34m[1mtrain: [0mNew cache created: /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/artifacts/data/demo/labels/fit.cache
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 25.2±0.0 MB/s, size: 0.6 KB)
+[K[34m[1mval: [0mScanning /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/artifacts/data/demo/labels/dev... 1 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1/1 1.2Kit/s 0.0s
+[34m[1mval: [0mNew cache created: /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/artifacts/data/demo/labels/dev.cache
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and determining best 'optimizer' and 'lr0' automatically... 
+[34m[1moptimizer:[0m AdamW(lr=0.001667, momentum=0.9) with parameter groups 116 weight(decay=0.0), 141 weight(decay=0.0005), 139 bias(decay=0.0)
+Using 1 train, 1 val images for fraction=1.0 at imgsz=64
+Using 0 dataloader workers
+Logging results to [1m/root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run/tiny[0m
+Starting training for 1 epochs...
+/opt/conda/lib/python3.12/site-packages/torch/utils/data/dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+      Epoch    GPU_mem   box_loss   cls_loss    l1_losssemantic_loss  gain_losssmoke_aux_loss  Instances       Size
+[K        1/1         0G      2.791      3.569    0.08136    0.01431          0     0.1519          1         64: 0% ──────────── 0/1  0.2s[K        1/1         0G      2.791      3.569    0.08136    0.01431          0     0.1519          1         64: 100% ━━━━━━━━━━━━ 1/1 4.9it/s 0.2s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 1/1 30.3it/s 0.0s
+                   all          1          1          0          0          0          0
+
+1 epochs completed in 0.000 hours.
+Optimizer stripped from /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run/tiny/weights/last.pt, 5.4MB
+Optimizer stripped from /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run/tiny/weights/best.pt, 5.4MB
+
+Validating /root/rivermind-data/FIRE_R2/tmp/tmp5uv5n71k/run/tiny/weights/best.pt...
+Ultralytics 8.4.183 🚀 Python-3.12.13 torch-2.12.1+cu130 CPU (Intel Xeon CPU E5-2680 v4 @ 2.40GHz)
+model summary (fused): 143 layers, 2,419,459 parameters, 0 gradients, 5.9 GFLOPs
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 1/1 47.3it/s 0.0s
+                   all          1          1          0          0          0          0
+Speed: 0.1ms preprocess, 16.6ms inference, 0.0ms loss, 1.9ms postprocess per image
+ok
+test_decomposition_matches_native_empty_and_positive (test_torch_modules.BackendTests.test_decomposition_matches_native_empty_and_positive) ... Overriding model.yaml nc=80 with nc=2
+ok
+test_native_r2_manifest_dataset_wrapper (test_torch_modules.BackendTests.test_native_r2_manifest_dataset_wrapper) ... Fast image access ✅ (ping: 0.0±0.0 ms, read: 28.3±0.0 MB/s, size: 0.6 KB)
+[KScanning /root/rivermind-data/FIRE_R2/tmp/tmpidz0ap_m/artifacts/data/demo/labels/fit... 1 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1/1 913.4it/s 0.0s
+New cache created: /root/rivermind-data/FIRE_R2/tmp/tmpidz0ap_m/artifacts/data/demo/labels/fit.cache
+ok
+test_research_graph_and_shared_assignment_backward (test_torch_modules.BackendTests.test_research_graph_and_shared_assignment_backward) ... Overriding model.yaml nc=80 with nc=2
+ok
+test_view_sampler_keeps_every_image_and_whole_clean_batches (test_torch_modules.BackendTests.test_view_sampler_keeps_every_image_and_whole_clean_batches) ... ok
+test_extra_head_forward_does_not_update_bn_twice (test_torch_modules.TensorTests.test_extra_head_forward_does_not_update_bn_twice) ... ok
+test_fusion_starts_as_identity_and_semantic_head_shapes (test_torch_modules.TensorTests.test_fusion_starts_as_identity_and_semantic_head_shapes) ... ok
+test_unknown_semantics_and_gain_targets_detached (test_torch_modules.TensorTests.test_unknown_semantics_and_gain_targets_detached) ... ok
+test_weight_one_native_reduction_and_gradient (test_torch_modules.TensorTests.test_weight_one_native_reduction_and_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 7.433s
+
+OK

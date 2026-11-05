@@ -10,7 +10,12 @@ def main():
     if platform.system()!='Linux' or Path(sys.prefix).resolve()!=ROOT/'.envs/sci-env':raise RuntimeError('Use the existing project cloud sci-env')
     key='fasdd_'+a.part;base=DATA/('fasdd-'+a.part)/'v9';out=ROOT/'artifacts/fasdd-full-20261105'
     out.mkdir(parents=True,exist_ok=True)
-    subprocess.run([sys.executable,'-B','cloud/restore_fasdd_archives.py','--part',a.part],cwd=ROOT,check=True)
+    from restore_fasdd_archives import SPECS
+    spec=SPECS[a.part];receipt=base/'EXTRACTED.json';archive=base/'raw'/spec['name']
+    extracted=json.loads(receipt.read_text()) if receipt.exists() else {}
+    if not (extracted.get('archive_md5')==spec['md5'] and extracted.get('archive_retained')
+            and archive.is_file() and archive.stat().st_size==spec['bytes'] and (base/'extracted').is_dir()):
+        subprocess.run([sys.executable,'-B','cloud/restore_fasdd_archives.py','--part',a.part],cwd=ROOT,check=True)
     audit=out/(a.part+'-audit.json')
     with (out/(a.part+'-audit.log')).open('w') as log:
         subprocess.run([sys.executable,'-B','code/fire_r2_cli.py','--datasets-root',str(DATA),'audit',
@@ -23,6 +28,7 @@ def main():
     inspected=json.loads(audit.read_text());prepared=json.loads((view/'view.json').read_text())
     expected=95314 if a.part=='cv' else 25097
     assert inspected['images']==expected and prepared['all_images_decoded'] and prepared['training_ready']
+    assert prepared['source_digest']==inspected['source_digest'] and prepared['config_sha256']==inspected['config_sha256']
     if a.part=='cv':assert inspected['frozen_manifest_check']['matched']
     else:assert prepared['roles']=={'external':25097} and not (view/'train.yaml').exists()
     source=json.loads((base/'EXTRACTED.json').read_text())

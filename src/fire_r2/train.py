@@ -60,15 +60,17 @@ def staged_checkpoint_amp_check(checkpoint, training_model):
 
 
 def training_plan(root, config, cloud):
-    if config.get("experiment") != "B_native":
-        raise ProjectError("Only B_native is implemented. W/S/M must not silently run as an unmodified baseline.")
+    from .experiments import factor_config
+    factors=factor_config(config.get('experiment'))
+    if not factors.get('native') and not config.get('supervision'):
+        raise ProjectError('Research configurations require explicit frozen supervision, including the uniform B control')
     if config["dataset"] not in ("dfire","homefire","fasdd_cv"):
         raise ProjectError("External-only data cannot be selected for training")
     if config.get("seed") not in (17,29,43):
         raise ProjectError("Expected a registered seed: 17, 29, or 43")
     if not config.get("run_name") or any(c not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-" for c in config["run_name"]):
         raise ProjectError("Invalid run name")
-    return {"execution":False,"experiment":config["experiment"],"dataset":config["dataset"],
+    return {"execution":False,"experiment":config["experiment"],"factors":factors,"dataset":config["dataset"],
             "view":str(child(root,config["prepared_view"])),"weights":str(child(root,config["weights"])),
             "remote_project":cloud["project_root"],"gpu":cloud["gpu_id"],
             "notice":"No model import, weight load, network access or training occurs in plan mode",
@@ -111,6 +113,13 @@ def execute_training(root, config, cloud):
         raise ProjectError("Provide an existing verified cloud checkpoint; automatic weight download is disabled")
     direct=importlib.metadata.distribution("ultralytics").read_text("direct_url.json")
     verify_backend_source(direct, config)
+    research=not plan['factors'].get('native')
+    if research:
+        from .backend_lock import verify_backend
+        from .supervision import validate_supervision
+        verify_backend(Path(root),config['ultralytics_commit'])
+        supervision=read_json(child(root,config['supervision']))
+        validate_supervision(supervision,view/'manifest.jsonl',plan['factors'])
     run=Path(root)/"runs"/config["run_name"]
     if run.exists():raise ProjectError("Run already exists; do not overwrite another experiment")
     gpu=str(cloud["gpu_id"])
@@ -132,6 +141,15 @@ def execute_training(root, config, cloud):
             import torch
             if not torch.cuda.is_available():raise ProjectError("No CUDA GPU; do not fall back to billable CPU training")
             from ultralytics import YOLO
+            train_extra={}
+            if research:
+                from .ultralytics_backend import ResearchTrainer
+                from .unified_validator import UnifiedSelectionMixin
+                class SelectedTrainer(UnifiedSelectionMixin,ResearchTrainer):pass
+                SelectedTrainer.research_config=plan['factors']
+                SelectedTrainer.supervision_file=str(child(root,config['supervision']))
+                SelectedTrainer.manifest_file=str(view/'manifest.jsonl')
+                train_extra['trainer']=SelectedTrainer
             model=YOLO(str(checkpoint),task="detect")
             started=time.monotonic(); best_fire=-float("inf")
             budget=float(cloud["approval"]["stage_budget_hours"])*3600
@@ -155,7 +173,8 @@ def execute_training(root, config, cloud):
                 ids=list(metric.ap_class_index)
                 if 0 not in ids:
                     raise ProjectError("No fire validation AP; cannot select the required checkpoint")
-                score=float(metric.maps[0])
+                original=getattr(trainer.validator,'original_report',None)
+                score=float(original['classes']['fire']['AP50_95'] if original else metric.maps[0])
                 if score>best_fire:
                     best_fire=score
                     shutil.copy2(trainer.last,Path(trainer.save_dir)/"weights/best_fire.pt")
@@ -180,7 +199,7 @@ def execute_training(root, config, cloud):
             try:
                 model.train(data=str(view/"train.yaml"),device=0,project=str(Path(root)/"runs"),
                     name=config["run_name"],seed=config["seed"],resume=False,exist_ok=False,
-                    val=True,save=True,amp=bool(config.get('amp_enabled',False)),plots=False,**args)
+                    val=True,save=True,amp=bool(config.get('amp_enabled',False)),plots=False,**train_extra,**args)
                 record["status"]="completed_or_budget_stopped"
             except BaseException as exc:
                 record.update(status="failed_or_interrupted",error=str(exc));raise

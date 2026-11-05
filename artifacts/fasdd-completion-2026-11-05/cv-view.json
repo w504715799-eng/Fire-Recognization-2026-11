@@ -1,0 +1,55 @@
+{
+  "dataset": "fasdd_cv",
+  "version": "v9",
+  "images": 95314,
+  "official_splits": {
+    "train": 47660,
+    "val": 31770,
+    "test": 15884
+  },
+  "roles": {
+    "fit": 47660,
+    "cal": 15885,
+    "dev": 15885,
+    "test": 15884
+  },
+  "states": {
+    "both": 20151,
+    "fire_only": 12550,
+    "empty": 39199,
+    "smoke_only": 23414
+  },
+  "boxes": {
+    "0": 73297,
+    "1": 53080
+  },
+  "nonpositive_boxes": 3,
+  "expected_counts_match": true,
+  "source_digest": "23c6351832de92f538e97ff6b835c206b1bb4dbe172948af75d7d986a8212d12",
+  "config_sha256": "3db43e2b833aaaa532b9af4ee0af9e4bfa5e30b757994e3737a11f1b4f878662",
+  "annotation_root": "/root/rivermind-data/shared/datasets/fasdd-cv/v9/annotations",
+  "image_root": "/root/rivermind-data/shared/datasets/fasdd-cv/v9/extracted/images",
+  "image_root_present": true,
+  "images_checked": true,
+  "training_ready": true,
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "frozen_manifest_check": {
+    "matched": true,
+    "records": 95314,
+    "manifest_sha256": "5b848803337ef6b49b0067b472dd5d096d93fe9aa74d295a14430c6b1fd7c474"
+  },
+  "missing_image_count": 0,
+  "missing_examples": [],
+  "view_root": "/root/rivermind-data/FIRE_R2/artifacts/data/fasdd-cv-v9",
+  "view_manifest_sha256": "f24fd8a86afe08664dacf329ad1b4606caab6c2abb4a8236f2ef426d18c1d08d",
+  "all_images_decoded": true,
+  "role_list_sha256": {
+    "fit": "5b9018df05d14fa43a13933972429a03527d24ccb6196b218433f5e37d7379d3",
+    "cal": "ac988b48577a2727fb3b67c1680b6132acd0ca20914e262b53cbedf107d702d1",
+    "dev": "deb423e142fcf22929c26015433d01f4c8952e16904b4d757c5849b5d93cc1bc",
+    "test": "2746ba9dc8c9c14169389a8acf78544537efb3d0f911a3acd5def44111030bca"
+  },
+  "training_yaml_sha256": "dfb82e4019e1a68ae626bcb414f603150755f423bb16935d815ba0767cb7c37b",
+  "export_policy": "Derived YOLO view; no clipping, no dropping; original metadata retained in manifest"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "verified_and_relocated",
+  "source": "/root/rivermind-data/shared/datasets/fasdd-cv/v9/raw/FASDD_CV.zip",
+  "destination": "/FIRE_R2-transfer/archives/FASDD_CV.zip",
+  "expected_bytes": 12326081298,
+  "expected_sha256": "04e17bef4da76e6854d66cc2b5ec2bc6f4f53b8c5ea37e68e34574bab5f3322e",
+  "before_data_free": 2887491584,
+  "before_root_free": 31322918912,
+  "copied_bytes": 12326081298,
+  "sha256": "04e17bef4da76e6854d66cc2b5ec2bc6f4f53b8c5ea37e68e34574bab5f3322e",
+  "source_is_symlink": true,
+  "archive_retained": true,
+  "after_data_free": 15084793856,
+  "after_root_free": 18996817920,
+  "finished_at": "2026-11-05T08:49:48.964756+00:00"
+}

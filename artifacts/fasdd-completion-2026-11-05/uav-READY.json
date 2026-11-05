@@ -1,0 +1,53 @@
+{
+  "files": 75298,
+  "reused_files": 57987,
+  "restored_files": 17311,
+  "expanded_bytes": 15142026203,
+  "archive_md5": "c5ea9651ca672fc128c6f17d0797c2f2",
+  "archive_sha256": "7f4202a893e98f6ee3960f268aaeaf2fdeb277fa7305440125069cb158cbd0b2",
+  "archive_bytes": 14888184890,
+  "archive_retained": true,
+  "original_labels_modified": false,
+  "status": "ready",
+  "ready_at": "2026-11-05T08:38:58.592439+00:00",
+  "images": 25097,
+  "all_images_decoded": true,
+  "use": "external_evaluation_only",
+  "audit": {
+    "dataset": "fasdd_uav",
+    "version": "v9",
+    "images": 25097,
+    "official_splits": {
+      "train": 12551,
+      "val": 8365,
+      "test": 4181
+    },
+    "roles": {
+      "external": 25097
+    },
+    "states": {
+      "both": 7819,
+      "fire_only": 212,
+      "empty": 11986,
+      "smoke_only": 5080
+    },
+    "boxes": {
+      "0": 36308,
+      "1": 17222
+    },
+    "nonpositive_boxes": 1,
+    "expected_counts_match": true,
+    "source_digest": "5cb010340898b62f7a27bd9e378390a6a48ecba3c03407bea6b2828e7ead96a3",
+    "config_sha256": "3db43e2b833aaaa532b9af4ee0af9e4bfa5e30b757994e3737a11f1b4f878662",
+    "annotation_root": "/root/rivermind-data/shared/datasets/fasdd-uav/v9/annotations",
+    "image_root": "/root/rivermind-data/shared/datasets/fasdd-uav/v9/extracted/images",
+    "image_root_present": true,
+    "images_checked": true,
+    "training_ready": true,
+    "original_labels_modified": false,
+    "cross_dataset_deduplication": false,
+    "missing_image_count": 0,
+    "missing_examples": []
+  },
+  "project_view": "/root/rivermind-data/FIRE_R2/artifacts/data/fasdd-uav-v9"
+}

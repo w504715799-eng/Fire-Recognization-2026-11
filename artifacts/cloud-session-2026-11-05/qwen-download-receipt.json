@@ -1,0 +1,107 @@
+{
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "hf_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "source": "official Qwen ModelScope repository",
+  "runtime_content_verified_against_hf": true,
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11343,
+      "sha256": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32",
+      "mirror_file_revision": "c62d4afcf135a7464a3e6743ee9454a6997291a1",
+      "hf_runtime_match": false,
+      "documentation": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 61705,
+      "sha256": "87a163af54f32fa608a0f8d3ac67945c53dd2b4a7c96740b3d7fdc28e8458864",
+      "mirror_file_revision": "bd6f72b9f5c265a3538819110e37d06586f0229d",
+      "hf_runtime_match": false,
+      "documentation": true
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 7755,
+      "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+      "mirror_file_revision": "c62d4afcf135a7464a3e6743ee9454a6997291a1",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "config.json",
+      "bytes": 2907,
+      "sha256": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 3353259,
+      "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "model.safetensors-00001-of-00001.safetensors",
+      "bytes": 1746942600,
+      "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 50900,
+      "sha256": "d8a08838a613b025eb7952ed9db11696213e57e76a375661ef5c12f9dd5dcf4e",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 16709,
+      "sha256": "49e2b6e395f959f077f1e992b338919c0d4a9732fc6e613995e06557f843500c",
+      "mirror_file_revision": "c62d4afcf135a7464a3e6743ee9454a6997291a1",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "video_preprocessor_config.json",
+      "bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "mirror_file_revision": "c62d4afcf135a7464a3e6743ee9454a6997291a1",
+      "hf_runtime_match": true,
+      "documentation": false
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 6722759,
+      "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+      "mirror_file_revision": "05f056712f8c582c8708395156518d963b46fb29",
+      "hf_runtime_match": true,
+      "documentation": false
+    }
+  ],
+  "model_loaded": false,
+  "total_bytes": 1769978694,
+  "documentation_note": "Official mirror documentation/license retained; runtime files verified against fixed HF revision."
+}

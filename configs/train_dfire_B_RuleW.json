@@ -1,0 +1,23 @@
+{
+  "experiment": "B+RuleW",
+  "dataset": "dfire",
+  "prepared_view": "artifacts/data/dfire-kaggle-21527-sha65d81b60",
+  "weights": "weights/yolo26s.pt",
+  "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+  "ultralytics_commit": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+  "seed": 17,
+  "run_name": "dfire_B_RuleW_seed17_full",
+  "train": {
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 16,
+    "workers": 2,
+    "patience": 0,
+    "cache": false,
+    "deterministic": true
+  },
+  "ultralytics_archive_sha256": "082f69bd8d8c8223caf5e8fbb33e8610cebde84b2d99d223b0292f5d43e17b05",
+  "amp_enabled": true,
+  "supervision": "artifacts/supervision/dfire-B_RuleW.json",
+  "checkpoint_selection": "original_dev_fire_ap50_95"
+}

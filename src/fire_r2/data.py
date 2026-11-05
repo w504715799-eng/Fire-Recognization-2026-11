@@ -187,11 +187,17 @@ def prepare_view(project_root, rows, summary, destination):
             by_role = defaultdict(list)
             with (staging/"manifest.jsonl").open("w") as manifest:
                 for row in rows:
-                    from PIL import Image
+                    from PIL import Image, ImageOps
                     with Image.open(row["image_path"]) as image:
                         image.load()
-                        if "width" in row and image.size != (row["width"], row["height"]):
-                            raise ProjectError(f"COCO/image dimensions differ for {row['sample_id']}")
+                        orientation=image.getexif().get(274,1)
+                        displayed=ImageOps.exif_transpose(image)
+                        row['decoded_width'],row['decoded_height']=displayed.size
+                        row['exif_orientation']=orientation
+                        mismatch="width" in row and displayed.size != (row["width"], row["height"])
+                        row['dimension_mismatch_without_boxes']=bool(mismatch and not row['boxes'])
+                        if mismatch and row['boxes']:
+                            raise ProjectError(f"COCO/image dimensions differ for labelled image {row['sample_id']}")
                     key = hashlib.sha256(row["sample_id"].encode()).hexdigest()[:24]
                     ext = Path(row["image_path"]).suffix.lower()
                     image_rel = Path("images")/row["role"]/(key+ext)

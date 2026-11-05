@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-05T08:50:57.947483+00:00",
+  "root_free_bytes": 18996817920,
+  "data_free_bytes": 15084736512,
+  "dfire_completed_epochs": 32,
+  "dfire_latest": {
+    "epoch": "32",
+    "time": "5460.17",
+    "train/box_loss": "1.54446",
+    "train/cls_loss": "1.22056",
+    "train/l1_loss": "0.01199",
+    "metrics/precision(B)": "0.7913",
+    "metrics/recall(B)": "0.69096",
+    "metrics/mAP50(B)": "0.78168",
+    "metrics/mAP50-95(B)": "0.45116",
+    "val/box_loss": "1.52208",
+    "val/cls_loss": "1.0995",
+    "val/l1_loss": "0.017",
+    "lr/pg0": "0.020793",
+    "lr/pg1": "0.006931",
+    "lr/pg2": "0.020793",
+    "lr/pg3": "0.006931",
+    "lr/pg4": "0.020793",
+    "lr/pg5": "0.006931",
+    "lr/pg6": "0.020793",
+    "lr/pg7": "0.006931"
+  },
+  "fasdd": {
+    "cv": {
+      "status": "ready",
+      "images": 95314,
+      "all_images_decoded": true
+    },
+    "uav": {
+      "status": "ready",
+      "images": 25097,
+      "all_images_decoded": true
+    }
+  }
+}

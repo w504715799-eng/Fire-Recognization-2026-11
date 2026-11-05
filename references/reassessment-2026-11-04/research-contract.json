@@ -2,7 +2,7 @@
   "plan_id": "fire-final-20261104",
   "canonical_plan": "../../火焰识别研究方案.md",
   "date": "2026-11-04",
-  "status": "cloud_environment_and_homefire_data_ready_no_model_training",
+  "status": "all_four_data_parts_ready_dfire_baseline_running_methods_cpu_checked_gpu_validation_queued",
   "principle": "research value, reproducible improvements and informative experiments; no mandatory first-use or fixed-module novelty gate",
   "student": "YOLO26s",
   "teacher": "Qwen/Qwen3.5-0.8B",
@@ -129,5 +129,6 @@
     "dfire": "author-linked Kaggle original verified locally by shared task; remote transfer managed by R1",
     "fasdd_cv": "annotations/frozen split present; full images pending",
     "fasdd_uav": "full images pending"
-  }
+  },
+  "implementation_update": "2026-11-05"
 }

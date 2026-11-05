@@ -1,0 +1,28 @@
+{
+  "source": "https://china.scidb.cn/download?fileId=85bad3972ed60e0a20a790032c0d85fb",
+  "archive_bytes": 12326081298,
+  "publisher_md5": "da5e1410e13113fc9d605567aea54508",
+  "format": "sparse_partial_use_checkpoint_not_file_length",
+  "segments": [
+    {
+      "start": 0,
+      "length": 6163040649,
+      "written": 6163040649
+    },
+    {
+      "start": 6163040649,
+      "length": 6163040649,
+      "written": 6163040649
+    }
+  ],
+  "phase": "archive_verified",
+  "error": null,
+  "bytes_received": 12326081298,
+  "percent": 100.0,
+  "elapsed_seconds": 15158.198296291288,
+  "rate_limit_wait_until": 0.0,
+  "archive_md5": "da5e1410e13113fc9d605567aea54508",
+  "archive_sha256": "04e17bef4da76e6854d66cc2b5ec2bc6f4f53b8c5ea37e68e34574bab5f3322e",
+  "archive_path": "/root/rivermind-data/shared/datasets/fasdd-cv/v9/raw/FASDD_CV.zip",
+  "archive_retained": true
+}

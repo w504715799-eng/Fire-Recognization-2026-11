@@ -1,0 +1,32 @@
+{
+  "baseline_run": "dfire_B_native_seed17_full_20261105",
+  "baseline_config": "configs/train_dfire_full.json",
+  "expected_epochs": 100,
+  "max_wait_hours": 6,
+  "stages": [
+    {
+      "name": "methods_gpu_preflight",
+      "args": [
+        "cloud/validate_methods.py",
+        "--cloud-config",
+        "configs/cloud.methods.local.json"
+      ],
+      "log": "logs/methods-gpu-preflight-20261105.log",
+      "timeout_seconds": 900
+    },
+    {
+      "name": "teacher_fit_pilot",
+      "args": [
+        "code/fire_r2_cli.py",
+        "teacher",
+        "--config",
+        "configs/teacher_dfire_pilot.json",
+        "--cloud-config",
+        "configs/cloud.methods.local.json",
+        "--execute"
+      ],
+      "log": "logs/teacher-pilot-20261105.log",
+      "timeout_seconds": 2100
+    }
+  ]
+}

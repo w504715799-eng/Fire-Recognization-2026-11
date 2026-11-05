@@ -4,7 +4,7 @@
 
 ## 仓库内容
 
-- `src/fire_r2/`、`code/`、`cloud/`：数据准备、划分、云端运行与恢复代码。
+- `src/fire_r2/`、`code/`、`cloud/`：数据准备、划分、W/S/M、教师评分、统一评价、云端运行与恢复代码。
 - `configs/`：公开实验和数据版本配置；真实连接配置不提交。
 - `references/`：研究核验记录、文献来源及固定划分；不重复发布完整论文、网页缓存或原始数据。
 - `artifacts/`：实验步骤、环境版本、检查及传输回执；保留失败和恢复记录。
@@ -17,7 +17,7 @@
 
 [Home-fire原版YOLO26s，seed17，100轮](results/homefire_B_native_seed17_full_20261105/README.md)已完成，期间服务器重启后从第6轮恢复。这是单次原版基线的开发验证集结果，不是方法改进、独立测试或跨库结论；完整CSV及参数保留。
 
-研究保留D-Fire、Home-fire、FASDD_CV/UAV三来源四部分，版本和映射见`configs/datasets.json`。当前代码与实验进度据实记录，不能把数据准备视为全研究完成。
+研究保留D-Fire、Home-fire、FASDD_CV/UAV三来源四部分，全部148,438张云端原图已核验就绪，版本和映射见`configs/datasets.json`。W/S/M及教师代码通过59项云端CPU检查；D-Fire100轮进行中，GPU方法检查与教师先导已排队，尚无方法增益结论。当前代码与实验进度据实记录，不能把数据准备视为全研究完成。
 
 ## 复现与轻量开发
 

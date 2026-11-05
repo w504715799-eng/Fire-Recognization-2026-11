@@ -11,6 +11,47 @@ from fire_r2.data import assign_roles, load_dataset, parse_yolo, prepare_view, v
 
 
 class DataContractTests(unittest.TestCase):
+    def test_exif_mismatch_retains_empty_background_but_rejects_labelled_image(self):
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);cfg,ann,images=self.fixture(root)
+            photo=Image.new('RGB',(30,50),'gray');exif=photo.getexif();exif[274]=8
+            image_path=images/'train-0.jpg';photo.save(image_path,exif=exif)
+            label_path=ann/'train.json';obj=json.loads(label_path.read_text())
+            obj['images'][0].update(width=30,height=50)
+            label_path.write_text(json.dumps(obj))
+            rows,summary=load_dataset(root,cfg,'demo')
+            with self.assertRaises(ProjectError):
+                prepare_view(root,rows,summary,'artifacts/data/mismatch-labelled')
+            obj['annotations']=[];label_path.write_text(json.dumps(obj))
+            before_image=image_path.read_bytes();before_label=label_path.read_bytes()
+            rows,summary=load_dataset(root,cfg,'demo')
+            prepare_view(root,rows,summary,'artifacts/data/mismatch-empty')
+            manifest=[json.loads(x) for x in (root/'artifacts/data/mismatch-empty/manifest.jsonl').read_text().splitlines()]
+            kept=next(x for x in manifest if x['official_split']=='train')
+            self.assertTrue(kept['dimension_mismatch_without_boxes'])
+            self.assertEqual(kept['boxes'],[])
+            self.assertEqual(image_path.read_bytes(),before_image)
+            self.assertEqual(label_path.read_bytes(),before_label)
+
+    def test_exif_display_dimensions_preserve_original_image_and_gt(self):
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);cfg,ann,images=self.fixture(root)
+            photo=Image.new('RGB',(30,50),'gray');exif=photo.getexif();exif[274]=6
+            image_path=images/'train-0.jpg';photo.save(image_path,exif=exif)
+            label_path=ann/'train.json';obj=json.loads(label_path.read_text())
+            obj['images'][0].update(width=50,height=30);label_path.write_text(json.dumps(obj))
+            before_image=image_path.read_bytes();before_label=label_path.read_bytes()
+            rows,summary=load_dataset(root,cfg,'demo')
+            prepare_view(root,rows,summary,'artifacts/data/exif')
+            manifest=[json.loads(x) for x in (root/'artifacts/data/exif/manifest.jsonl').read_text().splitlines()]
+            corrected=next(x for x in manifest if x['official_split']=='train')
+            self.assertEqual((corrected['decoded_width'],corrected['decoded_height']),(50,30))
+            self.assertEqual(corrected['exif_orientation'],6)
+            self.assertEqual(image_path.read_bytes(),before_image)
+            self.assertEqual(label_path.read_bytes(),before_label)
+
     def test_dfire_mapping_and_unknown_classes(self):
         boxes=parse_yolo("0 .5 .5 .2 .4\n1 .4 .3 .1 .2\n",{"0":1,"1":0})
         self.assertEqual([b["class_id"] for b in boxes],[1,0])

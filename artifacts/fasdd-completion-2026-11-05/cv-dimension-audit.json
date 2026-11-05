@@ -1,0 +1,28 @@
+{
+  "images": 95314,
+  "dimension_or_header_cases": 1,
+  "with_boxes": 0,
+  "without_boxes": 1,
+  "cases": [
+    {
+      "split": "train",
+      "file": "neitherFireNorSmoke_CV011441.jpg",
+      "boxes": 0,
+      "metadata_size": [
+        334,
+        512
+      ],
+      "raw_size": [
+        334,
+        512
+      ],
+      "orientation": 8,
+      "display_size": [
+        512,
+        334
+      ],
+      "raw_matches": true
+    }
+  ],
+  "original_files_modified": false
+}

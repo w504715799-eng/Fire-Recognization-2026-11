@@ -7,7 +7,8 @@
   "final_model_bytes": 20338477,
   "cloud_file": "/root/rivermind-data/FIRE_R2/artifacts/final-models/homefire_B_native_seed17_full_20261105/best_fire_deploy.pt",
   "optimizer_removed": true,
-  "public_release_uploaded": false,
-  "local_weight_downloaded": false,
-  "publication_note": "GitHub connector has repository write access but no binary release-upload tool; cloud GitHub authentication is not configured. Metrics and provenance are published; model binary remains on cloud."
+  "local_weight_downloaded": true,
+  "publication_note": "User explicitly authorized this single20.3MB final YOLO26s file in local Git; stored and hashed as bytes only, never loaded or executed locally. No intermediate checkpoints are included.",
+  "repository_file": "model/best_fire_deploy.pt",
+  "public_repository_uploaded": true
 }

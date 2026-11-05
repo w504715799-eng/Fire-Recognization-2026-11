@@ -76,3 +76,6 @@ datasets/*/*/raw/*.zip
 /references/dataset-verification-2026-10-16/indoor-image-manifest.jsonl
 /references/dataset-verification-2026-10-16/indoor-zip-entries.json
 /references/new-candidates-2026-10-19/homefire-records.json
+
+# Explicit user authorization: this one final small detector only, never intermediate checkpoints.
+!results/homefire_B_native_seed17_full_20261105/model/best_fire_deploy.pt

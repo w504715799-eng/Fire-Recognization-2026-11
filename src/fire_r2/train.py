@@ -39,6 +39,26 @@ def offline_connector(original):
     return connect
 
 
+def staged_checkpoint_amp_check(checkpoint, training_model):
+    """Run the pinned official FP32/AMP comparison using the already verified YOLO26s asset."""
+    import torch
+    from ultralytics import YOLO
+    from ultralytics.utils import ASSETS
+    from ultralytics.utils.torch_utils import autocast
+    device=next(training_model.parameters()).device
+    if device.type!='cuda':return False
+    image=ASSETS/'bus.jpg'
+    if not image.is_file():raise ProjectError('AMP probe image is missing; do not implicitly download assets')
+    probe=YOLO(str(checkpoint),task='detect')
+    size=max(256,int(training_model.stride.max()*4))
+    a=probe([image]*8,imgsz=size,device=device,verbose=False)[0].boxes.data.clone()
+    with autocast(enabled=True,device=device.type):
+        b=probe([image]*8,imgsz=size,device=device,verbose=False)[0].boxes.data.clone()
+    passed=a.shape==b.shape and a.numel()>0 and torch.allclose(a,b.float(),atol=.5)
+    print('AMP verified using staged YOLO26s:',bool(passed),flush=True)
+    return bool(passed)
+
+
 def training_plan(root, config, cloud):
     if config.get("experiment") != "B_native":
         raise ProjectError("Only B_native is implemented. W/S/M must not silently run as an unmodified baseline.")
@@ -107,6 +127,7 @@ def execute_training(root, config, cloud):
         # Prevent implicit network fetches in this single-GPU process.
         original_connect=socket.socket.connect
         socket.socket.connect=offline_connector(original_connect)
+        trainer_module=None;original_amp_check=None
         try:
             import torch
             if not torch.cuda.is_available():raise ProjectError("No CUDA GPU; do not fall back to billable CPU training")
@@ -120,13 +141,16 @@ def execute_training(root, config, cloud):
                 "torch_version":torch.__version__,"ultralytics_version":importlib.metadata.version("ultralytics")}
             record_path=Path(root)/"artifacts/run-records"/(config["run_name"]+".json")
             write_json(record_path,record)
+            stop_file=Path(root)/'artifacts/run-controls'/(config['run_name']+'.stop')
             def on_epoch_end(trainer):
-                if time.monotonic()-started>=budget:
+                if time.monotonic()-started>=budget or stop_file.exists():
                     trainer.stop=True
-                    print("USER_NOTICE: Training stage budget reached. Stopping at epoch boundary; server remains billable until you stop it.",flush=True)
+                    print("USER_NOTICE: Stop request or stage budget reached; save this epoch and retain a resumable checkpoint. Server is not powered off.",flush=True)
             def on_model_save(trainer):
                 nonlocal best_fire
                 import shutil
+                # Keep optimizer/EMA state before native final cleanup strips best/last checkpoints.
+                shutil.copy2(trainer.last,Path(trainer.save_dir)/'weights/resume_last.pt')
                 metric=trainer.validator.metrics.box
                 ids=list(metric.ap_class_index)
                 if 0 not in ids:
@@ -137,13 +161,26 @@ def execute_training(root, config, cloud):
                     shutil.copy2(trainer.last,Path(trainer.save_dir)/"weights/best_fire.pt")
             model.add_callback("on_train_epoch_end",on_epoch_end)
             model.add_callback("on_model_save",on_model_save)
+            def verify_image_coverage(trainer):
+                for role,loader in [('fit',trainer.train_loader),('dev',trainer.test_loader)]:
+                    expected=sorted(Path(p).name for p in (view/f'{role}.txt').read_text().splitlines())
+                    actual=sorted(Path(p).name for p in loader.dataset.im_files)
+                    if expected!=actual:raise ProjectError(f'Native loader changed {role} image coverage; inspect rather than discard images')
+                record['actual_amp']=bool(trainer.amp)
+                record['image_coverage_verified']=True
+                write_json(record_path,record)
+            model.add_callback('on_pretrain_routine_end',verify_image_coverage)
             args=dict(config["train"])
             prohibited={"data","device","project","name","resume","pretrained","val","save","exist_ok","amp","plots","seed"}
             if prohibited.intersection(args):raise ProjectError("Training config contains reserved execution fields")
+            if config.get('amp_enabled',False):
+                from ultralytics.engine import trainer as trainer_module
+                original_amp_check=trainer_module.check_amp
+                trainer_module.check_amp=lambda current:staged_checkpoint_amp_check(checkpoint,current)
             try:
                 model.train(data=str(view/"train.yaml"),device=0,project=str(Path(root)/"runs"),
                     name=config["run_name"],seed=config["seed"],resume=False,exist_ok=False,
-                    val=True,save=True,amp=False,plots=False,**args)
+                    val=True,save=True,amp=bool(config.get('amp_enabled',False)),plots=False,**args)
                 record["status"]="completed_or_budget_stopped"
             except BaseException as exc:
                 record.update(status="failed_or_interrupted",error=str(exc));raise
@@ -153,5 +190,6 @@ def execute_training(root, config, cloud):
                 write_json(record_path,record)
                 print("USER_NOTICE: Training process ended. Check the billable server and the other service before changing or stopping it.",flush=True)
         finally:
+            if trainer_module is not None:trainer_module.check_amp=original_amp_check
             socket.socket.connect=original_connect
     return record

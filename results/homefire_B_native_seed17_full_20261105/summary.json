@@ -16,5 +16,5 @@
   "resume_elapsed_seconds": 9978.562363583129,
   "timing_note": "CSV time resets after restart; do not use its last value as full original+resumed wall time",
   "method_improvement_claimed": false,
-  "model_binary_publication": "not_uploaded; retained on authorized cloud, no local weight download"
+  "model_binary_publication": "model/best_fire_deploy.pt included by explicit user authorization; see model.json for SHA-256"
 }

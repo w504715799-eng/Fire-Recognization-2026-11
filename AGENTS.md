@@ -44,3 +44,5 @@
 ## GitHub版本管理（用户2026-11-05授权）
 
 仓库为https://github.com/w504715799-eng/Fire-Recognization-2026-11.git，主分支main。每个研究阶段完成后同步代码、唯一方案、参数、步骤、完整指标和结果说明，不能只上传成功片段。大体积原始数据、环境/缓存、私钥/凭据、中间checkpoint不提交。最终模型采用云端直接发布独立资产并记录SHA及链接；未发布要明确状态，本机仍不接收权重。推送前运行code/check_repository_export.py；不force-push或覆盖远端未知更新，不把GitHub token写入项目。GitHub插件认证与本机Git凭据分开。
+
+用户随后明确允许仅此最终YOLO26s文件纳入本机Git：results/homefire_B_native_seed17_full_20261105/model/best_fire_deploy.pt，20,338,477字节，SHA-256 9923b770c51f791482e5ae8bcd22a31fa888d368896d0c7c02edbccbf6496844。只作文件保存/版本管理，不在本机加载或运行；其他权重默认云端，禁止扩大为本机大模型部署授权。Git忽略与导出检查只对该精确路径/大小/SHA放行。

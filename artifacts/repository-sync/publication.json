@@ -1,0 +1,16 @@
+{
+  "published_commit": "4e15e2afcd40d996e3630a8196704ee5c4c06e0d",
+  "repository": "https://github.com/w504715799-eng/Fire-Recognization-2026-11",
+  "branch": "main",
+  "local_upstream": "origin/main",
+  "tracked_files": 351,
+  "tracked_logical_bytes": 28929316,
+  "git_allocated_KiB": 30088,
+  "temporary_payload_bytes_removed": 37828956,
+  "fresh_checkout_tests_passed": 21,
+  "frozen_metadata_hashes_verified": 9,
+  "final_model_bytes": 20338477,
+  "model_loaded_locally": false,
+  "publication_method": "GitHub connector Git Data API; local native HTTPS Git credentials are not configured",
+  "verified_at": "2026-11-05T07:30:33.327245+00:00"
+}

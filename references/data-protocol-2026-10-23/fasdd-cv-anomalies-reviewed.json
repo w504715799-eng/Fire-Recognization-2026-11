@@ -1,0 +1,4091 @@
+[
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV001979.jpg",
+    "ann_id": 6527,
+    "category_id": 0,
+    "bbox": [
+      219.0,
+      343.0,
+      0,
+      1.0
+    ],
+    "area": 0.0,
+    "image_size": [
+      676,
+      429
+    ],
+    "reasons": [
+      "nonpositive"
+    ],
+    "excursion_px": 0.0,
+    "normalized_view": [
+      0.3239644970414201,
+      0.8006993006993007,
+      0.0,
+      0.002331002331002331
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016876.jpg",
+    "ann_id": 64926,
+    "category_id": 1,
+    "bbox": [
+      538.0,
+      1.0,
+      503.0,
+      326.0
+    ],
+    "area": 163978.0,
+    "image_size": [
+      1040,
+      585
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7591346153846154,
+      0.28034188034188035,
+      0.48365384615384616,
+      0.5572649572649573
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016877.jpg",
+    "ann_id": 64928,
+    "category_id": 1,
+    "bbox": [
+      7.0,
+      9.0,
+      634.0,
+      253.0
+    ],
+    "area": 160402.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.50625,
+      0.3763888888888889,
+      0.990625,
+      0.7027777777777777
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016879.jpg",
+    "ann_id": 64940,
+    "category_id": 0,
+    "bbox": [
+      793.0,
+      143.0,
+      108.0,
+      92.0
+    ],
+    "area": 9936.0,
+    "image_size": [
+      900,
+      600
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9411111111111111,
+      0.315,
+      0.12,
+      0.15333333333333332
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016884.jpg",
+    "ann_id": 64960,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1024.0,
+      576.0
+    ],
+    "area": 589824.0,
+    "image_size": [
+      1024,
+      576
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5009765625,
+      0.5017361111111112,
+      1.0,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016885.jpg",
+    "ann_id": 64963,
+    "category_id": 1,
+    "bbox": [
+      2.0,
+      3.0,
+      1279.0,
+      715.0
+    ],
+    "area": 914485.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.501171875,
+      0.5006944444444444,
+      0.99921875,
+      0.9930555555555556
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016905.jpg",
+    "ann_id": 65088,
+    "category_id": 1,
+    "bbox": [
+      75.0,
+      1.0,
+      566.0,
+      261.0
+    ],
+    "area": 147726.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.559375,
+      0.36527777777777776,
+      0.884375,
+      0.725
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016913.jpg",
+    "ann_id": 65116,
+    "category_id": 1,
+    "bbox": [
+      393.0,
+      1.0,
+      696.0,
+      511.0
+    ],
+    "area": 355656.0,
+    "image_size": [
+      1088,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6810661764705882,
+      0.35625,
+      0.6397058823529411,
+      0.7097222222222223
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016924.jpg",
+    "ann_id": 65185,
+    "category_id": 1,
+    "bbox": [
+      615.0,
+      1.0,
+      666.0,
+      521.0
+    ],
+    "area": 346986.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.740625,
+      0.36319444444444443,
+      0.5203125,
+      0.7236111111111111
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016927.jpg",
+    "ann_id": 65194,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      960.0,
+      400.0
+    ],
+    "area": 384000.0,
+    "image_size": [
+      960,
+      470
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5010416666666667,
+      0.4276595744680851,
+      1.0,
+      0.851063829787234
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016927.jpg",
+    "ann_id": 65196,
+    "category_id": 0,
+    "bbox": [
+      1.0,
+      318.0,
+      360.0,
+      153.0
+    ],
+    "area": 55080.0,
+    "image_size": [
+      960,
+      470
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.18854166666666666,
+      0.8393617021276596,
+      0.375,
+      0.32553191489361705
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016944.jpg",
+    "ann_id": 65276,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1120.0,
+      521.0
+    ],
+    "area": 583520.0,
+    "image_size": [
+      1120,
+      840
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5008928571428571,
+      0.3113095238095238,
+      1.0,
+      0.6202380952380953
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016952.jpg",
+    "ann_id": 65310,
+    "category_id": 1,
+    "bbox": [
+      191.0,
+      1.0,
+      610.0,
+      369.0
+    ],
+    "area": 225090.0,
+    "image_size": [
+      800,
+      512
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.62,
+      0.3623046875,
+      0.7625,
+      0.720703125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016955.jpg",
+    "ann_id": 65324,
+    "category_id": 1,
+    "bbox": [
+      186.0,
+      1.0,
+      445.0,
+      204.0
+    ],
+    "area": 90780.0,
+    "image_size": [
+      630,
+      469
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6484126984126984,
+      0.21961620469083157,
+      0.7063492063492064,
+      0.4349680170575693
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016977.jpg",
+    "ann_id": 65433,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      216.0
+    ],
+    "area": 138240.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.3096590909090909,
+      1.0,
+      0.6136363636363636
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV016978.jpg",
+    "ann_id": 65441,
+    "category_id": 1,
+    "bbox": [
+      543.0,
+      11.0,
+      98.0,
+      104.0
+    ],
+    "area": 10192.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.925,
+      0.175,
+      0.153125,
+      0.28888888888888886
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017005.jpg",
+    "ann_id": 65552,
+    "category_id": 1,
+    "bbox": [
+      125.0,
+      1.0,
+      670.0,
+      520.0
+    ],
+    "area": 348400.0,
+    "image_size": [
+      794,
+      530
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5793450881612091,
+      0.49245283018867925,
+      0.8438287153652393,
+      0.9811320754716981
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017010.jpg",
+    "ann_id": 65570,
+    "category_id": 1,
+    "bbox": [
+      303.0,
+      1.0,
+      898.0,
+      583.0
+    ],
+    "area": 523534.0,
+    "image_size": [
+      1200,
+      950
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6266666666666667,
+      0.3078947368421053,
+      0.7483333333333333,
+      0.6136842105263158
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017011.jpg",
+    "ann_id": 65573,
+    "category_id": 1,
+    "bbox": [
+      197.0,
+      4.0,
+      804.0,
+      517.0
+    ],
+    "area": 415668.0,
+    "image_size": [
+      1000,
+      666
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.599,
+      0.39414414414414417,
+      0.804,
+      0.7762762762762763
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017013.jpg",
+    "ann_id": 65585,
+    "category_id": 1,
+    "bbox": [
+      421.0,
+      1.0,
+      668.0,
+      506.0
+    ],
+    "area": 338008.0,
+    "image_size": [
+      1088,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6939338235294118,
+      0.3527777777777778,
+      0.6139705882352942,
+      0.7027777777777777
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017016.jpg",
+    "ann_id": 65601,
+    "category_id": 1,
+    "bbox": [
+      543.0,
+      1.0,
+      738.0,
+      357.0
+    ],
+    "area": 263466.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7125,
+      0.24930555555555556,
+      0.5765625,
+      0.49583333333333335
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017019.jpg",
+    "ann_id": 65611,
+    "category_id": 0,
+    "bbox": [
+      309.0,
+      161.0,
+      332.0,
+      143.0
+    ],
+    "area": 47476.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7421875,
+      0.6458333333333334,
+      0.51875,
+      0.3972222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017026.jpg",
+    "ann_id": 65653,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      253.0,
+      91.0
+    ],
+    "area": 23023.0,
+    "image_size": [
+      253,
+      169
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5039525691699605,
+      0.27514792899408286,
+      1.0,
+      0.5384615384615384
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017033.jpg",
+    "ann_id": 65690,
+    "category_id": 1,
+    "bbox": [
+      120.0,
+      1.0,
+      521.0,
+      320.0
+    ],
+    "area": 166720.0,
+    "image_size": [
+      640,
+      640
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.59453125,
+      0.2515625,
+      0.8140625,
+      0.5
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017035.jpg",
+    "ann_id": 65699,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      646.0,
+      512.0
+    ],
+    "area": 330752.0,
+    "image_size": [
+      768,
+      512
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.421875,
+      0.501953125,
+      0.8411458333333334,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017043.jpg",
+    "ann_id": 65727,
+    "category_id": 1,
+    "bbox": [
+      10.0,
+      1.0,
+      1271.0,
+      406.0
+    ],
+    "area": 516026.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.504296875,
+      0.2833333333333333,
+      0.99296875,
+      0.5638888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017043.jpg",
+    "ann_id": 65728,
+    "category_id": 0,
+    "bbox": [
+      561.0,
+      361.0,
+      720.0,
+      150.0
+    ],
+    "area": 108000.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.71953125,
+      0.6055555555555555,
+      0.5625,
+      0.20833333333333334
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017044.jpg",
+    "ann_id": 65732,
+    "category_id": 0,
+    "bbox": [
+      1084.0,
+      276.0,
+      197.0,
+      153.0
+    ],
+    "area": 30141.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.923828125,
+      0.4895833333333333,
+      0.15390625,
+      0.2125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017044.jpg",
+    "ann_id": 65734,
+    "category_id": 0,
+    "bbox": [
+      1127.0,
+      533.0,
+      154.0,
+      135.0
+    ],
+    "area": 20790.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.940625,
+      0.8340277777777778,
+      0.1203125,
+      0.1875
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017045.jpg",
+    "ann_id": 65739,
+    "category_id": 1,
+    "bbox": [
+      125.0,
+      1.0,
+      516.0,
+      157.0
+    ],
+    "area": 81012.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5984375,
+      0.22585227272727273,
+      0.80625,
+      0.4460227272727273
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017048.jpg",
+    "ann_id": 65754,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      499.0
+    ],
+    "area": 638720.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.50078125,
+      0.34791666666666665,
+      1.0,
+      0.6930555555555555
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017060.jpg",
+    "ann_id": 65802,
+    "category_id": 1,
+    "bbox": [
+      177.0,
+      1.0,
+      616.0,
+      207.0
+    ],
+    "area": 127512.0,
+    "image_size": [
+      792,
+      359
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6123737373737373,
+      0.29108635097493035,
+      0.7777777777777778,
+      0.5766016713091922
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017066.jpg",
+    "ann_id": 65828,
+    "category_id": 1,
+    "bbox": [
+      51.0,
+      1.0,
+      447.0,
+      352.0
+    ],
+    "area": 157344.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.42890625,
+      0.5028409090909091,
+      0.6984375,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017066.jpg",
+    "ann_id": 65829,
+    "category_id": 0,
+    "bbox": [
+      214.0,
+      169.0,
+      164.0,
+      184.0
+    ],
+    "area": 30176.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.4625,
+      0.7414772727272727,
+      0.25625,
+      0.5227272727272727
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017069.jpg",
+    "ann_id": 65841,
+    "category_id": 1,
+    "bbox": [
+      131.0,
+      1.0,
+      1150.0,
+      324.0
+    ],
+    "area": 372600.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5515625,
+      0.2263888888888889,
+      0.8984375,
+      0.45
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017072.jpg",
+    "ann_id": 65864,
+    "category_id": 1,
+    "bbox": [
+      38.0,
+      1.0,
+      734.0,
+      533.0
+    ],
+    "area": 391222.0,
+    "image_size": [
+      771,
+      533
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5252918287937743,
+      0.50187617260788,
+      0.9520103761348897,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017089.jpg",
+    "ann_id": 65937,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      581.0
+    ],
+    "area": 743680.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.50078125,
+      0.4048611111111111,
+      1.0,
+      0.8069444444444445
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017090.jpg",
+    "ann_id": 65939,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      204.0
+    ],
+    "area": 130560.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.29261363636363635,
+      1.0,
+      0.5795454545454546
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017092.jpg",
+    "ann_id": 65947,
+    "category_id": 1,
+    "bbox": [
+      166.0,
+      1.0,
+      428.0,
+      206.0
+    ],
+    "area": 88168.0,
+    "image_size": [
+      593,
+      439
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6408094435075885,
+      0.23690205011389523,
+      0.7217537942664418,
+      0.46924829157175396
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017093.jpg",
+    "ann_id": 65950,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      292.0
+    ],
+    "area": 186880.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.4083333333333333,
+      1.0,
+      0.8111111111111111
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017094.jpg",
+    "ann_id": 65956,
+    "category_id": 1,
+    "bbox": [
+      840.0,
+      4.0,
+      121.0,
+      53.0
+    ],
+    "area": 6413.0,
+    "image_size": [
+      960,
+      640
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9380208333333333,
+      0.04765625,
+      0.12604166666666666,
+      0.0828125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017118.jpg",
+    "ann_id": 66042,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      692.0,
+      390.0
+    ],
+    "area": 269880.0,
+    "image_size": [
+      692,
+      390
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5014450867052023,
+      0.5025641025641026,
+      1.0,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017125.jpg",
+    "ann_id": 66085,
+    "category_id": 1,
+    "bbox": [
+      478.0,
+      1.0,
+      316.0,
+      143.0
+    ],
+    "area": 45188.0,
+    "image_size": [
+      793,
+      546
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8020176544766708,
+      0.13278388278388278,
+      0.39848675914249687,
+      0.2619047619047619
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017128.jpg",
+    "ann_id": 66096,
+    "category_id": 1,
+    "bbox": [
+      44.0,
+      1.0,
+      533.0,
+      314.0
+    ],
+    "area": 167362.0,
+    "image_size": [
+      576,
+      576
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5390625,
+      0.2743055555555556,
+      0.9253472222222222,
+      0.5451388888888888
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017133.jpg",
+    "ann_id": 66115,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      600.0,
+      264.0
+    ],
+    "area": 158400.0,
+    "image_size": [
+      600,
+      420
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5016666666666667,
+      0.31666666666666665,
+      1.0,
+      0.6285714285714286
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017139.jpg",
+    "ann_id": 66158,
+    "category_id": 1,
+    "bbox": [
+      397.0,
+      1.0,
+      884.0,
+      389.0
+    ],
+    "area": 343876.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.65546875,
+      0.27152777777777776,
+      0.690625,
+      0.5402777777777777
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017145.jpg",
+    "ann_id": 66194,
+    "category_id": 1,
+    "bbox": [
+      179.0,
+      1.0,
+      458.0,
+      284.0
+    ],
+    "area": 130072.0,
+    "image_size": [
+      636,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6415094339622641,
+      0.3972222222222222,
+      0.720125786163522,
+      0.7888888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017146.jpg",
+    "ann_id": 66203,
+    "category_id": 0,
+    "bbox": [
+      597.0,
+      284.0,
+      44.0,
+      45.0
+    ],
+    "area": 1980.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9671875,
+      0.8513888888888889,
+      0.06875,
+      0.125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017151.jpg",
+    "ann_id": 66223,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1024.0,
+      505.0
+    ],
+    "area": 517120.0,
+    "image_size": [
+      1024,
+      767
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5009765625,
+      0.3305084745762712,
+      1.0,
+      0.6584093872229465
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017153.jpg",
+    "ann_id": 66229,
+    "category_id": 1,
+    "bbox": [
+      8.0,
+      1.0,
+      943.0,
+      504.0
+    ],
+    "area": 475272.0,
+    "image_size": [
+      950,
+      712
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5047368421052632,
+      0.3553370786516854,
+      0.9926315789473684,
+      0.7078651685393258
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017171.jpg",
+    "ann_id": 66301,
+    "category_id": 1,
+    "bbox": [
+      109.0,
+      1.0,
+      685.0,
+      394.0
+    ],
+    "area": 269890.0,
+    "image_size": [
+      793,
+      606
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5693568726355611,
+      0.32673267326732675,
+      0.8638083228247163,
+      0.6501650165016502
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017179.jpg",
+    "ann_id": 66335,
+    "category_id": 1,
+    "bbox": [
+      431.0,
+      1.0,
+      444.0,
+      545.0
+    ],
+    "area": 241980.0,
+    "image_size": [
+      874,
+      576
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7471395881006865,
+      0.4748263888888889,
+      0.5080091533180778,
+      0.9461805555555556
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017185.jpg",
+    "ann_id": 66363,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      588.0
+    ],
+    "area": 752640.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.50078125,
+      0.4097222222222222,
+      1.0,
+      0.8166666666666667
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017201.jpg",
+    "ann_id": 66431,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      360.0,
+      178.0
+    ],
+    "area": 64080.0,
+    "image_size": [
+      360,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5027777777777778,
+      0.25,
+      1.0,
+      0.49444444444444446
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017204.jpg",
+    "ann_id": 66442,
+    "category_id": 1,
+    "bbox": [
+      567.0,
+      1.0,
+      714.0,
+      392.0
+    ],
+    "area": 279888.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.721875,
+      0.27361111111111114,
+      0.5578125,
+      0.5444444444444444
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017205.jpg",
+    "ann_id": 66444,
+    "category_id": 1,
+    "bbox": [
+      600.0,
+      1.0,
+      681.0,
+      463.0
+    ],
+    "area": 315303.0,
+    "image_size": [
+      1280,
+      640
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.734765625,
+      0.36328125,
+      0.53203125,
+      0.7234375
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV017248.jpg",
+    "ann_id": 66643,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      33.0,
+      640.0,
+      170.0
+    ],
+    "area": 108800.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.3277777777777778,
+      1.0,
+      0.4722222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "bothFireAndSmoke_CV018145.jpg",
+    "ann_id": 70019,
+    "category_id": 0,
+    "bbox": [
+      512.0,
+      1.0,
+      0,
+      155.0
+    ],
+    "area": 0.0,
+    "image_size": [
+      512,
+      341
+    ],
+    "reasons": [
+      "nonpositive"
+    ],
+    "excursion_px": 0.0,
+    "normalized_view": [
+      1.0,
+      0.23020527859237536,
+      0.0,
+      0.45454545454545453
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005813.jpg",
+    "ann_id": 107679,
+    "category_id": 1,
+    "bbox": [
+      433.0,
+      1.0,
+      409.0,
+      337.0
+    ],
+    "area": 137833.0,
+    "image_size": [
+      841,
+      437
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7580261593341261,
+      0.3878718535469107,
+      0.4863258026159334,
+      0.7711670480549199
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005817.jpg",
+    "ann_id": 107686,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      960.0,
+      733.0
+    ],
+    "area": 703680.0,
+    "image_size": [
+      960,
+      1280
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5010416666666667,
+      0.287109375,
+      1.0,
+      0.57265625
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005825.jpg",
+    "ann_id": 107694,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      258.0
+    ],
+    "area": 165120.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.3693181818181818,
+      1.0,
+      0.7329545454545454
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005830.jpg",
+    "ann_id": 107700,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      513.0,
+      341.0
+    ],
+    "area": 174933.0,
+    "image_size": [
+      513,
+      341
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5019493177387915,
+      0.5029325513196481,
+      1.0,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005839.jpg",
+    "ann_id": 107713,
+    "category_id": 1,
+    "bbox": [
+      667.0,
+      1.0,
+      266.0,
+      348.0
+    ],
+    "area": 92568.0,
+    "image_size": [
+      932,
+      524
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8583690987124464,
+      0.33396946564885494,
+      0.2854077253218884,
+      0.6641221374045801
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005844.jpg",
+    "ann_id": 107721,
+    "category_id": 1,
+    "bbox": [
+      55.0,
+      1.0,
+      846.0,
+      393.0
+    ],
+    "area": 332478.0,
+    "image_size": [
+      900,
+      675
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5311111111111111,
+      0.29259259259259257,
+      0.94,
+      0.5822222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005847.jpg",
+    "ann_id": 107725,
+    "category_id": 1,
+    "bbox": [
+      209.0,
+      90.0,
+      272.0,
+      286.0
+    ],
+    "area": 77792.0,
+    "image_size": [
+      480,
+      848
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.71875,
+      0.27476415094339623,
+      0.5666666666666667,
+      0.33726415094339623
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005855.jpg",
+    "ann_id": 107734,
+    "category_id": 1,
+    "bbox": [
+      162.0,
+      178.0,
+      772.0,
+      205.0
+    ],
+    "area": 158260.0,
+    "image_size": [
+      933,
+      700
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.587352625937835,
+      0.4007142857142857,
+      0.827438370846731,
+      0.29285714285714287
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005884.jpg",
+    "ann_id": 107771,
+    "category_id": 1,
+    "bbox": [
+      168.0,
+      1.0,
+      453.0,
+      251.0
+    ],
+    "area": 113703.0,
+    "image_size": [
+      620,
+      349
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6362903225806451,
+      0.3624641833810888,
+      0.7306451612903225,
+      0.7191977077363897
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005888.jpg",
+    "ann_id": 107775,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      177.0
+    ],
+    "area": 113280.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.24861111111111112,
+      1.0,
+      0.49166666666666664
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005902.jpg",
+    "ann_id": 107792,
+    "category_id": 1,
+    "bbox": [
+      189.0,
+      1.0,
+      434.0,
+      250.0
+    ],
+    "area": 108500.0,
+    "image_size": [
+      622,
+      346
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6527331189710611,
+      0.36416184971098264,
+      0.6977491961414791,
+      0.7225433526011561
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005913.jpg",
+    "ann_id": 107803,
+    "category_id": 1,
+    "bbox": [
+      1159.0,
+      1.0,
+      122.0,
+      319.0
+    ],
+    "area": 38918.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.953125,
+      0.22291666666666668,
+      0.0953125,
+      0.44305555555555554
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005913.jpg",
+    "ann_id": 107805,
+    "category_id": 1,
+    "bbox": [
+      1004.0,
+      175.0,
+      277.0,
+      302.0
+    ],
+    "area": 83654.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.892578125,
+      0.4527777777777778,
+      0.21640625,
+      0.41944444444444445
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005923.jpg",
+    "ann_id": 107821,
+    "category_id": 1,
+    "bbox": [
+      621.0,
+      1.0,
+      227.0,
+      147.0
+    ],
+    "area": 33369.0,
+    "image_size": [
+      847,
+      431
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8671782762691853,
+      0.1728538283062645,
+      0.2680047225501771,
+      0.34106728538283065
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005932.jpg",
+    "ann_id": 107832,
+    "category_id": 1,
+    "bbox": [
+      16.0,
+      1.0,
+      189.0,
+      134.0
+    ],
+    "area": 25326.0,
+    "image_size": [
+      204,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5416666666666666,
+      0.18888888888888888,
+      0.9264705882352942,
+      0.37222222222222223
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005943.jpg",
+    "ann_id": 107846,
+    "category_id": 1,
+    "bbox": [
+      6.0,
+      54.0,
+      1275.0,
+      667.0
+    ],
+    "area": 850425.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.502734375,
+      0.5381944444444444,
+      0.99609375,
+      0.9263888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005952.jpg",
+    "ann_id": 107859,
+    "category_id": 1,
+    "bbox": [
+      976.0,
+      1.0,
+      280.0,
+      218.0
+    ],
+    "area": 61040.0,
+    "image_size": [
+      1255,
+      659
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8892430278884462,
+      0.1669195751138088,
+      0.22310756972111553,
+      0.330804248861912
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005955.jpg",
+    "ann_id": 107865,
+    "category_id": 1,
+    "bbox": [
+      357.0,
+      1.0,
+      444.0,
+      363.0
+    ],
+    "area": 161172.0,
+    "image_size": [
+      800,
+      442
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.72375,
+      0.41289592760180993,
+      0.555,
+      0.8212669683257918
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005956.jpg",
+    "ann_id": 107866,
+    "category_id": 1,
+    "bbox": [
+      384.0,
+      1.0,
+      257.0,
+      107.0
+    ],
+    "area": 27499.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.80078125,
+      0.15482954545454544,
+      0.4015625,
+      0.3039772727272727
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005968.jpg",
+    "ann_id": 107881,
+    "category_id": 1,
+    "bbox": [
+      271.0,
+      1.0,
+      370.0,
+      191.0
+    ],
+    "area": 70670.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7125,
+      0.26805555555555555,
+      0.578125,
+      0.5305555555555556
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005979.jpg",
+    "ann_id": 107897,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      459.0,
+      85.0,
+      40.0
+    ],
+    "area": 3400.0,
+    "image_size": [
+      836,
+      498
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.05203349282296651,
+      0.9618473895582329,
+      0.10167464114832536,
+      0.08032128514056225
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005982.jpg",
+    "ann_id": 107900,
+    "category_id": 1,
+    "bbox": [
+      33.0,
+      1.0,
+      1168.0,
+      567.0
+    ],
+    "area": 662256.0,
+    "image_size": [
+      1200,
+      628
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5141666666666667,
+      0.45302547770700635,
+      0.9733333333333334,
+      0.9028662420382165
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005987.jpg",
+    "ann_id": 107908,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      59.0,
+      824.0,
+      435.0
+    ],
+    "area": 358440.0,
+    "image_size": [
+      876,
+      493
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.4714611872146119,
+      0.5608519269776876,
+      0.9406392694063926,
+      0.8823529411764706
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV005990.jpg",
+    "ann_id": 107911,
+    "category_id": 1,
+    "bbox": [
+      3.0,
+      1.0,
+      627.0,
+      274.0
+    ],
+    "area": 171798.0,
+    "image_size": [
+      629,
+      353
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5031796502384738,
+      0.3909348441926346,
+      0.9968203497615262,
+      0.7762039660056658
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV006018.jpg",
+    "ann_id": 107944,
+    "category_id": 1,
+    "bbox": [
+      291.0,
+      26.0,
+      350.0,
+      227.0
+    ],
+    "area": 79450.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.728125,
+      0.3963068181818182,
+      0.546875,
+      0.6448863636363636
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV006040.jpg",
+    "ann_id": 107969,
+    "category_id": 1,
+    "bbox": [
+      155.0,
+      1.0,
+      646.0,
+      564.0
+    ],
+    "area": 364344.0,
+    "image_size": [
+      800,
+      600
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5975,
+      0.4716666666666667,
+      0.8075,
+      0.94
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV006045.jpg",
+    "ann_id": 107977,
+    "category_id": 1,
+    "bbox": [
+      396.0,
+      1.0,
+      585.0,
+      353.0
+    ],
+    "area": 206505.0,
+    "image_size": [
+      980,
+      552
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7025510204081633,
+      0.32155797101449274,
+      0.5969387755102041,
+      0.6394927536231884
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "train",
+    "file": "smoke_CV006068.jpg",
+    "ann_id": 108008,
+    "category_id": 1,
+    "bbox": [
+      365.0,
+      1.0,
+      512.0,
+      163.0
+    ],
+    "area": 83456.0,
+    "image_size": [
+      876,
+      493
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.708904109589041,
+      0.16734279918864098,
+      0.5844748858447488,
+      0.3306288032454361
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "fit"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV010851.jpg",
+    "ann_id": 41180,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      763.0,
+      0
+    ],
+    "area": 0.0,
+    "image_size": [
+      800,
+      600
+    ],
+    "reasons": [
+      "nonpositive"
+    ],
+    "excursion_px": 0.0,
+    "normalized_view": [
+      0.478125,
+      0.0016666666666666668,
+      0.95375,
+      0.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016880.jpg",
+    "ann_id": 64944,
+    "category_id": 1,
+    "bbox": [
+      433.0,
+      3.0,
+      552.0,
+      619.0
+    ],
+    "area": 341688.0,
+    "image_size": [
+      984,
+      621
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7205284552845529,
+      0.5032206119162641,
+      0.5609756097560976,
+      0.9967793880837359
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016880.jpg",
+    "ann_id": 64949,
+    "category_id": 0,
+    "bbox": [
+      561.0,
+      608.0,
+      20.0,
+      14.0
+    ],
+    "area": 280.0,
+    "image_size": [
+      984,
+      621
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5802845528455285,
+      0.9903381642512077,
+      0.02032520325203252,
+      0.02254428341384863
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016921.jpg",
+    "ann_id": 65176,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      181.0
+    ],
+    "area": 115840.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.2599431818181818,
+      1.0,
+      0.5142045454545454
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016926.jpg",
+    "ann_id": 65191,
+    "category_id": 1,
+    "bbox": [
+      165.0,
+      1.0,
+      476.0,
+      224.0
+    ],
+    "area": 106624.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6296875,
+      0.3138888888888889,
+      0.74375,
+      0.6222222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016941.jpg",
+    "ann_id": 65260,
+    "category_id": 1,
+    "bbox": [
+      135.0,
+      1.0,
+      1146.0,
+      719.0
+    ],
+    "area": 823974.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.553125,
+      0.5006944444444444,
+      0.8953125,
+      0.9986111111111111
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016947.jpg",
+    "ann_id": 65287,
+    "category_id": 0,
+    "bbox": [
+      565.0,
+      114.0,
+      76.0,
+      25.0
+    ],
+    "area": 1900.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9421875,
+      0.35138888888888886,
+      0.11875,
+      0.06944444444444445
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016947.jpg",
+    "ann_id": 65288,
+    "category_id": 1,
+    "bbox": [
+      501.0,
+      1.0,
+      140.0,
+      83.0
+    ],
+    "area": 11620.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8921875,
+      0.11805555555555555,
+      0.21875,
+      0.23055555555555557
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016956.jpg",
+    "ann_id": 65328,
+    "category_id": 1,
+    "bbox": [
+      275.0,
+      4.0,
+      503.0,
+      506.0
+    ],
+    "area": 254518.0,
+    "image_size": [
+      777,
+      517
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6776061776061776,
+      0.49709864603481624,
+      0.6473616473616474,
+      0.9787234042553191
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV016973.jpg",
+    "ann_id": 65412,
+    "category_id": 1,
+    "bbox": [
+      135.0,
+      1.0,
+      890.0,
+      373.0
+    ],
+    "area": 331970.0,
+    "image_size": [
+      1024,
+      576
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.56640625,
+      0.3255208333333333,
+      0.869140625,
+      0.6475694444444444
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017020.jpg",
+    "ann_id": 65615,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      34.0,
+      336.0,
+      319.0
+    ],
+    "area": 107184.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.2640625,
+      0.5497159090909091,
+      0.525,
+      0.90625
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017028.jpg",
+    "ann_id": 65658,
+    "category_id": 1,
+    "bbox": [
+      158.0,
+      185.0,
+      1123.0,
+      369.0
+    ],
+    "area": 414387.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.562109375,
+      0.5131944444444444,
+      0.87734375,
+      0.5125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017030.jpg",
+    "ann_id": 65673,
+    "category_id": 1,
+    "bbox": [
+      239.0,
+      1.0,
+      562.0,
+      386.0
+    ],
+    "area": 216932.0,
+    "image_size": [
+      800,
+      480
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.65,
+      0.4041666666666667,
+      0.7025,
+      0.8041666666666667
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017034.jpg",
+    "ann_id": 65696,
+    "category_id": 1,
+    "bbox": [
+      589.0,
+      170.0,
+      52.0,
+      143.0
+    ],
+    "area": 7436.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9609375,
+      0.6708333333333333,
+      0.08125,
+      0.3972222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017039.jpg",
+    "ann_id": 65711,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      1246.0,
+      324.0
+    ],
+    "area": 403704.0,
+    "image_size": [
+      1246,
+      661
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5008025682182986,
+      0.24659606656580937,
+      1.0,
+      0.49016641452344933
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017049.jpg",
+    "ann_id": 65759,
+    "category_id": 1,
+    "bbox": [
+      65.0,
+      1.0,
+      386.0,
+      340.0
+    ],
+    "area": 131240.0,
+    "image_size": [
+      450,
+      800
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5733333333333334,
+      0.21375,
+      0.8577777777777778,
+      0.425
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017050.jpg",
+    "ann_id": 65766,
+    "category_id": 1,
+    "bbox": [
+      419.0,
+      1.0,
+      1502.0,
+      604.0
+    ],
+    "area": 907208.0,
+    "image_size": [
+      1920,
+      1080
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.609375,
+      0.28055555555555556,
+      0.7822916666666667,
+      0.5592592592592592
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017057.jpg",
+    "ann_id": 65789,
+    "category_id": 0,
+    "bbox": [
+      922.0,
+      219.0,
+      63.0,
+      20.0
+    ],
+    "area": 1260.0,
+    "image_size": [
+      984,
+      616
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.9690040650406504,
+      0.3717532467532468,
+      0.06402439024390244,
+      0.032467532467532464
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017120.jpg",
+    "ann_id": 66051,
+    "category_id": 1,
+    "bbox": [
+      332.0,
+      1.0,
+      869.0,
+      530.0
+    ],
+    "area": 460570.0,
+    "image_size": [
+      1200,
+      900
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.63875,
+      0.29555555555555557,
+      0.7241666666666666,
+      0.5888888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017121.jpg",
+    "ann_id": 66059,
+    "category_id": 1,
+    "bbox": [
+      64.0,
+      30.0,
+      141.0,
+      142.0
+    ],
+    "area": 20022.0,
+    "image_size": [
+      204,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6593137254901961,
+      0.28055555555555556,
+      0.6911764705882353,
+      0.39444444444444443
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017126.jpg",
+    "ann_id": 66086,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      218.0
+    ],
+    "area": 139520.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.3055555555555556,
+      1.0,
+      0.6055555555555555
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017126.jpg",
+    "ann_id": 66087,
+    "category_id": 0,
+    "bbox": [
+      610.0,
+      153.0,
+      31.0,
+      30.0
+    ],
+    "area": 930.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.97734375,
+      0.4666666666666667,
+      0.0484375,
+      0.08333333333333333
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017216.jpg",
+    "ann_id": 66482,
+    "category_id": 1,
+    "bbox": [
+      300.0,
+      44.0,
+      725.0,
+      538.0
+    ],
+    "area": 390050.0,
+    "image_size": [
+      1024,
+      768
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.64697265625,
+      0.4075520833333333,
+      0.7080078125,
+      0.7005208333333334
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "bothFireAndSmoke_CV017234.jpg",
+    "ann_id": 66579,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      224.0
+    ],
+    "area": 143360.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.3138888888888889,
+      1.0,
+      0.6222222222222222
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005838.jpg",
+    "ann_id": 107710,
+    "category_id": 1,
+    "bbox": [
+      62.0,
+      1.0,
+      389.0,
+      215.0
+    ],
+    "area": 83635.0,
+    "image_size": [
+      450,
+      335
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.57,
+      0.3238805970149254,
+      0.8644444444444445,
+      0.6417910447761194
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005845.jpg",
+    "ann_id": 107723,
+    "category_id": 1,
+    "bbox": [
+      122.0,
+      1.0,
+      859.0,
+      405.0
+    ],
+    "area": 347895.0,
+    "image_size": [
+      980,
+      552
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5627551020408164,
+      0.3686594202898551,
+      0.8765306122448979,
+      0.7336956521739131
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005848.jpg",
+    "ann_id": 107726,
+    "category_id": 1,
+    "bbox": [
+      227.0,
+      1.0,
+      414.0,
+      202.0
+    ],
+    "area": 83628.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.678125,
+      0.2833333333333333,
+      0.646875,
+      0.5611111111111111
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005850.jpg",
+    "ann_id": 107729,
+    "category_id": 1,
+    "bbox": [
+      273.0,
+      1.0,
+      528.0,
+      410.0
+    ],
+    "area": 216480.0,
+    "image_size": [
+      800,
+      800
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.67125,
+      0.2575,
+      0.66,
+      0.5125
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005852.jpg",
+    "ann_id": 107731,
+    "category_id": 1,
+    "bbox": [
+      333.0,
+      1.0,
+      438.0,
+      382.0
+    ],
+    "area": 167316.0,
+    "image_size": [
+      770,
+      434
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7168831168831169,
+      0.4423963133640553,
+      0.5688311688311688,
+      0.880184331797235
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005856.jpg",
+    "ann_id": 107735,
+    "category_id": 1,
+    "bbox": [
+      44.0,
+      1.0,
+      921.0,
+      510.0
+    ],
+    "area": 469710.0,
+    "image_size": [
+      964,
+      602
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5233402489626556,
+      0.42524916943521596,
+      0.9553941908713693,
+      0.8471760797342193
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005864.jpg",
+    "ann_id": 107746,
+    "category_id": 1,
+    "bbox": [
+      100.0,
+      1.0,
+      701.0,
+      402.0
+    ],
+    "area": 281802.0,
+    "image_size": [
+      800,
+      448
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.563125,
+      0.45089285714285715,
+      0.87625,
+      0.8973214285714286
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005876.jpg",
+    "ann_id": 107762,
+    "category_id": 1,
+    "bbox": [
+      255.0,
+      1.0,
+      381.0,
+      235.0
+    ],
+    "area": 89535.0,
+    "image_size": [
+      635,
+      348
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7015748031496063,
+      0.34051724137931033,
+      0.6,
+      0.6752873563218391
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005898.jpg",
+    "ann_id": 107785,
+    "category_id": 1,
+    "bbox": [
+      121.0,
+      1.0,
+      204.0,
+      449.0
+    ],
+    "area": 91596.0,
+    "image_size": [
+      324,
+      477
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6882716049382716,
+      0.4727463312368973,
+      0.6296296296296297,
+      0.9412997903563941
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005924.jpg",
+    "ann_id": 107822,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      205.0
+    ],
+    "area": 131200.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.2875,
+      1.0,
+      0.5694444444444444
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005933.jpg",
+    "ann_id": 107834,
+    "category_id": 1,
+    "bbox": [
+      127.0,
+      1.0,
+      514.0,
+      182.0
+    ],
+    "area": 93548.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6,
+      0.26136363636363635,
+      0.803125,
+      0.5170454545454546
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005936.jpg",
+    "ann_id": 107838,
+    "category_id": 1,
+    "bbox": [
+      25.0,
+      1.0,
+      616.0,
+      283.0
+    ],
+    "area": 174328.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5203125,
+      0.3958333333333333,
+      0.9625,
+      0.7861111111111111
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005942.jpg",
+    "ann_id": 107845,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      111.0,
+      848.0,
+      218.0
+    ],
+    "area": 184864.0,
+    "image_size": [
+      848,
+      480
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5011792452830188,
+      0.4583333333333333,
+      1.0,
+      0.45416666666666666
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005967.jpg",
+    "ann_id": 107880,
+    "category_id": 1,
+    "bbox": [
+      49.0,
+      2.0,
+      828.0,
+      210.0
+    ],
+    "area": 173880.0,
+    "image_size": [
+      876,
+      493
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5285388127853882,
+      0.21703853955375255,
+      0.9452054794520548,
+      0.4259634888438134
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005986.jpg",
+    "ann_id": 107907,
+    "category_id": 1,
+    "bbox": [
+      86.0,
+      60.0,
+      515.0,
+      222.0
+    ],
+    "area": 114330.0,
+    "image_size": [
+      600,
+      401
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5725,
+      0.42643391521197005,
+      0.8583333333333333,
+      0.5536159600997507
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV005988.jpg",
+    "ann_id": 107909,
+    "category_id": 1,
+    "bbox": [
+      318.0,
+      1.0,
+      848.0,
+      506.0
+    ],
+    "area": 429088.0,
+    "image_size": [
+      1165,
+      769
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6369098712446352,
+      0.33029908972691807,
+      0.7278969957081545,
+      0.657997399219766
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006032.jpg",
+    "ann_id": 107959,
+    "category_id": 1,
+    "bbox": [
+      375.0,
+      1.0,
+      266.0,
+      360.0
+    ],
+    "area": 95760.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.79375,
+      0.5027777777777778,
+      0.415625,
+      1.0
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006032.jpg",
+    "ann_id": 107960,
+    "category_id": 1,
+    "bbox": [
+      590.0,
+      266.0,
+      51.0,
+      95.0
+    ],
+    "area": 4845.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.96171875,
+      0.8708333333333333,
+      0.0796875,
+      0.2638888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006038.jpg",
+    "ann_id": 107966,
+    "category_id": 1,
+    "bbox": [
+      208.0,
+      1.0,
+      433.0,
+      305.0
+    ],
+    "area": 132065.0,
+    "image_size": [
+      640,
+      352
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.66328125,
+      0.43607954545454547,
+      0.6765625,
+      0.8664772727272727
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006039.jpg",
+    "ann_id": 107968,
+    "category_id": 1,
+    "bbox": [
+      427.0,
+      239.0,
+      162.0,
+      53.0
+    ],
+    "area": 8586.0,
+    "image_size": [
+      588,
+      441
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8639455782312925,
+      0.6020408163265306,
+      0.2755102040816326,
+      0.12018140589569161
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006053.jpg",
+    "ann_id": 107992,
+    "category_id": 1,
+    "bbox": [
+      395.0,
+      1.0,
+      586.0,
+      406.0
+    ],
+    "area": 237916.0,
+    "image_size": [
+      980,
+      552
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7020408163265306,
+      0.3695652173913043,
+      0.5979591836734693,
+      0.7355072463768116
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006058.jpg",
+    "ann_id": 107997,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      209.0
+    ],
+    "area": 133760.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5015625,
+      0.29305555555555557,
+      1.0,
+      0.5805555555555556
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "cal"
+  },
+  {
+    "split": "val",
+    "file": "smoke_CV006067.jpg",
+    "ann_id": 108007,
+    "category_id": 1,
+    "bbox": [
+      207.0,
+      1.0,
+      306.0,
+      125.0
+    ],
+    "area": 38250.0,
+    "image_size": [
+      512,
+      307
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.703125,
+      0.20684039087947884,
+      0.59765625,
+      0.40716612377850164
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "dev"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV016935.jpg",
+    "ann_id": 65229,
+    "category_id": 1,
+    "bbox": [
+      638.0,
+      1.0,
+      643.0,
+      424.0
+    ],
+    "area": 272632.0,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.749609375,
+      0.29583333333333334,
+      0.50234375,
+      0.5888888888888889
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017023.jpg",
+    "ann_id": 65630,
+    "category_id": 0,
+    "bbox": [
+      588.0,
+      225.0,
+      53.0,
+      77.0
+    ],
+    "area": 4081.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.96015625,
+      0.7319444444444444,
+      0.0828125,
+      0.21388888888888888
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017031.jpg",
+    "ann_id": 65683,
+    "category_id": 1,
+    "bbox": [
+      555.0,
+      3.0,
+      86.0,
+      147.0
+    ],
+    "area": 12642.0,
+    "image_size": [
+      640,
+      360
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.934375,
+      0.2125,
+      0.134375,
+      0.4083333333333333
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017042.jpg",
+    "ann_id": 65721,
+    "category_id": 1,
+    "bbox": [
+      413.0,
+      1.0,
+      228.0,
+      202.0
+    ],
+    "area": 46056.0,
+    "image_size": [
+      640,
+      368
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.8234375,
+      0.27717391304347827,
+      0.35625,
+      0.5489130434782609
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017042.jpg",
+    "ann_id": 65722,
+    "category_id": 1,
+    "bbox": [
+      1.0,
+      2.0,
+      347.0,
+      367.0
+    ],
+    "area": 127349.0,
+    "image_size": [
+      640,
+      368
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.27265625,
+      0.5040760869565217,
+      0.5421875,
+      0.9972826086956522
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017052.jpg",
+    "ann_id": 65772,
+    "category_id": 1,
+    "bbox": [
+      331.0,
+      1.0,
+      431.0,
+      262.0
+    ],
+    "area": 112922.0,
+    "image_size": [
+      761,
+      691
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.7181340341655716,
+      0.191027496382055,
+      0.5663600525624178,
+      0.3791606367583213
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017158.jpg",
+    "ann_id": 66245,
+    "category_id": 1,
+    "bbox": [
+      32.0,
+      1.0,
+      446.0,
+      522.0
+    ],
+    "area": 232812.0,
+    "image_size": [
+      477,
+      735
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.5345911949685535,
+      0.3564625850340136,
+      0.9350104821802935,
+      0.710204081632653
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  },
+  {
+    "split": "test",
+    "file": "bothFireAndSmoke_CV017225.jpg",
+    "ann_id": 66536,
+    "category_id": 1,
+    "bbox": [
+      86.0,
+      1.0,
+      217.0,
+      357.0
+    ],
+    "area": 77469.0,
+    "image_size": [
+      302,
+      470
+    ],
+    "reasons": [
+      "outside"
+    ],
+    "excursion_px": 1.0,
+    "normalized_view": [
+      0.6440397350993378,
+      0.3819148936170213,
+      0.7185430463576159,
+      0.7595744680851064
+    ],
+    "numeric_tolerance_ok": true,
+    "derived_role": "test"
+  }
+]

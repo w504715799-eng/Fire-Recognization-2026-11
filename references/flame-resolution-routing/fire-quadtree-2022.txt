@@ -1,0 +1,554 @@
+
+PAGE 1
+/gid00030/gid00035/gid00032/gid00030/gid00038/gid00001/gid00033/gid00042/gid00045/gid00001
+/gid00048/gid00043/gid00031/gid00028/gid00047/gid00032/gid00046
+Citation: Perrolas, G.; Niknejad, M.;
+Ribeiro, R.; Bernardino, A. Scalable
+Fire and Smoke Segmentation from
+Aerial Images Using Convolutional
+Neural Networks and Quad-Tree
+Search. Sensors 2022, 22, 1701.
+https://doi.org/10.3390/s22051701
+Academic Editor: Kah Phooi Seng
+Received: 5 January 2022
+Accepted: 15 February 2022
+Published: 22 February 2022
+Publisher’s Note: MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional afﬁl-
+iations.
+Copyright: © 2022 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+sensors
+Article
+Scalable Fire and Smoke Segmentation from Aerial Images
+Using Convolutional Neural Networks and Quad-Tree Search
+Gonçalo Perrolas
+ , Milad Niknejad *, Ricardo Ribeiro and Alexandre Bernardino
+Instituto de Sistemas e Robótica, Instituto Superior Tecnico, University of Lisbon, 1049-001 Lisbon, Portugal;
+goncalo.perrolas@tecnico.ulisboa.pt (G.P .); ribeiro@isr.tecnico.ulisboa.pt (R.R.); alex@isr.tecnico.ulisboa.pt (A.B.)
+* Correspondence: milad3n@gmail.com
+Abstract: Autonomous systems can help ﬁreﬁghting operations by detecting and locating the ﬁre spot
+from surveillance images and videos. Similar to many other areas of computer vision, Convolutional
+Neural Networks (CNNs) have achieved state-of-the-art results for ﬁre and smoke detection and
+segmentation. In practice, input images to a CNN are usually downsized to ﬁt into the network to
+avoid computational complexities and restricted memory problems. Although in many applications
+downsizing is not an issue, in the early phases of ﬁre ignitions downsizing may eliminate the ﬁre
+regions since the incident regions are small. In this paper, we propose a novel method to segment
+ﬁre and smoke regions in high resolution images based on a multi-resolution iterative quad-tree
+search algorithm , which manages the application of classiﬁcation and segmentation CNNs to focus
+the attention on informative parts of the image. The proposed method is more computationally
+efﬁcient compared to processing the whole high resolution input, and contains parameters that can
+be tuned based on the needed scale precision. The results show that the proposed method is capable
+of detecting and segmenting ﬁre and smoke with higher accuracy and is useful for segmenting small
+regions of incident in high resolution aerial images in a computationally efﬁcient way.
+Keywords: ﬁre detection; smoke detection; aerial images; wildﬁre; convolutional neural networks
+1. Introduction
+Over the last two decades, automated systems to support forest fire fighting have shown
+an increasing popularity as a research topic due to the growing incidence of forest fires around
+the world. One example operating in Portugal is the project CICLOPE [ 1] that monitors
+1,300,000 hectares of forest and detects the occurrence of fire through smoke analysis on
+the images captured. Recently , Unmanned Aerial V ehicles (UA Vs) equipped with imaging
+sensors have become popular in diverse forest and agricultureapplications [2,3], including
+the detection and monitoring of wildfires [4] Fire and smoke detection methods in images are
+the essential part in these systems, which are based on Artificial Intelligence (AI).
+The classical methods for fire detection were mainly based on handcrafted features
+obtained based on RGB color values [ 5–7]. The features are then classified using vector
+classifier methods such as Support V ector Machines (SVM). Recently , Convolutional Neural
+Networks (CNNs) have led to state-of-the-art results for fire and smoke recognition [8,9],
+similar to many other computer vision areas. Beyond recognition, it is also very important
+for an autonomous system to determine the location of the fire or smoke. There are some
+works which proposed to localize fire by bounding box [10] or pixel segmentation [11]. For
+fire segmentation, the approaches are mainly based on adapting multi-label segmentation
+methods such as deeplab-v3 [12] for the case of fire or smoke segmentation [11].
+The majority of ﬁre/smoke detection systems rely on images captured by ﬁxed cameras
+at high altitude in order to cover large areas of forest terrain, resulting in high resolution
+surveillance images.
+Although theoretically the input size of the images in CNNs could be arbitrary for
+a learned network, in practice, the images are usually downsized to small sizes (e.g.,
+Sensors 2022, 22, 1701. https://doi.org/10.3390/s22051701 https://www.mdpi.com/journal/sensors
+
+PAGE 2
+Sensors 2022, 22, 1701 2 of 12
+244 × 244 pixels in VGG [ 13]) to feed into CNNs. Using high resolution images causes
+a large increase in the computational time, especially in training phases to compute the
+gradient of the weights. It also highly increases the memory usage, which is another
+limitation. Although in many applications it sufﬁces to have small image sizes, for the
+applications demanding high resolution aerial images to detect ﬁre and smoke, image
+resizing may result in missing small ﬁre areas, and decreases the georeferencing accuracy.
+Detecting small areas of ﬁre is important to detect the ﬁre at the early phases of an incident
+and timely activate alarms. On the contrary, if the smoke/ﬁre area is noticeable, resizing the
+image to a smaller size may lose accuracy of the localization, especially in the boundaries of
+smoke or ﬁre. Existing methods to localize ﬁre do not address the ability to detect variable
+sizes of ﬁre in images, which we denote as “scalability”.
+In this paper, we propose a novel scalable method for the detection and segmentation
+of smoke and fire in images based on the well-known quad-tree [14] search algorithm. The
+proposed network consists of two classification and segmentation CNNs to detect and localize
+fire and smoke. The method processes image patches, and begins by considering the entire
+image as a patch. For each patch, the classification network first determines whether the
+patch contains instances of fire or smoke. If fire/smoke is detected, the segmentation network
+computes the initial segmentation of fire. If the the segmented area in the patch is small
+(below some threshold), the image is sliced into four parts, and each part is “zoomed-in”
+to search for smaller scale instances of interest. The patches are finally aggregated to form
+the entire segmented mask for the image. Note that, in all mentioned stages, the inputs of
+CNN are fixed-size images that are downsized versions of the selected patches to keep the
+computational efficiency . The results show that the proposed method is capable of segmenting
+fire and smoke in images with high accuracy , and is able to localize very small areas of fire or
+smoke in images, which is very important for early detection systems.
+2. Related Works
+Classical methods for fire and smoke detection mainly use image processing techniques
+in which the images are analyzed by texture, contrast, or RGB components of pixels to
+detect fire and smoke [5–7,15]. The features extracted from the color of pixels, such as color
+histograms, can be used to distinguish fire regions from the background. So, many methods
+use features calculated from the RGB components of pixels to detect fire [5,16] or smoke [17].
+Recently, state-of-the-art methods for ﬁre detection, similar to many other areas of
+computer vision, are based on CNNs [ 18]. These methods do not require hand-crafted
+features, as the features are learned automatically by an end-to-end supervised training
+scheme. The method in [ 8] uses simpliﬁed structures of the Alexnet [ 19] and Inception
+networks [20] for classifying images to ﬁre and non-ﬁre. In [10], the faster Region-CNN
+(R-CNN) is ﬁrst used to extract ﬁre candidate regions, and then each region is classiﬁed.
+Some methods consider the classiﬁcation of ﬁre videos using CNNs [21,22]. In [22], a long
+short term memory network (LSTM) is used for ﬁre classiﬁcation.
+Apart from classification, some methods consider the problem of segmentation of fire or
+smoke regions in images, as it enables the system to localize the incident regions. This localiza-
+tion can be used for georeferencing the events from aerial images. Deeplabv3+ network and
+Squeeze-net have been employed in [11,23], respectively , to segment the fire regions. Similar
+methods based on CNNs have also been proposed for smoke segmentation.Reference [24]
+used two segmentation networks to infer a segmentation mask based on coarse and fine
+features extracted from smoke images, and then fused them using a new network.
+Quad-Tree is a well-known data structure for storing and retrieving two dimensional
+data [14]. It partitions two-dimensional data recursively into four quadrants or regions and
+unify ’interesting’ data into one cell. It has lots of applications in different areas such as image
+compression [25] and data storage [26]. One interesting feature of Quad-tree in our application
+for fire/smoke detection is the ability of efficient search of specific regions in images.
+
+PAGE 3
+Sensors 2022, 22, 1701 3 of 12
+3. Methodology
+The proposed method is designed to process images taken from an aerial point of
+view, either taken from a static surveillance tower, or a conventional aerial vehicle like
+an airplane or helicopter or an unmanned vehicle like a drone. Those vehicles must be
+equipped with an RGB camera with enough resolution to be able to detect small ﬁre/smoke
+areas and a transmission system to send the images to a processing unit on land. The aerial
+images will then go through the proposed algorithm to detect ﬁre and smoke.
+Although in theory the convolutional filters obtained by CNNs can be used for any input
+size, in practice, the images are downsized to lower resolutions, e.g.,244 × 244 to feed into the
+CNNs. Considering high resolution images for the input of a CNN causes high computational
+complexity for training and inference. Moreover, convolutional filters obtained from images
+with one specific scale of an object may not perform optimally for detecting other scales of
+the object. V ery recently , some methods have considered this problem and aim to extract
+information from high resolution images usingCNNs [27,28]. However, these methods are
+proposed for classification and not for segmenting the objects. The size of the areas of fire and
+smoke in aerial images may span several orders of magnitude, so it is important to detect
+small regions of fire/smoke from high resolution images. Those areas may even disappear in
+the first step of downsizing the image or become very difficult to detect.
+The main purpose of this algorithm is to efﬁciently segment small areas of ﬁre and
+smoke in high resolution images. A straightforward approach would be to slice (divide)
+the image into patches of ﬁxed-size, then feed each slice as an input to the CNN, and ﬁnally
+aggregate the output patches by returning them to the original position of the patch in
+the image. However, this approach is not adaptive to the scale of the events, and is time
+consuming in the test phase. In this paper we propose to use a search method based on
+the Quad-tree approach. Depending on the size of the ﬁre/smoke area in the image, the
+algorithm will tend to either do a more precise detection, involving zoomed-in patches, or
+a more global search using patches from larger areas or even the whole image.
+The proposed method, described in Algorithm 1, uses two CNNs in the process, one
+for classiﬁcation and one for segmentation, which are trained independently. Starting from
+the entire image as a patch, the basic operation of the proposed method is composed of
+three steps. The ﬁrst step classiﬁes the input patch to check if ﬁre/smoke. If ﬁre/smoke
+is detected, then the second step uses the segmentation network to compute a binary
+mask marking where ﬁre/smoke exists inside the patch. In the third step, if the area of
+the segmented mask is lower than a minimum segmentation threshold, meaning that a
+more detailed analysis of the event is required, the patch is sliced into four parts and the
+procedure is repeated for the four patches. In all stages the patch is downsized to the input
+size of classiﬁcation and segmentation networks.
+In basic procedure of the algorithm, the classiﬁcation network decides if the ﬁre exists
+in the patch in order to move to the next stage for the segmentation. If patches are too
+large, small areas of ﬁre may be lost by the classiﬁcation network, resulting in false negative
+classiﬁcations. To resolve this issue, we propose to use a maximum size for the patches
+to be classiﬁed as negative, above which we further divide the patches to higher scales
+even if the output of the classiﬁcation network is negative. This distinguishes patch sizes
+that have high false negative rates, and therefore should be further analyzed, from patch
+sizes that have low false negative rates, and can be conﬁdently discarded when classiﬁed
+as negatives. To control the maximum resolution of analysis, we also deﬁne a minimum
+patch size threshold for the networks, denoting when the algorithm stops further dividing
+the patches. This threshold determines the precision of the algorithm, and could be tuned
+based on the precision required for the application at hand.
+For classiﬁcation, SqueezeNet [29] is used due to high computational efﬁciency and
+acceptable performance in our application. U-net [30] is used for segmentation. Figure 1
+shows the structure of the networks used for segmentation and classiﬁcation in our method.
+Both networks are trained independently using ﬁre and smoke image datasets, suitable for
+each speciﬁc task. Figure 2 shows some examples of the output of SqueezeNet.
+
+PAGE 4
+Sensors 2022, 22, 1701 4 of 12
+Algorithm 1: Quad_Tree Algorithm.
+Function Quad_Tree(input_Patch):
+positive = Classify( input_patch);
+if positive OR Size(input_patch)>max_neg_size then
+input_patch_seg = Segment (input_patch);
+if Percentage(input_patch_seg) < seg_threshold AND
+Size(input_patch) > min_seg_size then
+patches = Split_in_4(input_patch);
+for patch in patches do
+result = Quad_Tree (patch)
+Append result to results
+end
+ﬁnal_result = Reconstruct_from_patches ( results );
+end
+ﬁnal_result=input_patch_seg
+end
+ﬁnal_result = blank_patch;
+return ﬁnal_result
+Below we describe the functions and parameters used in Algorithm 1.
+• Percentage () computes the ratio between the number of segmented pixels divided by
+the total number of pixels in the patch;
+• seg_threshold is the threshold value for the previous ratio, below which the algorithm
+continues the ’zooming’ process;
+• max_neg_size is the maximum value of the patch sizes for which we rely on the
+negative classiﬁcation output;
+• min_seg_size is the minimum value of patch size for the zoom-in process. This is
+actually the minimum size of patch the algorithm can reach.
+The last three mentioned parameters can be tuned based on the application at hand,
+and could be deﬁned to set the trade off between the computational complexity and the
+accuracy of the algorithm.
+(a) ( b)
+Figure 1. Network structures of segmentation and classiﬁcation network used in our method.
+(a) Segmentation network [30], (b) Classiﬁcation Network SqueezeNet [29].
+
+PAGE 5
+Sensors 2022, 22, 1701 5 of 12
+(a) ( b) ( c) ( d)
+Figure 2. Examples of classiﬁcations using SqueezeNet in our method. ( a) Fire image (Positive),
+(b) Fire image (Positive), (c) Red sky (Negative), (d) Red rooftops (Negative).
+4. Implementation and Results
+4.1. Dataset
+In order to train and evaluate the networks, we created a labeled dataset of fire and
+smoke images, including challenging negative images. For the classification network, the
+labels indicate if the image contains the phenomenon or not. For the segmentation networks,
+the labels specify each pixel class. In total, four different types of datasets were gathered for the
+tasks of fire classification, fire segmentation, smoke classification, and smoke segmentation.
+The images gathered for the ﬁre segmentation dataset mainly came from two sources:
+Corsican dataset [31] (RGB images with pixel wise labelling), and a batch of images gathered
+online that were manually labeled to extend the size of the dataset. For the smoke dataset,
+we used three sources: the datasets of [32,33] augmented by 300 images gathered online
+and segmented manually. The labeling was done using the Image Labeler App included in
+the Computer Vision System Toolbox 8.0 from Matlab [34]. We have included challenging
+negative examples in the dataset, which are likely to produce false positive results. In case
+of ﬁre, we have included images containing sunsets/sunrises, reddish color sky, red foliage,
+and red objects that can appear in ﬁre ﬁghting situations (such as ﬁre trucks, airplanes,
+and helicopters). For smoke, the images that are likely to produce false positive results
+are clouds. By including them in the dataset, the CNNs are trained to distinguish those
+images from real ﬁre and smoke examples. Two examples are shown in Figure 2, which the
+classiﬁcation network is able to classify correctly. We have also included images that add
+diversity of situations not covered in the Corsican Dataset, mainly images taken from long
+distances, from an aerial perspective, and with small areas of ﬁre/smoke. In Table 1, an
+overview of our datasets is presented, including the number of images gathered for each
+category. In our experiments, the dataset is divided randomly into train/validation/test
+subsets with 70, 20, and 10 percentage of images, respectively.
+Table 1. The number of images gathered in the dataset in each category.
+Classiﬁcation
+Fire Positive 800
+Negative 520
+Smoke Positive 500
+Negative 300
+Segmentation
+Fire Containing ﬁre 700
+Negative 450
+Smoke Containing ﬁre 300
+Negative 60
+4.2. Networks Training
+We have implemented the code in Python with the Tensorﬂow library, running on a
+single core hyper threaded Xeon Processor at @2.3Ghz and a Tesla K80 (GPU). As explained
+earlier, the algorithm uses in total four different network instances, each one having a
+different task. Two instances of the SqueezeNet and two instances of the U-Net were
+trained. The input size for the segmentation network is 128 × 128, and for the classiﬁcation
+network is 192 × 192. We chose a higher input size for the classiﬁcation network as it
+
+PAGE 6
+Sensors 2022, 22, 1701 6 of 12
+assumes a key role in the pipeline by making the decision of whether the algorithm should
+proceed to the segmentation step. To train the networks to adapt to different scales of
+instances of ﬁre and smoke, we sample random patches of different sizes from the training
+images, and resize them to the input size of the network.
+The training parameters for the classiﬁcation networks were set as follows,
+Fire Classiﬁer Training Parameters:
+• Optimizer: Adam()
+Learn. Rate: 0.001
+β1: 0.9;
+β2: 0.999;
+ϵ: 1e-7;
+• Loss: Binary Crossentropy;
+• Batch Size: 32;
+• Patience: 20;
+• Epochs: 150;
+• Monitor: Val. Loss;
+Smoke Classiﬁer Training Parameters:
+• Optimizer: Adam()
+Learn. Rate: 0.002
+β1: 0.9;
+β2: 0.999;
+ϵ: 1e-7;
+• Loss: Binary Crossentropy;
+• Batch Size: 32;
+• Patience: 20;
+• Epochs: 150;
+• Monitor: Val. Loss;
+The parameters used in the training phase for the U-net segmentation network are as follows,
+Fire Segmentation Training Parameters:
+• Optimizer: Adam()
+Learn. Rate: 0.0001
+β1: 0.9;
+β2: 0.999;
+ϵ: 1e-5;
+• Loss: Binary Crossentropy;
+• Batch Size: 32;
+• Patience: 30;
+• Epochs: 200;
+• Monitor: Val. Loss;
+Smoke Segmentation Training Parameters:
+• Optimizer: Adam()
+Learn. Rate: 0.0005
+β1: 0.9;
+β2: 0.999;
+ϵ: 1e-5;
+• Loss: Binary Crossentropy;
+• Batch Size: 32;
+• Patience: 50;
+• Epochs: 200;
+• Monitor: Val. Loss;
+
+PAGE 7
+Sensors 2022, 22, 1701 7 of 12
+The parameters were chosen to lead to an acceptable performance on the validation
+set. The training took approximately two and a half hours for ﬁre and nearly two hours
+for smoke.
+In order to measure the performance of the classiﬁcation network, which has an
+important role in our algorithm, the accuracy of the classiﬁcation network in the training
+validation and tests set are shown in Table 2. The confusion matrix for the test set is also
+shown in Tables 3 and 4. Note that in this experiment all images are downsized to the
+classiﬁcation network input size.
+Table 2. The performance of the SqueezeNet classiﬁcation network in our dataset.
+Fire Dataset Smoke Dataset
+Training set accuracy 98.56 96.10
+Validation set accuracy 95.98 91.01
+Table 3. Normalised confusion matrix of the test set for the ﬁre dataset.
+Predicted Fire Predicted Non-Fire
+True ﬁre class 0.951 0.049
+True non-ﬁre class 0.041 0.959
+Table 4. Normalised confusion matrix of the test set for the smoke dataset.
+Predicted Smoke Predicted Non-Smoke
+True smoke class 0.902 0.098
+True non-smoke class 0.087 0.913
+4.3. Results
+In this part, we evaluate the overall performance of the proposed system and its
+performance when some of its components are disabled. We use the datasets reserved for
+testing proposes. The evaluation of each class is made separately and, for each, we tested
+four different models:
+• 1. Q + C + S: This model corresponds to the complete proposed algorithm. It uses all
+the components explained earlier, the QuadTree algorithm, the classiﬁcation stage,
+and the segmentation stage;
+• 2. Q + S: This model removes the classiﬁcation component from the algorithm, and
+QuadTree assumes the classiﬁcation to always be positive;
+• 3. C + S : In this model, QuadTree methodology is removed. It divides the image
+into patches of minimum size ( min_seg_size). It then processes all patches by ﬁrst
+classifying them and then segmenting them.
+• 4. S : This ﬁnal model consists only of the segmentation stage with the input im-
+age resized to the network input size. This corresponds to conventional semantic
+segmentation methods (in our case with Deeplab-v3).
+In the experiments, theseg_threshold parameter is 30%, max_neg_size, and min_seg_size
+are set to 512 × 512, and 128 × 128, respectively (see Table 5).
+Table 5. The parameters used in the algorithm producing the reported results.
+seg_threshold max _neg_size min _seg_size
+30% 512 × 512 128 × 128
+To evaluate the performance of the four different implementations we use the mean
+and standard deviation (SD) of the Intersection over Union (IoU) metric together with
+
+PAGE 8
+Sensors 2022, 22, 1701 8 of 12
+the pixel accuracy and processing time per pixel. IoU is the common metric used to
+measure the quality of segmentation methods through the amount of overlap between the
+computed segmentation and the ground truth mask. It is computed by the ratio of the
+intersection over the union of the segmentation area with respect to the ground-truth mask
+area. The mean IoU is the mean value of the IoU and SD is the standard deviation of the IoU,
+computed across all images of the test set. The higher the mean IoU, the better the average
+performance of the method is. The higher the SD, the bigger the variability of the quality of
+the segmentation from frame to frame. To compute IOU, all obtained masks are resized to
+the size of the original image (mask). In order to compare the computational complexity,
+the average processing time per pixel is computed, as the resolution of processed images
+are different in each implementation.
+The results are reported in Tables 6 and 7, for ﬁre and smoke, respectively. As men-
+tioned earlier, S in the table corresponds to normal segmentation methods. Here we used
+Deeplab-v3 [12]. C + S corresponds the the exhaustive search by processing all patches
+with the minimum size.
+Table 6. The effect of adding different stages to the proposed method and comparison to common
+segmentation (ﬁre dataset).
+Model Mean IoU % SD (of IoU) Pixel Acc. Process. Time
+(per Pixel)
+Q + C + S 88.3 0.10 95.8 5.4 × 10−6
+Q + S 88.01 0.15 95.8 6.0 × 10−6
+C + S 88.51 0.10 95.9 18.4 × 10−6
+S 83.49 0.22 91.3 4.2 × 10−6
+Table 7. The effect of adding different stages to the proposed method and comparison to common
+segmentation (Smoke dataset).
+Model Mean IoU % SD (of IoU) Pixel Acc. Process. Time
+(per Pixel)
+Q + C + S 83.37 0.133 91.6 5.3 × 10−6
+Q + S 82.81 0.149 91.5 6.1 × 10−6
+C + S 83.25 0.144 91.6 18.3 × 10−6
+S 77.21 0.215 87.4 4.2 × 10−6
+As it can be seen in Tables 6 and 7, the complete system has a better performance
+in terms of IOU compared to the other models for the smoke. For ﬁre segmentation, the
+C + S (exhaustive search) method performs slightly better. However, using the quad-
+tree signiﬁcantly improves the speed (more than three times in both cases). The simple
+segmentation in our results has less computational complexity, as it only requires one
+pass to the network for evaluation. However, using the Quad-Tree leads to a considerable
+improvement over the segmentation-only method (S) for ﬁre (improvement from 83.49
+to 88.3 in IoU). Moreover, in many cases the segmentation network cannot detect small
+portions of ﬁre/smoke incidents from aerial images, which is a great limitation for early
+detection of wildﬁres. Similarly, for smoke segmentation, although the time complexity
+is slightly higher, the performance has improved from77.21 to 83.37 in IoU compared to
+conventional Deeplab-v3 segmentation.
+Figure 3 shows the performance of the proposed method for images containing small
+ﬁre parts compared to DeepLab-v3 [12], which is a well-known and convensional image
+segmentation method. As it can be seen, the proposed method is capable of segmenting
+the ﬁre part of the image while Deeplab fails to do so.
+Figure 4 shows illustrated segmentations obtained by the proposed method compared
+to DeepLab-v3 [12]. Patches used by the quad-tree algorithm are indicated with white
+border lines. As it can be seen, image regions with smaller ﬁre areas are more reﬁned by the
+
+PAGE 9
+Sensors 2022, 22, 1701 9 of 12
+proposed algorithm, leading to more precise segmentation. The parts in the image where
+there is no ﬁre or where there are larger areas of ﬁre are more coarsely segmented. It can
+be seen that the proposed method has better precision, especially in the boundaries of ﬁre
+compared to DeepLab-v3.
+Figure 5 shows two examples in which the ﬁre areas are very small (to better visualize
+the results, we added a zoom crop). In these examples, it can be seen that the proposed
+method is capable of segmenting the incident parts with high level of details.
+Smoke segmentation examples in images captured from an aerial point of view are
+shown in Figure 6. Here we show some examples of smoke segmentation performed by
+our proposed method. These images are captured by many common surveillance systems
+such as ﬁxed mounted cameras on hill tops or gimbal systems installed in manned and
+unmanned aerial vehicles. An example of segmentation of images containing small portion
+of smoke is shown in Figure 7.
+Small Fire Area Image The proposed method Deeplab-v3
+Figure 3. Examples of segmentation of small regions of ﬁre in images covering large areas of terrain.
+(a) ( b) ( c)
+(d) ( e)
+Figure 4. Comparison of the segmented masks produced by different methods and visualization of
+the searches. The searched regions are indicated by white borders. (a) Input Image, (b) Ground-truth
+mask, (c) DeepLab v3 [12], (d) Exhaustive search (C + S), (e) Proposed quad-tree search (Q + C + S).
+
+PAGE 10
+Sensors 2022, 22, 1701 10 of 12
+Figure 5. Two examples of ﬁre segmentation of the proposed method for aerial images containing
+a small portion of ﬁre. (Left): Original images; (Right): Segmented masks by Q + C + S; (Middle):
+Magniﬁed images and obtained masks.
+Input image Resulting segmentation
+Figure 6. Example of segmentation of smoke by the proposed method.
+
+PAGE 11
+Sensors 2022, 22, 1701 11 of 12
+Input image Output segmented mask
+Figure 7. Example of segmentation of small smoke area by the proposed method.
+5. Conclusions
+We proposed in this paper a computationally efﬁcient method based on quad-tree
+search to localize and segment ﬁre and smoke on different scales. Unlike exhaustive
+search, quad-tree searches for the incidents work adaptively on different scales, leading to
+a computationally efﬁcient algorithm. The results show that the algorithm is capable of
+detecting ﬁre and smoke regions in aerial images in cases when the ﬁre and smoke regions
+are small compared to the image size. This problem, to the best of our knowledge, has
+not been addressed in the literature, but is relevant to the efﬁcient and early detection of
+wildﬁres. Using the proposed method for other types of images such as infra-red images
+could be a subject of future works.
+Author Contributions: Formal analysis, A.B.; Investigation, G.P .; Methodology, M.N.; Software,
+M.N.; Writing—original draft, G.P .; Writing—review & editing, M.N., R.R. and A.B. All authors have
+read and agreed to the published version of the manuscript.
+Funding: This research was funded by FCT with the LARSyS funding (UID 50009/2020), project
+FIREFRONT (PCIF/SSI/0096/2017), and project VOAMAIS (PTDC EEI-AUT/31172/2017).
+Institutional Review Board Statement: Not applicable.
+Informed Consent Statement: Not applicable.
+Data Availability Statement: Not applicable.
+Conﬂicts of Interest: The authors declare no conﬂict of interest.
+References
+1. Batista, M.; Oliveira, B.; Chaves, P .; Ferreira, J.C.; Brandão, T. Improved Real-time Wildﬁre Detection using a Surveillance System.
+In Proceedings of the World Congress on Engineering, London, UK, 3–5 July 2019.
+2. Lindner, L.; Sergiyenko, O.; Rivas-López, M.; Hernández-Balbuena, D.; Flores-Fuentes, W.; Rodríguez-Quiñonez, J.C.; Murrieta-
+Rico, F.N.; Ivanov, M.; Tyrsa, V .; Básaca-Preciado, L.C. Exact laser beam positioning for measurement of vegetation vitality.Ind.
+Robot. Int. J. 2017, 44, 532–541. [CrossRef]
+3. Sotnikov, O.; Kartashov, V .G.; Tymochko, O.; Sergiyenko, O.; Tyrsa, V .; Mercorelli, P .; Flores-Fuentes, W. Methods for Ensuring the
+Accuracy of Radiometric and Optoelectronic Navigation Systems of Flying Robots in a Developed Infrastructure. In Machine
+Vision and Navigation; Springer: Berlin/Heidelberg, Germany, 2020; pp. 537–577.
+4. Yuan, C.; Zhang, Y.; Liu, Z. A Survey on Technologies for Automatic Forest Fire Monitoring, Detection and Fighting Using UAVs
+and Remote Sensing Techniques. Can. J. For. Res. 2015, 45, 783–792. [CrossRef]
+5. Celik, T.; Demirel, H. Fire detection in video sequences using a generic color model. Fire Saf. J. 2009, 44, 147–158. [CrossRef]
+6. Chen, T.H.; Wu, P .H.; Chiou, Y.C. An early ﬁre-detection method based on image processing. In Proceedings of the 2004
+International Conference on Image Processing, Singapore, 24–27 October 2004; pp. 1707–1710.
+7. Habibo˘ glu, Y.H.; Günay, O.; Çetin, A.E. Covariance matrix-based ﬁre and ﬂame detection method in video.Mach. Vis. Appl. 2012,
+23, 1103–1113. [CrossRef]
+8. Dunnings, A.J.; Breckon, T.P . Experimentally deﬁned convolutional neural network architecture variants for non-temporal
+real-time ﬁre detection. In Proceedings of the 2018 25th IEEE International Conference on Image Processing (ICIP), Athens,
+Greece, 7–10 October 2018; pp. 1558–1562.
+9. Barmpoutis, P .; Dimitropoulos, K.; Kaza, K.; Grammalidis, N. Fire Detection from Images Using Faster R-CNN and Multidi-
+mensional Texture Analysis. In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing
+(ICASSP), Brighton, UK, 12–17 May 2019. [CrossRef]
+
+PAGE 12
+Sensors 2022, 22, 1701 12 of 12
+10. Chaoxia, C.; Shang, W.; Zhang, F. Information-guided ﬂame detection based on faster r-cnn. IEEE Access 2020, 8, 58923–58932.
+[CrossRef]
+11. Harkat, H.; Nascimento, J.M.; Bernardino, A. Fire Detection using Residual Deeplabv3+ Model. In Proceedings of the 2021
+Telecoms Conference (ConfTELE), Leiria, Portugal, 11–12 February 2021; pp. 1–6.
+12. Chen, L.C.; Papandreou, G.; Schroff, F.; Adam, H. Rethinking atrous convolution for semantic image segmentation. arXiv 2017,
+arXiv:1706.05587.
+13. Simonyan, K.; Zisserman, A. Very Deep Convolutional Networks for Large-Scale Image Recognition. In Proceedings of the 3rd
+International Conference on Learning Representations (ICLR), San Diego, CA, USA, 7–9 May 2015.
+14. Finkel, R.A.; Bentley, J.L. Quad trees a data structure for retrieval on composite keys. Acta Inform. 1974, 4, 1–9. [CrossRef]
+15. Toulouse, T.; Rossi, L.; Akhlouﬁ, M.; Celik, T.; Maldague, X. Benchmarking of wildland ﬁre color segmentation algorithms.IET
+Image Process. 2015, 9, 1064–1072. [CrossRef]
+16. Cruz, H.; Eckert, M.; Meneses, J.; Martínez, J.F. Efﬁcient Forest Fire Detection Index for Application in Unmanned Aerial Systems
+(UASs). Sensors 2016, 16, 893. [CrossRef] [PubMed]
+17. Dung, N.M.; Ro, S. Algorithm for Fire Detection Using a Camera Surveillance System. In Proceedings of the 2018 International
+Conference on Image and Graphics Processing, New York, NY, USA, 24–26 February 2018.
+18. LeCun, Y.; Bengio, Y. Convolutional networks for images, speech, and time series. In The Handbook of Brain Theory and Neural
+Networks; The MIT Press: Cambridge, MA, USA, 1998; pp. 255–258. [CrossRef]
+19. Krizhevsky, A.; Sutskever, I.; Hinton, G.E. Imagenet classiﬁcation with deep convolutional neural networks. Adv. Neural Inf.
+Process. Syst. 2012, 25, 1097–1105. [CrossRef]
+20. Szegedy, C.; Liu, W.; Jia, Y.; Sermanet, P .; Reed, S.; Anguelov, D.; Erhan, D.; Vanhoucke, V .; Rabinovich, A. Going deeper with
+convolutions. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, Boston, MA, USA, 7–12 June
+2015; pp. 1–9.
+21. Lehr, J.; Gerson, C.; Ajami, M.; Krüger, J. Development of a Fire Detection Based on the Analysis of Video Data by Means of Convolutional
+Neural Networks; Springer: Berlin, Germany, 2019; pp. 497–507.
+22. Verlekar, T.T.; Bernardino, A. Video Based Fire Detection Using Xception and Conv-LSTM. In Proceedings of the International
+Symposium on Visual Computing, San Diego, CA, USA, 5–7 October 2020; pp. 277–285.
+23. Harkat, H.; Nascimento, J.; Bernardino, A. Fire segmentation using a SqueezeSegv2. In Proceedings of the Image and Signal
+Processing for Remote Sensing XXVII, Online, 21–25 September 2020; pp. 82–88.
+24. Yuan, F.; Zhang, L.; Xia, X.; Wan, B.; Huang, Q.; Li, X. Deep smoke segmentation. Neurocomputing 2019, 357, 248–260. [CrossRef]
+25. Shusterman, E.; Feder, M. Image compression via improved quadtree decomposition algorithms. IEEE Trans. Image Process. 1994,
+3, 207–215. [CrossRef] [PubMed]
+26. D’Angelo, A. A Brief Introduction to Quadtrees and Their Applications. In Proceedings of the 28th Canadian Conference on
+Computational Geometry, Vancouver, BC, Canada, 3–5 August 2016.
+27. Cordonnier, J.B.; Mahendran, A.; Dosovitskiy, A.; Weissenborn, D.; Uszkoreit, J.; Unterthiner, T. Differentiable Patch Selection for
+Image Recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, Nashville, TN,
+USA, 20–25 June 2021; pp. 2351–2360.
+28. Katharopoulos, A.; Fleuret, F. Processing megapixel images with deep attention-sampling models. In Proceedings of the
+International Conference on Machine Learning, Long Beach, CA, USA, 18–23 January 2019; pp. 3282–3291.
+29. Iandola, F.N.; Han, S.; Moskewicz, M.W.; Ashraf, K.; Dally, W.J.; Keutzer, K. SqueezeNet: AlexNet-level accuracy with 50×
+fewer parameters and <0.5 MB model size. In Proceedings of the 19th International Conference Medical Image Computing and
+Computer-Assisted Intervention MICCAI1, Athens, Greece, 17–21 October 2016.
+30. Ronneberger, O.; Fischer, P .; Brox, T. U-Net: Convolutional Networks for Biomedical Image Segmentation. In Proceedings of the
+18th International Conference Medical Image Computing and Computer-Assisted Intervention MICCAI1, Munich, Germany, 5–9
+October 2015.
+31. Toulouse, T.; Rossi, L.; Campana, A.; Celik, T.; Akhlouf, M. Computer vision for wildﬁre research: An evolving image dataset for
+processing and analysis. Fire Saf. J. 2017, 92, 188–194. [CrossRef]
+32. Baidya, A.; Olinda. Smoke Detection via Semantic Segmentation Using Baseline U-Net Model and Image Augmentation in Keras.
+2019. Available online: https://github.com/rekon/Smoke-semantic-segmentation (accessed on 12 November 2020).
+33. Smoke Dataset. 2016. Available online: http://smoke.ustc.edu.cn/datasets.htm (accessed on 20 November 2020).
+34. The MathWorks, Inc. Computer Vision Toolbox. 2018. Available online: https://www.mathworks.com/products/computer-
+vision.html (accessed on 27 December 2020).

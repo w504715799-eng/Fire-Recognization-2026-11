@@ -1,0 +1,16 @@
+{
+  "dataset": "FiSmo-Images",
+  "archive_bytes": 2603306346,
+  "uncompressed_bytes": 2659932297,
+  "entries": 7457,
+  "extension_counts": {
+    ".csv": 39,
+    ".png": 604,
+    ".jpg": 6780,
+    ".txt": 8,
+    ".md": 1
+  },
+  "range_bytes_read": 714468,
+  "full_download_allowed_by_size": true,
+  "source_file_id": "1YJ4P6EGXN4zvXd96YKlPOJTryK4M4tBj"
+}

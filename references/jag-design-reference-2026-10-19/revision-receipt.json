@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-19",
+  "operation": "document revision only",
+  "version": "FSRF-v2.2",
+  "plan": "/Users/edwiin/Desktop/code-workspace/fire/ideas/面向小火焰与困难负例的火烟关系协同融合研究方案.md",
+  "previous_sha256": "60ebc22f3377250a0420982c35d006446bf08d737a0ec1ee0114f77b5bc83f77",
+  "current_sha256": "c827ec092aa7058ee6fc5878b52d6b42038a18d5725fd8694cf311dd291ea66b",
+  "protected_checks": {
+    "dataset_requirements_unchanged": true,
+    "publication_thresholds_unchanged": true,
+    "data_capacity_gate_unchanged": true,
+    "stop_loss_rules_unchanged": true,
+    "training_config_count_preserved": true,
+    "design_only": true,
+    "no_forced_large_model": true
+  },
+  "local_links_valid": true,
+  "model_runs_this_turn": 0,
+  "weights_downloaded_this_turn": false,
+  "datasets_downloaded_this_turn": false,
+  "new_required_training_configurations": 0,
+  "sources": [
+    "https://arxiv.org/html/2610.13239v2",
+    "https://github.com/xyzzzh/Jag"
+  ]
+}

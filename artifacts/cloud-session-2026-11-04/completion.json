@@ -1,0 +1,55 @@
+{
+  "finished_at": "2026-11-04T10:22:52.656129+00:00",
+  "project_root": "/root/rivermind-data/FIRE_R2",
+  "environment_prefix": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+  "environment_mode": "private venv overlay reusing preinstalled Conda torch/CUDA",
+  "shared_dataset_root": "/root/rivermind-data/shared/datasets",
+  "local_environment_reused": true,
+  "local_dependencies_installed": [],
+  "cloud_unit_tests_passed": 20,
+  "local_unit_tests_passed": 20,
+  "pip_check_passed": true,
+  "cuda_arithmetic_and_nms_passed": true,
+  "homefire": {
+    "images": 6500,
+    "raw_sha256_verified": true,
+    "all_images_decoded": true,
+    "frozen_manifest_matched": true,
+    "roles": {
+      "fit": 3900,
+      "cal": 650,
+      "dev": 650,
+      "test": 1300
+    },
+    "view_root": "/root/rivermind-data/FIRE_R2/artifacts/data/homefire-v1",
+    "local_transfer_removed_bytes": 1820933129,
+    "source_digest": "d909818ddaf13e56c6ecc26476f94337a56638c9c3cf1781245e26084fe98a2a"
+  },
+  "dfire": {
+    "owner": "R1",
+    "version": "kaggle-21527-sha65d81b60",
+    "local_original_verified": true,
+    "full_cloud_images_ready": false,
+    "local_shared_entry": "datasets/dfire/kaggle-21527-sha65d81b60/raw/dfire.zip",
+    "roles": {
+      "fit": 14122,
+      "dev": 1549,
+      "cal": 1550,
+      "test": 4306
+    }
+  },
+  "fasdd_full_images_ready": false,
+  "remote_storage_logical_bytes": {
+    "/root/rivermind-data/FIRE_R2": 437712712,
+    "/root/rivermind-data/FIRE_R2/.envs/sci-env": 406568743,
+    "/root/rivermind-data/FIRE_R2/.cache": 453,
+    "/root/rivermind-data/FIRE_R2/artifacts/data/homefire-v1": 5869672,
+    "/root/rivermind-data/shared/datasets/home-fire/v1": 3647893095
+  },
+  "remote_pip_cache_removed_bytes": 134010768,
+  "weights_downloaded_or_loaded": false,
+  "training_started": false,
+  "server_shutdown_or_upgrade_performed": false,
+  "hourly_price": null,
+  "server_may_remain_billable": true
+}

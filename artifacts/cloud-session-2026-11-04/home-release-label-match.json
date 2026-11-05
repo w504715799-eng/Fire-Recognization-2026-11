@@ -1,0 +1,23 @@
+{
+  "checked": "same-release label integrity, no image deduplication",
+  "splits": {
+    "train": {
+      "images": 3900,
+      "labels": 3900,
+      "expanded_bytes": 1063997223,
+      "historical_label_differences": []
+    },
+    "val": {
+      "images": 1300,
+      "labels": 1300,
+      "expanded_bytes": 353436619,
+      "historical_label_differences": []
+    },
+    "test": {
+      "images": 1300,
+      "labels": 1300,
+      "expanded_bytes": 409525355,
+      "historical_label_differences": []
+    }
+  }
+}

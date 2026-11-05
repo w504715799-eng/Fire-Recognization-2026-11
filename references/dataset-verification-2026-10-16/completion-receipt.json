@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-16",
+  "environment": "/Users/edwiin/Desktop/code-workspace/fire/.local/miniconda3/envs/sci-env",
+  "checks": [
+    {
+      "dataset": "cqu",
+      "archive_hash_rechecked": true,
+      "all_image_label_counts_consistent": true,
+      "semantic_confirmation_passed": false
+    },
+    {
+      "dataset": "indoor",
+      "archive_hash_rechecked": true,
+      "all_image_label_counts_consistent": true,
+      "semantic_confirmation_passed": false
+    }
+  ],
+  "documents_links_valid": true,
+  "statistical_boundary_checked": true,
+  "model_runs": 0,
+  "model_weights_downloaded": false,
+  "cloud_uploaded": false,
+  "cross_dataset_dedup_performed": false,
+  "source_files_deleted": false,
+  "source_labels_rewritten": false,
+  "local_archives_retained": true,
+  "decision": "supplementary confirmation gate not passed",
+  "plan_sha256": "60ebc22f3377250a0420982c35d006446bf08d737a0ec1ee0114f77b5bc83f77"
+}

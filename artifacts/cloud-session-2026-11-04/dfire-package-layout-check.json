@@ -1,0 +1,23 @@
+{
+  "source": "https://github.com/gaia-solutions-on-demand/DFireDataset",
+  "linked_package": "https://www.kaggle.com/datasets/sayedgamal99/smoke-fire-detection-yolo",
+  "local_package": "/Users/edwiin/Desktop/code-workspace/FIRE_R1/tmp/cloud-transfer/dfire-kaggle-65d81b60.zip",
+  "bytes": 3049605157,
+  "images_by_packaged_split": {
+    "test": 4306,
+    "train": 14122,
+    "val": 3099
+  },
+  "yaml": {
+    "data.yaml": "path: /kaggle/working/D Fire Dataset  # dataset root dir\ntrain: data/train/images  # train images (relative to 'path')\nval: data/val/images  # val images (relative to 'path')\ntest: data/test/images  # test images (relative to 'path')\n\n# Classes\nnames: ['smoke', 'fire']  # Replace with your actual class names\n\n# Counts\nnc: 2  # number of classes\ntrain_count: 14122\nval_count: 3099\ntest_count: 4306\n"
+  },
+  "first_members": [
+    "data.yaml",
+    "data/test/images/AoF06723.jpg",
+    "data/test/images/AoF06724.jpg",
+    "data/test/images/AoF06725.jpg",
+    "data/test/images/AoF06726.jpg"
+  ],
+  "no_images_extracted": true,
+  "peer_verified_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83"
+}

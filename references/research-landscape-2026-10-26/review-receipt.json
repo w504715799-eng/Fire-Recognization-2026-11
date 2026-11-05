@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "report": "references/research-landscape-2026-10-26/火焰烟雾研究现状与当前方案论证审查.md",
+  "sha256": "265ab5dff073fc0d1067c710125d36cf393c1d6c419b8358b034b7cd03455fa0",
+  "scope": "Targeted qualitative literature review; not exhaustive bibliometrics or a replacement plan",
+  "active_plan_read": "火焰识别研究方案.md (FIRE-MASTER-v1.9)",
+  "active_plan_modified": false,
+  "principle": "Value, meaningful optimization and adequate evidence; no requirement that all components be first-of-kind",
+  "source_urls": [
+    "https://arxiv.org/abs/2604.23542",
+    "https://arxiv.org/abs/2606.10174",
+    "https://arxiv.org/abs/2606.23503",
+    "https://doi.org/10.1016/j.aei.2026.104671",
+    "https://doi.org/10.1016/j.eswa.2025.127621",
+    "https://doi.org/10.1016/j.patcog.2024.111177",
+    "https://doi.org/10.3390/f17080955",
+    "https://doi.org/10.3390/s26103008",
+    "https://doi.org/10.3390/s26154970",
+    "https://doi.org/10.3390/s26196020",
+    "https://github.com/henryzhao0615/MultiNatSmoke",
+    "https://mivia.unisa.it/onfire2025/index.html",
+    "https://openaccess.thecvf.com/content/WACV2026/html/Qi_SmokeBench_Evaluating_Multimodal_Large_Language_Models_for_Wildfire_Smoke_Detection_WACV_2026_paper.html",
+    "https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_False_Alarm_Rectification_for_Early_Smoke_Segmentation_WACV_2026_paper.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13469129/",
+    "https://www.gao.gov/products/gao-25-108161",
+    "https://www.mdpi.com/1424-8220/26/20/6506",
+    "https://www.nature.com/articles/s41597-025-05634-0",
+    "https://www.nature.com/articles/s41597-026-06810-6"
+  ],
+  "model_executions": 0,
+  "weights_downloaded": false,
+  "datasets_downloaded": false,
+  "cloud_actions": false,
+  "validation": {
+    "local_links_resolve": true,
+    "sections_present": true
+  }
+}

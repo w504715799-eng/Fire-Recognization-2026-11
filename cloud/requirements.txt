@@ -1,0 +1,4 @@
+# REMOTE ONLY. Local sci-env already has all dependencies for metadata preparation.
+# Install a CUDA-compatible torch/torchvision pair in the cloud env first.
+# The actual complete Linux dependency set must be frozen after installation.
+ultralytics @ git+https://github.com/ultralytics/ultralytics.git@2e241d0336ea7545c385eadd30a2f58eb4c0e2ad

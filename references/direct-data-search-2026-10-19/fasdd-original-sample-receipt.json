@@ -1,0 +1,247 @@
+{
+  "sample_images": [
+    {
+      "file": "fire_CV002177.jpg",
+      "bytes": 9113,
+      "dimensions": [
+        212,
+        238
+      ],
+      "sha256": "4658b14a7d0a541b7e9c82e3f7440368da205591c6ad4d7b386e499227396902",
+      "state": "10"
+    },
+    {
+      "file": "fire_CV005809.jpg",
+      "bytes": 5884,
+      "dimensions": [
+        512,
+        270
+      ],
+      "sha256": "d13c093ea92bd34034b0d8ccee142cc3fbaa4b09ca2d8e582ef4753e9352ec92",
+      "state": "10"
+    },
+    {
+      "file": "fire_CV003324.jpg",
+      "bytes": 6629,
+      "dimensions": [
+        224,
+        224
+      ],
+      "sha256": "c85703aeb91e3cfcbbb6e17c9099c92db8448cc7b695e25e3e4cb3eec42197b7",
+      "state": "10"
+    },
+    {
+      "file": "fire_CV009161.jpg",
+      "bytes": 11342,
+      "dimensions": [
+        224,
+        224
+      ],
+      "sha256": "d510eac448d1b7325dac121cf3169484f502a9c6ac45d9accf376231745c0d07",
+      "state": "10"
+    },
+    {
+      "file": "fire_CV004934.jpg",
+      "bytes": 22007,
+      "dimensions": [
+        500,
+        333
+      ],
+      "sha256": "0b71cc82d9f45bdfdaa5e46779afc022643b9463539e6f9b9581e8a1161c2fcd",
+      "state": "10"
+    },
+    {
+      "file": "fire_CV003809.jpg",
+      "bytes": 42147,
+      "dimensions": [
+        1015,
+        575
+      ],
+      "sha256": "2f8db2985741f398ea71c09a0e83bd8490a96619b2cd910be3b923b8a00049f1",
+      "state": "10"
+    },
+    {
+      "file": "smoke_CV022090.jpg",
+      "bytes": 185537,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0603a7d64a09d67a7f832b95c00f2d3e73b1e3d8c6c9d5c6a7a742b25cbc09c1",
+      "state": "01"
+    },
+    {
+      "file": "smoke_CV007075.jpg",
+      "bytes": 6448,
+      "dimensions": [
+        263,
+        192
+      ],
+      "sha256": "41ebabfdf7fadc09af338583ce3819266e7de3e7913b6000f9fd7412a3b3b28c",
+      "state": "01"
+    },
+    {
+      "file": "smoke_CV020625.jpg",
+      "bytes": 231379,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1f5b6e74252cc5485affaf4e109c13b9b9e69bb3c9c7a528973fc905ef2a6fdd",
+      "state": "01"
+    },
+    {
+      "file": "smoke_CV013170.jpg",
+      "bytes": 165464,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8497cc7f5401cb81fa001ff9e5e87e8b6b9c202be2d1ad4f9b20567c689bf603",
+      "state": "01"
+    },
+    {
+      "file": "smoke_CV010160.jpg",
+      "bytes": 378119,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0f701f188b56ed76f3a6bc5560f423673cd1a705f9e093441c466e573616f0bd",
+      "state": "01"
+    },
+    {
+      "file": "smoke_CV009047.jpg",
+      "bytes": 16893,
+      "dimensions": [
+        704,
+        576
+      ],
+      "sha256": "8b7d268a33d884ca31ac5c5fbb9aff4fd4ce0f9cb185ca82f7f24fa4564cb909",
+      "state": "01"
+    },
+    {
+      "file": "bothFireAndSmoke_CV018533.jpg",
+      "bytes": 103474,
+      "dimensions": [
+        750,
+        486
+      ],
+      "sha256": "eb7b7560168092a0f7c8ddc56f15b776a5347f305fd7de5e5463730d069b3ad6",
+      "state": "11"
+    },
+    {
+      "file": "bothFireAndSmoke_CV001152.jpg",
+      "bytes": 18734,
+      "dimensions": [
+        500,
+        333
+      ],
+      "sha256": "ee2253cd26e366c6e71bbbfe3786599c95c14f02e10d37647dd671752dd423f0",
+      "state": "11"
+    },
+    {
+      "file": "bothFireAndSmoke_CV016286.jpg",
+      "bytes": 26183,
+      "dimensions": [
+        540,
+        406
+      ],
+      "sha256": "631e111e4895d43f482bbcf92fcb042e1646689433e077bda05b47ba687316de",
+      "state": "11"
+    },
+    {
+      "file": "bothFireAndSmoke_CV015864.jpg",
+      "bytes": 50560,
+      "dimensions": [
+        640,
+        360
+      ],
+      "sha256": "c526d9ca4ce2e3101f516d52e713869bb0e14ee404a99e6513db217600dc46a1",
+      "state": "11"
+    },
+    {
+      "file": "bothFireAndSmoke_CV001758.jpg",
+      "bytes": 23918,
+      "dimensions": [
+        432,
+        278
+      ],
+      "sha256": "e7bcbb11277af00c5ba21d846fa0b9267ba26599d3e67c808983f45f4e28910f",
+      "state": "11"
+    },
+    {
+      "file": "bothFireAndSmoke_CV001360.jpg",
+      "bytes": 12210,
+      "dimensions": [
+        275,
+        183
+      ],
+      "sha256": "80dfa9c73ef6e1d7588ad31ccfff3e3035acc5ee56cd0d51261d079b25fdf7fa",
+      "state": "11"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV008120.jpg",
+      "bytes": 43343,
+      "dimensions": [
+        658,
+        658
+      ],
+      "sha256": "844965141863658baa3915a7703900e13b81f36ce6ce469dbffed095190411db",
+      "state": "00"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV037131.jpg",
+      "bytes": 59258,
+      "dimensions": [
+        750,
+        536
+      ],
+      "sha256": "42d565ed48cf40582697d14bb7c0a840a2d076c5745d81c8166292fd3f8c55bf",
+      "state": "00"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV001709.jpg",
+      "bytes": 31595,
+      "dimensions": [
+        500,
+        292
+      ],
+      "sha256": "c992d6ae26cf4da12bddd0321ff8f25d24a119e10468407be268b5bdee8073ff",
+      "state": "00"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV018755.jpg",
+      "bytes": 160214,
+      "dimensions": [
+        800,
+        800
+      ],
+      "sha256": "2ed2b3c4d08c1d4f8690ae8cf7ead3984100f884f5ab9fdcb740935cd773a032",
+      "state": "00"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV009802.jpg",
+      "bytes": 74092,
+      "dimensions": [
+        440,
+        512
+      ],
+      "sha256": "a341005e54415ce0298b4579415ae2becc54eb3de474393ace3a3c934821c5f1",
+      "state": "00"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV010549.jpg",
+      "bytes": 347497,
+      "dimensions": [
+        2048,
+        1536
+      ],
+      "sha256": "78e85be66afa81e91d10fb49d787a199052b5287c03931908056920806c4fcbd",
+      "state": "00"
+    }
+  ],
+  "all_sample_images_decoded": true,
+  "full_archive_downloaded": false,
+  "labels_changed": false
+}

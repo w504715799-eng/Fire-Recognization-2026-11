@@ -1,0 +1,572 @@
+{
+  "files": [
+    {
+      "id": 53486522,
+      "name": "MyData_Fire.zip",
+      "size": 544994383,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/53486522",
+      "supplied_md5": "",
+      "computed_md5": "fd9ed42cd67fd5f7c016ca127985e245",
+      "mimetype": "application/zip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 11876798,
+      "full_name": "Shouthiri Partheepan",
+      "first_name": "Shouthiri",
+      "last_name": "Partheepan",
+      "is_active": true,
+      "url_name": "Shouthiri_Partheepan",
+      "orcid_id": "0000-0001-7093-0164"
+    }
+  ],
+  "custom_fields": [
+    {
+      "name": "External Author Affiliations",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 1000
+        },
+        "placeholder": "External Author Affiliations"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Editor",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Editor"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Volume",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 50
+        },
+        "placeholder": "Volume"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Issue",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 35
+        },
+        "placeholder": "Issue"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Start Page",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 15
+        },
+        "placeholder": "Start page"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "End Page",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 15
+        },
+        "placeholder": "End page"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Number of Pages",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 30
+        },
+        "placeholder": "Number of Pages"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Start Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Finish Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "eISSN",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 8,
+          "max_length": 11
+        },
+        "placeholder": "eISSN"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISSN",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 8,
+          "max_length": 11
+        },
+        "placeholder": "ISSN"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISBN-10",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 10,
+          "max_length": 13
+        },
+        "placeholder": "ISBN-10"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISBN-13",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 13,
+          "max_length": 17
+        },
+        "placeholder": "ISBN-13"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Location",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Location"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Publisher"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Place of Publication",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Place of Publication"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher License",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Publisher License"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher DOI",
+      "value": [],
+      "settings": {
+        "placeholder": "Publisher DOI",
+        "is_multiple": false
+      },
+      "field_type": "url",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Full Text URL",
+      "value": [],
+      "settings": {
+        "placeholder": "Full Text URL",
+        "is_multiple": false
+      },
+      "field_type": "url",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Additional Rights",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 2,
+          "max_length": 3000
+        },
+        "placeholder": "Additional Rights"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Language",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Language"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Peer Reviewed",
+      "value": [],
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Peer Reviewed",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Open Access",
+      "value": [
+        "Yes"
+      ],
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Open Access",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Version",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Version"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Cultural Warning",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 161,
+          "max_length": 200
+        },
+        "placeholder": "Cultural Warning"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Acceptance Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Author Research Institute",
+      "value": [],
+      "settings": {
+        "options": [
+          "Appleton Institute",
+          "Centre for Intelligent Systems",
+          "Centre for Railway Engineering",
+          "Centre for Regional Advancement of Learning, Equity, Access and Participation (LEAP)",
+          "Centre for Indigenous Health Equity Research",
+          "Centre for Tourism and Regional Opportunities",
+          "Centre for Research in Equity and Advancement of Teaching & Education (CREATE)",
+          "Coastal Marine Ecosystems Research Centre (CMERC)",
+          "Institute for Future Farming Systems",
+          "Queensland Centre for Domestic and Family Violence",
+          "Centre for Regional Economics and Supply Chain (RESC)",
+          "Jawun Research Centre"
+        ],
+        "placeholder": "Author Research Institute",
+        "is_multiple": true
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Era Eligible",
+      "value": [],
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Era Eligible",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Medium",
+      "value": "The dataset consists of the following file formats:\nImage files: .jpg, .png \nAnnotation files: .txt",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Medium"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Parent Title",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 5000
+        },
+        "placeholder": "Parent Title"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Geolocation",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 1000
+        },
+        "placeholder": "Geolocation"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Number and size of Dataset",
+      "value": "The dataset includes 22,045 files, including image files, YOLO annotation .txt files, and supporting scripts and metadata. It occupies approximately 514 MB.",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Number and size of Dataset"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Supervisor",
+      "value": "Farzad Sanati, Jahan Hassan",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Supervisor"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    }
+  ],
+  "figshare_url": "https://acquire.cqu.edu.au/articles/dataset/Annotated_Fire_-Smoke_Image_Dataset_for_fire_detection_Using_YOLO_/28747046",
+  "download_disabled": false,
+  "description": "This dataset contains 11027 labeled images for the detection of fire and smoke instances in diverse real-world scenarios. The annotations are provided in YOLO format with bounding boxes and class labels for two classes: fire and smoke. The dataset is divided into an 80% training set with 10,090 fire instances and 9724 smoke instances, a 10% Validation set with 1,255 fire and 1,241 smoke instances, and a 10% Test set with 1,255 fire and 1,241 smoke instances. This dataset is suitable for training and evaluating fire and smoke detection models, such as YOLOv8, YOLOv9, and similar deep learning-based frameworks in the context of emergency response, wildfire monitoring, and smart surveillance.<p></p>",
+  "funding": null,
+  "funding_list": [],
+  "version": 1,
+  "status": "public",
+  "size": 544994383,
+  "created_date": "2025-04-14T01:13:13Z",
+  "modified_date": "2025-04-14T01:13:14Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "Fire detection",
+    "smoke detection",
+    "YOLO annotations",
+    "UAV fire monitoring",
+    "YOLO"
+  ],
+  "keywords": [
+    "Fire detection",
+    "smoke detection",
+    "YOLO annotations",
+    "UAV fire monitoring",
+    "YOLO"
+  ],
+  "categories": [
+    {
+      "id": 29161,
+      "title": "Deep learning",
+      "parent_id": 29152,
+      "path": "/28798/29152/29161",
+      "source_id": "461103",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 29170,
+      "title": "Semi- and unsupervised learning",
+      "parent_id": 29152,
+      "path": "/28798/29152/29170",
+      "source_id": "461106",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 28852,
+      "title": "Planning and decision making",
+      "parent_id": 28825,
+      "path": "/28798/28825/28852",
+      "source_id": "460209",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": false,
+  "citation": "Partheepan, Shouthiri (2025). Annotated Fire -Smoke Image Dataset for fire detection Using YOLO.. CQUniversity. Dataset. https://doi.org/10.25946/28747046.v1",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 28747046,
+  "title": "Annotated Fire -Smoke Image Dataset for fire detection Using YOLO.",
+  "doi": "10.25946/28747046.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/28747046",
+  "published_date": "2025-04-14T01:13:13Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": 30527,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/28747046",
+  "url_public_api": "https://api.figshare.com/v2/articles/28747046",
+  "url_private_html": "https://figshare.com/account/articles/28747046",
+  "url_public_html": "https://acquire.cqu.edu.au/articles/dataset/Annotated_Fire_-Smoke_Image_Dataset_for_fire_detection_Using_YOLO_/28747046",
+  "timeline": {
+    "posted": "2025-04-14T01:13:13",
+    "firstOnline": "2025-04-14"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

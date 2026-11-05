@@ -1,0 +1,55 @@
+{
+  "dataset": "fasdd_cv",
+  "version": "v9",
+  "images": 95314,
+  "official_splits": {
+    "train": 47660,
+    "val": 31770,
+    "test": 15884
+  },
+  "roles": {
+    "fit": 47660,
+    "cal": 15885,
+    "dev": 15885,
+    "test": 15884
+  },
+  "states": {
+    "both": 20151,
+    "fire_only": 12550,
+    "empty": 39199,
+    "smoke_only": 23414
+  },
+  "boxes": {
+    "0": 73297,
+    "1": 53080
+  },
+  "nonpositive_boxes": 3,
+  "expected_counts_match": true,
+  "source_digest": "23c6351832de92f538e97ff6b835c206b1bb4dbe172948af75d7d986a8212d12",
+  "config_sha256": "a0844af5bf06c3d7478fdb51419aa9a9fd689b978cdea40e0f8cdea0b3c08478",
+  "annotation_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/fasdd-cv/v9/annotations",
+  "image_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/fasdd-cv/v9/extracted/images",
+  "image_root_present": false,
+  "images_checked": true,
+  "training_ready": false,
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "frozen_manifest_check": {
+    "matched": true,
+    "records": 95314,
+    "manifest_sha256": "5b848803337ef6b49b0067b472dd5d096d93fe9aa74d295a14430c6b1fd7c474"
+  },
+  "missing_image_count": 95314,
+  "missing_examples": [
+    "fasdd_cv/train/bothFireAndSmoke_CV000490.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000505.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000530.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000667.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000668.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000671.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000672.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000673.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000676.jpg",
+    "fasdd_cv/train/bothFireAndSmoke_CV000680.jpg"
+  ]
+}

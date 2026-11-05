@@ -1,0 +1,40 @@
+{
+  "image_entries": 6500,
+  "label_entries": 6500,
+  "raw_class_combinations": {
+    "1": 1856,
+    "0": 3456,
+    "0,1": 1053,
+    "empty": 135
+  },
+  "box_counts": {
+    "1": 3140,
+    "0": 4838
+  },
+  "by_split": {
+    "test": {
+      "1": 433,
+      "0": 667,
+      "0,1": 185,
+      "empty": 15
+    },
+    "train": {
+      "0": 2096,
+      "1": 1050,
+      "0,1": 667,
+      "empty": 87
+    },
+    "val": {
+      "0": 693,
+      "1": 373,
+      "0,1": 201,
+      "empty": 33
+    }
+  },
+  "images_missing_label": [],
+  "labels_missing_image": [],
+  "anomaly_count": 0,
+  "class_map_metadata": {},
+  "range_bytes": 2004820,
+  "all_images_decoded": false
+}

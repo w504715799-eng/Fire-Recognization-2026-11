@@ -1,0 +1,16 @@
+{
+  "dataset": "AIDER author record 3888300",
+  "sample_rule_file": "aider-fixed-sample.json",
+  "sample_count": 32,
+  "normal_sample_count": 24,
+  "observed_files": [
+    {
+      "file": "AIDER/normal/normal_image3359.jpg",
+      "original_label": "normal",
+      "observation": "烟花燃放场景，图中有明显烟雾；Normal不能等同无可见火/烟。已查看原尺寸图。"
+    }
+  ],
+  "decision": "exclude from strict physical no-fire/no-smoke confirmation; preserve complete archive and original class labels",
+  "new_labels_created": false,
+  "images_removed": false
+}

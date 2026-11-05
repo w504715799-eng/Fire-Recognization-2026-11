@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19",
+  "checks": {
+    "methods_and_experiment_matrix_unchanged": true,
+    "main_thresholds_unchanged": true,
+    "stage_gates_unchanged": true,
+    "stop_rules_unchanged": true,
+    "homefire_all_values_finite": true,
+    "aider_full_integrity_passed": true
+  },
+  "broken_local_links": [],
+  "model_runs": 0,
+  "new_full_archives": [
+    "AIDER author original.zip"
+  ],
+  "original_labels_modified": 0,
+  "images_deleted": 0,
+  "cross_dataset_deduplication": false,
+  "new_confirmation_samples_admitted": 0,
+  "plan_sha256": "eb5d91d1185e82ee9448f00bfc86629f25cfd52bf28bee43001355e4e17660a3",
+  "report_sha256": "c87de6e62d8e75512dc778b795d1e47ef88a33ac1ea5642dc9a7424d4a2ea67a",
+  "homefire_source_labels_sha256": "680a13c7e1a137f8f4a5f1c94280c4eb81c8142de4ade32ea6e84e6afb56e988"
+}

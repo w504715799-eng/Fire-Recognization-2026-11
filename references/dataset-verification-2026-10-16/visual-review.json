@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-16",
+  "method": "Assistant visual inspection of deterministic contact sheets; no local model inference. 12 distinct filename-prefix samples per declared group where available; CQU background all 2 inspected.",
+  "images_inspected": {
+    "cqu": 38,
+    "indoor": 36
+  },
+  "sampling_supports_prevalence_estimate": false,
+  "indoor_mapping": "visual samples support 0=fire,1=smoke; package and original project only give numeric names, so mapping remains provisional",
+  "findings": [
+    {
+      "key": "cqu",
+      "state": "fire_only",
+      "number": 2,
+      "image": "train/images/IMG_20231008_115047_1-1-_jpg.rf.de069ed45f60dac9c78c238ae5ab355e.jpg",
+      "label": "train/labels/IMG_20231008_115047_1-1-_jpg.rf.de069ed45f60dac9c78c238ae5ab355e.txt",
+      "observation": "Visible substantial dark smoke as well as flame; original label contains only class fire. Not a verified smoke-absent scene.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "cqu",
+      "state": "fire_only",
+      "number": 4,
+      "image": "train/images/images-2023-12-08T021850-409_jpeg.rf.a799b12ccdd9adf3dd0930e4a1ec9336.jpg",
+      "label": "train/labels/images-2023-12-08T021850-409_jpeg.rf.a799b12ccdd9adf3dd0930e4a1ec9336.txt",
+      "observation": "Visible smoke plume with flame; smoke class absent in label.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "cqu",
+      "state": "smoke_only",
+      "number": 5,
+      "image": "train/images/1281_png_jpg.rf.69f6c667be43706bbb6f35f9eedf49a2.jpg",
+      "label": "train/labels/1281_png_jpg.rf.69f6c667be43706bbb6f35f9eedf49a2.txt",
+      "observation": "Visible flames near lower trees; label only smoke. Cannot treat as confirmed fire-negative.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "cqu",
+      "state": "smoke_only",
+      "number": 7,
+      "image": "test/images/Fire-322-_jpg.rf.7ae944eb0ce8dfcb3cbfd444d6bc7313.jpg",
+      "label": "test/labels/Fire-322-_jpg.rf.7ae944eb0ce8dfcb3cbfd444d6bc7313.txt",
+      "observation": "Visible large flames among trees; original label has only smoke boxes. Cannot treat as confirmed fire-negative.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "cqu",
+      "state": "background",
+      "number": 1,
+      "image": "train/images/937_jpg.rf.ed5ada21f7d6a324aa17c59805e2000b.jpg",
+      "label": "train/labels/937_jpg.rf.ed5ada21f7d6a324aa17c59805e2000b.txt",
+      "observation": "Empty label file, but clearly visible flame and smoke. Empty label is not reliable negative truth.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "cqu",
+      "state": "background",
+      "number": 2,
+      "image": "valid/images/H_00980_png.rf.4d84d566b0beb02f02eaa97e20bb63df.jpg",
+      "label": "valid/labels/H_00980_png.rf.4d84d566b0beb02f02eaa97e20bb63df.txt",
+      "observation": "Empty label with visible gray aerosol/plume; cannot establish both-absent background from label.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "indoor",
+      "state": "label0_only",
+      "number": 2,
+      "image": "Indoor Fire Smoke/test/images/part2-trimmed_mp4-84_jpg.rf.74d46a25f9223a664a8abf673972cf0f.jpg",
+      "label": "Indoor Fire Smoke/test/labels/part2-trimmed_mp4-84_jpg.rf.74d46a25f9223a664a8abf673972cf0f.txt",
+      "observation": "Class 0 boxes on flame; visible dark smoke/haze is not labeled class 1. Pure-fire interpretation requires annotation policy clarification.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "indoor",
+      "state": "label0_only",
+      "number": 3,
+      "image": "Indoor Fire Smoke/train/images/30_jpg.rf.ed2416664f60cd2a6561ed30438d70c7.jpg",
+      "label": "Indoor Fire Smoke/train/labels/30_jpg.rf.ed2416664f60cd2a6561ed30438d70c7.txt",
+      "observation": "Class 0 boxes on flame, with apparent ceiling smoke/haze; completeness of opposite class is not established.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    },
+    {
+      "key": "indoor",
+      "state": "label1_only",
+      "number": 11,
+      "image": "Indoor Fire Smoke/train/images/a_0181_jpg.rf.88faddc3976d8384a9106d12cb9914d3.jpg",
+      "label": "Indoor Fire Smoke/train/labels/a_0181_jpg.rf.88faddc3976d8384a9106d12cb9914d3.txt",
+      "observation": "Class 1 marks plume above an apparent humidifier/diffuser. Whether class means combustion smoke or broader aerosol is undocumented.",
+      "purpose": "quality-audit evidence, not replacement ground truth",
+      "source_labels_modified": false
+    }
+  ],
+  "files_removed": false,
+  "labels_rewritten": false,
+  "cross_dataset_duplicate_comparison": false
+}

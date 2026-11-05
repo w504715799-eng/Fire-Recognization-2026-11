@@ -1,0 +1,6 @@
+path: "/root/rivermind-data/FIRE_R2/artifacts/data/homefire-v1"
+train: fit.txt
+val: dev.txt
+names:
+  0: fire
+  1: smoke

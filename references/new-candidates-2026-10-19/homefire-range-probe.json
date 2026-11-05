@@ -1,0 +1,8 @@
+{
+  "url": "https://www.kaggle.com/api/v1/datasets/download/pengbo00/home-fire-dataset",
+  "status": 206,
+  "range": "bytes 1821071253-1821136810/1821136811",
+  "length": "65558",
+  "type": "application/zip",
+  "sample_bytes": 65558
+}

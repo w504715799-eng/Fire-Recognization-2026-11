@@ -1,0 +1,25 @@
+test_backend_archive_and_vcs_provenance (test_cloud.CloudContractTests.test_backend_archive_and_vcs_provenance) ... ok
+test_bundle_carries_configured_frozen_split (test_cloud.CloudContractTests.test_bundle_carries_configured_frozen_split) ... ok
+test_bundle_whitelist_and_upload_path_checks (test_cloud.CloudContractTests.test_bundle_whitelist_and_upload_path_checks) ... ok
+test_cloud_project_cannot_own_shared_dataset_root (test_cloud.CloudContractTests.test_cloud_project_cannot_own_shared_dataset_root) ... ok
+test_default_plan_has_no_model_import_or_network (test_cloud.CloudContractTests.test_default_plan_has_no_model_import_or_network) ... ok
+test_existing_server_window_allows_preparation_without_unknown_price (test_cloud.CloudContractTests.test_existing_server_window_allows_preparation_without_unknown_price) ... ok
+test_external_dataset_and_unimplemented_methods_rejected (test_cloud.CloudContractTests.test_external_dataset_and_unimplemented_methods_rejected) ... ok
+test_failed_remote_lock_acquisition_does_not_release_other_owner (test_cloud.CloudContractTests.test_failed_remote_lock_acquisition_does_not_release_other_owner) ... ok
+test_gpu_lock_mutual_exclusion_and_release (test_cloud.CloudContractTests.test_gpu_lock_mutual_exclusion_and_release) ... ok
+test_offline_training_preserves_dataloader_ipc (test_cloud.CloudContractTests.test_offline_training_preserves_dataloader_ipc) ... ok
+test_paid_phase_must_be_notified_and_local_mac_cannot_train (test_cloud.CloudContractTests.test_paid_phase_must_be_notified_and_local_mac_cannot_train) ... ok
+test_unapproved_execution_fails_before_models (test_cloud.CloudContractTests.test_unapproved_execution_fails_before_models) ... ok
+test_upload_never_overwrites_conflicting_remote_content (test_cloud.CloudContractTests.test_upload_never_overwrites_conflicting_remote_content) ... ok
+test_upload_reuses_existing_verified_content (test_cloud.CloudContractTests.test_upload_reuses_existing_verified_content) ... ok
+test_author_train_test_kept_and_partition_reproducible (test_data.DataContractTests.test_author_train_test_kept_and_partition_reproducible) ... ok
+test_coco_geometry_preserved_and_training_separated (test_data.DataContractTests.test_coco_geometry_preserved_and_training_separated) ... ok
+test_dfire_mapping_and_unknown_classes (test_data.DataContractTests.test_dfire_mapping_and_unknown_classes) ... ok
+test_dfire_rounding_and_external_all (test_data.DataContractTests.test_dfire_rounding_and_external_all) ... ok
+test_missing_and_corrupt_images_cannot_produce_ready_view (test_data.DataContractTests.test_missing_and_corrupt_images_cannot_produce_ready_view) ... ok
+test_output_cannot_point_to_shared_source_and_manifest_mismatch_fails (test_data.DataContractTests.test_output_cannot_point_to_shared_source_and_manifest_mismatch_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.044s
+
+OK

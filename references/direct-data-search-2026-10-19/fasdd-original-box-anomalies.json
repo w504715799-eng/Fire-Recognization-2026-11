@@ -1,0 +1,2117 @@
+[
+  {
+    "split": "train",
+    "ann_id": 6527,
+    "image": "bothFireAndSmoke_CV001979.jpg",
+    "bbox": [
+      219.0,
+      343.0,
+      0,
+      1.0
+    ],
+    "dimensions": [
+      676,
+      429
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 64926,
+    "image": "bothFireAndSmoke_CV016876.jpg",
+    "bbox": [
+      538.0,
+      1.0,
+      503.0,
+      326.0
+    ],
+    "dimensions": [
+      1040,
+      585
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 64928,
+    "image": "bothFireAndSmoke_CV016877.jpg",
+    "bbox": [
+      7.0,
+      9.0,
+      634.0,
+      253.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 64940,
+    "image": "bothFireAndSmoke_CV016879.jpg",
+    "bbox": [
+      793.0,
+      143.0,
+      108.0,
+      92.0
+    ],
+    "dimensions": [
+      900,
+      600
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 64960,
+    "image": "bothFireAndSmoke_CV016884.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1024.0,
+      576.0
+    ],
+    "dimensions": [
+      1024,
+      576
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 64963,
+    "image": "bothFireAndSmoke_CV016885.jpg",
+    "bbox": [
+      2.0,
+      3.0,
+      1279.0,
+      715.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65088,
+    "image": "bothFireAndSmoke_CV016905.jpg",
+    "bbox": [
+      75.0,
+      1.0,
+      566.0,
+      261.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65116,
+    "image": "bothFireAndSmoke_CV016913.jpg",
+    "bbox": [
+      393.0,
+      1.0,
+      696.0,
+      511.0
+    ],
+    "dimensions": [
+      1088,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65185,
+    "image": "bothFireAndSmoke_CV016924.jpg",
+    "bbox": [
+      615.0,
+      1.0,
+      666.0,
+      521.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65194,
+    "image": "bothFireAndSmoke_CV016927.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      960.0,
+      400.0
+    ],
+    "dimensions": [
+      960,
+      470
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65196,
+    "image": "bothFireAndSmoke_CV016927.jpg",
+    "bbox": [
+      1.0,
+      318.0,
+      360.0,
+      153.0
+    ],
+    "dimensions": [
+      960,
+      470
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65276,
+    "image": "bothFireAndSmoke_CV016944.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1120.0,
+      521.0
+    ],
+    "dimensions": [
+      1120,
+      840
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65310,
+    "image": "bothFireAndSmoke_CV016952.jpg",
+    "bbox": [
+      191.0,
+      1.0,
+      610.0,
+      369.0
+    ],
+    "dimensions": [
+      800,
+      512
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65324,
+    "image": "bothFireAndSmoke_CV016955.jpg",
+    "bbox": [
+      186.0,
+      1.0,
+      445.0,
+      204.0
+    ],
+    "dimensions": [
+      630,
+      469
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65433,
+    "image": "bothFireAndSmoke_CV016977.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      216.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65441,
+    "image": "bothFireAndSmoke_CV016978.jpg",
+    "bbox": [
+      543.0,
+      11.0,
+      98.0,
+      104.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65552,
+    "image": "bothFireAndSmoke_CV017005.jpg",
+    "bbox": [
+      125.0,
+      1.0,
+      670.0,
+      520.0
+    ],
+    "dimensions": [
+      794,
+      530
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65570,
+    "image": "bothFireAndSmoke_CV017010.jpg",
+    "bbox": [
+      303.0,
+      1.0,
+      898.0,
+      583.0
+    ],
+    "dimensions": [
+      1200,
+      950
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65573,
+    "image": "bothFireAndSmoke_CV017011.jpg",
+    "bbox": [
+      197.0,
+      4.0,
+      804.0,
+      517.0
+    ],
+    "dimensions": [
+      1000,
+      666
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65585,
+    "image": "bothFireAndSmoke_CV017013.jpg",
+    "bbox": [
+      421.0,
+      1.0,
+      668.0,
+      506.0
+    ],
+    "dimensions": [
+      1088,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65601,
+    "image": "bothFireAndSmoke_CV017016.jpg",
+    "bbox": [
+      543.0,
+      1.0,
+      738.0,
+      357.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65611,
+    "image": "bothFireAndSmoke_CV017019.jpg",
+    "bbox": [
+      309.0,
+      161.0,
+      332.0,
+      143.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65653,
+    "image": "bothFireAndSmoke_CV017026.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      253.0,
+      91.0
+    ],
+    "dimensions": [
+      253,
+      169
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65690,
+    "image": "bothFireAndSmoke_CV017033.jpg",
+    "bbox": [
+      120.0,
+      1.0,
+      521.0,
+      320.0
+    ],
+    "dimensions": [
+      640,
+      640
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65699,
+    "image": "bothFireAndSmoke_CV017035.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      646.0,
+      512.0
+    ],
+    "dimensions": [
+      768,
+      512
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65727,
+    "image": "bothFireAndSmoke_CV017043.jpg",
+    "bbox": [
+      10.0,
+      1.0,
+      1271.0,
+      406.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65728,
+    "image": "bothFireAndSmoke_CV017043.jpg",
+    "bbox": [
+      561.0,
+      361.0,
+      720.0,
+      150.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65732,
+    "image": "bothFireAndSmoke_CV017044.jpg",
+    "bbox": [
+      1084.0,
+      276.0,
+      197.0,
+      153.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65734,
+    "image": "bothFireAndSmoke_CV017044.jpg",
+    "bbox": [
+      1127.0,
+      533.0,
+      154.0,
+      135.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65739,
+    "image": "bothFireAndSmoke_CV017045.jpg",
+    "bbox": [
+      125.0,
+      1.0,
+      516.0,
+      157.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65754,
+    "image": "bothFireAndSmoke_CV017048.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      499.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65802,
+    "image": "bothFireAndSmoke_CV017060.jpg",
+    "bbox": [
+      177.0,
+      1.0,
+      616.0,
+      207.0
+    ],
+    "dimensions": [
+      792,
+      359
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65828,
+    "image": "bothFireAndSmoke_CV017066.jpg",
+    "bbox": [
+      51.0,
+      1.0,
+      447.0,
+      352.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65829,
+    "image": "bothFireAndSmoke_CV017066.jpg",
+    "bbox": [
+      214.0,
+      169.0,
+      164.0,
+      184.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65841,
+    "image": "bothFireAndSmoke_CV017069.jpg",
+    "bbox": [
+      131.0,
+      1.0,
+      1150.0,
+      324.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65864,
+    "image": "bothFireAndSmoke_CV017072.jpg",
+    "bbox": [
+      38.0,
+      1.0,
+      734.0,
+      533.0
+    ],
+    "dimensions": [
+      771,
+      533
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65937,
+    "image": "bothFireAndSmoke_CV017089.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      581.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65939,
+    "image": "bothFireAndSmoke_CV017090.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      204.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65947,
+    "image": "bothFireAndSmoke_CV017092.jpg",
+    "bbox": [
+      166.0,
+      1.0,
+      428.0,
+      206.0
+    ],
+    "dimensions": [
+      593,
+      439
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65950,
+    "image": "bothFireAndSmoke_CV017093.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      292.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 65956,
+    "image": "bothFireAndSmoke_CV017094.jpg",
+    "bbox": [
+      840.0,
+      4.0,
+      121.0,
+      53.0
+    ],
+    "dimensions": [
+      960,
+      640
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66042,
+    "image": "bothFireAndSmoke_CV017118.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      692.0,
+      390.0
+    ],
+    "dimensions": [
+      692,
+      390
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66085,
+    "image": "bothFireAndSmoke_CV017125.jpg",
+    "bbox": [
+      478.0,
+      1.0,
+      316.0,
+      143.0
+    ],
+    "dimensions": [
+      793,
+      546
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66096,
+    "image": "bothFireAndSmoke_CV017128.jpg",
+    "bbox": [
+      44.0,
+      1.0,
+      533.0,
+      314.0
+    ],
+    "dimensions": [
+      576,
+      576
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66115,
+    "image": "bothFireAndSmoke_CV017133.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      600.0,
+      264.0
+    ],
+    "dimensions": [
+      600,
+      420
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66158,
+    "image": "bothFireAndSmoke_CV017139.jpg",
+    "bbox": [
+      397.0,
+      1.0,
+      884.0,
+      389.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66194,
+    "image": "bothFireAndSmoke_CV017145.jpg",
+    "bbox": [
+      179.0,
+      1.0,
+      458.0,
+      284.0
+    ],
+    "dimensions": [
+      636,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66203,
+    "image": "bothFireAndSmoke_CV017146.jpg",
+    "bbox": [
+      597.0,
+      284.0,
+      44.0,
+      45.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66223,
+    "image": "bothFireAndSmoke_CV017151.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1024.0,
+      505.0
+    ],
+    "dimensions": [
+      1024,
+      767
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66229,
+    "image": "bothFireAndSmoke_CV017153.jpg",
+    "bbox": [
+      8.0,
+      1.0,
+      943.0,
+      504.0
+    ],
+    "dimensions": [
+      950,
+      712
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66301,
+    "image": "bothFireAndSmoke_CV017171.jpg",
+    "bbox": [
+      109.0,
+      1.0,
+      685.0,
+      394.0
+    ],
+    "dimensions": [
+      793,
+      606
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66335,
+    "image": "bothFireAndSmoke_CV017179.jpg",
+    "bbox": [
+      431.0,
+      1.0,
+      444.0,
+      545.0
+    ],
+    "dimensions": [
+      874,
+      576
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66363,
+    "image": "bothFireAndSmoke_CV017185.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1280.0,
+      588.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66431,
+    "image": "bothFireAndSmoke_CV017201.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      360.0,
+      178.0
+    ],
+    "dimensions": [
+      360,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66442,
+    "image": "bothFireAndSmoke_CV017204.jpg",
+    "bbox": [
+      567.0,
+      1.0,
+      714.0,
+      392.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66444,
+    "image": "bothFireAndSmoke_CV017205.jpg",
+    "bbox": [
+      600.0,
+      1.0,
+      681.0,
+      463.0
+    ],
+    "dimensions": [
+      1280,
+      640
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 66643,
+    "image": "bothFireAndSmoke_CV017248.jpg",
+    "bbox": [
+      1.0,
+      33.0,
+      640.0,
+      170.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 70019,
+    "image": "bothFireAndSmoke_CV018145.jpg",
+    "bbox": [
+      512.0,
+      1.0,
+      0,
+      155.0
+    ],
+    "dimensions": [
+      512,
+      341
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107679,
+    "image": "smoke_CV005813.jpg",
+    "bbox": [
+      433.0,
+      1.0,
+      409.0,
+      337.0
+    ],
+    "dimensions": [
+      841,
+      437
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107686,
+    "image": "smoke_CV005817.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      960.0,
+      733.0
+    ],
+    "dimensions": [
+      960,
+      1280
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107694,
+    "image": "smoke_CV005825.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      258.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107700,
+    "image": "smoke_CV005830.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      513.0,
+      341.0
+    ],
+    "dimensions": [
+      513,
+      341
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107713,
+    "image": "smoke_CV005839.jpg",
+    "bbox": [
+      667.0,
+      1.0,
+      266.0,
+      348.0
+    ],
+    "dimensions": [
+      932,
+      524
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107721,
+    "image": "smoke_CV005844.jpg",
+    "bbox": [
+      55.0,
+      1.0,
+      846.0,
+      393.0
+    ],
+    "dimensions": [
+      900,
+      675
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107725,
+    "image": "smoke_CV005847.jpg",
+    "bbox": [
+      209.0,
+      90.0,
+      272.0,
+      286.0
+    ],
+    "dimensions": [
+      480,
+      848
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107734,
+    "image": "smoke_CV005855.jpg",
+    "bbox": [
+      162.0,
+      178.0,
+      772.0,
+      205.0
+    ],
+    "dimensions": [
+      933,
+      700
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107771,
+    "image": "smoke_CV005884.jpg",
+    "bbox": [
+      168.0,
+      1.0,
+      453.0,
+      251.0
+    ],
+    "dimensions": [
+      620,
+      349
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107775,
+    "image": "smoke_CV005888.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      177.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107792,
+    "image": "smoke_CV005902.jpg",
+    "bbox": [
+      189.0,
+      1.0,
+      434.0,
+      250.0
+    ],
+    "dimensions": [
+      622,
+      346
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107803,
+    "image": "smoke_CV005913.jpg",
+    "bbox": [
+      1159.0,
+      1.0,
+      122.0,
+      319.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107805,
+    "image": "smoke_CV005913.jpg",
+    "bbox": [
+      1004.0,
+      175.0,
+      277.0,
+      302.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107821,
+    "image": "smoke_CV005923.jpg",
+    "bbox": [
+      621.0,
+      1.0,
+      227.0,
+      147.0
+    ],
+    "dimensions": [
+      847,
+      431
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107832,
+    "image": "smoke_CV005932.jpg",
+    "bbox": [
+      16.0,
+      1.0,
+      189.0,
+      134.0
+    ],
+    "dimensions": [
+      204,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107846,
+    "image": "smoke_CV005943.jpg",
+    "bbox": [
+      6.0,
+      54.0,
+      1275.0,
+      667.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107859,
+    "image": "smoke_CV005952.jpg",
+    "bbox": [
+      976.0,
+      1.0,
+      280.0,
+      218.0
+    ],
+    "dimensions": [
+      1255,
+      659
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107865,
+    "image": "smoke_CV005955.jpg",
+    "bbox": [
+      357.0,
+      1.0,
+      444.0,
+      363.0
+    ],
+    "dimensions": [
+      800,
+      442
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107866,
+    "image": "smoke_CV005956.jpg",
+    "bbox": [
+      384.0,
+      1.0,
+      257.0,
+      107.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107881,
+    "image": "smoke_CV005968.jpg",
+    "bbox": [
+      271.0,
+      1.0,
+      370.0,
+      191.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107897,
+    "image": "smoke_CV005979.jpg",
+    "bbox": [
+      1.0,
+      459.0,
+      85.0,
+      40.0
+    ],
+    "dimensions": [
+      836,
+      498
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107900,
+    "image": "smoke_CV005982.jpg",
+    "bbox": [
+      33.0,
+      1.0,
+      1168.0,
+      567.0
+    ],
+    "dimensions": [
+      1200,
+      628
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107908,
+    "image": "smoke_CV005987.jpg",
+    "bbox": [
+      1.0,
+      59.0,
+      824.0,
+      435.0
+    ],
+    "dimensions": [
+      876,
+      493
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107911,
+    "image": "smoke_CV005990.jpg",
+    "bbox": [
+      3.0,
+      1.0,
+      627.0,
+      274.0
+    ],
+    "dimensions": [
+      629,
+      353
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107944,
+    "image": "smoke_CV006018.jpg",
+    "bbox": [
+      291.0,
+      26.0,
+      350.0,
+      227.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107969,
+    "image": "smoke_CV006040.jpg",
+    "bbox": [
+      155.0,
+      1.0,
+      646.0,
+      564.0
+    ],
+    "dimensions": [
+      800,
+      600
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 107977,
+    "image": "smoke_CV006045.jpg",
+    "bbox": [
+      396.0,
+      1.0,
+      585.0,
+      353.0
+    ],
+    "dimensions": [
+      980,
+      552
+    ]
+  },
+  {
+    "split": "train",
+    "ann_id": 108008,
+    "image": "smoke_CV006068.jpg",
+    "bbox": [
+      365.0,
+      1.0,
+      512.0,
+      163.0
+    ],
+    "dimensions": [
+      876,
+      493
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 41180,
+    "image": "bothFireAndSmoke_CV010851.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      763.0,
+      0
+    ],
+    "dimensions": [
+      800,
+      600
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 64944,
+    "image": "bothFireAndSmoke_CV016880.jpg",
+    "bbox": [
+      433.0,
+      3.0,
+      552.0,
+      619.0
+    ],
+    "dimensions": [
+      984,
+      621
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 64949,
+    "image": "bothFireAndSmoke_CV016880.jpg",
+    "bbox": [
+      561.0,
+      608.0,
+      20.0,
+      14.0
+    ],
+    "dimensions": [
+      984,
+      621
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65176,
+    "image": "bothFireAndSmoke_CV016921.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      181.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65191,
+    "image": "bothFireAndSmoke_CV016926.jpg",
+    "bbox": [
+      165.0,
+      1.0,
+      476.0,
+      224.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65260,
+    "image": "bothFireAndSmoke_CV016941.jpg",
+    "bbox": [
+      135.0,
+      1.0,
+      1146.0,
+      719.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65287,
+    "image": "bothFireAndSmoke_CV016947.jpg",
+    "bbox": [
+      565.0,
+      114.0,
+      76.0,
+      25.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65288,
+    "image": "bothFireAndSmoke_CV016947.jpg",
+    "bbox": [
+      501.0,
+      1.0,
+      140.0,
+      83.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65328,
+    "image": "bothFireAndSmoke_CV016956.jpg",
+    "bbox": [
+      275.0,
+      4.0,
+      503.0,
+      506.0
+    ],
+    "dimensions": [
+      777,
+      517
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65412,
+    "image": "bothFireAndSmoke_CV016973.jpg",
+    "bbox": [
+      135.0,
+      1.0,
+      890.0,
+      373.0
+    ],
+    "dimensions": [
+      1024,
+      576
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65615,
+    "image": "bothFireAndSmoke_CV017020.jpg",
+    "bbox": [
+      1.0,
+      34.0,
+      336.0,
+      319.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65658,
+    "image": "bothFireAndSmoke_CV017028.jpg",
+    "bbox": [
+      158.0,
+      185.0,
+      1123.0,
+      369.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65673,
+    "image": "bothFireAndSmoke_CV017030.jpg",
+    "bbox": [
+      239.0,
+      1.0,
+      562.0,
+      386.0
+    ],
+    "dimensions": [
+      800,
+      480
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65696,
+    "image": "bothFireAndSmoke_CV017034.jpg",
+    "bbox": [
+      589.0,
+      170.0,
+      52.0,
+      143.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65711,
+    "image": "bothFireAndSmoke_CV017039.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      1246.0,
+      324.0
+    ],
+    "dimensions": [
+      1246,
+      661
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65759,
+    "image": "bothFireAndSmoke_CV017049.jpg",
+    "bbox": [
+      65.0,
+      1.0,
+      386.0,
+      340.0
+    ],
+    "dimensions": [
+      450,
+      800
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65766,
+    "image": "bothFireAndSmoke_CV017050.jpg",
+    "bbox": [
+      419.0,
+      1.0,
+      1502.0,
+      604.0
+    ],
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 65789,
+    "image": "bothFireAndSmoke_CV017057.jpg",
+    "bbox": [
+      922.0,
+      219.0,
+      63.0,
+      20.0
+    ],
+    "dimensions": [
+      984,
+      616
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66051,
+    "image": "bothFireAndSmoke_CV017120.jpg",
+    "bbox": [
+      332.0,
+      1.0,
+      869.0,
+      530.0
+    ],
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66059,
+    "image": "bothFireAndSmoke_CV017121.jpg",
+    "bbox": [
+      64.0,
+      30.0,
+      141.0,
+      142.0
+    ],
+    "dimensions": [
+      204,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66086,
+    "image": "bothFireAndSmoke_CV017126.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      218.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66087,
+    "image": "bothFireAndSmoke_CV017126.jpg",
+    "bbox": [
+      610.0,
+      153.0,
+      31.0,
+      30.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66482,
+    "image": "bothFireAndSmoke_CV017216.jpg",
+    "bbox": [
+      300.0,
+      44.0,
+      725.0,
+      538.0
+    ],
+    "dimensions": [
+      1024,
+      768
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 66579,
+    "image": "bothFireAndSmoke_CV017234.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      224.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107710,
+    "image": "smoke_CV005838.jpg",
+    "bbox": [
+      62.0,
+      1.0,
+      389.0,
+      215.0
+    ],
+    "dimensions": [
+      450,
+      335
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107723,
+    "image": "smoke_CV005845.jpg",
+    "bbox": [
+      122.0,
+      1.0,
+      859.0,
+      405.0
+    ],
+    "dimensions": [
+      980,
+      552
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107726,
+    "image": "smoke_CV005848.jpg",
+    "bbox": [
+      227.0,
+      1.0,
+      414.0,
+      202.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107729,
+    "image": "smoke_CV005850.jpg",
+    "bbox": [
+      273.0,
+      1.0,
+      528.0,
+      410.0
+    ],
+    "dimensions": [
+      800,
+      800
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107731,
+    "image": "smoke_CV005852.jpg",
+    "bbox": [
+      333.0,
+      1.0,
+      438.0,
+      382.0
+    ],
+    "dimensions": [
+      770,
+      434
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107735,
+    "image": "smoke_CV005856.jpg",
+    "bbox": [
+      44.0,
+      1.0,
+      921.0,
+      510.0
+    ],
+    "dimensions": [
+      964,
+      602
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107746,
+    "image": "smoke_CV005864.jpg",
+    "bbox": [
+      100.0,
+      1.0,
+      701.0,
+      402.0
+    ],
+    "dimensions": [
+      800,
+      448
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107762,
+    "image": "smoke_CV005876.jpg",
+    "bbox": [
+      255.0,
+      1.0,
+      381.0,
+      235.0
+    ],
+    "dimensions": [
+      635,
+      348
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107785,
+    "image": "smoke_CV005898.jpg",
+    "bbox": [
+      121.0,
+      1.0,
+      204.0,
+      449.0
+    ],
+    "dimensions": [
+      324,
+      477
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107822,
+    "image": "smoke_CV005924.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      205.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107834,
+    "image": "smoke_CV005933.jpg",
+    "bbox": [
+      127.0,
+      1.0,
+      514.0,
+      182.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107838,
+    "image": "smoke_CV005936.jpg",
+    "bbox": [
+      25.0,
+      1.0,
+      616.0,
+      283.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107845,
+    "image": "smoke_CV005942.jpg",
+    "bbox": [
+      1.0,
+      111.0,
+      848.0,
+      218.0
+    ],
+    "dimensions": [
+      848,
+      480
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107880,
+    "image": "smoke_CV005967.jpg",
+    "bbox": [
+      49.0,
+      2.0,
+      828.0,
+      210.0
+    ],
+    "dimensions": [
+      876,
+      493
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107907,
+    "image": "smoke_CV005986.jpg",
+    "bbox": [
+      86.0,
+      60.0,
+      515.0,
+      222.0
+    ],
+    "dimensions": [
+      600,
+      401
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107909,
+    "image": "smoke_CV005988.jpg",
+    "bbox": [
+      318.0,
+      1.0,
+      848.0,
+      506.0
+    ],
+    "dimensions": [
+      1165,
+      769
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107959,
+    "image": "smoke_CV006032.jpg",
+    "bbox": [
+      375.0,
+      1.0,
+      266.0,
+      360.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107960,
+    "image": "smoke_CV006032.jpg",
+    "bbox": [
+      590.0,
+      266.0,
+      51.0,
+      95.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107966,
+    "image": "smoke_CV006038.jpg",
+    "bbox": [
+      208.0,
+      1.0,
+      433.0,
+      305.0
+    ],
+    "dimensions": [
+      640,
+      352
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107968,
+    "image": "smoke_CV006039.jpg",
+    "bbox": [
+      427.0,
+      239.0,
+      162.0,
+      53.0
+    ],
+    "dimensions": [
+      588,
+      441
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107992,
+    "image": "smoke_CV006053.jpg",
+    "bbox": [
+      395.0,
+      1.0,
+      586.0,
+      406.0
+    ],
+    "dimensions": [
+      980,
+      552
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 107997,
+    "image": "smoke_CV006058.jpg",
+    "bbox": [
+      1.0,
+      1.0,
+      640.0,
+      209.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "val",
+    "ann_id": 108007,
+    "image": "smoke_CV006067.jpg",
+    "bbox": [
+      207.0,
+      1.0,
+      306.0,
+      125.0
+    ],
+    "dimensions": [
+      512,
+      307
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65229,
+    "image": "bothFireAndSmoke_CV016935.jpg",
+    "bbox": [
+      638.0,
+      1.0,
+      643.0,
+      424.0
+    ],
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65630,
+    "image": "bothFireAndSmoke_CV017023.jpg",
+    "bbox": [
+      588.0,
+      225.0,
+      53.0,
+      77.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65683,
+    "image": "bothFireAndSmoke_CV017031.jpg",
+    "bbox": [
+      555.0,
+      3.0,
+      86.0,
+      147.0
+    ],
+    "dimensions": [
+      640,
+      360
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65721,
+    "image": "bothFireAndSmoke_CV017042.jpg",
+    "bbox": [
+      413.0,
+      1.0,
+      228.0,
+      202.0
+    ],
+    "dimensions": [
+      640,
+      368
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65722,
+    "image": "bothFireAndSmoke_CV017042.jpg",
+    "bbox": [
+      1.0,
+      2.0,
+      347.0,
+      367.0
+    ],
+    "dimensions": [
+      640,
+      368
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 65772,
+    "image": "bothFireAndSmoke_CV017052.jpg",
+    "bbox": [
+      331.0,
+      1.0,
+      431.0,
+      262.0
+    ],
+    "dimensions": [
+      761,
+      691
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 66245,
+    "image": "bothFireAndSmoke_CV017158.jpg",
+    "bbox": [
+      32.0,
+      1.0,
+      446.0,
+      522.0
+    ],
+    "dimensions": [
+      477,
+      735
+    ]
+  },
+  {
+    "split": "test",
+    "ann_id": 66536,
+    "image": "bothFireAndSmoke_CV017225.jpg",
+    "bbox": [
+      86.0,
+      1.0,
+      217.0,
+      357.0
+    ],
+    "dimensions": [
+      302,
+      470
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ROI quality cues, design only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "content",
+    "visibility"
+  ],
+  "properties": {
+    "content": {
+      "type": "string",
+      "enum": [
+        "fire",
+        "smoke",
+        "both",
+        "other",
+        "uncertain"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "limited",
+        "unjudgeable"
+      ]
+    }
+  }
+}

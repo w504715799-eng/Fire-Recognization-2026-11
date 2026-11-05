@@ -1,0 +1,56 @@
+{
+  "workers": 8,
+  "total_bytes": 67108864,
+  "elapsed_seconds": 19.66442229200038,
+  "aggregate_Bps": 3412704.579035629,
+  "blocks": [
+    {
+      "index": 0,
+      "bytes": 8388608,
+      "seconds": 19.414888040992082,
+      "sha256": "c0657892aa624f65992f499c93650b3fa616daab20e6a981c318a266d85f51ea"
+    },
+    {
+      "index": 1,
+      "bytes": 8388608,
+      "seconds": 18.58910625000135,
+      "sha256": "296605e3aca42875ee116d7979f01608b224f3d9caa31d896514edc0c0e3bbb5"
+    },
+    {
+      "index": 2,
+      "bytes": 8388608,
+      "seconds": 6.996064957987983,
+      "sha256": "4813da816ef9ac90190103b5d819afab95d7dd3fe18baf97fa8f4f995ea82990"
+    },
+    {
+      "index": 3,
+      "bytes": 8388608,
+      "seconds": 19.385988875001203,
+      "sha256": "b633aa14a9f67ddefafe6720d21a96ed3efab11beb89a16f1d32d5f0b3670ddb"
+    },
+    {
+      "index": 4,
+      "bytes": 8388608,
+      "seconds": 6.1013698339957045,
+      "sha256": "4a5f58ab4e08e86c8cfa5e18258cb6a14229da999395299ca165effe53905e68"
+    },
+    {
+      "index": 5,
+      "bytes": 8388608,
+      "seconds": 19.66099641699111,
+      "sha256": "34eeb0c66099137e4f2269d753929205ffca140225f0dbb66d7bf840e2c2ed91"
+    },
+    {
+      "index": 6,
+      "bytes": 8388608,
+      "seconds": 17.405097584007308,
+      "sha256": "71b9f8f9523de322ac3b7b45ee4c129100be787433df4adabed7526b05da1e2c"
+    },
+    {
+      "index": 7,
+      "bytes": 8388608,
+      "seconds": 18.283653332997346,
+      "sha256": "1b6b5e95867cc6442a188fc65797ffd39b006f5c41df304215af38bf24e06fb4"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "https://api.figshare.com/v2/articles/28747046",
+    "file": "references/fire-smoke-fusion-2026-10-15/cqu-metadata.json",
+    "bytes": 10687,
+    "sha256": "cba33d50f064908d1453cfb8eeafc4a3d5462cd4fad333f2478a7cae87d8cb86"
+  },
+  {
+    "source": "https://zenodo.org/api/records/15826133",
+    "file": "references/fire-smoke-fusion-2026-10-15/indoor-metadata.json",
+    "bytes": 4114,
+    "sha256": "59601dffb0d77e80cf22a1209e23383ba52cd66b157f11a5947db4b4c71c100e"
+  },
+  {
+    "source": "https://huggingface.co/datasets/pyronear/pyro-sdis/raw/ebfc02d0cba7f7dfe0623d13bcf0f0aa8a38e3ee/README.md",
+    "file": "references/fire-smoke-fusion-2026-10-15/pyro-readme.md",
+    "bytes": 7970,
+    "sha256": "e0bb2012bcf74b2e5fb1f2f6b5925375aafd2bb9cb929f634e4b0ec2df738a0f"
+  },
+  {
+    "source": "https://huggingface.co/api/datasets/mountainmoon2000/wildfire_mm/tree/main?recursive=false",
+    "file": "references/fire-smoke-fusion-2026-10-15/fasdd-mirror-files.json",
+    "bytes": 1699,
+    "sha256": "3f049cfb0e790120dcb864a0db7d382ef1297a987792fa65a79cb60f91f11901"
+  },
+  {
+    "source": "https://www.scidb.cn/en/detail?dataSetId=ce9c9400b44148e1b0a749f5c3eb0bda",
+    "file": "references/fire-smoke-fusion-2026-10-15/fasdd-official-page.html",
+    "bytes": 804795,
+    "sha256": "61e1b14e90895835334864379993412880ee6a52c5db9a100b31387d69524ccf"
+  }
+]

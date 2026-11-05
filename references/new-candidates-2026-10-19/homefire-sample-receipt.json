@@ -1,0 +1,246 @@
+{
+  "samples": [
+    {
+      "member": "train/images/train_3091.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3091.jpg",
+      "bytes": 162506,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0cb2acbc5d47020aa637869a329906018a5111712a605f2544175275a1550d53"
+    },
+    {
+      "member": "train/images/train_2514.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_2514.jpg",
+      "bytes": 222012,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "351ee771968ad971955e3cd62fce8e8b9a99da3f338bbaf8da2271b7590a47a7"
+    },
+    {
+      "member": "train/images/train_2124.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_2124.jpg",
+      "bytes": 96278,
+      "dimensions": [
+        640,
+        360
+      ],
+      "sha256": "41d8414f90e9ea186364a9e89f265b7e37e8ac442067e10d3d4af1cc90a447e0"
+    },
+    {
+      "member": "test/images/test_724.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/test__images__test_724.jpg",
+      "bytes": 831793,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "26c9ef872db8db9f62a5a63b49bac9ce4b866541cc3008a5312259286d78e1ef"
+    },
+    {
+      "member": "train/images/train_2479.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_2479.jpg",
+      "bytes": 418231,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "31276391984949413dc02be68ccfd93ba928422eaf424cefd5b160a4a886c8ef"
+    },
+    {
+      "member": "train/images/train_642.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_642.jpg",
+      "bytes": 27652,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e8e1f9d67878a4b7eb7837e8ff285625e1031217e5b84557ed11d3c747febc8c"
+    },
+    {
+      "member": "train/images/train_3854.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3854.jpg",
+      "bytes": 175156,
+      "dimensions": [
+        960,
+        540
+      ],
+      "sha256": "b6ab26f7cc0304d88c9a61834e04164b2269b97459220721ac187591e342d023"
+    },
+    {
+      "member": "train/images/train_356.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_356.jpg",
+      "bytes": 351973,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "8cd99bdbe611a389d05390b7d4d5ebf36ac1ff9f91f67914554d0aecbec8cf98"
+    },
+    {
+      "member": "train/images/train_2588.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_2588.jpg",
+      "bytes": 261568,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "28339e3e81ac1106c46d1b3173005713d16e00e201b9d0169285e7deb337f606"
+    },
+    {
+      "member": "train/images/train_4019.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_4019.jpg",
+      "bytes": 70220,
+      "dimensions": [
+        960,
+        544
+      ],
+      "sha256": "0c0f1429c7376f4c8239c9b010532646150779ab5406d6506d8306ad722c8c4a"
+    },
+    {
+      "member": "train/images/train_86.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_86.jpg",
+      "bytes": 111847,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "39c85044545c51e1fa766bc5e0b6a53ee1205539dba2f7dfb781e6966c694ab3"
+    },
+    {
+      "member": "train/images/train_3798.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3798.jpg",
+      "bytes": 301469,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "66f0da2eae736f28aab75e3e8d6d03e94ae3bbef7844c38b667a95207fc6928f"
+    },
+    {
+      "member": "train/images/train_633.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_633.jpg",
+      "bytes": 156239,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "21924ca373667bdbbc39d401443fa84cc74ad43f15ba0b6df2045eaa44d0be58"
+    },
+    {
+      "member": "train/images/train_3900.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3900.jpg",
+      "bytes": 329158,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9a375bd7d2518d63ec8ec47853f9d4fc483d0bac2f776991532f9f003ea352b9"
+    },
+    {
+      "member": "train/images/train_2501.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_2501.jpg",
+      "bytes": 599256,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d170d6f1e092de2305f460dea20b0cab986c9106c24cba1cb5b198b4213b425c"
+    },
+    {
+      "member": "test/images/test_1290.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/test__images__test_1290.jpg",
+      "bytes": 482091,
+      "dimensions": [
+        2304,
+        1296
+      ],
+      "sha256": "7dc1a9df96ed2f558da8f57be3411ae027f110094b86212d7538c614d72fa557"
+    },
+    {
+      "member": "train/images/train_3056.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3056.jpg",
+      "bytes": 163893,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2e29c9c6cd3bc867ffb49a6fb6486e69b76f768ab9b5b99d529a9ddb5a7dedc6"
+    },
+    {
+      "member": "train/images/train_586.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_586.jpg",
+      "bytes": 384166,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "297c369d3806cda6393fd455bceb0f6b0d81e3b52815efbdcbb349772d259afe"
+    },
+    {
+      "member": "train/images/train_360.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_360.jpg",
+      "bytes": 846764,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "34aa72f0e1323d9c080cdf2be98f6211efa4aa0896d806259bbb1bbc1244e40a"
+    },
+    {
+      "member": "train/images/train_3515.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_3515.jpg",
+      "bytes": 267022,
+      "dimensions": [
+        960,
+        540
+      ],
+      "sha256": "086a5d2feffc8b298c98599d074917bf8cc5221d30c227695bc93c7b17918589"
+    },
+    {
+      "member": "train/images/train_930.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_930.jpg",
+      "bytes": 438960,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f29fbcdafd4fbdddd6f6dad35d9bd30846cdf7bc3dcb112579285db8d05ef8fb"
+    },
+    {
+      "member": "train/images/train_1527.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_1527.jpg",
+      "bytes": 127109,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "45145ee2133c0f1366f35a4c80710fb668647bb4609e3155d787bb5910b3559e"
+    },
+    {
+      "member": "train/images/train_1047.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_1047.jpg",
+      "bytes": 113576,
+      "dimensions": [
+        640,
+        360
+      ],
+      "sha256": "7e4da7e1faf29aa7389db6596a3dae8d7037752ef076be1c177c55f4f030ee2e"
+    },
+    {
+      "member": "train/images/train_4098.jpg",
+      "saved": "data/new-candidates-2026-10-19/homefire/fixed-samples/train__images__train_4098.jpg",
+      "bytes": 138387,
+      "dimensions": [
+        1280,
+        853
+      ],
+      "sha256": "35b6ff47d4f1e195ab58cb85135516278aaec261a059641ab4e0ecd6073f78be"
+    }
+  ],
+  "all_24_decoded": true,
+  "class_mapping_is_visual_inference_only": true
+}

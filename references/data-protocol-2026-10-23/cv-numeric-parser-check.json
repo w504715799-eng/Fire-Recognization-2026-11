@@ -1,0 +1,20 @@
+{
+  "train": {
+    "float32_duplicate_label_rows": 0,
+    "duplicate_ann_ids": [],
+    "normalized_min": 0.0,
+    "normalized_max": 1.0
+  },
+  "val": {
+    "float32_duplicate_label_rows": 0,
+    "duplicate_ann_ids": [],
+    "normalized_min": 0.0,
+    "normalized_max": 1.0
+  },
+  "test": {
+    "float32_duplicate_label_rows": 0,
+    "duplicate_ann_ids": [],
+    "normalized_min": 0.005457025920873124,
+    "normalized_max": 0.999
+  }
+}

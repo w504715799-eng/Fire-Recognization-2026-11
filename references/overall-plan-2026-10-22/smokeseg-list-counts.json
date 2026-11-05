@@ -1,0 +1,14 @@
+{
+  "train": {
+    "status": 200,
+    "listed_ids": 5344
+  },
+  "val": {
+    "status": 200,
+    "listed_ids": 300
+  },
+  "test": {
+    "status": 200,
+    "listed_ids": 500
+  }
+}

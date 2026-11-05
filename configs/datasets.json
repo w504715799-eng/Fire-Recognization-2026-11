@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "names": [
+    "fire",
+    "smoke"
+  ],
+  "split_salt": "fire-master-v1-20261022",
+  "datasets": {
+    "dfire": {
+      "version": "kaggle-21527-sha65d81b60",
+      "format": "yolo",
+      "split_key": "dfire",
+      "annotation_root": "dfire/kaggle-21527-sha65d81b60/extracted/data",
+      "image_root": "dfire/kaggle-21527-sha65d81b60/extracted/data",
+      "official_splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "class_map": {
+        "0": 1,
+        "1": 0
+      },
+      "split_policy": "val_half",
+      "expected_counts": {
+        "train": 14122,
+        "val": 3099,
+        "test": 4306
+      },
+      "frozen_manifest": "references/data-protocol-2026-11-04/dfire-kaggle-split-manifest.jsonl",
+      "source_url": "https://www.kaggle.com/datasets/sayedgamal99/smoke-fire-detection-yolo",
+      "archive_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83",
+      "packaging_note": "Author-linked Kaggle package; preserve packaged train/val/test, not asserted identical to the OneDrive packaging"
+    },
+    "homefire": {
+      "version": "v1",
+      "format": "yolo",
+      "split_key": "homefire",
+      "annotation_root": "home-fire/v1/annotations",
+      "image_root": "home-fire/v1/extracted",
+      "official_splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "class_map": {
+        "0": 0,
+        "1": 1
+      },
+      "split_policy": "val_half",
+      "expected_counts": {
+        "train": 3900,
+        "val": 1300,
+        "test": 1300
+      },
+      "frozen_manifest": "references/data-protocol-2026-10-23/homefire-split-manifest.jsonl"
+    },
+    "fasdd_cv": {
+      "version": "v9",
+      "format": "coco",
+      "split_key": "fasdd_cv",
+      "annotation_root": "fasdd-cv/v9/annotations",
+      "image_root": "fasdd-cv/v9/extracted/images",
+      "official_splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "class_map": {
+        "0": 0,
+        "1": 1
+      },
+      "split_policy": "val_half",
+      "expected_counts": {
+        "train": 47660,
+        "val": 31770,
+        "test": 15884
+      },
+      "frozen_manifest": "references/data-protocol-2026-10-23/fasdd-cv-split-manifest.jsonl"
+    },
+    "fasdd_uav": {
+      "version": "v9",
+      "format": "coco",
+      "split_key": "fasdd_uav",
+      "annotation_root": "fasdd-uav/v9/annotations",
+      "image_root": "fasdd-uav/v9/extracted/images",
+      "official_splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "class_map": {
+        "0": 0,
+        "1": 1
+      },
+      "split_policy": "external_only",
+      "expected_counts": {
+        "train": 12551,
+        "val": 8365,
+        "test": 4181
+      }
+    }
+  }
+}

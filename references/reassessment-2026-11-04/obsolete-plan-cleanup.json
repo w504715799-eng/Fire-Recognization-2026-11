@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-04",
+  "reason": "user requested only one final plan",
+  "removed": [
+    {
+      "path": "references/data-gap-search-2026-10-19/plan-update.diff",
+      "bytes": 14805,
+      "sha256": "47033c30ef285825c5b4a1c7236400f9459a4d1afdf5948a9b01e4faceb2d6b1"
+    },
+    {
+      "path": "references/direct-data-search-2026-10-19/plan-update.diff",
+      "bytes": 13154,
+      "sha256": "80705958c21547336bd6d73feb43ea6db225044d224871552de4bb72d66be2a2"
+    },
+    {
+      "path": "references/jag-design-reference-2026-10-19/plan-update.diff",
+      "bytes": 19349,
+      "sha256": "de9c95acb9e0aff33217a76f1c1ea1471f6eb1b898c8d2501cc1adfb6942b9ec"
+    },
+    {
+      "path": "references/new-candidates-2026-10-19/plan-update.diff",
+      "bytes": 17752,
+      "sha256": "8de4fea4256b78599b7d4bc1f6f71cee22cdcbeb30a2ba56eb9d6d486a3c1b22"
+    },
+    {
+      "path": "references/overall-plan-2026-10-22/legacy-manifest.json",
+      "bytes": 2106,
+      "sha256": "2ae7d40c83423ee8b3edd866667466c37e41ef9c6834670923328838be6e4ce2"
+    },
+    {
+      "path": "references/overall-plan-2026-10-22/legacy-plans/RESEARCH_REQUIREMENTS.md",
+      "bytes": 11471,
+      "sha256": "8ea277cf338ea481e8637205da08305414607f332e90bc9faee716a4bf20d975"
+    },
+    {
+      "path": "references/research-reassessment-2026-11-04/RESEARCH_REQUIREMENTS-before-reassessment.md",
+      "bytes": 4436,
+      "sha256": "9181e613e694243fe8c825cbee09dbb01c9a9077b5a352e07637fb41ae24ea6a"
+    },
+    {
+      "path": "references/research-reassessment-2026-11-04/teacher-contract-before-reassessment.json",
+      "bytes": 2075,
+      "sha256": "dfebf1f487256c56540e862c92cf23676b3b36364647fea71b2530bb4e11e5db"
+    },
+    {
+      "path": "references/universat-design-2026-10-22/plan-update.diff",
+      "bytes": 32865,
+      "sha256": "5727f65eb61b813c110a4953e01bacaad6246f35633744a08d995aff9346b22a"
+    },
+    {
+      "path": "references/universat-refinement-2026-10-22/proposal-v2-to-v2.1.diff",
+      "bytes": 23106,
+      "sha256": "0d32706cdb505e7ca67a52fb1d8dce4112143f18a979f2282097ef2b2196f25e"
+    }
+  ],
+  "data_annotations_and_source_evidence_removed": false
+}

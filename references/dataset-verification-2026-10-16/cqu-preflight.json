@@ -1,0 +1,20 @@
+{
+  "key": "cqu",
+  "metadata_url": "https://api.figshare.com/v2/articles/28747046",
+  "name": "MyData_Fire.zip",
+  "bytes": 544994383,
+  "url": "https://ndownloader.figshare.com/files/53486522",
+  "md5": "fd9ed42cd67fd5f7c016ca127985e245",
+  "uncompressed_bytes": 539763798,
+  "entries": 22054,
+  "files": 22045,
+  "extensions": {
+    ".txt": 11023,
+    ".yaml": 1,
+    ".jpg": 11021
+  },
+  "range_bytes_read": 3368303,
+  "unsafe_paths": [],
+  "duplicate_archive_names": [],
+  "full_download_allowed": true
+}

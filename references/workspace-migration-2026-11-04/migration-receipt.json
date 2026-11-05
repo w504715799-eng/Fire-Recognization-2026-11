@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-04",
+  "operation": "same_filesystem_directory_rename",
+  "source": "/Users/edwiin/Desktop/code-workspace/fire",
+  "destination": "/Users/edwiin/Desktop/code-workspace/FIRE_R2",
+  "compatibility_symlink": "/Users/edwiin/Desktop/code-workspace/fire",
+  "symlink_target": "/Users/edwiin/Desktop/code-workspace/FIRE_R2",
+  "before": {
+    "digest": "415e5f8119103adf10d197d2cc1572d691492222b29700a0aeeb75f596130eee",
+    "entries": 107412,
+    "files": 91754,
+    "symlinks": 5638,
+    "logical_bytes_including_shared_files": 3726337661
+  },
+  "after": {
+    "digest": "415e5f8119103adf10d197d2cc1572d691492222b29700a0aeeb75f596130eee",
+    "entries": 107412,
+    "files": 91754,
+    "symlinks": 5638,
+    "logical_bytes_including_shared_files": 3726337661
+  },
+  "identity_size_mtime_and_symlink_target_checks_passed": true,
+  "environment_recreated": false,
+  "new_dependencies": [],
+  "weights_downloaded": false,
+  "cloud_actions": false,
+  "verification_scope": "Per-entry identity/size/mtime and symlink targets, not a new content hash of every dataset image",
+  "status": "complete",
+  "active_ledger": "下载与安装台账.md",
+  "development_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2",
+  "environment_check": "environment-check.json",
+  "disk_usage_kib": 3038360,
+  "python_sources_syntax_checked": 12,
+  "active_document_links_valid": true,
+  "canonical_ledger_only": true,
+  "legacy_conda_prefix_compatibility_preserved": true,
+  "local_weight_execution_allowed": false,
+  "conditional_local_weight_transfer_allowed": true,
+  "weight_transfer_authorization": "2026-11-04 user: cloud download failure -> local download -> upload -> delete after verification",
+  "intentionally_updated_after_move": [
+    "AGENTS.md",
+    "RESEARCH_REQUIREMENTS.md",
+    "火焰识别研究方案.md",
+    "下载与安装台账.md",
+    "references/reassessment-2026-11-04/research-contract.json",
+    "code/activate-sci-env.sh"
+  ]
+}

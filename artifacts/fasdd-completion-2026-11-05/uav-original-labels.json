@@ -1,0 +1,39 @@
+{
+  "dataset": "fasdd_uav",
+  "status": "original_annotations_checked_full_images_pending",
+  "splits": {
+    "train": {
+      "images": 12551,
+      "annotations": 26776,
+      "states": {
+        "both": 3909,
+        "fire_only": 107,
+        "empty": 5994,
+        "smoke_only": 2541
+      },
+      "sha256": "d256bbf681765f9fcb269f0dd728481fdb84241c8051e2e05eb50169cfb627dc"
+    },
+    "val": {
+      "images": 8365,
+      "annotations": 17828,
+      "states": {
+        "both": 2607,
+        "fire_only": 70,
+        "empty": 3995,
+        "smoke_only": 1693
+      },
+      "sha256": "e829556bd0122f8e6771218f438bbbd4ac8e0394a932af86b1a822e5304155ad"
+    },
+    "test": {
+      "images": 4181,
+      "annotations": 8926,
+      "states": {
+        "both": 1303,
+        "fire_only": 35,
+        "empty": 1997,
+        "smoke_only": 846
+      },
+      "sha256": "8deb23ac29f10b49448e361fcf4d98121b05f804923d4ab1852fa99a7b24c898"
+    }
+  }
+}

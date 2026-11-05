@@ -1,0 +1,10 @@
+{
+  "location": "cloud_only",
+  "root": "/root/rivermind-data/FIRE_R2/runs/homefire_B_native_seed17_pilot_20261105/weights",
+  "sha256": {
+    "best_fire.pt": "886388410f53cef2d35e93e91a8d71cbf28cc762fc5f93a94572fe004885f7c8",
+    "best.pt": "0576d144ee3e48b611dbf074d37ef697ede93e674694f12a4200e9c3b7f8180a",
+    "last.pt": "8b9e673f1ce0be07d64e0ca8a2a10c4799602ee51ef70773a123b8455c108ea5"
+  },
+  "local_checkpoint_downloads": 0
+}

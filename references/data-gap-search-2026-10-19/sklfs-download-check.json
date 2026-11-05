@@ -1,0 +1,115 @@
+{
+  "url": "http://114.214.240.198:8000/datasets/",
+  "status": 200,
+  "text": "数据资源 · Fire Detection Research Group 中国科大火灾监测监控研究团队 火灾探测预警 首页 研究方向 数据资源 团队动态 团队成员 学术成果 学术论坛 联系我们 登录 注册 Datasets 数据资源 会员审批通过后可下载受限数据。公开数据可直接访问。 会员专属 FIgLib_ustc_labeled FIgLib_ustc_labeled extends the original FIgLib training split with PASCAL VOC-style XML bounding-box annotations for wildfire smoke object detection. 版本：V2024 · 发布日期：2024年1月1日 详细 等待审批后下载 会员专属 SKLFS-WildFire Test A large-scale real-world wildfire smoke test set containing 50,735 images from 3,309 videos, designed for evaluating open-scene early wildfire detection with difficult negative samples. 版本：V2024 · 发布日期：2025年1月1日 详细 等待审批后下载 会员专属 SKLFS-WildFire1M SKLFS-WildFire1M, a large-scale forest smoke detection dataset comprising over one million images. All images are authentic captures from industrial scenarios, having undergone rigorous manual filtering, annotation, and desensitization. 版本：待定 · 发布日期：待定 详细 等待审批后下载 会员专属 SKLFS-WildFire2025 Test A large-scale and diverse forest smoke test set containing 8,363 video clips and 152,700 annotated frames, reserved for evaluating smoke detection in real-world surveillance scenarios. 版本：V2025 · 发布日期：2026年6月1日 详细 等待审批后下载 中国科学技术大学 火灾安全全国重点实验室 火灾监测监控研究团队.",
+  "links": [
+    {
+      "text": "中国科大火灾监测监控研究团队 火灾探测预警",
+      "href": "/"
+    },
+    {
+      "text": "首页",
+      "href": "/"
+    },
+    {
+      "text": "研究方向",
+      "href": "/research/"
+    },
+    {
+      "text": "数据资源",
+      "href": "/datasets/"
+    },
+    {
+      "text": "团队动态",
+      "href": "/news/"
+    },
+    {
+      "text": "团队成员",
+      "href": "/people/"
+    },
+    {
+      "text": "学术成果",
+      "href": "/publications/"
+    },
+    {
+      "text": "学术论坛",
+      "href": "/forum/"
+    },
+    {
+      "text": "联系我们",
+      "href": "/contact/"
+    },
+    {
+      "text": "登录",
+      "href": "/accounts/login/"
+    },
+    {
+      "text": "注册",
+      "href": "/accounts/register/"
+    },
+    {
+      "text": "",
+      "href": "/datasets/10/"
+    },
+    {
+      "text": "FIgLib_ustc_labeled",
+      "href": "/datasets/10/"
+    },
+    {
+      "text": "详细",
+      "href": "/datasets/10/"
+    },
+    {
+      "text": "等待审批后下载",
+      "href": "/dashboard/"
+    },
+    {
+      "text": "",
+      "href": "/datasets/2/"
+    },
+    {
+      "text": "SKLFS-WildFire Test",
+      "href": "/datasets/2/"
+    },
+    {
+      "text": "详细",
+      "href": "/datasets/2/"
+    },
+    {
+      "text": "等待审批后下载",
+      "href": "/dashboard/"
+    },
+    {
+      "text": "",
+      "href": "/datasets/13/"
+    },
+    {
+      "text": "SKLFS-WildFire1M",
+      "href": "/datasets/13/"
+    },
+    {
+      "text": "详细",
+      "href": "/datasets/13/"
+    },
+    {
+      "text": "等待审批后下载",
+      "href": "/dashboard/"
+    },
+    {
+      "text": "",
+      "href": "/datasets/9/"
+    },
+    {
+      "text": "SKLFS-WildFire2025 Test",
+      "href": "/datasets/9/"
+    },
+    {
+      "text": "详细",
+      "href": "/datasets/9/"
+    },
+    {
+      "text": "等待审批后下载",
+      "href": "/dashboard/"
+    }
+  ]
+}

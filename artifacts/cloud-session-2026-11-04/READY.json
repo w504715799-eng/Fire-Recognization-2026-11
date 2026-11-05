@@ -1,0 +1,25 @@
+{
+  "dataset": "homefire",
+  "version": "v1",
+  "images": 6500,
+  "raw_archives_sha_verified": true,
+  "all_images_decoded": true,
+  "image_root": "/root/rivermind-data/shared/datasets/home-fire/v1/extracted",
+  "annotation_root": "/root/rivermind-data/shared/datasets/home-fire/v1/annotations",
+  "official_splits": {
+    "train": 3900,
+    "val": 1300,
+    "test": 1300
+  },
+  "r2_roles": {
+    "fit": 3900,
+    "cal": 650,
+    "dev": 650,
+    "test": 1300
+  },
+  "r2_view": "/root/rivermind-data/FIRE_R2/artifacts/data/homefire-v1",
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "published_at": "2026-11-04T10:20:32.627005+00:00",
+  "consumer_rule": "Shared originals read-only; each project owns independent views/caches/results"
+}

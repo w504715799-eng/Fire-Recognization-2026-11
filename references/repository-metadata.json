@@ -1,0 +1,68 @@
+{
+  "purpose": "Lossless frozen split/audit metadata storage; originals stay unchanged locally",
+  "files": [
+    {
+      "original": "references/data-protocol-2026-10-23/fasdd-cv-split-manifest.jsonl",
+      "compressed": "references/data-protocol-2026-10-23/fasdd-cv-split-manifest.jsonl.gz",
+      "bytes": 19943392,
+      "compressed_bytes": 910964,
+      "sha256": "5b848803337ef6b49b0067b472dd5d096d93fe9aa74d295a14430c6b1fd7c474"
+    },
+    {
+      "original": "artifacts/cloud-session-2026-11-04/homefire-view/manifest.jsonl",
+      "compressed": "artifacts/cloud-session-2026-11-04/homefire-view/manifest.jsonl.gz",
+      "bytes": 4615116,
+      "compressed_bytes": 665407,
+      "sha256": "4d64de97551b15097f091fd63aec71602f6700b1447427cfa9ccd522852c15fd"
+    },
+    {
+      "original": "references/data-protocol-2026-10-23/homefire-split-manifest.jsonl",
+      "compressed": "references/data-protocol-2026-10-23/homefire-split-manifest.jsonl.gz",
+      "bytes": 1134709,
+      "compressed_bytes": 40336,
+      "sha256": "e5734715bbe4391c494b8c94ae4fbfb735273f12c9f758702018419b45962f6a"
+    },
+    {
+      "original": "references/data-protocol-2026-11-04/dfire-kaggle-split-manifest.jsonl",
+      "compressed": "references/data-protocol-2026-11-04/dfire-kaggle-split-manifest.jsonl.gz",
+      "bytes": 1718818,
+      "compressed_bytes": 61705,
+      "sha256": "2b19ceaf49efc1e3b4c873588572355151f4589d084f173ecc651f0a4b3e0daf"
+    },
+    {
+      "original": "references/dataset-verification-2026-10-16/cqu-image-manifest.jsonl",
+      "compressed": "references/dataset-verification-2026-10-16/cqu-image-manifest.jsonl.gz",
+      "bytes": 7698692,
+      "compressed_bytes": 906047,
+      "sha256": "5b143abfe847b48629bca3404d6f1441eac5e9ca085b8df99aca9cd1b95f94b1"
+    },
+    {
+      "original": "references/dataset-verification-2026-10-16/cqu-zip-entries.json",
+      "compressed": "references/dataset-verification-2026-10-16/cqu-zip-entries.json.gz",
+      "bytes": 4762643,
+      "compressed_bytes": 830007,
+      "sha256": "3a9048c28bb4b8f2e6f1644644acd383fd3cf93a79a5bdb953a62732eee3dfb1"
+    },
+    {
+      "original": "references/dataset-verification-2026-10-16/indoor-image-manifest.jsonl",
+      "compressed": "references/dataset-verification-2026-10-16/indoor-image-manifest.jsonl.gz",
+      "bytes": 3458121,
+      "compressed_bytes": 442664,
+      "sha256": "36f8e833a875194e2b0456973c1335f5067f6dfa80af87e74455b20381508820"
+    },
+    {
+      "original": "references/dataset-verification-2026-10-16/indoor-zip-entries.json",
+      "compressed": "references/dataset-verification-2026-10-16/indoor-zip-entries.json.gz",
+      "bytes": 4749414,
+      "compressed_bytes": 476154,
+      "sha256": "fa5484ce01b63101abae8bb398537c7c8be7d67fdb2017cf4d37194a674eddc2"
+    },
+    {
+      "original": "references/new-candidates-2026-10-19/homefire-records.json",
+      "compressed": "references/new-candidates-2026-10-19/homefire-records.json.gz",
+      "bytes": 1247834,
+      "compressed_bytes": 146578,
+      "sha256": "58e3c3a295a8064303992aa212755a54b4340f7cd232865aa8207f45cd90d68e"
+    }
+  ]
+}

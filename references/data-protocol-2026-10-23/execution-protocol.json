@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-23",
+  "model_experiments": 0,
+  "cross_dataset_deduplication": false,
+  "homefire": {
+    "mapping": {
+      "0": "fire",
+      "1": "smoke"
+    },
+    "status": "evidence_supported_operational_mapping",
+    "author_numeric_mapping_file_found": false,
+    "original_samples_hash_verified": 24,
+    "visual_review": "existing fixed contact sheet; 6 ID0, 6 ID1, 6 both, 6 empty",
+    "independent_implementation": "https://huggingface.co/e1250/safety_detection/blob/9f0417154d2a57495fe308ad119fa1f707868100/README.md",
+    "original_labels_changed": false
+  },
+  "splits": {
+    "dfire": {
+      "fit": 14122,
+      "dev": 1549,
+      "cal": 1550,
+      "test": 4306,
+      "status": "author-linked Kaggle package verified 2026-11-04; packaged train/test preserved; packaged val deterministically split; no result-based resplitting",
+      "version": "kaggle-21527-sha65d81b60",
+      "frozen_manifest": "../data-protocol-2026-11-04/dfire-kaggle-split-manifest.jsonl"
+    },
+    "homefire": {
+      "fit": 3900,
+      "dev": 650,
+      "cal": 650,
+      "test": 1300,
+      "status": "all 6500 cloud images decoded 2026-11-04; frozen manifest matched; fit/dev/cal/test view ready"
+    },
+    "fasdd_cv": {
+      "fit": 47660,
+      "dev": 15885,
+      "cal": 15885,
+      "test": 15884,
+      "status": "manifest_materialized_from_existing_original_COCO; full images pending"
+    },
+    "fasdd_uav": {
+      "external_all": 25097,
+      "official_test_slice": 4181,
+      "status": "external_only; exact original manifest pending"
+    }
+  },
+  "evaluation": {
+    "annotation_ids": "bijective positive internal indices with original IDs retained for traceability",
+    "ground_truth_coordinates": "retain author coordinates; no clipping, padding, or deletion to repair annotations",
+    "degenerate_gt": "retain original records and count; no new ignore flags",
+    "training": "same documented native augmentation and assignment behavior for all methods; no rewritten source labels; runtime checks deferred"
+  },
+  "comparison_registry": {
+    "current_contract": "../reassessment-2026-11-04/research-contract.json",
+    "development_source": "dfire",
+    "confirmation_sources": [
+      "dfire",
+      "homefire",
+      "fasdd_cv"
+    ],
+    "external_component": "fasdd_uav",
+    "suggested_seeds": [
+      17,
+      29,
+      43
+    ],
+    "run_status": "not_started"
+  },
+  "plan_version": "fire-final-20261104",
+  "last_design_update": "2026-11-04"
+}

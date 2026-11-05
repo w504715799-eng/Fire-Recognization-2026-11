@@ -1,0 +1,55 @@
+{
+  "dataset": "homefire",
+  "version": "v1",
+  "images": 6500,
+  "official_splits": {
+    "train": 3900,
+    "val": 1300,
+    "test": 1300
+  },
+  "roles": {
+    "fit": 3900,
+    "cal": 650,
+    "dev": 650,
+    "test": 1300
+  },
+  "states": {
+    "fire_only": 3456,
+    "smoke_only": 1856,
+    "both": 1053,
+    "empty": 135
+  },
+  "boxes": {
+    "0": 4838,
+    "1": 3140
+  },
+  "nonpositive_boxes": 0,
+  "expected_counts_match": true,
+  "source_digest": "d909818ddaf13e56c6ecc26476f94337a56638c9c3cf1781245e26084fe98a2a",
+  "config_sha256": "a0844af5bf06c3d7478fdb51419aa9a9fd689b978cdea40e0f8cdea0b3c08478",
+  "annotation_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/home-fire/v1/annotations",
+  "image_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/home-fire/v1/extracted",
+  "image_root_present": false,
+  "images_checked": true,
+  "training_ready": false,
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "frozen_manifest_check": {
+    "matched": true,
+    "records": 6500,
+    "manifest_sha256": "e5734715bbe4391c494b8c94ae4fbfb735273f12c9f758702018419b45962f6a"
+  },
+  "missing_image_count": 6500,
+  "missing_examples": [
+    "homefire/train/train/images/train_1.jpg",
+    "homefire/train/train/images/train_10.jpg",
+    "homefire/train/train/images/train_100.jpg",
+    "homefire/train/train/images/train_1000.jpg",
+    "homefire/train/train/images/train_1001.jpg",
+    "homefire/train/train/images/train_1002.jpg",
+    "homefire/train/train/images/train_1003.jpg",
+    "homefire/train/train/images/train_1004.jpg",
+    "homefire/train/train/images/train_1005.jpg",
+    "homefire/train/train/images/train_1006.jpg"
+  ]
+}

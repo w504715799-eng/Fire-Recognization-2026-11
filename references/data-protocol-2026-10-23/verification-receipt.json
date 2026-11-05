@@ -1,0 +1,27 @@
+{
+  "version": "FIRE-MASTER-v1.9",
+  "user_principle_preserved": true,
+  "local_links_valid": true,
+  "derived_manifest_counts": {
+    "homefire": {
+      "test": 1300,
+      "fit": 3900,
+      "cal": 650,
+      "dev": 650
+    },
+    "fasdd-cv": {
+      "test": 15884,
+      "fit": 47660,
+      "cal": 15885,
+      "dev": 15885
+    }
+  },
+  "original_train_test_preserved": true,
+  "original_coco_hashes_unchanged": true,
+  "cv_anomalies": 141,
+  "cv_max_excursion_px": 1.0,
+  "cv_degenerate": 3,
+  "downloaded_large_files": false,
+  "model_imports_or_experiments": false,
+  "cross_dataset_deduplication": false
+}

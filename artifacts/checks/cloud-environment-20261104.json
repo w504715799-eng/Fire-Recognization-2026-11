@@ -1,0 +1,174 @@
+{
+  "hostname": "jupyter-7lrm3ongvydsr1db",
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "python_executable": "/opt/conda/bin/python",
+  "python_prefix": "/opt/conda",
+  "python_version": "3.12.13",
+  "cwd": "/root",
+  "packages": {
+    "torch": "2.12.1+cu130",
+    "torchvision": "0.27.1+cu130",
+    "torchaudio": null,
+    "ultralytics": null,
+    "transformers": null,
+    "accelerate": null,
+    "huggingface-hub": null,
+    "safetensors": null,
+    "numpy": "2.4.4",
+    "scipy": null,
+    "pandas": null,
+    "pillow": "12.2.0",
+    "pyarrow": null,
+    "pyyaml": "6.0.3",
+    "requests": "2.34.2",
+    "opencv-python": null,
+    "psutil": "7.2.2"
+  },
+  "conda_environments": {
+    "exit_code": 0,
+    "stdout": "{\n  \"envs\": [\n    \"/opt/conda\"\n  ],\n  \"envs_details\": {\n    \"/opt/conda\": {\n      \"name\": \"base\",\n      \"created\": null,\n      \"last_modified\": \"2026-07-08T11:55:28+00:00\",\n      \"active\": false,\n      \"base\": true,\n      \"frozen\": false,\n      \"writable\": true\n    }\n  }\n}",
+    "stderr": ""
+  },
+  "nvcc": {
+    "exit_code": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Wed_Aug_20_01:58:59_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.88\nBuild cuda_13.0.r13.0/compiler.36424714_0",
+    "stderr": ""
+  },
+  "gpu_before": {
+    "exit_code": 0,
+    "stdout": "index, name, uuid, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\n0, NVIDIA GeForce RTX 2080 Ti, GPU-fdacf107-8a36-ab9b-6c72-6a3387d02053, 580.178.04, 22528 MiB, 1 MiB, 0 %",
+    "stderr": ""
+  },
+  "compute_processes_before": {
+    "exit_code": 0,
+    "stdout": "gpu_uuid, pid, process_name, used_gpu_memory [MiB]",
+    "stderr": ""
+  },
+  "disk_mounts": {
+    "exit_code": 0,
+    "stdout": "Filesystem                                                        Type     Size  Used Avail Use% Mounted on\noverlay                                                           overlay   30G  3.7M   30G   1% /\ntmpfs                                                             tmpfs     64M     0   64M   0% /dev\n/dev/mapper/lvmdata-pvc--fa022d95--a994--45e1--9013--6a037de787f1 ext4      30G  3.7M   30G   1% /.rootfs\n/dev/sda3                                                         xfs      744G   74G  671G  10% /etc/hosts\n/dev/sdb1                                                         ext4     961G  265G  647G  30% /data/tini\n/dev/mapper/lvmdata-pvc--210b2b94--a81d--440d--ba97--4b695de84860 ext4      49G  2.1M   49G   1% /root/rivermind-data\ntmpfs                                                             tmpfs     16G     0   16G   0% /dev/shm\ntmpfs                                                             tmpfs     26G  6.6M   26G   1% /run/nvidia-persistenced/socket\ntmpfs                                                             tmpfs     58G   12K   58G   1% /run/secrets/kubernetes.io/serviceaccount\ntmpfs                                                             tmpfs    4.0K  4.0K     0 100% /run/nvidia-ctk-hook17f93773-fde1-438d-a358-ffcde9569094\ntmpfs                                                             tmpfs    126G     0  126G   0% /proc/acpi\ntmpfs                                                             tmpfs    126G     0  126G   0% /proc/scsi\ntmpfs                                                             tmpfs    126G     0  126G   0% /sys/firmware",
+    "stderr": ""
+  },
+  "directories": {
+    "/": {
+      "entries": [
+        ".dockerenv",
+        ".rootfs",
+        "NGC-DL-CONTAINER-LICENSE",
+        "bin",
+        "boot",
+        "cuda-keyring_1.1-1_all.deb",
+        "data",
+        "dev",
+        "etc",
+        "home",
+        "lib",
+        "lib32",
+        "lib64",
+        "libx32",
+        "media",
+        "mnt",
+        "opt",
+        "proc",
+        "root",
+        "run",
+        "sbin",
+        "srv",
+        "sys",
+        "tmp",
+        "usr",
+        "var",
+        "workspace"
+      ],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/root": {
+      "entries": [
+        ".bashrc",
+        ".cache",
+        ".config",
+        ".ipython",
+        ".jupyter",
+        ".local",
+        ".nv",
+        ".placeholder",
+        ".profile",
+        ".ssh",
+        "rivermind-data"
+      ],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/workspace": {
+      "entries": [],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/data": {
+      "entries": [
+        "tini"
+      ],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/mnt": {
+      "entries": [],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/home": {
+      "entries": [],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    },
+    "/opt/conda/envs": {
+      "entries": [],
+      "free_bytes": 31505833984,
+      "total_bytes": 31526391808
+    }
+  },
+  "torch_check": {
+    "version": "2.12.1+cu130",
+    "compiled_cuda": "13.0",
+    "cuda_available": true,
+    "device_count": 1,
+    "cudnn_version": 92000,
+    "cuda_arch_list": [
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "device_name": "NVIDIA GeForce RTX 2080 Ti",
+    "total_memory_bytes": 23262527488,
+    "compute_capability": [
+      7,
+      5
+    ],
+    "tiny_cuda_test": [
+      3,
+      5,
+      7
+    ],
+    "tiny_cuda_test_passed": true,
+    "peak_allocated_bytes": 1536
+  },
+  "torchvision_check": {
+    "version": "0.27.1+cu130",
+    "cpu_nms_result": [
+      0
+    ],
+    "cpu_nms_passed": true
+  },
+  "actions": {
+    "packages_installed": false,
+    "weights_downloaded_or_loaded": false,
+    "training_started": false,
+    "files_written_on_server_by_audit": false,
+    "only_tiny_gpu_arithmetic": true
+  },
+  "checked_at_utc": "2026-11-04T09:32:00Z"
+}

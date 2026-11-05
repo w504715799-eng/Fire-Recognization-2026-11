@@ -1,0 +1,51 @@
+[
+  {
+    "file": "dfire-readme.md",
+    "url": "https://raw.githubusercontent.com/gaia-solutions-on-demand/DFireDataset/master/README.md",
+    "status": 200,
+    "bytes": 4484,
+    "sha256": "3a2feee38048459341598016fda90f0009c35a057c50af7925650e4031011bdf"
+  },
+  {
+    "file": "homefire-repo.json",
+    "url": "https://api.github.com/repos/PengBo0/Home-fire-dataset",
+    "status": 200,
+    "bytes": 5396,
+    "sha256": "f200117334676d19d02d98e6b3dfce4d5dcc70a6809cc33e77da1ddff1cd670b"
+  },
+  {
+    "file": "homefire-release.json",
+    "url": "https://api.github.com/repos/PengBo0/Home-fire-dataset/releases/tags/v1.0.0",
+    "status": 200,
+    "bytes": 8111,
+    "sha256": "68c3874523c76ff12f348cef54829e7543d2db68a6bd863ecd1c84a2dc98a902"
+  },
+  {
+    "file": "fasdd-official.html",
+    "url": "https://www.scidb.cn/en/detail?dataSetId=ce9c9400b44148e1b0a749f5c3eb0bda",
+    "status": 200,
+    "bytes": 812758,
+    "sha256": "517259979366ae6d54e42deafdfd44e9e569f857e22c96a5961e2442d4f583a0"
+  },
+  {
+    "file": "fasdd-mirror-tree.json",
+    "url": "https://huggingface.co/api/datasets/mountainmoon2000/wildfire_mm/tree/main?recursive=false",
+    "status": 200,
+    "bytes": 1699,
+    "sha256": "3f049cfb0e790120dcb864a0db7d382ef1297a987792fa65a79cb60f91f11901"
+  },
+  {
+    "file": "qwen-model-metadata.json",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3.5-0.8B",
+    "status": 200,
+    "bytes": 20756,
+    "sha256": "b78a7e822ce6eda8cd1043c2e12a0d0cb068edd1da2c2a9065482a41145531d9"
+  },
+  {
+    "file": "homefire-readme.md",
+    "url": "https://raw.githubusercontent.com/PengBo0/Home-fire-dataset/main/README.md",
+    "status": 200,
+    "bytes": 3122,
+    "sha256": "d7275af3034a86e35ff14f57425d94ab706d921a2da6210e77a0a83aa4a0cc65"
+  }
+]

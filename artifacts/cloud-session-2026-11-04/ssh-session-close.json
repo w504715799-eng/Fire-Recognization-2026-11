@@ -1,0 +1,22 @@
+[
+  {
+    "socket": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-data2.sock",
+    "returncode": 0,
+    "message": "Exit request sent."
+  },
+  {
+    "socket": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-data3.sock",
+    "returncode": 0,
+    "message": "Exit request sent."
+  },
+  {
+    "socket": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-data4.sock",
+    "returncode": 0,
+    "message": "Exit request sent."
+  },
+  {
+    "socket": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-direct.sock",
+    "returncode": 0,
+    "message": "Exit request sent."
+  }
+]

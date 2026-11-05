@@ -1,0 +1,513 @@
+[
+  {
+    "image": "Indoor Fire Smoke/valid/images/5test3394_jpg.rf.a40408229e7f4afc604307b0874e4be6.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/2239_jpg.rf.2724c11d25959796fde97bddf81a446a.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/frame_0000207_png.rf.da7897b122ff5e2b106d98ac7e1b4d05.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/img_321_jpg.rf.6527a1d044bd8b76947c6a0a177acd87.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/test20898_jpg.rf.22f5e450a03c76b69e8a090f2de96f69.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/test20964_jpg.rf.e8e89227c8aa0f9a32f87a31b0874f16.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/frame_0000861_png.rf.477ddc7b9b819ca24f96e39a372057b0.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/test20898_jpg.rf.61d9dffdeca9c4ce340bb7608d8bdba4.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/part2-trimmed_mp4-87_jpg.rf.52ac57b5d69cd519adb34d284d59f77f.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/166140_jpg.rf.e9108b4b953d7f70bb36f68e0e3eb87b.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/2239_jpg.rf.7c2e48210eab99b6529181e6f275da2a.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/valid/images/1725_jpg.rf.c1919dfafbe25fc1f90faf90df0d0442.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/asdsd_jpg.rf.d4af9e7cf5d6acbdc3527dad1e1d5f5b.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/Fram4702_jpg.rf.13671f9199511224dd54a6d8e4f8c923.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/11015_jpg.rf.ebcdd9d4e1d1f98e945431a21f1ccc30.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/Smoke_img20_jpg.rf.0d49945b454ec3228afaf62fcd668812.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/frame_0001183_png.rf.796563b032ecddbbe2f2bfeed5a0083c.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/a_0161_jpg.rf.c9c17784af0801503f12cdecfc1a8871.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/mergedfire2400_jpg.rf.ae229ac8a9abe4495653858917c5bd23.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/test/images/frame_079_jpg.rf.c0ab37aa11eea8598dcf87a1291c44f0.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/test20958_jpg.rf.dbf6120a20781d80ee277ff8e998fb01.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_362_jpg.rf.03417de4919da51ad0f76e44d6dd156d.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/5-Valveglandleak_png.rf.415f5149dec37878298ff11818723b9b.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/000714_jpg.rf.f0306f57cd281ac465916167d8918e0b.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/000697_jpg.rf.ec56de907717b66b3d9977601790e81f.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/data_0000577_png.rf.73dd3f4090fff6990d3aa6181fb97d7d.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000812_png.rf.06bcd025407c4b162a52e059ecdf9398.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_931_jpg.rf.ab86d29508e98d381fffb2b687de0a3f.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000869_png.rf.ec906acbec663af3cb04ee54fcd5ee0d.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_330_jpg.rf.a527eef20226fc15db23a43f5f156a3f.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000959_png.rf.4b844b3b7cb7eb6cbc3e62e75d45f9b5.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/part1_mp4-79_jpg.rf.7bc00fbaa45c7ee1c62800e6d71c2412.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001175_png.rf.35d650bbbb8df39410bf80b49b7ae7bd.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/777_harsh_jpg.rf.324f8cc57b44f85793336c55ed807f43.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000218_png.rf.95fadde638059feb65314a354a4b471a.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_07_jpg.rf.5e8f3b8bac533375a0103e6de397f4da.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/test20881_jpg.rf.1ac8a331882178565cd781b8552d5286.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/ClosingYourBedroomDoorCouldSaveYourLife-KDKA2911_png_jpg.rf.8d8e06aed8c295f0a5f0859818869981.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000856_png.rf.1635cedcdb5e3ed6936667c4d54b8716.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/fire_roi11_jpg.rf.cfc9c7f97a63fc957d29d1faaff047d1.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/1538_jpg.rf.72bd0887348937b836ebcfbbf54defe6.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/1537_jpg.rf.51f1e90b0d4f3d7517f474696f55c4d5.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/8test3573_jpg.rf.e1cbd7236c28c80dc9a1c63913c291e5.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/part1_mp4-71_jpg.rf.fa1f6b339d8757cfb21e94431d28df04.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/280aos_mp4-0107_jpg.rf.ca55fdf0159296b6d0c2395fc9a78b72.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_1030_jpg.rf.e4c2df05aaa9b9e5c2624f80958c10cd.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000095_png.rf.18bbcfe45fbc8758df530ce76b0d526e.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001060_png.rf.f2eab0a7a3214e467e0c4a9321bab630.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/Inside-a-burning-house_135_jpg.rf.0236e4664acd2d59324c87e24240b3f0.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_360_jpg.rf.76b89d9f62cf4865aa58ecf438cbdef9.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/8test8488_jpg.rf.bc531bdc3299e9f6e91cab6cbefb919c.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000480_png.rf.c6a5e1b23fb715b16cd6d75f8fa3188d.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000651_png.rf.7a5260280b60c7b510a1baa82788fd26.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000437_png.rf.4279672957d5c3df3ef70a0172273e5b.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_317_jpg.rf.44284c423fa5d92dc5377aba9ed40b90.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/10_jpeg_jpg.rf.d5e85cf6e2d7fccbf928cd794987e6fa.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001040_png.rf.634ff57a83194861ed11f887cfa10650.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/part8b_mp4-48_jpg.rf.1caafd0998cfb9696c20fbdba711899f.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/classk10_mp4-175_jpg.rf.4c6b1a4cb2b4f2aa2da0ec181e8c307f.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001131_png.rf.626f0e8a87ee5c6addd8e4c3c253cbd7.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_312_jpg.rf.c236695b214089515750a5d1a12341f2.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000268_png.rf.8f7bcbb70199799ef339f436fff83b0d.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_327_jpg.rf.738b500b6aada362dd9053025b2adbd5.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/data_0000412_png.rf.516a6c3eed8138e800766857f1e386f9.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/fire04630_jpg.rf.94350065605465036a66a458cc182164.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/1_jpg.rf.c28ece532832ba8943b3ef67c9e539da.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/mergedfire2490_jpg.rf.c212deffae72937e05b0356e9f8a45ad.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/000023_jpg.rf.6c4a4869aecf6e7e97f9824d67d7543d.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_942_jpg.rf.dc91b78d420693151767aa7fd0256fe6.jpg",
+    "issues": [
+      "line_2:box_crosses_border",
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/Smoke_img17_jpg.rf.b86bd5eb263b9a80230e60d0929b235e.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/8test4087_jpg.rf.581891d9972c05781328da4d0fbc67aa.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/Smoke_img84_jpg.rf.d66fe9da8e7daa8289d426e411226dd3.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001179_png.rf.2568aac7c4e449cc2779210b95ab6fa2.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/img_361_jpg.rf.084a70b40710ea01f5ae0036b4ae09cf.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000582_png.rf.f22f1a65527f931301c529995a6403c3.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0001042_png.rf.a62bb5ba2fcf50e8fa3fe33532728f5e.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000459_png.rf.675f169093207d0d031dac792de823f8.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0002024_png.rf.96b1b9af2f6d66d88ce2143d03f8ed6c.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000439_png.rf.024bc4d0100b68d17d77927f0fe9ab94.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/test21019_jpg.rf.b2fc116a58428a1cf7a74d58ca97f327.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/vid34_mp4-0014_jpg.rf.cb5c50c030f88270ea01ce13b0d9a3c7.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/280aos_mp4-0100_jpg.rf.2ba458b8babf89111e6ea8d42040143f.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/7test1914_jpg.rf.2ec6d34671c8f68840f20a2db0e9c689.jpg",
+    "issues": [
+      "line_3:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/7test1930_jpg.rf.122d31e2e5f01c9b1b97ac30ccc52310.jpg",
+    "issues": [
+      "line_2:box_crosses_border"
+    ]
+  },
+  {
+    "image": "Indoor Fire Smoke/train/images/frame_0000702_png.rf.ea26c7274dbc46177b04497f98db6435.jpg",
+    "issues": [
+      "line_1:box_crosses_border"
+    ]
+  }
+]

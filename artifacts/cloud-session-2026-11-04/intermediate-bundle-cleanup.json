@@ -1,0 +1,14 @@
+[
+  {
+    "path": "artifacts/staging/fire-r2-code.zip",
+    "bytes": 49533
+  },
+  {
+    "path": "artifacts/staging/fire-r2-cloud-20261104.zip",
+    "bytes": 1117766
+  },
+  {
+    "path": "artifacts/staging/fire-r2-cloud-ready.zip",
+    "bytes": 1118222
+  }
+]

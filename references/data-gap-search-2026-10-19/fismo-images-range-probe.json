@@ -1,0 +1,37 @@
+{
+  "url": "https://drive.usercontent.google.com/download?id=1YJ4P6EGXN4zvXd96YKlPOJTryK4M4tBj&export=download",
+  "status": 200,
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": "2464"
+  },
+  "text": "Google Drive - Virus scan warning Google Drive can't scan this file for viruses. FiSmo-Images.zip (2.4G) is too large for Google to scan for viruses. Would you still like to download this file?",
+  "forms": [
+    {
+      "action": "https://drive.usercontent.google.com/download",
+      "method": "get",
+      "inputs": [
+        [
+          null,
+          "Download anyway"
+        ],
+        [
+          "id",
+          "1YJ4P6EGXN4zvXd96YKlPOJTryK4M4tBj"
+        ],
+        [
+          "export",
+          "download"
+        ],
+        [
+          "confirm",
+          "t"
+        ],
+        [
+          "uuid",
+          "c60bf371-0cd7-43b6-ac69-2c900e12335b"
+        ]
+      ]
+    }
+  ]
+}

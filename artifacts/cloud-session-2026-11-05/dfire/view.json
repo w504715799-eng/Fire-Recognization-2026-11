@@ -1,0 +1,55 @@
+{
+  "dataset": "dfire",
+  "version": "kaggle-21527-sha65d81b60",
+  "images": 21527,
+  "official_splits": {
+    "train": 14122,
+    "val": 3099,
+    "test": 4306
+  },
+  "roles": {
+    "fit": 14122,
+    "dev": 1549,
+    "cal": 1550,
+    "test": 4306
+  },
+  "states": {
+    "empty": 9838,
+    "fire_only": 1164,
+    "smoke_only": 5867,
+    "both": 4658
+  },
+  "boxes": {
+    "0": 14692,
+    "1": 11865
+  },
+  "nonpositive_boxes": 18,
+  "expected_counts_match": true,
+  "source_digest": "24e0e3b42dfeaced3e9e26202c18af626ee97e64d600e896fb15b6968a2c861e",
+  "config_sha256": "3db43e2b833aaaa532b9af4ee0af9e4bfa5e30b757994e3737a11f1b4f878662",
+  "annotation_root": "/root/rivermind-data/shared/datasets/dfire/kaggle-21527-sha65d81b60/extracted/data",
+  "image_root": "/root/rivermind-data/shared/datasets/dfire/kaggle-21527-sha65d81b60/extracted/data",
+  "image_root_present": true,
+  "images_checked": true,
+  "training_ready": true,
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "frozen_manifest_check": {
+    "matched": true,
+    "records": 21527,
+    "manifest_sha256": "2b19ceaf49efc1e3b4c873588572355151f4589d084f173ecc651f0a4b3e0daf"
+  },
+  "missing_image_count": 0,
+  "missing_examples": [],
+  "view_root": "/root/rivermind-data/FIRE_R2/artifacts/data/dfire-kaggle-21527-sha65d81b60",
+  "view_manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "all_images_decoded": true,
+  "role_list_sha256": {
+    "fit": "5416ae24c8c0bc1f2ce030011bd9dfdf343cccaed93eba22ebe74a4f3fdcf4f4",
+    "dev": "d8fcca4347fab2fbc69e626f12e5198a52814f5fa364f4125bedf3cf4d0f02ef",
+    "cal": "439cb242963b8e4b2b0424b42c7979a27b986186fdb0b0cc737f515cb3c16d30",
+    "test": "790dbab4dc1da68cceb66e9351e567f741da78a1aedc0c3e7b5bfeb40a254299"
+  },
+  "training_yaml_sha256": "1d518d6045ab5b497093a44a8f860341dd72501cd3379f9cb2e086651fd348ad",
+  "export_policy": "Derived YOLO view; no clipping, no dropping; original metadata retained in manifest"
+}

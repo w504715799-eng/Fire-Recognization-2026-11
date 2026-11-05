@@ -1,0 +1,13 @@
+{
+  "experiment": "homefire_B_native_seed17_full_20261105",
+  "selection": "best fire dev AP50:95",
+  "source_checkpoint_sha256": "208015a69504d94bdf029ce6ca0d032041f128cd29b5fb49ed8d989523e9dd36",
+  "source_checkpoint_bytes": 100254213,
+  "final_model_sha256": "9923b770c51f791482e5ae8bcd22a31fa888d368896d0c7c02edbccbf6496844",
+  "final_model_bytes": 20338477,
+  "cloud_file": "/root/rivermind-data/FIRE_R2/artifacts/final-models/homefire_B_native_seed17_full_20261105/best_fire_deploy.pt",
+  "optimizer_removed": true,
+  "public_release_uploaded": false,
+  "local_weight_downloaded": false,
+  "publication_note": "GitHub connector has repository write access but no binary release-upload tool; cloud GitHub authentication is not configured. Metrics and provenance are published; model binary remains on cloud."
+}

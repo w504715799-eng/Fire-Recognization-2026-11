@@ -1,0 +1,52 @@
+{
+  "dataset": "fasdd-cv",
+  "phase": "annotation_check_while_images_download",
+  "splits": {
+    "train": {
+      "images": 47660,
+      "annotations": 66582,
+      "states": {
+        "both": 10076,
+        "fire_only": 6276,
+        "empty": 19600,
+        "smoke_only": 11708
+      },
+      "categories": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "sha256": "f7c737c76dcabd2c74f74a9c8abc1af58f25168d5f94b4496661e51f063338e2"
+    },
+    "test": {
+      "images": 15884,
+      "annotations": 17242,
+      "states": {
+        "both": 3358,
+        "fire_only": 2091,
+        "empty": 6533,
+        "smoke_only": 3902
+      },
+      "categories": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "sha256": "9cc33e56e0fc71d019521ed6b4af7a2813a3478c61b1cfab673143772aaffb43"
+    },
+    "val": {
+      "images": 31770,
+      "annotations": 42553,
+      "states": {
+        "both": 6717,
+        "fire_only": 4183,
+        "empty": 13066,
+        "smoke_only": 7804
+      },
+      "categories": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "sha256": "8f2863f0b5b2ed4277029e07b8cfdee0272228d2b4e03599e28768faaf942353"
+    }
+  },
+  "archive_not_yet_verified": true
+}

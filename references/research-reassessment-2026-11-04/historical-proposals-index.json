@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-04",
+  "reason": "User requested a single final version; loose historical proposal bodies and entry stubs consolidated",
+  "active_proposal": "火焰识别研究方案.md",
+  "archive": "references/research-reassessment-2026-11-04/historical-proposals.zip",
+  "archive_sha256": "b4dfab054a308ffce697c368eb6b4c0dbcc5a220c6e397decebb729e2e7ab27b",
+  "files": [
+    {
+      "original_path": "ideas/基于高分辨率重建的火焰识别研究方案.md",
+      "bytes": 444,
+      "sha256": "14236ed260da076031a0c4b17bac01a0696321d7aa16fae29e1414495862221e"
+    },
+    {
+      "original_path": "ideas/火焰与烟的关联或融合关系识别研究方案.md",
+      "bytes": 447,
+      "sha256": "89ed205cb4af7dfd870eb99f7f78083647147e7a2bee375660848618be93e191"
+    },
+    {
+      "original_path": "ideas/火焰高分辨率按需检测研究方案.md",
+      "bytes": 435,
+      "sha256": "cc8fe2fb1cf8e2d875598b5cd7e20693d6e40dddf1172cc0940402ea72e97e19"
+    },
+    {
+      "original_path": "ideas/面向小火焰与困难负例的火烟关系协同融合研究方案.md",
+      "bytes": 462,
+      "sha256": "adb87583d83fb103c0584caad34ffa999b6638f320021cd8e9bc03ecabdec633"
+    },
+    {
+      "original_path": "ideas/面向小火焰与困难负例的竞争感知可拒绝关系检测研究方案.md",
+      "bytes": 471,
+      "sha256": "cae6a63d19582612194cd1d7e565ebeb60f329159a22964ba532941a7f0687da"
+    },
+    {
+      "original_path": "ideas/面向跨场景小火焰检测的局部细节与选择性上下文研究方案.md",
+      "bytes": 471,
+      "sha256": "3d5dd75c6a32a6e3b6f49f1c56720517898b1d964682ed58fcdb4aa10dce453d"
+    },
+    {
+      "original_path": "references/data-gap-search-2026-10-19/FSRF-v2.2-before-data-gap-search.md",
+      "bytes": 49108,
+      "sha256": "c827ec092aa7058ee6fc5878b52d6b42038a18d5725fd8694cf311dd291ea66b"
+    },
+    {
+      "original_path": "references/dataset-verification-2026-10-16/FSRF-v2-before-dataset-audit.md",
+      "bytes": 37862,
+      "sha256": "3a7da716c7994bcf9a4ce60f42f255916148b98901b8f637047a8d2b0e970be8"
+    },
+    {
+      "original_path": "references/direct-data-search-2026-10-19/FSRF-v2.3-before-direct-search.md",
+      "bytes": 55627,
+      "sha256": "d253805103f16c9e9e49f0df6c634df0ad0e3724cbb8ded6505412b1a6d4f65d"
+    },
+    {
+      "original_path": "references/fire-smoke-fusion-2026-10-15/CRFD-proposal-v1-before-fusion.md",
+      "bytes": 29923,
+      "sha256": "c9ae9b195b38550336945afeac674d38a80161b2d725e19e0f449548cf65dab2"
+    },
+    {
+      "original_path": "references/fire-smoke-selection-2026-10-15/proposal-v1-before-expected-gain-selection.md",
+      "bytes": 55426,
+      "sha256": "92473469c91023e22e1df7ad2acde78b879db4f721b77e180a1d9d5ef17ba426"
+    },
+    {
+      "original_path": "references/jag-design-reference-2026-10-19/FSRF-v2.1-before-jag-reference.md",
+      "bytes": 41031,
+      "sha256": "60ebc22f3377250a0420982c35d006446bf08d737a0ec1ee0114f77b5bc83f77"
+    },
+    {
+      "original_path": "references/new-candidates-2026-10-19/FSRF-v2.4-before-new-candidates.md",
+      "bytes": 61463,
+      "sha256": "4019a1715bde754275b330cf7f390804ff56cb82d6ea9966fa115554247ba999"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/基于高分辨率重建的火焰识别研究方案.md",
+      "bytes": 55750,
+      "sha256": "1c6c9c40f1d586e5aa40eb83e256ea267cc9590c0581c3453c68c44ce6bcb6d9"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/火焰与烟的关联或融合关系识别研究方案.md",
+      "bytes": 50875,
+      "sha256": "5ac550d175fb754859354e7d932124c65b787be1fbaaa0782db1d9fa1c3368c7"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/火焰高分辨率按需检测研究方案.md",
+      "bytes": 50270,
+      "sha256": "1b761cdcc9f114a76e3de4272ce38ddb8cf2d095512a16701714b95e2991ef30"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/面向小火焰与困难负例的火烟关系协同融合研究方案.md",
+      "bytes": 86923,
+      "sha256": "f1ccf1447ffc76b4f5bc730a3e830fa5c083ca06ee93cc18fd0a74dfa880f11f"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/面向小火焰与困难负例的竞争感知可拒绝关系检测研究方案.md",
+      "bytes": 652,
+      "sha256": "ce3d0c17aaa8bae9bac6a6ad8ac6afd21acbb02847ba434113e57b0ef8f0f72a"
+    },
+    {
+      "original_path": "references/overall-plan-2026-10-22/legacy-plans/面向跨场景小火焰检测的局部细节与选择性上下文研究方案.md",
+      "bytes": 30630,
+      "sha256": "39dcf3bb2c42892836cff6ae22f02b7244a269d14d95df3c4ed41282c0b04adc"
+    },
+    {
+      "original_path": "references/research-reassessment-2026-11-04/FIRE-MASTER-v1.10-before-reassessment.md",
+      "bytes": 81775,
+      "sha256": "dec24d5435e6907691da4b1e095a265adb7c57584af09fe185e52cc93c4c212e"
+    },
+    {
+      "original_path": "references/route-reassessment-2026-10-22/FSRF-v2.6-before-reformulation.md",
+      "bytes": 86401,
+      "sha256": "08bfdb1e6a32c5eef6c8b7bec2a96309237f3154655907bb2be9dbb2581cc552"
+    },
+    {
+      "original_path": "references/universat-design-2026-10-22/FSRF-v2.5-before-local-detail.md",
+      "bytes": 67685,
+      "sha256": "eb5d91d1185e82ee9448f00bfc86629f25cfd52bf28bee43001355e4e17660a3"
+    },
+    {
+      "original_path": "references/universat-refinement-2026-10-22/proposal-v2-before-detail-refinement.md",
+      "bytes": 39501,
+      "sha256": "19891449e79dc159c6496633951f1f9d5786689bfaea02f2f014c54ccdb4978f"
+    }
+  ],
+  "archive_verified_before_removing_loose_files": true,
+  "reference_link_updates": [
+    "火焰识别研究方案.md",
+    "references/data-gap-search-2026-10-19/纯火保护与低误报数据缺口核验报告.md",
+    "references/direct-data-search-2026-10-19/免注册公开原标注数据续查报告.md",
+    "references/new-candidates-2026-10-19/新增候选与停止重复检索核验报告.md"
+  ],
+  "dataset_files_modified": false
+}

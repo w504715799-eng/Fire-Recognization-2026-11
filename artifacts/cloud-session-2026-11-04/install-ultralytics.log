@@ -1,0 +1,19 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Processing ./rivermind-data/FIRE_R1/tmp/ultralytics-2e241d0.zip
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ultralytics
+  Building wheel for ultralytics (pyproject.toml): started
+  Building wheel for ultralytics (pyproject.toml): finished with status 'done'
+  Created wheel for ultralytics: filename=ultralytics-8.4.183-py3-none-any.whl size=1428712 sha256=f1d0775eccd6cb8bab7b1c5499705abce422cfc0281846b3703c686ed6fcbe4c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-jq33itm2/wheels/92/61/55/7c631a94f6574b612cd8fa512b7179aa5b5b841a034ce6a973
+Successfully built ultralytics
+Installing collected packages: ultralytics
+Successfully installed ultralytics-8.4.183
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

@@ -1,0 +1,10 @@
+{
+  "local_removed_path": "/Users/edwiin/Desktop/code-workspace/FIRE_R1/tmp/cloud-transfer/dfire-kaggle-65d81b60.zip",
+  "removed_logical_bytes": 3049605157,
+  "removed_file_allocated_bytes": 3053457408,
+  "source_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83",
+  "remote_verified": true,
+  "remote_all_images_decoded": 21527,
+  "observed_volume_available_change": 3053752320,
+  "note": "Volume delta includes background/filesystem effects. Cloud original archive and images retained."
+}

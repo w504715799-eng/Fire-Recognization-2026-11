@@ -1,0 +1,11 @@
+{
+  "compressed_bytes": 1821136811,
+  "uncompressed_bytes": 1826959197,
+  "entries": 13000,
+  "extensions": {
+    ".jpg": 6500,
+    ".txt": 6500
+  },
+  "full_archive_downloaded": false,
+  "whole_checksum_verified": false
+}

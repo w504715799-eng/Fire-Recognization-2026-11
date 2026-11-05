@@ -1,0 +1,20 @@
+{
+  "source": "https://github.com/DeepQuestAI/Fire-Smoke-Dataset/releases/download/v1/FIRE-SMOKE-DATASET.zip",
+  "compressed_bytes": 320963592,
+  "uncompressed_bytes": 362882301,
+  "entries": 3008,
+  "image_count": 3000,
+  "class_split_counts": {
+    "FIRE-SMOKE-DATASET/Test/Fire": 100,
+    "FIRE-SMOKE-DATASET/Test/Neutral": 100,
+    "FIRE-SMOKE-DATASET/Test/Smoke": 100,
+    "FIRE-SMOKE-DATASET/Train/Fire": 900,
+    "FIRE-SMOKE-DATASET/Train/Neutral": 900,
+    "FIRE-SMOKE-DATASET/Train/Smoke": 900
+  },
+  "extensions": {
+    "": 8,
+    ".jpg": 3000
+  },
+  "range_bytes": 270684
+}

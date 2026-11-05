@@ -1,0 +1,23 @@
+{
+  "cloud_source": "https://china.scidb.cn/download",
+  "cv_file_id": "85bad3972ed60e0a20a790032c0d85fb",
+  "uav_file_id": "9456106d26c5fc6b74143c3707115d39",
+  "expected_compressed_total": 27214266188,
+  "expected_expanded_total": 27881299276,
+  "strategy": "bounded ordered parallel ranges into streaming extraction; whole-stream MD5 and per-file CRC; no duplicate compressed archive on disk",
+  "local_probe": {
+    "bytes": 8388608,
+    "speed_Bps": 1104335
+  },
+  "cloud_probe": {
+    "bytes": 8388608,
+    "speed_Bps": 571730
+  },
+  "new_cloud_dependencies": {
+    "stream-unzip": "0.0.101",
+    "stream-inflate": "0.0.43",
+    "pycryptodome": "4.3.0"
+  },
+  "small_archive_self_test": "passed",
+  "model_weights_downloaded_this_step": false
+}

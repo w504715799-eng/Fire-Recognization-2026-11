@@ -1,0 +1,88 @@
+{
+  "dataset": "homefire",
+  "version": "v1",
+  "images": 6500,
+  "official_splits": {
+    "train": 3900,
+    "val": 1300,
+    "test": 1300
+  },
+  "expanded_bytes": 1826959197,
+  "archives": [
+    {
+      "split": "train",
+      "images": 3900,
+      "archive_sha256": "bf7135b0e3caf0181b5e74cb34a717e4c1b79f90ad8d62a39af04b86e8a9a36c"
+    },
+    {
+      "split": "val",
+      "images": 1300,
+      "archive_sha256": "ffe0444340b3baab129e24b75f1a67ec489f072be85ea7b1c2cc4c5ce7f6ef63"
+    },
+    {
+      "split": "test",
+      "images": 1300,
+      "archive_sha256": "fdc734103a2606da901d05d514623f2a874a01aee9f0cb89b5b26279017607b6"
+    }
+  ],
+  "image_root": "/root/rivermind-data/shared/datasets/home-fire/v1/extracted",
+  "annotation_root": "/root/rivermind-data/shared/datasets/home-fire/v1/annotations",
+  "finished_at": "2026-11-04T10:19:01.646185+00:00",
+  "originals_modified": false,
+  "deduplicated": false
+}
+{
+  "dataset": "homefire",
+  "version": "v1",
+  "images": 6500,
+  "official_splits": {
+    "train": 3900,
+    "val": 1300,
+    "test": 1300
+  },
+  "roles": {
+    "fit": 3900,
+    "cal": 650,
+    "dev": 650,
+    "test": 1300
+  },
+  "states": {
+    "fire_only": 3456,
+    "smoke_only": 1856,
+    "both": 1053,
+    "empty": 135
+  },
+  "boxes": {
+    "0": 4838,
+    "1": 3140
+  },
+  "nonpositive_boxes": 0,
+  "expected_counts_match": true,
+  "source_digest": "d909818ddaf13e56c6ecc26476f94337a56638c9c3cf1781245e26084fe98a2a",
+  "config_sha256": "3db43e2b833aaaa532b9af4ee0af9e4bfa5e30b757994e3737a11f1b4f878662",
+  "annotation_root": "/root/rivermind-data/shared/datasets/home-fire/v1/annotations",
+  "image_root": "/root/rivermind-data/shared/datasets/home-fire/v1/extracted",
+  "image_root_present": true,
+  "images_checked": true,
+  "training_ready": true,
+  "original_labels_modified": false,
+  "cross_dataset_deduplication": false,
+  "frozen_manifest_check": {
+    "matched": true,
+    "records": 6500,
+    "manifest_sha256": "e5734715bbe4391c494b8c94ae4fbfb735273f12c9f758702018419b45962f6a"
+  },
+  "missing_image_count": 0,
+  "missing_examples": [],
+  "view_root": "/root/rivermind-data/FIRE_R2/artifacts/data/homefire-v1",
+  "view_manifest_sha256": "4d64de97551b15097f091fd63aec71602f6700b1447427cfa9ccd522852c15fd",
+  "all_images_decoded": true,
+  "role_list_sha256": {
+    "fit": "bdc21dc30d1114362736238ba7a2971ad3e319d810728faf81105e29c1d6bf50",
+    "cal": "3de57d21f54da77a93a675269cfacf9fe02010fe765932a753227eb2a9bad593",
+    "dev": "a1a63d586a1496066cb053b7c9453b325f0fd684b65599426f9bbbc513b85201",
+    "test": "9ce74194a3db2c6ca2a16106f1ccd691368eeeab144bb3e9766d565f774414fb"
+  },
+  "training_yaml_sha256": "123993bf678ec182713914f22caee981e476bb3117ba044bf00278b94d844d96",
+  "export_policy": "Derived YOLO view; no clipping, no dropping; original metadata retained in manifest"
+}

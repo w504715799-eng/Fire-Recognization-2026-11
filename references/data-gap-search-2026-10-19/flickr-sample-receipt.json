@@ -1,0 +1,246 @@
+{
+  "images": [
+    {
+      "filename": "5313770487.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 331005,
+      "sha256": "ec41a98737ddcf6925dbfc1d462d4221bcbd252ba0004678daa35cd0a84789f4"
+    },
+    {
+      "filename": "5616605109.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        685
+      ],
+      "bytes": 346580,
+      "sha256": "abcd423aeb276c2c1fcc0cdf169854f25acb108c2827de3ce93f58c659e29e92"
+    },
+    {
+      "filename": "5706979402.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        685
+      ],
+      "bytes": 284641,
+      "sha256": "89e5b123165ad5177fe5be289f52bb829f66a1b32e0251fdfdfb8804d78abc73"
+    },
+    {
+      "filename": "2854582683.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        681
+      ],
+      "bytes": 472303,
+      "sha256": "54b002b55e1c960b0d2daf44572f2f0fb1618c2223b95d2530bb9ea5787a93c5"
+    },
+    {
+      "filename": "315791460.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 401093,
+      "sha256": "2acd84bcd92c505059be1d5040400d728efa4e0e35662a9816e6003610ffa5c3"
+    },
+    {
+      "filename": "8636982127.jpg",
+      "raw_state": "10",
+      "dimensions": [
+        1024,
+        678
+      ],
+      "bytes": 275100,
+      "sha256": "6ad0c2c7453672c76c7a6feab8453a0afed1784570c7c03956a5f854dbce9169"
+    },
+    {
+      "filename": "2576064384.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 379227,
+      "sha256": "fd22759c8c4e12f007a0a8032c711f7183be73753dafc9f4b49a2772c00901a6"
+    },
+    {
+      "filename": "3300292342.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        683,
+        1024
+      ],
+      "bytes": 220822,
+      "sha256": "8ad826f86bb9d380003e42f0dfcb461171cd0742667001809795a8b2b3d8ffe0"
+    },
+    {
+      "filename": "519238053.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 378035,
+      "sha256": "72557111524242aa50375647bf3ca763bcfe9bb3ea0cc13e69cc107582c64cc9"
+    },
+    {
+      "filename": "8153243502.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        1024,
+        692
+      ],
+      "bytes": 537592,
+      "sha256": "99cc348e8043fd8e3037bb08334eaa7e0b63a32dc536205e58a82baad0aef08b"
+    },
+    {
+      "filename": "8041310576.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        477,
+        720
+      ],
+      "bytes": 202158,
+      "sha256": "1bc305779a3b4e9b92132e54a51b71302fdc7f871e63c8ebf89ffce0b3755f47"
+    },
+    {
+      "filename": "1722872592.jpg",
+      "raw_state": "01",
+      "dimensions": [
+        1024,
+        816
+      ],
+      "bytes": 672671,
+      "sha256": "4fa147765b57fff24532990a59f6de82d1a25bc523f6e11face4dc1cc6054687"
+    },
+    {
+      "filename": "184825608.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 376249,
+      "sha256": "10e6a80ab44c64aee7a682bc83c83112c17d01f130726a24fd3a7aad6b07b72f"
+    },
+    {
+      "filename": "3266507563.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "bytes": 384067,
+      "sha256": "fd64d6332ed09add51c19639e162ab8f565289124bbb57252f72319c3bb57f48"
+    },
+    {
+      "filename": "4906414122.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 422866,
+      "sha256": "1e2bbf2a871784c41a3e2cf453b0d3b83e59162a6b870780bcb898f749393aeb"
+    },
+    {
+      "filename": "4777451119.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        1024,
+        681
+      ],
+      "bytes": 209966,
+      "sha256": "d44565dc75e8dc96d8a18f22aadacc265c1ec41e569ee4a00adfdc4f998a5d5b"
+    },
+    {
+      "filename": "13983451052.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        1024,
+        633
+      ],
+      "bytes": 223838,
+      "sha256": "0c58aa746282780d24b142d160869a0d9dd51191f08fcf323820d873326e5c5d"
+    },
+    {
+      "filename": "8457402061.jpg",
+      "raw_state": "11",
+      "dimensions": [
+        1024,
+        683
+      ],
+      "bytes": 257517,
+      "sha256": "658c9bdd0992d6dd414dae2eddaaf9d0f425f23d8812979b730cac624f662d4f"
+    },
+    {
+      "filename": "4393031377.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        1024,
+        683
+      ],
+      "bytes": 295475,
+      "sha256": "e2a176385614600c54ca1f128aa782459b88f885e1dcc674ebd02c189c82d027"
+    },
+    {
+      "filename": "6803212385.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        683,
+        1024
+      ],
+      "bytes": 592098,
+      "sha256": "5ed04ea050e5b72e41864d58506113d8d33e981a5698ceb3352e75e482381964"
+    },
+    {
+      "filename": "4067979548.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        1024,
+        685
+      ],
+      "bytes": 322253,
+      "sha256": "62f548adb4145b6cae578c65f089b496abf690e739b07e5e0569f1572082e82f"
+    },
+    {
+      "filename": "2198144601.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 332008,
+      "sha256": "54b871302b6a8ddb9f903725066bde204507f8960bbce29935f8adc46c99f7ea"
+    },
+    {
+      "filename": "6744614381.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 469611,
+      "sha256": "8c3571163b6a1816ad35a78288680540df69a3987ac0f0032c0defac60a8ae7b"
+    },
+    {
+      "filename": "3266249494.jpg",
+      "raw_state": "00",
+      "dimensions": [
+        683,
+        1024
+      ],
+      "bytes": 356953,
+      "sha256": "2f2dc1dcc059c02931006736f5d6fe55169d037d69335557a02fd901d8ac7a47"
+    }
+  ],
+  "range_bytes_read": 9422958,
+  "all_sample_images_decoded": true
+}

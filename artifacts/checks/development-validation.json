@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-04",
+  "phase": "development_scaffold_only",
+  "entrypoint": "code/fire_r2_cli.py",
+  "tests_passed": 17,
+  "data_checks": {
+    "dfire": {
+      "status": "blocked",
+      "records": null,
+      "roles": null,
+      "training_ready": false,
+      "reason": "Annotations not available: /Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/dfire/v1/extracted; no download attempted",
+      "frozen_manifest_match": null
+    },
+    "fasdd_uav": {
+      "status": "blocked",
+      "records": null,
+      "roles": null,
+      "training_ready": false,
+      "reason": "Annotations not available: /Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/fasdd-uav/v9/annotations; no download attempted",
+      "frozen_manifest_match": null
+    },
+    "homefire": {
+      "status": "audited",
+      "records": 6500,
+      "roles": {
+        "fit": 3900,
+        "cal": 650,
+        "dev": 650,
+        "test": 1300
+      },
+      "training_ready": false,
+      "reason": null,
+      "frozen_manifest_match": true
+    },
+    "fasdd_cv": {
+      "status": "audited",
+      "records": 95314,
+      "roles": {
+        "fit": 47660,
+        "cal": 15885,
+        "dev": 15885,
+        "test": 15884
+      },
+      "training_ready": false,
+      "reason": null,
+      "frozen_manifest_match": true
+    }
+  },
+  "new_packages": [],
+  "local_environment": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.local/miniconda3/envs/sci-env",
+  "shared_dataset_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets",
+  "ssh_available": true,
+  "rsync_available": true,
+  "model_runs": 0,
+  "model_weights_downloaded": false,
+  "large_files_downloaded": false,
+  "cloud_connections": 0,
+  "actual_gpu_training_tested": false,
+  "original_data_modified": false,
+  "source_files": {
+    "src/fire_r2/cloud.py": "55c99b8cd16810f3752ba1fe648b3558f59b3d9de6e433d4e9f4774d8e906503",
+    "src/fire_r2/__init__.py": "acaff4d0eb5674b8ddeb80a7ed99fa35d278bd339a98e10dc6a9d9930c00cbf9",
+    "src/fire_r2/cli.py": "ea979bcced2cccf18f565e761b5f16d59bfab3e3db4771c85221105723b59fcf",
+    "src/fire_r2/common.py": "5f8a40d4eee29298252ee79544062c6e51173944c61315d691d519f544a8fd27",
+    "src/fire_r2/train.py": "2ad8441daeec015726e747b4b5d620722b309148b630f29ae0988b58a72e7d3f",
+    "src/fire_r2/data.py": "36959d23aefb04d88fecd0a8825c12a1af048d393c4a3242b0601bdcb4367a50",
+    "code/fire_r2_cli.py": "82d9d7c192337ec54992396370e862066debfadc597f90fe5604de73faaeb269",
+    "tests/test_cloud.py": "566e22dc54c13ee0f162c6eb3997ffb2d8d8cd63a1bce0df0e0f4ebb872dd907",
+    "tests/test_data.py": "5df1af319e7baa2c919d1e1df328ae9ff30e38de2e3b59ff651c1a6857ebdd29"
+  }
+}

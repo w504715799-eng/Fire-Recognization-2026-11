@@ -1,0 +1,22 @@
+{
+  "key": "indoor",
+  "metadata_url": "https://zenodo.org/api/records/15826133",
+  "name": "Indoor Fire Smoke.zip",
+  "bytes": 200547120,
+  "url": "https://zenodo.org/api/records/15826133/files/Indoor%20Fire%20Smoke.zip/content",
+  "md5": "086fbc3b874139276097f4057bc45a3c",
+  "uncompressed_bytes": 198855257,
+  "entries": 20024,
+  "files": 20014,
+  "extensions": {
+    "": 11,
+    ".ds_store": 1,
+    ".yaml": 2,
+    ".jpg": 10000,
+    ".txt": 10000
+  },
+  "range_bytes_read": 3266678,
+  "unsafe_paths": [],
+  "duplicate_archive_names": [],
+  "full_download_allowed": true
+}

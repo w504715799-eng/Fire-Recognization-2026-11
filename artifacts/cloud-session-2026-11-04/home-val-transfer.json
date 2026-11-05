@@ -1,0 +1,27 @@
+{
+  "source": "https://github.com/PengBo0/Home-fire-dataset/releases/download/v1.0.0/val.zip",
+  "local": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/datasets/home-fire/v1/raw/val.zip",
+  "remote": "/root/rivermind-data/shared/datasets/home-fire/v1/raw/val.zip",
+  "bytes": 352482306,
+  "sha256": "ffe0444340b3baab129e24b75f1a67ec489f072be85ea7b1c2cc4c5ce7f6ef63",
+  "zip": {
+    "members": 2602,
+    "uncompressed_bytes": 353436619,
+    "first_members": [
+      "images/",
+      "images/val_1.jpg",
+      "images/val_10.jpg",
+      "images/val_100.jpg",
+      "images/val_1000.jpg",
+      "images/val_1001.jpg",
+      "images/val_1002.jpg",
+      "images/val_1003.jpg"
+    ]
+  },
+  "status": "verified_and_local_removed",
+  "local_file_deleted": true,
+  "started_at": "2026-11-04T09:58:35.461515+00:00",
+  "remote_sha256": "ffe0444340b3baab129e24b75f1a67ec489f072be85ea7b1c2cc4c5ce7f6ef63",
+  "remote_verified_at": "2026-11-04T10:12:35.362488+00:00",
+  "finished_at": "2026-11-04T10:12:35.380917+00:00"
+}

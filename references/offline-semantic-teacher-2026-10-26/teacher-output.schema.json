@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Qwen offline visual semantic advice: design only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fire_visible",
+    "smoke_visible",
+    "cloud_fog_like",
+    "bright_light_like",
+    "reflection_like",
+    "low_visibility"
+  ],
+  "properties": {
+    "fire_visible": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    },
+    "smoke_visible": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    },
+    "cloud_fog_like": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    },
+    "bright_light_like": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    },
+    "reflection_like": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    },
+    "low_visibility": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ]
+    }
+  }
+}

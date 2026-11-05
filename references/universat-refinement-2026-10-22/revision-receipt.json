@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "version": "v2.1",
+  "document": "ideas/火焰与烟的关联或融合关系识别研究方案.md",
+  "backup": "references/universat-refinement-2026-10-22/proposal-v2-before-detail-refinement.md",
+  "sha256": "5ac550d175fb754859354e7d932124c65b787be1fbaaa0782db1d9fa1c3368c7",
+  "checks": {
+    "publication_contract_section9_identical": true,
+    "data_section3_identical": true,
+    "all_original_stage_gates_preserved": true,
+    "single_structural_rescue_preserved": true,
+    "local_links_resolve": true,
+    "balanced_fences": true,
+    "training_budget_arithmetic": true,
+    "backup_unchanged": true
+  },
+  "training_plan_upper_bound": {
+    "detectors": 21,
+    "lightweight_components": 60,
+    "total": 81,
+    "incremental_lightweight_jobs": 24,
+    "conditional_on_pilot_gates": true
+  },
+  "sources": [
+    "https://arxiv.org/abs/2606.23503",
+    "https://arxiv.org/html/2606.23503v1",
+    "https://github.com/gastruc/UniverSat",
+    "https://gastruc.github.io/universat"
+  ],
+  "model_executions_this_turn": 0,
+  "weights_downloaded": false,
+  "datasets_downloaded": false,
+  "cloud_actions": false
+}

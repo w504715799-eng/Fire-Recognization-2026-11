@@ -1,0 +1,28 @@
+{
+  "version": "v2.0",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "document": "ideas/火焰与烟的关联或融合关系识别研究方案.md",
+  "sha256": "19891449e79dc159c6496633951f1f9d5786689bfaea02f2f014c54ccdb4978f",
+  "backup": "references/fire-smoke-selection-2026-10-15/proposal-v1-before-expected-gain-selection.md",
+  "checks": {
+    "sections_1_to_12": true,
+    "local_links_resolve": true,
+    "fences_balanced": true,
+    "training_dependency_arithmetic": true,
+    "old_method_formulas_removed": true,
+    "backup_unchanged": true
+  },
+  "scope": "Only this independent proposal and its revision archive",
+  "model_runs_this_revision": 0,
+  "weights_downloaded": false,
+  "datasets_downloaded": false,
+  "jev_api_called": false,
+  "cloud_actions": false,
+  "training_plan": {
+    "detector_jobs": 21,
+    "lightweight_component_jobs": 36,
+    "total_jobs_if_all_gates_pass": 57
+  },
+  "data_execution_ready": false
+}

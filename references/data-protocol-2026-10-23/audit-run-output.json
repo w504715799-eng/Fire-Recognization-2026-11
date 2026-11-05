@@ -1,0 +1,210 @@
+{
+  "home_labels": 6500,
+  "home_errors": 0,
+  "home_roles": {
+    "test": {
+      "images": 1300,
+      "smoke_only": 433,
+      "fire_boxes": 897,
+      "smoke_boxes": 689,
+      "fire_only": 667,
+      "both": 185,
+      "empty": 15
+    },
+    "fit": {
+      "images": 3900,
+      "fire_only": 2096,
+      "fire_boxes": 2978,
+      "smoke_boxes": 1834,
+      "smoke_only": 1050,
+      "both": 667,
+      "empty": 87
+    },
+    "cal": {
+      "images": 650,
+      "fire_only": 345,
+      "fire_boxes": 483,
+      "smoke_boxes": 319,
+      "smoke_only": 186,
+      "both": 103,
+      "empty": 16
+    },
+    "dev": {
+      "images": 650,
+      "smoke_only": 187,
+      "fire_boxes": 480,
+      "smoke_boxes": 298,
+      "both": 98,
+      "fire_only": 348,
+      "empty": 17
+    }
+  },
+  "cv": {
+    "images": 95314,
+    "annotations": 126377,
+    "anomalous_boxes": 141,
+    "affected_images": 131,
+    "max_excursion_px": 1.0,
+    "by_official_split": {
+      "train": {
+        "images": 47660,
+        "annotations": 66582,
+        "reasons": {
+          "nonpositive": 2,
+          "outside": 84
+        },
+        "affected_images": 81,
+        "annotation_id_zero": 0,
+        "duplicate_annotation_ids": 0
+      },
+      "val": {
+        "images": 31770,
+        "annotations": 42553,
+        "reasons": {
+          "nonpositive": 1,
+          "outside": 46
+        },
+        "affected_images": 43,
+        "annotation_id_zero": 0,
+        "duplicate_annotation_ids": 0
+      },
+      "test": {
+        "images": 15884,
+        "annotations": 17242,
+        "reasons": {
+          "outside": 8
+        },
+        "affected_images": 7,
+        "annotation_id_zero": 1,
+        "duplicate_annotation_ids": 0
+      }
+    },
+    "degenerate": [
+      {
+        "split": "train",
+        "file": "bothFireAndSmoke_CV001979.jpg",
+        "ann_id": 6527,
+        "category_id": 0,
+        "bbox": [
+          219.0,
+          343.0,
+          0,
+          1.0
+        ],
+        "area": 0.0,
+        "image_size": [
+          676,
+          429
+        ],
+        "reasons": [
+          "nonpositive"
+        ],
+        "excursion_px": 0.0,
+        "normalized_view": [
+          0.3239644970414201,
+          0.8006993006993007,
+          0.0,
+          0.002331002331002331
+        ],
+        "numeric_tolerance_ok": true,
+        "derived_role": "fit"
+      },
+      {
+        "split": "train",
+        "file": "bothFireAndSmoke_CV018145.jpg",
+        "ann_id": 70019,
+        "category_id": 0,
+        "bbox": [
+          512.0,
+          1.0,
+          0,
+          155.0
+        ],
+        "area": 0.0,
+        "image_size": [
+          512,
+          341
+        ],
+        "reasons": [
+          "nonpositive"
+        ],
+        "excursion_px": 0.0,
+        "normalized_view": [
+          1.0,
+          0.23020527859237536,
+          0.0,
+          0.45454545454545453
+        ],
+        "numeric_tolerance_ok": true,
+        "derived_role": "fit"
+      },
+      {
+        "split": "val",
+        "file": "bothFireAndSmoke_CV010851.jpg",
+        "ann_id": 41180,
+        "category_id": 1,
+        "bbox": [
+          1.0,
+          1.0,
+          763.0,
+          0
+        ],
+        "area": 0.0,
+        "image_size": [
+          800,
+          600
+        ],
+        "reasons": [
+          "nonpositive"
+        ],
+        "excursion_px": 0.0,
+        "normalized_view": [
+          0.478125,
+          0.0016666666666666668,
+          0.95375,
+          0.0
+        ],
+        "numeric_tolerance_ok": true,
+        "derived_role": "dev"
+      }
+    ]
+  },
+  "cv_roles": {
+    "fit": {
+      "images": 47660,
+      "both": 10076,
+      "fire_boxes": 39545,
+      "smoke_boxes": 27037,
+      "fire_only": 6276,
+      "empty": 19600,
+      "smoke_only": 11708
+    },
+    "cal": {
+      "images": 15885,
+      "both": 3382,
+      "fire_boxes": 12521,
+      "smoke_boxes": 8934,
+      "fire_only": 2075,
+      "empty": 6547,
+      "smoke_only": 3881
+    },
+    "dev": {
+      "images": 15885,
+      "both": 3335,
+      "fire_boxes": 12209,
+      "smoke_boxes": 8889,
+      "fire_only": 2108,
+      "empty": 6519,
+      "smoke_only": 3923
+    },
+    "test": {
+      "images": 15884,
+      "both": 3358,
+      "fire_boxes": 9022,
+      "smoke_boxes": 8220,
+      "fire_only": 2091,
+      "empty": 6533,
+      "smoke_only": 3902
+    }
+  }
+}

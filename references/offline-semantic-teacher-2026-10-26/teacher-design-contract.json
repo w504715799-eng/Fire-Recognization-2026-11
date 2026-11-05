@@ -1,0 +1,85 @@
+{
+  "version": "fire-final-20261104",
+  "date": "2026-11-04",
+  "status": "design_only_no_teacher_outputs_generated",
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "teacher_trainable": false,
+  "input": {
+    "view": "whole_rgb_image_letterbox_640_then_recorded_teacher_processor",
+    "prompt_excludes": [
+      "filename",
+      "dataset_name",
+      "GT_class",
+      "GT_box",
+      "detector_confidence"
+    ],
+    "calls_per_image": 1,
+    "max_output_tokens_initial": 192,
+    "decode": "deterministic_non_thinking"
+  },
+  "fit_only": {
+    "dfire": 13776,
+    "homefire": 3900,
+    "fasdd_cv": 47660
+  },
+  "planned_total_images": 65336,
+  "excluded_from_training_cache": [
+    "dev",
+    "cal",
+    "test",
+    "fasdd_uav"
+  ],
+  "output_schema": "teacher-output.schema.json",
+  "teacher_fire_smoke_fields_usage": "diagnostic_only_not_GT_replacement",
+  "trainable_context_fields": [
+    "cloud_fog_like",
+    "bright_light_like",
+    "reflection_like",
+    "low_visibility"
+  ],
+  "unknown_policy": "mask_only_auxiliary_field_keep_image_and_original_detection_loss",
+  "original_annotations_changed": false,
+  "semantic_head": {
+    "input": "GAP(F_smoke), GAP(F_scene), GAP(C) for M; projected P3 for plain detector",
+    "output_logits": 6,
+    "original_GT_presence_indices": [
+      0,
+      1
+    ],
+    "teacher_context_indices": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "removed_at_deployment": true
+  },
+  "teacher_context_used_as_gate_target": false,
+  "loss_initial_weights": {
+    "presence": 0.1,
+    "context": 0.05
+  },
+  "loss_ramp": "T1 epochs 1–2 zero; 3–5 linear; subsequent target weight",
+  "consistent_view_batch_fraction": 0.25,
+  "consistent_view_schedule_applies_to_all_comparisons": true,
+  "main_teacher_comparisons": [
+    "F",
+    "F-GT",
+    "F-Q"
+  ],
+  "further_ablations": [
+    "shuffled_context_with_masks_and_original_GT_preserved",
+    "E0-Q",
+    "E3-Q_vs_E4-Q",
+    "semantic_attachment_location_when_claimed"
+  ],
+  "offline_teacher_in_deployment": false,
+  "local_weights_downloaded": false,
+  "model_experiments_run": 0,
+  "revision_check": "official_model_metadata_only_no_weights_loaded",
+  "architecture_scope": "Fusion F or base E0 with matched semantic-head controls; development determines retained method",
+  "canonical_plan": "../../火焰识别研究方案.md",
+  "task_scope": "A_scene_semantics_only; B_ROI_quality specified by current research contract",
+  "current_research_contract": "../reassessment-2026-11-04/research-contract.json"
+}

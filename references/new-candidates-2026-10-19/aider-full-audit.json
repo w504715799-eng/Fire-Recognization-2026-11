@@ -1,0 +1,24 @@
+{
+  "source_record": 3888300,
+  "compressed_bytes": 275701096,
+  "uncompressed_bytes": 275908544,
+  "publisher_md5": "1ad4eb02ed156e8dfa19986ff382e58b",
+  "md5": "1ad4eb02ed156e8dfa19986ff382e58b",
+  "sha256": "5c5c1eb25653642da7ee79ef30dfd3eb82eccaeb1e7a5ee587b3582bf056ba00",
+  "md5_matches": true,
+  "all_members_crc_ok": true,
+  "all_image_decode_failures": [],
+  "original_class_counts": {
+    "collapsed_building": 511,
+    "fire": 521,
+    "flooded_areas": 526,
+    "normal": 4390,
+    "traffic_incident": 485
+  },
+  "all_images_decoded": true,
+  "annotation_type": "original mutually exclusive scene classes; no boxes; fire and smoke combined",
+  "physical_four_state_counts": null,
+  "labels_changed": false,
+  "images_deleted": false,
+  "cross_dataset_deduplication": false
+}

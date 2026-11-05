@@ -1,0 +1,147 @@
+{
+  "csv_rows": 5556,
+  "image_entries": 5556,
+  "image_uncompressed_bytes": 2002896950,
+  "raw_column_state_counts": {
+    "11": 527,
+    "00": 3583,
+    "10": 1077,
+    "01": 369
+  },
+  "invalid_rows": [],
+  "repeated_label_filenames": [],
+  "labels_without_image_entry": [],
+  "images_without_label": [],
+  "csv_sha256": "217b563e5463ba8015214e79f01c9256ce350ca000aa927a6fd02c5952a7fe98",
+  "annotation_level": "two binary image-level EMERGENCY fire/smoke labels; no bounding boxes",
+  "column_mapping_evidence": "Original FiSmo paper section 2.1 and Table 2; first binary is emergency fire, second is emergency smoke",
+  "physical_fire_only_count": null,
+  "physical_smoke_only_count": null,
+  "physical_background_count": null,
+  "semantic_admission": "failed: emergency-conditioned labels differ from physical visible-fire/smoke task",
+  "full_archive_downloaded": false,
+  "all_images_decoded": false,
+  "sampling": "six smallest SHA256(filename) per raw state; fixed before viewing; no deletion or relabeling",
+  "sample_rows": [
+    [
+      "5313770487.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "5616605109.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "5706979402.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "2854582683.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "315791460.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "8636982127.jpg",
+      "1",
+      "0"
+    ],
+    [
+      "2576064384.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "3300292342.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "519238053.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "8153243502.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "8041310576.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "1722872592.jpg",
+      "0",
+      "1"
+    ],
+    [
+      "184825608.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "3266507563.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "4906414122.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "4777451119.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "13983451052.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "8457402061.jpg",
+      "1",
+      "1"
+    ],
+    [
+      "4393031377.jpg",
+      "0",
+      "0"
+    ],
+    [
+      "6803212385.jpg",
+      "0",
+      "0"
+    ],
+    [
+      "4067979548.jpg",
+      "0",
+      "0"
+    ],
+    [
+      "2198144601.jpg",
+      "0",
+      "0"
+    ],
+    [
+      "6744614381.jpg",
+      "0",
+      "0"
+    ],
+    [
+      "3266249494.jpg",
+      "0",
+      "0"
+    ]
+  ]
+}

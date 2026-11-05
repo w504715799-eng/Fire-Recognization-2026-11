@@ -1,0 +1,10 @@
+SKLFS-WildFire2025 Test · Fire Detection Research Group 中国科大火灾监测监控研究团队 火灾探测预警 首页 研究方向 数据资源 团队动态 团队成员 学术成果 学术论坛 联系我们 登录 注册 Dataset SKLFS-WildFire2025 Test A large-scale and diverse forest smoke test set containing 8,363 video clips and 152,700 annotated frames, reserved for evaluating smoke detection in real-world surveillance scenarios. 会员专属 版本：V2025 发布日期：2026年6月1日 云盘下载 返回数据资源 等待审批后下载 SKLFS-WildFire2025 Test Overview SKLFS-WildFire2025 Test is a large-scale forest smoke detection test set introduced in LwST-FSD: Efficient Forest Smoke Detection via Lightweight Spatio-temporal Modeling . It is designed as an evaluation benchmark for smoke detection in real-world surveillance scenarios. The dataset contains 8,363 video clips, totaling 152,700 annotated frames. Among them, 48,777 smoke-affected images are extracted from 3,952 video segments. All samples are reserved exclusively for testing, providing a large and diverse benchmark for evaluating forest smoke detection models. Key Features Real-world forest smoke detection test set. 8,363 video clips. 152,700 annotated frames. 48,777 smoke-affected images from 3,952 video segments. Reserved exclusively for testing. Designed to evaluate smoke detection under large-scale and diverse real-world conditions. Citation If you use this dataset, please cite: @article{WANG2025122481,
+title = {LwST-FSD: Efficient forest smoke detection via lightweight spatio-temporal modeling},
+journal = {Information Sciences},
+volume = {719},
+pages = {122481},
+year = {2025},
+issn = {0020-0255},
+doi = {https://doi.org/10.1016/j.ins.2025.122481},
+author = {Chong Wang and Hai Song and Zhong Wang and Zhilin Shan and Qixing Zhang},
+} 云盘下载信息 该数据集仅对审批通过的会员开放。 中国科学技术大学 火灾安全全国重点实验室 火灾监测监控研究团队.

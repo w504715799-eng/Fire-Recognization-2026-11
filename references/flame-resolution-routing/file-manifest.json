@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-14",
+  "purpose": "literature_only_no_model_weights_or_image_datasets",
+  "files": {
+    "references/flame-resolution-routing/papers/small-object-review-074191.pdf": {
+      "sha256": "73286bec47bab1cb7c6751cd3d90a0f48d0d58cff27efbd6080e475919a1f59c",
+      "bytes": 31885360
+    },
+    "references/flame-resolution-routing/papers/realtimewam-2610.06617.pdf": {
+      "sha256": "a763e5f29338a734c0e071724926a0e2669dfdba5106c0091fb7ea642eefb11d",
+      "bytes": 3151198
+    },
+    "references/flame-resolution-routing/papers/fire-quadtree-2022.pdf": {
+      "sha256": "82fc963e225f814fe66b6a4012874121fbcc719cc86a2252226ef470d13b5255",
+      "bytes": 14234606
+    },
+    "references/flame-resolution-routing/papers/realtimewam-2610.10079.pdf": {
+      "sha256": "bc3abe7b318df100718370eafb2789a49fa84e4fa6a73cc27c78e5f3811fea64",
+      "bytes": 12899063
+    },
+    "references/flame-resolution-routing/small-object-review-074191.txt": {
+      "sha256": "58b7db13eea342e8ed646e864d0b29aee2855e8e586bb19c052b5ca47be53cf8",
+      "bytes": 179445
+    },
+    "references/flame-resolution-routing/realtimewam-2610.06617.txt": {
+      "sha256": "9a2e4b6fdbf6841a48ecce67462afab4e8918d8d410696c910b05a58363a8a0f",
+      "bytes": 66047
+    },
+    "references/flame-resolution-routing/fire-quadtree-2022.txt": {
+      "sha256": "6933a9abd726e5af19d3ab806431b88627bfaba83c233080532f461545c51667",
+      "bytes": 37148
+    },
+    "references/flame-resolution-routing/realtimewam-2610.10079.txt": {
+      "sha256": "82f23ddc2d5a72e1115dfcb5556518a2ef2d5f05851dd6846f52106c32b9d1f1",
+      "bytes": 68196
+    },
+    "references/flame-resolution-routing/cmc-review.html": {
+      "sha256": "76aa41d5b7d52efe91150c9e4535c1bc7079a2b56c9b9fa5c9f1de3eeae23ca6",
+      "bytes": 405565
+    },
+    "references/flame-resolution-routing/cmc-pdf-link.html": {
+      "sha256": "d3ca06febb6ce51d93a631979faa6662b1d05c76a07f821e83b98a86d7415d1e",
+      "bytes": 84164
+    }
+  }
+}

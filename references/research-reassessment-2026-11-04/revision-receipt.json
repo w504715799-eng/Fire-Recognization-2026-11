@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-04",
+  "version": "FIRE-MASTER-v2.0",
+  "active_proposal": "火焰识别研究方案.md",
+  "sha256": "317d769151c5a33bc0f87989664e18f9546584232114712072b45af467166b41",
+  "active_proposal_count": 1,
+  "archived_proposal_count": 23,
+  "sources_index": "capture-index.json",
+  "public_data_check": "public-data-recheck.json",
+  "changes": [
+    "Problem-method-experiment justification",
+    "Recent fusion and offline teacher comparisons",
+    "Public metadata and existing original annotation recheck",
+    "Conditional experiments without shrinking study scope",
+    "One final proposal; historical bodies archived"
+  ],
+  "verification": {
+    "user_principle_preserved": true,
+    "evaluation_section9_preserved": true,
+    "stop_rules_section10_preserved": true,
+    "main_headings_contiguous": true,
+    "fences_balanced": true,
+    "three_sources_four_parts_retained": true,
+    "active_document_links_valid": true,
+    "single_final_proposal_verified": true
+  },
+  "teacher_revision_metadata_only": "2fc06364715b967f1860aea9cf38778875588b17",
+  "models_run": 0,
+  "model_weights_downloaded": false,
+  "large_data_downloaded": false,
+  "cross_dataset_deduplication": false,
+  "cloud_actions": false
+}

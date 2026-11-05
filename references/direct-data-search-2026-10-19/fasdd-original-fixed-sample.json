@@ -1,0 +1,503 @@
+{
+  "rule": "First six SHA256(filename) per annotation state, fixed before viewing. No evaluation split or new GT.",
+  "samples": [
+    {
+      "file": "fire_CV002177.jpg",
+      "split": "train",
+      "state": "10",
+      "width": 212,
+      "height": 238,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            77.0,
+            12.0,
+            76.0,
+            174.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "fire_CV005809.jpg",
+      "split": "train",
+      "state": "10",
+      "width": 512,
+      "height": 270,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            170.0,
+            83.0,
+            218.0,
+            150.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "fire_CV003324.jpg",
+      "split": "test",
+      "state": "10",
+      "width": 224,
+      "height": 224,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            124.0,
+            85.0,
+            46.0,
+            73.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            163.0,
+            163.0,
+            6.0,
+            28.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "fire_CV009161.jpg",
+      "split": "val",
+      "state": "10",
+      "width": 224,
+      "height": 224,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            115.0,
+            117.0,
+            33.0,
+            38.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "fire_CV004934.jpg",
+      "split": "val",
+      "state": "10",
+      "width": 500,
+      "height": 333,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            263.0,
+            128.0,
+            47.0,
+            46.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "fire_CV003809.jpg",
+      "split": "train",
+      "state": "10",
+      "width": 1015,
+      "height": 575,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            391.0,
+            170.0,
+            209.0,
+            231.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV022090.jpg",
+      "split": "train",
+      "state": "01",
+      "width": 1920,
+      "height": 1080,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            798.0,
+            569.0,
+            180.0,
+            403.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV007075.jpg",
+      "split": "train",
+      "state": "01",
+      "width": 263,
+      "height": 192,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            41.0,
+            33.0,
+            222.0,
+            95.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            7.0,
+            129.0,
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            1.0,
+            58.0,
+            69.0,
+            58.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV020625.jpg",
+      "split": "train",
+      "state": "01",
+      "width": 1920,
+      "height": 1080,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            727.0,
+            449.0,
+            159.0,
+            425.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV013170.jpg",
+      "split": "test",
+      "state": "01",
+      "width": 1920,
+      "height": 1080,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            241.0,
+            269.0,
+            472.0,
+            378.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV010160.jpg",
+      "split": "val",
+      "state": "01",
+      "width": 1920,
+      "height": 1080,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            1046.0,
+            601.0,
+            273.0,
+            369.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "smoke_CV009047.jpg",
+      "split": "test",
+      "state": "01",
+      "width": 704,
+      "height": 576,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            405.0,
+            379.0,
+            112.0,
+            103.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV018533.jpg",
+      "split": "train",
+      "state": "11",
+      "width": 750,
+      "height": 486,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            232.0,
+            113.0,
+            517.0,
+            190.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            77.0,
+            1.0,
+            311.0,
+            109.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV001152.jpg",
+      "split": "val",
+      "state": "11",
+      "width": 500,
+      "height": 333,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            308.0,
+            262.0,
+            17.0,
+            19.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            329.0,
+            289.0,
+            17.0,
+            25.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            1.0,
+            1.0,
+            440.0,
+            319.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV016286.jpg",
+      "split": "train",
+      "state": "11",
+      "width": 540,
+      "height": 406,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            81.0,
+            170.0,
+            62.0,
+            77.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            154.0,
+            168.0,
+            60.0,
+            151.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            55.0,
+            32.0,
+            310.0,
+            67.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV015864.jpg",
+      "split": "test",
+      "state": "11",
+      "width": 640,
+      "height": 360,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            168.0,
+            112.0,
+            89.0,
+            134.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            107.0,
+            1.0,
+            166.0,
+            168.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV001758.jpg",
+      "split": "train",
+      "state": "11",
+      "width": 432,
+      "height": 278,
+      "boxes": [
+        {
+          "class": 1,
+          "bbox": [
+            40.0,
+            1.0,
+            392.0,
+            199.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            51.0,
+            154.0,
+            59.0,
+            22.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            273.0,
+            208.0,
+            10.0,
+            15.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "bothFireAndSmoke_CV001360.jpg",
+      "split": "train",
+      "state": "11",
+      "width": 275,
+      "height": 183,
+      "boxes": [
+        {
+          "class": 0,
+          "bbox": [
+            141.0,
+            29.0,
+            101.0,
+            139.0
+          ]
+        },
+        {
+          "class": 0,
+          "bbox": [
+            118.0,
+            155.0,
+            19.0,
+            11.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            181.0,
+            1.0,
+            94.0,
+            95.0
+          ]
+        },
+        {
+          "class": 1,
+          "bbox": [
+            64.0,
+            142.0,
+            60.0,
+            16.0
+          ]
+        }
+      ]
+    },
+    {
+      "file": "neitherFireNorSmoke_CV008120.jpg",
+      "split": "val",
+      "state": "00",
+      "width": 658,
+      "height": 658,
+      "boxes": []
+    },
+    {
+      "file": "neitherFireNorSmoke_CV037131.jpg",
+      "split": "test",
+      "state": "00",
+      "width": 750,
+      "height": 536,
+      "boxes": []
+    },
+    {
+      "file": "neitherFireNorSmoke_CV001709.jpg",
+      "split": "val",
+      "state": "00",
+      "width": 500,
+      "height": 292,
+      "boxes": []
+    },
+    {
+      "file": "neitherFireNorSmoke_CV018755.jpg",
+      "split": "train",
+      "state": "00",
+      "width": 800,
+      "height": 800,
+      "boxes": []
+    },
+    {
+      "file": "neitherFireNorSmoke_CV009802.jpg",
+      "split": "val",
+      "state": "00",
+      "width": 440,
+      "height": 512,
+      "boxes": []
+    },
+    {
+      "file": "neitherFireNorSmoke_CV010549.jpg",
+      "split": "val",
+      "state": "00",
+      "width": 2048,
+      "height": 1536,
+      "boxes": []
+    }
+  ]
+}

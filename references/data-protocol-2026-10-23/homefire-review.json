@@ -1,0 +1,53 @@
+{
+  "source": "references/new-candidates-2026-10-19/homefire-original-labels",
+  "labels": 6500,
+  "mapping": {
+    "0": "fire",
+    "1": "smoke"
+  },
+  "mapping_basis": "local raw-label/visual correspondence plus independent user implementation; no author numeric mapping file found",
+  "label_digest": "536ffe186d4c6d2a52255745e1ed44cbb58618a5a79a65c92b39789621fe5311",
+  "errors": [],
+  "manifest": {
+    "path": "references/data-protocol-2026-10-23/homefire-split-manifest.jsonl",
+    "sha256": "e5734715bbe4391c494b8c94ae4fbfb735273f12c9f758702018419b45962f6a",
+    "by_role": {
+      "test": {
+        "images": 1300,
+        "smoke_only": 433,
+        "fire_boxes": 897,
+        "smoke_boxes": 689,
+        "fire_only": 667,
+        "both": 185,
+        "empty": 15
+      },
+      "fit": {
+        "images": 3900,
+        "fire_only": 2096,
+        "fire_boxes": 2978,
+        "smoke_boxes": 1834,
+        "smoke_only": 1050,
+        "both": 667,
+        "empty": 87
+      },
+      "cal": {
+        "images": 650,
+        "fire_only": 345,
+        "fire_boxes": 483,
+        "smoke_boxes": 319,
+        "smoke_only": 186,
+        "both": 103,
+        "empty": 16
+      },
+      "dev": {
+        "images": 650,
+        "smoke_only": 187,
+        "fire_boxes": 480,
+        "smoke_boxes": 298,
+        "both": 98,
+        "fire_only": 348,
+        "empty": 17
+      }
+    }
+  }
+}

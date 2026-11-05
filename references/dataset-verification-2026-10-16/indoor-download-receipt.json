@@ -1,0 +1,12 @@
+{
+  "key": "indoor",
+  "path": "data/supplementary-verification-2026-10-16/indoor/original.zip",
+  "bytes": 200547120,
+  "md5": "086fbc3b874139276097f4057bc45a3c",
+  "expected_md5": "086fbc3b874139276097f4057bc45a3c",
+  "sha256": "f5e4b452bc0e74508366b4ce3f62d7479d1a790a7438a1f0ebee145a216d7b6a",
+  "seconds": 76.45142958301585,
+  "complete": true,
+  "remote_uploaded": false,
+  "local_deletion_allowed": false
+}

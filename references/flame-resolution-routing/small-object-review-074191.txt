@@ -1,0 +1,2284 @@
+
+PAGE 1
+echT PressScience
+Doi:10.32604/cmc.2025.074191
+REVIEW
+AComprehensiveLiteratureReviewonYOLO-BasedSmallObjectDetection:
+Methods,Challenges,andFutureTrends
+Hui Yu1,J u nL i u1,* andMingweiLin 2,*
+1SchoolofComputerScienceandTechnology,ChongqingUniversityofPostsandTelecommunications,Chongqing,400065,China
+2CollegeofComputerandCyberSecurity,FujianNormalUniversity,Fuzhou,350117,China
+*CorrespondingAuthors:JunLiu.Email:junliu@cqupt.edu.cn;MingweiLin.Email: linmwcs@163.com
+Received:05October2025;Accepted:12December2025;Published:10February2026
+ABSTRACT: Small object detection has been a focus of attention since the emergence of deep learning-based object
+detection. Although classical object detection frameworks have made significant contributions to the development of
+object detection, there are still many issues to be resolved in detecting small objects due to the inherent complexity
+and diversity of real-world visual scenes. In particular, the YOLO (You Only Look Once) series of detection models,
+renowned for their real-time performance, have undergone numerous adaptations aimed at improving the detection
+of small targets. In this survey, we summarize the state-of-the-art YOLO-based small object detection methods. This
+reviewpresentsasystematiccategorizationofYOLO-basedapproachesforsmall-objectdetection,organizedintofour
+methodologicalavenues,namelyattention-basedfeatureenhancement,detection-headoptimization,lossfunction,and
+multi-scale feature fusion strategies. We then examine the principal challenges addressed by each category. Finally,
+w ea n a l y z et h ep e r f o r m a n c eo ft h e s em e t h o d so np u b l i cb e nchmarks and, by comparing current approaches, identify
+limitationsandoutlinedirectionsforfutureresearch.
+KEYWORDS:Smallobjectdetection;YOLO;real-timedetection;featurefusion;deeplearning
+1I n t r o d u c t i o n
+Smallobjectdetectionisaspecializeddomainofcomputervisionthatfocusesonidentifyingandlocaliz-
+ingobjectswhichoccupyonlyafewpixelswithinanimage.Thistaskhasgainedincreasingprominencesince
+theadventofdeeplearning-basedobjectdetectors,givenitsimportanceindiverseapplicationareassuchas
+autonomousdriving[ 1],surveillance[ 2],aerialimaging[ 3],andremotesensing[ 4,5].However,theseverely
+limitedpixelfootprintofsmallobjectsmeansthatconvolutionaldownsamplingcanobliteratecriticalvisual
+details, and small objects are easily confounded by clutter and sensor noise. Consequently, simply applying
+conventional detection frameworks without modification is insufficient for reliably detecting small objects.
+Despite continuous advances in general object detection, designing approaches that are simultaneously
+robustandefficientforsmallobjectsremainsacentralchallenge.In2016,Redmonetal.proposedYOLO[ 6],
+thefirstwidelyadoptedone-stagedetectortodemonstratereal-timeperformancebyperformingdetectionin
+asingleforwardpass.YOLOeliminatestheexplicitregi onproposalstageusedinearliertwo-stagedetectors,
+instead dividing the image into an S× Sg r i da n dd i r e c t l yp r e d i c t i n gb o u n d i n gb o xc o o r d i n a t e sa n dc l a s s
+probabilities for each cell in a single forward pass. This pioneering design demonstrated that high-speed
+objectdetectionisfeasiblewithinaunifiedend-to-e ndnetwork,layingthefoundationforanewgeneration
+of real-time detectors.Fig.1 outlinesatypicalworkflowforYOLO-basedsmall-objectdetection.
+Copyright©2026TheAuthors. PublishedbyTechSciencePress.
+This work is licensed under a Creative Commons Attribution 4.0 International License, which permits
+unrestricteduse,distribution,andreproductioninan ymedium,providedtheoriginalworkisproperlycited.
+
+PAGE 2
+2 ComputMaterContin. 2026;87(1):7
+Figure1: YOLO workflow for small objects
+As YOLO has been widely adopted, numerous variants and related methods have emerged to tackle
+the challenges of small object detection. Some methods [7–11] strengthen feature expressiveness for small
+objects,improvingtherecoveryoffine-grainedcuesandthesalienceofsmallinstancesinfeaturemaps.Some
+methods [12–15] aim to deliver real-time performance under resource constraints, reducing computational
+and memory overhead while preserving accuracy. Other strategies [16–18] focus on training robustness,
+introducingscale-awareobjectives,dataaugmentation ,andadaptivelabelassignmenttomitigatebiastoward
+largerobjectsandstabilizeoptimization.
+TherearefourmaindirectionsinwhichY OLO-basedapproacheshavebeenextendedtoimprovesmall
+objectdetection.Thefirstcategory[ 19,20]focusesonattentionmechanismsandfeatureenhancement.These
+approaches insert lightweight modules to amplify fine-grained features and incorporate contextual cues
+aroundsmall-objectregions.Thesecondcategory[ 21,22] involves detection-head redesign. These methods
+revisepredictionheadsoroutputlayersintheYOLOarchitecturetoimprovelocalizationandclassification
+for small objects. The third category [23,24] comprises loss-function engineering and regression-precision
+optimization, including new loss terms and training strategies that account for scale imbalance in small-
+objectdetection.Thesemethodsseektoincreaselocalizationprecisionforsmallboundingboxesandprevent
+g r a d i e n t sf r o mb e i n gd o m i n a t e db ye r r o r sf r o ml a r g eo b j e c t s .Th efi n a lc a t e g o r y[25,26]i n v o l v e sm u l t i -
+scale feature-fusion techniques, which merge feature maps across layers or scales to retain high-resolution
+informationandrecoverdetailslostindeeperstages.Notably,manystate-of-the-artYOLO-baseddetectors
+combine these directions in hybrid designs that exploit their complementary strengths for small object
+detection. In this review we treat attention mechanism enhancements and multi scale feature fusion as
+separateimprovementdimensionsandweinterprethybridmodulesaccordingtothedimensionthatreflects
+theirprimaryrole.
+In recent years, numerous studies have addressed the enhancement of YOLO models to meet this
+challenge. However, most existing reviews treat YOLO broadly by emphasizing the overall evolution of the
+YOLO family and cataloguing architectural and training modifications across successive variants [27]a n d
+do not systematically examine the adaptations and evaluation protocols unique to tiny targets. Therefore, a
+systematic review of recent advancements, applications, and future directions in YOLO-based small-object
+detection is both timely and essential as the field moves toward the next generation of real-time visual
+intelligence.Themaincontributionsofthisreviewcanbesummarizedasfollows:
+
+PAGE 3
+ComputMaterContin. 2026;87(1):7 3
+(1) We identify and select research articles published between 2020 and 2025, with a focus on advance-
+mentsinYOLOmodelsforsmallobjectdetection.
+(2) We develop a unified theoretical framework that categorizes YOLO-based small-object detection
+improvements into four enhancement dimensions: attention mechanism enhancements, detection-
+head and branch redesign, loss-function engineering, and multi-scale feature fusion. Within this
+framework, we also situateemerging work on dynamicnetwork design andheterogeneous fusion for
+small-objectdetection.Foreachcategory,wedescriberepresentativeapproachesandprovideacritical
+analysisoftheirstrengthsandlimitations.
+(3) Wesynthesizeandcompareexperimentalresultsonstandardsmall-objectdetectionbenchmarksusing
+metricssuchasprecision,recall,andmeanaveragepr ecision,therebyofferingadetailedevaluationof
+the performance of YOLO-baseddetectors.
+(4) We present insights and recommendations for future research directions and potential application
+scenariosforYOLOmodelsinsmallobjectdetection.
+Therestofthispaperisorganizedasfollows. Section2 reviewsfundamentalobjectdetectionalgorithms
+and related work on YOLO-based small-object detection, develops a unified theoretical framework of four
+enhancement dimensions, and contrasts this review with existing surveys on the YOLO family.Section3
+provides a detailed survey of architectural improvements specifically designed to enhance small object
+detection and examines the current challenges associated with these methods.Section4 presents a com-
+p a r a t i v ea n a l y s i so fe x p e r i m e n t a lr e s u l t sf o rv a r i o u sY O L O - b a s e di m p r o v e m e n t so nm a j o rb e n c h m a r k
+datasets.Section5 discussescurrentchallenges,identifiesopenresearchquestions,andhighlightspromising
+dir ectio nsfo rfu tur ewo rk.Section6 concludesthepaper.
+2R e l a t e dW o r k
+Recent advances in object detection have produced a rich body of work on small object detection
+and on the evolution of the YOLO family of detectors. Small objects exhibit limited spatial support, low
+signaltonoiseratio,andastrongdependenceoncontextualcues,whichjointlyexposestructurallimitations
+of standard single stage architectures. These limitations have motivated a series of targeted modifications
+that redistribute representational capacity, reshape prediction heads, adjust optimization objectives, and
+strengthen multi scale interactions. To position the present study within the broader literature, this section
+developsaunifiedtheoreticalframeworkthatabstractsrecentYOLO-baseddesignsintofourenhancement
+dimensionsandthencontraststhisframeworkwithexistingsurveysonYOLOandonsmall-objectdetection.
+From a theoretical perspective, the four enhancement dimensions considered in this review form a
+coherent framework that restructures how detectors in the YOLO family allocate representational capacity
+to weak and spatially constrained signals associated with small objects. Attention mechanisms and feature
+enhancementmodulesactprimarilyoninternalfeaturerepresentations.Theyintroducelearnableweighting
+functions over channels and spatial locations so thatthe network can amplify informative responses while
+suppressingbackgroundactivationsthatarisefromclutteredsurroundings.Inthecaseofsmallobjects,the
+rawconvolutionalprocessingpipelineoftenproducesfeaturesinwhichresponsesfromtinytargetsareeasily
+submerged by context, which leads to low discriminability in the latent space. Attention modules counter
+this tendency by implementing a data driven reweighting of signal and noise. Features that correlate with
+reliable evidence of small objects receive increased importance, whereas channels and positions dominated
+by background receive reduced influence. This process enlarges the margin between foreground instances
+and background in the representation space and establishes a more discriminative basis for subsequent
+predictionlayers.Detectionheaddesignandbranchstructureoptimizationoperateattheinterfacebetween
+representation and prediction. The detection head defines how the continuous feature field is sampled into
+
+PAGE 4
+4 ComputMaterContin. 2026;87(1):7
+discrete hypotheses over scale, aspect ratio, and spatial position. For small objects, conventional heads
+with a limited set of strides and anchors can under sample the image plane or assign tiny targets to
+receptive fields that do not match their spatial extent. Refined heads adjust sampling density, receptive field
+allocation,andbranchspecializationsothatatleastonepredictionbranchmaintainsareceptivefieldthatis
+commensuratewiththephysicalscaleofsmallinstancesandreceivesgradientsconcentratedonthatregime.
+In conceptual terms, the head reparametrizes the mapping from feature space to bounding box hypotheses
+so that signals associated with small objects are not systematically projected into under resolved or low
+confidencepredictions.Lossfunctionimprovementandregressionprecisionoptimizationshapethelearning
+dynamicsthatactonthesehypotheses.Classicallossfor mulationsbalanceclassificationandlocalizationin
+a manner that is often dominated by medium and large objects, since these objects contribute most of the
+mass under the loss surface. Small objects, which are more sensitive to localization jitter and annotation
+noise, may therefore receive weak or unstable gradients. Redesigned loss functions modify the geometry
+of the optimization problem by increasing sensitivity to localization errors at small scales, by refining the
+penalty near object boundaries, and by adjusting the relative influence of easy and hard examples. This can
+beinterpretedasaredistributionofgradientenergytowardthoseregionsofparameterspacethatgovernthe
+behaviour of small objects, which in turn yields detectors whose decision surfaces are more closely aligned
+with the fine scale structure of the data. Multi scale feature fusion and spatial context enhancement act at
+the level of information flow across resolutions. In standard hierarchical networks, shallow layers preserve
+spatial detail but convey limited semantic abstraction, whereas deeper layers encode strong semantics but
+lose spatial precision. Effective small object detection requires both properties simultaneously. Multi scale
+fusionconstructsexplicitpathwaysthattransmithighlevelsemanticinformationbacktohigherresolution
+feature maps and aggregates contextual information across different scales. Context enhancement further
+refinesthisprocessbyenablingthenetworktointegratecuesfromsurroundingregionsthatextendbeyond
+theobjectyetremaininformativeaboutitspresenceandcategory.Atanabstractlevel,thesemodulesdefine
+agraphofinteractionsamongfeaturemapsatdifferentdepthsandresolutionsandlearncontextdependent
+mixingcoefficientsalongthisgraph.Forsmallobjects,thisleadstorepresentationsinwhicheachdetection
+locationissupportedbybothlocalizeddetailandcoherentcontext.Takentogether,attentiondrivenfeature
+enhancement,redesigneddetectionheadsandbranches,lossformulationstailoredtopreciseregression,and
+multiscalefusionwithspatialcontextconstitutefourcomplementaryaxesofmodification.Theydetermine
+how the network assigns weights to features, how it samples predictions, how gradients propagate through
+themodel,andhowinformationflowsacrossscales.Throughasystematicanalysisalongthesefouraxes,the
+presentreviewmovesbeyondacatalogueofmodulesandinsteadoffersamethodologicalperspectiveonhow
+designchoicesatthearchitecturalandoptimizationlevelsjointlydeterminethedetectabilityofsmallobjects.
+Most existing reviews of the YOLO family place their emphasis on the chronological development
+of the algorithm or on its broad application spectrum. Several representative studies [28,29]c a r e f u l l y
+enumerate the architectural changes introduced in successive YOLO versions from v1 to v8 and survey a
+wide range of use cases, they tend to treat the evolution of the detector in an aggregate manner and do not
+examineindepththespecificdifficultiesassociatedwithsmallobjectdetection.Theseworksprovidevaluable
+overviewsofthearchitectureandperformancetrendsoftheYOLOfamily,butthelevelofanalysisgenerally
+remains at a coarse architectural scale. Other articles extend YOLO reviews into particular application
+domainsoroperationalcontexts.Forexample,somesurveysanalyzethedeploymentofYOLOstyledetectors
+in areas such as autonomous driving and medical imaging and highlight their practical impact, while
+mentioning small objects only as one challenge among many that arise in these settings. Such reviews with
+as pec i fi cd o m a i nf ocu s[30–34] concentrate mainly on implementation case studies and on summary level
+performance indicators, with limited attention to the detailed design choices that contribute specifically to
+
+PAGE 5
+ComputMaterContin. 2026;87(1):7 5
+thedetectionofsmallobjects.Inparallel,thereexistsurveysthatconsidersmallobjectdetectionasageneral
+taskwithouttyingthediscussiontoaparticulardetectorfamily.Thesestudiesexaminegenericstrategiesfor
+handlingdiminutivetargets[ 35,36]butdonotanalyzeadaptationsthataretailoredtotheYOLOframework.
+Takentogether,mostofthecurrentliteratureeithertracestheoverallevolutionandapplicationsofthe
+YOLO family or discusses small object detection at a detector agnostic level, and the intersection of these
+two lines of work remains insufficiently explored. Focused reviews that address YOLO based small object
+detectioninasystematicmannerarethereforestillrel ativelyscarce.Thepresentreviewbuildsonthebroad
+insights provided by these YOLO and small object detection surveys and seeks to fill this gap. It adopts an
+analytical perspective that is explicitly driven by the characteristics of the small object detection problem,
+in which each architectural or algorithmic modification is interpreted through its capacity to mitigate core
+obstacles in this setting. Whereas previous surveys primarily recorded what changes occurred in YOLO or
+where the detector has been applied, the framework developed here investigates how and why particular
+enhancementstrategiesaddressthechallengesposedb ysmallobjects.Thediscussionisorganizedaccording
+tofourtechnicaldimensions,namelyattentionmechanismandfeatureenhancement,detectionheaddesign
+and branch structure optimization, loss function improvement and regression precision optimization, and
+multi scale feature fusion and spatial context enhancement. This organization supports a more detailed
+comparative analysis of designs that target small objects than is available in earlier work, and by extending
+t h et i m es p a nt oi n c l u d em e t h o d sp r o p o s e db e t w e e n2 0 2 0a n d2 0 2 5a n dc o n s i s t e n t l yi n t e r p r e t i n gt h e m
+throughthelensofsmallobjectdetection,thereviewrefinesandenrichesthebroaderoverviewsofferedin
+theexistingliterature.
+Section3 examines each of these four categories in depth and analyzes representative approaches and
+their contributions to advancing small-object detection within the YOLO framework.Fig.2 shows the
+organizationofthepaper.
+3 YOLO-BasedSmallObjectDetection:RecentAdvances
+Recent research on YOLO based small object detection can be interpreted through the four enhance-
+ment dimensions outlined inSection2, and this perspective provides a consistent structure for organizing
+a diverse set of architectural proposals. A first line of work strengthens internal representations through
+attention mechanisms and feature enhancement modules inserted into the backbone or at the interface
+between the backbone and the neck, which have been shown to refine fine grained cues that are crucial for
+very small targets [37,38]. A second line of work redesigns the detection head and the branch structure so
+that prediction layers are better aligned with the scale and aspect ratio distributions of small objects and
+so that at least one branch maintains an appropriate receptive field for these instances [39]. A third line of
+workmodifiesthelossfunctionandrelatedoptimizationcomponentsinordertoadjustthebalancebetween
+classification and localization, to emphasize accuracy for small objects, and to alleviate class imbalance
+effects [40]. A fourth line of work focuses on multi scale feature fusion and spatial context enhancement
+and aggregates information across different resolutions through feature pyramids, dilated receptive fields,
+and context aggregation modules so that even the smallest objects are represented with sufficient semantic
+richness and spatial detail [41,42]. In parallel with these four directions, very recent studies from 2024 and
+2025 have begun to explore dynamic network design and heterogeneous architectural fusion as emerging
+hotspotsforYOLObasedsmallobjectdetection,andthesedevelopmentsaresummarizedin Section3.6.In
+the remainder of this section, we examine representative methods in each of these four categories, explain
+how they modify the original YOLO architecture, and summarize their reported performance on public
+benchmarks,therebytranslatingthetheoreticalframeworkof Section2 intoaconcretecomparativeanalysis
+ofrecentadvances.
+
+PAGE 6
+6 ComputMaterContin. 2026;87(1):7
+Figure2: The organizationofthe paper
+Intheanalysisthatfollowstheattentiondimensionandthemultiscalefusiondimensionplaycomple-
+mentarybutnonoverlappingroles.Theattentiondimensiondescribeshowadetectorredistributessalience
+within a single feature level. The discussion therefore concentrates on mechanisms that adjust channel
+weighting or spatial weighting while the topology across scales in the network remains fixed. The multi
+scale fusion dimension describes how a detector constructs the paths that couple feature maps at different
+resolutions.Thediscussioninthatdimensionfocusesonthedesignoffeaturepyramids,bidirectionalpaths
+andcontextaggregationblocksthatgoverninformationflowbetweenlayers.Manyrecentmodelsapplyboth
+typesofmodification.Insuchcasesweassignthemethodtothedimensionthatdrivesthemainarchitectural
+changeandwetreattheothercomponentassupportive.
+Fig.3 presents an illustrative schematic based on the YOLOv8 architecture that indicates the typical
+locationsofthesefourcategoriesofimprovements.Thecolor-codedregionsmarkcommonlociofmodifica-
+tion. Blue denotes attention and feature-enhancement modules that are primarily inserted in the backbone
+or at the transition into the neck. Green denotes detection-head and branch-structure adjustments at the
+P3, P4, and P5 heads and at the convolutional layers that immediately precede them. Yellow denotes loss-
+function and regression-precision components along the training pathway that links head outputs to loss
+computationandlabelassignment.Purpledenotesmulti-scalefusionandspatial-contextmoduleslocatedin
+the neck, including upsampling and downsampling operators, fusion nodes and adaptiveweightingblocks.
+The color coding reflects typical practice across recent YOLO variants, and YOLOv8 serves only as an
+
+PAGE 7
+ComputMaterContin. 2026;87(1):7 7
+exampletoanchorthediscussion.Actualmodelsoftenmixmultiplecategoriesatthesamesite.Forinstance,
+theymaycombineattentionwithneck-levelfusionorpairarevisedheadwithatailoredloss.Theschematicis
+intendedtohelpreadersmapeachimprovementtoitsarchitecturallocationandtounderstandhowchanges
+inonepartofthepipelineinteractwiththeothers.
+Figure3: SchematicofYOLOv8highlightingtypicallocioffourimprovementcategories
+3.1 AttentionMechanismandFeatureEnhancement
+This subsection introduces attention mechanisms and their role in feature enhancement for small-
+objectdetection.Attentionmodulesdynamicallyhighlig htinformativefeaturesorspatialregions,effectively
+guiding the network to focus on the parts of the image most relevant to small objects. Broadly, attention
+in YOLO-based small object detectors can be categorized into four groups: (a) channel attention, which
+reweights feature maps across the channel dimension; (b) spatial attention, which emphasizes particular
+locations in feature maps; (c) combined or deformable attention mechanisms that capture complex feature
+dependencies; and (d) hybrid feature enhancement modules that integrate attention with other operations.
+Each type addresses different aspects of feature representation, and collectively they improve the network’s
+ability to represent and discriminate small objects under challenging conditions. Although attention and
+
+PAGE 8
+8 ComputMaterContin. 2026;87(1):7
+multi-scale fusion are discussed in separate subsections for clarity, the two approaches frequently co-occur
+withinthesamemodule,particularlyintheneck,whereattentiongatesorreweightscross-scaleinformation
+flows. Throughout this subsection we interpret hybrid modules through the lens of attention. The narrative
+highlights how learned weighting functions reshape feature salience for small objects. The contribution of
+any embedded multi scale fusion operators is summarized only when it is necessary to understand how
+attentionactsonaggregatedfeatures.Adetailedcomparisonofthefusionoperatorsthemselvesispresented
+inSection3.4.
+3.1.1ChannelAttentionMechanisms
+Channel attention mechanisms selectively recalibrate channel-wise feature responses. These modules
+functionbyhighlightinginformativechannelsandsuppressingredundantornoisyactivations,whichenables
+thenetworktofocusonfeaturesrelevanttosmallobjectsandmitigatesthedilutionofsubtledetailsduring
+the forward pass. Typical channel attention mechanisms include coordinate attention (CA) [43], efficient
+channel attention (ECA) [44], and squeeze-and-excitation (SE) [45], which enhance or suppress different
+channels by learning the importance of each feature channel. For instance, SE blocks adaptively reweight
+channelfeaturesbasedon theglobalcontext.Liuetal.introduced theChannelWeightingModule (CWM),
+w h i c hc o m b i n e da nS Eb l o c kw i t ha1× 1 convolution and improved mAP50 by 2.3% on VEDAI. Further
+refinementsfocusedonmakingchannelrecalibrationmoreefficientandlightweight.
+In several representative designs, channelattentionis not applied in isolationbut is coupled with multi
+scale fusion so that reweighting acts on aggregated cross scale information. Wu et al. [46]fu sedm ul tisc al e
+featuresthroughparalleldepthwiseandpointwiseconvolutionsfollowedbySEattentionandobtaineda0.6%
+improvementinmAP.Heetal.[ 47]extendedthisideainFOSYOLOwithtwolightweightmodules.ADEM
+separates features into depthwise and standard convolutional paths before SE based recalibration. LERM
+applies grouped depthwise convolutions with channel shuffle and a simplified SE structure. Together these
+modules increase mAP50 by 1.8 percentage points and reduce the parameter count by more than twenty
+percent.Wangetal.[ 48]proposedtheCPMAEMmoduleinSCASNet,whichusesmultibranchdepthwise
+convolutions and sequential channel spatial attention to strengthen multi scale cues. These designs show
+attention operating within cross scale pipelines. Their core operators perform explicit aggregation across
+scales, so their fusion behaviour belongs to the multi scale fusion dimension, while this subsection focuses
+ontheattentioneffect.Readerscanfindtheoperator-levelanalysisin Section3.4.
+CoordinateAttention(CA)mechanismswerealsoadoptedinYOLO-baseddetectorstoembedspatial
+context into channel attention. By performing separate global pooling along the horizontal and vertical
+directions, CA encodes positional information into the channel-wise weights, which enables the network
+to localize small and elongated objects more accurately. This approach was incorporated into various
+architectures, such as GhostNet and CSP modules. Xie et al. [13]i n s e r t e daC Am o d u l ea tt h eo u t p u to f
+each CSP stage to embed long range dependencies along both width and height and reweight channels
+accordingly, which allowed the model to focus on precise target locations, achieving an mAP of 88.74% on
+DOTA. Likewise, coordinate attention was used in cross-scale feature connections to adaptively highlight
+fine-grainedtargets,suchastinyshipsinaerialimagery,anditmarkedlyimprovedthedetectionofdensely
+distributedobjects[ 49].
+RCA introduced a residual reweighting structure and employed mixed pooling, which strengthened
+the representation of small and dense objects [50]. Xu et al. [51] developed the Lightweight CSP Attention
+(LCA)blockinMFFCI-YOLOv8,combiningdepthwiseseparableconvolutionswithaSimAMmodulethat
+introduces no additional parameters for channel reweighting, which resulted in a 1.4% increase in mAP
+onVisDrone2019.Beyondexplicitattention,alternativeapproachesusechannelselectiontoachievesimilar
+
+PAGE 9
+ComputMaterContin. 2026;87(1):7 9
+effects. Zhu and Miao [52] proposed the Selective Feature Enhancement Block in SCNet, which ranked
+channelsbytheirgloballypooledL1norms,processedhigh-andlow-contributionchannelsdifferently,and
+thenfusedthem,attaininganmAPof96.1%onNWPUVHR-10and71.9%onDIOR.
+Beyond these mainstream channel-attention schemes, recent studies extended the mechanism to
+broader and more complex contexts. Hou et al. [53] introduced the C2f-GE module, which combined
+local feature extraction with global-context heatmaps to enhance channel attention. Transformer-inspired
+approachesalsoemerged.Forinstance,Lietal.[ 54]presentedtheMulti-ChannelTrans-Attention(MCTA)
+module,whichemployedmulti-headself-attentiontolearninter-channeldependenciesandtorefinesubtle
+features.DingandDu[ 55]furthervalidatedthistrendinanindustriallogoinspectionsystem.Theyreplaced
+theearlyC2fblocksintheYOLOv8backbonewithcontextualT ransformerlayersandequippedthedetection
+head with a coordinate-aware CoordSaEBlock that fuses positional encoding with channel attention. This
+hybriddesignproducedmorediscriminativefeaturesf orfine-grainedcigarette-packagelogosandimproved
+classificationaccuracywhilemaintainingreal-timethroughputonalarge-scaleproductioninspectionline.
+3.1.2SpatialAttentionMechanisms
+SpatialattentionmechanismsinYOLO-baseddetectorsfocusonwherethenetworkshouldconcentrate
+its attention, emphasizing important regions and contextual cues in the feature maps. For small-object
+detection, spatial attention is vital for isolating tiny targets from cluttered backgrounds and capturing the
+surrounding context that might indicate an object’s presence. A key direction in recent research on YOLO-
+based small-object detection involves leveraging transformer-based spatial attention to explicitly model
+long-range dependencies. For instance, Zhang et al. [7] introduced a Deformable Attention Transformer
+aftertheSPPFlayer.Themoduleusedlearnablereferencepointstodirectsparseself-attentiontowardsalient
+regions. They further proposed a Spatial Channel Attention Module that modulated spatial and channel
+informationjointly.Thiscombinationimprovedspatialrelationshipmodelingandyieldeda1.7%increasein
+mAP on the USOD dataset. Similarly, Zhao et al. [56] embedded a Swin Transformer block within the C2f
+moduleoftheYOLOv8nbackboneandincreasedmAP50by1.5%.
+Building on these advances, some designs parallelized convolutional and transformer-based paths to
+capturelocaldetailsandglobaldependenciesmoreeffectively.YOLOAntexemplifiesthishybridapproach.
+Itsbackboneusesdepthwiseseparableconvolutionswithlargekernelstoobtainmultiscalelocalrepresenta-
+tions.ItsneckaddsanattentionmoduleinspiredbyMobileViTthatrunsinparalleltothemainconvolutional
+stream.Thisdesignpreservesfinedetailsandglobalspatialdependencieswithhighcomputationalefficiency,
+whichmakesthemodelsuitableforsmallobjectrecognitioninresourceconstrainedsettings[ 57].
+Acommonthemeunderlyingthesespatial-attentiondesignsisthepreservationoffine-grainedlocation
+information for small objectswhilesimultaneously leveraging broader contextual cues. To this end, several
+methodsencodedexplicitcoordinateinformationoremployedmulti-scalepoolingoperations.Nanetal.[ 58]
+introduced coordinate attention by applying one-dimensional global pooling along the height and width
+axes, generating spatially aware attention maps that guided the network to focus on critical regions while
+retaining positional details. Similarly, Li et al. [59] proposed the Spatial Information Enhancement (SIE)
+module, which incorporated coordinate-convolution layers into both the backbone and neck. By pooling
+along spatial axes and concatenating these features, SIE augmented feature maps with explicit location cues
+andresultedina0.3%increaseinmAPforUAVdetectiontasks.
+Beyond coordinate based methods, other models adapt the receptive field in the spatial domain to
+capture context at multiple scales. Peng et al. [60] developed the Receptive Field Attention module, which
+modifies dilation rates or kernel sizes according to input features and highlights spatial patterns of small
+
+PAGE 10
+10 ComputMaterContin. 2026;87(1):7
+objects.IntegratingRFAConvledtoa2%improvementinmAPonVisDrone2019.Jiangetal.[ 61]proposed
+the RA3-DWA module for DSFPAP-Net. It applies a sequence of depthwise convolutions with different
+dilation rates to accumulate context across scales. A subsequent SimAM driven spatial channel attention
+m e c h a n i s mr e c a l i b r a t e sf e a t u r e sa ta l ld e t e c t i o nh e a d sa n ds t r e n g t h e n st h er e p r e s e n t a t i o no fs m a l lo b j e c t s .
+Zhu et al. [62]d e v e l o p e dt h eS p a t i a lD e p t h w i s eA t r o u sb l o c kf o rY O L O v 5o nd r o n ei m a g e r y .I tf u s e s
+depthwise separable convolutions with multi branch dilated paths and then applies channel and spatial
+attention. This design recalibrates features and significantly boosts small object detection even without
+explicitpositionalencodings.
+3.1.3 Deformable Convolution Guided Mechanisms
+Deformable convolution essentially acts as an attention mechanism by using adaptive sampling and
+learningoffsetvectorstoshiftsamplinglocationstowardmoreinformativeregions.InthecontextofYOLO
+detectors, this flexibility allows the network to focus on the exact shapes and positions of small objects,
+improvingfeaturealignmentandreducingbackgroundconfusion.
+SeveralstudiessuccessfullyintegrateddeformableconvolutionallayersintotheYOLObackboneorneck
+to harness these advantages. Chen et al. [63] systematically replaced all standard C2f convolutional units
+in both the backbone and neck of YOLOv8n with DCNv2 deformable convolutions, granting the network
+the flexibility to capture local geometric deformations. This modification led to a 2.6% improvement in
+mAP50,reflectinganenhancedabilitytotrackobjectcontoursandkeypointsinchallengingscenarios.Peng
+etal.[ 64],intheirMLSA-YOLOframework,introducedtheDCN_C2fmodulebysubstitutingasingle3 ×3
+convolutionintheC2fbottleneckwithaDCNv3layer.Thisadjustmentallowedthereceptivefieldtodeform
+adaptively in response to object distribution, retaining more fine-grained information for small targets at
+lowresolutionsandleadingtoa0.4%increaseinmAP.
+Beyond straightforward replacement strategies, other works coupled deformable convolutions with
+explicit attention mechanisms for further gains. Xu et al. [65] proposed ESOD-YOLO, featuring the
+SPPELAN module in the neck, which combined parallel DCNv3 convolutions with a Mixed Local Channel
+Attention (MLCA) mechanism. In this design, the deformable convolution provided adaptive sampling
+for geometric and multi-scale information, while MLCAassigned attention weights by jointly considering
+local feature patterns and global channel context. The addition of SPPELAN to SCCFF resulted in a
+0.2%mAPimprovement.
+Furthermore, some studies integrated deformable convolution into feature fusion modules to better
+preservesmall-objectdetails.Shietal.[ 66]designedtheDeformableConvolutionGuidedFeatureLearning
+(DCGFL) module for the backbone, utilizing a DCNv2 layer to dynamically adjust the sampling grid
+for multi-scale and shape-adaptive representations. This was followed by a channel-attention block to
+recalibratefeatureresponses,facilitatingrobustmulti-scaleinformationintegration.Intheneck,deformable
+convolution-guidedfusionblocks(DCGFF)wereemployedtoalignandmergehigh-resolutionshallowfea-
+tureswithdeepsemanticinformation,ensuringthatfinedetailswereretainedduringfusion.Incorporation
+oftheDCGFLmoduleelevatedmAP50ontheVisDrone2021datasetto57.6%.
+3.1.4Multi-ScaleandSelf-AttentionFusionMechanisms
+In YOLO-based small object detection, multi-scale feature fusion enriches representations by innova-
+tively combining multi-scale convolutional processing with various attention mechanisms. This approach
+preserves fine-grained details while incorporating higher-level context, expanding the receptive field and
+integratingcontextualcueswithoutcompromisingthediscriminabilityofsmall-objectfeatures.
+
+PAGE 11
+ComputMaterContin. 2026;87(1):7 11
+Withintheattentionfamily,severalrepresentativedesignsdeployattentionatfusionsites,whereitgates
+or reweights cross scale features. Wang et al. [67] advanced the CSA module by using parallel convolutions
+andglobalpoolingformulticontextaggregation,followedbyself-attentionandresidualfusion,andobtained
+a0 . 6 %i m p r o v e m e n ti np e r f o r m a n c e .Z e n ge ta l .[8] introduced the SCA block, which combined global
+pooling with SimAM based selection to guide spatial attention during feature fusion and achieved a 0.9%
+improvement on VisDrone2020. Zheng et al. [68] proposed the MSFAM module, which aggregated multi
+scale pyramid features and projected them into a joint space for channel and spatial reweighting, resulting
+in an mAP of 69.3% on VEDAI. Bai et al. [69] d designed a weight adaptive spatial attention mechanism
+that generated separate spatial maps for semantic and detailed features and balanced their contributions,
+reaching mAP50 of 87.2% on NWPU VHR-10 and 88.2% on DIOR. Wang et al. [14]p r o p o s e dD y H e a df o r
+improved YOLOv8, which unified scale, spatial and task attention within a dynamic head and produced a
+1.5%increaseinmAP.Liaoetal.[ 70]furtheradvancedthisdirectionwiththeMSCETblock,whichcoupled
+paralleldilatedconvolutionsformultiscalecontextwithmultiheadself-attentionandboostedmAPby1.7%.
+Collectively,thesetechniquesshowafusiondrivenstrategyinwhichattentionisinterwovenwithmultiscale
+aggregationandstrengthensthegranularityandcontextualrichnessofsmallobjectrepresentations.
+One set of approaches focused on multi branch convolutional modules that gather multi scale infor-
+mation and can be fused or simplified for efficiency. Niu and Yan [71] integrated a Diversified Basic Block
+intotheYOLOv8backbone.Duringtraining,itusesparallelconvolutionalbrancheswithvariedkernelsizes
+to learn richer features. At inference, these branches are folded into a single convolution to retain multi
+path expressiveness. In another work, Jiang et al. [72] proposed MSFEM, a multi scale feature extraction
+modulecomposedoffourparallelbrancheswithdifferentkernelsizes,including1 ×1and5×5convolutions,
+pointwise convolutions and a residual connection. Other designs drew on mixture-of-experts ideas. Chen
+et al. [73] proposed MPMS for Para-YOLO, where three parallel dynamic-convolution branches of varying
+sizesoperatedondifferentchannelproportionsandwereadaptivelyfusedbyalightweightrouter,yieldinga
+1.6% gain in mAP. Liu et al. [74] diversified context extraction in SOD-YOLOv8n with the MFFM module,
+which divided feature channels into four groups processed by distinct branches and shuffling, achieving
+mAP50of54.62%onVEDAI.
+Anotherprominentdirectionisthedevelopmentofhybridattentionmechanismsthatcombinechannel
+andspatialattentionwithinaunifiedframework.TheConvolutionalBlockAttentionModule(CBAM)[ 64]
+exemplifiesthisapproach,simultaneouslyapplyingbothchannelandspatialattentiontorefinefeaturemaps.
+Tang et al. [75] enhanced YOLOv5 by appending a CBAM block at the end of the backbone, significantly
+boosting both channel and spatial representations. Building upon this, MSCA-CBAM [76] replaced global
+pooling in CBAM with a two-dimensional discrete cosine transform, enriching the frequency components
+during channel excitation and achieving mAP50 of 73.98% on DIOR and 97.50% on RSOD. Beyond
+CBAM, advanced hybrid attention mechanisms such as the Global Attention Module (GAM) proposed
+by Xie et al. [77] sequentially applied channel and spatial attention while preserving cross-dimensional
+dependencies,yieldinganmAP50of37.6%onVisDrone2019.
+Acleartrendistheintegrationoftransformer-basedorself-attentionmodules,whichareincorporated
+either alongside CNN backbones or as standalone pipelines, in order to further strengthen local and
+global context modeling. In TA-YOLO, Li et al. [54] implemented the MCSTA module, using multi-
+head channel self-attention to globally reweight channels before applying multi-head spatial self-attention
+to model positional dependencies, with their coordinated output merged via residuals for a substantial
+6.2% increase in mAP50. Bai and Li [78] addressed similar challenges in industrial instrumentation by
+integratingaSwin-TransformerbackbonewithFocusanddepthwise-separableconvolutionsandbyadopting
+anSPPCSPCblockfollowedbyaC3STRnecktostrengthenmulti-scalefeatureinteraction.Thisarchitecture
+
+PAGE 12
+12 ComputMaterContin. 2026;87(1):7
+substantially improved the detectability of small pointers and scale markings under complex backgrounds,
+while still delivering real-time inference on an industrial pointer meter dataset. Ge et al. [79] investigated
+lightweight UAV-based infrared detection by constructing an S2GM backbone from ShuffleNetV2 blocks
+withstride2andC2fGhostmodules.ThedesigncoupledthisbackbonewithanAGFCattentionblockand
+aSENet-stylemulti-featurefusionneck.Together,thesecomponentsreducedparametersandfloating-point
+operationsrelativetotheYOLOv8nbaselineandimproveddetectionaccuracyforsmallinfraredtargetson
+theHIT-UAVdataset.Themodelstillsatisfiedreal-timerequirementsonembeddedUAVplatforms.
+Altogether, these advances reflect a clear shift toward increasingly unified and adaptive multi-scale
+fusion frameworks in YOLO-based small object detectors. By systematically integrating convolutional,
+attention-based, and transformer-driven mechanisms, these models achieve a more balanced capture of
+fine-grained local features and global semantic context. This synergy not only enhances detection accuracy
+f o rs m a l lo b j e c t sa c r o s sc h a l l e n g i n gd a t a s e t sb u ta l s os e t sap r o m i s i n gd i r e c t i o nf o rf u t u r ea r c h i t e c t u r a l
+innovationinthefield.
+3.1.5ChallengesandLimitationsofAttentionMechanisms
+Attention mechanisms and feature enhancement modules face intrinsic theoretical limitations when
+they are applied to small object detection because the underlying feature statistics differ fundamentally
+from those of medium or large targets. In convolutional backbones the activations corresponding to a very
+small object are distributed over only a few receptivefields and exhibit low energy relative to the global
+feature map, which leads to an extremely low signal to noise ratio in both channel and spatial dimensions.
+Standardattentionmodulesestimateimportanceweightsfromtheseactivationsthroughglobalaggregation
+or similarity measures and implicitly assume that salient structures dominate the feature distribution. For
+tiny objects this assumption is violated, since the informative response of the object is often statistically
+indistinguishable from background fluctuations, and the attention module therefore tends to assign high
+weightstotexturedclutter,shadows,orneighboringlargeinstancesratherthantothetruesmalltarget.From
+the perspective of optimization this misallocation of attention degrades gradient propagation, because the
+network repeatedly reinforces background dominated channels while the weak gradients associated with
+small objects are suppressed, which in turn further reduces the separability of their features in the latent
+spaceandcanultimatelydrivethemodeltowardasolutioninwhichsmallobjectsaresystematicallyignored.
+Moreover, many attention designs are scale agnostic and operate on a single feature map without explicit
+constraints on spatial extent, so they lack a mechanism to distinguish between a genuine tiny object and a
+fragmentofalargerstructurethatoccupiesasimilarimageregion.Thesetheoreticalissuesindicatethatdirect
+insertion of generic attention modules is insufficientfor small object detection and must be complemented
+bydesignsthatareexplicitlysensitivetoscaleandcontext.Shahapurkaretal.[ 80]evaluatedfinetunedYOLO
+detectors on the SIRST-UAVB infrared benchmark. Even after extensive tuning, performance remained
+strong for UAV targets but weak for small birds in cluttered low contrast scenes. This gap illustrates the
+persistentdifficultyofinfraredsmalltargetdetectionandthelimitedsuitabilityofgenericYOLObackbones
+in such regimes. One promising direction is to couple attention with multi scale feature fusion so that the
+weightingfunctionsareconditionedjointlyonlocalfeatureswithfinespatialgranularityandonmorestable
+coarsesemanticcontext,whichcanprovideapriorabouttheplausiblelocationandextentofsmallobjects.
+This interaction between attention and multi scale feature aggregation is examined in detail inSection3.4
+ofthisreview.Anotherpossibleavenueistointroduceadditionalsupervisionorregularizationforattention
+maps, for example by aligning them with spatially subsampled ground truth masks or by penalizing overly
+diffuseresponses,sothatthelearnedweightingpatternsconcentratemorereliablyaroundtruetargetregions.
+It is also beneficial to design attention modules whose parameterization is constrained by geometric priors
+
+PAGE 13
+ComputMaterContin. 2026;87(1):7 13
+suchasexpectedobjectsizerangesoraspectratios,whichcanpreventthemechanismfromfocusingalmost
+exclusively on dominant large scale structures. In summary, the principal challenge for attention driven
+featureenhancementinsmallobjectdetectionarisesfromthemismatchbetweenthestatisticalassumptions
+of standard attention formulations and the weak, sparse, and easily confounded signals produced by tiny
+targets, and effective solutions require mechanisms that are explicitly scale sensitive, guided by contextual
+information, and supported by stronger supervisory signals.
+3.2 DetectionHeadDesignandBranchStructureOptimization
+For small-object detection, many studies have shown that modifying the YOLO head or adding extra
+predictionbranchescanmarkedlyimprovethecaptureoffinedetails.Broadly,improvementsinthiscategory
+fall into two groups: (1) High-Resolution Branch Enhancement, which adds or preserves finer-scale feature
+maps for prediction, and (2) Detection Head Structure Optimization, which redesigns the head to better
+localize small objects. The former mainly addresses the resolution of features used to detect small objects,
+while the latter involves changes like anchor-free heads, decoupled heads, or specialized layers to handle
+small-object geometry. By dividing improvements into these two categories, we can see a progression from
+simply increasing feature resolution for predictions to more fundamental redesigns of the head for small-
+objectaccuracy.
+3.2.1High-ResolutionBranchEnhancement
+A common enhancement in YOLO-based small object detection is adding an extra high-resolution
+prediction head at an earlier backbone stage to capture fine-grained features. Many studies introduced
+additionalpredictionheadsatfinerspatialscales.Bytappingintoshallowbackboneoutputs,thesebranches
+effectively preserve subtle textures and edges essential for accurate localization and classification of micro-
+scale targets, while incurring minimal computational cost. This approach was broadly validated across
+UAVsurveillance,logistics,airportsensing,andunderwaterdetectiontasks.Itconsistentlyreducedmissed
+detectionsandimprovedaccuracy[ 81–84].
+Tang et al. [85] implemented this strategy in YOLO-RSFM by appending a shallow P2 head directly to
+the earliest backbone feature map, without deep feature fusion, thereby concentrating on high-resolution
+texture andboundary cues.This modification led to a 1.3% increase in mAP. In a similarvein,Qi et al. [86]
+proposed SD-YOLO, which introduced a Low-Level Detection Head (LLDH) operating on early-stage
+featuremaps,enablingthedetectionofminuteaerialtargetsthatareotherwiselostindeeperlayers,withan
+mAPof41.2onVisDrone2019.
+Recent studies have further strengthened high-resolution branches through adaptive fusion strategies.
+RepresentativeexamplesincludeMIS-YOLOv8andtheapproachofNingetal.[ 9,87],whichintegratehigh-
+resolutionpredictionswithcontext-awarefusionmechanisms.Theseapproachesareanalyzedinmoredetail
+inSection3.6 ondynamiccontextadaptivefusion.
+In parallel with additional high-resolution branches, several works enhance feature fidelity through
+input or intermediate super resolution techniques. Zhang et al. [88]i m p r o v e dY O L O v 5b yr e m o v i n g
+the Focus module and adding a lightweight encoder decoder super resolution branch during training to
+reconstruct high resolution features from low resolution inputs. This SuperYOLO design achieved an mAP
+of 64.4 on the VEDAI validation set. Liu et al. [89] extended this idea with a super resolution perceptual
+branch between the backbone and the neck. The branch uses residual blocks and up convolutions with a
+perceptuallossthatalignsfeaturestohighresolutio nimagepatchesduringtraining.Thisschemeyieldsa7.4
+percentagepointgaininmAP.
+
+PAGE 14
+14 ComputMaterContin. 2026;87(1):7
+3.2.2DetectionHeadStructure Optimization
+Effective small object detection with YOLO architectures increasingly relies on specialized detection
+head redesigns that address the uniquechallenges posed by tiny, dense, or variably oriented targets. Recent
+research has converged on three primary directions: lightweight design and anchor strategy optimization,
+attention-drivenadaptiveheads,andarchitecturesfo cused on task decoupling, spatial alignment, and rota-
+tion awareness. These improvements collectively enhance the detection head’s ability to extract, represent,
+andlocalizesmallobjectsindiversescenarios.
+Reducing the computational footprint of detection heads while maintaining robust representation is
+crucial for real-time and edge applications. Wu et al. [46,50] tackled the challenge of anchor generation
+by replacing traditional k-means clustering with a Differential Evolution (DE) algorithm. This approach
+iteratively refined anchor box dimensions to better match the scale distribution of small objects, yielding
+a substantial improvement in detection for remote sensing imagery and achieving 63.7% mAP on NWPU
+VHR-10. Parallel efforts in head design sought to unify and streamline head architecture. Wu et al. [46]
+introduced CRL-YOLO, which employed a single set of convolutional layers shared between classification
+andregression,regulatedbyGroupNormalizationand alearnablescalefactor.Thisconfigurationachieved
+efficient parameter usage and facilitated deployment in resource-constrained environments. Liu et al. [90]
+developed EdgeYOLO, in which the Lite Decoupled Head eliminated redundant 3× 3 convolutions and
+employedstructuralreparameterizationtomergeimplicitfeaturelearninglayers,significantlycompressing
+the head while sustaining effective feature extraction. EdgeYOLO also adopted an anchor-free detection
+paradigm inspired by FCOS, shifting to per-pixel prediction and discarding anchor-based post-processing,
+which simplified inference and proved advantageous in scenes with densely clustered small objects. On
+the MS COCO 2017 dataset, the Lite Decoupled Head enabled EdgeYOLO to achieve 50.6% mAP50. For
+industrial settings, Yuan et al. [91] presented YOLO-HMC, which pruned unnecessary layers from the
+YOLOv5 head and adaptively tuned the channel configuration for PCB defect detection, leading to a 3.5%
+increaseinmAP.
+To address the limited visibility and ambiguous features of small or densely packed objects, several
+models injected advanced attention mechanisms directly into the detection head. Peng et al. [60]p r o po sed
+LGFF-YOLO, in which the Lightweight Detection Head (LDyHead) integrated sequential scale-sensitive,
+spatial-adaptive, and task-specific attention modules, dynamically modulating feature importance at each
+stage. The use of a computationally efficient FasterConv module further accelerated inference, and the
+replacementofthestandardheadwithLDyHeadresultedina2.1%improvementinmAP50.
+This trend toward fine-grained attention is also evident in domain-specific applications. Hu et al. [92]
+introducedMOA-YOLO,enhancingeachdetectionheadwithaMulti-headLatentAttention(MLA)module,
+whichenabledthenetworktobetterdistinguishsmall fishfrombackgroundnoise,leadingtoa6.4%increase
+in mAP. For X-ray imagery, Cheng et al. [93] developed X-YOLO with an improved Dynamic Head that is
+awareoftask,scale,andspatialinformation.Thearchitectureadaptivelyreweightedfeaturesforclassification
+andlocalizationacrossdifferentscales,supportingmoreaccuratedetectionofsmallandclutteredtargets.Liu
+et al. [94] investigated conveyor belt safety monitoring and proposed the YOLO-EV2 detector. The model
+coupled an EfficientNetV2 backbone with a scale-sensitive detection head. The head explicitly enhanced
+responses to small longitudinal tearing patterns along belt edges under heavy interference. On a coal mine
+conveyor belt tear dataset, YOLO-EV2 achieved higher mean average precision and frame rate than recent
+YOLO baselines. These attention-driven modifications enable detection heads to more effectively capture
+subtleandlocalizedinformationrequiredforchallengingsmallobjectscenarios.
+Athirdstrandofheadoptimizationtargetsthedecouplingoftasks,explicitspatialalignment,andhan-
+dlingoforientedobjects,therebyrefiningthehead’sspecializationforsmalltargetlocalization.Moetal.[ 95]
+
+PAGE 15
+ComputMaterContin. 2026;87(1):7 15
+presented SGT-YOLO, which removed the higher-level (P4/P5) heads to simplify the architecture and
+introducedaTask-SpecificContextDecouplinghead.Thisdecouplingenabledmorefocusedfeaturelearning
+fortinydefects,achievinga0.4%improvementinmAP50.Buildingonthethemeoftaskspecialization,Jiao
+et al. [96] developed YOLO-DTAD, embedding a dedicated feature extractor within a decoupled head and
+employingdynamiclossweightingtostrengthenthesyner gybetweenclassificationan dlocalizationstreams.
+This architecture led to a 4.1% accuracy improvement. Addressing the alignment of spatial predictions,
+Zhuangetal.[ 97]introducedYOLO-KED,whichutilizedaDynamicAlignmentandRotatedHead(DARH)
+to coordinate the confidence and localization for each object and to support rotation-aware bounding
+boxes, achieving a 1.3% improvement in mAP0.5:0.95. For scenes involving arbitrary object orientation,
+Xie et al. [13] developed CSPPartial-YOLO, which featured a rotational prediction head comprising three
+parallelbranchestoestimatelocation,category,androtationangle.ThetrainingstrategycombinedVarifocal
+Loss, ProbIoU Loss, and Distributed Focal Loss to address class imbalance, regression accuracy, and angle
+predictionstability,respectively.Theirapproachachieved89.75%mAPonDOTA.
+Collectively,thesestructuralinnovationssignificant lyimprovetheadaptabilityandrobustnessofYOLO
+detection heads for small object scenarios. By integrating lightweight designs, advanced attention mecha-
+nisms,andspecializedmodulesforchallengingspatialcontexts,recentmethodshaveenabledYOLO-based
+detectorstomoreeffectivelylocalizeandrecognizesmalltargetsacrossdiverseandcomplexapplications.
+3.2.3 Challenges ofDetection Head and Branch Structure Optimization
+Challengesindetectionheaddesignandbranchstructureoptimizationforsmallobjectdetectionarise
+fromthecentralrolethatthesecomponentsplayinmappingcontinuousfeaturefieldstodiscreteprediction
+hypotheses. In single stage detectors such as the YOLO family, each detection head defines a particular
+samplingofthemultiscalefeaturehierarchyintoboundingboxandclasspredictions,andtheintroductionof
+additionalheadsorbranchesforsmallobjectsfundamentallyaltersthissamplinggeometry.Whenanextra
+predictionheadisattachedtoafeaturemapwithfinerspatialstride,thenumberofcandidateboxesincreases
+sharplyandmanyofthesecandidatesoccupyhighlyoverlappingreceptivefields.Fromastatisticalviewpoint
+this causes a substantial rise in correlated outputs whose underlying features are almost identical, which
+increases the probability of false positives unless the allocation of responsibilities across heads is carefully
+constrained. In principle a head that is intended for small objects should respond only to targets within a
+particularrangeofscales,yetinpracticethereceptiv efieldsofdifferentheadsoverlapacrossscaleandaspect
+ratio. As a result, the same object may be explainable by multiple heads, which creates ambiguity in label
+assignmentduringtrainingandinconfidenceallocationduringinference.Thisambiguityhasadirectimpact
+on the optimization landscape. The multi head loss is a sum of coupled terms whose gradients compete
+for shared backbone parameters. If training targets are not assigned in a scale consistent manner, gradients
+from different heads may point in conflicting directions in parameter space, which slows convergence and
+can lead to solutions in which one head dominates while another remains under trained. Small object
+branches are particularly vulnerable to this phenomenon because they often operate on shallower features
+withweakersemanticsandthusreceivenoisysupervision.Atthesametime,eachadditionalheadintroduces
+newparametersandincreasesthedimensionalityofthehypothesisspace.Thisenlargesthesearchspacethat
+the optimizer must explore and can cause the model tooverfit to spurious correlations in the small object
+regime. Computationally, extra heads and branches also increase the cost of dense prediction, which runs
+countertotherealtimeconstraintsthatoriginallymotivatedtheYOLOframeworkandmaymakesomesmall
+objectorienteddesignsimpracticalfordeploymentonresourcelimitedplatforms.Thesechallengessuggest
+thateffectivedetectionheadoptimizationrequiresmorethansimplyaddingfinescalebranches.Promising
+directionsincludescaleawareassignmentstrategiestha tenforceaclearpartitionofobjectsizesacrossheads,
+
+PAGE 16
+16 ComputMaterContin. 2026;87(1):7
+regularizationschemesorknowledgedistillationthatstabilizegradientsinmultiheadtraining,anddynamic
+gating mechanisms that activate only the branches that are informative for a given input distribution. In
+theoretical terms the goal is to design a prediction layer that increases the sensitivity of the network to
+smallobjectswhilemaintainingawellconditionedoptimizationproblemandpreservingtheglobalbalance
+betweenrecall,precision,andefficiencythatdefineshighqualitysinglestagedetection.
+3.3 LossFunctionImprovementandRegressionPrecisionOptimization
+3.3.1RecentAdvancesinLossFunctionsforSmallObjectDetection
+Recent studies in YOLO-based small object detection have focused on designing loss functions that
+incorporate scale-aware weighting, geometry-aware metrics, and adaptive task balancing to address the
+disproportionateinfluenceoflargeobjectsandimprovelocalizationprecisionforsmalltargets.Smallobjects
+occupy few pixels, so localization errors can be relatively large and heavily penalized by standard loss
+functions.Moreover,traditionallossfunctionslikeCIoUorDIoUassignequalimportancetoerrorsinboth
+large and small bounding boxes, often causing the optimization to be influenced primarily by large-object
+samples.Toaddressthis,researchershaveproposedavarietyofimprovedlossfunctionsandbounding-box
+regressionstrategiesaimedatimprovingsmall-objectaccuracy.
+Acommonthemeinrecentresearchistomakethelocalizationlossmoresensitivetosmallerrorsand
+to the presence of small targets. One direct approach is to reweight IoU-based losses so that small objects
+contribute more to the overall loss. For example, Xie et al. [77] proposed the WIoUv3 loss in KL-YOLO,
+which introduced a dynamic, non-monotonic weighting mechanism to adaptively adjust gradient gains for
+targetsofdifferentsizes.ThecoreformulaofWIoUv3isasfollows:
+β= L
+∗
+IoU
+LIoU
+∈[0,+∞) (1)
+r= β
+δαβ−δ (2)
+LWIoUv3= rLWIoUv1 (3)
+where LWIoUv1 isthebaselineWIoUlossand LWIoUv 3= rLWIoUv 1 isitsreweightedform. L∗
+IoU denotesthe
+monotonicfocusingtermassociatedwith LWIoUv1; LIoU denotestheexponentialmovingaverageoftheIoU
+loss.r= β/δαβ−δisthedynamicgradientgainfactor; α>1controlsthesharpnessofthegainchangeand δ>
+0setsthequalitydemarcationpoint.IncorporatingWIoUv3intoKL-YOLOresultedina0.8%improvement
+inmAP50,highlightingitseffectivenessforsmallobjectdetection.
+Similarly,tobalancescaledifferences,NiuandYan[ 71]integratedtheWise-IoUlossintotheirYOLOv8-
+based model, which increased the loss for bounding boxes on small objects and decreased it for large
+ones. Building on this, Wu et al. [50] proposed the Adaptive Weighted IoU, which further adjusted the
+regression focus to regular-sized anchors, preventing the loss from being dominated by extremely large or
+small instances. Replacing CIoU with AW-IoU in YOLOv5s achieved 64% mAP on NWPU VHR-10. In a
+related development, Sun et al. [98] introduced the Adaptive Focal Powerful IoU loss in SOD-YOLOv10.
+The Adaptive Focal Powerful IoU (FP-IoU) employed adaptive penalty and gradient modulation to assign
+higher costs to small errors, particularly for small bounding boxes, which in turn discouraged unnecessary
+enlargement of anchor boxes and accelerated convergence. It achieved 92.81% mAP on RSOD. These
+reweighting schemes share the goal of ensuring thatthe regression loss does not treat all errors equally and
+insteadplacesgreateremphasisonsmall-objectboundingboxesthatwouldotherwisebeunderrepresented.
+
+PAGE 17
+ComputMaterContin. 2026;87(1):7 17
+Beyondweightingschemes,otherlossfunctionimprovementsincorporateadditionalgeometricfactors
+oralternativedistancemeasurestofurtherbenefitsmall-objectdetection.Severalstudiesproposedmodified
+IoU or distance-based losses that capture object alignment and spatial relationships more effectively. Jiang
+et al. [16] introduced the Complete IoU with Normalized Wasserstein Distance for small manufacturing
+defect detection. The method augmented standard IoU with a normalized Wasserstein distance term that
+measured the displacement between box centers relative to their sizes, which provided a richer gradient
+signalforoptimizingalignment.WithCI-NWD,mAP50increasedby0.4%.
+In scenarios with oriented or elongated small objects, incorporating angle and shape information
+can further enhance localization. Hou et al. [53] proposed the α-SIoU loss inαS-YOLO, which extended
+the classic SIoU by introducing an adaptive angular control coefficient. This enabled the loss function to
+dynamically adjust convergence speeds in different directions according to the angular difference between
+the predicted and ground-truth boxes, facilitating precise localization for small and rotated objects. The
+α-S I oUlossisfo rm ula tedas:
+L
+α−SIoU =1−IoU+αΔ+(1−α)Ω( 4 )
+where Δ is a directionally adaptive distance cost that adjusts the penalty based on the misalignment angle
+betweenthepredictedandground-truthboundingboxes,andΩrepresentstheshapecostpenalizingwidth
+and height discrepancies. By introducing these angular and directional components,α-SIoU enabled the
+regression to focus more on directions with greater alignment discrepancies, resulting in faster and more
+stable convergence, especially for small, arbitrarily oriented objects. This approach achieved 47.5% mAP on
+VisDrone2019.
+For general object detection, other approaches refined IoU formulations to improve bounding box
+regression for small targets. Gu et al. [26] replaced standard CIoU with Efficient IoU in an infrared small
+target detector. EIoU provided a more balanced treatment of width, height, and center distance, achieving
+an mAP of 87.5% on the FLIR dataset. Additionally, Mahaveerakannan et al. [99] proposed Shape_IOU,
+adding a shape-aware component to the IoU computation and enabling more accurate localization of
+objects with nonstandard measurements or irregular forms, especially small targets that occupy only a few
+pixels.Byemphasizinggeometricoverlapandshapeconformitybetweenpredictedandground-truthboxes,
+Shape IOU improved detection robustness in challenging small-object scenarios. Du et al. [100] addressed
+industrialsurfacedefectinspectionwiththeMGF-YOLOdetector.Themethodemployedamulti-scalegated
+fusionneckandadoptedaFocalerintersectionoverunionregressionloss.Thelosssuppressedgradientsfrom
+well localized boxes and amplified gradients from poorly localized predictions. This formulation increased
+localizationsensitivityaroundtinysteelsurfacedef ectsandyieldedhighermeanaverageprecisionandrecall
+thanavanillaY OLOv5sbaseline.
+Some loss functions incorporate scale-adaptive terms to enhance the localization sensitivity for small
+objects, thereby reducing the dominance of large-object errors in YOLO-based training. Li et al. [18]
+proposed the Adaptive Scale-Enhanced CIoU loss as part of YOLO-DFA, which modulated the penalty on
+aspect ratio and scale according to the size of each target, effectively amplifying errors on small objects
+relative to larger ones. This approach led to a 1.7% improvement in mAP50. Ni et al. [17] adopted a related
+strategy by introducing an adaptive Focal-EIoU loss in their Tri-Decoupling++ detector. This loss applied
+focal-like scaling to the components of the EIoU formulation, guiding regression gradients toward more
+challengingexamples,especiallysmallorirregularly shaped targets. With this design, the method achieved
+94.4%mAP50onNWPUVHR-10.Inparallel,Wuetal.[ 50]improvedthepost-processingofdenselypacked
+small objects by integrating SCYLLA-IoU into a soft-NMS scheme. S-IoU used an IoU-based continuous
+
+PAGE 18
+18 ComputMaterContin. 2026;87(1):7
+suppression mechanism that retained multiple nearby detections more effectively. The incorporation of S-
+IoU resulted in a 0.9% improvement in mAP50. Although S-IoU primarily impacts NMS rather than the
+training loss, it reflects the broader trend of IoU-based innovations designed to better handle crowded
+small-objectscenarios.
+Therearealsohybridlossstrategiesthatintegrateclassificationandlocalizationtermstofurtherbenefit
+small-object training. For instance, some methods dynamically increase the weight of the classification
+loss for small objects, ensuring that the network learns to distinguish their subtle features. Jiao et al. [96]
+adopted dynamic task weighting in YOLO-DTAD, a scheme that prevented the classification of numerous
+large objects from overwhelming the localization of smaller targets. This loss optimization approach led to
+a 1.5% mAP improvement. In addition to loss function modifications, enhancements in label assignment
+and sample selection also contribute to improved small-object detection. Zhou et al. [12]i nA D - Y O L O
+introducedadual-labelassignmentstrategy,wheresmall objectswereassignedtomultiplepredictionscales
+duringtraining.Thismulti-scalesupervisionallowedthelosstobecomputedfromvariouslevels,providing
+the network with additional opportunities to capture small object features. When combined with ECSA
+attentionandadedicatedsmall-objectdetectionlayer,thisstrategyachieveda4.4%mAPimprovement.
+In summary, ongoing advances in loss function design for small object detection have produced a
+diverse set of strategies that include reweighting schemes, geometry-aware and scale-aware formulations,
+as well as dynamic task balancing. These approaches aim to more precisely address the challenges posed by
+targets that are small, densely distributed, or irregularly shaped. By explicitly amplifying localization and
+classification signals associated with small objects, and by refining both regression and sample assignment
+processes, these methods collectively provide a more balanced and effective optimization landscape. As a
+result, modern YOLO-based detectors are increasingly able to achieve robust performance on small object
+benchmarks,evenincomplexandcrowdedenvironments.
+3.3.2ChallengesandLimitationsofLossFunctionImprovements
+Loss function improvement and regression precision optimization for small object detection face
+fundamental challenges that stem from the way gradients are distributed over highly imbalanced and
+heterogeneous data. Standard formulations of classification and localization loss tend to be dominated by
+medium and large objects, which contribute strong and relatively stable signals, while the weak and noisy
+responses of small objects induce gradients of much smaller magnitude. The gradient field becomes highly
+sensitive to hyperparameters that control how much emphasis is placed on rare small objects relative to
+abundanteasynegativesandlargertargets.Iftheweightingistooaggressive,thelosscanoverfocusonasmall
+subset of difficult instances, which leads to underfitting of more common object sizes and makes training
+unstable. If the weighting is too conservative, the contribution of small objects remains negligible and the
+modificationfailstochangetheeffectivelearningdynamics.Evenwhenhyperparametersaretunedcarefully,
+there remains a structural limitation: loss reweighting operates on the outputs of the network and cannot
+create information that is not present in the underlying features, so it cannot fully overcome the intrinsic
+scarcityandlowsignaltonoiseratioofsmallobjectrepresentations.Afurtherdifficultyarisesfromthedesign
+of refined localization losses. Precise overlap based objectives and fine grained boundary terms provide
+more informative supervision for small boxes whose location error must be measured in a few pixels, yet
+they often require expensive geometric computations and numerical stabilization, which increases training
+time and may hinder deployment in large scale or real time regimes. These considerations suggest that loss
+functionimprovementsforsmallobjectdetectionshouldbecoupledwithcomplementarymechanismsthat
+enhance feature quality and sampling, and that the design of new objectives should emphasize robustness
+tohyperparametervariation,computationalparsimony,andabalancedtreatmentofdifferentobjectscales.
+
+PAGE 19
+ComputMaterContin. 2026;87(1):7 19
+Practicalstrategiesincludeadaptiveweightingschemesthatarelearnedfromdataratherthanfixedbyhand,
+curriculum style training that gradually increases the influence of small objects as the backbone stabilizes,
+and multi task formulations in which auxiliary signals such as centerness or boundary uncertainty help to
+regularizetheoptimizationoffinescaleregression.
+3.4 Multi-ScaleFeatureFusionandSpatialContextEnhancement
+Multi-scale feature fusion has improved through redesigned cross-layer connections and adaptive
+mechanisms, thereby better integrating fine-grained details with high-level semantics for spatial context
+modeling. Advances in this area generally fall into two complementary strategies: Structured Cross-Layer
+Multi-Path Fusion and Dynamic Weighted Context-Adaptive Fusion. The former approach introduces
+architecturalmodulesthatexplicitlyconnectandcombinefeaturemapsacrossscales,ensuringtheeffective
+utilization of fine-grained details from shallow layers alongside the rich semantics from deeper layers. The
+latter employs adaptive mechanisms to adjust the fusion process based on contextual cues, enabling the
+network to dynamically focus on features most relevant to small objects. Together, these architectural and
+adaptiveadvanceshavesignificantlyenrichedthemulti-scalerepresentationsthatarevitalforprecisesmall
+object detection. Although many multi-scale fusion methods incorporate attention modules to adaptively
+refine feature aggregation, we treat fusion and spatial context enhancement as a distinct category in this
+section for clarity. In this survey, the multi-scale fusion dimension refers to the architectural design that
+specifies which feature maps interact and at which spatial resolutions. The analysis below focuses on the
+layout of cross-layer links, the choice of upsampling and downsampling operators, and the rules used
+to combine features across different depths. Complementary attention-centric perspectives are discussed
+inSection3.1.
+3.4.1 Structured Cross-Layer Multi-Path Fusion
+Enhancing the feature pyramid has long been a foundational approach for small-object improvement.
+In this context, a variety of multi-branch modules have emerged to extract and merge features at diverse
+receptivefields,therebyprovidingaricherrepresentationalbasisforsmallobjectdetection.NiuandYan[ 71]
+integrated a Diversified Basic Block into the YOLOv8 backbone. DBB leveraged parallel convolutional
+branches of different kernel sizes during training and fused them into a single equivalent convolution
+for inference, enabling the model to learn multi-path representations. Building on this concept, Jiang
+etal.[ 72]designedtheMSFEMmodule,inwhichparallelconvolutionswerefollowedbyconcatenationand
+compression,capturingbothfineandcoarsefeatures.
+Efforts to enhance channel diversity and context adaptation have led to more sophisticated multi-
+branch fusions. Chen et al. [73] proposed the MPMS module for Para-YOLO, which grouped convolution
+branches by channel and employed a learnable router for expert-like multi-scale aggregation, leading to
+a 1.6% improvement in mAP50. This trend toward parallel, context-aware processing is mirrored by the
+CSAmod uleo fW angetal.[67],whichcombined convolution andpooling pathwaysandthenapplied self-
+attention to refine context aggregation, increasing mAP50 on VisDrone2019 by 0.6%. In a complementary
+fashion, Liu et al. [74] exploited group convolution and channel shuffling in MFFM, which enhanced
+representationalflexibilityandachieved54.62%mAPonVEDAI.
+Several structured fusion modules integrate attention or adaptive sampling directly into the merging
+process. Wu et al. [101] adopted a decomposition strategy in BHFM, splitting large kernels into cascades
+ofsmallerconvolutionsintegratedwithattentionmechanisms,therebyenablingbroadercontextualcapture
+whileconstrainingparametergrowth.Thisdesignachieveda3.4%mAPimprovement.Theutilityofmulti-
+scalekernelintegrationisparticularlynotableinvehicledetection.Methodsforaligningandfusingfeatures
+
+PAGE 20
+20 ComputMaterContin. 2026;87(1):7
+atdifferentresolutionshavealsoadvanced,asillustratedbyShietal.[ 66],whouseddeformable-convolution
+fusion blocks that adaptively sampled and integrated multi-resolution features and improved mAP50 by
+0.6% on UAV. By embedding either explicit attention or deformable sampling within the fusion pathway,
+theseapproachesenhancetheabilityofthemodeltointegratebroadcontextwhilepreservingthefinedetail
+requiredforreliablesmall-objectdetection.
+Toaddresstheneedforcapturingwiderspatialcontextwithoutexcessivecomputation,theuseoflarge
+or dilated kernels within fusion branches has also been explored. Zhang et al. [102] employed a Multiscale
+Large-Kernel Module totargetvehiclesofvaryingsizes,achieving90.3%mAPonUSOD.Thearchitectural
+philosophy behind these advances was further reflected in the Multiscale Dilated Separable Fusion block
+of Gu et al. [26], where depthwise kernels and multi-scale decomposition replaced standard convolutions,
+achieving81.4%mAPonFLIR.
+Beyond within-layer diversification, the effective propagation of information across different network
+depthshasemergedasacriticalconcern.Avarietyofr edesigned necks and cross-layer fusion mechanisms
+have sought to strengthen both semantic abstraction and the preservation of low-level detail, especially for
+objects at the limits of resolution. Wang et al. [14] provided an instructive example by employing a BiFPN-
+basedneckinYOLOv8-QSD,leveragingiterativetop-downandbottom-upblendingwithlearnableweights.
+Thisconfigurationachieveda1.5%mAP50improvementforchallengingdistanttrafficsigndetection.
+The principles underpinning bidirectional fusion are further demonstrated in the BPNet architecture
+proposed by Zan et al. [103], which enhanced the traditional FPN by augmenting cross-scale connections.
+This approach proved especially effective for fine-grained object detection in real-world surveillance, as
+reflected in state-of-the-art empirical results. Meanwhile, the benefit of dense connectivity is evident in
+the Layer-by-Layer Dense Residual Module designed by Ni et al. [17]. Through the establishment of direct
+semanticpathwaysbetweendeepandshallowlayers,Tri-Decoupling ++Netachieved68.3%mAPonDOTA
+and93.6%mAPonNWPUVHR-10.
+TheexplorationofoptimalfusionstrategiescontinuedintheworkofWangetal.[ 25],whodemonstrated
+that replacing the PANet module with a conventional FPN could enhance feature resolution, with mAP50
+risingfrom73.2%to77.9%inmultimodalsmall-objectscenarios.Thefusionofenhancedlow-leveltextures
+with high-level abstractions, as achieved by the FF module in MSFE-YOLO from Qi et al. [10], further
+exemplifiedtheintegrationofspatialdetailandsemanticrichness,leadingtoa2%improvementinmAP50.
+Atthebackbonelevel, theintegrationofshallow,detail-richfeatureswithhigher-levelabstractionshasalso
+proven effective for maintaining small-object cues throughout the network. In the work of Zeng et al. [8],
+suchafusionstrategyachieved47.4%mAPontheVisDrone2020testset.Tangetal.[ 104]addressedinfrared
+small target detection by augmenting a YOLO-style backbone with an edge feature enhancement module
+thatstrengthenedlocalgradientresponsesaroundtinytargets.Aninfraredrelationalenhancementmodule
+further aggregated multi-scale contextual information within a long-range receptive field. This multi-level
+fusionincreasedthedetectionprobabilityofextremelysmallandlow-contrasttargetsininfraredscenesand
+maintainedapracticalfalse-alarmrate.
+3.4.2DynamicWeightedContextAdaptiveFusion
+Dynamic Weighted Context-Adaptive Fusion can be understood as a coupling between multi-scale
+aggregationandattention-basedselection.InmodernYOLOpipelines,thefusionstagelearnsspatiallyand
+channel-wise varying weights that gate cross-scale flows, often via explicit attention or implicit attention
+proxies. Readers seeking attention mechanisms per se can refer toSection3.1. This subsection examines
+how multi-scale aggregation is coupled with attention-based selection to preserve fine detail, inject global
+
+PAGE 21
+ComputMaterContin. 2026;87(1):7 21
+semantics, and suppress background clutter for small-object detection. A representative example is the
+AdaptiveSpatialFeatureFusionmoduleproposedbySunetal.[ 9]inMIS-YOLOv8,wherespatiallyvarying
+weights are learned for each location in the feature map. This enabled the model to dynamically determine
+theoptimalcontributionsofhigh-resolution(P2)anddeepersemantic(P3,P4)featuresateveryspatialpoint,
+leadingtoa6.2%improvementinmAP50.Thiscontext-sensitivefusionensuresthatthedetailsessentialfor
+smallobjectdetectionarepreservedwithoutbeingoverwhelmedbyirrelevantinformation.
+Extending this paradigm, Ning et al. [87] developed a parallel P2–P3–P4 detection head architecture
+in which each head operates on relatively shallow feature maps. The P2 branch incorporates a spatial self-
+attentionmechanismthathelpscapturelongrangedependenciesandspatialrelationshipsthatarecriticalfor
+distinguishingtinytargetsincomplexbackgrounds.Removingredundantdownsamplingfurtherpreserves
+discriminative cues and leads to a 2.4% improvement in mAP50. Wang et al. [105] introduced an Adaptive
+Feature Fusion module within a super resolution aided YOLO framework. The network learns to integrate
+multiscalefeaturesfromdifferentlayersaccordingtothecontextualdemandsofaerialscenesandsurpasses
+rigidconcatenation.TheuseofAFFyieldsan11.11%improvementinmAPandshowsthebenefitofadaptive
+fusion in small object scenarios. Together these methods reveal a trend in which dynamic context aware
+fusion mechanisms improve the extraction of fine-grained information and enhance the reliability of small
+objectdetection.
+Anothertoolforadaptivefusionistheuseofexplicitattentionduringfeatureaggregation.Sunetal.[ 98]
+introduced an Attention Gated Feature Pyramid Network in SOD-YOLOv10, where a gating mechanism
+driven by aggregated attention modulates the fusion of hierarchical features across scales. This enables
+the network to focus on essential features of small objects while suppressing background noise and leads
+to a 2.28% improvement in mAP50 on RSOD. Building upon this, Wang et al. [25]d e v e l o p e dt h eM u l t i
+ScaleIterativeAggregationmodule, whichrepeatedly refines theintegrationof highlevel semanticfeatures
+and low level spatial details through attention based fusion and improves sensitivity to small objects in
+complexbackgrounds.
+Inadditiontospatialandcross-scaleadaptivity,theintegrationofbothlocalandglobalcontextualcues
+hasprovenvaluable.Wuetal.[ 106]designedLGC-YOLOwiththeGradientOptimizedSpatialInformation
+Interaction module and Edge-Semantic Fusion, enabling adaptive coordination between local and global
+context. This flexible interaction allowed the model to effectively adapt to varied scene compositions,
+achieving 89.5% mAP on NWPU VHR-10. Similarly, Gu et al. [19] employed a Global–Local Enhanced
+AttentionmechanisminGLFE-YOLOX,combiningglobalandlocalcontextmodelinginbothbackboneand
+necklayers,leadingtoa3%improvementinmAP50onDIOR.
+Focusingontheneckregion,adaptationwithinmodulesthatmergespatialorchannelinformationhas
+alsoproveneffective.Kangetal.[ 20]extendedtheELANmoduleofYOLOv7toaweightedversioninwhich
+learnedweightscontrolfeaturepropagationandfilteroutlessinformativechannels.Thisselectivityimproves
+precisioninbloodcelldetection,adomainwithmanytinytargets.Zhangetal.[ 102]introducedaDirectional
+Global Context module in LGA YOLO. It combines global spatial cues with directional channel attention
+to suppress noise such as shadows and to highlight critical vehicle features and yields a 3% improvement
+i nm A P 50o nD I O R.S u ne tal .[107] focused on missile borne infrared surveillance and proposed the CDT
+YOLOalgorithm.ThemethodcombinesaYOLObaseddetectorwithatemporaltrackingmodulethatuses
+multiframecontextandcrossscaleaggregationtomaintaintrajectoriesoftinymovingtargetsundersevere
+noiseandplatformmotion.Jointoptimizationofmultiscaledetectionfeaturesandthetemporalassociation
+branchyieldsmorerobusttrackingofdistantinfraredsmallobjectsthanastaticframewiseYOLOv8baseline.
+Several works have further demonstrated that adaptive attention can be successfully tailored for
+specializeddomains.InthecaseofMOA-YOLO,Huetal.[ 92]embeddedmulti-headlatentattentionwithin
+
+PAGE 22
+22 ComputMaterContin. 2026;87(1):7
+thefeaturepyramidtoenablerobustdiscriminationofsmallfishagainstwaterglare,whileChengetal.[ 93]
+focusedonscale-awareattentionforeffectivefusioninX-rayimagedetection.Thesedesignsunderlinehow
+domain-specificadaptationoffeaturefusionandattentioncandrivedetectiongainsforuniqueobjecttypes
+or imaging conditions.
+In summary, fusion is most effective when it incorporates attention. Content-adaptive weighting
+through spatial and channel gating and through deformable sampling preserves fine-grained cues from
+shallowmapswhileselectivelyincorporatinghigh-levelcontextfromdeeperscales.Thisdelineationbetween
+attention and fusion is a deliberate choice in our taxonomy, and readers can connect the mechanism level
+viewin Section3.1 withtheoperatorleveldesignsreviewedhere.
+3.4.3ChallengesofMulti-ScaleFusionandContextEnhancement
+Multi scale feature fusion and spatial context enhancement introduce challenges that are rooted in the
+fundamental interaction between signals of different resolutions, receptive fields, and semantic strengths.
+When feature maps from distinct depths are combined, the network constructs a joint representation in
+which high resolution maps carry fine spatial detail and background texture, while low resolution maps
+encode abstract semantic information dominated by larger structures. If this integration is not carefully
+normalized and calibrated, strong responses associated with large objects or clutter can dominate the fused
+representationandsuppressthealreadyweakevidenceproducedbytrulysmalltargets.Intheoreticalterms,
+thefusionoperationdefinesamixingoffeaturesubspaceswithverydifferentsignaltonoiseproperties,and
+without scale aware weighting the energy of the representation concentrates on patterns that occupy many
+pixels, which reduces the probability that the optimization process will align parameters with the sparse
+gradients generated by small objects. A further difficulty arises from geometric misalignment. Different
+layers correspond to different receptive fields and sampling grids, so naive upsampling and addition can
+create aliasing and spatial shifts. The fused features may no longer correspond precisely to object locations,
+w h i c hi sp a r t i c u l a r l yh a r m f u lf o rs m a l lo b j e c t sw h o s ee x t e n ti sm e a s u r e di naf e wc e l l s .E v e ns u b t l e
+misregistration can blur boundaries and degrade localization accuracy because the decision function is
+learned on features that are not perfectly anchored to the underlying image content. Context enhancement
+adds another layer of complexity. Enlarging the receptive field through context modules is intended to
+provide priors about typical object relationships and the overall scene layout. However, in many scenes the
+backgroundcontainsrepeatedpatternsorstructuresthatcloselyresemblesmallobjects.Ifthenetworkrelies
+too heavily on these contextual correlations, it may attend to regions that satisfy the context pattern while
+failing to place precise boundaries around the actual target or even predicting objects where none exist.
+These issues suggest that multi scale fusion and context integration for small objects require mechanisms
+that explicitly control the relative contribution of each scale, enforce geometric alignment, and regulate the
+influence of context. Potential strategies include the use of scale specific normalization that adjusts feature
+magnitudes before fusion, learnable gating functions that modulate information flow from each resolution
+according to local uncertainty, and alignment modules that estimate continuous offsets so that upsampled
+deepfeaturesmatchshallowspatialgrids.Inaddition,contextmodulescanbeconstrainedtooperateinaway
+that complements, rather than replaces, evidence from local appearance, for instance by using uncertainty
+guidedweightingthatreducestheimpactofcontextwhenthelocalsignalisambiguous.Onlywhenfusion,
+alignment, and context are jointly designed with these principles can multi scale architectures fully exploit
+theirtheoreticaladvantagesforsmallobjectdetect ionwithoutamplifyingnoiseorscaleinterference.
+
+PAGE 23
+ComputMaterContin. 2026;87(1):7 23
+3.5 CommonChallengesinSmallObjectDetectionImprovements
+Across YOLO based models that target small object detection, several overarching challenges arise
+from fundamental constraints in computation, data, and evaluation, and these limitations persist even
+when different architectural strategies are applied. A first difficulty concerns the systematic increase in
+computational and memory cost that accompanies most targeted improvements. Each additional attention
+module,detectionbranch,specializedlosscomponent,orfusionpathwayenlargestheparameterspaceand
+the number of intermediate activations. From a theoretical perspective, this broadens the hypothesis class
+thatthemodelcanrepresentbutalsoincreasesthecomplexityofthefunctionbeinglearnedandthenumber
+of operations required for inference. On resource constrained platforms, the resulting tension between
+expressive power and real time operation becomes acute, and even modest gains in small object accuracy
+mayrequirehardwarebudgetsthatcontradicttheoriginaldesignphilosophyoftheYOLOfamily.
+A second pervasive issue is overfitting in the regime of scarce and weak small object signals. In many
+datasets, small objects occupy only a tiny portion of the image and appear less frequently than medium
+or large instances. The associated feature vectors lie near the noise floor of the representation and form a
+minority in the empirical distribution. When a detector is heavily tuned toward these cases, the learning
+processcanlatchontoincidentaltexturesordatasetspecificartifactsthathappentocorrelatewiththesmall
+labels in the training set. Mitigation requires stronger forms of regularization, robust data augmentation
+that alters both appearance and geometry, and preferably additional data sources that increase coverage
+of small object conditions. A third structural challenge is persistent class and scale imbalance. The data
+distribution is typically long tailed with respect to both semantic labels and object sizes, so gradients are
+dominated by abundant medium and large instances. Reweighting schemes, modified sampling policies,
+and curriculum style schedules can partially redistribute gradient mass toward rare small objects, yet none
+of these techniques can fully compensate for the intrinsic scarcity of informative events. As a result, the
+optimizationdynamicsremainbiasedtowardregimeswherefeaturesarestrongandstable,andthedecision
+surface continues to favor larger and easier targets. A fourth difficulty lies in the evaluation protocols used
+to judge progress. Aggregate metrics such as mean average precision pool performance over a wide range
+ofsizesandintersectionoverunionthresholds,whichcanconcealsystematicfailuresonverysmallobjects.
+Moreover,adetectormayshowanapparentimprovementatacommonlyusedthresholdwhilestillexhibiting
+poorlocalizationaccuracyatstricteroverlapsorinlowvisibilityconditions.Thisinducesaformofevaluation
+bias in which models are selected for deployment based on metrics that do not fully reflect their behaviour
+on the smallest and most fragile targets.Fig.4 highlights these key challenges and their interactions within
+YOLO-basedsmall-objectdetectors.
+Addressing these common challenges calls for a more integrateddesignphilosophyinwhicharchitec-
+tural modifications are coupled with principled complexity control, small sample aware training strategies,
+andsizesensitiveevaluationcriteria.Potentialdirectionsincludetheuseofstructurallyregularizedmodules
+that add discriminative power without uncontrolled growth in capacity, joint optimization schemes that
+explicitlybalancegradientsacrossscales,andbenchmarkprotocolsthatreportsizespecificmetricsanderror
+decompositions. Only by confronting these cross cutting issues at both the theoretical and practical levels
+canfutureYOLObaseddetectorsmovebeyondincrementalimprovementsandachieverobustandefficient
+performanceonsmallobjectsinrealworldscenarios.
+
+PAGE 24
+24 ComputMaterContin. 2026;87(1):7
+Figure4: ChallengesinSmall-ObjectDetection.( A)Occlusionandtruncation;( B)Extremelylimitedpixelfootprint;
+(C) Multi-scale variation; (D)C r o w d i n ga n dh i g h - d e n s i t ys c e n e s ;(E) Extremely limited pixel footprint; (F)M o t i o n
+blur
+3.6 DynamicNetworkDesignandHeterogeneousFusionforSmallObjectDetection
+Recent progress in small object detection has moved beyond manually designed backbones and fixed
+featurepyramidstowarddynamicnetworkdesignandheterogeneousarchitecturalfusion.Insteadofrelying
+solely on hand-crafted YOLO variants, current research increasingly exploits Neural Architecture Search
+(NAS)toadaptdepth,width,andconnectivitytodatacharacteristics,andcombinesconvolutionaldetectors
+with transformer or spiking neural modules to balance accuracy, efficiency, and energy consumption. This
+section reviews two representative directions.Section3.6.1 discusses NAS-driven design of YOLO-style
+detectors with an emphasis on small-object scenarios, including the state-of-the-art YOLO-DKR architec-
+ture. Section3.6.2 analyzes heterogeneous fusion strategies that combine YOLO with Vision Transformer
+(ViT)orspikingneuralnetworks(SNNs),highlightingboththeiradvantagesandtheirlimitationsforsmall
+targetdetectionunderrealisticdeploymentconstraints.
+3.6.1NeuralArchitectureSearchforYOLO-BasedSmallObjectDetection
+NeuralArchitectureSearchprovidesawaytodiscoverdetectordesignsthataretunedtothestatisticsof
+smallobjectsratherthantogenericobjectdistributions.IntheYOLOfamily,NAScontrollersselectbackbone
+depth, neck width and fusion connectivity from a predefined search space. The resulting architectures can
+concentrate representational capacity on the scales where tiny targets appear while respecting latency and
+memory constraints that are typical in aerial and embedded deployments. For scenes that combine dense
+smallinstanceswithstrictrealtimerequirements,thisautomaticdesignprocessisoftenmoreeffectivethan
+manual trial and error. Recent studies illustrate the promise of this approach through the use of YOLO
+NAS baselines in small object settings. YOLO NAS has been adopted in military surveillance of distant
+camouflaged targets [108], in traffic monitoring of far range vehicles [109], and in agricultural inspection
+
+PAGE 25
+ComputMaterContin. 2026;87(1):7 25
+of fine-grained disease spots on rice leaves [110]. In each case the searched architecture maintains real time
+throughput while recovering tiny and low contrast objects that challenge hand designed YOLO variants.
+However, these works typically reuse a single generic architecture and fine tune it for each task instead of
+performinganewarchitecturesearchthatisexplicitlyguidedbysmallobjectcharacteristics.
+Methodological advances in NAS are now beginning to address this gap. Differentiable architecture
+search equipped with dual attention over feature channels and architecture parameters stabilizes training
+on deep detection backbones and allows the search to emphasize operations that benefit small object
+features[111].Progressivepartialchannelconnectionswithchannelattentioncontrolmemoryusageduring
+search and reduce the discrepancy between search networks and evaluation networks [112].Multiobjective
+searchframeworksincorporateaccuracyandresourcecostsintoajointobjective[ 113],whichisparticularly
+important for airborne or embedded small object detectors that must satisfy strict limits on model size
+andlatency.
+Building on these developments, Xue et al. [114] introduced YOLO-DKR, a differentiable NAS frame-
+work that tailors YOLO-style architectures to small-object detection. The method adopts a DARTS-based
+continuous relaxation and applies a kernel reusing mechanism that consolidates multiple candidate convo-
+lutionsintoasinglefusedoperationoneachsupernetedge,whichsubstantiallyreducesmemoryusageand
+acceleratesthesearchwhilepreservingdetectionaccuracyonlargebackbones.Thearchitecturesearchjointly
+optimizesdeepsemanticlayersandmulti-scalefusionpathssothatbotharealignedwiththecharacteristics
+of small objects. During retraining, lightweight coordinate attention modules are incorporated to reinforce
+fine-grained feature extraction. Experiments on PASCAL VOC and MS COCO show that YOLO-DKR
+and its tiny variant achieve higher overall and small-object detection accuracy than strong YOLO and
+NAS-based baselines.
+Taken together, these developments show that NAS is no longer only a generic tool for model
+discovery but has begun to serve as a dedicated mechanism for shaping YOLO-style architectures to the
+specific demands of small-object detection. By enabling dynamic control over depth, width and cross-
+scaleconnectivityunderexplicitresourceconstraints,NAS-drivendesignsofferaprincipledwaytobalance
+accuracy and efficiency for tiny targets. As NAS techniques continue to mature and become more tightly
+integratedwithtask-awareobjectives,dynamicnetwor kdesignforsmall-objectdetectionislikelytoremain
+acentralresearchfocusandapromisingavenueforfutureadvancesinYOLO-baseddetectors.
+3.6.2 Heterogeneous Architecture Fusionof VisualTransformer and YOLOfor SmallTarget Detection
+Heterogeneous fusion between convolutional YOLO detectors and Vision Transformer modules has
+emerged as a targeted strategy for small target detection. Transformer backbones can capture long range
+dependencies and localize very small key points with higher precision than purely convolutional baselines,
+whichmakesthemsuitableforfinegrainedspatialstructures[ 115].Transformerbaseddetectorsthatintegrate
+encoderdecoderstyleattentionwithcrossscaleinteractionmodulesachievehigheraverageprecisionontiny
+objects in complex unmanned aerial vehicle scenes while preserving competitive inference efficiency [116].
+ThesefindingsmotivatetheinsertionofTransformer-styleself-attentionintoYOLO-baseddenseprediction
+pipelinessothatfragilesmall-objectcuesaresupportedbyrichglobalcontext.
+CurrentYOLOandVisionTransformerhybridsexplorethreemainfusionpatternsthatareallrelevant
+tosmallobjects.Inpipelinestyledesigns,YOLOfirstgeneratescoarseregionsofinterestthatcoverpotential
+tiny targets and a transformer module performs refined recognition on cropped patches. This strengthens
+semanticdiscriminationofverysmallstructureswithoutalteringtheYOLObackbone[ 117].Inarchitecture
+level hybrids, transformer blocks are embedded into the YOLO backbone or detection head. Multi head
+
+PAGE 26
+26 ComputMaterContin. 2026;87(1):7
+self-attention enriches feature maps with long range contextual dependencies and yields more informative
+attention maps for distant or partially occluded targets [118]. In enhancement driven fusion, transformer
+modulesareinsertedintogenerativeorenhancementnetworksthatpreprocessthermalorlowlightimagery
+before detection. Global context modeling increases contrast, suppresses background noise and amplifies
+weak cues associated with small objects, which leads to consistent gains for several YOLO variants on low
+visibilitytargets[ 119].Thesepatternsshowthattransformercomponentscanbepositionedattherecognition
+stage, inside the detection architecture or in the enhancement front end to provide global support for tiny
+targetsinYOLOstyledetectors.
+Given the stringent energy budget of battery-powered UAVs, spiking neural networks (SNNs) offer
+considerable potential for low-power onboard small-object detection. SNNs have recently gained attention
+in UAV perception because their event-driven computation and sparse spike activity can markedly reduce
+energy consumption compared with conventional ANN detectors. Shen et al. [120] proposed a directly
+trained SNN detector for infrared HIT-UAV imagery that achieves 87.33% mAP50 while reducing the
+estimated per-image energy from 179.40 mJ for YOLOv8m to 17.96 mJ, approximately one tenth of the
+baseline.Houetal.[ 121]extendedthislineofworktoRGBVisDrone2019vehicledetectionandcombineda
+spike-basedSPDSdown-samplingblockwithanSNNBiFPNneck.Theirmodelattains73.98%mAP50while
+consuming only 17.14% of the energy required by a residual ANN detector with a comparable architecture,
+corresponding to an 82.86% reduction. As summarized inTable 1,t h e s er e s u l t si n d i c a t et h a tc a r e f u l l y
+designed SNN architectures can deliver competitive UAV small-object detection performance under a
+substantiallyreducedenergybudget.
+Table 1:EnergyconsumptioncomparisonforUAV-basedsmallobjectdetection
+Dataset Method EC(mJ) RelativeEnergy mAP 0.5
+HIT-UAV
+YOLOv8m (ANN
+baseline) 179.40 1.00(baseline) 88.0
+SA-YOLO
+(SNN)[120] 17.96 0.1001( ≈10.01%) 87.3
+Visdrone2019
+ResNet(ANN
+baseline) –1 . 0 0 ( b a s e l i n e ) 3 1 . 5
+EMSBS-YOLO
+(SNN)[121] –0 . 1 7 1 4 ( ≈17.14%) 34.1
+Despitethesegains,existingfusionstrategiesthatcombineYOLOdetectorswithtransformermodules
+or spiking components still exhibit limitations for small target detection. Transformer based hybrids often
+insert additional attention blocks or enhancement subnetworks on top of the YOLO backbone, which
+increases architectural complexity, memory consumption and inference latency. This makes deployment
+on platforms with strict resource and energy budgets more difficult. Many transformer modules are tuned
+to a particular dataset, so their benefits may degrade when the scale distribution, background clutter or
+illumination conditions of small objects differ from those seen during training. Fusions that incorporate
+spiking neural networks face additional challenges. Training pipelines remain immature and discrete time
+step simulation is required in most implementations. Spiking dynamics are also sensitive to algorithmic
+hyperparameters. These factors complicate stable optimization and efficient inference on general purpose
+hardware.Overall,YOLObaseddetectorsenhancedwithtransformerorspikingmodulesofferclearpoten-
+tialforstrongerglobalcontextmodelingandlowerenergyusageinsmallobjectdetection.However,advances
+
+PAGE 27
+ComputMaterContin. 2026;87(1):7 27
+inlightweightattentiondesign,taskrobustfusionschemesandcoordinatedhardwareandalgorithmdesign
+are still required before heterogeneous fusion can be widely adopted as a standard solution for small
+targetdetection.
+4 ExperimentalSetupandPerformanceEvaluation
+4.1 BenchmarkDatasetsforSmallObjectDetection
+In this review, we focus on seven benchmark datasets that are widely used for the evaluation of small
+object detection. These datasets are VisDrone2019, AI-TOD, DOTA, NWPU VHR-10, VEDAI, DIOR and
+UAVDT. For the purpose of this survey, a small object is defined as an instance whose projected size in
+the image is smaller than 10 by 10 pixels. These benchmarks contain large numbers of instances that satisfy
+this criterion. They also report quantitative indicators of dataset difficulty. The published statistics include
+sizedistributions,instancedensity,spatialresolutionanddetailsoftheannotationprotocol.Imagesinthese
+datasetstypicallycontainextremelysmalltargetsembeddedinclutteredbackgrounds.Manyscenesexhibit
+highobjectdensity,strongocclusionandarbitrarytargetorientation.Thesevendatasetscoverawiderangeof
+imagingplatformsandapplicationscenarios.Theyspa nlowaltitudeunmannedaerialvehiclevideoinurban
+trafficaswellashighaltitudesa telliteandaerialimagery .A saresult,evalua tionoutcomesarenotrestricted
+to a single domain. Each dataset is associated with established evaluation protocols and widely reported
+baselines.Theirsizedistributionsincludesubstantial proportionsoftinyinstancesthatmeetthesmallobject
+definitionintroducedabove.TheyarethereforeparticularlysuitableforassessingtheperformanceofYOLO
+based detectors on small objects. Quantitative characteristics of each dataset and its small object statistics
+aresummarizedin Table 2.
+Table 2:Overviewofbenchmarkdatasetsforsmallobjectdetection
+Dataset Datasetdescription Sampleillustration
+Visdrone2019 [122]
+TheVisDrone2019dataset,developedbyMachine
+LearningandDataMiningLaboratoryatTianjin
+University,contains10,209staticimagescollected
+over14Chinesecitiesacrossdaytimeandnighttime
+conditions.Theofficialsplitcomprises6471training
+images,548validationimages,1610testimages,and
+1580challengeimages.Tenobjectcategoriesare
+annotated,with“car”beingthemostfrequentclass.
+AI-TOD[123]
+TheAI-TODaggregatestinyobjectsacrosseight
+categoriesandreports700,621annotatedinstances.
+Thedatasetdefinesobjectsizebythesquarerootof
+thebounding-boxareaandquantifiestiny-object
+prevalencewithabsoluteandrelativemeasureson
+800by800images.Itfurtherdocumentsveryhigh
+instancedensity,includingimageswithupto2667
+objects,and reports a concentration of very small
+targets,withameanabsoluteobjectsizeof12.8
+pixelsandastandarddeviationof5.9pixels.
+(Continued)
+
+PAGE 28
+28 ComputMaterContin. 2026;87(1):7
+Table 2 (continued)
+Dataset Datasetdescription Sampleillustration
+DOTA[124]
+TheDOTAcontains2806imagesand188,282
+instancesannotatedbyorientedquadrilaterals
+acrossfifteencategories,whichenablesevaluation
+ofdetectorsunderarbitraryobjectorientations.The
+imagewidthrangesfrom800to4000pixels,and
+theofficialanalysisreportssizestratathathighlight
+a large proportion of small objects,with a small to
+middletolargedistributionthatplacesmost
+instancesinthesmallandmiddleranges.
+NWPU
+VHR-10[125]
+TheNWPUVHR-10containstengeospatialobject
+classesand800images,co nsistingo f715RGB
+imagesfromGoogleEarthwithspatialresolutions
+from0.5to2mand85pansharpenedcolor
+infraredimagesat0.08m.Thedatasetprovides
+3775annotatedinstanceswithhorizontalbounding
+boxesandisorganizedintofoursubsets:anegative
+imagesetof150images,apositiveimagesetof150
+images,anoptimizingsetof150images,anda
+testingsetof350images.
+VEDAI[126]
+TheVEDAItargetsmulti-classvehicledetection
+andcontains1210aerialimagesofsize1024 ×1024
+pixelscapturedinspring2012withaground
+samplingdistanceof12.5cm.Eachimageprovides
+fourchannelscomprisingRGBandnear-infrared.
+Thedatasetincludes3640vehicleinstancesacross
+nineclasses,withanaverageof5.5vehiclesper
+imageandanaverageobjectfootprintof0.7percent
+of pixels per image.
+DIOR[127]
+TheDIORcontains23,463imagesand192,472
+instancesacrosstwentycategories,withimages
+standardizedto800by800pixelsandannotations
+providedashorizontalboundingboxes.These
+designchoicesyieldalarge-scalebenchmarkwith
+manysmallinstancesandbroadcategorydiversity
+that is suitable for quantitative comparison of
+small-objectperformance.
+(Continued)
+
+PAGE 29
+ComputMaterContin. 2026;87(1):7 29
+Table 2 (continued)
+Dataset Datasetdescription Sampleillustration
+UAVDT [128]
+TheUAVDTprovides100videosequenceswith
+80,000framesataspatialresolutionof1080 ×540
+pixels,and0.84millionannotatedboundingboxes
+thatprimarilycovervehicles.Thebenchmark
+definesdifficultyandattributedimensions
+includingaltitude,cameraview,occlusion,and
+weather, and it reports that many targets are small;
+anillustrativecaseshowsacaroccupyingonly
+0.005percentofimagepixels.
+4.2 EvaluationMetrics
+In reviewing experimental results from the literature, we adopt a set of well-established evaluation
+metricstosynthesizeandcompareperformance,focusingonthosemostpertinenttosmallobjectdetection.
+We report Precision (P), Recall (R), Average Precision (AP), and inference speed (measured in Frames Per
+Second) as the primary criteria. Together, they provide a consistent basis for cross-paper comparison by
+capturingbotheffectivenessandefficiencyundersharedreportingconventionsacrossstudies.Thesemetrics
+wereselectedbecausetheycollectivelycaptureboththeaccuracyandefficiencyofdetectionmethods,which
+iscrucialforacomprehensiveanalysisofsmallobjectdetectionsystems.
+Precision(P)andRecall(R)arefundamentaltoevalua tingdetectorsandareparticularlyimportantfor
+tiny objects. Detection outcomes are summarized as true positives (TP), false positives (FP), true negatives
+(TN), and false negatives (FN). Precision quantifies the proportion of predicted detections that correspond
+to real objects, which reflects the system’s ability to avoid false alarms. Recall measures the proportion of
+ground-truthobjectsthataresuccessfullydetected.Achievinghighrecallisespeciallychallengingforsmall
+o b j e c t sb e c a u s ew e a ks i g n a l sa n do c c l u s i o na r ec o m m o n ,s or e c a l ls e r v e sa sak e yi n d i c a t o ri nt h i ss e t t i n g .
+Both metrics depend on the decision threshold and together describe the trade-off between selectivity and
+completeness.Formally,
+Precision(P)= TP
+TP+FP (5)
+Recall(R)= TP
+TP+FN (6)
+Bothmetricsarethreshold-dependentandjointlycharacterizethedetector’strade-offbetweenselectiv-
+ityandcompleteness.
+Average Precision (AP) summarizes the relationship between precision and recall for a given class by
+computingtheareaunderthecurveofprecisionvs.recall.Inpractice,APisobtainedfromprecisionvalues
+e v a l u a t e da c r o s sr e c a l ll e v e l sf r o m0t o1 .M e a nA v e r a g eP r e c i s i o n( m A P )e x t e n d sA Pa c r o s sc a t e g o r i e sb y
+averagingtheper-classAPvalues.TheformulasforAPandmAParegivenasfollows:
+AP=∫
+1
+0
+P(R)dR (7)
+
+PAGE 30
+30 ComputMaterContin. 2026;87(1):7
+mAP= 1
+Nall
+Nall
+∑
+i=1
+APi (8)
+where Nall is the total number of categories andAPi represents the AP value for theit hc l a s si nt h e
+experimentalcategories.
+Accuracyaloneisnotsufficientinmanysmallobjectapplicationsbecausedeploymentoftentakesplace
+under strict computational and hardware constraints. To reflect the trade off between accuracy and model
+complexityinamoredeviceindependentway,eachtablenowreportsthenumberofparametersinmillions
+and the floating point operations per image. The Params (M) and GFLOPs columns make it possible to
+interpret performance gains together with changes in model size and computational cost rather than from
+accuracymetricsalone.Precision,Recall,APandmAPdescribedetectionquality.Params(M)andGFLOPs
+provide a proxy for architectural efficiency. Throughout our study we follow standard metric definitions in
+theexistingliteratureinordertopreservecomparabilityasfaraspossible.
+Allnumericalvaluesaretakendirectlyfromthecitedsourcesunlessexplicitlynoted,andanynecessary
+adjustmentsareclearlydocumentedinthecorrespondingfigureortablecaptions.
+4.3 ComparativePerformanceofYOLO-BasedSmallObjectDetectionMethods
+Wecompileresultsfromrecentliteraturetoevaluatehowdifferentmodificationsinfluenceperformance
+on small-object benchmarks. Every numerical entry was curated directly from the primary source and
+checked against the exact location of reporting in the article body, the figure captions, and the official
+supplementarymaterials.Foreachmethodwerecordedthedatasetsplit,theinputresolution,thedefinition
+ofeachmetric,andtheavailableefficiencyindicatorssuchasparametercountandfloating-pointoperations.
+Metric names and significant figures follow the original sources so that every value can be traced without
+ambiguity .Whenastudyreportedrepeatedrunswithareportedmeanandvariation,weadoptedtheauthors’
+aggregateandrecordedthemeanastheprincipalfigure.Cellsareleftblankwhenasourcedoesnotreporta
+metric.Noimputationorre-estimationwasperformed.
+For each method, we list the original model identifier and the evaluation metrics as reported in
+the primary source, so that readers can trace back the exact experimental setting. The availability and
+maintenance status of these assets vary across studies and may change over time, so we refer readers to the
+primarysourcescitedinthe“Model”column,whereauthorsdescribetheirexperimentalsettingsand,when
+available,discloseofficialrepositories,configurationfilesormodelzoos.
+Fig.5 presents a bar chart comparing the mean increase in detection performance achieved by four
+categories of YOLO-based enhancements on the VisDrone dataset. The vertical axis measures the average
+mAP50 gain over the baseline YOLO model, while the horizontal axis lists the categories of improvement:
+attentionmechanisms,detectionheadmodifications,lossfunctionchanges,andmulti-scalefeaturefusion.
+Fig.6 depicts the performance trade-offs of various YOLO-based small-object detectors on the Vis-
+Drone dataset using two complementary scatter plots.Fig.6a plots each model’s precision vs. recall, with a
+seriesofconcaveiso-F1curvesforF1scoresof0.4,0.5,0.6,and0.7overlaidtoindicatethebalancebetween
+these two metrics.Fig.6b charts each model’s mAP50 against its recall and includes a dashed least-squares
+trend line; the coefficient of determination is approximately 0.65, which highlights the general relationship
+between recall and overall accuracy. In both panels, individual points represent different YOLO-SOD
+variants, and the color encodes the improvement type, where blue denotes attention-based models, green
+
+PAGE 31
+ComputMaterContin. 2026;87(1):7 31
+denotesdetection-headmodifications,yellowdenotesloss-functionadjustments,andpurpledenotesmulti-
+scale fusion approaches; the marker shape indicates whether the model incorporates a single enhancement
+module or a combination of multiple improvements. The left plot shows clear trade-offs between precision
+and recall, as many methods cluster along an F1 band between 0.5 and 0.6, with some emphasizing higher
+recallattheexpenseofprecisionandappearingtowardthelowerrightbelowtheF1equals0.5curve,whereas
+others achieve high precision while missing many targets and appear in the upper-left region. Only a few
+models approach the top-right corner near the F1 equals 0.7 contour, which indicates a superior balance of
+high precision and high recall. The right plot shows that models with higher recall generally attain higher
+mAP50scoresandthatmostpointsfollowanupwardtrend,althoughnoticeablevariabilityremainsaround
+thetrendline.
+Figure5: AveragemAP50improvementbyenhancementcategoryonVisDrone
+Figure 6: Precision, recall and mAP50 statistics of YOLO based small object detectors on the VisDrone dataset (a)
+Precisionvs.RecallwithIso-F1ContoursonVisDrone;( b)mAP50vs.RecallonVisDronewithLeast-SquaresTrend
+
+PAGE 32
+32 ComputMaterContin. 2026;87(1):7
+Forthesingle-modulesummariesin Tables 2–5we extracted results from ablation or component-wise
+studies that isolate one category of modification on the VisDrone2019 benchmark. Each entry explicitly
+sta testhebaselinemodelasr eportedb ythesour ceandr ep r oducesthebaselinescor einthecolumnlabeled
+Original.Thispairingallowsreaderstointerpretthegainwithinthesametrainingprotocolandarchitectural
+context rather than across heterogeneous baselines. The performance numbers that follow the “Original”
+columnarequotedfromthecorrespondingablationsettinginthesourcesothatthedeltawithrespecttothe
+pairedbaselinereflectsonlythestatedmodification.
+Table 3:Impact ofattentionmodulesonYOLOperformance
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv5
+CBAM[62] 28.9 – – 36.1 28.1 24.2 –
+SSB[48] 48.1 – – – – 48.2 27.1
+CAB[48] 48.1 – – – – 48.2 27.6
+SEB [8] 46.1 47.1 123.2 58.7 44.4 46.4 –
+YOLOv5s SIE[ 59]7 5 . 8 – – 7 1 . 9 6 4 . 5 7 6 . 1 –
+YOLOv5n EStem[129] 23.9 1.8 4.1 34.8 27.6 24.9 13.6
+C3+DCNv2(noMPCA)
+[129] 23.9 1.9 4.3 35.7 28.8 25.2 14.2
+YOLOv8n
+GAM[77] 35.1 3.4 8.4 48.2 36.6 37.6 –
+RFA-Block[60]3 3 . 8 3 . 1 8 . 6 –– 3 5 . 8 2 1 . 1
+SPPF-LSKA[56] 26.3 3.3 8.4 38.3 29.1 26.7 14.8
+Swin
+Transformer [56] 26.3 3.2 32.8 37.3 30.1 27.8 15.6
+FASTERNET [85] 32.9 – – 52.8 34.9 33.7 –
+NSSA[130] 32.9 3.9 9.2 44.9 33.8 34.2 20.3
+YOLOv8s
+LCA(no SimAM) [51] 37.8 9.7 24.3 – – 39.0 –
+LCA[51] 37.8 9.7 24.3 – – 39.2 –
+DCN_C2f[64] 35.4 – – 46.0 37.8 35.8 20.4
+MLCA[65] 38.9 7.9 25.9 – – 39.8 23.8
+SPD [9] 45.5 – 53.2 55.5 45.5 46.8 29.0
+EMA[10] 37.3 22.5 – – – 37.5 22.3
+SOB[86] 37.3 11.4 30.8 – – 37.7 22.1
+DDM[86] 37.3 13.3 36.0 – – 38.8 23.1
+YOLOv8
+LKEM[101] 47.2 12.5 76.8 57.0 44.2 48.0 –
+C2f_GE[53] 47.2 – – 60.1 45.2 48.1 30.1
+MCTA[54] 38.3 3.5 – 49.4 38.1 38.9 23.3
+MSTA[54] 38.3 3.5 – 50.4 37.3 39.1 23.4
+MCSTA[54] 38.3 3.8 – 50.2 38.9 40.1 24.1
+YOLOv10n SPDConv [ 131] 35.9 3.13 – – – 35.6 20.9
+(Continued)
+
+PAGE 33
+ComputMaterContin. 2026;87(1):7 33
+Table 3 (continued)
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv11n LAD[132] 32.2 2.27 6.6 – – 33.2 19.4
+SegNext
+Attention [132] 32.2 2.71 6.6 – – 33.3 19.3
+Table 4:Impactofdetectionheadandbranchstructuremodifications
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv5 SODH[75] 27.6 – – 46.2 37.9 35.9 –
+CFAM[48]5 2 . 6 – – –– 5 5 . 7 3 3 . 8
+YOLOv5n MSEHead[ 90] 23.9 2.2 5.0 40.6 32.1 30.7 17.1
+YOLOv5s
+Modify P
+H[72] 30.6 2.0 – 74.2 17.0 36.9 –
+P2[8] 41.1 47.1 – 60.4 43.3 46.1 –
+YOLOv7 Ensemble[133] 41.2 – – 56.3 48.7 47.2 29.1
+P2+Dyhead[133] 41.2 – – 55.3 47.8 42.8 25.6
+YOLOv8n
+DETR[85]2 7 . 2 – – 5 0 . 0 3 3 . 2 3 1 . 6–
+P2Head[ 54] 33.9 3.4 – 46.8 36.8 37.5 22.4
+CSFA-
+Head [130] 32.9 4.4 20.8 46.8 35.7 35.8 21.4
+TODL[77] 35.1 3.2 – 47.5 36.6 37.2 –
+LdyHead[60] 3 3 . 83 . 5 – ––– –
+YOLOv8 Q-block[14] 32.3 – – 43.9 33.7 33.1 16.8
+P2P3P4[87] 40.7 3.3 – 53.5 42.1 43.3 –
+YOLOv8m SDSA[ 67] 37.7 6.5 – 51.1 40.5 41.7 25.2
+YOLOv8s
+ISPP[65] 40.6 5.4 20.6 – – 40.6 24.3
+IDDH[9] 39.3 – 45.9 56.1 43.2 45.5 27.8
+LLDH[86] 37.3 3.1 29.3 – – 41.2 23.2
+YOLOv10n DySample[131] 35.9 2.4 7.6 – – 35.8 20.8
+AKConv[131] 35.8 3.3 11.5 – – 36.5 23.1
+Table 5:Impact of loss functionimprovements
+Baseline Lossfunction Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv5s EfficiCLoss[ 59] 75.8 – – 71.6 65.1 76.3 –
+(Continued)
+
+PAGE 34
+34 ComputMaterContin. 2026;87(1):7
+Table 5 (continued)
+Baseline Lossfunction Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv7 WIoU[70] 44.2 – 167.2 55.7 45.5 44.6 –
+Outer-IoU[133] 41.2 – – 53.5 44.7 42.8 25.6
+YOLOv8n
+GIoU[134] 35.1 – – 44.6 34.7 35.2 –
+EIoU[135] 35.1 – – 46.0 33.7 34.6 –
+WIoUv3[77] 35.1 – – 46.2 35.6 35.9 –
+INNER-
+MPDIoU[85] 33.7 – – 53.5 36.4 35.1 –
+YOLOv8
+α-SIoU[53] 47.2 – – 58.8 45.7 47.5 –
+Wise-IoU [71] 41.7 7.0 – 52.0 41.0 42.2 29.5
+SIoU Loss [61] 59.0 13.2 33.6 – – 59.4 37.8
+Table 3summarizes methods that implement attention-based feature enhancement on top of a YOLO
+baseline. Table 4covers detection head and branch structure optimizations. These entries typically involve
+modelsthataddanextradetectionlayerorreconfiguretheheadspecificallyforsmallobjects. Table 5focuses
+onlossfunctionrefinements,listingresultsfromstudiesthatintroducedimprovedlosstermstobettertrain
+YOLOforsmallobjectaccuracy.Similarly, Table 6presentsmethodsemphasizingmulti-scalefeaturefusion
+and context enhancement, where the primary modification is the integration of feature pyramid networks,
+contextmodules,orothermulti-scalestrategies.
+Table 6:Impactofmulti-scalefusionandcontextmodules
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv5
+MatrixFlow
+Reducer[48] 48.1 – – – – 49.9 27.8
+SCASM[48]5 0 . 7 – – – – 5 2 . 6 3 1 . 4
+CPMAEM[85] 50.0 – – – – 51.5 30.9
+YOLOv5n C3-DMP[ 129] 23.9 1.9 4.5 36.8 29.2 26.7 14.9
+YOLOv5s
+Coord_C3[59]7 5 . 8–– 7 2 . 1 6 4 . 9 7 6 . 4 –
+BDFPN[72]3 0 . 6 4 . 5 – 7 7 . 5 2 1 . 7 4 2 . 5 –
+FPN[72]3 0 . 6 – – 7 6 . 6 1 2 . 9 3 1 . 7 –
+PANet [72]3 0 . 6 – – 7 4 . 2 1 7 . 0 3 6 . 9 –
+BiFPN[72] 30.6 – – 79.0 17.7 37.7 –
+MSFEM[72] 36.9 3.4 – 75.3 20.2 40.3 –
+CFFI[75] – – – 35.5 31.1 26.8 –
+Bi[8] 46.1 47.4 124.8 60.5 46.5 46.7 –
+SCA[8] 46.1 47.4 125.1 57.5 46.3 47.0 –
+YOLOv7
+BHC-FB[70] 42.8 – 158.1 56.1 44.8 44.2 –
+MS-CET[70] 41.1 – 142.9 56.3 43.4 42.8 –
+(Continued)
+
+PAGE 35
+ComputMaterContin. 2026;87(1):7 35
+Table 6 (continued)
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+DSDM-LFIM[15] 49.8 29.8 70.1 – – 46.7 26.0
+YOLOv8s
+GSPPF[51] 37.8 11.6 29.0 – – 38.7 –
+MFLNeck[51]3 7 . 8 1 0 . 6 2 6 . 3 – – 3 9 . 4 –
+PAN-FPN [71] 41.0 7.0 – 51.8 40.5 41.7 –
+DBB[71] 40.4 7.0 – 51.2 39.8 41.0 –
+SCCFF[65] 39.8 6.5 21.2 – – 40.4 24.0
+SCCFF+
+SPPELAN[65] 40.4 5.8 20.7 – – 40.6 24.3
+MLSA[64] 35.4 – – 50.3 40.2 39.3 22.8
+SPD-
+Conv+CSPD[64] 35.4 – – 47.2 38.9 37.2 21.4
+FF[10] 37.3 22.9 – – – 39.7 24.0
+SCF[10] 37.3 31.0 – – – 38.3 22.8
+SAC[9] 45.5 – 26.1 54.7 43.6 45.6 27.9
+SDA [9] 45.5 – 34.3 55.6 45.8 47.6 29.3
+MFE[9] 38.6 – 34.4 50.1 38.3 39.3 23.5
+SPPF[86] 37.3 11.1 28.8 – – 37.3 22.1
+YOLOv8m CSA [ 67] 37.7 9.0 – 49.8 37.5 38.3 22.9
+YOLOv8n
+GIFM+FLCM[60] 33.8 3.6 10.3 – – 35.2 20.5
+STE-neck[56] 26.3 1.8 11.8 37.4 31.2 28.1 15.6
+STE-neck+MSFE[56] 28.1 2.1 17.7 42.0 31.6 29.9 16.9
+STDL[85] 31.6 – – 51.2 34.7 32.9 –
+Fusion[54] 37.5 3.4 – 49.9 36.6 38.3 22.8
+YOLOv8
+MLFF[87] 40.7 13.9 – 53.2 41.2 41.8 –
+CCGM[101]4 7 . 2 1 2 . 6 8 1 . 0 5 6 . 7 4 4 . 4 4 8 . 2 –
+(BF-FPN,Dyhead)[14] 33.1 – – 44.2 34.2 34.6 16.8
+SimpleGFPN[66] 57.6 12.2 32.8 – – 58.4 37.1
+SimpleGFPN
++DCGFF[ 66] 58.4 13.2 33.6 – – 59.0 37.4
+MVM[101] 47.2 18.4 94.7 59.1 47.0 49.9 –
+MSAVM[101] 47.2 13.8 74.8 55.9 43.6 47.6 –
+DCGFL[ 66] 57.0 – 32.2 – – 57.6 36.6
+DBB[14] 31.4 – – 43.8 32.7 32.3 16.1
+YOLOv10n MBSFPN[131]3 4 . 2 3 . 1 7 . 9 – – 3 5 . 9 2 1 . 3
+CSP-OKB[131] 35.9 3.11 – – – 36.7 21.5
+(Continued)
+
+PAGE 36
+36 ComputMaterContin. 2026;87(1):7
+Table 6 (continued)
+Baseline Model Original Params
+(M) GFLOPs P(%) R(%) mAP 50 mAP50:95
+YOLOv11n Re-Calibration
+FPN[132] 32.2 3.9 18.8 – – 39.5 24.2
+Wepresentattentionmechanismsandmulti-scalefusionasdistinctcategoriesinordertodifferentiate
+structuraldesignfromweightingstrategy.Multi-scalefusiondefinesthearchitecturalskeletonthatconnects
+and aggregates information across resolutions through explicit cross-scale operators, whereas attention
+allocatesweightstochannelsandspatiallocationsalongthoseestablishedpaths.Accordingly, Table 2reports
+only attention methods, defined as modules that modulate feature salience within a single representation
+without constructing explicit cross-scale links.Table 5reports multi-scale fusion and context methods,
+defined as designs that perform aggregation or alignment across resolutions via explicit cross-scale oper-
+ations. In contemporary YOLO research, multi-scale fusion methods almost always incorporate attention
+to adapt weights or to guide alignment across scales; therefore, entries inTable 5should be interpreted
+as attention-augmented fusion by default. This delineation enforces precise classification criteria, supports
+mechanism-level comparison inTable 2and operator-level comparison inTable 5,a n dr e m o v e sa m b i g u i t y
+inthetreatmentofhybridmodules.
+In each table we report the indicators that are standard in the cited works, including precision–recall
+based measures and computational measures, for representative detectors drawn from recent studies. All
+entriesaretranscribedfromtheoriginalsources,andtheoriginalnomenclatureandformattingareretained
+topreservefidelity.Whenauthorsevaluatedmodelsonofficialtestserversoronclearlyspecifiedvalidation
+partitions,weusedthosevaluestoprovideastablebasisforcomparison.Theorderingofmethodswithina
+tabledoesnotimplyaranking.Thelayoutisdesignedtosupportclearsidebysidereading.
+The following seven tables present a comparative summary of complete model results, with one table
+corresponding to each dataset. We aggregate state-of-the-art detectors evaluated on VisDrone, DOTA,
+UAVDT, VEDAI, NWPU VHR-10, AI-TOD, and DIOR so that readers can inspect model behavior under
+a consistent set of dataset-specific conditions and metrics.Table 7reports experimental results of YOLO
+models for small-object detection on VisDrone,Table 8reports results on DOTA,Table 9reports results
+on UAVDT,Table 10reportsresultsonVEDAI, Table 11reportsresultsonNWPUVHR-10, Table 12reports
+results on AI-TOD, andTable 13reports results on DIOR.
+Table 7:Experimentalresults ofYOLO modelsforsmallobject detectiononVisDrone
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+KL-YOLO[77] 35.1 3.2 19.6 54.2 40.6 43.1 –
+Niu et al. [71] 40.4 7.0 – 52.0 41.0 42.2 –
+CRL-YOLO[46] 33.3 – – 47.2 38.6 38.4 –
+YOLO-RSFM [85] 29.0 7.0 29.1 53.5 36.4 35.1 20.3
+DS-YOLOv5s[59] 75.8 6.8 16.3 – – 78.9 –
+MFFCI-YOLO[51] 37.8 10.3 25.1 – – 40.6 –
+MFFSODNet[72] 30.6 4.5 – 78.1 24.1 45.5 –
+MV-YOLO[101] 43.4 21.8 105.5 – – – 50.6
+(Continued)
+
+PAGE 37
+ComputMaterContin. 2026;87(1):7 37
+Table 7 (continued)
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+SCA-YOLO[8] 41.4 47.7 126.8 59.2 45.3 47.4 28.1
+Ning et al. [87] 34.4 4.3 – 55.0 43.7 45.4 26.0
+HIC-YOLOv5[75] 27.57 – – 47.9 38.5 37.0 20.9
+EdgeYOLO[90]4 3 . 2 – – – – 4 5 . 4 –
+ESOD-YOLO[65] 37.4 5.4 20.6 – – 40.6 24.2
+MLSA-YOLO[64] 31.9 – – 52.6 41.0 41.4 24.2
+LGFF-YOLO[60] 33.8 4.2 12.4 – – 38.3 22.9
+PSO-YOLO[56] 26.3 2.6 29.0 41.0 32.8 30.9 17.4
+TA-YOLO [54] 33.9 3.8 14.1 – – 40.1 24.1
+ATBHC-YOLO [70] 41.1 – 167.2 55.7 45.5 44.6 –
+αS-YOLO[53] 47.2 – – 61.3 45.3 48.3 30.4
+Ant-YOLO[57] 25.4 6.1 16.2 – – 29.5 16.3
+Ant-YOLO[57] 25.4 6.1 16.2 – – 29.5 16.3
+QSD-YOLO[14] 31.4 – – 44.2 34.2 34.6 16.8
+Shietal.[ 66] 57.0 13.2 33.6 – – 59.4 37.8
+Wang et al. [105] 29.7 14.0 64.3 – 46.9 45.4 26.1
+MIS-YOLO[9] 38.6 – – 55.6 45.8 47.6 29.3
+MSFE-YOLO[10] 37.3 31.6 – – – 41.4 27.5
+Para-YOLO [73]3 3 . 3 6 . 5 7 . 3– – 3 5 . 2–
+MCIA-YOLO[67] 40.9 7.9 – 52.8 41.1 42.7 25.9
+SCASNet[48]4 7 . 3 – –– – 5 5 . 7 3 3 . 8
+SOD-YOLOv10[98]3 9 . 5 – – – –5 5 . 6 –
+TPH-YOLOv5[62]4 9 . 3 – – – –5 7 . 33 5 . 7
+LGC-YOLO[106] 36.8 11.3 29.0 – – 39.2 –
+SBF-YOLO[131] 34.2 3.3 11.5 – – 39.2 23.1
+SD-YOLO [86] 37.3 4.2 37.7 – – 43.5 26.4
+YOLO-DTAD [96]3 7 . 7 – – 5 1 . 1 3 9 . 1 3 8 . 2 2 2 . 2
+ED-YOLO[129] 23.9 20.6 7.2 – – 36.6 20.6
+Aams-YOLO[133] 41.8 59.2 171.7 56.3 48.7 47.2 29.1
+LRDS-YOLO[132] 32.3 4.2 24.1 53.3 41.6 43.6 26.6
+SOD-YOLOv7[15] 49.8 30.3 83.5 – – 50.7 30.0
+Zhouetal.[ 130] 32.9 3.3 24.9 57.3 44.7 45.9 28.2
+Note: The mean average precision values in this table refer to performance on this dataset only and are not directly
+comparablewithmAPvalues.reportedforotherdatasets.
+Table 8:Experimentalresultsof YOLO modelsforsmallobject detectiononDOTA
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+SuperYOLO[88] – 7.7 20.9 – – 70.0 –
+CSPPartial-YOLO[13] 87.9 9.6 16.2 – – 89.8 –
+SCA-YOLO[8] 74.8 47.9 126.4 78.0 73.5 75.8 50.7
+(Continued)
+
+PAGE 38
+38 ComputMaterContin. 2026;87(1):7
+Table 8 (continued)
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+LGFF-YOLO[60] 62.5 – – 73.6 – 63.5 41.1
+Liuetal.[ 89] 75.6 – – – – 78.6 50.8
+Sun et al. [136] 33.7 5.5 13.8 85.5 50.2 49.9 18.8
+DSFPAP-Net[61] 67.3 9.6 127.2 – – 73.7 –
+Wang et al. [105] – 14.0 56.9 – 66.4 68.2 40.5
+Para-YOLO [73] 71.2 6.5 18.7 – – 72.3 –
+Tri-
+Decoupling++Net [17] 66.6 10.8 36.7 – – 71.7 46.3
+LGC-YOLO[106] 70.0 11.3 29.0 – – 76.5 –
+Zakriaetal.[ 137]6 2 . 1 – – –– 7 4 . 2–
+SED-YOLO [130] 69.2 8.0 35.3 – – 71.6 –
+Note: The mean average precision values in this table refer to performance on this dataset only and are not directly
+comparablewithmAPvaluesreportedforotherdatasets.
+Table 9:Experimentalresults ofYOLO modelsfor smallobject detectiononUAVDT
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+KL-YOLO[77] 90.9 3.2 19.6 98.0 98.1 98.9 –
+MFFSODNet[72]9 7 . 5 4 . 5 –9 4 . 6 9 6 . 5 9 8 . 4–
+ESOD-YOLO[65]4 8 . 6 – – –– 5 1 . 72 7 . 3
+Shietal.[ 66]2 7 . 2 – – – – 3 1 . 4 1 8 . 5
+MCIA-YOLO[67] 36.1 – – 44.6 36.7 36.8 21.4
+Aams-YOLO[133] 41.9 59.2 171.7 – – 43.1 29.9
+Note:Themeanaverageprecisionvaluesinthistablerefertoperformanceonthisdatasetonlyandarenotdirectly
+comparablewithmAPvaluesreportedforotherdatasets.
+Table 10:Experimentalresults ofYOLO modelsforsmallobject detectiononVEDAI
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+FFCA-YOLO[7] 68.6 – – – 74.8 44.8 44.8
+SuperYOLO[88] 76.2 4.8 – – 80.9 – –
+HyperYOLO[58] 70.0 3.5 – – 82.6 52.4 52.4
+ATBHC-YOLO [70]5 8 . 4 – – –6 4 . 2– –
+SMN-YOLO[68] 67.3 2.4 – – 70.5 59.4 59.4
+Baietal.[ 69] 53.9 – – – 61.7 35.9 35.9
+LGA-YOLO[102] 74.3 – – – 80.3 51.0 51.0
+SOD-YOLOv8[74] 53.8 – 64.9 50.0 56.7 33.6 33.57
+MROD-YOLO[25] 70.8 45.4 82.1 65.3 77.9 49.8 49.8
+Note: The mean average precision values in this table refer to performance on this dataset only and are not directly
+comparablewithmAPvaluesreportedforotherdatasets.
+
+PAGE 39
+ComputMaterContin. 2026;87(1):7 39
+Table11: Experimen talr esul tso fY OLOmodelsfo rsmallob jectdetectio no nNWPUVHR -10
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+KL-YOLO[77] 90.9 3.2 19.6 98.0 98.1 98.9 –
+MFFSODNet[72]9 7 . 5 4 . 5 –9 4 . 6 9 6 . 5 9 8 . 4–
+ESOD-YOLO[65]4 8 . 6 – – –– 5 1 . 72 7 . 3
+Shietal.[ 66]2 7 . 2 – – – – 3 1 . 4 1 8 . 5
+MCIA-YOLO[67] 36.1 – – 44.6 36.7 36.8 21.4
+Aams-YOLO[133] 41.9 59.2 171.7 – – 43.1 29.9
+DET-YOLO[63] 69.2 1.4 5.3 87.4 72.9 79.9 –
+GLFE-YOLOX[19]8 7 . 8 – – –– 9 0 . 9 –
+Wu et al. [50] 95.5 7.1 7.4 71.6 65.1 95.6 –
+SuperYOLO[88]– 7 . 7 2 0 . 9 – – 9 3 . 3 –
+MFFCI-YOLO[51]9 0 . 1 – – –– 9 4 . 1 –
+Baietal.[ 69] 86.3 – – – – 87.2 56.9
+Wu et al. [50] 95.5 7.1 7.4 – – 95.6 65.1
+MCIA-YOLO[67]8 6 . 7 – –8 9 . 2 8 1 . 2 8 7 . 2 –
+SCNet[52]9 4 . 6 4 . 61 . 8 – – 9 6 . 6 –
+Tri-
+Decoupling++Net [17] 91.1 10.8 36.7 – – 94.9 62.9
+SOD-YOLOv10[98]8 6 . 6 – – – –9 3 . 2 –
+LGC-YOLO[106] 94.3 11.3 29.0 – – 97.3 –
+MFAE-YOLO[23]9 2 . 0 – – –– 9 4 . 7–
+SOD-YOLOv7[15] 81.9 30.3 83.5 – – 81.5 58.6
+Note:Themeanaverageprecisionvaluesinthistablerefertoperformanceonthisdatasetonlyandarenotdirectly
+comparablewithmAPvaluesreportedforotherdatasets.
+Table 12:ExperimentalresultsofYOLO modelsforsmallobject detectiononAI-TOD
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+CRL-YOLO[46] 37.3 – 61.0 34.6 35.9 –
+FFCA-YOLO[7] ––– – 6 1 . 7 2 7 . 7
+ESOD-YOLO[65] 45.2 – – – 48.3 21.7
+SMN-YOLO[68] 38.4 2.4 – – 41.3 –
+CAW-YOLO[76] 44.7 – – – 45.9 17.1
+Sun et al. [136] 36.5 5.5 89.6 51.4 50.6 19.3
+SCASNet[48] 46.9 – – – 54.2 24.6
+SOD-YOLOv8[74] 49.8 – – – 50.7 23.4
+SOD-YOLOv10[98]5 0 . 1 – – –5 9 . 5–
+SBF-YOLO[131] 35.3 – – – 36.3 14.7
+YOLO-SS [138] 38.3 31.0 – 64.1 53.5 24.0
+Note: The mean average precision values in this table refer to performance on this dataset only and are not directly
+comparablewithmAPvaluesreportedforotherdatasets.
+
+PAGE 40
+40 ComputMaterContin. 2026;87(1):7
+Table 13:Experimen talr esul tso fY OLOmodelsfo rsmallob jectdetectio no nDI OR
+Model Original Params(M) GFLOPs P(%) R(%) mAP 0.5 mAP50:95
+GLFE-YOLOX[19] 68.7 42.5 84.2 – – 78.9 –
+SuperYOLO[88]– 7 . 7 2 0 . 9 – – 7 1 . 8 2 –
+MV-YOLO[101] 88.9 21.8 105.5 – – 89.7 –
+CAW-YOLO[76]7 0 . 9 1 3 . 2 – –– 7 3 . 9 8–
+Baietal.[ 69] 86.7 – – – – 88.2 61.0
+Para-YOLO [73] 77.9 6.5 11.4 – – 79.4 –
+SCNet[52] 71.1 4.6 1.8 – – 72.6 –
+Note:Themeanaverageprecisionvaluesinthistablerefertoperformanceonthisdatasetonlyandarenotdirectly
+comparablewithmAPvaluesreportedforotherdatasets.
+Each dataset represents a distinct application context or imaging source and introduces characteristic
+challenges for small object detection such as high target density or strong background clutter. Because
+targetscaledistribution,objectdensity,viewpointrangeandannotationprotocoldifferacrossbenchmarks,
+the overall difficulty of each dataset is also different. Mean average precision values reported in different
+tables cannot therefore be compared directly across datasets. They should be interpreted only within the
+corresponding benchmark. In each table an “Original” column reports the baseline performance of the
+detectorbeforeanysmallobjectorientedmodificationisapplied.Improvementsareinterpretedasgainsover
+thisbaselinewithinthesamedatasetratherthanascomparisonsofabsolutescoresbetweendatasets.
+All numerical results inTables 7–13are taken directly from published studies so that the comparisons
+reflect the performance reported in the original papers and avoid inconsistencies that may arise from
+reimplementation. For each entry we cite the source in the table or in the accompanying discussion, and
+we align the evaluation metrics so that the contrasts are genuinely like for like. By analyzing these tables
+it is possible to outline the current landscape of YOLO based small object detection and to observe trade
+offs, for example between models that prioritize peak precision and models that emphasize recall for small
+objects,withmanyofthesedifferenceslinkedtospecificarchitecturalandtrainingchoicesdescribedinthe
+originalworks.Thetablesarestructuredtoisolatetheeffectofindividualimprovementstrategiesonashared
+benchmark and to assess the overall behaviour of advanced detectors across multiple benchmarks. Each
+enhanced model is paired with its reported baseline under a common evaluation protocol and consistent
+metric calibration, which enables like for like comparisons that quantify the incremental contribution of
+attention mechanisms, detection head redesigns, loss formulations and multi scale fusion while helping to
+limitconfoundingfromdatasetorprotocolshifts.Atthesametime,thetablesextendtheviewacrossdatasets
+with different object scales, scene densities and imaging conditions so that the robustness of each method
+canbeexaminedundervariedscenarios.Takentogether,thesesummariesprovideaconsolidatedreference
+thathighlightsrecurringdesignpatternsandsupportsmeaningfulcrosspapercomparisonofYOLObased
+smallobjectdetectors.
+Fig.7 summarizes how the magnitude of mAP50 gains depends on dataset characteristics rather than
+the method alone. VisDrone shows a wide and right-skewed distribution because its imagery contains
+very small targets, dense layouts, frequent occlusion, and strong illumination changes, which create large
+headroom for attention and fusion modules that recover fine detail. AI-TOD exhibits the largest spread
+because it concentrates extremely tiny instances in complex backgrounds, so improvements are substantial
+when designs strengthen cross-scale aggregation or deformable sampling yet can be modest when only
+lightweight recalibration is added. UAVDT yields compact distributions with high medians because scenes
+
+PAGE 41
+ComputMaterContin. 2026;87(1):7 41
+contain traffic targets with relatively consistent scale and motion cues, which produce strong baselines
+and leave less room for additional gains. DIOR produces narrow improvements because objects are often
+larger within 800 by 800 crops and class diversity dilutes the effect of detectors specialized for tiny objects.
+VEDAI centers around mid-range gains because it focuses on vehicles with limited category variation
+while still presenting occlusion and rotation that benefit from context modeling. NWPU VHR-10 shows
+moderate variance because very-high-resolution imagery preserves detail but the dataset is smaller, which
+constrains robust learning and limits the stability of gains. DOTA displays heterogeneous improvements
+because arbitrary orientations and multi-scale clutter increase reliance on alignment quality, so methods
+that couple fusion with orientation-aware attention achieve larger benefits than those that only reweight
+features.Collectively,thedistributionsindicatethatlargergainsarisewhenadatasetconcentratestiny,dense,
+and cluttered instances that amplify the value of explicit cross-scale aggregation, alignment, and content-
+adaptiveweighting,whereasdatasetswithlargerobjects,simplerscenes,orstrongerbaselinesshowsmaller
+yetconsistentimprovements.
+Figure7: DistributionofmAP50 improvements acrossdatasets
+Our comparative tables are structured to isolate the effect of individual improvement strategies on a
+sharedbenchmarkandtoassesstheholisticperforman ceofadvanceddetectorsacrossmultiplebenchmarks.
+By pairing each enhanced model with its reported baseline under a common evaluation protocol and
+metric calibration, the entries enable like-for-like contrasts that quantify the incremental contribution of
+attentionmechanisms,detection-headredesigns,lossformulations,andmulti-scalefusionwhileminimizing
+confoundingfromdatasetorprotocolshifts.Thesamecompilationthenextendstheviewtodiversedatasets,
+allowingperformancetobeexaminedunderdifferingob jectscales,scenedensities,andimagingconditions
+sothatgeneralizabilitycanbeappraisedratherthaninferred.
+In summary, the comparative tables are structured to first isolate the effect of individual improvement
+strategies on a common benchmark, and then to examine the holistic performance of advanced detectors
+across multiple benchmarks. This two-level comparison strategy allows us to discuss both the micro-level
+impact of specific techniques and the macro-level effectiveness of entire models in varied small object
+detectionscenarios.Throughthisacademicallyrigoroussynthesisofpublishedresults,ourliteraturere-view
+
+PAGE 42
+42 ComputMaterContin. 2026;87(1):7
+provides a clear landscape of which YOLO-based improvements have the most promise and under what
+conditions, guiding future research towards the most fruitful directions.
+5 FutureDirections
+AlthoughYOLObasedsmallobjectdetectionhasprogressedrapidly,severalresearchdirectionsremain
+centralforfuturework.Thesynthesisintheprevioussectionshighlightsfivethemesthatarelikelytoshape
+the next generation of detectors. These themes are cross domain generalization, dynamic and task aware
+architecture, lightweight design and model compression, multimodal fusion, and temporal reasoning in
+crowded scenes. Each theme reflects a specific constraint in real applications and points to methodological
+advances that go beyond incremental tuning of existing models. The following subsections outline these
+directionsanddiscusstheirimplicationsforYOLObasedsmallobjectdetection.
+5.1 CrossDomainGeneralizationforSmallObjectDetection
+Cross domain generalization is a fundamental challenge for YOLO based small object detection.
+Detectors trained on a particular dataset or sensor modality often suffer a marked drop in accuracy when
+deployedinnewcitiesorunderdifferentweatherandil luminationconditions.Theeffectisespeciallysevere
+for small objects because their visual signatures are weak and can be masked by changes in background
+statisticsorimagingnoise.Futureresearchneedstomovebeyonddatasetspecificoptimizationanddevelop
+representationsthatremainstablewhenthedeploymentdomaindiffersfromthetrainingdomain.
+Onelineofworkisdomaininvariantfeaturelearning.Adversarialobjectivescanconstrainintermediate
+featuressothatadomainclassifierfailstoinferthesourcedatasetwhilethedetectorpreservesdiscriminative
+powerfortargetcategories.Anotherlineismetalearningforrapidadaptation.Trainingepisodescansimulate
+domain shifts and encourage the detector to learn update rules that rely on a small amount of new data.
+Test time adaptation provides a complementary path. In this setting the detector updates batch statistics or
+selected parameters on unlabeled deployment data and gradually aligns its internal representation to the
+targetdomain.Forsmallobjectdetectionitisalsoimportanttoidentifywhichlayersshouldbeadapted,since
+excessivechangesinearlyfiltersmayamplifybackgroundnoisewhileinsufficientadaptationindeeperlayers
+canleavetinytargetspoorlyseparatedfromclutter.Moreover,domainadaptationmethodsneedtoaccount
+for the long tailed distributions of scale and class frequency in small object benchmarks so that rare small
+instances are not overshadowed by more common medium sized objects. A coherent research agenda will
+integrate these strategies within the YOLO framework and will evaluate them on benchmarks that include
+explicitcrossdomainsplitsforsmallobjectscenarios.
+5.2 DynamicandTask-AwareArchitectures
+MostcurrentYOLObaseddetectorsadoptafixedbackbonedepth,neckwidth,andfusionpatternforall
+inputs.Realscenescontainlargeregionswithlittlest ructureandsmallregionswithheavyclutteranddense
+tinytargets.Astaticarchitecturetendstoallocatesimilarcomputationtobothtypesofregionsandmaystill
+failtocapturethesubtlecuesneededforsmallobjectdiscrimination.Dynamicandtaskawarearchitectures
+aimtoadjusttheireffectivecapacityinresponsetothespatial,scale,andtemporalstructureofeachinputso
+thatcomputationisconcentratedoninformativeregions.
+Future research can explore neural architecture search, conditional computation, and routing mecha-
+nisms that allow the network to vary its paths based on content. Cross scale connections can be activated
+onlywhentheimagecontainsmanysmallobjects.Uniformregionssuchasskyorroadcanbeprocessedby
+lighter sub networks that require fewer operations. Architectures that combine local convolutional features
+withglobalcontextfromattentionstylemoduleshaveparticularpromise.Theycanexploitfinetexture.Atthe
+
+PAGE 43
+ComputMaterContin. 2026;87(1):7 43
+same time, they model extended contextual dependencies across the image, which helps resolve ambiguity
+betweensmalltargetsandclutter.Dynamicdesignshouldalsoextendtovideo.Detectorsforvideostreams
+canreusefeaturesacrossframesandactivatecomputationallyexpensivebranchesonlywhenmotionpatterns
+or occlusions make the scene more complex. In crowded scenes dynamic heads can adjust receptive fields
+andanchorlayoutsaccordingtoestimatedobjectdensitysothatoverlappingsmallobjectsremainseparable.
+ContinuedworkalongtheselinescanyieldYOLObaseddetectorsthatmaintainhighrecallforsmallobjects
+whileadaptingtheircomputationalstructuretothedemandsofeachscene.
+5.3 LightweightDesignandModelCompressionforDeployment
+Practical deployment of small object detectors frequently occurs on edge platforms. Typical examples
+include unmanned aerial vehicles, embedded cameras in intelligent transportation systems, and mobile
+robotic platforms. These environments impose strict limits on computation, memory, and energy, yet they
+often require real time detection of numerous small targets in complex backgrounds. A central research
+objectiveistosustainhighdetectionperformanceforsmallobjectswhilesatisfyingstringentconstraintson
+computation,memoryandenergy.
+Model compression provides a structured framework for this objective. Knowledge distillation [139]
+transfers behaviour from a high capacity teacher into a compact student network that preserves the
+detailed representations needed for small object detection [140]. Quantization reduces memory footprint
+andarithmeticcostbyusinglowprecisionweightsandactivations.Structuredpruningremovesredundant
+channelsorblocksandkeepstheoverallgeometryofthebackboneanddetectionheads.Whencompression
+techniques are co designed with architectures that emphasize high resolution features and enriched neck
+structures, the result can be streamlined YOLO variants that approach the accuracy of larger models
+while satisfying the constraints of embedded hardware. A promising direction is joint optimization of
+architectureandcompression.Insteadofcompressinganexistingmodel,futuremethodscansearchdirectly
+for backbones, necks, and heads that remain robust under strong pruning or low precision quantization.
+Training objectives can include explicit constraints on latency, memory, and power. Such pipelines would
+yieldlightweightsmallobjectdetectorsthataretailoredtospecificdevicesandoperatingconditions.
+5.4M ultimodalFusionforRobustSmallObjectP erception
+Single modality input often proves insufficient for reliable small object detection in adverse envi-
+ronments. In many real systems it is possible to acquire complementary data streams such as visible
+light imagery, infrared images, radar signals or depth maps. Each modality captures different physical
+properties of the scene and different aspects of small targets and background clutter. Visible images offer
+richtextureandcolourcuesbutdegradeunderlowilluminationandweatherdegradation.Infraredimagery
+highlightsthermal contrastbut mayblur finestructuraldetails.Radaranddepth sensorsencodegeometric
+and range information but provide limited spatial resolution. For small objects, whose footprint in each
+modalityisalreadysmall,thesestrengthsandweaknessesaremagnified.Futureresearchneedstoexploitthe
+complementarynatureofthesesignalssothatYOLObaseddetectorsremainrobustwhenasinglemodality
+becomesunreliable.
+Multimodal fusion for small object detection should therefore focus on architectures that align and
+combine heterogeneous modalities at appropriate stages of the detection pipeline. Early fusion can merge
+registeredrawinputsorshallowfeaturessothatsmallstructuresthatarevisibleinonlyonemodalitybecome
+recoverableinthefusedrepresentation.Fusionatintermediatefeaturelevelscanintegratemodalityspecific
+feature maps through attention or gating mechanisms that learn which channels and spatial locations carry
+
+PAGE 44
+44 ComputMaterContin. 2026;87(1):7
+reliableinformationfortinytargets.Latefusionatthedetectionheadcanaggregatemodalityspecificpredic-
+tionsintounifiedboundingboxesandconfidencescoreswhileexploitingdifferencesinerrorpatternsacross
+sensors. A key technical challenge is the calibration of geometric and photometric misalignment between
+modalities, especially when small objects occupy only a few pixels and even minor registration errors lead
+toinconsistentfeatures.Robusttrainingstrategiesare alsorequiredsothatthedetectordegradesgracefully
+when one modality is noisy or unavailable. Continued progress in these aspects of multimodal fusion will
+beessentialforimprovingthereliabilityofYOLObasedsmallobjectdetectorsinrealworldapplications.
+5.5 TemporalReasoningandCrowdedScenes
+Crowded scenes with many overlapping small objects remain one of the most demanding settings for
+YOLO based detectors. Typical examples include dense traffic at urban intersections, formations of aircraft
+orbirds,andlargecrowdsobservedbysurveillancesystems.Insuchscenessmallinstancesoftenoccludeone
+another and share very similar appearance. Conventional detection heads and non-maximum suppression
+can then produce both missed detections and duplicated bounding boxes. Spatial cues alone are frequently
+insufficienttoresolvetheseambiguities.
+Futureresearchshouldstrengthentheinterplaybetweenspatialsuppressionmechanismsandtemporal
+reasoning.Recentadvancesinnon-maximumsuppression,includingdiscretizationbasedandpooling-based
+strategies [141], show that suppression can be formulated as a stable and parallelizable operator. Extending
+theseideastosmallobjectdetectionrequiresalgorithmsthatremainreliablewhenmanyhighlyoverlapping
+hypotheses occupy a compact region. At the same time multi object tracking across frames can provide
+motion trajectories and temporal consistency signals that help separate instances that are indistinguishable
+on a single frame. Integrating such sequence level information into YOLO style pipelines will require new
+training paradigms. Possible directions include joint optimization of detection and tracking losses and
+curriculum designs that expose the network to scenes with increasing levels of crowding and occlusion.
+Progressalongthispathwouldyieldsmallobjectdetectorsthatmaintainconsistentidentitiesovertimeand
+provide reliable counts in dense scenes, which are critical capabilities for safety monitoring and large scale
+environmentalobservation.
+Taken together, the research directions outlined inSections5.1–5.5are closely interconnected. Cross
+domain generalization must account for variation in both scene distribution and sensor configuration.
+Dynamic and task aware architectures provide mechanisms that allocate computation adaptively in multi-
+modalandtemporallystructuredenvironments.Light weightdesignconstrainsthespaceoffeasiblemodels
+andbecomescriticalwhenthedetectorprocessesmultipleinputstreamsorincorporatestemporalmodules.
+Multimodal fusion and temporal reasoning supply complementary forms of context that support reliable
+detection when small objects are occluded, poorly illuminated or heavily cluttered. Future work that treats
+thesethemesjointlyratherthaninisolationislikelytoproduceYOLObasedsmallobjectdetectorsthatare
+bothaccurateanddeployableinrealisticapplications.
+6 Conclusion
+Achieving accurate and efficient recognition of small objects in cluttered environments has long
+remained a central goal for the vision community, highlighting the need for systematic improvements
+to YOLO-based detectors. This article presents the first comprehensive survey of YOLO-based small-
+object detection. We review progress across key application domains, including autonomous driving,
+surveillance,aerialimaging,andremotesensing,andw esynthesizetheliteratureintofourprincipalavenues
+for improving small-object performance within the YOLO framework, namely attention-based feature
+
+PAGE 45
+ComputMaterContin. 2026;87(1):7 45
+enhancement, detection-head and branch-structure optimization, loss-function design with regression-
+precision optimization, and multi-scale feature fusion with spatial-context modeling. For each avenue we
+delineatethelimitationsandpracticalchallengesthatremain.Weconcludebyidentifyingoutstandingopen
+problemsandoutliningpromisingresearchdirectionsintendedtoguidefutureworkandtocatalyzefurther
+advancesinthisrapidlyevolvingfield.
+Acknowledgement: Theauthorswouldliketothankallcontributorsandinstitutionsthatsupportedthisresearch.
+FundingStatement: This work was supported in part by the by Chongqing Research Program of Basic Research and
+FrontierTechnologyunderGrantCSTB2025NSCQ-GPX1309.
+AuthorContributions: The authors confirm contributionto the paper as follows: Conceptualization,Hui Yu and Jun
+Liu; methodology, Hui Yu; validation, Hui Yu, Jun Liu and Mingwei Lin; formal analysis, Mingwei Lin; resources,
+Mingwei Lin; writing—original draft preparation, Hui Yu; writing—review and editing, Jun Liu; supervision, Jun Liu;
+fundingacquisition,MingweiLin.Allauthorsreviewedtheresultsandapprovedthefinalversionofthemanuscript.
+AvailabilityofDataandMaterials: Not applicable.
+EthicsApproval: Not applicable.
+ConflictsofInterest: The authors declare no conflicts of interest to report regarding the present study.
+References
+1. LiMJ ,Li uX Y ,ChenS,Y a n gL,DuQ Y ,H a nZQ,etal .MS T -Y O L O:smallob jectdet ectio nmodelf o ra u t o no mo us
+driving.Sensors.2024;24(22):7347.doi:10.3390/s24227347.
+2. Hua CJ, Luo K, Wu YD, Shi R. YOLO-ABD: a multi-scale detection model for pedestrian anomaly behavior
+detection.Symmetry.2024;16(8):1003.doi:10.3390/sym16081003.
+3. TsaiY-S,SitY-H.Aerialobjecttrackingwithattentionmechanisms:accuratemotionpathestimationundermoving
+cameraperspectives.ComputModelEngSci.2025;143(3):3065–90.doi:10.32604/cmc.2025.066368.
+4. Peng J, He H, Zhang D. YOLOv8s-DroneNet: small object detection algorithm based on feature selection and
+ISIoU.ComputMaterContin.2025;84(3):5047–61.doi:10.32604/cmc.2025.066368.
+5. Tang X, Ruan C, Li X, Li B, Fu C. MSC-YOLO: improved YOLOv7 based on multi-scale spatial context for small
+objectdetectioninUAV-view.ComputMaterContin.2024;79(1):983–1003.doi:10.32604/cmc.2024.047541.
+6. RedmonJ,DivvalaS,GirshickR,FarhadiA.Youonlylookonce:unified,real-timeobjectdetection.In:Proceedings
+of the 2016 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR); 2016 Jun 27–30; Las
+V egas,NV ,USA.p .779–88.do i:10.1109/CVPR.2016.91.
+7. ZhangY,YeM,ZhuG,LiuY,GuoP,YanJ.FFCA-YOLOforsmallobjectdetectioninremotesensingimages.IEEE
+TransGeosciRemoteSens.2024;62:1–15.doi:10.1109/TGRS.2024.3363057.
+8. Zeng S, Yang W, Jiao Y, Geng L, Chen X. SCA-YOLO: a new small object detection model for UAV images. Vis
+Comput.2024;40(3):1787–803.doi:10.1007/s00371-023-02886-y.
+9. Tao S, Shengqi Y, Haiying L, Jason G, Lixia D, Lida L. MIS-YOLOv8: an improved algorithm for detecting small
+objects in UAV aerial photography based on YOLOv8. IEEE Trans Instrum Meas. 2025;74(9):1. doi:10.1109/TIM.
+2025.3551917.
+10. Qi S, Song X, Shang T, Hu X, Han K. MSFE-YOLO: an improved YOLOv8 network for object detectionon drone
+view.IEEEGeosciRemoteSensLett.2024;21:1–5.doi:10.1109/LGRS.2024.3432536.
+11. Bhanbhro H, Hooi Y-K, Zakaria M-N-B, Kusakunniran W, Amur Z-H. MCBAN: a small object detection
+multi-convolutionalblockattentionnetwork.ComputMaterContin.2024;81(11):2243–59.doi:10.32604/cmc.2024.
+052138.
+
+PAGE 46
+46 ComputMaterContin. 2026;87(1):7
+12. Zhou W, Cai C, Li C, Xu H, Shi H. AD-YOLO: a real-time YOLO network with swin transformer and atten-
+tion mechanism for airport scene detection. IEEE Trans Instrum Meas. 2024;73:3472805. doi:10.1109/TIM.2024.
+3472805.
+13. Xie S, Zhou M, Wang C, Huang S. CSPPartial-YOLO: a lightweight YOLO-based method for typical objects
+detection in remote sensing images. IEEE J Sel Top Appl Earth Obs Remote Sens. 2024;17(1):388–99. doi:10.1109/
+JSTARS.2023.3329235.
+14. W angH,LiuC,CaiY ,ChenL,LiY.YOLOv8-QSD:animprovedsmallobjectdetectionalgorithmforautonomous
+vehiclesbasedonYOLOv8.IEEETransInstrumMeas.2024;73:1–16.doi:10.1109/TIM.2024.3379090.
+15. XiaoY,DiN.SOD-YOLO:alightweightsmallobjectdetectionframework.SciRep.2024;14(1):25624.doi:10.1038/
+s41598-024-77513-4.
+16. JiangF,YeW,LuP,ZhangS,WuZ,ZhuH.CNCR-YOLO:acomprehensiveoptimizationstrategyforsmall-target
+defectdetectionininjection-moldedparts.IEEESensJ.2024;21(21):24.doi:10.1109/JSEN.2024.3454311.
+17. NiL,PanX,WangX,BaoD,ZhangJ,ShiJ.Small-objectdetectionmodelforopticalremotesensingimagesbased
+on Tri-Decoupling++Head. IEEE J Sel Top Appl Earth Obs Remote Sens. 2024;17:12256–73. doi:10.1109/JSTARS.
+2024.3417702.
+18. LiK,ZhongX,HanY.Ahigh-performancesmalltargetdefectdetectionmethodforPCBboardsbasedonanovel
+YOLO-DFAalgorithm.IEEETransInstrumMeas.2025;74:1–12.doi:10.1109/TIM.2025.3551584.
+19. GuQ,HuangH,HanZ,FanQ,LiY.GLFE-YOLOX:globalandlocalfeatureenhancedYOLOXforremotesensing
+images.IEEETransInstrumMeas.2024;73:1–12.doi:10.1109/TIM.2024.3387499.
+20. KangM,TingC-M,TingFF,PhanRC-W.CST-YOLO:anovelmethodforbloodcelldetectionbasedonimproved
+YOLOv7 and CNN-swin transformer. In: Proceedings of the 2024 IEEE International Conference on Image
+Processing (ICIP); 2024 Oct 27–30; Abu Dhabi, United Arab Emirates. p. 3024–9. doi:10.1109/ICIP51287.2024.
+10647618.
+2 1 . L u oX ,L u oS ,C h e nM ,Z h a oG ,H eC ,W uH .M B F o r m e r - Y O L O :m u l t i b r a n c ha d a p t i v es p a t i a lf e a t u r ed e t e c t i o n
+networkfor smallinfraredobject detection.IEEE SensJ. 2024;24(12):19517–30.doi:10.1109/JSEN.2024.3394956.
+22. Zhou W, Cai C, Srigrarom S, Wang P, Cui Z, Li C. ADH-YOLO: a small object detection based on improved
+YOLOv8 for airport scene images in hazy weather. J Supercomput. 2025;81(3):1–20. doi:10.1007/s11227-025-0
+6999-0.
+2 3 . L i uY ,C h e n gX ,X uN ,W a n gL ,W a n gX ,Z h o n gX .M F A E - Y O L O :m u l t i f e a t u r ea t t e n t i o n - e n h a n c e dn e t w o r kf o r
+remote sensing images object detection. IEEE Trans Geosci Remote Sens. 2025;63:1–14. doi:10.1109/TGRS.2025.
+3583467.
+24. Zhuo X, Tian J. YOLO-Pole: a deep learning framework for precise pole localization in aerial orthophotos. IEEE
+TransGeosciRemoteSens.2025;22:1–5.doi:10.1109/LGRS.2025.3566546.
+25. Wang S, Yang X, Lu R, Zhang D, Xie W, Su S, et al. MROD-YOLO: multimodal joint representation for small
+objectdetectioninremotesensingimageryviamulti-scaleiterativeaggregation.IEEETransGeosciRemoteSens.
+2025;63:1–14.doi:10.1109/TGRS.2025.3590447.
+2 6 . G uY ,G u oY ,X i eW ,W uZ ,D o n gS ,X i eG ,e ta l .M D S F :ap l u g - a n d - p l a yb l o c kf o rb o o s t i n gi n f r a r e ds m a l l
+targetdetectioninYOLO-basednetworks.IEEETransGeosciRemoteSens.2025;63:1–14.doi:10.1109/TGRS.2025.
+3566889.
+27. VijayakumarA,VairavasundaramS.YOLO-basedobjectdetectionmodels:areviewanditsapplications.Multimed
+ToolsAppl.2024;83(35):83535–74.doi:10.1007/s11042-024-18872-y.
+28. Badgujar CM, Poulose A, Gan H. Agricultural object detection with You Only Look Once (YOLO) algorithm:
+a bibliometric and systematic literature review. Comput Electron Agric. 2024;223:18. doi:10.1016/j.compag.2024.
+109090.
+29. AyachiR,SaidY,AfifM,AlshammariA,HleiliM,AbdelaliAB.AssessingYOLOmodelsforreal-timeobjectdetec-
+tioninurbanenvironmentsforadvanceddriver-assistancesystems(ADAS).AlexandriaEngJ.2025;123(1):530–49.
+doi:10.1016/j.aej.2025.03.077.
+3 0 . L vX ,C h e nT ,S o n gC ,Y a n gC ,P i n gT .A p p l i c a t i o no fY O L Oa l g o r i t h mf o ri n t e l l i g e n tt r a n s p o r t a t i o ns y s t e m s :a
+surveyandnewperspectives.IntJDistribSensNetw.2025;2025(1):2859040.doi:10.1155/dsn/2859040.
+
+PAGE 47
+ComputMaterContin. 2026;87(1):7 47
+31. KamaleshKS,RamalingamK,PazhanivelanP,JagadeeswaranR,PrabuP.YOLOdeeplearningalgorithmforobject
+detectioninagriculture:areview.JAgricEngRes.2024;55(4):1641.doi:10.4081/jae.2024.1641.
+32. SirishaU,PraveenSP,SrinivasuPN,BarsocchiP,BhoiAK.StatisticalanalysisofdesignaspectsofvariousYOLO-
+baseddeeplearningmodelsforobjectdetection.IntJComputIntellSyst.2023;16(1):1–29.doi:10.1007/s44196-023-
+00302-w.
+33. Cai Z, Zhou K, Liao Z. A systematic review of YOLO-based object detection in medical imaging: advances,
+challenges,andfuturedirections.ComputMaterContin.2025;85(2):2255–303.doi:10.32604/cmc.2025.067994.
+34. GheorgheC,DuguleanaM,BobocR,PostelnicuC.Analyzingreal-timeobjectdetectionwithY OLOalgorithmin
+automotiveapplications:areview.ComputModelEngSci.2024;141(3):43.doi:10.32604/cmes.2024.054735.
+35. DiwanT,AnirudhG,TembhurneJV.ObjectdetectionusingYOLO:challenges,architecturalsuccessors,datasets
+andapplications.MultimedToolsAppl.2023;82(6):9243–75.doi:10.1007/s11042-022-13644-y.
+36. LiuY,SunP,WergelesN,ShangY.Asurveyandperformanceevaluationofdeeplearningmethodsforsmallobject
+detection.ExpertSystAppl.2021;172(4):114602.doi:10.1016/j.eswa.2021.114602.
+37. LiA,SongX,SunS,ZhangZ,CaiT,SongH.YOLO-SA:anefficientobjectdetectionmodelbasedonself-attention
+mechanism. In: Proceedings of the 7th Asia-Pacific Web (APWeb) and Web-Age Information Management
+(WAIM)InternationalJointConferenceonWebandBigData;2024Aug31–Sep2;Wuhan,China.p.1–15.doi:10.
+1007/978-981-97-2421-5_1.
+38. NimmaD,Al-OmariO,PradhanR,UlmasZ,KrishnaR,El-EbiaryTYAB,etal.Objectdetectioninreal-timevideo
+surveillance using attention based transformer-YOLOv8 model. Alexandria Eng J. 2025;118:482–95. doi:10.1016/j.
+aej.2025.01.032.
+39. ChenJ,ErMJ.DynamicYOLOforsmallunderwaterobjectdetection.ArtifIntellRev.2024;57(7):165.doi:10.1007/
+s10462-024-10788-1.
+40. Ji S-J, Ling Q-H, Han F. An improved algorithm for small object detection based on YOLO v4 and multi-scale
+contextualinformation.ComputElectrEng.2023;105(1):108490.doi:10.1016/j.compeleceng.2022.108490.
+41. Peng S, Fan X, Tian S, Yu L. PS-YOLO: a small object detector based on efficient convolution and multi-scale
+featurefusion.MultimediaSyst.2024;30(5):1–16.doi:10.1007/s00530-024-01447-0.
+42. LiJ,Yu C,Wei W,LiJ,HuangK,HussianA,et al.A multi-scalefeaturefusionnetworkfocusingonsmallobjects
+inUAV-View.CognComput.2025;17(2):1–17.doi:10.1007/s12559-025-10445-x.
+43. Hou Q, Zhou D, Feng J. Coordinate attention for efficient mobile network design. In: Proceedings of the
+IEEE/CVFConferenceonComputerVisionandPatternRecognition(CVPR);2021Jun19–25;Nashville,TN,USA.
+p.13713–22.doi:10.1109/CVPR46437.2021.01350.
+4 4 . W a n gQ ,W uB ,Z h uP ,L iP ,Z u oW ,H uQ .E C A - N e t :e ffi c i e n tc h a n n e la t t e n t i o nf o rd e e pc o n v o l u t i o n a ln e u r a l
+networks. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR);
+2020Jun13–19;Seattle,WA,USA.p.11534–42.doi:10.1109/CVPR42600.2020.01155.
+45. Hu J, Shen L, Sun G. Squeeze-and-excitation networks. In: Proceedings of the 31st IEEE/CVF Conference on
+Computer Vision and Pattern Recognition (CVPR); 2018 Jun 18–23; Salt Lake City, UT, USA. p. 7132–41. doi:10.
+1109/CVPR.2018.00745.
+4 6 . W uD ,Y a n gW ,L iJ ,D uK ,L iL ,Y a n gZ .C R L - Y O L O :ac o m p r e h e n s i v er e c a l i b r a t i o na n dl i g h t w e i g h td e t e c t i o n
+modelforUAVpowerlineinspections.IEEETransInstrumMeas.2025;74:1–21.doi:10.1109/TIM.2025.3562980.
+4 7 . H eS ,Y uW ,T a n gT ,W a n gS ,L iC ,X uE .F O S - Y O L O :m u l t i s c a l ec o n t e x ta g g r e g a t i o nw i t ha t t e n t i o n - d r i v e n
+modulationforefficienttargetdetectionincomplexenvironments.IEEETransInstrumMeas.2025;74:1–13.doi:10.
+1109/TIM.2025.3552465.
+48. Wang Z, Dong X-M, Xu Y. SCASNet: spatial context-aware selection network for small object detection in aerial
+imagery.IEEEJSelTopApplEarthObsRemoteSens.2025;18:9351–67.doi:10.1109/JSTARS.2025.3555627.
+49. Liu S, Bu X, Xu M, Sheng H, Zeng Z, Yasir M. Svsdet: a fine-grained recognition method for ship target using
+satellitevideo.IEEEJSelTopApplEarthObsRemoteSens.2024;17(5):4726–42.doi:10.1109/JSTARS.2024.3359252.
+50. WuQ,WuY,LiY,HuangW.ImprovedYOLOv5swithcoordinateattentionforsmallanddenseobjectdetection
+fromopticalremotesensingimages.IEEEJSelTopApplEarthObsRemoteSens.2023;17(4):2543–56.doi:10.1109/
+jstars.2023.3341628.
+
+PAGE 48
+48 ComputMaterContin. 2026;87(1):7
+51. Xu S, Song L, Yin J, Chen Q, Zhan T, Huang W. MFFCI-YOLOv8: a lightweight remote sensing object detection
+networkbasedonmultiscalefeaturesfusionandcontextinformation.IEEEJSelTopApplEarthObsRemoteSens.
+2024;17:19743–55.doi:10.1109/JSTARS.2024.3474689.
+52. ZhuS,MiaoM.SCNet:alightweightandefficientobjectdetectionnetworkforremotesensing.IEEETransGeosci
+RemoteSens.2024;21:1–5.doi:10.1109/LGRS.2023.3344937.
+53. Hou W, Wu H, Wu D, Shen Y, Liu Z, Zhang L, et al. Small object detection method for UAV remote sensing
+images based on αS-YOLO. IEEE J Sel Top Appl Earth Obs Remote Sens. 2025;18:8984–94. doi:10.1109/JSTARS.
+2025.3539873.
+54. Li M, Chen Y, Zhang T, Huang W. TA-YOLO: a lightweight small object detection model based on multi-
+dimensional trans-attention module for remote sensing images. Complex Intell Syst. 2024;10(4):5459–73. doi:10.
+1007/s40747-024-01448-6.
+55. Ding H, Du S. CCSA-YOLO: enhanced YOLOv8 for industrial cigarette package classification with contextual
+transformerand coordinatechannel attention.In: Proceedings of the 2025 IEEE 6th InternationalConferenceon
+Pattern Recognition and Machine Learning (PRML); 2025 Jun 13–16; Chongqing, China. p. 218–25. doi:10.1109/
+PRML66062.2025.11160295.
+56. Zhao Z, Liu X, He P. PSO-YOLO: a contextual feature enhancement method for small object detection in UAV
+aerialimages.EarthSciInform.2025;18(2):1–19.doi:10.1007/s12145-025-01780-6.
+57 . T a n gX,Ch enX,Ch en gJ ,W uJ ,F a nR,Zha n gC,etal .Y O L O- An t:aligh tw eigh tdet ect o rviadep th wisesepa ra b le
+convolutional and large kernel design for antenna interference source detection. IEEE Trans Instrum Meas.
+2024;73:1–18.doi:10.1109/TIM.2024.3379397.
+58. Nan G, Zhao Y, Fu L, Ye Q. Object detection by channel and spatial exchange for multimodal remote sensing
+imagery.IEEEJSelTopApplEarthObsRemoteSens.2024;17:8581–93.doi:10.1109/JSTARS.2024.3388013.
+59. LiC,ZhouS,YuH,GuoT,GuoY,GaoJ.AnefficientmethodfordetectingdenseandsmallobjectsinUAVimages.
+IEEEJSelTopApplEarthObsRemoteSens.2024;17:6601–15.doi:10.1109/JSTARS.2024.3373231.
+60. Peng H, Xie H, Liu H, Guan X. LGFF-YOLO: small object detection method of UAV images based on efficient
+local-globalfeaturefusion.JReal-TimeImageProc.2024;21(5):167.doi:10.1007/s11554-024-01550-5.
+61. Jiang L, Li Y, Bai T. DSFPAP-Net: deeper and stronger feature path aggregation pyramid network for object
+detectioninremotesensingimages.IEEETransGeosciRemoteSens.2024;21:1–5.doi:10.1109/LGRS.2024.3398727.
+6 2 . Z h uX ,L y uS ,W a n gX ,Z h a oQ .T P H - Y O L O v 5 :i m p r o v e dY O L O v 5b a s e do nt r a n s f o r m e rp r e d i c t i o nh e a df o r
+object detection on drone-captured scenarios. In: Proceedings of the 18th IEEE/CVF International Conference
+on Computer Vision (ICCV); 2021 Oct 11–17; Montreal, QC, Canada. p. 2778–88. doi:10.1109/ICCVW54120.2021.
+00312.
+6 3 . C h e nX ,J i a n gH ,Z h e n gH ,Y a n gJ ,L i a n gR ,X i a n gD ,e ta l .D e t - y o l o :a ni n n o v a t i v eh i g h - p e r f o r m a n c em o d e lf o r
+detectingmilitaryaircraftinremotesensingimages.IEEEJSelTopApplEarthObsRemoteSens.2024;17:17753–71.
+doi:10.1109/JSTARS.2024.3462745.
+6 4 . P e n gJ ,L vK ,W a n gG ,X i a oW ,R a nT ,Y u a nL .M L S A - Y O L O :am u l t i - l e v e lf e a t u r ef u s i o na n ds c a l e - a d a p t i v e
+frameworkfor smallobject detection.J Supercomput.2025;81(4):528. doi:10.1007/s11227-025-06961-0.
+65. XuX,LiQ,PanJ,LuX,WeiH,SunM,etal.ESOD-YOLO:anenhancedefficientsmallobjectdetectionframework
+foraerialimages.Computing.2025;107(2):54.doi:10.1007/s00607-024-01398-4.
+66. Shi Y, Wang C, Xu S, Yuan M-D, Liu F, Zhang L. deformable convolution-guided multiscale feature learning and
+fusionforUAVobjectdetection.IEEETransGeosciRemoteSens.2024;21:1–5.doi:10.1109/LGRS.2024.3362890.
+67. WangJ,MaM,HangP,MeiS,ZhangL,WangH.Remotesensingsmallobjectdetectionbasedonmulti-contextual
+informationaggregation.IEEEJSelTopApplEarthObsRemoteSens.2025;1–13.doi:10.1109/jstars.2025.3543189.
+68. Zheng X, Bi J, Li K, Zhang G, Jiang P. SMN-YOLO: lightweight YOLOv8-based model for small object detection
+inremotesensingimages.IEEETransGeosciRemoteSens.2025;22:1–5.doi:10.1109/LGRS.2025.3546034.
+69. Bai R, Song G, Wang Q. YOLORemote: advancing remote sensing object detection by integrating YOLOv8 with
+theCE-WA-CSfeaturefusionapproach.IEEEJSelTopApplEarthObsRemoteSens.2025;18(12):9546–65.doi:10.
+1109/JSTARS.2025.3543951.
+
+PAGE 49
+ComputMaterContin. 2026;87(1):7 49
+70. Liao D, Zhang J, Tao Y, Jin X. ATBHC-YOLO: aggregate transformer and bidirectional hybrid convolution for
+smallobjectdetection.ComplexIntellSyst.2025;11(1):38.doi:10.1007/s40747-024-01652-4.
+71. NiuK,YanY.Asmall-object-detectionmodelbasedonimprovedyolov8foruavaerialimages.In:Proceedingsof
+the 2023 2nd International Conference on Artificial Intelligence and Intelligent Information Processing (AIIIP);
+2023Oct27–29;Hangzhou,China.p.57–60.doi:10.1109/aiiip61647.2023.00016.
+72. Jiang L, Yuan B, Du J, Chen B, Xie H, Tian J, et al. MFFSODNet: multiscale feature fusion small object detection
+networkforUAVaerialimages.IEEETransInstrumMeas.2024;73:1–14.doi:10.1109/TIM.2024.3381272.
+73. ChenH,CaoQ,WangY,WangS,FuH,ChenZ,etal.Para-YOLO:anefficienthigh-parameterlow-computation
+algorithm based on YOLO11n for remote sensing object detection. IEEE J Sel Top Appl Earth Obs Remote Sens.
+2025;18:14630–43.doi:10.1109/JSTARS.2025.3576221.
+74. Liu Y, Ye Q, Sun L, Wu Z. SOD-YOLOv8n: small object detection in remote sensing images based on YOLOv8n.
+IEEEGeosciRemoteSensLett.2025;22:6008405.doi:10.1109/LGRS.2025.3567362.
+75. Tang S, Zhang S, Fang Y. HIC-YOLOv5: improved YOLOv5 for small object detection. In: Proceedings of the
+2024 IEEE International Conference on Robotics and Automation (ICRA); 2024 May 13–17; Yokohama, Japan.
+p.6614–9.doi:10.1109/ICRA57147.2024.10610273.
+76. Shi W, Zhang S, Zhang S. CAW-YOLO: cross-layer fusion and weighted receptive field-based YOLO for small
+objectdetectioninremotesensing.ComputMaterContin.2024;139(3):3209–31.doi:10.32604/cmes.2023.044863.
+77. Xie J, Yuan B, Guo C, Li H, Wang F, Chu P, et al. KL-YOLO: a lightweight adaptive global feature enhancement
+networkforsmallobjectdetectioninlow-altituderemotesensingimagery.IEEETransInstrumMeas.2025;74:1–13.
+doi:10.1109/TIM.2025.3576957.
+78. Bai J, Li M. small target detection algorithm for industrial pointer meters based on swin transformer. In:
+Proceedingsofthe20256thInternationalConferenceonComputerEngineeringandApplication(ICCEA);2025
+Apr25–27;Hangzhou,China.p.185–8.doi:10.1109/ICCEA65460.2025.11103162.
+79. Ge P, Wan M, Qian W, Xu Y, Kong X, Gu G, et al. SGA-YOLO: a lightweight real-time object detection network
+forUAVinfraredimages.IEEETransIntellTranspSyst.2025;26(12):22432–46.doi:10.1109/TITS.2025.3616525.
+80. Shahapurkar S, Angadi P, Kumari C, Uppar P, Akkasaligar PT. Challenges in infrared small-target detection: a
+benchmark of YOLO models on UAV and bird infrared imagery. In: Proceedings of the 2025 10th International
+Conference on Signal Processing and Communication (ICSC); 2025 Feb 20–22; Noida, India. p. 315–20. doi:10.
+1109/ICSC64553.2025.10968859.
+81. Zhou W, Cai C, Srigrarom S, Xu H, Liu R, Li C. SAD-YOLO: a small object detector for airport optical sensors
+basedonimprovedYOLOv8.IEEESensJ.2025;25(11):20513–22.doi:10.1109/JSEN.2025.3557999.
+82. WangY.MBO-YOLO:anenhancedYOLOv8n-basedalgorithmfordetectingmarinebenthicorganisms.In:Pro-
+ceedingsofthe20255thInternationalConferenceonArtificialIntelligenceandIndustrialTechnologyApplications
+(AIITA);2025Mar28–30;Xi’an,China.p.854–60.doi:10.1109/AIITA65135.2025.11047694.
+83. Luo B. Integrating multiple attention mechanism fusion based YOLO logistics sorting and detection model.
+In: Proceedings of the 2025 8th International Conference on Advanced Algorithms and Control Engineering
+(ICAACE);2025Mar21–23;Shanghai,China.p.1196–201.doi:10.1109/ICAACE65325.2025.11019546.
+84. Kim J-H, Kim N, Won CS. High-speed drone detection based on yolo-v8. In: Proceedings of the 2023 IEEE
+International Conference on Acoustics, Speech and Signal Processing (ICASSP); 2023 Jun 4–10; Rhodes Island,
+Greece;2023.p.1–2.doi:10.1109/ICASSP49357.2023.10095516.
+85. Tang P, Ding Z, Lv M, Jiang M, Xu W. YOLO-RSFM: an efficient road small object detection method. IET Image
+Proc.2024;18(13):4263–74.doi:10.1049/ipr2.13247.
+86. QiS,SunY,SongX,LiJ,ShangT,YuL.SD-YOLO:arobustandefficientobjectdetectorforaerialimagedetection.
+IEEEJSelTopApplEarthObsRemoteSens.2025;18:20563–74.doi:10.1109/JSTARS.2025.3591493.
+8 7 . N i n gT ,W uW ,Z h a n gJ .S m a l lo b j e c td e t e c t i o nb a s e do nY O L O v 8i nU A Vp e r s p e c t i v e .P a t t e r nA n a lA p p l i c .
+2024;27(3):103.doi:10.1007/s10044-024-01323-7.
+8 8 . Z h a n gJ ,L e iJ ,X i eW ,F a n gZ ,L iY ,D uQ .S u p e r Y O L O :s u p e rr e s o l u t i o na s s i s t e do b j e c td e t e c t i o ni nm u l t i m o d a l
+remotesensingimagery.IEEETransGeosciRemoteSens.2023;61:1–15.doi:10.1109/TGRS.2023.3258666.
+
+PAGE 50
+50 ComputMaterContin. 2026;87(1):7
+89. LiuJ,ZhangJ,NiY,ChiW,QiZ.Small-objectdetectioninremotesensingimageswithsuperresolutionperception.
+IEEEJSelTopApplEarthObsRemoteSens.2024;17(000):15751–34.doi:10.1109/JSTARS.2024.3452707.
+90. Liu S, Zha J, Sun J, Li Z, Wang G. EdgeYOLO: an edge-real-time object detector. In: Proceedings of the 2023
+42nd Chinese Control Conference (CCC); 2023 Jul 24–26; Tianjin, China. p. 7507–12. doi:10.23919/CCC58697.
+2023.10239786.
+9 1 . Y u a nM ,Z h o uY ,R e nX ,Z h iH ,Z h a n gJ ,C h e nH .Y O L O - H M C :a ni m p r o v e dm e t h o df o rP C Bs u r f a c ed e f e c t
+detection.IEEETransInstrumMeas.2024;73(12):1–11.doi:10.1109/TIM.2024.3351241.
+92. Hu Z, Chen Q. MOA-YOLO: an accurate, real-time and lightweight YOLOv10-based algorithm for deep-sea fish
+detection.IEEESensJ.2025;25(13):23933–47.doi:10.1109/JSEN.2025.3574723.
+93. ChengQ,LanT,CaiZ,LiJ.X-YOLO:anefficientdetectionnetworkofdangerousobjectsinX-raybaggageimages.
+IEEESignalProcessLett.2024;31:2270–4.doi:10.1109/LSP.2024.3451311.
+94. LiuW,TaoQ,PeiH.Yolo-EV2:anindustrialminingconveyorbeltteardetectionmodelbasedonimprovedYolov5
+algorithmforefficientbackbonenetworks.In:Proceedingsofthe2024InternationalConferenceonCyber-Physical
+SocialIntelligence(ICCSI);2024Nov8–12;Doha,Qatar.p.1–5.doi:10.1109/ICCSI62669.2024.10799491.
+9 5 . M oC ,H uZ ,W a n gJ ,X i a oX .S G T - Y O L O :al i g h t w e i g h tm e t h o df o rp c bd e f e c td e t e c t i o n .I E E ET r a n sI n s t r u m
+Meas.2025;74:1–11.doi:10.1109/TIM.2025.3563011.
+96. Jiao R, Liu J, Li K, Qiao R, Liu Y, Zhang W. YOLO-DTAD: dynamic task alignment detection model for multi-
+categorypowerdefectsimage.IEEETransInstrumMeas.2025;74:1–14.doi:10.1109/TIM.2025.3541692.
+97. Zhuang Z, Liu P, Xu D, Cheng J. YOLO-KED: a novel framework for rotated object detection in complex
+environments. In: Proceedings of the 2025 IEEE International Conference on Acoustics, Speech and Signal
+Processing(ICASSP);2025Apr6–11;Hyderabad,India.p.1–5.doi:10.1109/ICASSP49660.2025.10888504.
+9 8 . S u nH ,Y a oG ,Z h uS ,Z h a n gL ,X uH ,K o n gJ .S O D - Y O L O v 1 0 :s m a l lo b j e c td e t e c t i o ni nr e m o t es e n s i n gi m a g e s
+basedonYOLOv10.IEEETransGeosciRemoteSens.2025;22:1–5.doi:10.1109/LGRS.2025.3534786.
+99. Mahaveerakannan R, Anitha C, Balamanigandan R, Saraswathi S. Enhanced public security: modified YOLO
+networkforunattendedobjectdetectionindynamicenvironments.In:Proceedingsofthe2025GlobalConference
+inEmergingTechnology(GINOTECH);2025May9–11;Pune,India.p.1–8.doi:10.1109/GINOTECH63460.2025.
+11076621.
+100. Du A, Lan R, Wang X, Long Z. MGF-YOLO: a lightweight industrial inspection algorithm for small defects on
+steel surfaces. In: Proceedings of the 2024 4th International Conference on Electronic Information Engineering
+andComputerScience(EIECS);2024Sep27–29;Yanji,China.p.173–8.doi:10.1109/EIECS63941.2024.10800534.
+101. Wu S, Lu X, Guo C, Guo H. MV-YOLO: an efficient small object detection framework based on mamba. IEEE
+TransGeosciRemoteSens.2025;63:1–14.doi:10.1109/TGRS.2025.3584955.
+102. ZhangY,WangW,YeM,YanJ,YangR.LGA-YOLOforvehicledetectioninremotesensingimages.IEEEJSelTop
+ApplEarthObsRemoteSens.2025;18(24):5317–30.doi:10.1109/JSTARS.2025.3535090.
+103. Zan J, Fang Y, Liu Q, Khairuddin U, Li Y, Sun K. MKD-YOLO: multi-scale and knowledge-distilling YOLO for
+efficient PPE compliance detection. In: Proceedings of the 2025 IEEE International Conference on Acoustics,
+SpeechandSignalProcessing(ICASSP);2025Apr6–11;Hyderabad,India.p.1–5.doi:10.1109/ICASSP49660.2025.
+10889626.
+104. TangY,XuT,QinH,LiJ.IRSTD-YOLO:animprovedYOLOframeworkforinfraredsmalltargetdetection.IEEE
+TransGeosciRemoteSens.2025;22:1–5.doi:10.1109/LGRS.2025.3562096.
+1 05.W a n gD ,GaoZ,F a n gJ ,LiY ,X uZ.I m p r o vin gua vaerialima g erydet ectio nmethodvias u per -r eso l u tio nsyner gy .
+IEEEJSelTopApplEarthObsRemoteSens.2025;18:3959–72.doi:10.1109/JSTARS.2024.3525148.
+106. Wu Q, Li Y, Yin J, You X. LGC-YOLO: local-global feature extraction and coordination network with contextual
+interaction for remote sensing object detection. IEEE J Sel Top Appl Earth Obs Remote Sens. 2025;18:15376–93.
+doi:10.1109/JSTARS.2025.3575239.
+1 0 7 . S u nS ,M oB ,H eY ,Z h a oJ ,L iD .C D T - Y O L O :al o n g - t e r md e t e c t i o na n dt r a c k i n ga l g o r i t h mf o ri n fr a r e dm o v i n g
+smallobjectsinmissile-borneplatforms.In:Proceedingsofthe202439thYouthAcademicAnnualConferenceof
+Chinese Association of Automation (YAC); 2024 Jun 7–9; Dalian, China. p. 904–11. doi:10.1109/YAC63405.2024.
+10598470.
+
+PAGE 51
+ComputMaterContin. 2026;87(1):7 51
+108. AtikI.Deeplearninginmilitaryobjectdetection:anexampleoftheYOLO-NASmodel.In:Proceedingsofthe2024
+8th International Symposium on Innovative Approaches in Smart Technologies (ISAS); 2024 Dec 6–7;˙Istanbul,
+Turkey.p.1–7.doi:10.1109/ISAS64331.2024.10845459.
+109. Abinaya A, Sumathi S. Moving vehicles counting and detection using deep neural networks based YOLO-NAS
+algorithm.In:Proceedingsofthe2025InternationalConferenceonInnovativeTrendsinInformationTechnology
+(ICITIIT);2025Feb21–22;Kottayam,India.p.1–6.doi:10.1109/ICITIIT64777.2025.11040692.
+110. JoseP,RekhaS,PonkavinB,HemkiranS,SheejaR,PVG.Automatedvision-basedsystemforreal-timedetection
+andclassificationofricediseasesusingYOLO-NAS.In:Proceedingsofthe20252ndInternationalConferenceon
+T rendsinEngineeringS ystemsandT echnologies(ICTEST);20 25J ul16–18;Ernakulam,I ndia.p .1–6.doi:10.1109/
+ICTEST64710.2025.11042353.
+111. XueY,HanX,WangZ.Self-adaptiveweightbasedondual-attentionfordifferentiableneuralarchitecturesearch.
+IEEETransIndustrInform.2024;20(4):6394–403.doi:10.1109/TII.2023.3348843.
+112. XueY,LuC,NeriF,QinJ.Improveddifferentiablearchitecturesearchwithmulti-stageprogressivepartialchannel
+connections.IEEETransEmergTopComputIntell.2024;8(1):32–43.doi:10.1109/TETCI.2023.3301395.
+113. Xue Y, Chen C, Słowik A. Neural architecture search based on a multi-objective evolutionary algorithm with
+probabilitystack.IEEETransEvolComput.2023;27(4):778–86.doi:10.1109/TEVC.2023.3252612.
+114. Xue Y, Yao C, Wahib M, Gabbouj M. YOLO-DKR: differentiable architecture search based on kernel reusing for
+objectdetection.InfSci.2025;713(15):122180.doi:10.1016/j.ins.2025.122180.
+115. Kumar V, Pratihar DK. Vision transformer-based pose estimation for automated gait analysis in ankle-foot
+prostheticdesign.In:Proceedingsofthe20242ndInternationalConferenceonAdvancementinComputation&
+Computer Technologies (InCACCT); 2024 May 2–3; Gharuan, India. p. 641–5. doi:10.1109/InCACCT61598.2024.
+10551002.
+116. MaS,ZhangY,PengL,SunC,DingL,ZhuY.OWRT-DETR:anovelreal-timetransformernetworkforsmallobject
+detectioninopenwatersearchandrescuefromUAVaerialimagery.IEEETransGeosciRemoteSens.2025;63:1–13.
+doi:10.1109/TGRS.2025.3560928.
+117. JayapradaS,ReddyMHV,ReddyKMV,PrakashM,ChowdaryKV.AhybridapproachcombiningYOLOandvisual
+image transformers for automated mark digitization of exam scripts. In: Proceedings of the 2025 International
+Conference on Electronics, Computing, Communication and Control Technology (ICECCC); 2025 May 1–2;
+Bengaluru,India.p.1–7.doi:10.1109/ICECCC65144.2025.11063807.
+118. Katangure RR, Meenakshi G, Rao S, Reddy K, Konkala VR, Veerapu G, et al. Hybrid YOLOv8-ViT framework
+for real-time intelligent wildlife monitoring system with XAI insights. In: Proceedings of the 2025 International
+Conference on Sensors and Related Networks (SENNET) Special Focus on Digital Healthcare; 2025 Jul 24–27;
+Vellore,India.p.1–6.doi:10.1109/SENNET64220.2025.11135988.
+119. Wu R, Huang W, Xu X. AE-YOLO: asymptotic enhancement for low-light object detection. In: Proceedings of
+the 2024 17th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics
+(CISP-BMEI);2024Oct26–28;Shanghai,China.p.1–6.doi:10.1109/CISP-BMEI64163.2024.10906253.
+120. ShenY ,LiuH,ZhaK,LiuX,DingY.SA-YOLO:spike-drivenattentionforenergy-efficientU A V-basedsmallobject
+detection.IEEEInternetThingsJ.2025;12(21):44851–66.doi:10.1109/JIOT.2025.3596434.
+121. HouJ,ChenW,YangG,CongL,QiX.EMSBS-YOLO:avehicledetectionmodelbasedonspikingneuralnetworks.
+In:Proceedingsofthe20248thAsianConferenceonArtificialIntelligenceTechnology(ACAIT);2024Nov8–10;
+Fuzhou,China.p.745–9.doi:10.1109/ACAIT63902.2024.11022103.
+122. Du D, Zhu P, Wen L, Bian X, Lin H, Hu Q, et al. VisDrone-DET2019: the vision meets drone object detection
+in image challenge results. In: Proceedings of the 2019 IEEE/CVF International Conference on Computer Vision
+Workshops(ICCVW);2019Oct27–28;Seoul,RepublicofKorea.p.213–26.doi:10.1109/ICCVW.2019.00030.
+123. Wang J, Yang W, Guo H, Zhang R, Xia G-S. Tiny object detection in aerial images. In: Proceedings of the 2020
+25thInternationalConferenceonPatternRecognition(ICPR);2021Jan10–15;Milan,Italy.p.3791–8.doi:10.1109/
+ICPR48806.2021.9413340.
+
+PAGE 52
+52 ComputMaterContin. 2026;87(1):7
+124. Xia G-S, Bai X, Ding J, Zhu Z, Belongie S, Luo J, et al. DOTA: a large-scale dataset for object detection in aerial
+images.In:Proceedingsofthe2018IEEE/CVFConferenceonComputerVisionandPatternRecognition(CVPR);
+2018Jun18–23;SaltLakeCity,UT,USA.p.3974–83.doi:10.1109/CVPR.2018.00418.
+125. ChengG,HanJ,ZhouP,GuoL.Multi-classgeospatialobjectdetectionandgeographicimageclassificationbased
+oncollectionofpart detectors. JPhotogrammRemote Sens.2014;98:119–32.doi:10.1016/j.isprsjprs.2014.10.002.
+126. Razakarivony S, Jurie F. Vehicle detection in aerial imagery: a small target detection benchmark. J Vis Commun
+ImageRepresent.2016;34(10):187–203.doi:10.1016/j.jvcir.2015.11.002.
+127. Li K, Wan G, Cheng G, Meng L, Han J. Object detection in optical remote sensing images: a survey and a new
+benchmark.JPhotogrammRemoteSens.2020;159:296–307.doi:10.1016/j.isprsjprs.2019.11.023.
+128. Yu H, Li G, Zhang W, Huang Q, Du D, Tian Q, et al. The unmanned aerial vehicle benchmark: object detection,
+trackingandbaseline.IntJComputVis.2020;128(5):1141–59.doi:10.1007/s11263-019-01266-1.
+129. LiW,XiaoL,YaoS,HouC,WenZ,RenD.ED-YOLO:anobjectdetectionalgorithmfordroneimageryfocusing
+onedgeinformationandsmallobjectfeatures.MultimedSyst.2025;31(3):1–15.doi:10.1007/s00530-025-01783-9.
+130. Zhou S, Zhou H, Qian L. A multi-scale small object detection algorithm SMA-YOLO for UAV remote sensing
+images.SciRep.2025;15(1):9255.doi:10.1038/s41598-025-92344-7.
+131. Fu H, Yang Z, Peng Y. SBF-YOLO: a small object detection network for aerial scene. In: Proceedings of the 2025
+28th International Conference on Computer Supported Cooperative Work in Design (CSCWD); 2025 May 5–7;
+Compiegne,France.p.2360–5.doi:10.1109/CSCWD64889.2025.11033385.
+132. HanY,WangC,LuoH,WangH,ChenZ,XiaY,etal.LRDS-YOLOenhancessmallobjectdetectioninUAVaerial
+imageswithalightweightandefficientdesign.SciRep.2025;15(1):22627.doi:10.1038/s41598-025-07021-6.
+1 3 3 .L i uY ,Z h a n gJ ,L i uS ,X uL ,W a n gY .A a m s - y o l o :as m a l lo b j e c td e t e c t i o nm e t h o df o rU A Vc a p t u r es c e n e sb a s e d
+onYOLOv7.ClusterComput.2025;28(5):1–14.doi:10.1007/s10586-024-04972-9.
+134. RezatofighiH,TsoiN,GwakJ,SadeghianA,ReidI,SavareseS.Generalizedintersectionoverunion:ametricand
+a loss for bounding box regression. In: Proceedings of the 2019 IEEE/CVF Conference on Computer Vision and
+PatternRecognition(CVPR);2019Jun15–20;LongBeach,CA,USA.p.658–66.doi:10.1109/CVPR.2019.00075.
+135. Zhang Y, Ren W, Zhang Z, Jia Z, Wang L, Focal TT. Focal and efficient IOU loss for accurate bounding box
+regression.NeuroComput.2022;42(9):146–57.doi:10.1016/j.neucom.2022.07.042.
+136. Sun H-R, Shi B-J, Hu Y-L. A lightweight YOLO-based model in small object detection for UAV optical sensors.
+IEEESensJ.2025;25(10):17585–99.doi:10.1109/JSEN.2025.3553871.
+1 3 7 . Z a k r i aZ ,D e n gJ ,K u m a rR ,K h o k h a rM S ,C a iJ ,K u m a rJ .M u l t i s c a l ea n dd i r e c t i o nt a r g e td e t e c t i n gi nr e m o t e
+sensing images via modified YOLO-v4. IEEE J Sel Top Appl Earth Obs Remote Sens. 2022;15(8):1039–48. doi:10.
+1109/JSTARS.2022.3140776.
+138. Tang Q, Su C, Tian Y, Zhao S, Yang K, Hao W, et al. YOLO-SS: optimizing YOLO for enhanced small object
+detectioninremotesensingimagery.JSupercomput.2025;81(1):303.doi:10.1007/s11227-024-06765-8.
+139. Wang L, Yoon K-J. Knowledge distillation and student-teacher learning for visual intelligence: a review and new
+outlooks.IEEETransPatternAnalMachIntell.2022;44(6):3048–68.doi:10.1109/TPAMI.2021.3055564.
+140. ChenY,LinM,HeZ,PolatK,AlhudhaifA,AleneziF.Consistency-anddependence-guidedknowledgedistillation
+for object detection in remote sensing images. Expert Syst Appl. 2023;229(16):120519. doi:10.1016/j.eswa.2023.
+120519.
+141. Zhang T, Chen C, Liu Y, Geng X, Aly MMS, Lin J. PSRR-MaxpoolNMS++: fast non-maximum suppression with
+discretization and pooling. IEEE Trans Pattern Anal Mach Intell. 2025;47(2):978–93. doi:10.1109/TPAMI.2024.
+3485898.

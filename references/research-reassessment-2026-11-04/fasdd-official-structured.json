@@ -1,0 +1,140 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/"
+  },
+  "@id": "https://doi.org/10.57760/sciencedb.j00104.00103",
+  "@type": "sc:Dataset",
+  "citeAs": "@data{ ce9c9400b44148e1b0a749f5c3eb0bda,\n  title        = {{An open flame and smoke detection dataset for deep learning in remote sensing based fire detection}},\n  author       = {{Ming Wang and Peng Yue and Liangcun Jiang and Dayu Yu and Tianyu Tuo}},\n  year        = {{2025}},\n  month       = {{September}},\n  publisher   = {{Science Data Bank}},\n  doi         = {{10.57760/sciencedb.j00104.00103}},\n  url         = {{https://doi.org/10.57760/sciencedb.j00104.00103}},\n  version     = {{V9}}\n}",
+  "conditionsOfAccess": "PUBLIC",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "affiliation": [
+        {
+          "@id": "https://ror.org/033vjfk17",
+          "@type": "sc:Organization",
+          "name": "Wuhan University"
+        }
+      ],
+      "name": "Ming Wang"
+    },
+    {
+      "@type": "sc:Person",
+      "affiliation": [
+        {
+          "@id": "https://ror.org/033vjfk17",
+          "@type": "sc:Organization",
+          "name": "Wuhan University"
+        }
+      ],
+      "name": "Peng Yue"
+    },
+    {
+      "@type": "sc:Person",
+      "affiliation": [
+        {
+          "@id": "https://ror.org/033vjfk17",
+          "@type": "sc:Organization",
+          "name": "Wuhan University; Wuhan University of Technology"
+        }
+      ],
+      "name": "Liangcun Jiang"
+    },
+    {
+      "@type": "sc:Person",
+      "affiliation": [
+        {
+          "@id": "https://ror.org/033vjfk17",
+          "@type": "sc:Organization",
+          "name": "Wuhan University"
+        }
+      ],
+      "name": "Dayu Yu"
+    },
+    {
+      "@type": "sc:Person",
+      "affiliation": [
+        {
+          "@id": "https://ror.org/033vjfk17",
+          "@type": "sc:Organization",
+          "name": "Wuhan University"
+        }
+      ],
+      "name": "Tianyu Tuo"
+    }
+  ],
+  "datePublished": "2022-08-02T00:00:00Z",
+  "description": "FASDD is a largest and most generalized Flame And Smoke Detection Dataset for object detection tasks, characterized by the utmost complexity in fire scenes, the highest heterogeneity in feature distribution, and the most significant variations in image size and shape. FASDD serves as a benchmark for developing advanced fire detection models, which can be deployed on watchtowers, drones, or satellites in a space-air-ground integrated observation network for collaborative fire warning. This endeavor provides valuable insights for government decision-making and fire rescue operations. FASDD contains fire, smoke, and confusing non-fire/non-smoke images acquired at different distances (near and far), different scenes (indoor and outdoor), different light intensities (day and night), and from various visual sensors (surveillance cameras, UAVs, and satellites). FASDD consists of three sub-datasets, a Computer Vision (CV) dataset (i.e. FASDD_CV), a Unmanned Aerial Vehicle (UAV) dataset (i.e. FASDD_UAV), and an Remote Sensing (RS) dataset (i.e. FASDD_RS). FASDD comprises 122,634 samples, with 70,581 annotated as positive samples and 52,073 labeled as negative samples. There are 113,154 instances of flame objects and 73,072 instances of smoke objects in the entire dataset. FASDD_CV contains 95,314 samples for general computer vision, while FASDD_UAV consists of 25,097 samples captured by UAV, and FASDD_RS comprises 2,223 samples from satellite imagery. FASDD_CV contains 73,297 fire instances and 53,080 smoke instances. The CV dataset exhibits considerable variation in image size, ranging from 78 to 10,600 pixels in width and 68 to 8,858 pixels in height. The aspect ratios of the images also vary significantly, ranging from 1:6.6 to 1:0.18. FASDD_UAV contains 36,308 fire instances and 17,222 smoke instances, with image aspect ratios primarily distributed between 4:3 and 16:9. In FASDD_RS, there are 2,770 smoke instances and 3,549 flame instances. The sizes of remote sensing images are predominantly around 1,000×1,000 pixels.FASDD is provided in three compressed files: FASDD_CV.zip, FASDD_UAV.zip, and FASDD_RS.zip, which correspond to the CV dataset, the UAV dataset, and the RS dataset, respectively. Additionally, there is a FASDD_RS_SWIR. zip folder storing pseudo-color images for detecting flame objects in remote sensing imagery. Each zip file contains two folders: &quot;images&quot; for storing the source data and &quot;annotations&quot; for storing the labels. The &quot;annotations&quot; folder consists of label files in four formats: YOLO, VOC, COCO, and TDML. The dataset is divided randomly into training, validation, and test sets, with a ratio of 1/2, 1/3, and 1/6, respectively, within each label format. In FASDD_CV, FASDD_UAV, and FASDD_RS, images and their corresponding annotation files have been individually sorted starting from 0. The flame and smoke objects in FASDD are given the labels &quot;fire&quot; and &quot;smoke&quot; for the object detection task, respectively. The names of all images and annotation files are prefixed with &quot;Fire&quot;, &quot;Smoke&quot;, &quot;FireAndSmoke&quot;, and &quot;NeitherFireNorSmoke&quot;, representing different categories for scene classification tasks.When using this dataset, please cite the following paper. Thank you very much for your support and cooperation：################################################################################使用数据集请引用对应论文，非常感谢您的关注和支持：Wang, M., Yue, P., Jiang, L., Yu, D., Tuo, T., &amp; Li, J. (2025). An open flame and smoke detection dataset for deep learning in remote sensing based fire detection. Geo-spatial Information Science, 28(2), 511-526.################################################################################",
+  "identifier": "https://doi.org/10.57760/sciencedb.j00104.00103",
+  "inLanguage": "en_US",
+  "includedInDataCatalog": {
+    "@id": "https://www.scidb.cn",
+    "@type": "sc:DataCatalog",
+    "@url": "http://www.scidb.cn",
+    "name": "Science Data Bank"
+  },
+  "keywords": [
+    "fire dataset benchmark",
+    "space-air-ground integration",
+    "remote sensing fire detection",
+    " object detection"
+  ],
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "name": "An open flame and smoke detection dataset for deep learning in remote sensing based fire detection",
+  "publisher": {
+    "@type": "sc:Organization",
+    "@url": "http://www.scidb.cn",
+    "name": "Science Data Bank"
+  },
+  "size": {
+    "@type": "sc:QuantitativeValue",
+    "unitText": "bytes",
+    "value": 82125550221
+  },
+  "url": "https://doi.org/10.57760/sciencedb.j00104.00103",
+  "version": "9.0.0"
+}

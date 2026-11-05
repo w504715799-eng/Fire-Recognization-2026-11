@@ -1,0 +1,102 @@
+{
+  "anomalous_boxes": 141,
+  "affected_images": 131,
+  "reason_counts": {
+    "nonpositive": 3,
+    "negative_origin": 0,
+    "outside": 138
+  },
+  "maximum_boundary_excursion_pixels": 1.0,
+  "examples": [
+    {
+      "split": "train",
+      "ann_id": 6527,
+      "image": "bothFireAndSmoke_CV001979.jpg",
+      "bbox": [
+        219.0,
+        343.0,
+        0,
+        1.0
+      ],
+      "dimensions": [
+        676,
+        429
+      ]
+    },
+    {
+      "split": "train",
+      "ann_id": 64926,
+      "image": "bothFireAndSmoke_CV016876.jpg",
+      "bbox": [
+        538.0,
+        1.0,
+        503.0,
+        326.0
+      ],
+      "dimensions": [
+        1040,
+        585
+      ]
+    },
+    {
+      "split": "train",
+      "ann_id": 64928,
+      "image": "bothFireAndSmoke_CV016877.jpg",
+      "bbox": [
+        7.0,
+        9.0,
+        634.0,
+        253.0
+      ],
+      "dimensions": [
+        640,
+        360
+      ]
+    },
+    {
+      "split": "train",
+      "ann_id": 64940,
+      "image": "bothFireAndSmoke_CV016879.jpg",
+      "bbox": [
+        793.0,
+        143.0,
+        108.0,
+        92.0
+      ],
+      "dimensions": [
+        900,
+        600
+      ]
+    },
+    {
+      "split": "train",
+      "ann_id": 64960,
+      "image": "bothFireAndSmoke_CV016884.jpg",
+      "bbox": [
+        1.0,
+        1.0,
+        1024.0,
+        576.0
+      ],
+      "dimensions": [
+        1024,
+        576
+      ]
+    },
+    {
+      "split": "train",
+      "ann_id": 64963,
+      "image": "bothFireAndSmoke_CV016885.jpg",
+      "bbox": [
+        2.0,
+        3.0,
+        1279.0,
+        715.0
+      ],
+      "dimensions": [
+        1280,
+        720
+      ]
+    }
+  ]
+}

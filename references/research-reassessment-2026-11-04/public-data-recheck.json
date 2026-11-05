@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-04",
+  "homefire_existing_labels": {
+    "files": 6500,
+    "boxes": {
+      "0": 4838,
+      "1": 3140
+    },
+    "states": {
+      "fire_only": 3456,
+      "smoke_only": 1856,
+      "both": 1053,
+      "empty": 135
+    },
+    "splits": {
+      "test": 1300,
+      "train": 3900,
+      "val": 1300
+    },
+    "malformed_lines": 0
+  },
+  "fasdd_cv_existing_coco": {
+    "train": {
+      "images": 47660,
+      "annotations": 66582,
+      "categories": [
+        {
+          "id": 0,
+          "name": "fire",
+          "supercategory": "null"
+        },
+        {
+          "id": 1,
+          "name": "smoke",
+          "supercategory": "null"
+        }
+      ],
+      "boxes": {
+        "0": 39545,
+        "1": 27037
+      },
+      "outside": 84,
+      "degenerate": 2,
+      "max_excursion_px": 1.0,
+      "source_sha256": "f7c737c76dcabd2c74f74a9c8abc1af58f25168d5f94b4496661e51f063338e2"
+    },
+    "val": {
+      "images": 31770,
+      "annotations": 42553,
+      "categories": [
+        {
+          "id": 0,
+          "name": "fire",
+          "supercategory": "null"
+        },
+        {
+          "id": 1,
+          "name": "smoke",
+          "supercategory": "null"
+        }
+      ],
+      "boxes": {
+        "0": 24730,
+        "1": 17823
+      },
+      "outside": 46,
+      "degenerate": 1,
+      "max_excursion_px": 1.0,
+      "source_sha256": "8f2863f0b5b2ed4277029e07b8cfdee0272228d2b4e03599e28768faaf942353"
+    },
+    "test": {
+      "images": 15884,
+      "annotations": 17242,
+      "categories": [
+        {
+          "id": 0,
+          "name": "fire",
+          "supercategory": "null"
+        },
+        {
+          "id": 1,
+          "name": "smoke",
+          "supercategory": "null"
+        }
+      ],
+      "boxes": {
+        "1": 8220,
+        "0": 9022
+      },
+      "outside": 8,
+      "degenerate": 0,
+      "max_excursion_px": 1.0,
+      "source_sha256": "9cc33e56e0fc71d019521ed6b4af7a2813a3478c61b1cfab673143772aaffb43"
+    }
+  },
+  "existing_manifests": {
+    "homefire": {
+      "roles": {
+        "test": 1300,
+        "fit": 3900,
+        "cal": 650,
+        "dev": 650
+      },
+      "sha256": "e5734715bbe4391c494b8c94ae4fbfb735273f12c9f758702018419b45962f6a"
+    },
+    "fasdd-cv": {
+      "roles": {
+        "test": 15884,
+        "fit": 47660,
+        "cal": 15885,
+        "dev": 15885
+      },
+      "sha256": "5b848803337ef6b49b0067b472dd5d096d93fe9aa74d295a14430c6b1fd7c474"
+    }
+  },
+  "cross_dataset_comparison": false,
+  "labels_modified": false,
+  "images_or_weights_downloaded": false,
+  "full_image_packages_checked": false,
+  "python": "/Users/edwiin/Desktop/code-workspace/fire/.local/miniconda3/envs/sci-env/bin/python",
+  "metadata_download_bytes": 856326,
+  "homefire_public_release": {
+    "tag": "v1.0.0",
+    "published_at": "2025-05-09T04:30:58Z",
+    "assets": [
+      {
+        "name": "test.zip",
+        "size": 407778390,
+        "browser_download_url": "https://github.com/PengBo0/Home-fire-dataset/releases/download/v1.0.0/test.zip"
+      },
+      {
+        "name": "train.zip",
+        "size": 1060672433,
+        "browser_download_url": "https://github.com/PengBo0/Home-fire-dataset/releases/download/v1.0.0/train.zip"
+      },
+      {
+        "name": "val.zip",
+        "size": 352482306,
+        "browser_download_url": "https://github.com/PengBo0/Home-fire-dataset/releases/download/v1.0.0/val.zip"
+      }
+    ]
+  },
+  "fasdd_official": {
+    "name": "An open flame and smoke detection dataset for deep learning in remote sensing based fire detection",
+    "version": "9.0.0",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "size": {
+      "@type": "sc:QuantitativeValue",
+      "unitText": "bytes",
+      "value": 82125550221
+    },
+    "description": "FASDD is a largest and most generalized Flame And Smoke Detection Dataset for object detection tasks, characterized by the utmost complexity in fire scenes, the highest heterogeneity in feature distribution, and the most significant variations in image size and shape. FASDD serves as a benchmark for developing advanced fire detection models, which can be deployed on watchtowers, drones, or satellites in a space-air-ground integrated observation network for collaborative fire warning. This endeavor provides valuable insights for government decision-making and fire rescue operations. FASDD contains fire, smoke, and confusing non-fire/non-smoke images acquired at different distances (near and far), different scenes (indoor and outdoor), different light intensities (day and night), and from various visual sensors (surveillance cameras, UAVs, and satellites). FASDD consists of three sub-datasets, a Computer Vision (CV) dataset (i.e. FASDD_CV), a Unmanned Aerial Vehicle (UAV) dataset (i.e. FASDD_UAV), and an Remote Sensing (RS) dataset (i.e. FASDD_RS). FASDD comprises 122,634 samples, with 70,581 annotated as positive samples and 52,073 labeled as negative samples. There are 113,154 instances of flame objects and 73,072 instances of smoke objects in the entire dataset. FASDD_CV contains 95,314 samples for general computer vision, while FASDD_UAV consists of 25,097 samples captured by UAV, and FASDD_RS comprises 2,223 samples from satellite imagery. FASDD_CV contains 73,297 fire instances and 53,080 smoke instances. The CV dataset exhibits considerable variation in image size, ranging from 78 to 10,600 pixels in width and 68 to 8,858 pixels in height. The aspect ratios of the images also vary significantly, ranging from 1:6.6 to 1:0.18. FASDD_UAV contains 36,308 fire instances and 17,222 smoke instances, with image aspect ratios primarily distributed between 4:3 and 16:9. In FASDD_RS, there are 2,770 smoke instances and 3,549 flame instances. The sizes of remote sensing images are predominantly around 1,000×1,000 pixels.FASDD is provided in three compressed files: FASDD_CV.zip, FASDD_UAV.zip, and FASDD_RS.zip, which correspond to the CV dataset, the UAV dataset, and the RS dataset, respectively. Additionally, there is a FASDD_RS_SWIR. zip folder storing pseudo-color images for detecting flame objects in remote sensing imagery. Each zip file contains two folders: &quot;images&quot; for storing the source data and &quot;annotations&quot; for storing the labels. The &quot;annotations&quot; folder consists of label files in four formats: YOLO, VOC, COCO, and TDML. The dataset is divided randomly into training, validation, and test sets, with a ratio of 1/2, 1/3, and 1/6, respectively, within each label format. In FASDD_CV, FASDD_UAV, and FASDD_RS, images and their corresponding annotation files have been individually sorted starting from 0. The flame and smoke objects in FASDD are given the labels &quot;fire&quot; and &quot;smoke&quot; for the object detection task, respectively. The names of all images and annotation files are prefixed with &quot;Fire&quot;, &quot;Smoke&quot;, &quot;FireAndSmoke&quot;, and &quot;NeitherFireNorSmoke&quot;, representing different categories for scene classification tasks.When using this dataset, please cite the following paper. Thank you very much for your support and cooperation：################################################################################使用数据集请引用对应论文，非常感谢您的关注和支持：Wang, M., Yue, P., Jiang, L., Yu, D., Tuo, T., &amp; Li, J. (2025). An open flame and smoke detection dataset for deep learning in remote sensing based fire detection. Geo-spatial Information Science, 28(2), 511-526.################################################################################"
+  }
+}

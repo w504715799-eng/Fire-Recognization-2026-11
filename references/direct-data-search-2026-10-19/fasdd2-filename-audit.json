@@ -1,0 +1,12 @@
+{
+  "counts_from_image_filename_not_labels": {
+    "bothFireAndSmoke": 20126,
+    "fire": 12536,
+    "neitherFireNorSmoke": 39114,
+    "smoke": 23350
+  },
+  "image_count": 95126,
+  "label_file_count": 95126,
+  "images_without_corresponding_label": 0,
+  "note": "Mirror provenance and official original equivalence NOT certified; not used as confirmation data."
+}

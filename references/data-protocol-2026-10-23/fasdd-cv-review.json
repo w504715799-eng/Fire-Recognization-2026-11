@@ -1,0 +1,181 @@
+{
+  "source_hashes": {
+    "original-coco-train.json": "f7c737c76dcabd2c74f74a9c8abc1af58f25168d5f94b4496661e51f063338e2",
+    "original-coco-val.json": "8f2863f0b5b2ed4277029e07b8cfdee0272228d2b4e03599e28768faaf942353",
+    "original-coco-test.json": "9cc33e56e0fc71d019521ed6b4af7a2813a3478c61b1cfab673143772aaffb43"
+  },
+  "by_official_split": {
+    "train": {
+      "images": 47660,
+      "annotations": 66582,
+      "reasons": {
+        "nonpositive": 2,
+        "outside": 84
+      },
+      "affected_images": 81,
+      "annotation_id_zero": 0,
+      "duplicate_annotation_ids": 0
+    },
+    "val": {
+      "images": 31770,
+      "annotations": 42553,
+      "reasons": {
+        "nonpositive": 1,
+        "outside": 46
+      },
+      "affected_images": 43,
+      "annotation_id_zero": 0,
+      "duplicate_annotation_ids": 0
+    },
+    "test": {
+      "images": 15884,
+      "annotations": 17242,
+      "reasons": {
+        "outside": 8
+      },
+      "affected_images": 7,
+      "annotation_id_zero": 1,
+      "duplicate_annotation_ids": 0
+    }
+  },
+  "images": 95314,
+  "annotations": 126377,
+  "anomalous_boxes": 141,
+  "affected_images": 131,
+  "max_excursion_px": 1.0,
+  "degenerate": [
+    {
+      "split": "train",
+      "file": "bothFireAndSmoke_CV001979.jpg",
+      "ann_id": 6527,
+      "category_id": 0,
+      "bbox": [
+        219.0,
+        343.0,
+        0,
+        1.0
+      ],
+      "area": 0.0,
+      "image_size": [
+        676,
+        429
+      ],
+      "reasons": [
+        "nonpositive"
+      ],
+      "excursion_px": 0.0,
+      "normalized_view": [
+        0.3239644970414201,
+        0.8006993006993007,
+        0.0,
+        0.002331002331002331
+      ],
+      "numeric_tolerance_ok": true,
+      "derived_role": "fit"
+    },
+    {
+      "split": "train",
+      "file": "bothFireAndSmoke_CV018145.jpg",
+      "ann_id": 70019,
+      "category_id": 0,
+      "bbox": [
+        512.0,
+        1.0,
+        0,
+        155.0
+      ],
+      "area": 0.0,
+      "image_size": [
+        512,
+        341
+      ],
+      "reasons": [
+        "nonpositive"
+      ],
+      "excursion_px": 0.0,
+      "normalized_view": [
+        1.0,
+        0.23020527859237536,
+        0.0,
+        0.45454545454545453
+      ],
+      "numeric_tolerance_ok": true,
+      "derived_role": "fit"
+    },
+    {
+      "split": "val",
+      "file": "bothFireAndSmoke_CV010851.jpg",
+      "ann_id": 41180,
+      "category_id": 1,
+      "bbox": [
+        1.0,
+        1.0,
+        763.0,
+        0
+      ],
+      "area": 0.0,
+      "image_size": [
+        800,
+        600
+      ],
+      "reasons": [
+        "nonpositive"
+      ],
+      "excursion_px": 0.0,
+      "normalized_view": [
+        0.478125,
+        0.0016666666666666668,
+        0.95375,
+        0.0
+      ],
+      "numeric_tolerance_ok": true,
+      "derived_role": "dev"
+    }
+  ],
+  "manifest": {
+    "path": "references/data-protocol-2026-10-23/fasdd-cv-split-manifest.jsonl",
+    "sha256": "5b848803337ef6b49b0067b472dd5d096d93fe9aa74d295a14430c6b1fd7c474",
+    "by_role": {
+      "fit": {
+        "images": 47660,
+        "both": 10076,
+        "fire_boxes": 39545,
+        "smoke_boxes": 27037,
+        "fire_only": 6276,
+        "empty": 19600,
+        "smoke_only": 11708
+      },
+      "cal": {
+        "images": 15885,
+        "both": 3382,
+        "fire_boxes": 12521,
+        "smoke_boxes": 8934,
+        "fire_only": 2075,
+        "empty": 6547,
+        "smoke_only": 3881
+      },
+      "dev": {
+        "images": 15885,
+        "both": 3335,
+        "fire_boxes": 12209,
+        "smoke_boxes": 8889,
+        "fire_only": 2108,
+        "empty": 6519,
+        "smoke_only": 3923
+      },
+      "test": {
+        "images": 15884,
+        "both": 3358,
+        "fire_boxes": 9022,
+        "smoke_boxes": 8220,
+        "fire_only": 2091,
+        "empty": 6533,
+        "smoke_only": 3902
+      }
+    }
+  },
+  "labels_edited": false,
+  "images_removed": false,
+  "models_imported": false,
+  "whole_images_decoded_this_run": false
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "file": "fasdd-readme.md",
+    "url": "https://raw.githubusercontent.com/openrsgis/FASDD/main/README.md",
+    "sha256": "49681673a86440afa7d79f8b99ea953a5766450d472331ebc2350086c9b4af14",
+    "bytes": 2925,
+    "retrieved": "2026-10-14",
+    "type": "public_text_metadata"
+  },
+  {
+    "file": "rtdetr-readme.md",
+    "url": "https://raw.githubusercontent.com/lyuwenyu/RT-DETR/main/README.md",
+    "sha256": "599e90b38354c7c5cb7f7f1679454fd0537a608b5feab5703210ba79353f30c9",
+    "bytes": 8247,
+    "retrieved": "2026-10-14",
+    "type": "public_text_metadata"
+  },
+  {
+    "file": "dfire-readme.md",
+    "url": "https://raw.githubusercontent.com/gaia-solutions-on-demand/DFireDataset/master/README.md",
+    "branch": "master",
+    "sha256": "c5395ce455e05f2b617c8c6de8193c143695b069c8d2dfa4367678c403741218",
+    "bytes": 3226,
+    "retrieved": "2026-10-14",
+    "type": "public_text_metadata",
+    "previous_main_branch_404": true
+  }
+]

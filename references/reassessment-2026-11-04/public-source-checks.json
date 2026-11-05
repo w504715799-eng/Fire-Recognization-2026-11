@@ -1,0 +1,75 @@
+[
+  {
+    "key": "dfire-author-readme",
+    "url": "https://raw.githubusercontent.com/gaia-solutions-on-demand/DFireDataset/master/README.md",
+    "status": 200,
+    "bytes": 4484,
+    "sha256": "3a2feee38048459341598016fda90f0009c35a057c50af7925650e4031011bdf"
+  },
+  {
+    "key": "homefire-release",
+    "url": "https://api.github.com/repos/PengBo0/Home-fire-dataset/releases/tags/v1.0.0",
+    "status": 200,
+    "bytes": 8111,
+    "sha256": "68c3874523c76ff12f348cef54829e7543d2db68a6bd863ecd1c84a2dc98a902",
+    "assets": [
+      {
+        "name": "test.zip",
+        "bytes": 407778390
+      },
+      {
+        "name": "train.zip",
+        "bytes": 1060672433
+      },
+      {
+        "name": "val.zip",
+        "bytes": 352482306
+      }
+    ],
+    "tag": "v1.0.0"
+  },
+  {
+    "key": "homefire-author-tree",
+    "url": "https://api.github.com/repos/PengBo0/Home-fire-dataset/git/trees/main?recursive=1",
+    "status": 200,
+    "bytes": 2015,
+    "sha256": "d349172fa9d5196a4e0ce1a55e34e2eadc4fffe35e80f558aee09bd6a5840979",
+    "revision": "889064eaafd87f32ef6b1d7128d4c98cb31fe7a5",
+    "paths": [
+      "HomeFireDataset/data.md",
+      "README.md",
+      "dataPath/dataPath.md",
+      "images/figure1.png",
+      "images/figure2.png"
+    ]
+  },
+  {
+    "key": "fasdd-author-files-v9",
+    "url": "https://www.scidb.cn/api/gin-sdb-filetree/public/file/childrenFileListByPath",
+    "status": 200,
+    "bytes": 5049,
+    "sha256": "bd01dd6828cac7caf9d86924e017e6ddb5ce618a16c2da2ff79d168708d8eea4",
+    "api_code": 20000,
+    "selected_files": [
+      {
+        "id": "85bad3972ed60e0a20a790032c0d85fb",
+        "fileName": "FASDD_CV.zip",
+        "size": 12326081298,
+        "md5": "da5e1410e13113fc9d605567aea54508"
+      },
+      {
+        "id": "9456106d26c5fc6b74143c3707115d39",
+        "fileName": "FASDD_UAV.zip",
+        "size": 14888184890,
+        "md5": "c5ea9651ca672fc128c6f17d0797c2f2"
+      }
+    ]
+  },
+  {
+    "key": "qwen-model-card",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B/raw/main/README.md",
+    "status": 200,
+    "bytes": 61705,
+    "sha256": "87a163af54f32fa608a0f8d3ac67945c53dd2b4a7c96740b3d7fdc28e8458864"
+  }
+]

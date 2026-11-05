@@ -1,0 +1,19 @@
+{
+  "project_id": "fire-r2",
+  "ssh_host": null,
+  "expected_hostname": null,
+  "project_root": "/workspace/fire-r2",
+  "environment_prefix": "/workspace/fire-r2/.envs/sci-env",
+  "shared_dataset_root": "/workspace/shared/datasets",
+  "shared_gpu_lock_root": "/workspace/shared/gpu-locks",
+  "gpu_id": 0,
+  "approval": {
+    "phase": "not_approved",
+    "server_id": null,
+    "user_notified_at": null,
+    "user_approved_at": null,
+    "hourly_price": null,
+    "currency": null,
+    "stage_budget_hours": null
+  }
+}

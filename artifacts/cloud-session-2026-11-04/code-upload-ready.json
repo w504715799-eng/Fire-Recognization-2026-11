@@ -1,0 +1,37 @@
+fire-r2-cloud-ready.zip
+        1118222 100%  141.66MB/s   00:00:00 (xfer#1, to-check=0/1)
+{
+  "source": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/artifacts/staging/fire-r2-cloud-ready.zip",
+  "target": "/root/rivermind-data/FIRE_R2/incoming/fire-r2-cloud-ready.zip",
+  "ssh": [
+    "ssh",
+    "-p",
+    "30188",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "UserKnownHostsFile=/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/known_hosts",
+    "-S",
+    "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-direct.sock",
+    "root@hz01-ssh.gpuhome.cc"
+  ],
+  "rsync": [
+    "rsync",
+    "-aL",
+    "--partial",
+    "--progress",
+    "-e",
+    "ssh -p 30188 -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/known_hosts -S /Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-direct.sock",
+    "/Users/edwiin/Desktop/code-workspace/FIRE_R2/artifacts/staging/fire-r2-cloud-ready.zip",
+    "root@hz01-ssh.gpuhome.cc:/root/rivermind-data/FIRE_R2/incoming/fire-r2-cloud-ready.zip"
+  ],
+  "source_bytes": 1118222,
+  "executed": true,
+  "started_at": "2026-11-04T09:54:37.531871+00:00",
+  "status": "verified",
+  "local_file_deleted": false,
+  "sha256": "36cf63061e8014f75e16859590e8d5f1d9fc1828e1412fdf1850a27fea66658e",
+  "finished_at": "2026-11-04T09:55:08.224708+00:00"
+}

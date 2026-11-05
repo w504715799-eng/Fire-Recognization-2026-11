@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-19",
+  "method": "Fixed six per raw state from filename SHA256, inspected 24-image contact sheet and full-resolution 8041310576.jpg. No new labels.",
+  "sample_count": 24,
+  "all_sample_decode_success": true,
+  "observations": [
+    {
+      "file": "8041310576.jpg",
+      "original_state": "01",
+      "note": "原标签仅紧急烟；视觉可见建筑燃烧亮区/火焰样结构，不能据此把整图当作可靠无可见火。该备注不是新真值。"
+    },
+    {
+      "file": "5706979402.jpg",
+      "original_state": "10",
+      "note": "火圈表演样场景；说明紧急情形定义在实图上的解释还可能存在歧义，不根据抽样重写标签。"
+    },
+    {
+      "file": "6803212385.jpg",
+      "original_state": "00",
+      "note": "人物吸烟样场景，烟的可见性与来源需协议解释；不把00自动判为物理无烟。"
+    }
+  ],
+  "decision": "Exclude entire candidate from core physical fire/smoke confirmation due to original annotation protocol, not sample cleanup.",
+  "error_rate_estimated": false
+}

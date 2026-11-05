@@ -1,0 +1,54 @@
+{
+  "completed_at": "2026-11-05T00:59:38.026728+00:00",
+  "server": "hz01-ssh.gpuhome.cc:30148",
+  "local_environment_unchanged": true,
+  "local_weights_downloaded": false,
+  "pilot": {
+    "epochs_completed": 3,
+    "elapsed_seconds": 354.29033880261704,
+    "best_fire_dev_AP50_95": 0.5952170808648984,
+    "combined_last_dev_AP50_95": 0.47895,
+    "purpose": "pipeline pilot, not method improvement or held-out test result"
+  },
+  "dfire": {
+    "images": 21527,
+    "training_ready": true,
+    "roles": {
+      "fit": 14122,
+      "dev": 1549,
+      "cal": 1550,
+      "test": 4306
+    },
+    "states": {
+      "empty": 9838,
+      "fire_only": 1164,
+      "smoke_only": 5867,
+      "both": 4658
+    },
+    "nonpositive_boxes_preserved": 18,
+    "raw_archive_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83",
+    "local_cleanup": {
+      "local_removed_path": "/Users/edwiin/Desktop/code-workspace/FIRE_R1/tmp/cloud-transfer/dfire-kaggle-65d81b60.zip",
+      "removed_logical_bytes": 3049605157,
+      "removed_file_allocated_bytes": 3053457408,
+      "source_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83",
+      "remote_verified": true,
+      "remote_all_images_decoded": 21527,
+      "observed_volume_available_change": 3053752320,
+      "note": "Volume delta includes background/filesystem effects. Cloud original archive and images retained."
+    }
+  },
+  "cloud_new_assets_bytes": {
+    "pretrained_weights": 20422725,
+    "pilot_run_directory": 140813671,
+    "dfire_derived_view": 20276829
+  },
+  "remaining_full_data": [
+    "fasdd_cv",
+    "fasdd_uav"
+  ],
+  "server_shutdown_performed": false,
+  "price_unknown": true,
+  "local_checks_passed": 21,
+  "local_artifact_bytes_before_final_ledger": 79419
+}

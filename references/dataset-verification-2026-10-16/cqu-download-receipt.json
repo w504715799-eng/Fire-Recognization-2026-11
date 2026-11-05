@@ -1,0 +1,12 @@
+{
+  "key": "cqu",
+  "path": "data/supplementary-verification-2026-10-16/cqu/original.zip",
+  "bytes": 544994383,
+  "md5": "fd9ed42cd67fd5f7c016ca127985e245",
+  "expected_md5": "fd9ed42cd67fd5f7c016ca127985e245",
+  "sha256": "8965cd9ec15ed0c772f3f946bdaf272fd61d9a32e4b4034e611b7c4af1194abf",
+  "seconds": 109.47268516599433,
+  "complete": true,
+  "remote_uploaded": false,
+  "local_deletion_allowed": false
+}

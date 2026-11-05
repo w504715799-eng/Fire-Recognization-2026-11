@@ -1,0 +1,30 @@
+{
+  "bundle": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/artifacts/staging/fire-r2-code.zip",
+  "bytes": 1185175,
+  "sha256": "cd4b06faac3f23f77d107f74ea4654c649a55b93976b8d52cc76ab04741dde4d",
+  "files": [
+    "AGENTS.md",
+    "RESEARCH_REQUIREMENTS.md",
+    "cloud/activate.sh",
+    "cloud/bootstrap.sh",
+    "cloud/requirements.txt",
+    "code/fire_r2_cli.py",
+    "configs/cloud.example.json",
+    "configs/datasets.json",
+    "configs/train_baseline.json",
+    "docs/开发与云端运行.md",
+    "references/data-protocol-2026-10-23/fasdd-cv-split-manifest.jsonl",
+    "references/data-protocol-2026-10-23/homefire-split-manifest.jsonl",
+    "references/data-protocol-2026-11-04/dfire-kaggle-split-manifest.jsonl",
+    "src/fire_r2/__init__.py",
+    "src/fire_r2/cli.py",
+    "src/fire_r2/cloud.py",
+    "src/fire_r2/common.py",
+    "src/fire_r2/data.py",
+    "src/fire_r2/train.py",
+    "tests/test_cloud.py",
+    "tests/test_data.py",
+    "火焰识别研究方案.md"
+  ],
+  "excludes": "datasets, weights, environments, caches, secrets and *.local.* configs"
+}

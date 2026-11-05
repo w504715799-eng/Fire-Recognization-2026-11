@@ -1,0 +1,15 @@
+{
+  "dataset": "Home-fire author Kaggle version 1",
+  "sample_rule_file": "homefire-fixed-sample.json",
+  "sample_count": 24,
+  "mapping_evidence": "Visual inspection of six raw-ID0 and six raw-ID1 samples supports 0=fire, 1=smoke; no author-provided numeric mapping file found in archive, README or release. Mapping remains provisional.",
+  "observations": [
+    "仅ID0样例包括可见室内明火、炉火、小火焰；仅ID1样例包括烟羽、局部白烟及室内烟雾。",
+    "查看train_4019原尺寸后，黄色亮区不能认定为明火；不据亮斑擅自判漏火。",
+    "仅ID0固定6图未发现足以认定系统性漏烟的明确反例；这不是全库语义完整性证明。",
+    "6张空标签样例以普通景物/物品为主；不以此保证全部135图都是真实无火无烟。"
+  ],
+  "decision": "conditional pure-fire protection candidate, not yet confirmation-ready",
+  "source_mapping": "Author source credits list has no train_N/test_N/val_N or JPEG references; no per-image event/source mapping established.",
+  "no_new_truth": true
+}

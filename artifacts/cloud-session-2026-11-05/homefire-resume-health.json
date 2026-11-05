@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-05T10:04:00+08:00",
+  "run_name": "homefire_B_native_seed17_full_20261105",
+  "restored_completed_epochs": 5,
+  "optimizer_state_present": true,
+  "resume_epoch": 6,
+  "verified_completed_epoch_after_resume": 6,
+  "next_epoch_running": 7,
+  "observed_batch": 12,
+  "batches_per_epoch": 488,
+  "losses_epoch6": {
+    "box": 1.70361,
+    "cls": 1.48322,
+    "l1": 0.0119
+  },
+  "gpu_memory_MiB_snapshot": 5534,
+  "gpu_utilization_percent_snapshot": 76,
+  "batch_rate_observed": "4.5–4.8/s",
+  "remote_log": "/root/rivermind-data/FIRE_R2/logs/homefire-full-resume-20261105T020010Z.log",
+  "backup_bytes": 200489738,
+  "main_thread_notified": "01a13e23-38fc-7380-a42f-6b2ed61b4f64",
+  "training_finished": false,
+  "new_weights_downloaded": false
+}

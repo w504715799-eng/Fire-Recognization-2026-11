@@ -1,0 +1,35 @@
+{
+  "source": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/artifacts/staging/fire-r2-code.zip",
+  "target": "/root/rivermind-data/FIRE_R2/incoming/fire-r2-final-20261104.zip",
+  "ssh": [
+    "ssh",
+    "-p",
+    "30188",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "UserKnownHostsFile=/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/known_hosts",
+    "-S",
+    "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-data3.sock",
+    "root@hz01-ssh.gpuhome.cc"
+  ],
+  "rsync": [
+    "rsync",
+    "-aL",
+    "--partial",
+    "--progress",
+    "-e",
+    "ssh -p 30188 -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/known_hosts -S /Users/edwiin/Desktop/code-workspace/FIRE_R2/.ssh/gpuhome-data3.sock",
+    "/Users/edwiin/Desktop/code-workspace/FIRE_R2/artifacts/staging/fire-r2-code.zip",
+    "root@hz01-ssh.gpuhome.cc:/root/rivermind-data/FIRE_R2/incoming/fire-r2-final-20261104.zip"
+  ],
+  "source_bytes": 1185057,
+  "executed": true,
+  "started_at": "2026-11-04T10:10:50.309935+00:00",
+  "status": "verified",
+  "local_file_deleted": false,
+  "sha256": "b2bcb549577ce585f493985047dc221cd2035966ee987a429685ff6a63b408de",
+  "finished_at": "2026-11-04T10:11:29.730607+00:00"
+}

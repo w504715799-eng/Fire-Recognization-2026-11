@@ -1,0 +1,44 @@
+[
+  {
+    "file": "ultralytics-data-utils.py",
+    "url": "https://raw.githubusercontent.com/ultralytics/ultralytics/2e241d0336ea7545c385eadd30a2f58eb4c0e2ad/ultralytics/data/utils.py",
+    "bytes": 49116,
+    "status": "read_only_source_not_executed",
+    "sha256": "fbd72bd589710609a578c41741707ecbe8c74b6a1af780e37b642770ddeaced9"
+  },
+  {
+    "file": "ultralytics-augment.py",
+    "url": "https://raw.githubusercontent.com/ultralytics/ultralytics/2e241d0336ea7545c385eadd30a2f58eb4c0e2ad/ultralytics/data/augment.py",
+    "bytes": 148666,
+    "status": "read_only_source_not_executed",
+    "sha256": "ce8aff76f312e7f0f8c92f73a437712cffabe3c9e738c3a7a0bb4601cdc862fa"
+  },
+  {
+    "file": "ultralytics-tal.py",
+    "url": "https://raw.githubusercontent.com/ultralytics/ultralytics/2e241d0336ea7545c385eadd30a2f58eb4c0e2ad/ultralytics/utils/tal.py",
+    "bytes": 29815,
+    "status": "read_only_source_not_executed",
+    "sha256": "7fc3127e4b094247ccbbcf8af9829972295f96fc53027313ef51b076d27274cd"
+  },
+  {
+    "file": "coco-evaluator.py",
+    "url": "https://raw.githubusercontent.com/cocodataset/cocoapi/master/PythonAPI/pycocotools/cocoeval.py",
+    "bytes": 24143,
+    "status": "read_only_source_not_executed",
+    "sha256": "e514af401848d5a4cc5d3512bd93d2c317f92272c6d30f218e0f00b7b4110534"
+  },
+  {
+    "file": "homefire-reuse-readme.md",
+    "url": "https://huggingface.co/e1250/safety_detection/raw/9f0417154d2a57495fe308ad119fa1f707868100/README.md",
+    "bytes": 1284,
+    "status": "read_only_source_not_executed",
+    "sha256": "92f93fe2bdaa354fbc1c70257135e771cf3186e37a2c7a208e61a5f784f8767f"
+  },
+  {
+    "file": "homefire-author-readme.md",
+    "url": "https://raw.githubusercontent.com/PengBo0/Home-fire-dataset/main/README.md",
+    "bytes": 3122,
+    "status": "read_only_source_not_executed",
+    "sha256": "d7275af3034a86e35ff14f57425d94ab706d921a2da6210e77a0a83aa4a0cc65"
+  }
+]

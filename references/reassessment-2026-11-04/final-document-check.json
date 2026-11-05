@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-04",
+  "canonical_plan": "火焰识别研究方案.md",
+  "canonical_sha256": "e2ed9a4b617eac998f4d97afed9eab2baba665dbab6b6f991313d9887938c7af",
+  "plan_files": [
+    "火焰识别研究方案.md"
+  ],
+  "user_principle_exact": true,
+  "data_split_manifests_unchanged": true,
+  "original_coco_unchanged": true,
+  "retained_report_links_updated": [],
+  "model_runs": 0,
+  "large_files_downloaded": false,
+  "weights_downloaded": false,
+  "local_links_valid": true
+}

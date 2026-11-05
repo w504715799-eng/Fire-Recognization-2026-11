@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-19",
+  "policy": "Do not reopen unchanged unsuitable sources. Reopen only on a new author revision, corrected protocol, new complete source package or genuinely restored access. No cross-dataset duplicate image checks.",
+  "closed_semantic_or_scale": [
+    "CQU v1",
+    "Indoor Fire Smoke v1",
+    "FiSmo/Flickr-FireSmoke",
+    "FASDD_CV strict pure-fire confirmation use",
+    "DeepQuestAI core 1pp protection use",
+    "DataCluster public sample",
+    "MmodalFire core statistical confirmation use",
+    "FireDetn fire-only annotation release",
+    "SAINetset v8.0 physical four-state use",
+    "AIDER record 3888300 strict no-fire/no-smoke background use"
+  ],
+  "paused_access": [
+    "LFDN no user account/link",
+    "MS-FSDB broken author download",
+    "NEWFireSmoke author export verification gate",
+    "RGBT-3M official Quark login/download barrier"
+  ],
+  "excluded_size": [
+    "FIREX-AQ 46.6GB",
+    "FireMan Multiclass.zip 33044640887 bytes"
+  ],
+  "new_conditional_candidate": "Home-fire Dataset author Kaggle v1: complete label/file pairing and syntax, class mapping and physical purity/event grouping pending",
+  "new_unverified_discovery": [
+    "FireRescue no public downloadable package found in inspected author paper",
+    "FSSD no directly readable original package verified"
+  ],
+  "new_confirmation_samples_admitted": 0
+}

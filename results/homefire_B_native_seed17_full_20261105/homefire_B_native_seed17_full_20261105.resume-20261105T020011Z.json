@@ -1,0 +1,17 @@
+{
+  "status": "completed_or_budget_stopped",
+  "original_run": "homefire_B_native_seed17_full_20261105",
+  "started_at": "2026-11-05T02:00:12.383355+00:00",
+  "deadline": "2026-11-05T05:42:04.772160+00:00",
+  "source": "User explicitly requested resume after server restart",
+  "server_powered_off": false,
+  "resume_checkpoint_sha256": "8c334bf592b3e2fe23d1c4b09d084264e033e22e0714358156fdd381ad0a299b",
+  "completed_epochs": 5,
+  "resume_human_epoch": 6,
+  "optimizer_state_present": true,
+  "prior_best_fire_dev_ap_rechecked": 0.49709607900903985,
+  "last_completed_epoch": 100,
+  "best_fire_dev_ap": 0.7071475258446636,
+  "elapsed_seconds": 9978.562363583129,
+  "finished_at": "2026-11-05T04:46:30.945721+00:00"
+}

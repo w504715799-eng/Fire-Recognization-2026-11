@@ -1,0 +1,54 @@
+{
+  "source": "author FASDD_CV.zip V9, original COCO train/val/test JSON",
+  "image_count": 95314,
+  "states": {
+    "11": 20151,
+    "10": 12550,
+    "00": 39199,
+    "01": 23414
+  },
+  "split_counts": {
+    "train": {
+      "images": 47660,
+      "annotations": 66582,
+      "states": {
+        "11": 10076,
+        "10": 6276,
+        "00": 19600,
+        "01": 11708
+      }
+    },
+    "val": {
+      "images": 31770,
+      "annotations": 42553,
+      "states": {
+        "11": 6717,
+        "10": 4183,
+        "00": 13066,
+        "01": 7804
+      }
+    },
+    "test": {
+      "images": 15884,
+      "annotations": 17242,
+      "states": {
+        "11": 3358,
+        "10": 2091,
+        "00": 6533,
+        "01": 3902
+      }
+    }
+  },
+  "box_counts": {
+    "0": 73297,
+    "1": 53080
+  },
+  "invalid_or_out_of_bounds_boxes": 141,
+  "orphan_annotations": [],
+  "repeated_image_record_names": [],
+  "labels_without_archive_image": [],
+  "archive_images_without_coco_record": [],
+  "all_images_decoded": false,
+  "whole_archive_md5_verified": false,
+  "state_counts_are_annotation_based_not_physical_guarantee": true
+}

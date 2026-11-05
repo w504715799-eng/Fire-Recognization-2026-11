@@ -1,0 +1,133 @@
+{
+  "plan_id": "fire-final-20261104",
+  "canonical_plan": "../../火焰识别研究方案.md",
+  "date": "2026-11-04",
+  "status": "cloud_environment_and_homefire_data_ready_no_model_training",
+  "principle": "research value, reproducible improvements and informative experiments; no mandatory first-use or fixed-module novelty gate",
+  "student": "YOLO26s",
+  "teacher": "Qwen/Qwen3.5-0.8B",
+  "teacher_frozen": true,
+  "source_families": [
+    "D-Fire",
+    "Home-fire",
+    "FASDD"
+  ],
+  "evaluation_components": [
+    "D-Fire",
+    "Home-fire",
+    "FASDD_CV",
+    "FASDD_UAV"
+  ],
+  "training_sources": [
+    "D-Fire",
+    "Home-fire",
+    "FASDD_CV"
+  ],
+  "teacher_scope": "current source fit only",
+  "factors": {
+    "W": "all-positive quality weights with coverage normalization",
+    "S": "offline semantic auxiliary training",
+    "M": "local detail, feature division, and optional gain-guided fusion"
+  },
+  "teacher_tasks": {
+    "A": "whole-image six-field scene semantics, image-only prompt",
+    "B": "up to one original ROI per fire/smoke class; neutral region marker; class name withheld from teacher"
+  },
+  "quality_defaults": {
+    "supported": 1.25,
+    "clear_questionable": 0.75,
+    "uncertain_or_failed": 1.0,
+    "image_score": "mean reviewed item scores; absent information neutral",
+    "groups": "original four-state x contains small fire at 640 reference",
+    "normalization": "w_i=r_i/mean(r in same group)",
+    "all_images_retained": true,
+    "zero_weights": false,
+    "GT_rewritten": false
+  },
+  "training": {
+    "initialization": "common generic pretrained weights for full data-effect comparison",
+    "same_update_budget": true,
+    "teacher_consistent_batch_fraction": 0.25,
+    "mixed_augmentation_batches": "native common augmentation with weight 1 and semantic loss 0",
+    "W_applies_to": "original-GT detection losses; preserve native reduction; w=1 must equal baseline",
+    "S_weights_initial": {
+      "presence": 0.1,
+      "context": 0.05
+    },
+    "teacher_in_deployment": false
+  },
+  "experiment_order": {
+    "baseline": [
+      "B_native",
+      "B"
+    ],
+    "data_factor": [
+      "B",
+      "B+RuleW",
+      "B+W",
+      "B+ShuffleW"
+    ],
+    "semantic_factor": [
+      "B",
+      "B+P",
+      "B+S"
+    ],
+    "model_factor": "ordinary fusion and selected relevant M controls",
+    "combination": "single factors plus selected pairs/full combination when supported",
+    "formal": "three source trainings and four-component evaluation; repeat key comparisons with 17/29/43"
+  },
+  "hard_filtering_or_relabeling_authorized": false,
+  "model_execution_authorized_this_turn": false,
+  "model_runs": 0,
+  "workspace_root": "/Users/edwiin/Desktop/code-workspace/FIRE_R2",
+  "storage_ledger": "下载与安装台账.md",
+  "local_weight_policy": {
+    "execution_allowed": false,
+    "large_model_download_allowed": false,
+    "authorization": "Latest user global AGENTS prohibits local large-model downloads, caching and execution; supersedes earlier transit exception"
+  },
+  "development": {
+    "entrypoint": "code/fire_r2_cli.py",
+    "datasets": "configs/datasets.json",
+    "cloud": "configs/cloud.example.json",
+    "training": "configs/train_baseline.json",
+    "implemented_experiments": [
+      "B_native"
+    ],
+    "research_factors_pending": [
+      "W",
+      "S",
+      "M",
+      "Qwen offline inference"
+    ],
+    "cloud_code_not_runtime_validated": false,
+    "cloud_directory": "/root/rivermind-data/FIRE_R2",
+    "cloud_environment": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+    "staging_cpu_allowed": true,
+    "notify_user_before_startup_and_upgrade": true,
+    "automatic_provision_or_shutdown": false,
+    "cloud_training_not_runtime_validated": true,
+    "cloud_environment_mode": "venv --system-site-packages on preinstalled Conda Python; private added dependencies",
+    "checks": {
+      "unit_tests": 20,
+      "pip_check": true,
+      "cuda_arithmetic": true,
+      "cuda_nms": true,
+      "weights_loaded": false,
+      "training_started": false
+    }
+  },
+  "preparation_authorization": {
+    "scope": "User-started cloud one-hour data/environment/code preparation; no purchase or upgrade",
+    "observed_start_utc": "2026-11-04T09:32:26Z",
+    "conservative_stop_utc": "2026-11-04T10:25:00Z",
+    "price_unknown": true
+  },
+  "dataset_registry": "configs/datasets.json",
+  "data_readiness": {
+    "homefire": "cloud all 6500 images decoded; frozen split matched; local transfer archives removed",
+    "dfire": "author-linked Kaggle original verified locally by shared task; remote transfer managed by R1",
+    "fasdd_cv": "annotations/frozen split present; full images pending",
+    "fasdd_uav": "full images pending"
+  }
+}

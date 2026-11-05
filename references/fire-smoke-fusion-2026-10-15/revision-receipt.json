@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-15",
+  "scope": "independent research plan revision and public metadata only",
+  "plan": "ideas/面向小火焰与困难负例的火烟关系协同融合研究方案.md",
+  "plan_sha256": "3a7da716c7994bcf9a4ce60f42f255916148b98901b8f637047a8d2b0e970be8",
+  "previous_plan_sha256": "c9ae9b195b38550336945afeac674d38a80161b2d725e19e0f449548cf65dab2",
+  "checks": {
+    "relative_links_valid": true,
+    "fences_balanced": true,
+    "dataset_group_sums_valid": true,
+    "training_count_formula_valid": true
+  },
+  "model_runs_this_turn": 0,
+  "dataset_image_packages_downloaded_this_turn": false,
+  "model_weights_downloaded_this_turn": false,
+  "cloud_runs_this_turn": false,
+  "current_old_data_paths_present": false
+}

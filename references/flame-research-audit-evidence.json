@@ -1,0 +1,183 @@
+{
+  "review_date": "2026-10-07",
+  "search_scope": "targeted_primary_source_review_not_systematic_review",
+  "queries": [
+    "2026 fire flame segmentation DINO few shot foundation model",
+    "2026 fire detection vision language SAFIRE global local reliability",
+    "few shot segmentation hard background prototypes negative prototypes",
+    "FireMAS github",
+    "INSID3 github DINOv3",
+    "fire vision-language zero-shot 2025 2026 CLIP"
+  ],
+  "github_searches": [
+    "fire segmentation",
+    "FSSDINO",
+    "SAFIRE fire",
+    "FireMAS"
+  ],
+  "inspected_repositories": [
+    {
+      "repository": "hussni0997/fssdino",
+      "commit": "24858986ea55e312200079937989ad32360f09b2",
+      "files": [
+        "fssdino/module.py",
+        "fss_eval.py",
+        "configs/dg.yaml"
+      ]
+    },
+    {
+      "repository": "visinf/INSID3",
+      "commit": "0c165a10cf52ab91f335883d06260de86854adbe",
+      "files": [
+        "README.md",
+        "models/__init__.py",
+        "opts.py"
+      ]
+    },
+    {
+      "repository": "dimfot3/Inverse-INSID3",
+      "commit": "e51b1e4b00258a0ec725aae2c127ac6283728a95",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "repository": "RISys-Lab/SAFIRE",
+      "commit": "ff76868cf4da817039577ff0a16cdd1c701d58b8",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "repository": "jcjiang99/CoW",
+      "commit": "aeed0eed39b0fa074ca6c1a13fabcbd3d5c9ff36",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "repository": "UEmmanuel5/ProFSAM",
+      "commit": null,
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "repository": "hayatkhan8660-maker/Fire_Seg_Dataset",
+      "commit": null,
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "repository": "gaia-solutions-on-demand/DFireDataset",
+      "commit": null,
+      "files": [
+        "README.md"
+      ]
+    }
+  ],
+  "data_checks": [
+    {
+      "url": "https://datasets-server.huggingface.co/first-rows?dataset=RISys-Lab%2FSAFIRE_193K_mcvqa&config=mcqa&split=test",
+      "fields": [
+        "image",
+        "image_name",
+        "scenario",
+        "question",
+        "options",
+        "answer",
+        "answer_key"
+      ],
+      "rows_returned": 100,
+      "reviewed": "schema and first-row textual metadata; not full image/label audit"
+    },
+    {
+      "url": "https://api.bitbucket.org/2.0/repositories/gbdi/bowfire-dataset/downloads",
+      "archive": "BoWFireDataset.zip",
+      "bytes": 291275697,
+      "downloaded": false
+    }
+  ],
+  "limitations": [
+    "No model training or inference.",
+    "No full dataset download or independent event count.",
+    "FireMAS publisher full text inaccessible; publisher-indexed abstract used.",
+    "No official FireMAS GitHub implementation verified.",
+    "Statistical sensitivity uses hypothetical variances; it is not a measured result."
+  ],
+  "decisions": {
+    "D1": "REJECTED_AT_PAPER_GATE",
+    "D2": "REJECTED_AT_PAPER_GATE",
+    "state": "STOP",
+    "execution_ready": false,
+    "switch_count": 1,
+    "model_experiments_run": 0
+  },
+  "prior_decisions_v2": {
+    "D1": "CONDITIONAL_RETAIN_NOT_READY",
+    "D2": "CURRENT_CANDIDATE_NOT_RECOMMENDED",
+    "execution_ready": false
+  },
+  "followup_review": {
+    "date": "2026-10-07",
+    "report": "../experiments/flame-research/review-decision-2026-10-07.md",
+    "scope": "targeted_primary_source_and_pinned_code_review_not_systematic_review",
+    "queries": [
+      "\"FireMAS\" \"global\" \"local\"",
+      "few-shot segmentation \"hard background\" prototype",
+      "\"fire segmentation\" \"prototype\" few shot",
+      "\"flame segmentation\" \"DINOv3\""
+    ],
+    "verified_sources": [
+      {
+        "url": "https://arxiv.org/html/2603.28480v1",
+        "sections": [
+          "3.3",
+          "C.1",
+          "C.4"
+        ],
+        "finding": "Reference background participates in backward matching; k-shot and empty-mask cases already discussed."
+      },
+      {
+        "url": "https://www.ijcai.org/proceedings/2025/0139.pdf",
+        "sections": [
+          "3.3",
+          "3.4"
+        ],
+        "finding": "Hard foreground/background prototype mechanisms exist; differs from current untrained top-fraction clustering."
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S0379711226000160",
+        "access": "publisher-indexed abstract only; direct full-text request failed",
+        "finding": "Global/local perspectives for collaborative fire validation; no claim of identical implementation."
+      }
+    ],
+    "pinned_code_reads": [
+      {
+        "repository": "hussni0997/fssdino",
+        "commit": "24858986ea55e312200079937989ad32360f09b2",
+        "files": [
+          "fssdino/module.py",
+          "configs/dg.yaml"
+        ],
+        "finding": "Upsample per-channel maps then max times mean; pixel_scores is max class score."
+      },
+      {
+        "repository": "visinf/INSID3",
+        "commit": "0c165a10cf52ab91f335883d06260de86854adbe",
+        "files": [
+          "models/insid3.py",
+          "opts.py"
+        ],
+        "finding": "Native k-shot, boolean final output, normalized zero-image positional basis in pinned code; CLI large/1024 defaults."
+      }
+    ],
+    "limitations": [
+      "No full dataset or model weights downloaded.",
+      "No implementation tests or inference.",
+      "No empirical power estimate.",
+      "No exhaustive novelty or publication potential guarantee."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-19",
+  "user_direction": "No LFDN access; continue only directly accessible public resources. No registration or models.",
+  "official_fasdd_file": "https://www.scidb.cn/en/file?fid=85bad3972ed60e0a20a790032c0d85fb&mode=front",
+  "official_metadata_request_mode": "front: public page mode, no credentials",
+  "public_archive_get_status": 206,
+  "original_label_image_states": {
+    "fire_only": 12550,
+    "smoke_only": 23414,
+    "coexist": 20151,
+    "neither": 39199
+  },
+  "counts_scope": "original COCO annotations; physical absence not certified",
+  "image_sample_count": 24,
+  "whole_archive_downloaded": false,
+  "sample_notes": [
+    {
+      "file": "fire_CV009161.jpg",
+      "original_state": "10",
+      "observation": "灰黑烟羽在火焰上方清晰可见；原COCO/VOC/YOLO三种格式均只有fire、无smoke。原标注完整性假设被否证；未修改原标注。"
+    },
+    {
+      "file": "neitherFireNorSmoke_CV037131.jpg",
+      "original_state": "00",
+      "observation": "商品介绍拼版图，不能把全库00直接声称为自然监控实拍背景。"
+    },
+    {
+      "file": "fire_CV005809.jpg",
+      "original_state": "10",
+      "observation": "黑底孤立火焰素材样图；仅凭外观无法确定真实拍摄或合成，不新增真假来源标签。"
+    }
+  ],
+  "conclusion": "File availability and volume solved for FASDD_CV; semantic confirmation and event independence remain unresolved."
+}

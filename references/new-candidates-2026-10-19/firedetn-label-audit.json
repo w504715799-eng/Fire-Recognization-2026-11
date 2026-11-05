@@ -1,0 +1,14 @@
+{
+  "label_archive_bytes": 2117308,
+  "label_archive_uncompressed_bytes": 3191401,
+  "xml_files": 4674,
+  "classes": {
+    "fire": 7472
+  },
+  "empty_xml": 0,
+  "image_archive_bytes": null,
+  "whole_dataset_uncompressed_bytes": null,
+  "label_combinations": {
+    "fire": 4674
+  }
+}

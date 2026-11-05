@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-22",
+  "canonical_plan": "火焰识别研究方案.md",
+  "canonical_sha256": "3175a51f14e8da6962a2995af1bf9a23b3f719b60fcbb3c55d8cf2affedd4488",
+  "documents_checked": 8,
+  "archive_originals_preserved": true,
+  "legacy_redirect_count": 6,
+  "main_configurations": 13,
+  "secondary_configurations": 7,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "planned_training_trajectories": 60,
+  "broken_local_links": [],
+  "model_experiments_started": false,
+  "dataset_packages_downloaded_this_revision": false,
+  "model_weights_downloaded": false,
+  "execution_ready": false
+}

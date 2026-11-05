@@ -1,0 +1,9 @@
+SKLFS-WildFire Test · Fire Detection Research Group 中国科大火灾监测监控研究团队 火灾探测预警 首页 研究方向 数据资源 团队动态 团队成员 学术成果 学术论坛 联系我们 登录 注册 Dataset SKLFS-WildFire Test A large-scale real-world wildfire smoke test set containing 50,735 images from 3,309 videos, designed for evaluating open-scene early wildfire detection with difficult negative samples. 会员专属 版本：V2024 发布日期：2025年1月1日 云盘下载 返回数据资源 等待审批后下载 SKLFS-WildFire Test Overview SKLFS-WildFire Test is a real-world test set for open-scene early wildfire smoke detection. It was introduced in Wildfire Smoke Detection System: Model Architecture, Training Mechanism, and Dataset to support systematic evaluation of wildfire smoke detection models under practical conditions. The test split contains 50,735 images from 3,309 videos, including 3,588 smoke-positive images from 340 real wildfire videos. The dataset also includes a large number of negative samples with smoke-like interference objects, making it suitable for evaluating model robustness in unpredictable open environments. Key Features Real-world early wildfire scenes collected from practical application data. 50,735 test images from 3,309 videos. 3,588 smoke-positive images from 340 real wildfire videos. Difficult negative samples with smoke-like visual interference. Bounding-box-level annotation for smoke detection evaluation. The training split is not released; the public dataset is the SKLFS-WildFire Test split. Citation If you use this dataset, please cite: @article{https://doi.org/10.1155/int/1610145,
+author = {Wang, Chong and Xu, Chen and Akram, Adeel and Wang, Zhong and Shan, Zhilin and Zhang, Qixing},
+title = {Wildfire Smoke Detection System: Model Architecture, Training Mechanism, and Dataset},
+journal = {International Journal of Intelligent Systems},
+volume = {2025},
+number = {1},
+pages = {1610145},
+year = {2025}
+} 云盘下载信息 该数据集仅对审批通过的会员开放。 中国科学技术大学 火灾安全全国重点实验室 火灾监测监控研究团队.

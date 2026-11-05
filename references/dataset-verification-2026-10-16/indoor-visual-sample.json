@@ -1,0 +1,254 @@
+[
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 1,
+    "image": "Indoor Fire Smoke/train/images/1725_jpg.rf.ab45cb1c0789b6650c8c35b638fe450b.jpg",
+    "label": "Indoor Fire Smoke/train/labels/1725_jpg.rf.ab45cb1c0789b6650c8c35b638fe450b.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 2,
+    "image": "Indoor Fire Smoke/train/images/classk11_mp4-25_jpg.rf.c3a8eb9f026d155d35b52ae6f93398d3.jpg",
+    "label": "Indoor Fire Smoke/train/labels/classk11_mp4-25_jpg.rf.c3a8eb9f026d155d35b52ae6f93398d3.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 3,
+    "image": "Indoor Fire Smoke/train/images/FrontRoomFire3761_jpg.rf.234cd5182e098013795dccc158c73805.jpg",
+    "label": "Indoor Fire Smoke/train/labels/FrontRoomFire3761_jpg.rf.234cd5182e098013795dccc158c73805.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 4,
+    "image": "Indoor Fire Smoke/train/images/18test2806_jpg.rf.42c1e4b31be89fd835f8b8dfa30bf467.jpg",
+    "label": "Indoor Fire Smoke/train/labels/18test2806_jpg.rf.42c1e4b31be89fd835f8b8dfa30bf467.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 5,
+    "image": "Indoor Fire Smoke/train/images/classk10_mp4-200_jpg.rf.5e1382357419ec9f18aabc65ceaa6fe6.jpg",
+    "label": "Indoor Fire Smoke/train/labels/classk10_mp4-200_jpg.rf.5e1382357419ec9f18aabc65ceaa6fe6.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 6,
+    "image": "Indoor Fire Smoke/train/images/14_jpg.rf.6fdac9425e06379bf101e856ae81dd40.jpg",
+    "label": "Indoor Fire Smoke/train/labels/14_jpg.rf.6fdac9425e06379bf101e856ae81dd40.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 7,
+    "image": "Indoor Fire Smoke/test/images/18test2762_jpg.rf.2145b49facae8254e677f912bd34f466.jpg",
+    "label": "Indoor Fire Smoke/test/labels/18test2762_jpg.rf.2145b49facae8254e677f912bd34f466.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 8,
+    "image": "Indoor Fire Smoke/test/images/2060_jpg.rf.70bc0d36cd342c07d729abc66836245a.jpg",
+    "label": "Indoor Fire Smoke/test/labels/2060_jpg.rf.70bc0d36cd342c07d729abc66836245a.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 9,
+    "image": "Indoor Fire Smoke/test/images/1831_jpg.rf.27a8e28bebac7826eebff0d2b9ff22e3.jpg",
+    "label": "Indoor Fire Smoke/test/labels/1831_jpg.rf.27a8e28bebac7826eebff0d2b9ff22e3.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 10,
+    "image": "Indoor Fire Smoke/train/images/2244_jpg.rf.0cb5ce8da79cc17b32e054be30ab1e3b.jpg",
+    "label": "Indoor Fire Smoke/train/labels/2244_jpg.rf.0cb5ce8da79cc17b32e054be30ab1e3b.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 11,
+    "image": "Indoor Fire Smoke/train/images/1827_jpg.rf.dddfb1ba0a319934927c911543123b62.jpg",
+    "label": "Indoor Fire Smoke/train/labels/1827_jpg.rf.dddfb1ba0a319934927c911543123b62.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "both",
+    "number": 12,
+    "image": "Indoor Fire Smoke/train/images/frame_0000168_png.rf.f580015b8025312436d4a6ab8ebebeb1.jpg",
+    "label": "Indoor Fire Smoke/train/labels/frame_0000168_png.rf.f580015b8025312436d4a6ab8ebebeb1.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 1,
+    "image": "Indoor Fire Smoke/train/images/fire01807_jpg.rf.968cabb9e3e9d6a38b7dff2755dbce57.jpg",
+    "label": "Indoor Fire Smoke/train/labels/fire01807_jpg.rf.968cabb9e3e9d6a38b7dff2755dbce57.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 2,
+    "image": "Indoor Fire Smoke/test/images/part2-trimmed_mp4-84_jpg.rf.74d46a25f9223a664a8abf673972cf0f.jpg",
+    "label": "Indoor Fire Smoke/test/labels/part2-trimmed_mp4-84_jpg.rf.74d46a25f9223a664a8abf673972cf0f.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 3,
+    "image": "Indoor Fire Smoke/train/images/30_jpg.rf.ed2416664f60cd2a6561ed30438d70c7.jpg",
+    "label": "Indoor Fire Smoke/train/labels/30_jpg.rf.ed2416664f60cd2a6561ed30438d70c7.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 4,
+    "image": "Indoor Fire Smoke/train/images/firefold7_168_jpg.rf.3d9c37e7401cc556bb038b25decc34fb.jpg",
+    "label": "Indoor Fire Smoke/train/labels/firefold7_168_jpg.rf.3d9c37e7401cc556bb038b25decc34fb.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 5,
+    "image": "Indoor Fire Smoke/test/images/fire128_jpeg.rf.80e6ebd7081f00691f8c20c0328dc871.jpg",
+    "label": "Indoor Fire Smoke/test/labels/fire128_jpeg.rf.80e6ebd7081f00691f8c20c0328dc871.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 6,
+    "image": "Indoor Fire Smoke/test/images/FireVid29_mp4-85_jpg.rf.b81023300f58a8441041cb38a6483ea0.jpg",
+    "label": "Indoor Fire Smoke/test/labels/FireVid29_mp4-85_jpg.rf.b81023300f58a8441041cb38a6483ea0.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 7,
+    "image": "Indoor Fire Smoke/test/images/fire_tlm_1vv00089_jpeg.rf.33b86f31d0002dbe59ce1cbbcde05055.jpg",
+    "label": "Indoor Fire Smoke/test/labels/fire_tlm_1vv00089_jpeg.rf.33b86f31d0002dbe59ce1cbbcde05055.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 8,
+    "image": "Indoor Fire Smoke/train/images/fire_tlm_1vv00200_jpeg.rf.27fcb443e6112292c1944fff713ab55d.jpg",
+    "label": "Indoor Fire Smoke/train/labels/fire_tlm_1vv00200_jpeg.rf.27fcb443e6112292c1944fff713ab55d.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 9,
+    "image": "Indoor Fire Smoke/test/images/8test3919_jpg.rf.26d201974fe16849a3516d77f82ff405.jpg",
+    "label": "Indoor Fire Smoke/test/labels/8test3919_jpg.rf.26d201974fe16849a3516d77f82ff405.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 10,
+    "image": "Indoor Fire Smoke/valid/images/fire_tlm_1vv00120_jpeg.rf.3ba02f4dba30545b171fed963acef411.jpg",
+    "label": "Indoor Fire Smoke/valid/labels/fire_tlm_1vv00120_jpeg.rf.3ba02f4dba30545b171fed963acef411.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 11,
+    "image": "Indoor Fire Smoke/train/images/firefirelightflame20_jpeg.rf.a380ea0788746cdeb039931c3c225bc0.jpg",
+    "label": "Indoor Fire Smoke/train/labels/firefirelightflame20_jpeg.rf.a380ea0788746cdeb039931c3c225bc0.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label0_only",
+    "number": 12,
+    "image": "Indoor Fire Smoke/train/images/FireVid36_mp4-69_jpg.rf.454382b5a3c9db9fa77673b4df2f6c31.jpg",
+    "label": "Indoor Fire Smoke/train/labels/FireVid36_mp4-69_jpg.rf.454382b5a3c9db9fa77673b4df2f6c31.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 1,
+    "image": "Indoor Fire Smoke/train/images/11test2783_jpg.rf.c9ffafba98506ea2594baf3ac4dc4026.jpg",
+    "label": "Indoor Fire Smoke/train/labels/11test2783_jpg.rf.c9ffafba98506ea2594baf3ac4dc4026.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 2,
+    "image": "Indoor Fire Smoke/train/images/frame_0001078_png.rf.6e6a95a04a203da187509280321ba5c3.jpg",
+    "label": "Indoor Fire Smoke/train/labels/frame_0001078_png.rf.6e6a95a04a203da187509280321ba5c3.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 3,
+    "image": "Indoor Fire Smoke/train/images/test10993_jpg.rf.68a649f7e5ac06caf66b3d703e26aa02.jpg",
+    "label": "Indoor Fire Smoke/train/labels/test10993_jpg.rf.68a649f7e5ac06caf66b3d703e26aa02.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 4,
+    "image": "Indoor Fire Smoke/train/images/test12357_jpg.rf.b2b734efb297756cfd62040c3acd4935.jpg",
+    "label": "Indoor Fire Smoke/train/labels/test12357_jpg.rf.b2b734efb297756cfd62040c3acd4935.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 5,
+    "image": "Indoor Fire Smoke/valid/images/Smoke_img75_jpg.rf.ad1fa3257b794c19e28a64f4c6bafadc.jpg",
+    "label": "Indoor Fire Smoke/valid/labels/Smoke_img75_jpg.rf.ad1fa3257b794c19e28a64f4c6bafadc.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 6,
+    "image": "Indoor Fire Smoke/train/images/data_0000097_png.rf.df30ab395e87fec59e084e0185027871.jpg",
+    "label": "Indoor Fire Smoke/train/labels/data_0000097_png.rf.df30ab395e87fec59e084e0185027871.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 7,
+    "image": "Indoor Fire Smoke/train/images/img_15_jpg.rf.350b8d7defaca01465992f41c53d0d76.jpg",
+    "label": "Indoor Fire Smoke/train/labels/img_15_jpg.rf.350b8d7defaca01465992f41c53d0d76.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 8,
+    "image": "Indoor Fire Smoke/train/images/000714_jpg.rf.13f3a81831a98f99bbeb64db8aa3593b.jpg",
+    "label": "Indoor Fire Smoke/train/labels/000714_jpg.rf.13f3a81831a98f99bbeb64db8aa3593b.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 9,
+    "image": "Indoor Fire Smoke/train/images/frame_0000661_png.rf.7c1e68972ba296bd49e0398f46bd3a7b.jpg",
+    "label": "Indoor Fire Smoke/train/labels/frame_0000661_png.rf.7c1e68972ba296bd49e0398f46bd3a7b.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 10,
+    "image": "Indoor Fire Smoke/train/images/vid34_mp4-0020_jpg.rf.50e6a1b56f6e17b6b0391c10cd0adb35.jpg",
+    "label": "Indoor Fire Smoke/train/labels/vid34_mp4-0020_jpg.rf.50e6a1b56f6e17b6b0391c10cd0adb35.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 11,
+    "image": "Indoor Fire Smoke/train/images/a_0181_jpg.rf.88faddc3976d8384a9106d12cb9914d3.jpg",
+    "label": "Indoor Fire Smoke/train/labels/a_0181_jpg.rf.88faddc3976d8384a9106d12cb9914d3.txt"
+  },
+  {
+    "key": "indoor",
+    "state": "label1_only",
+    "number": 12,
+    "image": "Indoor Fire Smoke/test/images/d2530851-9b2c-42f2-bc5f-28ed265234cf_jpg.rf.eb3223d45506a1322df237703fea6427.jpg",
+    "label": "Indoor Fire Smoke/test/labels/d2530851-9b2c-42f2-bc5f-28ed265234cf_jpg.rf.eb3223d45506a1322df237703fea6427.txt"
+  }
+]

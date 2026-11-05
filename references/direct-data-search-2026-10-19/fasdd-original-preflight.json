@@ -1,0 +1,19 @@
+{
+  "source": "https://china.scidb.cn/download?fileId=85bad3972ed60e0a20a790032c0d85fb",
+  "compressed_bytes": 12326081298,
+  "uncompressed_bytes": 12739273073,
+  "publisher_md5": "da5e1410e13113fc9d605567aea54508",
+  "md5_verified": false,
+  "full_archive_downloaded": false,
+  "all_images_decoded": false,
+  "entries": 285959,
+  "extensions": {
+    "": 10,
+    ".json": 4,
+    ".xml": 95314,
+    ".txt": 95317,
+    ".jpg": 95314
+  },
+  "size_gate_passed": true,
+  "range_bytes": 44405151
+}

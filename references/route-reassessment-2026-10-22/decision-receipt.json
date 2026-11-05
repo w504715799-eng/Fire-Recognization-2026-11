@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-22",
+  "new_version": "LCSC-v1",
+  "checks": {
+    "old_full_proposal_preserved": true,
+    "no_new_data_pool": true,
+    "both_full_main_evaluations": true,
+    "all_three_seeds": true,
+    "matrix_count": true,
+    "no_mandatory_non_yolo": true,
+    "thirty_gb_cap": true,
+    "reformulation_disclosed": true,
+    "no_experiments": true,
+    "one_structural_rescue": true,
+    "final_thresholds_and_links_verified": true
+  },
+  "missing_links": [],
+  "old_sha256": "08bfdb1e6a32c5eef6c8b7bec2a96309237f3154655907bb2be9dbb2581cc552",
+  "new_sha256": "39dcf3bb2c42892836cff6ae22f02b7244a269d14d95df3c4ed41282c0b04adc",
+  "model_runs": 0,
+  "new_dataset_downloads": 0,
+  "weights_downloaded": false,
+  "raw_images_or_labels_changed": false,
+  "other_ideas_files_modified": false,
+  "decision": "Archive physical fire-smoke strong-protection mainline; retain fire-smoke context only as preregistered comparison; bounded local-detail/selective-context pilot conditional on core data restoration and novelty gate.",
+  "observed_data_pool": [
+    "D-Fire",
+    "FASDD_UAV V9",
+    "Pyro-SDIS v2",
+    "Home-fire"
+  ]
+}

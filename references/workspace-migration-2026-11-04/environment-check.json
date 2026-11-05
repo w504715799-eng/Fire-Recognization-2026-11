@@ -1,0 +1,32 @@
+{
+  "cwd": "/Users/edwiin/Desktop/code-workspace/FIRE_R2",
+  "python_executable": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.local/miniconda3/envs/sci-env/bin/python",
+  "python_prefix": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.local/miniconda3/envs/sci-env",
+  "real_environment": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.local/miniconda3/envs/sci-env",
+  "conda_prefix": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.local/miniconda3/envs/sci-env",
+  "conda_default_env": "sci-env",
+  "python_version": "3.11.17",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.6",
+    "pillow": "12.3.0",
+    "pyarrow": "25.0.0",
+    "requests": "2.34.2",
+    "pyyaml": "6.0.3",
+    "beautifulsoup4": "4.15.0",
+    "pypdf": "6.21.1"
+  },
+  "lightweight_checks_passed": true,
+  "model_imports": false,
+  "network_used_by_check": false,
+  "installed_new_packages": false,
+  "cache_paths": {
+    "CONDA_PKGS_DIRS": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.cache/conda",
+    "PIP_CACHE_DIR": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.cache/pip",
+    "TMPDIR": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/tmp/runtime",
+    "MPLCONFIGDIR": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.cache/matplotlib",
+    "PYTHONPYCACHEPREFIX": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.cache/pycache",
+    "HF_HOME": "/Users/edwiin/Desktop/code-workspace/FIRE_R2/.cache/huggingface"
+  }
+}

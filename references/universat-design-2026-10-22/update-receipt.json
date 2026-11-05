@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-22",
+  "version": "FSRF-v2.6",
+  "checks": {
+    "data_sections_and_constraints_unchanged": true,
+    "main_metrics_unchanged": true,
+    "original_threshold_table_unchanged": true,
+    "framework_selection_unchanged": true,
+    "original_stop_rules_retained": true,
+    "data_ready_remains_false": true,
+    "extended_trajectory_count": true
+  },
+  "missing_local_links": [],
+  "original_plan_sha256": "eb5d91d1185e82ee9448f00bfc86629f25cfd52bf28bee43001355e4e17660a3",
+  "updated_plan_sha256": "08bfdb1e6a32c5eef6c8b7bec2a96309237f3154655907bb2be9dbb2581cc552",
+  "model_runs": 0,
+  "model_implementation_written": false,
+  "data_or_labels_modified": false,
+  "weights_downloaded": false,
+  "new_trajectory_plan": {
+    "main": [
+      23,
+      25
+    ],
+    "second": 9,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "total": [
+      96,
+      102
+    ],
+    "gate": "Only if data and source-domain detail/relation pilot pass; no compute authorized."
+  }
+}

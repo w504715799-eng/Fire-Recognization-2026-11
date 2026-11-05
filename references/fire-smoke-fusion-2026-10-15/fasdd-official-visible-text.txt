@@ -1,0 +1,1 @@
+An open flame and smoke detection dataset for deep learning in remote sensing based fire detection

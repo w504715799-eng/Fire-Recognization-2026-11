@@ -1,0 +1,1289 @@
+
+PAGE 1
+Preprint
+REALTIMEWAM: ONE-STEPASYNCHRONOUS
+WORLDACTIONMODELS
+Chengtao Lv1∗ Jinyang Du2∗ Shuyi Feng1 Yang Yong3 Shiqiao Gu3
+Shunzi Yang2 Ruihao Gong2† Shen Ren4 Tianwei Zhang1 Wenya Wang1†
+1Nanyang Technological University 2Beihang University 3Sensetime 4Continental Automotive Singapore
+chengtao001@e.ntu.edu.sg wangwy@ntu.edu.sg
+{jinyangdu, gongruihao}@buaa.edu.cn
+ABSTRACT
+World Action Models (W AMs) incorporate visual representations from video
+generation backbones to guide action prediction. Recent efficient W AMs adopt
+Mixture-of-Transformers (MoT) architectures and compute video representations
+once for reuse by the action expert. However, intra-expert iteration (i.e., multi-
+step action denoising) and inter-expert waiting (i.e., sequential execution of the
+video and action experts) still limit inference efficiency. To this end, we present
+RealtimeW AM, an extremely efficient W AM variant with one-step action gen-
+eration and asynchronous inference, addressing these two bottlenecks. To re-
+duce intra-expert iteration, we propose Teacher-Anchored Consistency Distilla-
+tion (TACD) to address a local-global error gap: low local consistency error alone
+does not guarantee accurate final actions. TACD supplements local consistency
+with explicit supervision from the frozen teacher’s multi-step rollout endpoint,
+enabling accurate one-step action generation. Additionally, we propose Cross-
+Expert Wavefront Pipelining (CEWP) to eliminate unnecessary expert-level wait-
+ing. It overlaps the two experts through block-wise sharing of the video KV
+cache, synchronizing only immediately before the corresponding action attention
+consumes it. Extensive experiments across diverse benchmarks (e.g., LIBERO,
+LIBERO-Plus and RoboTwin) and model variants (e.g., Fast-W AM and Faster-
+W AM) demonstrate the superiority of RealtimeW AM. Notably, RealtimeW AM
+maintains near-lossless performance (i.e.,<1%drop) across these benchmarks
+while delivering significant end-to-end speedup (e.g.,∼25×on H100). Our code
+and checkpoints are available via this link.
+1 INTRODUCTION
+World Action Models (W AMs) (Yuan et al., 2026; Ye et al., 2026; Bi et al., 2026; Li et al., 2026a;
+Kim et al., 2026; Zhao et al., 2026) have emerged as a promising paradigm for robot manipula-
+tion by jointly modeling future visual observations and robot actions. Unlike conventional Vision-
+Language-Action (VLA) models (Shukor et al., 2025; Intelligence et al., 2025; Kim et al., 2024;
+Bjorck et al., 2025; Black et al., 2024; Liu et al., 2025) that map visual observations and language
+instructions directly to actions, W AMs incorporate future visual prediction as an additional learn-
+ing objective. This supervision encourages policies to capture the physical dynamics and temporal
+structure of robot–environment interactions.
+Based on whether video and action modeling use the same network, W AM architectures can be
+broadly divided into two categories. Representative shared-backbone W AMs (Kim et al., 2026;
+Ye et al., 2026) jointly denoise video and action tokens within a single backbone. Consequently,
+iterative denoising of long token sequences through the heavy video backbone increases inference
+latency. In contrast, some efficient Mixture-of-Transformers (MoT)-based W AMs (Yuan et al., 2026;
+Zhao et al., 2026) offer a promising alternative: the video expert computes representationsonce,
+while a separate action expert reuses them for action generation.
+∗Equal Contribution.
+†Corresponding Authors.
+1
+arXiv:2610.06617v1  [cs.CV]  5 Oct 2026
+
+PAGE 2
+Preprint
+12.2
+27.2
+H100 RTX 4090D
+Inference Latency (ms)
+300
+48124.56×
+17.68×
+Original
+RealtimeWAM H100
+RTX 5090
+RTX 4090D
+8.6% 89.4%
+8.7% 88.7%
+8.5% 89.5%
+VAE Encode Video Expert Action Expert
+16.1
+44.7
+H100 RTX 4090D
+Inference Latency (ms)
+219
+36213.56×
+8.11×
+Original
+RealtimeWAM H100
+RTX 5090
+RTX 4090D
+13.0% 84.4%
+13.4% 83.0%
+12.4% 84.7%
+VAE Encode Video Expert Action Expert
+FastW AM FasterW AM
+Figure 1: Inference efficiency of Fast-W AM (left) and Faster-W AM (right) across diverse hard-
+ware. Vertical bars compare inference latency between the original models and RealtimeW AM,
+while stacked bars show the runtime proportions of key components.
+Despite advancements in inference pipeline design, these MoT-based W AMs still incur substan-
+tial latency. Specifically, even on advanced GPUs (e.g., H100 in Fig. 1), these models (e.g., Fast-
+W AM (Yuan et al., 2026)) require over 300 ms for a single inference call. We identify two inference
+bottlenecks that remain insufficiently addressed in existing MoT-based W AMs:➀Intra-expert iter-
+ationarises from multi-step action denoising. We observe that the action expert accounts for nearly
+90% of end-to-end latency for action generation across diverse GPUs (see Fig. 1).➁Inter-expert
+waitingstems from sequential execution of the video and action experts. As shown in Fig. 4(a),
+the action expert begins execution only after the video expert completes its forward pass, causing
+unnecessary waiting.
+Motivated by the above analysis, we presentRealtimeWAM, an extremely efficient post-trained vari-
+ant based onanyMoT-based W AM. To our knowledge, it is thefirstone-step W AM to achieve
+near-lossless performance compared with its multi-step counterparts.
+To combat intra-expert iteration, we proposeTeacher-Anchored Consistency Distillation(TACD)
+for one-step action generation. TACD addresses alocal-global error gapin conventional consis-
+tency distillation, which only constrains local consistency while neglecting to explicitly penalize
+the global target action error. TACD adopts the frozen teacher’s multi-step rollout endpoint as a
+numerical proxy for the exact clean endpoint, explicitly aligning the student’s velocity prediction
+with the corresponding interval-averaged teacher velocity. From a theoretical perspective, we show
+that this teacher anchor directly constrains the total endpoint error, complementing local consistency
+supervision with an explicit action endpoint constraint.
+To reduce inter-expert waiting, we introduceCross-Expert Wavefront Pipelining(CEWP), which
+transforms coarse expert-wise execution into a fine-grained block-wise pipeline. Under conventional
+expert-wise execution, the Action Expert waits for the Video Expert to construct the complete block-
+wise KV cache. We first conduct an in-depth dependency analysis, observing that each action block
+requires the video KV cache only from its corresponding video block, rather than the complete
+output of the Video Expert. Motivated by this observation, CEWP overlaps the execution of the two
+experts through block-wise sharing of the video KV cache, synchronizing only immediately before
+the corresponding action attention consumes it, which significantly reduces unnecessary waiting.
+RealtimeW AM achieves impressive results on representative MoT-based W AM architectures, in-
+cluding Fast-W AM (Yuan et al., 2026) and Faster-W AM (Zhao et al., 2026), across diverse down-
+stream benchmarks (e.g., LIBERO (Liu et al., 2023), LIBERO-Plus (Fei et al., 2025), and RoboTwin
+2.0 (Chen et al., 2025)). On these benchmarks, it delivers approximately14∼25×inference accel-
+eration with an average<1%accuracy drop compared with the original multi-step models. Notably,
+RealtimeW AM’s per-call inference latency is significantly shorter than the corresponding execution
+time (e.g., 30 Hz control frequency), enabling real-time action generation. These results demon-
+strate that RealtimeW AM remains effective across diverse robot configurations, task horizons, and
+distribution conditions, and provide a practical path toward efficient W AM deployment.
+To summarize, our contributions are as follows:
+▶We propose RealtimeW AM, a one-step asynchronous W AM that addresses both intra-expert iter-
+ation and inter-expert waiting inanyMoT-based W AM for efficient robot manipulation.
+▶We proposeTeacher-Anchored Consistency Distillation(TACD), which mitigates thelocal-global
+error gapby augmenting local consistency supervision with a teacher endpoint constraint for accu-
+rate one-step action generation.
+▶We introduceCross-Expert Wavefront Pipelining(CEWP), which reduces unnecessary synchro-
+2
+
+PAGE 3
+Preprint
+nization by overlapping block-wise execution of the Video and Action Experts according to their
+data dependencies.
+▶Extensive experiments demonstrate that RealtimeW AM achieves real-time action generation with
+<1%accuracy degradation (i.e., 12.2 ms inference latency with∼25×speedup on an NVIDIA
+H100 GPU).
+2 RELATEDWORK
+2.1 WORLDACTIONMODELS
+While Vision-Language-Action (VLA) models (Shukor et al., 2025; Intelligence et al., 2025; Kim
+et al., 2024; Bjorck et al., 2025; Black et al., 2024; Liu et al., 2025; Wang et al., 2026b; Zheng
+et al., 2026) rely on pretrained vision-language backbones to map visual observations and language
+instructions directly to actions, World Action Models (W AMs) (Yuan et al., 2026; Ye et al., 2026;
+Bi et al., 2026; Li et al., 2026a) incorporate future visual representations from video generation
+backbones to guide action prediction. Modern W AMs can be broadly classified into two cate-
+gories.➀One line of work focuses on shared-backbone W AMs, which model future video and
+robot actions within a shared backbone, including DreamZero (Ye et al., 2026) and Cosmos (Kim
+et al., 2026).➁In contrast, Mixture-of-Transformers (MoT)-based W AMs, such as Motus (Bi et al.,
+2026), employ separate video and action experts that interact through attention. Among these meth-
+ods, Fast-W AM (Yuan et al., 2026) reduces inference overhead by computing video representations
+oncefor reuse by the action expert. Subsequent works, including Light-W AM (Li et al., 2026c) and
+Faster-W AM (Zhao et al., 2026), further improve computational efficiency and out-of-distribution
+(OOD) robustness. Nevertheless, these methods may incur substantial performance degradation on
+challenging benchmarks or achieve limited speedups.
+2.2 FEW-STEPDISTILLATION
+Diffusion models (Sohl-Dickstein et al., 2015; Ho et al., 2020; Song et al., 2020) and flow mod-
+els (Lipman et al., 2022; Liu et al., 2022; Albergo et al., 2023) have become cornerstones of modern
+high-quality image and video generation. However, their iterative sampling cost has motivated a
+series of few-step acceleration methods, including progressive distillation (Salimans & Ho, 2022),
+consistency models (Song et al., 2023), distribution matching distillation (Yin et al., 2024), Mean-
+Flow (Geng et al., 2025), and adversarial distillation (Sauer et al., 2024). These distillation tech-
+niques have recently been introduced into World Action Models (Akbari et al., 2026; Yang et al.,
+2026). The work most relevant to ours is Flash-W AM (Akbari et al., 2026), which identifies a
+modality-dependent noise-regime mismatch and introduces modality-specific consistency parame-
+terizations. However,➀it focuses on few-step distillation for W AMs that retain future-video denois-
+ing during inference, such as LingBot-V A (Li et al., 2026a); and➁its ultra-few-step (i.e., one-step)
+distillation still exhibits noticeable performance degradation (e.g., RoboTwin and real-world tasks).
+These limitations motivate our investigation of one-step action distillation for MoT-based W AMs.
+2.3 ASYNCHRONOUSINFERENCE FORROBOTPOLICIES
+Asynchronous inference has been widely studied for real-time robot control because it mitigates
+execution stalls, stale observations, and delayed responses caused by policy latency. Existing ap-
+proaches can be broadly grouped into three categories: execution-level asynchrony, module-level
+asynchrony, and sampling-level asynchrony. Execution-level methods overlap prediction of the next
+action chunk with execution of the current one and maintain continuity through prefix condition-
+ing, state correction, or chunk fusion (Black et al., 2025a;b; Tang et al., 2025; Wang et al., 2026a;
+Motubrain Team, 2026). Module-level methods decouple a slow semantic or world module from
+a fast action module, allowing cached high-level representations to guide high-frequency action
+updates (Hirose et al., 2026; Cai et al., 2026). Sampling-level methods assign different action po-
+sitions, chunks, modalities, or denoising streams distinct sampling schedules, enabling early action
+output or selective refinement without waiting for full decoding (Jiang et al., 2025; Lu et al., 2026;
+Li et al., 2026b). In contrast, RealtimeW AM employs finer-grained asynchrony at the block level,
+distinguishing it from prior approaches.
+3
+
+PAGE 4
+Preprint
+3 PRELIMINARIES
+3.1 EFFICIENTMIXTURE-OF-TRANSFORMERS(MOT)-BASEDWAMS
+W AMs with a Mixture-of-Transformers (MoT) architecture (Bi et al., 2026; Li et al., 2026a) com-
+prise a pretrained Video Expert for world modeling and an Action Expert for action generation.
+Corresponding blocks in the two experts interact through shared attention. While the two experts
+are jointly trained on video and action prediction, recent efficient MoT-based W AMs (Yuan et al.,
+2026; Zhao et al., 2026) require only a single forward pass through the Video Expert during infer-
+ence. Specifically, the Video Expert processes the current observationoand language instructionl
+to extract block-wise keys and values:
+z(o, l) =F KV
+ψ (o, l) ={(K v
+i , V v
+i )}N
+i=1 .(1)
+Here,F KV
+ψ denotes the KV extraction function of the Video Expert with parametersψ. The latent
+world representationz(o, l)consists of keysK v
+i and valuesV v
+i from each of theNvideo transformer
+blocks. Subsequently, these efficient MoT-based W AMs use this representation to parameterize the
+action distribution:
+pθ(a|o, l) =p θ(a|z(o, l)).(2)
+Here,adenotes an action chunk with prediction horizonH, andθdenotes the parameters of the
+Action Expert. Action generation requiresndenoising steps along0 =t 0 <· · ·< t n = 1. The
+action distributionp θ(a|z(o, l))is implicitly defined by the denoising mapΦ z
+θ = Φ z
+θ,t1 ◦Φ z
+θ,t2 ◦
+· · · ◦Φ z
+θ,tn, wherea tj−1 = Φ z
+θ,tj(atj) =a tj −(t j −t j−1)vθ(atj , tj). Here,a tj denotes a noisy
+action chunk andv θ the predicted velocity.
+3.2 CONSISTENCYDISTILLATION FORACTIONGENERATION
+Consistency distillation (CD) (Song et al., 2023) learns to map noisy states (i.e., action chunks in
+our paper) along the same teacher denoising trajectory to a common clean endpoint (i.e.,t= 0),
+enabling few-step generation. It uses three models: a frozen teacherθ T, a trainable studentθ S, and
+an exponential moving average (EMA) targetθ ema. During training, given a clean action chunk
+adata
+0 from the training data, we randomly samplet∈[0,1]and Gaussian noiseϵ∼ N(0, I)to
+constructa t = (1−t)a data
+0 +tϵ. The student and EMA target use the endpoint mapping
+fθ(at, t) =a t −t v θ(at, t).(3)
+For a neighboring time0≤s < t, the teacher produces
+˜as =Solver(a t, t, s;θ T)≈a t −(t−s)v θT(at, t),(4)
+whereSolver(a t, t, s;θ T)denotes one numerical integration step fromttosusing the frozen
+teacherθ T. For neighboring time steps with smallt−s, treating the velocity as locally constant
+yields the first-order approximation above. The student is optimized with
+LCD =E at,t,s
+h
+∥fθS(at, t)−sg[f θema(˜as, s)]∥2
+2
+i
+,(5)
+wheresgdenotes stop-gradient. After each student update,θ ema ←µθ ema + (1−µ)θ S, with decay
+rateµ∈[0,1). Therefore, consistency distillation learns to map noisy action chunks directly to
+clean endpoints, enabling few-step action generation without traversing the full teacher trajectory.
+4 REALTIMEWAM
+In this work, we proposeRealtimeWAM, a one-step asynchronous world action model for post-
+training acceleration ofanyMoT-based W AM. RealtimeW AM addresses intra-expert iteration
+through Teacher-Anchored Consistency Distillation (Sec. 4.1) and inter-expert waiting through
+Cross-Expert Wavefront Pipelining (Sec. 4.2).
+4
+
+PAGE 5
+Preprint
+Shared KV𝑧(𝑜,𝑙) 𝑎!
+Teacher-Anchored Consistency Distillation
+Action Noise
+𝐿!"𝐿#$
+VideoExpert𝐹!KV
+TeacherAction Expert𝜃T EMAAction Expert𝑓"ema StudentAction Expert𝑓"S
+𝑜,𝑙
+EMA update
+"𝑎#𝑎0T
+Teacher rollout
+Clean action+
+Figure 2: Overview of Teacher-Anchored Consistency Distillation (TACD). The frozen Video Ex-
+pert provides shared KV conditioning, while the action student is trained with local consistency
+supervision and a teacher-anchored constraint derived from the frozen teacher’s multi-step rollout.
+4.1 TEACHER-ANCHOREDCONSISTENCYDISTILLATION
+As discussed above, multi-step action denoising dominates inference latency (Fig. 1) while video
+latent representations are computed in a single forward pass in the Video Expert. Therefore, our
+target is to achieve high-quality few-step action generation (especially one-step) to combat intra-
+expert iteration. Recent step distillation strategies (Song et al., 2023; Yin et al., 2024; Geng et al.,
+2025; Huang et al., 2026) have been extensively studied in image and video generation. However, we
+identify a distinctive characteristic of action generation in W AMs: denoising is strongly conditioned
+on visual observations, robot states, and language instructions, which can confine feasible actions
+(e.g., grasp positions and gripper commands) to a narrow range. Within this constrained action
+space, even subtle deviations can affect task success rates owing to the high sensitivity of robotic
+control to action errors.
+0 10000 20000 30000
+Training Steps
+3.0
+3.2
+3.4
+3.6
+3.8
+Consistency Loss #
+£10−3
+0 10000 20000 30000
+Training Steps
+1
+2
+3
+kvµS ¡ uµT k2
+2 #
+£10−3
+Consistency Distillation Teacher-Anchored Consistency Distillation
+Figure 3: Training curves of two distillation methods: con-
+sistency loss (Left) and squared distance between the stu-
+dent’s velocityv θS and the teacher’s average velocity to-
+wards the clean endpointu θT (Right).
+However, directly applying consis-
+tency distillation to W AMs raises
+a significant challenge, dubbed the
+local-global error gap. Specifi-
+cally, although consistency distilla-
+tion (Song et al., 2023) can effec-
+tively minimizelocalconsistency er-
+rors, it does not considerably reduce
+deviations from theglobaltarget ac-
+tion. As shown in Fig. 3 (right), the
+error between the teacher’s clean ac-
+tion targets and student’s predictions
+does not decrease considerably for
+consistency distillation. Such large
+deviations from the clean action tar-
+gets can induce inaccuracies in robotic control.
+Formally, leta t denote a noisy action chunk and˜as the teacher-updated action defined analogously
+to Eq. (4). Leta ⋆
+0 denote the exact clean endpoint of the frozen teacher ODE initialized ata t, where
+⋆indicates the theoretical exact solution. Omitting the shared conditioningz(o, l)for brevity, the
+totalerror decomposes into alocalconsistency error and aglobaltarget error:
+fθS(at, t)−a ⋆
+0| {z }
+etotal:Total error
+=f θS(at, t)−f θema(˜as, s)| {z }
+elocal:Local consistency error
++f θema(˜as, s)−a ⋆
+0| {z }
+eglobal:Global target error
+.(6)
+Consistency Distillation directly minimizesE∥e local∥2
+2 but does not explicitly penalizeeglobal. Con-
+sequently, a smalllocalconsistency error alone does not guarantee a small total errore total (see
+Appendix C.1). Therefore, our key insight is to preservelocalconsistency supervision while intro-
+ducing an additional constraint based on the teacher’s target action (i.e.,a ⋆
+0), thereby mitigating the
+globaldeviation that the local objective may leave unresolved.
+Motivated by this insight, we proposeTeacher-Anchored Consistency Distillation(TACD), a novel
+post-training step distillation framework tailored for MoT-based W AMs. Specifically, since the exact
+5
+
+PAGE 6
+Preprint
+(a) Conventional Expert-wise Execution
+(b) Cross-Expert Wavefront Pipelining (CEWP)
+Video Expert
+ActionExpert
+Block 1Block 2Block 3
+Wait for complete video KV cacheBlock 1Block 2Block 3
+Full-expert barrier
+P#!R#!Block 1
+P#"Attn!"R#"Block 1
+record(e!)(𝐾#!,𝑉#!)ready
+wait(e!)
+P%!Attn#$Block 2
+P%"Attn#"R%"Block 2
+record(e")(𝐾%!,𝑉%!)ready
+wait(e")
+P&!Attn%$R&!Block 3
+P&"Attn%"R&"Block 3
+record(e#)(𝐾&!,𝑉&!)ready
+wait(e#)Earlier completion
+Time
+Time
+Attn!$ R:Remaining ComputationP:Q/K/V ProjectionRecord EventStream Wait
+Block-level DependencyVideo Blockℎ'(#!
+P'!
+𝑄'!𝐾'!𝑉'!
+Attn'!
+R'!
+ℎ'!
+Action Blockℎ'(#"
+P'"
+𝑄'"𝐾'!∥𝐾'"𝑉'!∥𝑉'"
+Attn'"
+R'"
+ℎ'"
+𝐾'!,𝑉'!
+Available afterprojection
+Video Expertstream 𝑆!
+Action Expertstream 𝑆"
+R%!
+Figure 4: Comparison of expert execution schedules. (a) Conventional execution waits for the
+complete video KV cache. (b) Cross-Expert Wavefront Pipelining releases block-wise KV cache
+entries after projection and synchronizes only before action attention consumes them, overlapping
+the Video and Action Experts.
+endpointa ⋆
+0 is unavailable in practice, we adopt the frozen teacher’s multi-step rollout endpointa T
+0
+as a proxy and compute the corresponding interval-averaged velocity. It is worth noting that the
+three Action Experts (i.e., the frozen teacher, trainable student, and EMA target) share the same
+video KV cachez(o, l)from a single frozen Video Expert. Starting from the same noisy actiona t
+under this shared conditioningz(o, l), we have
+aT
+0 =Solver(a t, t,0;θ T), u θT(at, t) = at −a T
+0
+t , t >0,(7)
+whereSolverdenotes numerical integration fromtto0usingKteacher denoising steps.
+We further directly supervise the student’s velocity predictionvθS(at, t)with the teacher’s interval-
+averaged velocityu θT(at, t), yielding the teacher-anchored loss and the overall training objective:
+LTA =E at,t
+h
+∥vθS(at, t)−sg[u θT(at, t)]∥2
+2
+i
+,L=L CD +λL TA,(8)
+whereλ >0weights the teacher-anchored loss. Equivalently,L TA directly supervises the student’s
+clean action prediction against the teacher’s rollout endpoint, with weight1/t2 (see Appendix C.2).
+To relate this supervision to the exact teacher endpoint, letδ=a T
+0 −a ⋆
+0 denote the teacher’s
+numerical integration error. The total endpoint error in Eq. (6) then satisfies
+etotal =e local +e global =−t[v θS(at, t)−u θT(at, t)] +δ.(9)
+Consequently, teacher anchoring directly constrains the combined errore local +e global, com-
+plementing the local consistency objective with a direct endpoint constraint 1. In addition, for
+0< t≤1, this relation yields an upper bound on the expected squared endpoint error,E∥e total∥2
+2 ≤
+2LTA + 2E∥δ∥2
+2 (see Appendix C.3).
+4.2 CROSS-EXPERTWAVEFRONTPIPELINING
+Teacher-Anchored Consistency Distillation reduces intra-expert iteration by enabling one-step ac-
+tion generation. However, inter-expert waiting persists because the Video and Action Experts still
+execute sequentially (Fig. 4(a)). Specifically, the Action Expert waits for the complete video KV
+1The total endpoint errore total also depends on the teacher’s numerical integration errorδ, which can be
+controlled by increasing the number of teacher denoising stepsK(see Appendix C.3).
+6
+
+PAGE 7
+Preprint
+cache, creating a global synchronization barrier that prevents action computation from starting even
+when its required context is already available.
+We therefore analyze the actual data dependencies between the Video Expert and Action Expert in a
+fine-grained manner. We first decompose each DiT block into three sequential components: Q/K/V
+projectionP i, attentionAttn i, and the remaining computationR i. Leth v
+i−1 andh a
+i−1 denote the
+video and action hidden states entering blocki∈ {1, . . . , N}, respectively. Their projections are
+(Qv
+i , Kv
+i , V v
+i ) =P v
+i (hv
+i−1),(Q a
+i , Ka
+i , V a
+i ) =P a
+i (ha
+i−1).(10)
+Here,(K v
+i , V v
+i )constitute thei-th entry ofz(o, l)in Eq. (1). The Video Expert attends to its own
+tokens, while the Action Expert additionally incorporates the corresponding video KV cache:
+hv
+i =R v
+i
+ 
+hv
+i−1,Attn v
+i (Qv
+i , Kv
+i , V v
+i )
+
+,
+ha
+i =R a
+i
+ 
+ha
+i−1,Attn a
+i (Qa
+i , Kv
+i ∥K a
+i , V v
+i ∥V a
+i )
+
+, (11)
+where∥denotes token-wise concatenation. Action attentionAttn a
+i is thus the only operation in
+action blockithat directly consumes the video KV cache(K v
+i , V v
+i ), with the dependency
+P v
+i − →Attna
+i ← − Pa
+i .(12)
+Our key observations are:➀The action projectionP a
+i can execute onceh a
+i−1 is available, without
+waiting for the video KV cache(K v
+i , V v
+i ).➁Action attentionAttn a
+i can begin once bothP a
+i and
+P v
+i complete, without waiting for video attentionAttn v
+i or video statesh v
+j withj≥i.➂Existing
+methods (Yuan et al., 2026; Zhao et al., 2026) enforceRv
+N → P a
+1 , introducing unnecessary waiting.
+Based on this dependency analysis, we proposeCross-Expert Wavefront Pipelining(CEWP), which
+transforms coarse expert-wise execution into a fine-grained block-wise wavefront across the Video
+and Action Experts. We assign the Video and Action Experts to two non-blocking CUDA streams,
+Sv andS a, respectively. Each stream preserves program order, while a CUDA eventei enforces the
+dependency at blocki:
+Sv :P v
+i →record(e i)→Attn v
+i → R v
+i ,
+Sa :P a
+i →wait(e i)→Attn a
+i → R a
+i , (13)
+wheree i signals the availability of(K v
+i , V v
+i ). The video stream recordse i immediately afterP v
+i
+and continues its remaining computation, while the action stream waits only beforeAttn a
+i (shown
+in Fig. 4(b)). This late synchronization allows the action projection to proceed independently and
+delays cross-stream waiting until the video KV cache is actually consumed. Action blocks thus
+consume video KV cache entries incrementally as the video stream advances, forming a staggered
+wavefront along model depth.
+5 EXPERIMENTS
+5.1 IMPLEMENTATIONDETAILS
+We implement RealtimeW AM based on Fast-W AM (Yuan et al., 2026) and Faster-W AM (Zhao et al.,
+2026), yielding RealtimeW AM* and RealtimeW AM†, respectively. We freeze the Video Expert and
+optimize only rank-128 low-rank adaptation (LoRA) (Hu et al., 2021) parameters in the Action Ex-
+pert. In Teacher-Anchored Consistency Distillation (TACD), we obtain the teacher endpoint through
+a 10-step rollout of the frozen teacher and set the teacher-anchored loss weight toλ= 0.2. Training
+proceeds for 30,000 iterations with AdamW, a learning rate of10 −4, and a weight decay of10 −2.
+We set the exponential moving average (EMA) decay to0.995. For a fair comparison, all evalu-
+ated step-distillation methods, including distribution matching distillation (DMD) (Yin et al., 2024),
+consistency distillation (Song et al., 2023), and MeanFlow distillation (Geng et al., 2025; Gu et al.,
+2026), adopt the same training settings. Moreover, we compare against other efficient W AMs, in-
+cluding Flash-W AM (Akbari et al., 2026) and Light-W AM (Li et al., 2026c). For latency evaluation,
+we include V AE encoding time but exclude text encoding time, as instructions are encoded only
+once per episode.
+5.2 EVALUATIONBENCHMARKS
+We evaluate RealtimeW AM on LIBERO (Liu et al., 2023), RoboTwin 2.0 (Chen et al., 2025), and
+LIBERO-Plus (Fei et al., 2025), using task success rate as the evaluation metric. On LIBERO,
+7
+
+PAGE 8
+Preprint
+Table 1: Success rates (%) on RoboTwin 2.0 and LIBERO. NFE denotes the number of denoising
+steps for video and action generation. Methods marked with * and † are built on Fast-W AM and
+Faster-W AM, respectively.
+Method NFE RoboTwin 2.0 LIBERO
+Video Action Clean↑Random↑Overall↑ Overall↑
+W AM and VLA Baselines
+π0 (Black et al., 2024) – – 65.92 58.40 62.16 94.1
+π0.5(Intelligence et al., 2025) – – 82.74 76.76 79.75 96.9
+X-VLA (Zheng et al., 2026) – – 72.90 72.80 72.85 98.1
+Motus (Bi et al., 2026) 10 10 88.66 87.02 87.84 97.7
+LingBot-V A (Li et al., 2026a) 25 50 92.90 91.50 92.20 98.5
+Fast-W AM (Yuan et al., 2026) 1 10 91.82 91.19 91.51 97.0
+Faster-W AM (Zhao et al., 2026) 1 10 93.20 92.66 92.93 98.9
+Other Efficient Variants
+Flash-W AM (Akbari et al., 2026) 1 2 88.42 82.66 85.54 96.1
+Flash-W AM (Akbari et al., 2026) 1 1 82.56 80.26 81.41 95.1
+Light-W AM (Li et al., 2026c) 1 1 76.40 76.30 76.40 97.2
+Few-Step Distillation
+Fast-W AM (Yuan et al., 2026) 1 1 70.42 68.12 69.27 95.0
+Mean Flow* (Geng et al., 2025) 1 1 85.74 85.72 85.73 96.9
+Consistency Distillation* (Song et al., 2023) 1 1 89.88 89.38 89.63 96.9
+DMD* (Yin et al., 2024) 1 1 88.64 87.80 88.22 96.1
+RealtimeW AM* 1 1 91.96 89.72 90.84 97.0
+RealtimeW AM† 1 1 92.98 92.30 92.64 99.0
+we evaluate four task suites: Spatial, Object, Goal, and Long. For RoboTwin 2.0, we follow the
+multi-task training setting in previous work (Yuan et al., 2026), training on 50 tasks using a total
+of 2,500 clean demonstrations and 25,000 randomized demonstrations. We evaluate performance
+under both clean and randomized conditions. To assess out-of-distribution (OOD) robustness, we
+further evaluate success rates on all seven perturbation subsets of LIBERO-Plus. We additionally
+evaluate RealtimeW AM on real-world dual-arm manipulation tasks (see Appendix F.6).
+5.3 MAINRESULTS
+RoboTwin 2.0.We report detailed results on RoboTwin 2.0 (Tab. 1). Notably, RealtimeW AM *
+achieves a success rate of 90.84% with one-step action generation using only LoRA fine-tuning, in-
+curring a reduction of just 0.67% compared with 10-step Fast-W AM. Surprisingly, RealtimeW AM†
+achieves nearly lossless performance with one-step action generation, attaining a success rate of
+92.64% with a reduction of only 0.29% compared with 10-step Faster-W AM. It also consider-
+ably outperforms other efficient W AMs (e.g., 81.41% for one-step Flash-W AM) and step-distillation
+baselines (e.g., 88.22% for DMD*).
+LIBERO.A similar trend is observed on LIBERO (Tab. 1). RealtimeW AM* achieves an overall suc-
+cess rate of 97.0% with one-step action generation, matching the performance of 10-step Fast-W AM.
+Compared with directly reducing Fast-W AM to a single denoising step (95.0%), RealtimeW AM *
+improves the success rate by 2.0%, demonstrating the effectiveness of step distillation in preserv-
+ing policy performance. It also outperforms one-step Flash-W AM (95.1%) and DMD * (96.1%),
+while remaining competitive with Light-W AM (97.2%). Detailed results for individual LIBERO
+task suites are provided in Appendix F.3 (Tab. F.1).
+LIBERO-Plus.We further evaluate robustness to distribution shifts on LIBERO-Plus (Tab. 2). With
+one-step action generation, RealtimeW AM† achieves an overall success rate of 73.0%, only 0.6%
+below Faster-W AM (73.6%). It slightly improves performance under camera, sensor-noise, and
+layout perturbations, indicating that step distillation largely preserves out-of-distribution robustness.
+8
+
+PAGE 9
+Preprint
+Table 2: Success rates (%) on the seven perturbation subsets of LIBERO-Plus.
+Method Camera↑Robot↑Lang.↑Light↑Backg.↑Noise↑Layout↑ Overall↑
+UniVLA (Bu et al., 2025) 1.8 46.2 69.6 69.0 81.0 21.2 31.9 42.9
+OpenVLA-OFT (Kim et al., 2025)56.4 31.9 79.5 88.7 93.3 75.8 74.2 69.6
+π0 (Black et al., 2024) 13.8 6.0 58.8 85.0 81.4 79.0 68.9 53.6
+π0-Fast (Pertsch et al., 2025) 65.1 21.6 61.0 73.2 73.2 74.4 68.8 61.6
+WorldVLA (Cen et al., 2025) 0.1 27.9 41.6 43.7 17.1 10.9 38.0 25.0
+Fast-W AM (Yuan et al., 2026) 18.8 45.7 70.1 83.2 45.7 29.8 62.7 49.1
+Faster-W AM (Zhao et al., 2026) 53.8 71.6 94.7 96.3 61.3 63.6 79.1 73.6
+RealtimeW AM† 54.2 69.0 92.5 94.7 59.4 64.6 79.3 73.0
+Table 3: Ablation of loss terms and expert fine-
+tuning on RoboTwin 2.0.L CD andL TA denote
+the consistency and teacher-anchored losses, re-
+spectively. Video/Action indicate whether each
+expert is fine-tuned. Results are success rates
+(%); best results are in bold.
+LCD LTA Video Action Clean↑Random↑Overall↑
+✓ ✗ ✓ ✓89.88 89.38 89.63
+✓ ✗ ✗ ✓89.7689.9489.85
+✓ ✓ ✗ ✓ 91.96 89.72 90.84
+Table 4: Effect of teacher rollout stepsKin
+TACD on RoboTwin 2.0.Kdenotes the num-
+ber of teacher denoising steps used to obtainaT
+0 .
+We useK= 10by default. Results are success
+rates (%); best results are in bold.
+KClean↑Random↑Overall↑
+5 91.02 89.76 90.39
+10 91.96 89.72 90.84
+20 91.2290.3290.77
+0 50 100 150 200 250 300
+Latency (ms)
+FastWAM
++ TACD
++ CUDA Graph
++ CEWP
++ Efficient Kernel
+299.7 ms
+65.8 ms 4.56× speedup
+23.3 ms 12.87× speedup
+17.4 ms 17.22× speedup
+12.2 ms 24.55× speedup
+4.56×
+2.82×
+1.34×
+1.43×
+0 40 80 120 160 200
+Latency (ms)
+FasterWAM
++ TACD
++ CUDA Graph
++ CEWP
++ Efficient Kernel
+218.9 ms
+57.1 ms 3.83× speedup
+26.2 ms 8.35× speedup
+22.4 ms 9.78× speedup
+16.1 ms 13.56× speedup
+3.83×
+2.18×
+1.17×
+1.39×
+Figure 5: Inference latency of RealtimeW AM built on Fast-W AM (left) and Faster-W AM (right) on
+a single NVIDIA H100 GPU.
+5.4 ABLATIONSTUDY
+Effect of different components.We first validate the effectiveness of the key components of our
+distillation framework (Tab. 3). Fine-tuning the Video Expert during action step distillation reduces
+the overall success rate while introducing additional training overhead (i.e., longer training time and
+higher peak memory usage, as reported in Appendix A). With the Video Expert frozen, augmenting
+LCD withL TA, yieldingTeacher-Anchored Consistency Distillation(TACD), further improves the
+reported overall success rate from 89.85% to 90.84%. This improvement is consistent with our
+analysis: the teacher anchor provides an endpoint reference from the complete teacher trajectory,
+supplementinglocalconsistency supervision with an explicit endpoint constraint to mitigateglobal
+deviations that the local objective may leave unresolved.
+Choice of teacher rollout stepsK.We further present results for different numbers of teacher
+rollout stepsK(Tab. 4). WithK= 5, the rollout may produce a less accurate approximationa T
+0 to
+the exact clean endpointa ⋆
+0, resulting in a larger numerical integration errorδand weaker endpoint
+supervision. This setting achieves a success rate of 90.39%, which improves to 90.84% whenK
+increases to 10. Further increasingKto 20 yields no additional improvement (90.77%) while re-
+quiring more teacher computation. We therefore adoptK= 10to balance policy performance and
+teacher rollout cost.
+Efficiency Results.RealtimeW AM reduces inference latency through algorithm and system co-
+optimization (Fig. 5). In addition to TACD and CEWP, we employ CUDA Graph and efficient
+kernels from LightX2V (LightX2V Contributors, 2025) (see Appendix F.2). On Fast-W AM and
+9
+
+PAGE 10
+Preprint
+Faster-W AM, TACD reduces latency from 299.7 and 218.9 ms to 65.8 and 57.1 ms, yielding4.56×
+and3.83×speedups, respectively. After enabling CUDA Graph, CEWP further reduces latency
+from 23.3 to 17.4 ms on Fast-W AM and from 26.2 to 22.4 ms on Faster-W AM, providing additional
+speedups of1.34×and1.17×. With all optimizations enabled, RealtimeW AM achieves inference
+latencies of 12.2 and 16.1 ms, corresponding to overall speedups of24.55×and13.56×over the
+respective baselines. Detailed latency results on other GPUs (e.g., RTX 4090D and RTX 5090) are
+provided in Appendix F.5 (Tab. F.3).
+6 CONCLUSION
+We presented RealtimeW AM, a post-training framework that accelerates MoT-based W AMs by ad-
+dressing intra-expert iteration and inter-expert waiting.Teacher-Anchored Consistency Distillation
+complements local consistency supervision with a teacher endpoint constraint, enabling accurate
+one-step action generation.Cross-Expert Wavefront Pipeliningoverlaps block-wise execution of
+the Video and Action Experts through fine-grained synchronization, reducing unnecessary waiting.
+RealtimeW AM enables real-time action generation (e.g., 12.2 ms latency) with near-lossless policy
+performance on MoT-based W AMs, including Fast-W AM and Faster-W AM, while delivering sig-
+nificant end-to-end speedups across diverse hardwares (e.g., approximately14∼25×on H100).
+AIUSE STATEMENT
+In this work, we used generative AI tools solely to improve the language and readability of the
+manuscript. We did not use these tools for any tasks requiring disclosure under the ICLR 2027 AI
+Policy for Authors. The authors reviewed all AI-assisted edits to ensure that they preserved the
+original technical meaning. We take responsibility for the final content of this work, including the
+AI-assisted language edits.
+REFERENCES
+Arman Akbari, Ci Zhang, Arash Akbari, Lin Zhao, Yixiao Chen, Weiwei Chen, Xuan Zhang, Geng
+Yuan, and Yanzhi Wang. Flash-wam: Modality-aware distillation for world action models.arXiv
+preprint arXiv:2606.05254, 2026.
+Michael S Albergo, Nicholas M Boffi, and Eric Vanden-Eijnden. Stochastic interpolants: A unifying
+framework for flows and diffusions.arXiv preprint arXiv:2303.08797, 2023.
+Hongzhe Bi, Hengkai Tan, Shenghao Xie, Zeyuan Wang, Shuhe Huang, Haitian Liu, Ruowen Zhao,
+Yao Feng, Chendong Xiang, Yinze Rong, et al. Motus: A unified latent action world model.
+InProceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp.
+35101–35113, 2026.
+Johan Bjorck, Fernando Casta ˜neda, Nikita Cherniadev, Xingye Da, Runyu Ding, Linxi Fan,
+Yu Fang, Dieter Fox, Fengyuan Hu, Spencer Huang, et al. Gr00t n1: An open foundation model
+for generalist humanoid robots.arXiv preprint arXiv:2503.14734, 2025.
+Kevin Black, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo
+Fusai, Lachy Groom, Karol Hausman, Brian Ichter, et al.π 0: A vision-language-action flow
+model for general robot control.arXiv preprint arXiv:2410.24164, 2024.
+Kevin Black, Manuel Y . Galliker, and Sergey Levine. Real-time execution of action chunking flow
+policies.arXiv preprint arXiv:2506.07339, 2025a.
+Kevin Black, Allen Z Ren, Michael Equi, and Sergey Levine. Training-time action conditioning for
+efficient real-time chunking.arXiv preprint arXiv:2512.05964, 2025b.
+Qingwen Bu, Yanting Yang, Jisong Cai, Shenyuan Gao, Guanghui Ren, Maoqing Yao, Ping Luo, and
+Hongyang Li. Univla: Learning to act anywhere with task-centric latent actions.arXiv preprint
+arXiv:2505.06111, 2025.
+10
+
+PAGE 11
+Preprint
+Jisong Cai, Long Ling, Shiwei Chu, Zhongshan Liu, Jiayue Kang, Zhixuan Liang, Wenjie Xu, Yinan
+Mao, Weinan Zhang, Xiaokang Yang, et al. Aha-wam: Asynchronous horizon-adaptive world-
+action modeling with observation-guided context routing.arXiv preprint arXiv:2606.09811,
+2026.
+Jun Cen, Chaohui Yu, Hangjie Yuan, Yuming Jiang, Siteng Huang, Jiayan Guo, Xin Li, Yibing
+Song, Hao Luo, Fan Wang, et al. Worldvla: Towards autoregressive action world model.arXiv
+preprint arXiv:2506.21539, 2025.
+Tianxing Chen, Zanxin Chen, Baijun Chen, Zijian Cai, Yibin Liu, Zixuan Li, Qiwei Liang, Xian-
+liang Lin, Yiheng Ge, Zhenyu Gu, et al. RoboTwin 2.0: A scalable data generator and bench-
+mark with strong domain randomization for robust bimanual robotic manipulation.arXiv preprint
+arXiv:2506.18088, 2025.
+Senyu Fei, Siyin Wang, Junhao Shi, Zihao Dai, Jikun Cai, Pengfang Qian, Li Ji, Xinzhe He, Shiduo
+Zhang, Zhaoye Fei, Jinlan Fu, Jingjing Gong, and Xipeng Qiu. LIBERO-Plus: In-depth robust-
+ness analysis of vision-language-action models.arXiv preprint arXiv:2510.13626, 2025.
+Zhengyang Geng, Mingyang Deng, Xingjian Bai, J. Zico Kolter, and Kaiming He. Mean flows for
+one-step generative modeling.arXiv preprint arXiv:2505.13447, 2025.
+Yuchao Gu, Guian Fang, Yuxin Jiang, Weijia Mao, Song Han, Han Cai, and Mike Zheng Shou.
+Anyflow: Any-step video diffusion model with on-policy flow map distillation. InEuropean
+Conference on Computer Vision, pp. 163–181. Springer, 2026.
+E. Hairer, S.P. Nørsett, and G. Wanner.Solving ordinary differential equations I: Nonstiff problems.
+Springer, 1993.
+Noriaki Hirose, Catherine Glossop, Dhruv Shah, and Sergey Levine. Asyncvla: An asynchronous
+vla for fast and robust navigation on the edge.arXiv preprint arXiv:2602.13476, 2026.
+Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising diffusion probabilistic models.NeurIPS, 33:
+6840–6851, 2020.
+Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang,
+and Weizhu Chen. Lora: Low-rank adaptation of large language models.arXiv preprint
+arXiv:2106.09685, 2021.
+Yushi Huang, Xiangxin Zhou, Jun Zhang, Liefeng Bo, and Tianyu Pang. Meanflownft: Bringing
+forward-process rl to average-velocity generators.arXiv preprint arXiv:2607.15273, 2026.
+Physical Intelligence, Kevin Black, Noah Brown, James Darpinian, Karan Dhabalia, Danny Driess,
+Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai, et al.π 0.5: a vision-language-action
+model with open-world generalization.arXiv preprint arXiv:2504.16054, 2025.
+Yuhua Jiang, Shuang Cheng, Yan Ding, Feifei Gao, and Biqing Qi. Asyncvla: Asynchronous flow
+matching for vision-language-action models.arXiv preprint arXiv:2511.14148, 2025.
+Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti, Ted Xiao, Ashwin Balakrishna, Suraj Nair,
+Rafael Rafailov, Ethan Foster, Grace Lam, Pannag Sanketi, et al. Openvla: An open-source
+vision-language-action model.arXiv preprint arXiv:2406.09246, 2024.
+Moo Jin Kim, Chelsea Finn, and Percy Liang. Fine-tuning vision-language-action models: Opti-
+mizing speed and success.arXiv preprint arXiv:2502.19645, 2025.
+Moo Jin Kim, Yihuai Gao, Tsung-Yi Lin, Yen-Chen Lin, Yunhao Ge, Grace Lam, Percy Liang,
+Shuran Song, Ming-Yu Liu, Chelsea Finn, et al. Cosmos policy: Fine-tuning video models for
+visuomotor control and planning.arXiv preprint arXiv:2601.16163, 2026.
+Lin Li, Qihang Zhang, Yiming Luo, Shuai Yang, Ruilin Wang, Fei Han, Mingrui Yu, Zelin Gao, Nan
+Xue, Xing Zhu, et al. Causal world modeling for robot control.arXiv preprint arXiv:2601.21998,
+2026a.
+11
+
+PAGE 12
+Preprint
+Zekai Li, Jiaming Tang, and Zhijian Liu. Flashvla: Streaming action decoding for fast and asyn-
+chronous vla inference.arXiv preprint arXiv:2608.27384, 2026b.
+Ziang Li, Dongzhou Cheng, Yibin Wang, Shiyue Wang, Xiaoyang Xu, Lingxuan Weng, Juan Wang,
+and Jiaqi Wang. Light-wam: Efficient world action models with state-fusion action decoding.
+arXiv preprint arXiv:2606.08242, 2026c.
+LightX2V Contributors. LightX2V: Light video generation inference framework.https://
+github.com/ModelTC/lightx2v, 2025.
+Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le. Flow matching
+for generative modeling.arXiv preprint arXiv:2210.02747, 2022.
+Bo Liu, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter Stone. LIBERO:
+Benchmarking knowledge transfer for lifelong robot learning.arXiv preprint arXiv:2306.03310,
+2023.
+Songming Liu, Lingxuan Wu, Bangguo Li, Hengkai Tan, Huayu Chen, Zhengyi Wang, Ke Xu,
+Hang Su, and Jun Zhu. Rdt-1b: a diffusion foundation model for bimanual manipulation. In
+International Conference on Learning Representations, volume 2025, pp. 29982–30009, 2025.
+Xingchao Liu, Chengyue Gong, and Qiang Liu. Flow straight and fast: Learning to generate and
+transfer data with rectified flow.arXiv preprint arXiv:2209.03003, 2022.
+Yuxiang Lu, Zhe Liu, Xianzhe Fan, Zhenya Yang, Jinghua Hou, Junyi Li, Kaixin Ding, and Heng-
+shuang Zhao. Faster: Rethinking real-time flow vlas.arXiv preprint arXiv:2603.19199, 2026.
+Motubrain Team. World action models in real time: An empirical study of smooth execution via
+asynchronous deployment.arXiv preprint arXiv:2608.01880, 2026.
+Karl Pertsch, Kyle Stachowicz, Brian Ichter, Danny Driess, Suraj Nair, Quan Vuong, Oier Mees,
+Chelsea Finn, and Sergey Levine. Fast: Efficient action tokenization for vision-language-action
+models.arXiv preprint arXiv:2501.09747, 2025.
+Tim Salimans and Jonathan Ho. Progressive distillation for fast sampling of diffusion models.arXiv
+preprint arXiv:2202.00512, 2022.
+Axel Sauer, Dominik Lorenz, Andreas Blattmann, and Robin Rombach. Adversarial diffusion dis-
+tillation. InEuropean Conference on Computer Vision, pp. 87–103. Springer, 2024.
+Mustafa Shukor, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, Steven Palma,
+Adil Zouitine, Michel Aractingi, Caroline Pascal, Martino Russi, Andres Marafioti, et al.
+Smolvla: A vision-language-action model for affordable and efficient robotics.arXiv preprint
+arXiv:2506.01844, 2025.
+Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli. Deep unsupervised
+learning using nonequilibrium thermodynamics. InICML, pp. 2256–2265. pmlr, 2015.
+Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben
+Poole. Score-based generative modeling through stochastic differential equations.arXiv preprint
+arXiv:2011.13456, 2020.
+Yang Song, Prafulla Dhariwal, Mark Chen, and Ilya Sutskever. Consistency models. InProceedings
+of the 40th International Conference on Machine Learning, pp. 32211–32252, 2023.
+J Michael Steele.The Cauchy-Schwarz master class: an introduction to the art of mathematical
+inequalities. Cambridge University Press, 2004.
+Jiaming Tang, Yufei Sun, Yilong Zhao, Shang Yang, Yujun Lin, Zhuoyang Zhang, James Hou,
+Yao Lu, Zhijian Liu, and Song Han. Vlash: Real-time vlas via future-state-aware asynchronous
+inference.arXiv preprint arXiv:2512.01031, 2025.
+Haoxuan Wang, Gengyu Zhang, Yan Yan, Yuzhang Shang, Ramana Rao Kompella, and Gaowen
+Liu. Real-time robot execution with masked action chunking.arXiv preprint arXiv:2601.20130,
+2026a.
+12
+
+PAGE 13
+Preprint
+Yihao Wang, Pengxiang Ding, Lingxiao Li, Can Cui, Zirui Ge, Xinyang Tong, Wenxuan Song,
+Han Zhao, Wei Zhao, Pengxu Hou, et al. Vla-adapter: An effective paradigm for tiny-scale
+vision-language-action model. InProceedings of the AAAI conference on artificial intelligence,
+volume 40, pp. 18638–18646, 2026b.
+Liuhaichen Yang, Zhuang Jiang, Chenchao Sheng, and Zezhi Tang. Wam-opd: On-policy distillation
+for world action models.arXiv preprint arXiv:2608.22364, 2026.
+Seonghyeon Ye, Yunhao Ge, Kaiyuan Zheng, Shenyuan Gao, Sihyun Yu, George Kurian, Suneel
+Indupuru, You Liang Tan, Chuning Zhu, Jiannan Xiang, et al. World action models are zero-shot
+policies.arXiv preprint arXiv:2602.15922, 2026.
+Tianwei Yin, Micha ¨el Gharbi, Taesung Park, Richard Zhang, Eli Shechtman, Fr ´edo Durand, and
+William T. Freeman. Improved distribution matching distillation for fast image synthesis.arXiv
+preprint arXiv:2405.14867, 2024.
+Tianyuan Yuan, Zibin Dong, Yicheng Liu, and Hang Zhao. Fast-wam: Do world action models need
+test-time future imagination?arXiv preprint arXiv:2603.16666, 2026.
+Weiheng Zhao, Haoyi Jiang, Xin Shi, Liu Liu, Fan Huang, Zhizhong Su, Wei Sui, and Xinggang
+Wang. Faster-wam: Efficient inference-time future conditioning for robust world action models.
+arXiv preprint arXiv:2608.04404, 2026.
+Jinliang Zheng, Jianxiong Li, Zhihao Wang, Dongxiu Liu, Xirui Kang, Yuchun Feng, Yinan Zheng,
+Jiayin Zou, Yilun Chen, Jia Zeng, et al. X-vla: Soft-prompted transformer as scalable cross-
+embodiment vision-language-action model. InInternational Conference on Learning Represen-
+tations, volume 2026, pp. 60580–60606, 2026.
+13
+
+PAGE 14
+Preprint
+APPENDIX
+A Limitations 14
+B Cross-Expert Wavefront Pipelining: Pseudocode 15
+C Complete Error Derivation 16
+C.1 Local Consistency and Endpoint Error . . . . . . . . . . . . . . . . . . . . . . . . 16
+C.2 Equivalence to Weighted Endpoint Supervision . . . . . . . . . . . . . . . . . . . 16
+C.3 Total Endpoint Error Bound . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+D Inference Equivalence of Asynchronous Execution 17
+E Inference Latency Analysis 17
+F More Experimental Details and Results 18
+F.1 Result sources and aggregation . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+F.2 Efficient Kernel Implementation . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+F.3 Detailed LIBERO Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+F.4 Additional Ablation Study . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+F.5 Latency on Additional GPUs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+F.6 Real-World Evaluation of Long-Horizon Garment Folding . . . . . . . . . . . . . 19
+A LIMITATIONS
+1) Applicability.RealtimeW AM targets MoT-based W AMs and is not directly applicable to shared-
+backbone architectures such as DreamZero (Ye et al., 2026). Step distillation in shared-backbone
+W AMs more closely resembles step distillation in video generation, making action-specific charac-
+teristics harder to isolate and motivating our focus on MoT architectures. Within this scope, our
+framework supports both models that omit explicit future-video prediction at inference (e.g., Fast-
+W AM (Yuan et al., 2026)) and those that retain it (e.g., Faster-W AM (Zhao et al., 2026)).
+2) Training overhead.The teacher-anchored lossL TA introduces additional training overhead by
+requiring multi-step rollouts from the frozen teacher. Nevertheless, this overhead remains manage-
+able: as shown in Tab. A.1, addingL TA increases training time from 5h 21min to 8h 3min (ap-
+proximately 50%), comparable to jointly fine-tuning the Video and Action Experts (8h 1min). By
+freezing the Video Expert, TACD reduces peak GPU memory from 65.98 to 24.73 GiB compared
+with joint fine-tuning, a 62.5% reduction, while retaining the same memory footprint as action-only
+consistency distillation.
+Table A.1: Training time and peak GPU memory for 30,000 training iterations on 16 NVIDIA H100
+GPUs.L CD andL TA denote the consistency and teacher-anchored losses, respectively. Video/Ac-
+tion indicate whether each expert is fine-tuned.
+LCD LTA Video Action Training Time↓Peak Memory (GiB)↓
+✓ ✗ ✓ ✓8h 1min 65.98
+✓ ✗ ✗ ✓5h 21min 24.73
+✓ ✓ ✗ ✓ 8h 3min 24.73
+14
+
+PAGE 15
+Preprint
+B CROSS-EXPERTWAVEFRONTPIPELINING: PSEUDOCODE
+Our Cross-Expert Wavefront Pipelining (CEWP) supports MoT-based W AMs, including both mod-
+els that omit explicit future-video prediction at inference (e.g., Fast-W AM (Yuan et al., 2026)) and
+those that retain it (e.g., Faster-W AM (Zhao et al., 2026)). Algorithm 1 presents a unified sched-
+ule for one paired forward pass. Input preparation, attention masks, output heads, and denoising
+schedules follow the base model.
+LetCdenote the video-conditioned action blocks, indexed from1. Fast-W AM usesC={1, . . . , N},
+whereas our Faster-W AM implementation usesC={1,5, . . . , N}. At each conditioning block,
+Fusereturns the single-block KV for Fast-W AM or the base model’s weighted fusion of the ac-
+cumulated interval KV for Faster-W AM. The video stream then records a readiness event, which
+the action stream waits on only before attention. Intervening action blocks require no cross-expert
+synchronization.
+Algorithm 1Cross-Expert Wavefront Pipelining for MoT-based W AMs.
+# hv: video states, including future tokens if used; ha: action states.
+# P: Q/K/V projection, including key normalization and RoPE.
+# R: remaining block operations; Mv, Ma: base-model masks.
+defcewp(hv, ha, N, C, retain_video=False):
+caller = current_stream()
+Sv, Sa = Stream(), Stream()
+ready = {i: Event()foriinC}
+Sv.wait_stream(caller)
+Sa.wait_stream(caller)
+pending, cache = [], {}
+foriin range(1, N + 1):
+withstream(Sv):
+qv, kv, vv = P_v[i](hv)
+pending.append((kv, vv))
+ifiinC:
+cache[i] = Fuse[i](pending)
+pending = []
+ready[i].record(Sv) # Publish before video attention.
+hv = R_v[i](hv, Attn_v[i](qv, kv, vv, Mv[i]))
+withstream(Sa):
+qa, ka, va = P_a[i](ha) # No video dependency yet.
+mask = None
+ifiinC:
+Sa.wait_event(ready[i]) # Wait only at consumption.
+kc, vc = cache[i]
+kc.record_stream(Sa)
+vc.record_stream(Sa)
+ka, va = cat(kc, ka), cat(vc, va)
+mask = Ma[i]
+ha = R_a[i](ha, Attn_a[i](qa, ka, va, mask))
+caller.wait_stream(Sv)
+caller.wait_stream(Sa)
+ha.record_stream(caller)
+hv.record_stream(caller)
+action_pred = ActionHead(ha)
+video_pred = VideoHead(hv)ifretain_videoelseNone
+returnaction_pred, video_pred
+15
+
+PAGE 16
+Preprint
+C COMPLETEERRORDERIVATION
+C.1 LOCALCONSISTENCY ANDENDPOINTERROR
+We fix the model parameters and omit the shared conditioningz(o, l). For0< t≤1, leta ⋆
+τ be the
+unique teacher ODE solution witha ⋆
+t =a t, and leta ⋆
+0 denote its exact endpoint. All expectations
+below use the same training sampling distribution, and we assume finite second moments for the
+errors and velocity residuals.
+Adding and subtracting the EMA prediction makes the two error terms explicit:
+etotal =f θS(at, t)−a ⋆
+0
+=f θS(at, t)−f θema(˜as, s)| {z }
+elocal
++f θema(˜as, s)−a ⋆
+0| {z }
+eglobal
+.
+Expanding the squared norm and taking expectations gives
+E∥etotal∥2
+2 =E∥e local∥2
+2 +E∥e global∥2
+2 + 2E⟨elocal,e global⟩.
+Cauchy–Schwarz (Steele, 2004) bounds the cross term as
+|E⟨elocal,e global⟩| ≤E[∥e local∥2∥eglobal∥2]
+≤
+q
+E∥elocal∥2
+2
+q
+E∥eglobal∥2
+2.
+Substitution yields
+E∥etotal∥2
+2 ≤
+q
+E∥elocal∥2
+2 +
+q
+E∥eglobal∥2
+2
+2
+,
+E∥etotal∥2
+2 ≥
+q
+E∥elocal∥2
+2 −
+q
+E∥eglobal∥2
+2
+2
+.
+(C.1)
+Thus, a small expected local error alone does not ensure a small expected total error without con-
+trol of the global target error. In particular,E∥e local∥2
+2 = 0impliesE∥e total∥2
+2 =E∥e global∥2
+2:
+agreement with the EMA target does not by itself establish that the target is accurate.
+C.2 EQUIVALENCE TOWEIGHTEDENDPOINTSUPERVISION
+The student and teacher use the same noisy actiona t and conditioningz(o, l). By Eqs. (3) and (7),
+fθS(at, t) =a t −t v θS(at, t), a T
+0 =a t −t u θT(at, t).
+Subtracting the two endpoints gives
+fθS(at, t)−a T
+0 =−t[v θS(at, t)−u θT(at, t)].(C.2)
+Since the teacher target is frozen, stop-gradient does not change its value. Taking squared norms,
+dividing byt 2, and averaging gives
+LTA =E at,t
+h
+∥vθS(at, t)−u θT(at, t)∥2
+2
+i
+=E at,t
+"
+at −f θS(at, t)
+t − at −a T
+0
+t
+
+2
+2
+#
+=E at,t
+"fθS(at, t)−a T
+0
+2
+2
+t2
+#
+, t >0.
+(C.3)
+Thus, the velocity loss is exactly a weighted endpoint loss, with1/t 2 inside the expectation. The
+equivalence holds for any teacher solver through the definition ofu θT.
+16
+
+PAGE 17
+Preprint
+C.3 TOTALENDPOINTERRORBOUND
+Letδ=a T
+0 −a ⋆
+0. Adding this numerical integration error to Eq. (C.2) gives
+etotal =
+ 
+fθS(at, t)−a T
+0
+
++δ
+=−t[v θS(at, t)−u θT(at, t)] +δ,
+which recovers Eq. (9). Applying a consequence of Cauchy–Schwarz (Steele, 2004)2, taking expec-
+tations, and using0< t≤1yields
+E∥etotal∥2
+2 ≤2E
+h
+t2 ∥vθS(at, t)−u θT(at, t)∥2
+2
+i
++ 2E∥δ∥2
+2
+≤2L TA + 2E∥δ∥2
+2.
+(C.4)
+This bounds the combined errorelocal +e global and does not require the two components to decrease
+separately.
+Teacher numerical integration error.Following the standard error analysis of the explicit Euler
+method (Hairer et al., 1993), we estimate the teacher’s numerical integration error for a uniform
+K-step rollout. Leth=t/K,τ k =t−kh, andˆa τk denote the Euler iterates initialized atˆaτ0 =a t.
+Assume the teacher velocity isL-Lipschitz in state and∥d2a⋆
+τ /dτ 2∥2 ≤M. ForD k =∥ˆaτk −a⋆
+τk ∥2,
+Taylor expansion givesD k+1 ≤(1 +Lh)D k +M h 2/2, withD 0 = 0. Summing this recurrence
+gives, forL >0,
+∥δ∥2 =D K ≤ M h
+2L
+
+(1 +Lh) K −1
+
+≤ M eLtt2
+2K .
+ForL= 0, the bound isM t 2/(2K). With uniformL, M, the numerical contribution to Eq. (C.4)
+isO(K −2). Increasing the number of teacher rollout stepsKtherefore tightens the error bound,
+providing explicit control over the teacher’s numerical integration error.
+D INFERENCEEQUIVALENCE OFASYNCHRONOUSEXECUTION
+Cross-Expert Wavefront Pipelining (CEWP) changes only the execution schedule, using the same
+parameters, inputs, attention masks, denoising timestep, and operators as sequential inference. We
+fix the initial action noise and any future-video noise so that both executions start from identical
+states(h v
+0, ha
+0). In our implementation, video KV cache entries are published after their required
+preprocessing, including key normalization and RoPE. The action stream waits on the corresponding
+event before concatenating video and action KV .
+Suppose both executions receive identical states at blocki. Equation (10) then gives identical Q/K/V
+tensors. The event dependency in Eq. (13) ensures that action attention consumes the same com-
+pleted video KV cache. Applying the same attention and remaining-block operators in Eq. (11)
+therefore produces identical next-block states for both experts. Induction fromi= 0gives, in exact
+arithmetic,
+bhv
+i =h v
+i , bha
+i =h a
+i , i∈ {0, . . . , N}.(D.1)
+where the hat denotes asynchronous execution. The unchanged action output head preserves this
+equality. CEWP is thus another valid topological ordering of the original computation graph, requir-
+ing no architectural modification or additional training, and is independent of TACD.
+For sparse conditioning in Algorithm 1, the same argument applies: each event is recorded after the
+required KV fusion, whose inputs and operator remain unchanged, while non-conditioning action
+blocks require no video KV . When future-video prediction is retained, the unchanged video output
+head likewise preserves the video prediction.
+E INFERENCELATENCYANALYSIS
+We model the execution time of the two experts, excluding common costs such as V AE encoding.
+LetT v andT a denote the standalone latencies of one Video Expert pass and one Action Expert pass,
+2For real vectorsp, q, Cauchy–Schwarz gives|⟨p, q⟩| ≤ ∥p∥ 2∥q∥2. Together with2ab≤a 2 +b 2, this
+yields∥p+q∥ 2
+2 =∥p∥ 2
+2 +∥q∥ 2
+2 + 2⟨p, q⟩ ≤2∥p∥ 2
+2 + 2∥q∥ 2
+2.
+17
+
+PAGE 18
+Preprint
+respectively, andSthe number of action denoising steps. Since the video KV cache is computed
+once and reused across steps, sequential execution requires
+Tseq(S) =T v +ST a.(E.1)
+After TACD, the Action Expert requires only one denoising step (S= 1), reducing the sequential
+latency to
+Tseq(1) =T v +T a.(E.2)
+CEWP further overlaps the two remaining expert passes through the block-wise schedule in Eq. (13).
+We model its latency as
+Tpipe(1) =T v +T a −T overlap + ∆,(E.3)
+whereT overlap denotes the execution time saved through overlap, and∆accounts for additional
+synchronization, scheduling, and resource-contention costs. Under ideal overlap,T overlap ≈
+min(Tv, Ta), giving
+Tpipe(1)≈max(T v, Ta) + ∆.(E.4)
+This is an ideal reference: block dependencies and shared GPU resources limit the overlap attainable
+in practice. TACD and CEWP thus address complementary sources of latency: TACD reduces the
+number of action passes, while CEWP overlaps the remaining video and action passes.
+F MOREEXPERIMENTALDETAILS ANDRESULTS
+F.1 RESULT SOURCES AND AGGREGATION
+For results quoted from prior work in Tabs. 1 and 2, we retain the scores and aggregates reported
+in Light-W AM (Li et al., 2026c), Flash-W AM (Akbari et al., 2026), and Faster-W AM (Zhao et al.,
+2026). On LIBERO and RoboTwin 2.0, we evaluate Fast-W AM and Faster-W AM using 10 action
+denoising steps, our implementations of the few-step distillation baselines (DMD, MeanFlow, and
+consistency distillation), and the RealtimeW AM variants. Unless otherwise specified, Realtime-
+W AM variants use the action-only LoRA post-training setting described in Sec. 5.1, with the Video
+Expert kept frozen to maintain the teacher conditioning during distillation. For our evaluations,
+Overall is the arithmetic mean of the four suite-level success rates on LIBERO and of the Clean
+and Random success rates on RoboTwin 2.0. On LIBERO-Plus, Overall is the average success rate
+across perturbation categories, weighted by the number of trials in each category.
+F.2 EFFICIENTKERNELIMPLEMENTATION
+We apply five operator-level optimizations to reduce kernel launches and intermediate memory traf-
+fic. (1) We fuse modulation and residual gating into separate element-wise kernels, preserving BF16
+intermediate rounding while keeping LayerNorm independent. (2) We fuse each Q/K RMSNorm
+into a single Triton kernel, retaining FP32 statistics and BF16 intermediate rounding. (3) We fuse
+RoPE type conversions and complex rotation into a single Triton kernel while retaining FP64 arith-
+metic. (4) We replace static all-True attention masks withNone, preserving masks that exclude
+attention positions. (5) We pack self-attention Q/K/V and cross-attention K/V projections into sin-
+gle GEMMs, leaving cross-attention Q separate. These optimizations complement CUDA Graph,
+which reduces CPU submission overhead but does not automatically fuse operators within the graph.
+F.3 DETAILEDLIBERO RESULTS
+Tab. F.1 reports success rates on each LIBERO task suite, complementing the overall results in
+Tab. 1. With one-step action generation, RealtimeW AM * matches the 97.0% overall success rate
+of 10-step Fast-W AM, while RealtimeW AM† achieves 99.0%, comparable to 10-step Faster-W AM
+(98.9%). Compared with Faster-W AM, RealtimeW AM† improves Goal success by 1.2 percentage
+points (99.6% vs. 98.4%), with modest reductions on Spatial and LIBERO-10, indicating that overall
+performance is preserved despite variations across task suites.
+18
+
+PAGE 19
+Preprint
+Table F.1: Detailed success rates (%) on the four LIBERO task suites.
+Method NFE LIBERO
+Video ActionSpatial↑Object↑Goal↑LIBERO-10↑Overall↑
+W AM and VLA Baselines
+π0 (Black et al., 2024) – – 96.8 98.8 95.8 85.2 94.1
+π0.5(Intelligence et al., 2025) – – 98.8 98.2 98.0 92.4 96.9
+X-VLA (Zheng et al., 2026) – – 98.2 98.6 97.8 97.6 98.1
+Motus (Bi et al., 2026) 10 10 96.8 99.8 96.6 97.6 97.7
+LingBot-V A (Li et al., 2026a) 20 50 98.5 99.6 97.2 98.5 98.5
+Fast-W AM (Yuan et al., 2026) 1 10 97.0 99.4 96.6 94.8 97.0
+Faster-W AM (Zhao et al., 2026) 1 10 99.2 99.6 98.4 98.4 98.9
+Other Efficient Variants
+Flash-W AM (Akbari et al., 2026) 1 2 97.0 92.8 96.4 98.0 96.1
+Flash-W AM (Akbari et al., 2026) 1 1 96.0 92.6 96.0 95.8 95.1
+Light-W AM (Li et al., 2026c) 1 1 98.2 99.6 97.8 93.0 97.2
+Few-Step Distillation
+Fast-W AM (Yuan et al., 2026) 1 1 94.8 96.8 96.6 91.8 95.0
+Mean Flow* (Geng et al., 2025) 1 1 97.4 99.6 96.8 93.8 96.9
+Consistency Distillation* (Song et al., 2023) 1 1 96.4 99.4 96.8 95.2 96.9
+DMD* (Yin et al., 2024) 1 1 97.0 99.4 95.8 92.2 96.1
+RealtimeW AM* 1 1 97.0 99.4 97.2 94.2 97.0
+RealtimeW AM† 1 1 98.8 99.8 99.6 97.6 99.0
+F.4 ADDITIONALABLATIONSTUDY
+We further investigate the start and end points of
+the teacher rollout used to constructL TA. We
+compare three intervals:1→0,t→r, and
+t→0, where1denotes pure noise,0denotes
+the clean endpoint, andtandr < tdenote in-
+termediate noise levels. As shown in Tab. F.2,
+t→0achieves the highest overall success rate
+of 90.84%, outperforming both the full-interval
+rollout1→0and the intermediate-interval roll-
+outt→r. We therefore adoptt→0as the
+default teacher rollout interval.
+Table F.2: Effect of teacher rollout intervals on
+RoboTwin 2.0. Results are success rates (%);
+best results are in bold.
+Rollout
+Interval Clean↑Random↑Overall↑
+1→091.2689.9090.63
+t→r90.96 89.46 90.23
+t→0 91.96 89.72 90.84
+F.5 LATENCY ONADDITIONALGPUS
+Tab. F.3 extends the latency evaluation to RTX 5090 and RTX 4090D. TACD alone yields3.5–
+5.0×speedups, while CUDA Graph and CEWP further reduce latency across all four model–GPU
+configurations. With all optimizations enabled, RealtimeW AM achieves14.1×and17.7×speedups
+on Fast-W AM, and6.9×and8.1×on Faster-W AM, for RTX 5090 and RTX 4090D, respectively.
+The current kernels are optimized primarily for NVIDIA H-series GPUs (e.g., H100), which may
+explain their smaller gains on RTX 5090 and RTX 4090D. We expect dedicated kernel tuning for
+these GPUs to yield larger speedups.
+F.6 REAL-WORLDEVALUATION OFLONG-HORIZONGARMENTFOLDING
+We qualitatively evaluate RealtimeW AM* on a real-world T-shirt-folding task using a bimanual
+setup comprising two PiPER robotic arms from AgileX Robotics 3, with policy inference running
+on an NVIDIA RTX 4090 GPU. As shown in Figure F.1, the task involves successive grasping and
+folding operations that transform an unfolded garment into a compact configuration. It requires
+temporally coordinated decisions because each fold changes the garment geometry and the grasp lo-
+3https://global.agilex.ai/products/piper
+19
+
+PAGE 20
+Preprint
+Table F.3: Inference latency (ms) on additional GPUs. Each entry reports latency followed by the
+cumulative speedup in parentheses, relative to the unoptimized baseline for the same model and
+GPU.
+TACD CUDA
+Graph CEWP Efficient
+Kernels
+Fast-W AM Faster-W AM
+RTX 5090 RTX 4090D RTX 5090 RTX 4090D
+✗ ✗ ✗ ✗251.5 (1.0×) 480.8 (1.0×) 214.1 (1.0×) 362.4 (1.0×)
+✗ ✓ ✗ ✗97.8 (2.6×) 106.1 (4.5×) 81.5 (2.6×) 96.0 (3.8×)
+✓ ✗ ✗ ✗54.3 (4.6×) 96.8 (5.0×) 60.7 (3.5×) 91.7 (4.0×)
+✓ ✓ ✗ ✗30.8 (8.2×) 35.3 (13.6×) 38.5 (5.6×) 54.9 (6.6×)
+✓ ✓ ✓ ✗24.3 (10.3×) 31.2 (15.4×) 34.7 (6.2×) 51.1 (7.1×)
+✓ ✓ ✓ ✓ 17.8 (14.1×) 27.2 (17.7×) 30.9 (6.9×) 44.7 (8.1×)
+Figure F.1:Real-world garment folding with AgileX PiPER.Four keyframes from the recorded
+rollout show the initial unfolded T-shirt, the configuration after the first fold, a narrow configura-
+tion after further lengthwise folding, and the final folded configuration. The rollout was executed
+with the one-step RealtimeW AM* model. Consecutive actions proceed without perceptible pauses,
+demonstrating the smooth, low-latency inference that sustains long-horizon deformable-object ma-
+nipulation.
+cations available for subsequent actions. Early misalignment can therefore affect later folds, making
+this task a useful setting for examining long-horizon manipulation of deformable objects.
+To meet the real-time requirement of this sequential setting, we deploy the RealtimeW AM* model
+distilled from Fast-W AM, using TACD for one-step action generation and CEWP for block-wise
+overlap between the Video and Action Experts. In the physical evaluation, consecutive actions pro-
+ceeded without perceptible pauses, enabling smooth real-time execution even without execution-
+level asynchrony between policy inference and robot execution, such as Real-Time Chunking
+(RTC) (Black et al., 2025a). The resulting low-latency inference allows the policy to maintain con-
+tinuous control throughout the long-horizon folding sequence. In the context of RealtimeW AM *,
+this task motivates preserving action quality under one-step action generation while reducing infer-
+ence overhead during sequential execution.
+20

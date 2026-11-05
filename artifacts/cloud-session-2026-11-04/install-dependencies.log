@@ -1,0 +1,66 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: matplotlib>=3.3 in /opt/conda/lib/python3.12/site-packages (3.11.1)
+Collecting opencv-python!=4.13.0.90,>=4.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cf/4c/c73f828fdbcd37eaf21d08fa852544a3ca7c2dbb3ea76873d64f2ea413d1/opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (73.8 MB)
+Collecting polars>=0.20
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d5/d4/e696a46c74ec8cac6434764deaf72f7edcc2e91c2145a9b3f61900a7aa7a/polars-2.1.0-py3-none-any.whl (911 kB)
+Collecting nvidia-ml-py>=12
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/53/a1/1681dfa1c904d4e3e72e51b55a0ff012d50b766843ef832d584abe2113c6/nvidia_ml_py-13.615.71-py3-none-any.whl (58 kB)
+Collecting ultralytics-thop>=2.2.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/43/e2/2a9d6f54393487ed3b44654fc9a73b86ae814751e230113b982b9c56a000/ultralytics_thop-2.2.4-py3-none-any.whl (32 kB)
+Collecting ultralytics-platform>=0.1.45
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/8c/7561a597f291ecce0a919d6e0bb0878b61eea54334dd9db59ea94f1bcfb5/ultralytics_platform-0.1.102-py3-none-any.whl (100 kB)
+Collecting pycocotools>=2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/23/59/dc81895beff4e1207a829d40d442ea87cefaac9f6499151965f05c479619/pycocotools-2.0.11-cp312-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (411 kB)
+Requirement already satisfied: contourpy>=1.0.1 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (1.5.0)
+Requirement already satisfied: numpy>=1.25 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (2.4.4)
+Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (26.0)
+Requirement already satisfied: pillow>=9 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (12.2.0)
+Requirement already satisfied: pyparsing>=3 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.12/site-packages (from matplotlib>=3.3) (2.9.0.post0)
+Collecting polars-runtime-32==2.1.0 (from polars>=0.20)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/e6/649c524252d32b24d0ba92278033823fa8e0040ee3748ce5afbeda107403/polars_runtime_32-2.1.0-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (53.9 MB)
+Requirement already satisfied: torch in /opt/conda/lib/python3.12/site-packages (from ultralytics-thop>=2.2.3) (2.12.1+cu130)
+Requirement already satisfied: httpx<1,>=0.28 in /opt/conda/lib/python3.12/site-packages (from ultralytics-platform>=0.1.45) (0.28.1)
+Requirement already satisfied: anyio in /opt/conda/lib/python3.12/site-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.45) (4.12.1)
+Requirement already satisfied: certifi in /opt/conda/lib/python3.12/site-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.45) (2026.6.17)
+Requirement already satisfied: httpcore==1.* in /opt/conda/lib/python3.12/site-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.45) (1.0.9)
+Requirement already satisfied: idna in /opt/conda/lib/python3.12/site-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.45) (3.18)
+Requirement already satisfied: h11>=0.16 in /opt/conda/lib/python3.12/site-packages (from httpcore==1.*->httpx<1,>=0.28->ultralytics-platform>=0.1.45) (0.16.0)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib>=3.3) (1.17.0)
+Requirement already satisfied: filelock in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (3.29.4)
+Requirement already satisfied: typing-extensions>=4.10.0 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (4.15.0)
+Requirement already satisfied: setuptools<82 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (81.0.0)
+Requirement already satisfied: sympy>=1.13.3 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (3.6.1)
+Requirement already satisfied: jinja2 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (2026.4.0)
+Requirement already satisfied: cuda-toolkit==13.0.2 in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.2)
+Requirement already satisfied: nvidia-cublas<=13.1.1.3,>=13.1.0.3 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (13.1.1.3)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (13.0.3)
+Requirement already satisfied: nvidia-cudnn-cu13==9.20.0.48 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (9.20.0.48)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.1 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (0.8.1)
+Requirement already satisfied: nvidia-nccl-cu13==2.29.7 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (2.29.7)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (3.4.5)
+Requirement already satisfied: triton==3.7.1 in /opt/conda/lib/python3.12/site-packages (from torch->ultralytics-thop>=2.2.3) (3.7.1)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (12.6.3.3)
+Requirement already satisfied: nvidia-nvjitlink==13.0.88.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.88)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in /opt/conda/lib/python3.12/site-packages (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->ultralytics-thop>=2.2.3) (13.0.85)
+Requirement already satisfied: cuda-pathfinder~=1.1 in /opt/conda/lib/python3.12/site-packages (from cuda-bindings<14,>=13.0.3->torch->ultralytics-thop>=2.2.3) (1.2.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/conda/lib/python3.12/site-packages (from sympy>=1.13.3->torch->ultralytics-thop>=2.2.3) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.12/site-packages (from jinja2->torch->ultralytics-thop>=2.2.3) (3.0.3)
+Installing collected packages: nvidia-ml-py, pycocotools, polars-runtime-32, opencv-python, polars, ultralytics-platform, ultralytics-thop
+Successfully installed nvidia-ml-py-13.615.71 opencv-python-5.0.0.93 polars-2.1.0 polars-runtime-32-2.1.0 pycocotools-2.0.11 ultralytics-platform-0.1.102 ultralytics-thop-2.2.4
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

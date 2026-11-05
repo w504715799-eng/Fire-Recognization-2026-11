@@ -1,0 +1,117 @@
+{
+  "key": "cqu",
+  "archive": "data/supplementary-verification-2026-10-16/cqu/original.zip",
+  "files": 22045,
+  "images": 11021,
+  "labels": 11021,
+  "class_mapping": {
+    "0": "fire",
+    "1": "smoke"
+  },
+  "by_split": {
+    "all": {
+      "images": 11021,
+      "both": 2830,
+      "image_readable": 11021,
+      "label_present": 11021,
+      "structurally_clean_images": 11021,
+      "small_fire_positive_images": 353,
+      "small_fire_boxes_640": 538,
+      "fire_boxes": 12589,
+      "smoke_boxes": 12226,
+      "clean_both": 2830,
+      "fire_only": 3999,
+      "clean_fire_only": 3999,
+      "smoke_only": 4190,
+      "clean_smoke_only": 4190,
+      "background": 2,
+      "clean_background": 2
+    },
+    "test": {
+      "images": 1107,
+      "both": 297,
+      "image_readable": 1107,
+      "label_present": 1107,
+      "structurally_clean_images": 1107,
+      "small_fire_positive_images": 35,
+      "small_fire_boxes_640": 53,
+      "fire_boxes": 1258,
+      "smoke_boxes": 1247,
+      "clean_both": 297,
+      "fire_only": 395,
+      "clean_fire_only": 395,
+      "smoke_only": 415,
+      "clean_smoke_only": 415
+    },
+    "train": {
+      "images": 8826,
+      "fire_only": 3218,
+      "image_readable": 8826,
+      "label_present": 8826,
+      "structurally_clean_images": 8826,
+      "small_fire_positive_images": 282,
+      "small_fire_boxes_640": 420,
+      "fire_boxes": 10090,
+      "clean_fire_only": 3218,
+      "smoke_only": 3358,
+      "smoke_boxes": 9724,
+      "clean_smoke_only": 3358,
+      "both": 2249,
+      "clean_both": 2249,
+      "background": 1,
+      "clean_background": 1
+    },
+    "valid": {
+      "images": 1088,
+      "smoke_only": 417,
+      "image_readable": 1088,
+      "label_present": 1088,
+      "structurally_clean_images": 1088,
+      "small_fire_positive_images": 36,
+      "small_fire_boxes_640": 65,
+      "smoke_boxes": 1255,
+      "clean_smoke_only": 417,
+      "fire_only": 386,
+      "fire_boxes": 1241,
+      "clean_fire_only": 386,
+      "both": 284,
+      "clean_both": 284,
+      "background": 1,
+      "clean_background": 1
+    }
+  },
+  "box_counts": {
+    "fire": 12589,
+    "smoke": 12226
+  },
+  "dimensions": {
+    "640x640": 11021
+  },
+  "orphan_labels": [],
+  "image_or_label_issue_images": 0,
+  "issue_types": {},
+  "other_entry_crc_errors": [],
+  "package_metadata": {
+    "README.dataset.txt": "# Fire Smoke Obstacle Dataset > Fire_Smoke Detection\nhttps://universe.roboflow.com/myworkspace-d5kq3/fire-smoke-obstacle-dataset\n\nProvided by a Roboflow user\nLicense: undefined\n\n",
+    "README.roboflow.txt": "\nFire Smoke Obstacle Dataset - v10 Fire_Smoke Detection\n==============================\n\nThis dataset was exported via roboflow.com on March 25, 2025 at 3:41 AM GMT\n\nRoboflow is an end-to-end computer vision platform that helps you\n* collaborate with your team on computer vision projects\n* collect & organize images\n* understand and search unstructured image data\n* annotate, and create datasets\n* export, train, and deploy computer vision models\n* use active learning to improve your dataset over time\n\nFor state of the art Computer Vision training notebooks you can use with this dataset,\nvisit https://github.com/roboflow/notebooks\n\nTo find over 100k other datasets and pre-trained models, visit https://universe.roboflow.com\n\nThe dataset includes 11027 images.\nFire-smoke-obstacle are annotated in YOLOv8 format.\n\nThe following pre-processing was applied to each image:\n* Auto-orientation of pixel data (with EXIF-orientation stripping)\n* Resize to 640x640 (Fit (black edges))\n* Auto-contrast via contrast stretching\n\nNo image augmentation techniques were applied.\n\n\n",
+    "data.yaml": "train: ../train/images\nval: ../valid/images\ntest: ../test/images\n\nnc: 2\nnames: ['fire', 'smoke']\n\nroboflow:\n  workspace: myworkspace-d5kq3\n  project: fire-smoke-obstacle-dataset\n  version: 10\n  license: Private\n  url: https://universe.roboflow.com/myworkspace-d5kq3/fire-smoke-obstacle-dataset/dataset/10"
+  },
+  "filename_proxy": {
+    "description": "within-dataset filename before Roboflow suffix; not event IDs; no files removed",
+    "groups": 7265,
+    "multi_file_groups": 2214,
+    "cross_split_proxy_groups": 879,
+    "groups_by_declared_state": {
+      "background": 2,
+      "both": 2159,
+      "fire_only": 2421,
+      "smoke_only": 3076
+    }
+  },
+  "uncompressed_bytes_all_entries": 539763798,
+  "ignored_packaging_files": 0,
+  "seconds": 6.376195291988552,
+  "cross_dataset_comparison_performed": false,
+  "files_removed": false,
+  "semantic_mapping_explicit": true
+}

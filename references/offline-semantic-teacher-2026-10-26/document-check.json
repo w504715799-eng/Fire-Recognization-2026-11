@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "version": "FIRE-MASTER-v1.10",
+  "user_principle_exact": true,
+  "data_split_manifests_unchanged": {
+    "homefire": true,
+    "fasdd-cv": true
+  },
+  "source_families": 3,
+  "evaluation_parts": 4,
+  "teacher_model": "Qwen/Qwen3.5-0.8B",
+  "teacher_cache_generated": false,
+  "teacher_weights_downloaded": false,
+  "student_weights_downloaded": false,
+  "model_experiments_run": 0,
+  "local_links_valid": true
+}

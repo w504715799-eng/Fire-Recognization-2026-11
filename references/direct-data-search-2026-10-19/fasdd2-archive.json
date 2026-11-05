@@ -1,0 +1,29 @@
+{
+  "url": "https://huggingface.co/datasets/seawsurf/fire_smoke_dataset_fasdd_cv/resolve/main/FASDD_CV.zip",
+  "archive_bytes": 3410626268,
+  "uncompressed_bytes": 3367440415,
+  "entries": 190257,
+  "extensions": {
+    ".jpg": 95126,
+    ".txt": 95128,
+    ".yaml": 3
+  },
+  "range_bytes": 25466057,
+  "first_paths": [
+    "train/images/bothFireAndSmoke_CV006114_jpg.rf.76b0d41f0406a0fc6991c3da9d75f349.jpg",
+    "train/images/bothFireAndSmoke_CV018757_jpg.rf.912fbdc4c9a006080b379549c3a617d1.jpg",
+    "train/images/bothFireAndSmoke_CV001729_jpg.rf.bb7f6a5acb0510d34ae35ed23b420983.jpg",
+    "train/images/bothFireAndSmoke_CV003068_jpg.rf.dfd67122b11651bc0884719677644540.jpg",
+    "train/images/fire_CV005622_jpg.rf.9409597eac72539b3076cc6997e37d23.jpg",
+    "train/images/neitherFireNorSmoke_CV027968_jpg.rf.fec49adcb0f945f3914bec7487673cee.jpg",
+    "train/images/bothFireAndSmoke_CV001197_jpg.rf.e7c4ad0a64374bb7c31a850b71193f56.jpg",
+    "train/images/neitherFireNorSmoke_CV004888_jpg.rf.a35726609311c6d0f3c6581ea31bd9f9.jpg",
+    "train/images/smoke_CV020201_jpg.rf.92a0a5ee48fdabf9668aaa78931a53da.jpg",
+    "train/images/neitherFireNorSmoke_CV020437_jpg.rf.0f9745b88be093164eaef4ec2c1d63e8.jpg",
+    "train/images/fire_CV004692_jpg.rf.d1f0b726c97a8d27e8669d5d894f94bb.jpg",
+    "train/images/bothFireAndSmoke_CV005492_jpg.rf.4646693021167e1953578350710f8f7d.jpg",
+    "train/images/bothFireAndSmoke_CV018764_jpg.rf.92ff164df24fb9426bf3309e2fbfb239.jpg",
+    "train/images/bothFireAndSmoke_CV005290_jpg.rf.9fb831955e366adaffe0046908c9b08c.jpg",
+    "train/images/smoke_CV013728_jpg.rf.1928b9a4858db065efe5fcd2e7f53839.jpg"
+  ]
+}

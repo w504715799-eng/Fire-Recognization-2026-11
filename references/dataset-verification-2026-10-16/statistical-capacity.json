@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-16",
+  "not_observed_model_results": true,
+  "assumptions": "Correct complete truth; independent paired binary image outcomes; one-sided alpha .05 and 80% power; no multiplicity adjustment. Raw label groups do not satisfy these assumptions yet.",
+  "pure_fire_noninferiority": {
+    "margin": 0.01,
+    "true_difference": 0,
+    "approximate_required_n_by_discordance": {
+      "0.01": 619,
+      "0.02": 1237,
+      "0.05": 3092,
+      "0.1": 6183
+    },
+    "zero_new_miss_one_sided95_upper": {
+      "cqu_nominal_pure_fire": {
+        "n": 3999,
+        "upper": 0.0007488398278796549
+      },
+      "cqu_test_nominal_pure_fire": {
+        "n": 395,
+        "upper": 0.007555445374172187
+      },
+      "indoor_label0_only": {
+        "n": 2165,
+        "upper": 0.0013827531717093278
+      },
+      "indoor_test_label0_only": {
+        "n": 326,
+        "upper": 0.009147269643070333
+      }
+    },
+    "note": "Image-level examples, not box-level recall or clustered-event proof; zero new misses differs from net noninferiority."
+  },
+  "far_improvement": {
+    "baseline": 0.01,
+    "proposed": 0.007,
+    "absolute_difference": 0.003,
+    "exact_one_sided_mcnemar_required_n": {
+      "0.003": 2239,
+      "0.007": 5178,
+      "0.017": 12242
+    },
+    "power_by_nominal_group": {
+      "cqu_all_nominal": {
+        "n": 4192,
+        "expected_baseline_alarms": 41.92,
+        "power_by_discordance": {
+          "0.003": 0.9949814808789722,
+          "0.007": 0.7104029484873169,
+          "0.017": 0.39245784289439706
+        }
+      },
+      "cqu_test_nominal": {
+        "n": 415,
+        "expected_baseline_alarms": 4.15,
+        "power_by_discordance": {
+          "0.003": 0.008860378525067911,
+          "0.007": 0.02795734800372649,
+          "0.017": 0.05072541016067963
+        }
+      },
+      "indoor_all_label1_only_provisional": {
+        "n": 2376,
+        "expected_baseline_alarms": 23.76,
+        "power_by_discordance": {
+          "0.003": 0.8387736958216776,
+          "0.007": 0.46074594508486133,
+          "0.017": 0.2520187031671734
+        }
+      },
+      "indoor_test_label1_only_provisional": {
+        "n": 358,
+        "expected_baseline_alarms": 3.58,
+        "power_by_discordance": {
+          "0.003": 0.004842276407657459,
+          "0.007": 0.018213812514093035,
+          "0.017": 0.042109348793809925
+        }
+      }
+    }
+  },
+  "decision": "Neither dataset is certified to fill the pure-fire or low-FAR validation gap; label semantics/completeness and source independence are unresolved."
+}

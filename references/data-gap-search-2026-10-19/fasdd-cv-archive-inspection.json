@@ -1,0 +1,31 @@
+{
+  "source_url": "https://huggingface.co/datasets/mountainmoon2000/wildfire_mm/resolve/main/FASDD_CV.zip",
+  "archive_bytes": 380667668,
+  "entries": 193749,
+  "uncompressed_bytes": 544626348,
+  "extension_counts": {
+    ".json": 4,
+    ".xml": 95314,
+    ".txt": 95317,
+    ".jpg": 3104
+  },
+  "first_paths": [
+    "FASDD_CV/",
+    "FASDD_CV/annotations/",
+    "FASDD_CV/annotations/COCO_CV/",
+    "FASDD_CV/annotations/COCO_CV/Annotations/",
+    "FASDD_CV/annotations/COCO_CV/Annotations/test.json",
+    "FASDD_CV/annotations/COCO_CV/Annotations/train.json",
+    "FASDD_CV/annotations/COCO_CV/Annotations/val.json",
+    "FASDD_CV/annotations/TDML_CV/",
+    "FASDD_CV/annotations/TDML_CV/FASDD_CV_TDML.json",
+    "FASDD_CV/annotations/VOC_CV/",
+    "FASDD_CV/annotations/VOC_CV/Annotations/",
+    "FASDD_CV/annotations/VOC_CV/Annotations/bothFireAndSmoke_CV000000.xml",
+    "FASDD_CV/annotations/VOC_CV/Annotations/bothFireAndSmoke_CV000001.xml",
+    "FASDD_CV/annotations/VOC_CV/Annotations/bothFireAndSmoke_CV000002.xml",
+    "FASDD_CV/annotations/VOC_CV/Annotations/bothFireAndSmoke_CV000003.xml",
+    "FASDD_CV/annotations/VOC_CV/Annotations/bothFireAndSmoke_CV000004.xml"
+  ],
+  "range_bytes_read": 28204348
+}

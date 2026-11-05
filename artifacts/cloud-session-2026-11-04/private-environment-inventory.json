@@ -1,0 +1,49 @@
+{
+  "prefix": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+  "private_packages": [
+    {
+      "name": "nvidia-ml-py",
+      "version": "13.615.71"
+    },
+    {
+      "name": "opencv-python",
+      "version": "5.0.0.93"
+    },
+    {
+      "name": "pip",
+      "version": "25.0.1"
+    },
+    {
+      "name": "polars",
+      "version": "2.1.0"
+    },
+    {
+      "name": "polars-runtime-32",
+      "version": "2.1.0"
+    },
+    {
+      "name": "pycocotools",
+      "version": "2.0.11"
+    },
+    {
+      "name": "ultralytics",
+      "version": "8.4.183"
+    },
+    {
+      "name": "ultralytics-platform",
+      "version": "0.1.102"
+    },
+    {
+      "name": "ultralytics-thop",
+      "version": "2.2.4"
+    }
+  ],
+  "logical_bytes": {
+    "/root/rivermind-data/FIRE_R2/.envs/sci-env": 406568743,
+    "/root/rivermind-data/FIRE_R2/.cache": 453,
+    "/root/rivermind-data/FIRE_R2/tmp": 0,
+    "/root/rivermind-data/FIRE_R2/incoming": 1123490
+  },
+  "weights_downloaded": false,
+  "base_modified": false
+}

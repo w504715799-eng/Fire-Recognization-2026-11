@@ -1,0 +1,18 @@
+{
+  "host": "hz01-ssh.gpuhome.cc",
+  "port": 30148,
+  "host_key": "Matched prior trusted key; no trust reset",
+  "hostname": "jupyter-7lrm3ongvydsr1db",
+  "data_volume_available": "45GiB",
+  "GPU": "RTX2080Ti 22528MiB",
+  "torch": "2.12.1+cu130",
+  "ultralytics": "8.4.183",
+  "homefire_ready_preserved": true,
+  "prior_dfire_partial_bytes": 37571008,
+  "price": null,
+  "user_authorization": "According to research need; training permitted",
+  "pilot_epochs": 3,
+  "pilot_training_cap_minutes": 30,
+  "weights_downloaded_only_to_cloud": 20422725,
+  "training_running": true
+}

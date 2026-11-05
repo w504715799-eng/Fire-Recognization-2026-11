@@ -1,0 +1,10 @@
+{
+  "salt": "fire-master-v1-20261022",
+  "rule": "sha256(salt|dataset|val|exact_original_file) sort; first floor(n/2) dev, remainder cal",
+  "homefire_dataset_key": "homefire",
+  "fasdd_cv_dataset_key": "fasdd_cv",
+  "original_train_and_test_unchanged": true,
+  "group_ids_available": false,
+  "cross_dataset_deduplication": false,
+  "scope": "existing-label manifests, image restoration pending"
+}

@@ -10,6 +10,7 @@ import tempfile
 import json
 
 ROOT=Path(__file__).resolve().parents[1]
+(ROOT/'tmp').mkdir(exist_ok=True)
 sys.path.insert(0,str(ROOT/'src'))
 from fire_r2.common import ProjectError
 from fire_r2.supervision import (SEMANTIC_FIELDS,SCENE_PROMPT,REGION_PROMPT,digest_object,
@@ -102,6 +103,12 @@ class SupervisionTests(unittest.TestCase):
     def test_schema_does_not_accept_extra_fields(self):
         raw={f:'yes' for f in SEMANTIC_FIELDS};raw['class']='fire'
         self.assertIsNone(parse_advice(raw,'A')[0])
+
+    def test_single_json_fence_is_transport_syntax_not_new_semantics(self):
+        raw={f:'uncertain' for f in SEMANTIC_FIELDS}
+        answer,status=parse_advice('```json\n'+json.dumps(raw)+'\n```','A')
+        self.assertEqual((answer,status),(raw,'ok'))
+        self.assertIsNone(parse_advice('Explanation before JSON '+json.dumps(raw),'A')[0])
 
     def test_schedule_one_quarter_batches(self):
         self.assertEqual([i for i in range(12) if consistent_batch(i)],[0,4,8])

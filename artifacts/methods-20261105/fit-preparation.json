@@ -1,0 +1,18 @@
+{
+  "scope": "all_source_fit",
+  "fit_images": 14122,
+  "task_A_calls": 14122,
+  "task_B_calls": 10722,
+  "total_calls": 24844,
+  "states": {
+    "empty": 6458,
+    "fire_only": 770,
+    "smoke_only": 3836,
+    "both": 3058
+  },
+  "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "uniform_supervision_sha256": "39e79c229d1cbd3c55c845ff225222d402cf5e58ebd6fe12f153e96dbba25d2c",
+  "uniform_supervision_bytes": 4998935,
+  "all_weights_one": true,
+  "teacher_executed": false
+}

@@ -102,6 +102,7 @@ def run_teacher(root,config,cloud,execute=False):
     binding={'manifest_sha256':mh,'teacher_revision':config['teacher_revision'],
              'selection_sha256':digest_object(sorted(r['sample_id'] for r in rows)),
              'scope':plan['scope'],'prompt_hashes':[hashlib.sha256(p.encode()).hexdigest() for p in (SCENE_PROMPT,REGION_PROMPT)],
+             'parser':'exact_json_or_single_json_fence_v1',
              'generation':{'do_sample':False,'max_new_tokens':192,'enable_thinking':False,'dtype':'float16'}}
     output.parent.mkdir(parents=True,exist_ok=True)
     partial=output.with_suffix('.partial.jsonl');meta=partial.with_suffix('.meta.json')
@@ -138,7 +139,8 @@ def run_teacher(root,config,cloud,execute=False):
             cache=build_cache(rows,mh,'/',infer,config['teacher_revision'],checkpoint=record,initial_samples=initial)
         calls=[c for item in cache['samples'].values() for c in item['calls']]
         cache.update(scope=plan['scope'],full_fit_count=full_fit_count,selection_sha256=binding['selection_sha256'],
-                     generation=binding['generation'],runtime={'elapsed_seconds':time.monotonic()-started,
+                     generation=binding['generation'],parser=binding['parser'],runtime={'elapsed_seconds':time.monotonic()-started,
+                         'runner_sha256':sha256(__file__),
                          'peak_allocated_bytes':torch.cuda.max_memory_allocated(),'calls':len(calls),
                          'torch':torch.__version__,'transformers':importlib.metadata.version('transformers'),
                          'gpu':torch.cuda.get_device_name(0),

@@ -5,6 +5,7 @@ from collections import defaultdict
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 
 from .common import ProjectError,sha256
@@ -14,9 +15,10 @@ SEMANTIC_FIELDS = ("fire_visible", "smoke_visible", "cloud_fog_like",
 SCENE_PROMPT = ('Describe only visible evidence in this image. Return one JSON object with exactly '
                 + ', '.join(SEMANTIC_FIELDS) + '. Each value must be yes, no, or uncertain. '
                 'Do not infer fire from smoke alone. Use uncertain when evidence is insufficient.')
-REGION_PROMPT = ('Inspect the neutral outlined region 1 and its context. Return exactly '
-                 '{"content":"fire|smoke|both|other|uncertain",'
-                 '"visibility":"clear|limited|unjudgeable"}. Describe visible content; do not infer an unseen object.')
+REGION_PROMPT = ('Inspect the neutral outlined region 1 and its context. Return one JSON object '
+                 'with exactly two fields: content and visibility. Choose one content value from '
+                 'fire, smoke, both, other, uncertain. Choose one visibility value from clear, limited, '
+                 'unjudgeable. Describe visible content; do not infer an unseen object. No other text.')
 
 
 def digest_object(value):
@@ -43,6 +45,9 @@ def group_key(row):
 def parse_advice(raw, task):
     """Technical failures become explicit missing supervision, never new labels."""
     try:
+        if isinstance(raw,str):
+            fenced=re.fullmatch(r'\s*```(?:json)?\s*\n?(.*?)\s*```\s*',raw,re.DOTALL)
+            if fenced:raw=fenced.group(1)
         obj=json.loads(raw) if isinstance(raw,str) else raw
         if task=='A':
             valid=isinstance(obj,dict) and set(obj)==set(SEMANTIC_FIELDS) and all(v in {'yes','no','uncertain'} for v in obj.values())

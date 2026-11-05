@@ -78,7 +78,7 @@ def training_plan(root, config, cloud):
                 "complete verified data view", "existing locally staged cloud checkpoint with SHA-256",
                 "project-specific sci-env", "shared cooperative GPU lock"],
             "train_parameters":config["train"],
-            "checkpoint_policy":"native Ultralytics best/last plus best_fire selected by validation fire AP"}
+            "checkpoint_policy":"native fire dev AP" if factors.get('native') else "original-GT COCO fire dev AP, earliest exact tie"}
 
 
 def execute_training(root, config, cloud):

@@ -1,16 +1,16 @@
 {
   "checked_at": "2026-11-05T09:19:41.370016+00:00",
   "local_tests": {
-    "run": 59,
+    "run": 60,
     "skipped": 11,
     "success": true,
     "model_weights_loaded": false
   },
   "cloud_cpu_tests": {
-    "run": 59,
+    "run": 60,
     "skipped": 0,
     "success": true,
-    "seconds": 7.433
+    "log": "cpu-tests-final.log"
   },
   "trainer_first_failure": "custom batch_sampler cleared DataLoader.batch_size required by pinned trainer",
   "fix": "preserve batch_size metadata; iteration uses original full-batch sampler",
@@ -18,5 +18,13 @@
   "gpu_preflight": "queued after existing D-Fire100 epochs",
   "teacher_pilot": "queued, fit-only four states x2 fixed selection",
   "method_effectiveness_results": false,
-  "baseline_completed_epochs_at_snapshot": 44
+  "baseline_completed_epochs_at_snapshot": 44,
+  "initial_cloud_cpu_tests": {
+    "run": 59,
+    "skipped": 0,
+    "success": true,
+    "seconds": 7.433
+  },
+  "full_fit_supervision": "14122 images, all weights one, complete source manifest binding",
+  "teacher_calls_required": 24844
 }

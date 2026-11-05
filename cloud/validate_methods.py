@@ -44,15 +44,21 @@ def main():
                        'r2_weights':torch.tensor([.8,1.2] if factors['weighting']!='uniform' else [1.,1.],device='cuda'),
                        'r2_targets':torch.tensor([[1,0,0,1,0,0],[0,1,1,0,0,1]],device='cuda',dtype=torch.float32),
                        'r2_mask':torch.ones(2,6,device='cuda',dtype=torch.bool),'r2_warmup':1.}
-                losses=[];tick=time.monotonic()
-                for _ in range(2):
+                losses=[];tick=time.monotonic();overflows=0
+                for attempt in range(12):
                     optimizer.zero_grad(set_to_none=True)
                     with torch.autocast('cuda',dtype=torch.float16):loss,items=model(batch)
                     if not torch.isfinite(loss):raise ProjectError(f'Nonfinite {variant} loss')
                     scaler.scale(loss).backward();scaler.unscale_(optimizer)
-                    if any(p.grad is not None and not torch.isfinite(p.grad).all() for p in model.parameters()):
-                        raise ProjectError(f'Nonfinite {variant} gradient')
-                    scaler.step(optimizer);scaler.update();losses.append(float(loss.detach()))
+                    finite=all(p.grad is None or torch.isfinite(p.grad).all() for p in model.parameters())
+                    # Follow native GradScaler overflow recovery: skip the update
+                    # and reduce the scale, rather than misclassifying warmup as
+                    # a successful optimizer step or silently accepting NaNs.
+                    scaler.step(optimizer);scaler.update()
+                    if finite:losses.append(float(loss.detach()))
+                    else:overflows+=1
+                    if len(losses)==2:break
+                if len(losses)!=2:raise ProjectError(f'AMP gradients did not stabilize for {variant}')
                 model.eval()
                 with torch.no_grad():before=model(batch['img'])[0].clone()
                 model.strip_training_heads()
@@ -61,6 +67,7 @@ def main():
                 torch.cuda.synchronize()
                 report['variants'].append({'variant':variant,'optimizer_steps':2,'losses':losses,
                     'loss_items':{k:float(v) for k,v in items.items()},'finite_gradients':True,'amp':True,
+                    'amp_skipped_overflow_steps':overflows,'final_grad_scale':scaler.get_scale(),
                     'deployment_output_unchanged':True,'peak_allocated_bytes':torch.cuda.max_memory_allocated(),
                     'seconds':time.monotonic()-tick})
                 write_json(out,report);print(json.dumps(report['variants'][-1]),flush=True)

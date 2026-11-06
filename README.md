@@ -36,3 +36,5 @@ python -B code/fire_r2_cli.py train
 仓库为`https://github.com/w504715799-eng/Fire-Recognization-2026-11.git`，主分支`main`。每个实际研究阶段完成后同步代码、方案、参数、步骤、完整指标及结果说明；进行中结果标注快照时间。推送前运行`python -B code/check_repository_export.py`检查暂存文件，禁止密钥、权重和大数据混入。
 
 保留完整可追溯记录，不通过删除失败实验或中间指标改变结论。远端已有更新先拉取并合并，不强制覆盖。GitHub插件可用于已授权发布；本机Git HTTPS登录与插件登录独立，未配置Git凭据时不把token写进脚本或仓库。
+
+2026-11-06：配对B完整训练已启动；教师v2约束输出/细框输入/批量处理代码通过64项云端CPU检查。B结束后的教师先导与独立M已排队，实际状态与结果见results/teacher-protocol-v2-20261106及总方案。

@@ -6,7 +6,7 @@ from pathlib import Path
 import argparse,csv,json,os,subprocess,sys,time
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
-from fire_r2.common import ProjectError,child,file_lock,read_json,write_json
+from fire_r2.common import ProjectError,child,file_lock,read_json,write_json,output_path
 from fire_r2.runtime import check_remote_environment
 from fire_r2.cloud import now
 
@@ -25,10 +25,13 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--cloud-config',required=True);p.add_argument('--config',required=True);a=p.parse_args()
     cloud=read_json(ROOT/a.cloud_config);cfg=read_json(ROOT/a.config)
     check_remote_environment(ROOT,cloud)
-    dest=ROOT/'artifacts/methods-20261105/next-stage-status.json'
+    dest=output_path(ROOT,cfg.get('status_output','artifacts/methods-20261105/next-stage-status.json'))
+    queue_id=cfg.get('queue_id','next-stage')
+    if not queue_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in queue_id):
+        raise ProjectError('Invalid queue ID')
     record={'status':'waiting_for_own_baseline','started_at':now(),'baseline':cfg['baseline_run'],'stages':[]}
     started=time.monotonic()
-    with file_lock(ROOT/'artifacts/.locks/next-stage.lock'):
+    with file_lock(ROOT/'artifacts/.locks'/(queue_id+'.lock')):
         if dest.exists():raise ProjectError('Queue status exists; inspect before restarting')
         write_json(dest,record)
         try:
@@ -53,12 +56,27 @@ def main():
                 log=child(ROOT,stage['log']);log.parent.mkdir(parents=True,exist_ok=True)
                 args=[sys.executable,'-B',*stage['args']]
                 stamp={'name':stage['name'],'started_at':now(),'log':stage['log']};record['stages'].append(stamp);write_json(dest,record)
-                with log.open('x') as stream:
-                    result=subprocess.run(args,cwd=ROOT,stdout=stream,stderr=subprocess.STDOUT,
-                                          timeout=float(stage['timeout_seconds']))
-                stamp.update(finished_at=now(),returncode=result.returncode);write_json(dest,record)
-                if result.returncode:raise ProjectError('Stage failed; preserve logs and diagnose: '+stage['name'])
-            record.update(status='completed',finished_at=now())
+                try:
+                    with log.open('x') as stream:
+                        timeout=stage.get('timeout_seconds')
+                        result=subprocess.run(args,cwd=ROOT,stdout=stream,stderr=subprocess.STDOUT,
+                                              timeout=float(timeout) if timeout is not None else None)
+                    stamp.update(finished_at=now(),returncode=result.returncode)
+                except subprocess.TimeoutExpired:
+                    stamp.update(finished_at=now(),returncode=None,error='stage_timeout')
+                if stamp['returncode']==0 and stage.get('expected_training_epochs'):
+                    csv_path=ROOT/'runs'/stage['run_name']/'results.csv'
+                    completed=len(list(csv.DictReader(csv_path.open()))) if csv_path.exists() else 0
+                    stamp['completed_epochs']=completed
+                    stamp['expected_epochs']=stage['expected_training_epochs']
+                    if completed<stage['expected_training_epochs']:
+                        stamp['error']='training_stopped_before_expected_epochs'
+                        write_json(dest,record)
+                        raise ProjectError('Training checkpoint retained; expected epoch count not completed')
+                write_json(dest,record)
+                if stamp['returncode']!=0 and not stage.get('continue_on_failure',False):
+                    raise ProjectError('Stage failed; preserve logs and diagnose: '+stage['name'])
+            record.update(status='completed_with_stage_failures' if any(s['returncode']!=0 for s in record['stages']) else 'completed',finished_at=now())
         except BaseException as exc:
             record.update(status='needs_attention',error=f'{type(exc).__name__}: {exc}',finished_at=now())
             raise

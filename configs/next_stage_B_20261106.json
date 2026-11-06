@@ -1,0 +1,71 @@
+{
+  "queue_id": "after-B-20261106",
+  "status_output": "artifacts/methods-20261106/after-B-status.json",
+  "baseline_run": "dfire_B_seed17_full_20261106",
+  "baseline_config": "configs/train_dfire_B_20261106.json",
+  "expected_epochs": 100,
+  "max_wait_hours": 10,
+  "stages": [
+    {
+      "name": "teacher_v2_serial",
+      "args": [
+        "code/fire_r2_cli.py",
+        "teacher",
+        "--config",
+        "configs/teacher_dfire_v2_serial.json",
+        "--cloud-config",
+        "configs/cloud.experiments.local.json",
+        "--execute"
+      ],
+      "log": "logs/teacher-v2_serial-20261106.log",
+      "timeout_seconds": 2100,
+      "continue_on_failure": true
+    },
+    {
+      "name": "teacher_v2_batch4",
+      "args": [
+        "code/fire_r2_cli.py",
+        "teacher",
+        "--config",
+        "configs/teacher_dfire_v2_batch4.json",
+        "--cloud-config",
+        "configs/cloud.experiments.local.json",
+        "--execute"
+      ],
+      "log": "logs/teacher-v2_batch4-20261106.log",
+      "timeout_seconds": 2100,
+      "continue_on_failure": true
+    },
+    {
+      "name": "teacher_v2_expanded",
+      "args": [
+        "code/fire_r2_cli.py",
+        "teacher",
+        "--config",
+        "configs/teacher_dfire_v2_expanded.json",
+        "--cloud-config",
+        "configs/cloud.experiments.local.json",
+        "--execute"
+      ],
+      "log": "logs/teacher-v2_expanded-20261106.log",
+      "timeout_seconds": 2100,
+      "continue_on_failure": true
+    },
+    {
+      "name": "paired_M_full",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_M_20261106.json",
+        "--cloud-config",
+        "configs/cloud.M.local.json",
+        "--execute"
+      ],
+      "log": "logs/dfire-M-full-20261106.log",
+      "timeout_seconds": null,
+      "expected_training_epochs": 100,
+      "run_name": "dfire_M_seed17_full_20261106"
+    }
+  ]
+}

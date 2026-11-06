@@ -89,7 +89,9 @@ def validate_cache(cache, rows, manifest_sha256):
     if set(cache.get('samples',{}))!=expected:raise ProjectError('Cache must explicitly cover every fit sample, including failures, and no dev/cal/test sample')
     for key in ('teacher_id','teacher_revision','prompt_hashes'):
         if not cache.get(key):raise ProjectError(f'Missing cache provenance: {key}')
-    prompts={'A':hashlib.sha256(SCENE_PROMPT.encode()).hexdigest(),'B':hashlib.sha256(REGION_PROMPT.encode()).hexdigest()}
+    from .teacher_protocols import protocol
+    spec=protocol(cache.get('protocol','v1'))
+    prompts={task:hashlib.sha256(spec[task].encode()).hexdigest() for task in ('A','B')}
     if cache['prompt_hashes']!=prompts:raise ProjectError('Cache prompt revision differs from the frozen prompts')
     for row in fit_rows(rows):
         item=cache['samples'][row['sample_id']]

@@ -1,0 +1,58 @@
+{
+  "model_weights_loaded": false,
+  "uses_gpu": false,
+  "protocol": "v2",
+  "tasks": {
+    "A": {
+      "answer_count": 729,
+      "max_new_tokens": 42,
+      "input_shape": [
+        2,
+        549
+      ],
+      "pixel_values_shape": [
+        3200,
+        1536
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "different_images_have_different_pixels": true
+    },
+    "B": {
+      "answer_count": 15,
+      "max_new_tokens": 13,
+      "input_shape": [
+        2,
+        520
+      ],
+      "pixel_values_shape": [
+        3200,
+        1536
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "different_images_have_different_pixels": true
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,52 @@
+{
+  "identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "model_weights_loaded": false,
+  "uses_gpu": false,
+  "fresh_trie": {
+    "A": {
+      "answers": 729,
+      "max_new_tokens": 42,
+      "eos": 151645,
+      "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+    },
+    "B": {
+      "answers": 15,
+      "max_new_tokens": 13,
+      "eos": 151645,
+      "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+    }
+  },
+  "token_masks": [
+    {
+      "task": "scene_presence",
+      "input_length": 460,
+      "image_tokens": 400,
+      "supervised_positions": [
+        451,
+        457
+      ],
+      "supervised_token_text": "yesno",
+      "format_and_prompt_tokens_masked": true,
+      "synthetic_processor_fixture_not_training": true
+    },
+    {
+      "task": "region_class",
+      "input_length": 448,
+      "image_tokens": 400,
+      "supervised_positions": [
+        445
+      ],
+      "supervised_token_text": "fire",
+      "format_and_prompt_tokens_masked": true,
+      "synthetic_processor_fixture_not_training": true
+    }
+  ],
+  "status": "passed"
+}

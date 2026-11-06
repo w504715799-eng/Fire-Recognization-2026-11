@@ -1,0 +1,4364 @@
+{
+  "status": "completed",
+  "prerecorded_criteria_sha256": "945390dd1604178bbefabc0bd534be03f155ccc7bacf82e0c1928011b302ce33",
+  "criteria": {
+    "status": "one_bounded_diagnostic_not_training_authorization",
+    "teacher_protocol": "v2_frozen",
+    "sample_scope": "same_development_64_fit_images",
+    "max_seconds": 1200,
+    "threads": 6,
+    "dtype": "float32",
+    "score": "r=1+0.25*mean(P_support-P_opposition); uncertain has zero signed contribution",
+    "normalization": "original_state_x_small_fire_group_mean",
+    "continue_signal": {
+      "all_queries_recorded": true,
+      "minimum_groups_with_at_least_6_images": 2,
+      "minimum_normalized_weight_IQR": 0.05,
+      "all_weights_positive": true,
+      "group_mass_preserved": true,
+      "maximum_visual_screening_images": 8,
+      "screening": "4 lowest and 4 highest normalized weights; ties by sample ID; assistant screening is not independent human truth"
+    },
+    "stop_conditions": [
+      "constant or negligible within-group intervention",
+      "invalid or incomplete conditional score extraction",
+      "obvious wrong weighting of visibly correct targets during bounded screening",
+      "no task-based reliability evidence beyond arbitrary numeric variation"
+    ],
+    "no_coefficient_or_temperature_search": true,
+    "no_full_fit_teacher_or_W_training_from_this_probe": true
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "gpu_lock_acquired": false,
+  "training_before": {
+    "epochs": 74,
+    "recent_epoch_seconds": [
+      147.8,
+      150.1,
+      150.1
+    ]
+  },
+  "queries": [
+    {
+      "sample_id": "dfire/train/train/images/AoF04755.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.17698560655117035,
+          "smoke": 0.31064310669898987,
+          "both": 0.06556948274374008,
+          "other": 0.023121291771531105,
+          "uncertain": 0.4236806035041809
+        },
+        "visibility": {
+          "clear": 0.036004479974508286,
+          "limited": 0.7263514995574951,
+          "unjudgeable": 0.23764406144618988
+        }
+      },
+      "image_sha256": "b2c6ae944753f697248965421ca0be7596af8dd8c2165adcfec0b7d8b0b9f1b1",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 7.062374576926231,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00046.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5806610584259033,
+          "smoke": 0.29459381103515625,
+          "both": 0.0485171340405941,
+          "other": 0.011438162997364998,
+          "uncertain": 0.06478986889123917
+        },
+        "visibility": {
+          "clear": 0.26037225127220154,
+          "limited": 0.5825427770614624,
+          "unjudgeable": 0.15708501636981964
+        }
+      },
+      "image_sha256": "eca9a6f042ddb1e47b1c90c805c53d0ebddaa82f2f406d13108bf53370d7e199",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.189813895151019,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04162.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.8036035895347595,
+          "smoke": 0.08857322484254837,
+          "both": 0.09702590107917786,
+          "other": 0.006612096913158894,
+          "uncertain": 0.004185153637081385
+        },
+        "visibility": {
+          "clear": 0.3585980236530304,
+          "limited": 0.5387734174728394,
+          "unjudgeable": 0.10262861847877502
+        }
+      },
+      "image_sha256": "9cf6dac0c76b645eaea33bd3547394e559075cf6747caae645fd697d0cde85c4",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.136093686334789,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04645.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.18980862200260162,
+          "smoke": 0.2164451628923416,
+          "both": 0.13281747698783875,
+          "other": 0.012757344171404839,
+          "uncertain": 0.4481714069843292
+        },
+        "visibility": {
+          "clear": 0.0654226541519165,
+          "limited": 0.7674992084503174,
+          "unjudgeable": 0.16707822680473328
+        }
+      },
+      "image_sha256": "02cc4a9163e003d224cd35ee1a44da6870a863af7c1a3cec51c80fd107736986",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.581695823930204,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05002.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4347746968269348,
+          "smoke": 0.2231583446264267,
+          "both": 0.21581485867500305,
+          "other": 0.01910324953496456,
+          "uncertain": 0.10714894533157349
+        },
+        "visibility": {
+          "clear": 0.22651633620262146,
+          "limited": 0.6591790914535522,
+          "unjudgeable": 0.11430457979440689
+        }
+      },
+      "image_sha256": "fafaf16983099140adfd73a410a5e4f7d8b85f15f20fe70d131800786df65084",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.321598927024752,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04951.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.30731117725372314,
+          "smoke": 0.2787685990333557,
+          "both": 0.25425776839256287,
+          "other": 0.01725289411842823,
+          "uncertain": 0.1424095779657364
+        },
+        "visibility": {
+          "clear": 0.19489839673042297,
+          "limited": 0.674084484577179,
+          "unjudgeable": 0.13101714849472046
+        }
+      },
+      "image_sha256": "1f075c2e7b8de8e48ed73f6884fa308372fe43f9115af15a8974b70feaf983f6",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.032959900330752,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00008.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3819407820701599,
+          "smoke": 0.27514517307281494,
+          "both": 0.2777128219604492,
+          "other": 0.010929368436336517,
+          "uncertain": 0.054271865636110306
+        },
+        "visibility": {
+          "clear": 0.20371940732002258,
+          "limited": 0.6904356479644775,
+          "unjudgeable": 0.10584498941898346
+        }
+      },
+      "image_sha256": "5afefa0dc639dc8318c2ff9385df2b254b6247d0255f7bbb88f9881639d7830d",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.389513320289552,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05396.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.6341052055358887,
+          "smoke": 0.16598953306674957,
+          "both": 0.13349519670009613,
+          "other": 0.015283793210983276,
+          "uncertain": 0.05112630873918533
+        },
+        "visibility": {
+          "clear": 0.16575992107391357,
+          "limited": 0.7130336761474609,
+          "unjudgeable": 0.12120641022920609
+        }
+      },
+      "image_sha256": "a48036cabf588903c07d9b361d75333cc155a90bab8737db0485223ebc19c903",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.709223767276853,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04712.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3285660743713379,
+          "smoke": 0.2982751429080963,
+          "both": 0.19646687805652618,
+          "other": 0.019459720700979233,
+          "uncertain": 0.1572321206331253
+        },
+        "visibility": {
+          "clear": 0.18887008726596832,
+          "limited": 0.7006167769432068,
+          "unjudgeable": 0.11051315069198608
+        }
+      },
+      "image_sha256": "d78bba421146dda664d4a4770991af982df02c40998309aee6d3aad316d5daba",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.218108708970249,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03883.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5010255575180054,
+          "smoke": 0.31497591733932495,
+          "both": 0.11568965017795563,
+          "other": 0.020256344228982925,
+          "uncertain": 0.048052530735731125
+        },
+        "visibility": {
+          "clear": 0.20242977142333984,
+          "limited": 0.6742326617240906,
+          "unjudgeable": 0.12333754450082779
+        }
+      },
+      "image_sha256": "21e5119eb67a5525e91df9063c8b6cee1cc2bb577be7122c804e3d716c27fa57",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.197728477418423,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04215.jpg",
+      "task": "B",
+      "original_annotation_id": 5,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4998021423816681,
+          "smoke": 0.20469042658805847,
+          "both": 0.17486707866191864,
+          "other": 0.02495226450264454,
+          "uncertain": 0.0956881195306778
+        },
+        "visibility": {
+          "clear": 0.1635310798883438,
+          "limited": 0.7139842510223389,
+          "unjudgeable": 0.1224847286939621
+        }
+      },
+      "image_sha256": "dd8c6a5e9c75e5cc541356357093cfbe175ad4793e4f4b3622f5bb47e7752e6a",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.0207047667354345,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04905.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3961941599845886,
+          "smoke": 0.2075856328010559,
+          "both": 0.20863117277622223,
+          "other": 0.022409500554203987,
+          "uncertain": 0.16517940163612366
+        },
+        "visibility": {
+          "clear": 0.19281624257564545,
+          "limited": 0.6903790235519409,
+          "unjudgeable": 0.11680472642183304
+        }
+      },
+      "image_sha256": "90fb6d7f53eca47917c504a5e87db3c4783a1754f1c6fa389e7c7b532fce5461",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.322548738215119,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03976.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5040268301963806,
+          "smoke": 0.2275126874446869,
+          "both": 0.12293795496225357,
+          "other": 0.025496535003185272,
+          "uncertain": 0.12002598494291306
+        },
+        "visibility": {
+          "clear": 0.18560296297073364,
+          "limited": 0.7126976847648621,
+          "unjudgeable": 0.10169931501150131
+        }
+      },
+      "image_sha256": "cbeb5ed824568af8906b530a9c0e7164ceaa9f5ed070870ff5702febacecef08",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.62015279289335,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04909.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.291497141122818,
+          "smoke": 0.4054322838783264,
+          "both": 0.2417767196893692,
+          "other": 0.013147021643817425,
+          "uncertain": 0.048146892338991165
+        },
+        "visibility": {
+          "clear": 0.13839423656463623,
+          "limited": 0.7874647974967957,
+          "unjudgeable": 0.07414098083972931
+        }
+      },
+      "image_sha256": "0e103a48dd2a902b69890614c7e683937e6a68481e99328105d88b6eab41531c",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.8478042697533965,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04442.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2110150158405304,
+          "smoke": 0.40301525592803955,
+          "both": 0.15868844091892242,
+          "other": 0.01312144473195076,
+          "uncertain": 0.21415984630584717
+        },
+        "visibility": {
+          "clear": 0.06502538174390793,
+          "limited": 0.8098195195198059,
+          "unjudgeable": 0.12515504658222198
+        }
+      },
+      "image_sha256": "6d9d20dc93f01e3d7cebfa29893771bc697fe32c8b645d89223b12658a1e96e6",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.5514463521540165,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05391.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.36734500527381897,
+          "smoke": 0.26163235306739807,
+          "both": 0.20043335855007172,
+          "other": 0.026574622839689255,
+          "uncertain": 0.14401470124721527
+        },
+        "visibility": {
+          "clear": 0.17805317044258118,
+          "limited": 0.668401837348938,
+          "unjudgeable": 0.15354500710964203
+        }
+      },
+      "image_sha256": "a1a4da7dcdf8e79f27f57c7f6561738374ddb50716eac262a53fee882bd37b75",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.695581356063485,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06014.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.14612418413162231,
+          "smoke": 0.7932721376419067,
+          "both": 0.052600543946027756,
+          "other": 0.00218042079359293,
+          "uncertain": 0.005822768434882164
+        },
+        "visibility": {
+          "clear": 0.1577099859714508,
+          "limited": 0.7486616969108582,
+          "unjudgeable": 0.09362828731536865
+        }
+      },
+      "image_sha256": "da018cd21c7be5bdc8ed6aae1153d3f443dc307c10586394719571c29934745f",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.599536143243313,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06442.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.09505531191825867,
+          "smoke": 0.7630938291549683,
+          "both": 0.12243536859750748,
+          "other": 0.005802294705063105,
+          "uncertain": 0.013613156042993069
+        },
+        "visibility": {
+          "clear": 0.1378188580274582,
+          "limited": 0.7799426317214966,
+          "unjudgeable": 0.08223859965801239
+        }
+      },
+      "image_sha256": "c86029c2d6bd8662d8c33a0c43db188966266d0a3c5c2ce68169632f04a3f307",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.517623320221901,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF06202.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2027835249900818,
+          "smoke": 0.42627379298210144,
+          "both": 0.1099606305360794,
+          "other": 0.02596743032336235,
+          "uncertain": 0.23501460254192352
+        },
+        "visibility": {
+          "clear": 0.06188294291496277,
+          "limited": 0.8441622257232666,
+          "unjudgeable": 0.0939548909664154
+        }
+      },
+      "image_sha256": "9d96492e30aa3d56ba6c10bc7017fb3af3237063c0ea648b6b8c56b3ffb38936",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.374495850875974,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08047.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.1301930695772171,
+          "smoke": 0.7311870455741882,
+          "both": 0.13111762702465057,
+          "other": 0.003375267144292593,
+          "uncertain": 0.004126938059926033
+        },
+        "visibility": {
+          "clear": 0.09825889766216278,
+          "limited": 0.8123052716255188,
+          "unjudgeable": 0.08943589776754379
+        }
+      },
+      "image_sha256": "af6474b4d4ed5deb5cfebbaa041dd87901338b0ecff5f873dca5a55f34c007f1",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.890811559744179,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08620.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.12296847254037857,
+          "smoke": 0.697804868221283,
+          "both": 0.1605258733034134,
+          "other": 0.0070535666309297085,
+          "uncertain": 0.011647234670817852
+        },
+        "visibility": {
+          "clear": 0.12836846709251404,
+          "limited": 0.7804127931594849,
+          "unjudgeable": 0.0912187471985817
+        }
+      },
+      "image_sha256": "8a6f6b55b05220cdef98d3b3a7d7a5072e0cef92a7c8ed728652c9e08e590bd5",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.3789655840955675,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08333.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.16682320833206177,
+          "smoke": 0.7482803463935852,
+          "both": 0.07329116761684418,
+          "other": 0.003400640096515417,
+          "uncertain": 0.008204586803913116
+        },
+        "visibility": {
+          "clear": 0.13192443549633026,
+          "limited": 0.7731043100357056,
+          "unjudgeable": 0.09497123211622238
+        }
+      },
+      "image_sha256": "760dcf24e2ee7c8bc4cac0df396b267310d0aa9025136f1612183adecd454c48",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.066969918087125,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB09064.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.14446209371089935,
+          "smoke": 0.7074931263923645,
+          "both": 0.11651130765676498,
+          "other": 0.005479583982378244,
+          "uncertain": 0.02605387568473816
+        },
+        "visibility": {
+          "clear": 0.1869228482246399,
+          "limited": 0.6797576546669006,
+          "unjudgeable": 0.1333194524049759
+        }
+      },
+      "image_sha256": "c596f241421b7de2d79d1882e29ae2696a884354a455e21870aad66c39d01ee5",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.899198936764151,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB09147.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.21266382932662964,
+          "smoke": 0.6879697442054749,
+          "both": 0.08679629862308502,
+          "other": 0.004018870182335377,
+          "uncertain": 0.008551223203539848
+        },
+        "visibility": {
+          "clear": 0.11025822907686234,
+          "limited": 0.7989510297775269,
+          "unjudgeable": 0.09079080075025558
+        }
+      },
+      "image_sha256": "c8983727c562666b9c0ed04f8e236126eadf0b717f3254add7d05b0f1162258d",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.646832751110196,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00364.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.15687651932239532,
+          "smoke": 0.7402456998825073,
+          "both": 0.08022530376911163,
+          "other": 0.007354389876127243,
+          "uncertain": 0.015298130922019482
+        },
+        "visibility": {
+          "clear": 0.0531446598470211,
+          "limited": 0.8402365446090698,
+          "unjudgeable": 0.10661891102790833
+        }
+      },
+      "image_sha256": "3aa8253a857624338356526b212aab348ec42251f8418dca9b1d627280636e1d",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.159094888251275,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08707.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.244034543633461,
+          "smoke": 0.6131506562232971,
+          "both": 0.1321483999490738,
+          "other": 0.0034310664050281048,
+          "uncertain": 0.00723536079749465
+        },
+        "visibility": {
+          "clear": 0.2067234069108963,
+          "limited": 0.7019662261009216,
+          "unjudgeable": 0.09131032973527908
+        }
+      },
+      "image_sha256": "8186ea15f9817cd8fc45dcee1248fb0836a01db85c0c54b417c83fd5b45c1c50",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.619343949947506,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00373.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.10088104754686356,
+          "smoke": 0.670311689376831,
+          "both": 0.06987159699201584,
+          "other": 0.004869106691330671,
+          "uncertain": 0.15406659245491028
+        },
+        "visibility": {
+          "clear": 0.14688515663146973,
+          "limited": 0.7413261532783508,
+          "unjudgeable": 0.11178867518901825
+        }
+      },
+      "image_sha256": "ea05c0b3183b1aaa69165d78bde15a7badabec2a202d2d123f90b9619294d957",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.486880735028535,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08103.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.07420550286769867,
+          "smoke": 0.7093854546546936,
+          "both": 0.07358352839946747,
+          "other": 0.009474437683820724,
+          "uncertain": 0.13335111737251282
+        },
+        "visibility": {
+          "clear": 0.05647498369216919,
+          "limited": 0.8428052067756653,
+          "unjudgeable": 0.10071979463100433
+        }
+      },
+      "image_sha256": "51824bf644acfa9272d3b8b3ffc247628ca224b65fb08e01396038947df7948e",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.229545271024108,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05947.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2429409772157669,
+          "smoke": 0.12235835194587708,
+          "both": 0.11238882690668106,
+          "other": 0.07605674117803574,
+          "uncertain": 0.4462551176548004
+        },
+        "visibility": {
+          "clear": 0.025036754086613655,
+          "limited": 0.6769629716873169,
+          "unjudgeable": 0.2980002164840698
+        }
+      },
+      "image_sha256": "319c45bf44cdcb2bc0e5a54c4439e2e6c817fc74d257f0b0cdfd38a88958192b",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.040799949783832,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08446.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2642709016799927,
+          "smoke": 0.6091539859771729,
+          "both": 0.10056952387094498,
+          "other": 0.009710266254842281,
+          "uncertain": 0.016295352950692177
+        },
+        "visibility": {
+          "clear": 0.127360537648201,
+          "limited": 0.7180963754653931,
+          "unjudgeable": 0.15454307198524475
+        }
+      },
+      "image_sha256": "9242a473f1c5b54cf78c1be8955ff8703d10ef54f0d8479e77867475982d961c",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.637986502610147,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05910.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.13510842621326447,
+          "smoke": 0.5698017477989197,
+          "both": 0.08328171819448471,
+          "other": 0.008809797465801239,
+          "uncertain": 0.20299825072288513
+        },
+        "visibility": {
+          "clear": 0.05473767966032028,
+          "limited": 0.7921476364135742,
+          "unjudgeable": 0.1531147062778473
+        }
+      },
+      "image_sha256": "c65890ee667d503e481e99f0d7734ec31dd00a96a97171e2c9eae1a5c291c821",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.415810933802277,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06412.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.12281948328018188,
+          "smoke": 0.8366687893867493,
+          "both": 0.015927791595458984,
+          "other": 0.005744047928601503,
+          "uncertain": 0.018839793279767036
+        },
+        "visibility": {
+          "clear": 0.11310066282749176,
+          "limited": 0.8164944052696228,
+          "unjudgeable": 0.07040498405694962
+        }
+      },
+      "image_sha256": "b7f433c341c39ee17bc482fc6bd80df273c6d98ac3ef284c02da68c3bbe03ec0",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.835185134783387,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2456393539905548,
+          "smoke": 0.21411482989788055,
+          "both": 0.042221177369356155,
+          "other": 0.035405661910772324,
+          "uncertain": 0.46261903643608093
+        },
+        "visibility": {
+          "clear": 0.036263253539800644,
+          "limited": 0.6362290978431702,
+          "unjudgeable": 0.3275076448917389
+        }
+      },
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.759942132048309,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.22700653970241547,
+          "smoke": 0.6460304856300354,
+          "both": 0.1167936772108078,
+          "other": 0.0036290036514401436,
+          "uncertain": 0.006540253758430481
+        },
+        "visibility": {
+          "clear": 0.19678208231925964,
+          "limited": 0.6702471971511841,
+          "unjudgeable": 0.13297075033187866
+        }
+      },
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.1819551242515445,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05602.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.45058268308639526,
+          "smoke": 0.24621328711509705,
+          "both": 0.1105983555316925,
+          "other": 0.015517632476985455,
+          "uncertain": 0.1770879477262497
+        },
+        "visibility": {
+          "clear": 0.21516577899456024,
+          "limited": 0.6459810733795166,
+          "unjudgeable": 0.13885311782360077
+        }
+      },
+      "image_sha256": "b51ba4fdc3961118c683292fe777b4702b04fcf1c87342e3d26a4b67fa19ef36",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.2297225766815245,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05602.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.556202232837677,
+          "smoke": 0.2485460489988327,
+          "both": 0.18176700174808502,
+          "other": 0.006573362275958061,
+          "uncertain": 0.006911369040608406
+        },
+        "visibility": {
+          "clear": 0.2745687663555145,
+          "limited": 0.6336156129837036,
+          "unjudgeable": 0.09181565791368484
+        }
+      },
+      "image_sha256": "b51ba4fdc3961118c683292fe777b4702b04fcf1c87342e3d26a4b67fa19ef36",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.6167062423191965,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04759.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3061549961566925,
+          "smoke": 0.34044337272644043,
+          "both": 0.20998525619506836,
+          "other": 0.013337873853743076,
+          "uncertain": 0.13007852435112
+        },
+        "visibility": {
+          "clear": 0.07668767869472504,
+          "limited": 0.8143676519393921,
+          "unjudgeable": 0.10894466191530228
+        }
+      },
+      "image_sha256": "aa39af5f610ed5618b446ac785822efdb6ebf1a36836f5500f364699ffa12ea5",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.9201442818157375,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04759.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.48212695121765137,
+          "smoke": 0.28920263051986694,
+          "both": 0.139393612742424,
+          "other": 0.02009435184299946,
+          "uncertain": 0.06918235868215561
+        },
+        "visibility": {
+          "clear": 0.1879156082868576,
+          "limited": 0.6723217368125916,
+          "unjudgeable": 0.13976266980171204
+        }
+      },
+      "image_sha256": "aa39af5f610ed5618b446ac785822efdb6ebf1a36836f5500f364699ffa12ea5",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.459817769005895,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06848.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.6149918437004089,
+          "smoke": 0.17438697814941406,
+          "both": 0.1806013435125351,
+          "other": 0.007932435721158981,
+          "uncertain": 0.02208745665848255
+        },
+        "visibility": {
+          "clear": 0.19595825672149658,
+          "limited": 0.6892312169075012,
+          "unjudgeable": 0.11481054127216339
+        }
+      },
+      "image_sha256": "98c4c6c3896c88e2ead5f4a524d10f5785868abc5be3f6288279507a3d3daa1b",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.51986700296402,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06848.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5286886096000671,
+          "smoke": 0.2328108698129654,
+          "both": 0.22400733828544617,
+          "other": 0.008344555273652077,
+          "uncertain": 0.006148677319288254
+        },
+        "visibility": {
+          "clear": 0.19329561293125153,
+          "limited": 0.709094762802124,
+          "unjudgeable": 0.09760961681604385
+        }
+      },
+      "image_sha256": "98c4c6c3896c88e2ead5f4a524d10f5785868abc5be3f6288279507a3d3daa1b",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.859463703818619,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06286.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.6366183757781982,
+          "smoke": 0.24220062792301178,
+          "both": 0.10761084407567978,
+          "other": 0.006396886892616749,
+          "uncertain": 0.0071732113137841225
+        },
+        "visibility": {
+          "clear": 0.2347514033317566,
+          "limited": 0.6396388411521912,
+          "unjudgeable": 0.12560977041721344
+        }
+      },
+      "image_sha256": "fd1a9f83f7d9cf1b4d502a4f8e17976bed2f9e88402e30403761cb1af036ce82",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.047611268237233,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06286.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.333037793636322,
+          "smoke": 0.4343755841255188,
+          "both": 0.22718395292758942,
+          "other": 0.002700535347685218,
+          "uncertain": 0.0027022201102226973
+        },
+        "visibility": {
+          "clear": 0.21830569207668304,
+          "limited": 0.6751765608787537,
+          "unjudgeable": 0.10651776194572449
+        }
+      },
+      "image_sha256": "fd1a9f83f7d9cf1b4d502a4f8e17976bed2f9e88402e30403761cb1af036ce82",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 6.3153911787085235,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04611.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.6301223635673523,
+          "smoke": 0.11648135632276535,
+          "both": 0.10307637602090836,
+          "other": 0.04402007535099983,
+          "uncertain": 0.10629989206790924
+        },
+        "visibility": {
+          "clear": 0.229226216673851,
+          "limited": 0.6329150795936584,
+          "unjudgeable": 0.13785870373249054
+        }
+      },
+      "image_sha256": "833289696098eb9196c01977366ea6901e5896764edc68eb3cb1b5cc6241ff12",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.301068012136966,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04611.jpg",
+      "task": "B",
+      "original_annotation_id": 4,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5046425461769104,
+          "smoke": 0.25968942046165466,
+          "both": 0.22243832051753998,
+          "other": 0.008122073486447334,
+          "uncertain": 0.005107601173222065
+        },
+        "visibility": {
+          "clear": 0.24641859531402588,
+          "limited": 0.6411954760551453,
+          "unjudgeable": 0.11238589137792587
+        }
+      },
+      "image_sha256": "833289696098eb9196c01977366ea6901e5896764edc68eb3cb1b5cc6241ff12",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.605053497944027,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03934.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4986640214920044,
+          "smoke": 0.29598674178123474,
+          "both": 0.09895309060811996,
+          "other": 0.014585756696760654,
+          "uncertain": 0.09181036055088043
+        },
+        "visibility": {
+          "clear": 0.23997507989406586,
+          "limited": 0.6172083616256714,
+          "unjudgeable": 0.14281652867794037
+        }
+      },
+      "image_sha256": "b6db77af0d4bdec36b0376ff8318b0ba4fc0a7a97e9a19ba5124283be374c090",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.783872597850859,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03934.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5240157842636108,
+          "smoke": 0.3418450951576233,
+          "both": 0.12108779698610306,
+          "other": 0.00832292903214693,
+          "uncertain": 0.004728334955871105
+        },
+        "visibility": {
+          "clear": 0.1447911113500595,
+          "limited": 0.7263331413269043,
+          "unjudgeable": 0.1288757175207138
+        }
+      },
+      "image_sha256": "b6db77af0d4bdec36b0376ff8318b0ba4fc0a7a97e9a19ba5124283be374c090",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.405282610096037,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08354.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.22398418188095093,
+          "smoke": 0.1721705049276352,
+          "both": 0.07070689648389816,
+          "other": 0.041971947997808456,
+          "uncertain": 0.49116650223731995
+        },
+        "visibility": {
+          "clear": 0.021226420998573303,
+          "limited": 0.6739804148674011,
+          "unjudgeable": 0.3047931492328644
+        }
+      },
+      "image_sha256": "62b83785baecbb78806cb009bd7a06d3054d3b5821f063fedb9ba96ee0926a9d",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.640942802652717,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08354.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.21843358874320984,
+          "smoke": 0.619784951210022,
+          "both": 0.15032276511192322,
+          "other": 0.004822376184165478,
+          "uncertain": 0.0066362651996314526
+        },
+        "visibility": {
+          "clear": 0.2367250621318817,
+          "limited": 0.6355944871902466,
+          "unjudgeable": 0.1276804506778717
+        }
+      },
+      "image_sha256": "62b83785baecbb78806cb009bd7a06d3054d3b5821f063fedb9ba96ee0926a9d",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.59792576963082,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04469.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4709695279598236,
+          "smoke": 0.21546605229377747,
+          "both": 0.15815061330795288,
+          "other": 0.02462322637438774,
+          "uncertain": 0.13079050183296204
+        },
+        "visibility": {
+          "clear": 0.1602591872215271,
+          "limited": 0.6951085329055786,
+          "unjudgeable": 0.1446322351694107
+        }
+      },
+      "image_sha256": "f860ea6601a4895d386a611fb201321eed57ed9dc399cbc44ac2514ab33bd7f9",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.668197276070714,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04469.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.39744192361831665,
+          "smoke": 0.4400095045566559,
+          "both": 0.14965316653251648,
+          "other": 0.008734016679227352,
+          "uncertain": 0.004161403514444828
+        },
+        "visibility": {
+          "clear": 0.11658947914838791,
+          "limited": 0.7643752098083496,
+          "unjudgeable": 0.11903536319732666
+        }
+      },
+      "image_sha256": "f860ea6601a4895d386a611fb201321eed57ed9dc399cbc44ac2514ab33bd7f9",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.259340246208012,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04263.jpg",
+      "task": "B",
+      "original_annotation_id": 4,
+      "raw_response": "{\"content\":\"both\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "both",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.27167758345603943,
+          "smoke": 0.2720286250114441,
+          "both": 0.3013167977333069,
+          "other": 0.011455596424639225,
+          "uncertain": 0.14352136850357056
+        },
+        "visibility": {
+          "clear": 0.13667872548103333,
+          "limited": 0.673621654510498,
+          "unjudgeable": 0.18969953060150146
+        }
+      },
+      "image_sha256": "25c340b2ee85fd79cdfc58121def50d902cabd4f2e14d68df6a7eafdb17642a0",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.250094817019999,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04263.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4978804290294647,
+          "smoke": 0.2954500615596771,
+          "both": 0.19569258391857147,
+          "other": 0.004863112699240446,
+          "uncertain": 0.006113827228546143
+        },
+        "visibility": {
+          "clear": 0.19518938660621643,
+          "limited": 0.7153170704841614,
+          "unjudgeable": 0.08949349820613861
+        }
+      },
+      "image_sha256": "25c340b2ee85fd79cdfc58121def50d902cabd4f2e14d68df6a7eafdb17642a0",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.3855161890387535,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08966.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.48579439520835876,
+          "smoke": 0.3308201730251312,
+          "both": 0.1532280445098877,
+          "other": 0.009447594173252583,
+          "uncertain": 0.02070968970656395
+        },
+        "visibility": {
+          "clear": 0.1625242531299591,
+          "limited": 0.7169278860092163,
+          "unjudgeable": 0.12054785341024399
+        }
+      },
+      "image_sha256": "4cabbea261032a52abc0945fb1400ffc9b82228d154e16deb04a73a84ecff513",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.285744820255786,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08966.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.43306466937065125,
+          "smoke": 0.34679386019706726,
+          "both": 0.197441965341568,
+          "other": 0.010943695902824402,
+          "uncertain": 0.011755705811083317
+        },
+        "visibility": {
+          "clear": 0.15567238628864288,
+          "limited": 0.7340750098228455,
+          "unjudgeable": 0.11025252938270569
+        }
+      },
+      "image_sha256": "4cabbea261032a52abc0945fb1400ffc9b82228d154e16deb04a73a84ecff513",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.171329237986356,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08473.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.44149312376976013,
+          "smoke": 0.21926140785217285,
+          "both": 0.049496378749608994,
+          "other": 0.02083270251750946,
+          "uncertain": 0.26891639828681946
+        },
+        "visibility": {
+          "clear": 0.149276465177536,
+          "limited": 0.7105340957641602,
+          "unjudgeable": 0.14018946886062622
+        }
+      },
+      "image_sha256": "2de8c373bf28b8ce40bd8fb00f8f73f5a5b4b8184a352008afc7d51ccb46dd32",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.2549636089242995,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08473.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.2856822609901428,
+          "smoke": 0.41571280360221863,
+          "both": 0.28516507148742676,
+          "other": 0.007125146687030792,
+          "uncertain": 0.006314770318567753
+        },
+        "visibility": {
+          "clear": 0.16972443461418152,
+          "limited": 0.73479825258255,
+          "unjudgeable": 0.0954773798584938
+        }
+      },
+      "image_sha256": "2de8c373bf28b8ce40bd8fb00f8f73f5a5b4b8184a352008afc7d51ccb46dd32",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.369480018038303,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05257.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.17017847299575806,
+          "smoke": 0.31229233741760254,
+          "both": 0.07956154644489288,
+          "other": 0.02138027548789978,
+          "uncertain": 0.41658735275268555
+        },
+        "visibility": {
+          "clear": 0.032252728939056396,
+          "limited": 0.7396962642669678,
+          "unjudgeable": 0.2280510663986206
+        }
+      },
+      "image_sha256": "b5fa7733321acf0025f8c9256797b770dcb6c16a6922d800c905986ba6352e53",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.411459149327129,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05257.jpg",
+      "task": "B",
+      "original_annotation_id": 5,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.5837628245353699,
+          "smoke": 0.23464371263980865,
+          "both": 0.16908684372901917,
+          "other": 0.0059239561669528484,
+          "uncertain": 0.006582622416317463
+        },
+        "visibility": {
+          "clear": 0.22138606011867523,
+          "limited": 0.6805306673049927,
+          "unjudgeable": 0.09808331727981567
+        }
+      },
+      "image_sha256": "b5fa7733321acf0025f8c9256797b770dcb6c16a6922d800c905986ba6352e53",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.467484540306032,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05958.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.11317939311265945,
+          "smoke": 0.1209697499871254,
+          "both": 0.07164446264505386,
+          "other": 0.018036743625998497,
+          "uncertain": 0.6761696338653564
+        },
+        "visibility": {
+          "clear": 0.028478074818849564,
+          "limited": 0.6859479546546936,
+          "unjudgeable": 0.28557392954826355
+        }
+      },
+      "image_sha256": "dbf9f60df44843e2a6d33cf9c0d7f24b8a54bfee38d84b42d82f63aa95705057",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.380937716923654,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05958.jpg",
+      "task": "B",
+      "original_annotation_id": 8,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4963456094264984,
+          "smoke": 0.21825142204761505,
+          "both": 0.2589852809906006,
+          "other": 0.00994756631553173,
+          "uncertain": 0.016470136120915413
+        },
+        "visibility": {
+          "clear": 0.23027127981185913,
+          "limited": 0.6561632752418518,
+          "unjudgeable": 0.11356545984745026
+        }
+      },
+      "image_sha256": "dbf9f60df44843e2a6d33cf9c0d7f24b8a54bfee38d84b42d82f63aa95705057",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.075819745659828,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05340.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "uncertain",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.26486891508102417,
+          "smoke": 0.15661565959453583,
+          "both": 0.05329830199480057,
+          "other": 0.055520810186862946,
+          "uncertain": 0.4696962535381317
+        },
+        "visibility": {
+          "clear": 0.03291989117860794,
+          "limited": 0.6213269233703613,
+          "unjudgeable": 0.3457532227039337
+        }
+      },
+      "image_sha256": "96abd863eb593988101ba546dbd7fbae46daa43530ba2ae9fc42d6de89b3290e",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.2608204539865255,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05340.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3302309811115265,
+          "smoke": 0.40881893038749695,
+          "both": 0.2408420741558075,
+          "other": 0.010803070850670338,
+          "uncertain": 0.009304910898208618
+        },
+        "visibility": {
+          "clear": 0.10462571680545807,
+          "limited": 0.771235466003418,
+          "unjudgeable": 0.12413880974054337
+        }
+      },
+      "image_sha256": "96abd863eb593988101ba546dbd7fbae46daa43530ba2ae9fc42d6de89b3290e",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.467582090292126,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04633.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "raw_response": "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "fire",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.4056668281555176,
+          "smoke": 0.3270242214202881,
+          "both": 0.22933097183704376,
+          "other": 0.014500897377729416,
+          "uncertain": 0.023477017879486084
+        },
+        "visibility": {
+          "clear": 0.22227692604064941,
+          "limited": 0.6447616219520569,
+          "unjudgeable": 0.1329614818096161
+        }
+      },
+      "image_sha256": "6c95327371675f2528eac0244b1c3b36cba8a9dd66095ac6f2fd380338d27da6",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.345519339200109,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04633.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "limited"
+      },
+      "probabilities": {
+        "content": {
+          "fire": 0.3434658348560333,
+          "smoke": 0.45511293411254883,
+          "both": 0.18733453750610352,
+          "other": 0.007336067035794258,
+          "uncertain": 0.006750545930117369
+        },
+        "visibility": {
+          "clear": 0.2254858762025833,
+          "limited": 0.6630673408508301,
+          "unjudgeable": 0.1114468201994896
+        }
+      },
+      "image_sha256": "6c95327371675f2528eac0244b1c3b36cba8a9dd66095ac6f2fd380338d27da6",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "seconds": 5.33195314463228,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03078.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.13032063841819763,
+          "no": 0.8103024959564209,
+          "uncertain": 0.059376779943704605
+        },
+        "smoke_visible": {
+          "yes": 0.009866081178188324,
+          "no": 0.9753510355949402,
+          "uncertain": 0.014782914891839027
+        },
+        "cloud_fog_like": {
+          "yes": 0.2332884967327118,
+          "no": 0.7305637001991272,
+          "uncertain": 0.03614785149693489
+        },
+        "bright_light_like": {
+          "yes": 0.6062974333763123,
+          "no": 0.38799038529396057,
+          "uncertain": 0.005712233018130064
+        },
+        "reflection_like": {
+          "yes": 0.364339143037796,
+          "no": 0.6300356984138489,
+          "uncertain": 0.0056251827627420425
+        },
+        "low_visibility": {
+          "yes": 0.5252792239189148,
+          "no": 0.35888636112213135,
+          "uncertain": 0.11583440750837326
+        }
+      },
+      "image_sha256": "488fa5792b72d372eda8716236e5dc447c9ff9fe8df6918c0ac2849e53557c0e",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.058547530323267,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00811.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.11302601546049118,
+          "no": 0.8064508438110352,
+          "uncertain": 0.08052315562963486
+        },
+        "smoke_visible": {
+          "yes": 0.20744813978672028,
+          "no": 0.7672328352928162,
+          "uncertain": 0.02531903237104416
+        },
+        "cloud_fog_like": {
+          "yes": 0.9205431938171387,
+          "no": 0.07802894711494446,
+          "uncertain": 0.0014279538299888372
+        },
+        "bright_light_like": {
+          "yes": 0.5181339979171753,
+          "no": 0.4664827287197113,
+          "uncertain": 0.015383252874016762
+        },
+        "reflection_like": {
+          "yes": 0.15461412072181702,
+          "no": 0.8305519819259644,
+          "uncertain": 0.014833875931799412
+        },
+        "low_visibility": {
+          "yes": 0.27285900712013245,
+          "no": 0.45120298862457275,
+          "uncertain": 0.2759380042552948
+        }
+      },
+      "image_sha256": "9f650874e12aeb1d04c414acfa935e0a1d75fe3ce7dcba7750b12b4bcd4ee969",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 8.978874020278454,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB02850.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.11776434630155563,
+          "no": 0.8283817172050476,
+          "uncertain": 0.05385395511984825
+        },
+        "smoke_visible": {
+          "yes": 0.015637483447790146,
+          "no": 0.9763102531433105,
+          "uncertain": 0.008052220568060875
+        },
+        "cloud_fog_like": {
+          "yes": 0.6198994517326355,
+          "no": 0.3732641935348511,
+          "uncertain": 0.006836415734142065
+        },
+        "bright_light_like": {
+          "yes": 0.5583012700080872,
+          "no": 0.42681217193603516,
+          "uncertain": 0.014886570163071156
+        },
+        "reflection_like": {
+          "yes": 0.2888330817222595,
+          "no": 0.7047179341316223,
+          "uncertain": 0.006448938976973295
+        },
+        "low_visibility": {
+          "yes": 0.2755524814128876,
+          "no": 0.513452410697937,
+          "uncertain": 0.2109951227903366
+        }
+      },
+      "image_sha256": "1a7ca46c71fdd660062db8c201e4910139336284de6a54d839746daba8c95522",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.126635720022023,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03527.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.14984148740768433,
+          "no": 0.8037010431289673,
+          "uncertain": 0.046457525342702866
+        },
+        "smoke_visible": {
+          "yes": 0.017380528151988983,
+          "no": 0.9721248149871826,
+          "uncertain": 0.010494677349925041
+        },
+        "cloud_fog_like": {
+          "yes": 0.1390741467475891,
+          "no": 0.8353891968727112,
+          "uncertain": 0.025536641478538513
+        },
+        "bright_light_like": {
+          "yes": 0.4495294392108917,
+          "no": 0.5403095483779907,
+          "uncertain": 0.0101610803976655
+        },
+        "reflection_like": {
+          "yes": 0.1917758285999298,
+          "no": 0.8029159307479858,
+          "uncertain": 0.005308270920068026
+        },
+        "low_visibility": {
+          "yes": 0.12323325127363205,
+          "no": 0.5563530921936035,
+          "uncertain": 0.3204136788845062
+        }
+      },
+      "image_sha256": "572307dfa54ca42a8f838cae0f1368e0fd0fe9195d79cd03fe2e7bc7f30d8386",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.686799791641533,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00251.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.07334066927433014,
+          "no": 0.8784365653991699,
+          "uncertain": 0.048222728073596954
+        },
+        "smoke_visible": {
+          "yes": 0.01491787564009428,
+          "no": 0.972321093082428,
+          "uncertain": 0.012761006131768227
+        },
+        "cloud_fog_like": {
+          "yes": 0.8505433797836304,
+          "no": 0.1468687355518341,
+          "uncertain": 0.0025879889726638794
+        },
+        "bright_light_like": {
+          "yes": 0.2794337570667267,
+          "no": 0.6838228702545166,
+          "uncertain": 0.036743465811014175
+        },
+        "reflection_like": {
+          "yes": 0.022794019430875778,
+          "no": 0.9738459587097168,
+          "uncertain": 0.0033600854221731424
+        },
+        "low_visibility": {
+          "yes": 0.26840001344680786,
+          "no": 0.49639278650283813,
+          "uncertain": 0.2352072298526764
+        }
+      },
+      "image_sha256": "53242a4e6432bdd4accc4172537e80d4b5b5f5912809618265c96f5d388c01ca",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.108638643752784,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF02161.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.06565876305103302,
+          "no": 0.8433571457862854,
+          "uncertain": 0.09098412096500397
+        },
+        "smoke_visible": {
+          "yes": 0.02080800011754036,
+          "no": 0.9609972238540649,
+          "uncertain": 0.018194880336523056
+        },
+        "cloud_fog_like": {
+          "yes": 0.6806789636611938,
+          "no": 0.30738767981529236,
+          "uncertain": 0.011933363042771816
+        },
+        "bright_light_like": {
+          "yes": 0.2308938056230545,
+          "no": 0.7336796522140503,
+          "uncertain": 0.03542647883296013
+        },
+        "reflection_like": {
+          "yes": 0.17832660675048828,
+          "no": 0.8153280019760132,
+          "uncertain": 0.0063454522751271725
+        },
+        "low_visibility": {
+          "yes": 0.3509531617164612,
+          "no": 0.48144498467445374,
+          "uncertain": 0.16760188341140747
+        }
+      },
+      "image_sha256": "e44e38c3bdf6c871cda14134efebb4a11a6b1067d7960b11404bd22621673846",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.0771727389656,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF01183.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.08351853489875793,
+          "no": 0.8259595036506653,
+          "uncertain": 0.09052200615406036
+        },
+        "smoke_visible": {
+          "yes": 0.045218564569950104,
+          "no": 0.9278304576873779,
+          "uncertain": 0.026950916275382042
+        },
+        "cloud_fog_like": {
+          "yes": 0.7103497982025146,
+          "no": 0.28152045607566833,
+          "uncertain": 0.008129728026688099
+        },
+        "bright_light_like": {
+          "yes": 0.22306247055530548,
+          "no": 0.7420093417167664,
+          "uncertain": 0.03492816165089607
+        },
+        "reflection_like": {
+          "yes": 0.03532491251826286,
+          "no": 0.9595226049423218,
+          "uncertain": 0.005152511410415173
+        },
+        "low_visibility": {
+          "yes": 0.34980571269989014,
+          "no": 0.4527979791164398,
+          "uncertain": 0.19739630818367004
+        }
+      },
+      "image_sha256": "8cc3417710f807457f0a637b1c822d167fede27783ec549669cae1082e87f09d",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.119307026267052,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03008.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.10581757128238678,
+          "no": 0.8434054851531982,
+          "uncertain": 0.05077695846557617
+        },
+        "smoke_visible": {
+          "yes": 0.012367339804768562,
+          "no": 0.9740816354751587,
+          "uncertain": 0.013551061972975731
+        },
+        "cloud_fog_like": {
+          "yes": 0.1252565234899521,
+          "no": 0.8365368247032166,
+          "uncertain": 0.03820669278502464
+        },
+        "bright_light_like": {
+          "yes": 0.18648669123649597,
+          "no": 0.7776699066162109,
+          "uncertain": 0.03584333136677742
+        },
+        "reflection_like": {
+          "yes": 0.0891452208161354,
+          "no": 0.898463249206543,
+          "uncertain": 0.012391486205160618
+        },
+        "low_visibility": {
+          "yes": 0.14310777187347412,
+          "no": 0.5832666754722595,
+          "uncertain": 0.2736256420612335
+        }
+      },
+      "image_sha256": "7dcc23c38aa12e638f90ec9ca5030dc694ec7f891fccd2f5f350b3e7a4818509",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.091218282002956,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03132.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.131474107503891,
+          "no": 0.7867290377616882,
+          "uncertain": 0.08179684728384018
+        },
+        "smoke_visible": {
+          "yes": 0.016611840575933456,
+          "no": 0.9609182476997375,
+          "uncertain": 0.022469906136393547
+        },
+        "cloud_fog_like": {
+          "yes": 0.4922983944416046,
+          "no": 0.49223172664642334,
+          "uncertain": 0.015469943173229694
+        },
+        "bright_light_like": {
+          "yes": 0.7648682594299316,
+          "no": 0.23179340362548828,
+          "uncertain": 0.0033383560366928577
+        },
+        "reflection_like": {
+          "yes": 0.09174101799726486,
+          "no": 0.899597704410553,
+          "uncertain": 0.00866122730076313
+        },
+        "low_visibility": {
+          "yes": 0.4119323194026947,
+          "no": 0.4080466330051422,
+          "uncertain": 0.1800210177898407
+        }
+      },
+      "image_sha256": "d2b4e2177585ae00a945ea1a234a436062d7df181381e3678f9b8d387c183836",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.14033780572936,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00032.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.11762794852256775,
+          "no": 0.7950976490974426,
+          "uncertain": 0.08727439492940903
+        },
+        "smoke_visible": {
+          "yes": 0.012761177495121956,
+          "no": 0.9655958414077759,
+          "uncertain": 0.02164291776716709
+        },
+        "cloud_fog_like": {
+          "yes": 0.4248414933681488,
+          "no": 0.5495729446411133,
+          "uncertain": 0.02558549866080284
+        },
+        "bright_light_like": {
+          "yes": 0.25213155150413513,
+          "no": 0.7152824401855469,
+          "uncertain": 0.032586000859737396
+        },
+        "reflection_like": {
+          "yes": 0.02228713408112526,
+          "no": 0.9656897783279419,
+          "uncertain": 0.012023120187222958
+        },
+        "low_visibility": {
+          "yes": 0.11862916499376297,
+          "no": 0.631052553653717,
+          "uncertain": 0.2503182888031006
+        }
+      },
+      "image_sha256": "67176d00a43e3bf0b4335a1add48e5b21ed060e6fed598e99e76d8826f470ce8",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.042900525033474,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF00887.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.06355665624141693,
+          "no": 0.8718409538269043,
+          "uncertain": 0.06460236757993698
+        },
+        "smoke_visible": {
+          "yes": 0.02251473069190979,
+          "no": 0.9624423384666443,
+          "uncertain": 0.015042966231703758
+        },
+        "cloud_fog_like": {
+          "yes": 0.49172019958496094,
+          "no": 0.4819648861885071,
+          "uncertain": 0.026314953342080116
+        },
+        "bright_light_like": {
+          "yes": 0.15131217241287231,
+          "no": 0.8086689114570618,
+          "uncertain": 0.04001886397600174
+        },
+        "reflection_like": {
+          "yes": 0.052193526178598404,
+          "no": 0.9423707127571106,
+          "uncertain": 0.0054358020424842834
+        },
+        "low_visibility": {
+          "yes": 0.2844257056713104,
+          "no": 0.487423837184906,
+          "uncertain": 0.22815050184726715
+        }
+      },
+      "image_sha256": "bc5e6b57d4a3c04fa0a67f605f9403390b3381ea3d6d66cc108ea9dd7c6db942",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.125435286201537,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF00991.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.11843566596508026,
+          "no": 0.7985001802444458,
+          "uncertain": 0.08306410163640976
+        },
+        "smoke_visible": {
+          "yes": 0.29620161652565,
+          "no": 0.6705836653709412,
+          "uncertain": 0.033214714378118515
+        },
+        "cloud_fog_like": {
+          "yes": 0.3695507347583771,
+          "no": 0.6073786616325378,
+          "uncertain": 0.02307063713669777
+        },
+        "bright_light_like": {
+          "yes": 0.24631117284297943,
+          "no": 0.7234049439430237,
+          "uncertain": 0.030283892527222633
+        },
+        "reflection_like": {
+          "yes": 0.02813265658915043,
+          "no": 0.9615323543548584,
+          "uncertain": 0.010335045866668224
+        },
+        "low_visibility": {
+          "yes": 0.11377738416194916,
+          "no": 0.6437351703643799,
+          "uncertain": 0.24248744547367096
+        }
+      },
+      "image_sha256": "2fb63d0872cf5689c8fe1db302b308d8f2425a8dad575d08a0388f7aa2f4b968",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.090898676775396,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00586.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.09239261597394943,
+          "no": 0.8390542268753052,
+          "uncertain": 0.06855319440364838
+        },
+        "smoke_visible": {
+          "yes": 0.014179262332618237,
+          "no": 0.9721260666847229,
+          "uncertain": 0.013694657012820244
+        },
+        "cloud_fog_like": {
+          "yes": 0.19208693504333496,
+          "no": 0.7776250243186951,
+          "uncertain": 0.030288053676486015
+        },
+        "bright_light_like": {
+          "yes": 0.15489399433135986,
+          "no": 0.8023071885108948,
+          "uncertain": 0.04279875382781029
+        },
+        "reflection_like": {
+          "yes": 0.2647072672843933,
+          "no": 0.7107374668121338,
+          "uncertain": 0.024555295705795288
+        },
+        "low_visibility": {
+          "yes": 0.15616819262504578,
+          "no": 0.5908582806587219,
+          "uncertain": 0.2529734969139099
+        }
+      },
+      "image_sha256": "5c6611cd892a500c0185cf554d536f1e9df0e030b167e7bb163b099fd40ebaf0",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.138996676541865,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00053.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.11291312426328659,
+          "no": 0.8041515946388245,
+          "uncertain": 0.08293533325195312
+        },
+        "smoke_visible": {
+          "yes": 0.011843393556773663,
+          "no": 0.9708878397941589,
+          "uncertain": 0.017268754541873932
+        },
+        "cloud_fog_like": {
+          "yes": 0.30301687121391296,
+          "no": 0.6752898097038269,
+          "uncertain": 0.021693330258131027
+        },
+        "bright_light_like": {
+          "yes": 0.26967325806617737,
+          "no": 0.7042355537414551,
+          "uncertain": 0.026091193780303
+        },
+        "reflection_like": {
+          "yes": 0.164381206035614,
+          "no": 0.8187657594680786,
+          "uncertain": 0.016853081062436104
+        },
+        "low_visibility": {
+          "yes": 0.1286531537771225,
+          "no": 0.609152615070343,
+          "uncertain": 0.2621942460536957
+        }
+      },
+      "image_sha256": "87cfba0e7d665b30bc508ff00b8cd9edf20850389e99f41e09f8460787a61ca2",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.0991817638278,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00929.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.15231168270111084,
+          "no": 0.7978491187095642,
+          "uncertain": 0.04983922839164734
+        },
+        "smoke_visible": {
+          "yes": 0.018459411337971687,
+          "no": 0.9671122431755066,
+          "uncertain": 0.014428231865167618
+        },
+        "cloud_fog_like": {
+          "yes": 0.47026950120925903,
+          "no": 0.5141036510467529,
+          "uncertain": 0.015626780688762665
+        },
+        "bright_light_like": {
+          "yes": 0.4040779769420624,
+          "no": 0.5877651572227478,
+          "uncertain": 0.008156832307577133
+        },
+        "reflection_like": {
+          "yes": 0.30271008610725403,
+          "no": 0.6924399137496948,
+          "uncertain": 0.00484996335580945
+        },
+        "low_visibility": {
+          "yes": 0.09934057295322418,
+          "no": 0.6041319966316223,
+          "uncertain": 0.2965275049209595
+        }
+      },
+      "image_sha256": "0b848028a6a1673d7e2e3d9d37e9906ef0d6d1402bb779e9fe4965723e6a8059",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.027150759939104,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF01318.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "no"
+      },
+      "probabilities": {
+        "fire_visible": {
+          "yes": 0.06398655474185944,
+          "no": 0.8508789539337158,
+          "uncertain": 0.08513443917036057
+        },
+        "smoke_visible": {
+          "yes": 0.36421599984169006,
+          "no": 0.6206653118133545,
+          "uncertain": 0.015118623152375221
+        },
+        "cloud_fog_like": {
+          "yes": 0.9734832048416138,
+          "no": 0.026417208835482597,
+          "uncertain": 9.952939581125975e-05
+        },
+        "bright_light_like": {
+          "yes": 0.1720132827758789,
+          "no": 0.7881747484207153,
+          "uncertain": 0.039811983704566956
+        },
+        "reflection_like": {
+          "yes": 0.06292188912630081,
+          "no": 0.9315730929374695,
+          "uncertain": 0.005504978820681572
+        },
+        "low_visibility": {
+          "yes": 0.3446161448955536,
+          "no": 0.4687632918357849,
+          "uncertain": 0.1866205632686615
+        }
+      },
+      "image_sha256": "d0098bd5458b59af0e316b4af129f61f70a992234674b359993450b156aadb3d",
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "seconds": 9.103998668957502,
+      "answer_matches_frozen_cpu_v2": true,
+      "score_scope": "conditional probabilities among legal next-token labels; not calibrated correctness"
+    }
+  ],
+  "samples": {
+    "dfire/train/train/images/AoF04755.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.17698560655117035,
+            "smoke": 0.31064310669898987,
+            "both": 0.06556948274374008,
+            "other": 0.023121291771531105,
+            "uncertain": 0.4236806035041809
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/PublicDataset00046.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.5806610584259033,
+            "smoke": 0.29459381103515625,
+            "both": 0.0485171340405941,
+            "other": 0.011438162997364998,
+            "uncertain": 0.06478986889123917
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04162.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.8036035895347595,
+            "smoke": 0.08857322484254837,
+            "both": 0.09702590107917786,
+            "other": 0.006612096913158894,
+            "uncertain": 0.004185153637081385
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04645.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.18980862200260162,
+            "smoke": 0.2164451628923416,
+            "both": 0.13281747698783875,
+            "other": 0.012757344171404839,
+            "uncertain": 0.4481714069843292
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF05002.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.4347746968269348,
+            "smoke": 0.2231583446264267,
+            "both": 0.21581485867500305,
+            "other": 0.01910324953496456,
+            "uncertain": 0.10714894533157349
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04951.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.30731117725372314,
+            "smoke": 0.2787685990333557,
+            "both": 0.25425776839256287,
+            "other": 0.01725289411842823,
+            "uncertain": 0.1424095779657364
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/PublicDataset00008.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.3819407820701599,
+            "smoke": 0.27514517307281494,
+            "both": 0.2777128219604492,
+            "other": 0.010929368436336517,
+            "uncertain": 0.054271865636110306
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05396.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.6341052055358887,
+            "smoke": 0.16598953306674957,
+            "both": 0.13349519670009613,
+            "other": 0.015283793210983276,
+            "uncertain": 0.05112630873918533
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04712.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.3285660743713379,
+            "smoke": 0.2982751429080963,
+            "both": 0.19646687805652618,
+            "other": 0.019459720700979233,
+            "uncertain": 0.1572321206331253
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB03883.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.5010255575180054,
+            "smoke": 0.31497591733932495,
+            "both": 0.11568965017795563,
+            "other": 0.020256344228982925,
+            "uncertain": 0.048052530735731125
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04215.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 5,
+          "content": {
+            "fire": 0.4998021423816681,
+            "smoke": 0.20469042658805847,
+            "both": 0.17486707866191864,
+            "other": 0.02495226450264454,
+            "uncertain": 0.0956881195306778
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04905.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.3961941599845886,
+            "smoke": 0.2075856328010559,
+            "both": 0.20863117277622223,
+            "other": 0.022409500554203987,
+            "uncertain": 0.16517940163612366
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB03976.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.5040268301963806,
+            "smoke": 0.2275126874446869,
+            "both": 0.12293795496225357,
+            "other": 0.025496535003185272,
+            "uncertain": 0.12002598494291306
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04909.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.291497141122818,
+            "smoke": 0.4054322838783264,
+            "both": 0.2417767196893692,
+            "other": 0.013147021643817425,
+            "uncertain": 0.048146892338991165
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04442.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.2110150158405304,
+            "smoke": 0.40301525592803955,
+            "both": 0.15868844091892242,
+            "other": 0.01312144473195076,
+            "uncertain": 0.21415984630584717
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05391.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.36734500527381897,
+            "smoke": 0.26163235306739807,
+            "both": 0.20043335855007172,
+            "other": 0.026574622839689255,
+            "uncertain": 0.14401470124721527
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06014.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.14612418413162231,
+            "smoke": 0.7932721376419067,
+            "both": 0.052600543946027756,
+            "other": 0.00218042079359293,
+            "uncertain": 0.005822768434882164
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06442.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.09505531191825867,
+            "smoke": 0.7630938291549683,
+            "both": 0.12243536859750748,
+            "other": 0.005802294705063105,
+            "uncertain": 0.013613156042993069
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF06202.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.2027835249900818,
+            "smoke": 0.42627379298210144,
+            "both": 0.1099606305360794,
+            "other": 0.02596743032336235,
+            "uncertain": 0.23501460254192352
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08047.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.1301930695772171,
+            "smoke": 0.7311870455741882,
+            "both": 0.13111762702465057,
+            "other": 0.003375267144292593,
+            "uncertain": 0.004126938059926033
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08620.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.12296847254037857,
+            "smoke": 0.697804868221283,
+            "both": 0.1605258733034134,
+            "other": 0.0070535666309297085,
+            "uncertain": 0.011647234670817852
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08333.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.16682320833206177,
+            "smoke": 0.7482803463935852,
+            "both": 0.07329116761684418,
+            "other": 0.003400640096515417,
+            "uncertain": 0.008204586803913116
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB09064.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.14446209371089935,
+            "smoke": 0.7074931263923645,
+            "both": 0.11651130765676498,
+            "other": 0.005479583982378244,
+            "uncertain": 0.02605387568473816
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB09147.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.21266382932662964,
+            "smoke": 0.6879697442054749,
+            "both": 0.08679629862308502,
+            "other": 0.004018870182335377,
+            "uncertain": 0.008551223203539848
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/PublicDataset00364.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.15687651932239532,
+            "smoke": 0.7402456998825073,
+            "both": 0.08022530376911163,
+            "other": 0.007354389876127243,
+            "uncertain": 0.015298130922019482
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08707.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.244034543633461,
+            "smoke": 0.6131506562232971,
+            "both": 0.1321483999490738,
+            "other": 0.0034310664050281048,
+            "uncertain": 0.00723536079749465
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/PublicDataset00373.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.10088104754686356,
+            "smoke": 0.670311689376831,
+            "both": 0.06987159699201584,
+            "other": 0.004869106691330671,
+            "uncertain": 0.15406659245491028
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08103.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.07420550286769867,
+            "smoke": 0.7093854546546936,
+            "both": 0.07358352839946747,
+            "other": 0.009474437683820724,
+            "uncertain": 0.13335111737251282
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF05947.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.2429409772157669,
+            "smoke": 0.12235835194587708,
+            "both": 0.11238882690668106,
+            "other": 0.07605674117803574,
+            "uncertain": 0.4462551176548004
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08446.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.2642709016799927,
+            "smoke": 0.6091539859771729,
+            "both": 0.10056952387094498,
+            "other": 0.009710266254842281,
+            "uncertain": 0.016295352950692177
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF05910.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.13510842621326447,
+            "smoke": 0.5698017477989197,
+            "both": 0.08328171819448471,
+            "other": 0.008809797465801239,
+            "uncertain": 0.20299825072288513
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06412.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.12281948328018188,
+            "smoke": 0.8366687893867493,
+            "both": 0.015927791595458984,
+            "other": 0.005744047928601503,
+            "uncertain": 0.018839793279767036
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB07909.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.2456393539905548,
+            "smoke": 0.21411482989788055,
+            "both": 0.042221177369356155,
+            "other": 0.035405661910772324,
+            "uncertain": 0.46261903643608093
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.22700653970241547,
+            "smoke": 0.6460304856300354,
+            "both": 0.1167936772108078,
+            "other": 0.0036290036514401436,
+            "uncertain": 0.006540253758430481
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05602.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.45058268308639526,
+            "smoke": 0.24621328711509705,
+            "both": 0.1105983555316925,
+            "other": 0.015517632476985455,
+            "uncertain": 0.1770879477262497
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.556202232837677,
+            "smoke": 0.2485460489988327,
+            "both": 0.18176700174808502,
+            "other": 0.006573362275958061,
+            "uncertain": 0.006911369040608406
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/AoF04759.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.3061549961566925,
+            "smoke": 0.34044337272644043,
+            "both": 0.20998525619506836,
+            "other": 0.013337873853743076,
+            "uncertain": 0.13007852435112
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.48212695121765137,
+            "smoke": 0.28920263051986694,
+            "both": 0.139393612742424,
+            "other": 0.02009435184299946,
+            "uncertain": 0.06918235868215561
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06848.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.6149918437004089,
+            "smoke": 0.17438697814941406,
+            "both": 0.1806013435125351,
+            "other": 0.007932435721158981,
+            "uncertain": 0.02208745665848255
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.5286886096000671,
+            "smoke": 0.2328108698129654,
+            "both": 0.22400733828544617,
+            "other": 0.008344555273652077,
+            "uncertain": 0.006148677319288254
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06286.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.6366183757781982,
+            "smoke": 0.24220062792301178,
+            "both": 0.10761084407567978,
+            "other": 0.006396886892616749,
+            "uncertain": 0.0071732113137841225
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.333037793636322,
+            "smoke": 0.4343755841255188,
+            "both": 0.22718395292758942,
+            "other": 0.002700535347685218,
+            "uncertain": 0.0027022201102226973
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04611.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.6301223635673523,
+            "smoke": 0.11648135632276535,
+            "both": 0.10307637602090836,
+            "other": 0.04402007535099983,
+            "uncertain": 0.10629989206790924
+          }
+        },
+        {
+          "original_annotation_id": 4,
+          "content": {
+            "fire": 0.5046425461769104,
+            "smoke": 0.25968942046165466,
+            "both": 0.22243832051753998,
+            "other": 0.008122073486447334,
+            "uncertain": 0.005107601173222065
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB03934.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.4986640214920044,
+            "smoke": 0.29598674178123474,
+            "both": 0.09895309060811996,
+            "other": 0.014585756696760654,
+            "uncertain": 0.09181036055088043
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.5240157842636108,
+            "smoke": 0.3418450951576233,
+            "both": 0.12108779698610306,
+            "other": 0.00832292903214693,
+            "uncertain": 0.004728334955871105
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08354.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.22398418188095093,
+            "smoke": 0.1721705049276352,
+            "both": 0.07070689648389816,
+            "other": 0.041971947997808456,
+            "uncertain": 0.49116650223731995
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.21843358874320984,
+            "smoke": 0.619784951210022,
+            "both": 0.15032276511192322,
+            "other": 0.004822376184165478,
+            "uncertain": 0.0066362651996314526
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04469.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.4709695279598236,
+            "smoke": 0.21546605229377747,
+            "both": 0.15815061330795288,
+            "other": 0.02462322637438774,
+            "uncertain": 0.13079050183296204
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.39744192361831665,
+            "smoke": 0.4400095045566559,
+            "both": 0.14965316653251648,
+            "other": 0.008734016679227352,
+            "uncertain": 0.004161403514444828
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04263.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 4,
+          "content": {
+            "fire": 0.27167758345603943,
+            "smoke": 0.2720286250114441,
+            "both": 0.3013167977333069,
+            "other": 0.011455596424639225,
+            "uncertain": 0.14352136850357056
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.4978804290294647,
+            "smoke": 0.2954500615596771,
+            "both": 0.19569258391857147,
+            "other": 0.004863112699240446,
+            "uncertain": 0.006113827228546143
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08966.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.48579439520835876,
+            "smoke": 0.3308201730251312,
+            "both": 0.1532280445098877,
+            "other": 0.009447594173252583,
+            "uncertain": 0.02070968970656395
+          }
+        },
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.43306466937065125,
+            "smoke": 0.34679386019706726,
+            "both": 0.197441965341568,
+            "other": 0.010943695902824402,
+            "uncertain": 0.011755705811083317
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB08473.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.44149312376976013,
+            "smoke": 0.21926140785217285,
+            "both": 0.049496378749608994,
+            "other": 0.02083270251750946,
+            "uncertain": 0.26891639828681946
+          }
+        },
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.2856822609901428,
+            "smoke": 0.41571280360221863,
+            "both": 0.28516507148742676,
+            "other": 0.007125146687030792,
+            "uncertain": 0.006314770318567753
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05257.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.17017847299575806,
+            "smoke": 0.31229233741760254,
+            "both": 0.07956154644489288,
+            "other": 0.02138027548789978,
+            "uncertain": 0.41658735275268555
+          }
+        },
+        {
+          "original_annotation_id": 5,
+          "content": {
+            "fire": 0.5837628245353699,
+            "smoke": 0.23464371263980865,
+            "both": 0.16908684372901917,
+            "other": 0.0059239561669528484,
+            "uncertain": 0.006582622416317463
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05958.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.11317939311265945,
+            "smoke": 0.1209697499871254,
+            "both": 0.07164446264505386,
+            "other": 0.018036743625998497,
+            "uncertain": 0.6761696338653564
+          }
+        },
+        {
+          "original_annotation_id": 8,
+          "content": {
+            "fire": 0.4963456094264984,
+            "smoke": 0.21825142204761505,
+            "both": 0.2589852809906006,
+            "other": 0.00994756631553173,
+            "uncertain": 0.016470136120915413
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05340.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.26486891508102417,
+            "smoke": 0.15661565959453583,
+            "both": 0.05329830199480057,
+            "other": 0.055520810186862946,
+            "uncertain": 0.4696962535381317
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "content": {
+            "fire": 0.3302309811115265,
+            "smoke": 0.40881893038749695,
+            "both": 0.2408420741558075,
+            "other": 0.010803070850670338,
+            "uncertain": 0.009304910898208618
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB04633.jpg": {
+      "scene": {},
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "content": {
+            "fire": 0.4056668281555176,
+            "smoke": 0.3270242214202881,
+            "both": 0.22933097183704376,
+            "other": 0.014500897377729416,
+            "uncertain": 0.023477017879486084
+          }
+        },
+        {
+          "original_annotation_id": 1,
+          "content": {
+            "fire": 0.3434658348560333,
+            "smoke": 0.45511293411254883,
+            "both": 0.18733453750610352,
+            "other": 0.007336067035794258,
+            "uncertain": 0.006750545930117369
+          }
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB03078.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.13032063841819763,
+          "no": 0.8103024959564209,
+          "uncertain": 0.059376779943704605
+        },
+        "smoke_visible": {
+          "yes": 0.009866081178188324,
+          "no": 0.9753510355949402,
+          "uncertain": 0.014782914891839027
+        },
+        "cloud_fog_like": {
+          "yes": 0.2332884967327118,
+          "no": 0.7305637001991272,
+          "uncertain": 0.03614785149693489
+        },
+        "bright_light_like": {
+          "yes": 0.6062974333763123,
+          "no": 0.38799038529396057,
+          "uncertain": 0.005712233018130064
+        },
+        "reflection_like": {
+          "yes": 0.364339143037796,
+          "no": 0.6300356984138489,
+          "uncertain": 0.0056251827627420425
+        },
+        "low_visibility": {
+          "yes": 0.5252792239189148,
+          "no": 0.35888636112213135,
+          "uncertain": 0.11583440750837326
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB00811.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.11302601546049118,
+          "no": 0.8064508438110352,
+          "uncertain": 0.08052315562963486
+        },
+        "smoke_visible": {
+          "yes": 0.20744813978672028,
+          "no": 0.7672328352928162,
+          "uncertain": 0.02531903237104416
+        },
+        "cloud_fog_like": {
+          "yes": 0.9205431938171387,
+          "no": 0.07802894711494446,
+          "uncertain": 0.0014279538299888372
+        },
+        "bright_light_like": {
+          "yes": 0.5181339979171753,
+          "no": 0.4664827287197113,
+          "uncertain": 0.015383252874016762
+        },
+        "reflection_like": {
+          "yes": 0.15461412072181702,
+          "no": 0.8305519819259644,
+          "uncertain": 0.014833875931799412
+        },
+        "low_visibility": {
+          "yes": 0.27285900712013245,
+          "no": 0.45120298862457275,
+          "uncertain": 0.2759380042552948
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB02850.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.11776434630155563,
+          "no": 0.8283817172050476,
+          "uncertain": 0.05385395511984825
+        },
+        "smoke_visible": {
+          "yes": 0.015637483447790146,
+          "no": 0.9763102531433105,
+          "uncertain": 0.008052220568060875
+        },
+        "cloud_fog_like": {
+          "yes": 0.6198994517326355,
+          "no": 0.3732641935348511,
+          "uncertain": 0.006836415734142065
+        },
+        "bright_light_like": {
+          "yes": 0.5583012700080872,
+          "no": 0.42681217193603516,
+          "uncertain": 0.014886570163071156
+        },
+        "reflection_like": {
+          "yes": 0.2888330817222595,
+          "no": 0.7047179341316223,
+          "uncertain": 0.006448938976973295
+        },
+        "low_visibility": {
+          "yes": 0.2755524814128876,
+          "no": 0.513452410697937,
+          "uncertain": 0.2109951227903366
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB03527.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.14984148740768433,
+          "no": 0.8037010431289673,
+          "uncertain": 0.046457525342702866
+        },
+        "smoke_visible": {
+          "yes": 0.017380528151988983,
+          "no": 0.9721248149871826,
+          "uncertain": 0.010494677349925041
+        },
+        "cloud_fog_like": {
+          "yes": 0.1390741467475891,
+          "no": 0.8353891968727112,
+          "uncertain": 0.025536641478538513
+        },
+        "bright_light_like": {
+          "yes": 0.4495294392108917,
+          "no": 0.5403095483779907,
+          "uncertain": 0.0101610803976655
+        },
+        "reflection_like": {
+          "yes": 0.1917758285999298,
+          "no": 0.8029159307479858,
+          "uncertain": 0.005308270920068026
+        },
+        "low_visibility": {
+          "yes": 0.12323325127363205,
+          "no": 0.5563530921936035,
+          "uncertain": 0.3204136788845062
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB00251.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.07334066927433014,
+          "no": 0.8784365653991699,
+          "uncertain": 0.048222728073596954
+        },
+        "smoke_visible": {
+          "yes": 0.01491787564009428,
+          "no": 0.972321093082428,
+          "uncertain": 0.012761006131768227
+        },
+        "cloud_fog_like": {
+          "yes": 0.8505433797836304,
+          "no": 0.1468687355518341,
+          "uncertain": 0.0025879889726638794
+        },
+        "bright_light_like": {
+          "yes": 0.2794337570667267,
+          "no": 0.6838228702545166,
+          "uncertain": 0.036743465811014175
+        },
+        "reflection_like": {
+          "yes": 0.022794019430875778,
+          "no": 0.9738459587097168,
+          "uncertain": 0.0033600854221731424
+        },
+        "low_visibility": {
+          "yes": 0.26840001344680786,
+          "no": 0.49639278650283813,
+          "uncertain": 0.2352072298526764
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/AoF02161.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.06565876305103302,
+          "no": 0.8433571457862854,
+          "uncertain": 0.09098412096500397
+        },
+        "smoke_visible": {
+          "yes": 0.02080800011754036,
+          "no": 0.9609972238540649,
+          "uncertain": 0.018194880336523056
+        },
+        "cloud_fog_like": {
+          "yes": 0.6806789636611938,
+          "no": 0.30738767981529236,
+          "uncertain": 0.011933363042771816
+        },
+        "bright_light_like": {
+          "yes": 0.2308938056230545,
+          "no": 0.7336796522140503,
+          "uncertain": 0.03542647883296013
+        },
+        "reflection_like": {
+          "yes": 0.17832660675048828,
+          "no": 0.8153280019760132,
+          "uncertain": 0.0063454522751271725
+        },
+        "low_visibility": {
+          "yes": 0.3509531617164612,
+          "no": 0.48144498467445374,
+          "uncertain": 0.16760188341140747
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/AoF01183.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.08351853489875793,
+          "no": 0.8259595036506653,
+          "uncertain": 0.09052200615406036
+        },
+        "smoke_visible": {
+          "yes": 0.045218564569950104,
+          "no": 0.9278304576873779,
+          "uncertain": 0.026950916275382042
+        },
+        "cloud_fog_like": {
+          "yes": 0.7103497982025146,
+          "no": 0.28152045607566833,
+          "uncertain": 0.008129728026688099
+        },
+        "bright_light_like": {
+          "yes": 0.22306247055530548,
+          "no": 0.7420093417167664,
+          "uncertain": 0.03492816165089607
+        },
+        "reflection_like": {
+          "yes": 0.03532491251826286,
+          "no": 0.9595226049423218,
+          "uncertain": 0.005152511410415173
+        },
+        "low_visibility": {
+          "yes": 0.34980571269989014,
+          "no": 0.4527979791164398,
+          "uncertain": 0.19739630818367004
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB03008.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.10581757128238678,
+          "no": 0.8434054851531982,
+          "uncertain": 0.05077695846557617
+        },
+        "smoke_visible": {
+          "yes": 0.012367339804768562,
+          "no": 0.9740816354751587,
+          "uncertain": 0.013551061972975731
+        },
+        "cloud_fog_like": {
+          "yes": 0.1252565234899521,
+          "no": 0.8365368247032166,
+          "uncertain": 0.03820669278502464
+        },
+        "bright_light_like": {
+          "yes": 0.18648669123649597,
+          "no": 0.7776699066162109,
+          "uncertain": 0.03584333136677742
+        },
+        "reflection_like": {
+          "yes": 0.0891452208161354,
+          "no": 0.898463249206543,
+          "uncertain": 0.012391486205160618
+        },
+        "low_visibility": {
+          "yes": 0.14310777187347412,
+          "no": 0.5832666754722595,
+          "uncertain": 0.2736256420612335
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB03132.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.131474107503891,
+          "no": 0.7867290377616882,
+          "uncertain": 0.08179684728384018
+        },
+        "smoke_visible": {
+          "yes": 0.016611840575933456,
+          "no": 0.9609182476997375,
+          "uncertain": 0.022469906136393547
+        },
+        "cloud_fog_like": {
+          "yes": 0.4922983944416046,
+          "no": 0.49223172664642334,
+          "uncertain": 0.015469943173229694
+        },
+        "bright_light_like": {
+          "yes": 0.7648682594299316,
+          "no": 0.23179340362548828,
+          "uncertain": 0.0033383560366928577
+        },
+        "reflection_like": {
+          "yes": 0.09174101799726486,
+          "no": 0.899597704410553,
+          "uncertain": 0.00866122730076313
+        },
+        "low_visibility": {
+          "yes": 0.4119323194026947,
+          "no": 0.4080466330051422,
+          "uncertain": 0.1800210177898407
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB00032.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.11762794852256775,
+          "no": 0.7950976490974426,
+          "uncertain": 0.08727439492940903
+        },
+        "smoke_visible": {
+          "yes": 0.012761177495121956,
+          "no": 0.9655958414077759,
+          "uncertain": 0.02164291776716709
+        },
+        "cloud_fog_like": {
+          "yes": 0.4248414933681488,
+          "no": 0.5495729446411133,
+          "uncertain": 0.02558549866080284
+        },
+        "bright_light_like": {
+          "yes": 0.25213155150413513,
+          "no": 0.7152824401855469,
+          "uncertain": 0.032586000859737396
+        },
+        "reflection_like": {
+          "yes": 0.02228713408112526,
+          "no": 0.9656897783279419,
+          "uncertain": 0.012023120187222958
+        },
+        "low_visibility": {
+          "yes": 0.11862916499376297,
+          "no": 0.631052553653717,
+          "uncertain": 0.2503182888031006
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/AoF00887.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.06355665624141693,
+          "no": 0.8718409538269043,
+          "uncertain": 0.06460236757993698
+        },
+        "smoke_visible": {
+          "yes": 0.02251473069190979,
+          "no": 0.9624423384666443,
+          "uncertain": 0.015042966231703758
+        },
+        "cloud_fog_like": {
+          "yes": 0.49172019958496094,
+          "no": 0.4819648861885071,
+          "uncertain": 0.026314953342080116
+        },
+        "bright_light_like": {
+          "yes": 0.15131217241287231,
+          "no": 0.8086689114570618,
+          "uncertain": 0.04001886397600174
+        },
+        "reflection_like": {
+          "yes": 0.052193526178598404,
+          "no": 0.9423707127571106,
+          "uncertain": 0.0054358020424842834
+        },
+        "low_visibility": {
+          "yes": 0.2844257056713104,
+          "no": 0.487423837184906,
+          "uncertain": 0.22815050184726715
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/AoF00991.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.11843566596508026,
+          "no": 0.7985001802444458,
+          "uncertain": 0.08306410163640976
+        },
+        "smoke_visible": {
+          "yes": 0.29620161652565,
+          "no": 0.6705836653709412,
+          "uncertain": 0.033214714378118515
+        },
+        "cloud_fog_like": {
+          "yes": 0.3695507347583771,
+          "no": 0.6073786616325378,
+          "uncertain": 0.02307063713669777
+        },
+        "bright_light_like": {
+          "yes": 0.24631117284297943,
+          "no": 0.7234049439430237,
+          "uncertain": 0.030283892527222633
+        },
+        "reflection_like": {
+          "yes": 0.02813265658915043,
+          "no": 0.9615323543548584,
+          "uncertain": 0.010335045866668224
+        },
+        "low_visibility": {
+          "yes": 0.11377738416194916,
+          "no": 0.6437351703643799,
+          "uncertain": 0.24248744547367096
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB00586.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.09239261597394943,
+          "no": 0.8390542268753052,
+          "uncertain": 0.06855319440364838
+        },
+        "smoke_visible": {
+          "yes": 0.014179262332618237,
+          "no": 0.9721260666847229,
+          "uncertain": 0.013694657012820244
+        },
+        "cloud_fog_like": {
+          "yes": 0.19208693504333496,
+          "no": 0.7776250243186951,
+          "uncertain": 0.030288053676486015
+        },
+        "bright_light_like": {
+          "yes": 0.15489399433135986,
+          "no": 0.8023071885108948,
+          "uncertain": 0.04279875382781029
+        },
+        "reflection_like": {
+          "yes": 0.2647072672843933,
+          "no": 0.7107374668121338,
+          "uncertain": 0.024555295705795288
+        },
+        "low_visibility": {
+          "yes": 0.15616819262504578,
+          "no": 0.5908582806587219,
+          "uncertain": 0.2529734969139099
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/WEB00053.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.11291312426328659,
+          "no": 0.8041515946388245,
+          "uncertain": 0.08293533325195312
+        },
+        "smoke_visible": {
+          "yes": 0.011843393556773663,
+          "no": 0.9708878397941589,
+          "uncertain": 0.017268754541873932
+        },
+        "cloud_fog_like": {
+          "yes": 0.30301687121391296,
+          "no": 0.6752898097038269,
+          "uncertain": 0.021693330258131027
+        },
+        "bright_light_like": {
+          "yes": 0.26967325806617737,
+          "no": 0.7042355537414551,
+          "uncertain": 0.026091193780303
+        },
+        "reflection_like": {
+          "yes": 0.164381206035614,
+          "no": 0.8187657594680786,
+          "uncertain": 0.016853081062436104
+        },
+        "low_visibility": {
+          "yes": 0.1286531537771225,
+          "no": 0.609152615070343,
+          "uncertain": 0.2621942460536957
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/PublicDataset00929.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.15231168270111084,
+          "no": 0.7978491187095642,
+          "uncertain": 0.04983922839164734
+        },
+        "smoke_visible": {
+          "yes": 0.018459411337971687,
+          "no": 0.9671122431755066,
+          "uncertain": 0.014428231865167618
+        },
+        "cloud_fog_like": {
+          "yes": 0.47026950120925903,
+          "no": 0.5141036510467529,
+          "uncertain": 0.015626780688762665
+        },
+        "bright_light_like": {
+          "yes": 0.4040779769420624,
+          "no": 0.5877651572227478,
+          "uncertain": 0.008156832307577133
+        },
+        "reflection_like": {
+          "yes": 0.30271008610725403,
+          "no": 0.6924399137496948,
+          "uncertain": 0.00484996335580945
+        },
+        "low_visibility": {
+          "yes": 0.09934057295322418,
+          "no": 0.6041319966316223,
+          "uncertain": 0.2965275049209595
+        }
+      },
+      "regions": []
+    },
+    "dfire/train/train/images/AoF01318.jpg": {
+      "scene": {
+        "fire_visible": {
+          "yes": 0.06398655474185944,
+          "no": 0.8508789539337158,
+          "uncertain": 0.08513443917036057
+        },
+        "smoke_visible": {
+          "yes": 0.36421599984169006,
+          "no": 0.6206653118133545,
+          "uncertain": 0.015118623152375221
+        },
+        "cloud_fog_like": {
+          "yes": 0.9734832048416138,
+          "no": 0.026417208835482597,
+          "uncertain": 9.952939581125975e-05
+        },
+        "bright_light_like": {
+          "yes": 0.1720132827758789,
+          "no": 0.7881747484207153,
+          "uncertain": 0.039811983704566956
+        },
+        "reflection_like": {
+          "yes": 0.06292188912630081,
+          "no": 0.9315730929374695,
+          "uncertain": 0.005504978820681572
+        },
+        "low_visibility": {
+          "yes": 0.3446161448955536,
+          "no": 0.4687632918357849,
+          "uncertain": 0.1866205632686615
+        }
+      },
+      "regions": []
+    }
+  },
+  "original_GT_modified": false,
+  "full_fit_training_authorized_by_probe": false,
+  "load_seconds": 7.88242327189073,
+  "torch": "2.12.1+cu130",
+  "raw_scores": {
+    "dfire/train/train/images/AoF04755.jpg": 0.9771976727060974,
+    "dfire/train/train/images/PublicDataset00046.jpg": 1.080786554608494,
+    "dfire/train/train/images/WEB04162.jpg": 1.2013610422145575,
+    "dfire/train/train/images/AoF04645.jpg": 1.0233558979816735,
+    "dfire/train/train/images/AoF05002.jpg": 1.1020819903351367,
+    "dfire/train/train/images/AoF04951.jpg": 1.0663868631236255,
+    "dfire/train/train/images/PublicDataset00008.jpg": 1.0933947656303644,
+    "dfire/train/train/images/WEB05396.jpg": 1.146581768989563,
+    "dfire/train/train/images/AoF04712.jpg": 1.0518245222046971,
+    "dfire/train/train/images/WEB03883.jpg": 1.0703707365319133,
+    "dfire/train/train/images/WEB04215.jpg": 1.111256632488221,
+    "dfire/train/train/images/AoF04905.jpg": 1.0937075498513877,
+    "dfire/train/train/images/WEB03976.jpg": 1.0934888906776905,
+    "dfire/train/train/images/AoF04909.jpg": 1.0286736388225108,
+    "dfire/train/train/images/WEB04442.jpg": 0.9883916890248656,
+    "dfire/train/train/images/WEB05391.jpg": 1.0698928469792008,
+    "dfire/train/train/images/WEB06014.jpg": 1.1743920191656798,
+    "dfire/train/train/images/WEB06442.jpg": 1.1961678977822885,
+    "dfire/train/train/images/AoF06202.jpg": 1.0768708670511842,
+    "dfire/train/train/images/WEB08047.jpg": 1.1821840839693323,
+    "dfire/train/train/images/WEB08620.jpg": 1.182077175588347,
+    "dfire/train/train/images/WEB08333.jpg": 1.162836916395463,
+    "dfire/train/train/images/WEB09064.jpg": 1.168515689088963,
+    "dfire/train/train/images/WEB09147.jpg": 1.1395208358298987,
+    "dfire/train/train/images/PublicDataset00364.jpg": 1.164060023613274,
+    "dfire/train/train/images/WEB08707.jpg": 1.1244583615334705,
+    "dfire/train/train/images/PublicDataset00373.jpg": 1.1586082830326632,
+    "dfire/train/train/images/WEB08103.jpg": 1.1748222606256604,
+    "dfire/train/train/images/AoF05947.jpg": 0.9789373651146889,
+    "dfire/train/train/images/WEB08446.jpg": 1.1089355854783207,
+    "dfire/train/train/images/AoF05910.jpg": 1.1272913105785847,
+    "dfire/train/train/images/WEB06412.jpg": 1.1810082624433562,
+    "dfire/train/train/images/WEB07909.jpg": 1.0713160823797807,
+    "dfire/train/train/images/WEB05602.jpg": 1.020873446832411,
+    "dfire/train/train/images/AoF04759.jpg": 1.0110917432466522,
+    "dfire/train/train/images/WEB06848.jpg": 1.066632352070883,
+    "dfire/train/train/images/WEB06286.jpg": 1.1026816141384188,
+    "dfire/train/train/images/WEB04611.jpg": 1.0677575536537915,
+    "dfire/train/train/images/WEB03934.jpg": 1.0272048490587622,
+    "dfire/train/train/images/WEB08354.jpg": 1.078425047104247,
+    "dfire/train/train/images/WEB04469.jpg": 1.071564699173905,
+    "dfire/train/train/images/WEB04263.jpg": 1.0347386579378508,
+    "dfire/train/train/images/WEB08966.jpg": 1.0498727665981278,
+    "dfire/train/train/images/WEB08473.jpg": 1.0823707324452698,
+    "dfire/train/train/images/WEB05257.jpg": 0.9662638977752067,
+    "dfire/train/train/images/WEB05958.jpg": 1.0020951111800969,
+    "dfire/train/train/images/WEB05340.jpg": 1.0518322124844417,
+    "dfire/train/train/images/WEB04633.jpg": 1.073139781365171,
+    "dfire/train/train/images/WEB03078.jpg": 1.205683351494372,
+    "dfire/train/train/images/WEB00811.jpg": 1.15665119048208,
+    "dfire/train/train/images/WEB02850.jpg": 1.2089112675748765,
+    "dfire/train/train/images/WEB03527.jpg": 1.2010754803195596,
+    "dfire/train/train/images/WEB00251.jpg": 1.2203123891958967,
+    "dfire/train/train/images/AoF02161.jpg": 1.2147359508089721,
+    "dfire/train/train/images/AoF01183.jpg": 1.203131607733667,
+    "dfire/train/train/images/WEB03008.jpg": 1.2124127761926502,
+    "dfire/train/train/images/WEB03132.jpg": 1.1999451671727002,
+    "dfire/train/train/images/WEB00032.jpg": 1.203788045560941,
+    "dfire/train/train/images/AoF00887.jpg": 1.2185264881700277,
+    "dfire/train/train/images/AoF00991.jpg": 1.131805820390582,
+    "dfire/train/train/images/WEB00586.jpg": 1.2130760519066826,
+    "dfire/train/train/images/WEB00053.jpg": 1.2062853645766154,
+    "dfire/train/train/images/PublicDataset00929.jpg": 1.1992737834807485,
+    "dfire/train/train/images/AoF01318.jpg": 1.13041771389544
+  },
+  "weights": {
+    "dfire/train/train/images/AoF04755.jpg": 0.9398841666828309,
+    "dfire/train/train/images/PublicDataset00046.jpg": 1.0395175905681155,
+    "dfire/train/train/images/AoF04645.jpg": 0.9842798773055896,
+    "dfire/train/train/images/AoF05002.jpg": 1.0599998772344932,
+    "dfire/train/train/images/AoF04951.jpg": 1.0256677397039946,
+    "dfire/train/train/images/WEB04442.jpg": 0.9506507485049756,
+    "dfire/train/train/images/WEB04162.jpg": 1.0960770944623603,
+    "dfire/train/train/images/PublicDataset00008.jpg": 0.9975726827326623,
+    "dfire/train/train/images/WEB05396.jpg": 1.0460985247207186,
+    "dfire/train/train/images/AoF04712.jpg": 0.9596455400761079,
+    "dfire/train/train/images/WEB03883.jpg": 0.9765664156486827,
+    "dfire/train/train/images/WEB04215.jpg": 1.013869185148908,
+    "dfire/train/train/images/AoF04905.jpg": 0.9978580554125862,
+    "dfire/train/train/images/WEB03976.jpg": 0.9976585589220544,
+    "dfire/train/train/images/AoF04909.jpg": 0.9385235358657767,
+    "dfire/train/train/images/WEB05391.jpg": 0.9761304070101426,
+    "dfire/train/train/images/WEB06014.jpg": 1.026752294656332,
+    "dfire/train/train/images/WEB06442.jpg": 1.0457905995603836,
+    "dfire/train/train/images/AoF06202.jpg": 0.9414910998619204,
+    "dfire/train/train/images/WEB08047.jpg": 1.0335647731870912,
+    "dfire/train/train/images/WEB08620.jpg": 1.033471304887151,
+    "dfire/train/train/images/WEB08333.jpg": 1.0166498517831777,
+    "dfire/train/train/images/WEB09064.jpg": 1.021614712578149,
+    "dfire/train/train/images/WEB09147.jpg": 0.9962649727714039,
+    "dfire/train/train/images/PublicDataset00364.jpg": 1.0177191950024804,
+    "dfire/train/train/images/WEB08707.jpg": 0.9830960906650296,
+    "dfire/train/train/images/PublicDataset00373.jpg": 1.0129528247788562,
+    "dfire/train/train/images/WEB08103.jpg": 1.0271284479331615,
+    "dfire/train/train/images/AoF05947.jpg": 0.8558693941656718,
+    "dfire/train/train/images/WEB08446.jpg": 0.9695247740399522,
+    "dfire/train/train/images/AoF05910.jpg": 0.9855728930319104,
+    "dfire/train/train/images/WEB06412.jpg": 1.0325367710973292,
+    "dfire/train/train/images/WEB07909.jpg": 1.0283896427440817,
+    "dfire/train/train/images/WEB05602.jpg": 0.9799681872998611,
+    "dfire/train/train/images/WEB04611.jpg": 1.0249737002921722,
+    "dfire/train/train/images/WEB08354.jpg": 1.0352137591869472,
+    "dfire/train/train/images/WEB04263.jpg": 0.9932778348724248,
+    "dfire/train/train/images/WEB08473.jpg": 1.0390013453204638,
+    "dfire/train/train/images/WEB05257.jpg": 0.9275467819191053,
+    "dfire/train/train/images/WEB05958.jpg": 0.9619422785970682,
+    "dfire/train/train/images/WEB05340.jpg": 1.0096864697678762,
+    "dfire/train/train/images/AoF04759.jpg": 0.956155448706996,
+    "dfire/train/train/images/WEB06848.jpg": 1.0086783340994419,
+    "dfire/train/train/images/WEB06286.jpg": 1.0427689085482654,
+    "dfire/train/train/images/WEB03934.jpg": 0.9713930708325315,
+    "dfire/train/train/images/WEB04469.jpg": 1.0133426888318078,
+    "dfire/train/train/images/WEB08966.jpg": 0.9928293579062535,
+    "dfire/train/train/images/WEB04633.jpg": 1.0148321910747047,
+    "dfire/train/train/images/WEB03078.jpg": 1.008621818215264,
+    "dfire/train/train/images/WEB00811.jpg": 0.9676036625527967,
+    "dfire/train/train/images/WEB02850.jpg": 1.011322151252234,
+    "dfire/train/train/images/WEB03527.jpg": 1.0047670752624975,
+    "dfire/train/train/images/WEB00251.jpg": 1.0208598296193059,
+    "dfire/train/train/images/AoF02161.jpg": 1.0161948258121172,
+    "dfire/train/train/images/AoF01183.jpg": 1.0064871412883978,
+    "dfire/train/train/images/WEB03008.jpg": 1.014251359807845,
+    "dfire/train/train/images/WEB03132.jpg": 1.0038215048522194,
+    "dfire/train/train/images/WEB00032.jpg": 1.0070362883874848,
+    "dfire/train/train/images/AoF00887.jpg": 1.0193658231393858,
+    "dfire/train/train/images/AoF00991.jpg": 0.9468191154950159,
+    "dfire/train/train/images/WEB00586.jpg": 1.0148062271831275,
+    "dfire/train/train/images/WEB00053.jpg": 1.0091254359593833,
+    "dfire/train/train/images/PublicDataset00929.jpg": 1.0032598546981744,
+    "dfire/train/train/images/AoF01318.jpg": 0.9456578864747501
+  },
+  "groups": {
+    "fire_only|small_fire=1": {
+      "images": 6,
+      "IQR": 0.07699709714695624,
+      "sum": 5.999999999999999,
+      "min": 0.9398841666828309,
+      "max": 1.0599998772344932
+    },
+    "fire_only|small_fire=0": {
+      "images": 10,
+      "IQR": 0.03362699354504972,
+      "sum": 10.0,
+      "min": 0.9385235358657767,
+      "max": 1.0960770944623603
+    },
+    "smoke_only|small_fire=0": {
+      "images": 16,
+      "IQR": 0.043526836284013104,
+      "sum": 16.0,
+      "min": 0.8558693941656718,
+      "max": 1.0457905995603836
+    },
+    "both|small_fire=1": {
+      "images": 9,
+      "IQR": 0.04842145544422061,
+      "sum": 9.0,
+      "min": 0.9275467819191053,
+      "max": 1.0390013453204638
+    },
+    "both|small_fire=0": {
+      "images": 7,
+      "IQR": 0.031976225583863815,
+      "sum": 7.000000000000001,
+      "min": 0.956155448706996,
+      "max": 1.0427689085482654
+    },
+    "empty|small_fire=0": {
+      "images": 16,
+      "IQR": 0.010708984337957528,
+      "sum": 16.0,
+      "min": 0.9456578864747501,
+      "max": 1.0208598296193059
+    }
+  },
+  "qualifying_groups": [
+    "fire_only|small_fire=1"
+  ],
+  "nonconstant_gate_passed": false,
+  "bounded_visual_screening_ids": [
+    "dfire/train/train/images/AoF05947.jpg",
+    "dfire/train/train/images/WEB05257.jpg",
+    "dfire/train/train/images/AoF04909.jpg",
+    "dfire/train/train/images/AoF04755.jpg",
+    "dfire/train/train/images/WEB06442.jpg",
+    "dfire/train/train/images/WEB05396.jpg",
+    "dfire/train/train/images/AoF05002.jpg",
+    "dfire/train/train/images/WEB04162.jpg"
+  ],
+  "visual_screening_status": "pending",
+  "cuda_initialized": false,
+  "total_seconds": 524.9311467916705,
+  "peak_rss_kib": 6148772,
+  "training_after": {
+    "epochs": 77,
+    "recent_epoch_seconds": [
+      152.8,
+      153.5,
+      150.8
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "weights": "runs/homefire_B_native_seed17_full_20261105/weights/best_fire.pt",
+  "weights_sha256": "208015a69504d94bdf029ce6ca0d032041f128cd29b5fb49ed8d989523e9dd36",
+  "manifest": "artifacts/data/homefire-v1/manifest.jsonl",
+  "ultralytics_commit": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+  "training_source": "homefire",
+  "target_source": "homefire",
+  "seed": 17,
+  "device": "cpu",
+  "cpu_threads": 4,
+  "batch": 4,
+  "half": false,
+  "purpose": "cal",
+  "output": "artifacts/evaluation-cpu-20261106/homefire-cal-predictions.json"
+}

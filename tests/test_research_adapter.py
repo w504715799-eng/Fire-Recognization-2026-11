@@ -2,13 +2,23 @@ import copy,json,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from fire_r2.common import ProjectError
-from fire_r2.research_data import canonical_row,coco_view
+from fire_r2.research_data import canonical_row,coco_view,load_manifest
 from fire_r2.supervision import prepare_supervision,parse_advice
 from fire_r2.teacher_runner import pilot_selection,teacher_view
 from test_research import row,cache_for
 
 
 class AdapterTests(unittest.TestCase):
+    def test_pilot_selection_does_not_read_unselected_image_headers(self):
+        from unittest.mock import patch
+        rows=[{'sample_id':'dfire/train/'+str(i),'role':'fit','state':'fire_only',
+               'image_path':'missing-'+str(i)+'.jpg','boxes':[]} for i in range(20)]
+        with tempfile.TemporaryDirectory(dir=ROOT/'tmp') as tmp:
+            path=Path(tmp)/'manifest.jsonl';path.write_text(''.join(json.dumps(r)+'\n' for r in rows))
+            with patch('PIL.Image.open',side_effect=AssertionError('No pixels/headers during selection')):
+                selected=pilot_selection(load_manifest(path,roles={'fit'},enrich=False),2)
+            self.assertEqual([r['sample_id'] for r in selected],[r['sample_id'] for r in pilot_selection(rows,2)])
+
     def test_r2_box_conversion_keeps_raw_geometry_and_zero_id(self):
         source={'sample_id':'fasdd_cv/train/x','image_path':'x.jpg','view_image':'images/fit/short.jpg',
                 'role':'fit','state':'fire_only','width':100,'height':80,

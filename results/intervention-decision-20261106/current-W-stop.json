@@ -1,0 +1,25 @@
+{
+  "scope": "development_64_only",
+  "visibility_counts": {
+    "limited": 64
+  },
+  "raw_scores": {
+    "fire_only": {
+      "1.0": 16
+    },
+    "smoke_only": {
+      "1.0": 16
+    },
+    "both": {
+      "1.0": 16
+    },
+    "empty": {
+      "1.25": 16
+    }
+  },
+  "normalized_weights_unique": [
+    1.0
+  ],
+  "decision": "stop_current_visibility_gated_W_no_full_training",
+  "new_candidate_config_sha256": "945390dd1604178bbefabc0bd534be03f155ccc7bacf82e0c1928011b302ce33"
+}

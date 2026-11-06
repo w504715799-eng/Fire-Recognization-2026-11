@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "homefire",
+  "checkpoint_sha256": "208015a69504d94bdf029ce6ca0d032041f128cd29b5fb49ed8d989523e9dd36",
+  "fit_partition": "cal",
+  "rule": "fire_F1_IoU0.5_tie_highest_threshold",
+  "threshold": 0.47988951206207275,
+  "selection_sha256": "e5e1395abd9d2ff931b942735c37cc7c5f2492561bf4900ddf695d9f8eb5b3e4",
+  "calibration_predictions_sha256": "92cedc94f30bf04c9b0a697d39230ecf7f78dd7dd0ae263f560334e350eaf8a0",
+  "calibration_result": {
+    "threshold": 0.47988951206207275,
+    "tp": 452,
+    "fp": 24,
+    "precision": 0.9495798319327731,
+    "recall": 0.9358178053830227,
+    "f1": 0.9426485922836287,
+    "fp_per_image": 0.036923076923076927,
+    "negative_trigger_rate": 0.0049504950495049506
+  },
+  "calibration_images": 650
+}

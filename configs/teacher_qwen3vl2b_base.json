@@ -1,0 +1,18 @@
+{
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "expected_model_type": "qwen3_vl",
+  "expected_architecture": "Qwen3VLForConditionalGeneration",
+  "model_dir": "weights/Qwen3-VL-2B-Instruct/89644892e4d85e24eaac8bacfd4f463576704203",
+  "independent_tokenizer_and_trie": true,
+  "weight_sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0",
+  "inference_dtype": "float16",
+  "attention_backend": "sdpa",
+  "trust_remote_code": false,
+  "local_files_only": true,
+  "variant": "base",
+  "status": "cloud_cpu_pilot_completed_regression_in_progress",
+  "regression_protocol": "v2_frozen_same64",
+  "cache_root": "artifacts/teacher-qwen3vl2b/base",
+  "max_stage_seconds": 1800
+}

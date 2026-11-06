@@ -81,7 +81,7 @@ def teacher_jobs(rows, manifest_sha256):
     return {'schema_version':1,'manifest_sha256':manifest_sha256,'scope':'fit_only','jobs':jobs,'runs_teacher':False}
 
 
-def validate_cache(cache, rows, manifest_sha256):
+def validate_cache(cache, rows, manifest_sha256,required_tasks=('A','B')):
     if cache.get('scope')=='pilot_fit_only':raise ProjectError('Pilot timing cache cannot replace full-fit supervision')
     if cache.get('teacher_id')!='Qwen/Qwen3.5-0.8B':raise ProjectError('Unexpected teacher model')
     expected={r['sample_id'] for r in fit_rows(rows)}
@@ -91,14 +91,16 @@ def validate_cache(cache, rows, manifest_sha256):
         if not cache.get(key):raise ProjectError(f'Missing cache provenance: {key}')
     from .teacher_protocols import protocol
     spec=protocol(cache.get('protocol','v1'))
-    prompts={task:hashlib.sha256(spec[task].encode()).hexdigest() for task in ('A','B')}
+    tasks=set(cache.get('tasks',('A','B')))
+    if not tasks<={'A','B'} or not set(required_tasks)<=tasks:raise ProjectError('Cache task scope does not support this experiment')
+    prompts={task:hashlib.sha256(spec[task].encode()).hexdigest() for task in tasks}
     if cache['prompt_hashes']!=prompts:raise ProjectError('Cache prompt revision differs from the frozen prompts')
     for row in fit_rows(rows):
         item=cache['samples'][row['sample_id']]
         image_hash=item.get('image_sha256','')
         if len(image_hash)!=64 or any(c not in '0123456789abcdef' for c in image_hash):raise ProjectError('Every cache item needs its input image SHA-256')
         if row.get('image_sha256') is not None and row['image_sha256']!=image_hash:raise ProjectError('Teacher image hash differs from the verified original image')
-        allowed={b['original_annotation_id'] for b in selected_regions(row)}
+        allowed={b['original_annotation_id'] for b in selected_regions(row)} if 'B' in tasks else set()
         seen=set()
         for region in item.get('regions',[]):
             ident=region['original_annotation_id']
@@ -162,7 +164,8 @@ def semantic_targets(row,item=None):
 
 def prepare_supervision(rows, manifest_sha256, cache=None, variant='qwen', normalization='group', seed=17, rule_scores=None, shuffle_semantic=False):
     fit=fit_rows(rows)
-    items=validate_cache(cache,rows,manifest_sha256) if cache is not None else {}
+    needed=('A','B') if variant in ('qwen','shuffle') else ('A',)
+    items=validate_cache(cache,rows,manifest_sha256,needed) if cache is not None else {}
     if variant in {'qwen','shuffle'} and not items:raise ProjectError('Qwen weighting needs a validated offline cache, including explicit failures')
     if variant=='rule':
         if not rule_scores or set(rule_scores)!=set(r['sample_id'] for r in fit):raise ProjectError('RuleW needs all fit rule scores')
@@ -205,7 +208,7 @@ def consistent_batch(index, every=4):
 
 
 def validate_supervision(advice,manifest,factors):
-    rows=load_manifest(manifest,roles={'fit'});expected={r['sample_id'] for r in rows}
+    rows=load_manifest(manifest,roles={'fit'},enrich=False);expected={r['sample_id'] for r in rows}
     if advice.get('manifest_sha256')!=sha256(manifest) or set(advice.get('samples',{}))!=expected:
         raise ProjectError('Supervision must cover every original fit image and bind the exact frozen manifest')
     if advice.get('variant')!=factors['weighting'] or advice.get('normalization')!=factors['normalization']:
@@ -217,4 +220,8 @@ def validate_supervision(advice,manifest,factors):
     for item in advice['samples'].values():
         if not math.isfinite(item['weight']) or item['weight']<=0:raise ProjectError('All images require positive finite weights')
         if len(item['targets'])!=6 or len(item['mask'])!=6:raise ProjectError('Six semantic fields required')
+    if factors['weighting'] in ('qwen','shuffle') and all(abs(x['weight']-1.)<1e-12 for x in advice['samples'].values()):
+        raise ProjectError('W has no effective intervention: reuse the corresponding unweighted result rather than train a duplicate')
+    if factors.get('semantic')=='qwen' and not any(any(x['mask'][2:]) for x in advice['samples'].values()):
+        raise ProjectError('S has no known context targets: it would duplicate the GT-only P control')
     return advice

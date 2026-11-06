@@ -1,0 +1,80 @@
+{
+  "source": "dfire",
+  "detector_fit_images": 14122,
+  "detector_fit_unchanged": true,
+  "source_manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "original_annotations_modified": false,
+  "image_copies_created": 0,
+  "supervised_tasks": [
+    "scene_presence",
+    "region_class"
+  ],
+  "context_GT_created": false,
+  "heldout_scope": "teacher holdout within detector fit, not detector test or cross-domain generalization",
+  "partitions": {
+    "teacher_holdout": {
+      "images": 256,
+      "states": {
+        "fire_only": 64,
+        "smoke_only": 64,
+        "both": 64,
+        "empty": 64
+      },
+      "instruction_examples": 512,
+      "tasks": {
+        "scene_presence": 256,
+        "region_class": 256
+      },
+      "image_manifest_sha256": "fbec5d6b46a5cb3a0237d8233d03dccb3cb5c4256a0b6a77f12106cd2c8b7b03",
+      "instruction_sha256": "346e88520ebd82c79754a08ef773d5fa34b50a16c65692bc5342e937f9563c80"
+    },
+    "teacher_dev": {
+      "images": 128,
+      "states": {
+        "fire_only": 32,
+        "smoke_only": 32,
+        "both": 32,
+        "empty": 32
+      },
+      "instruction_examples": 256,
+      "tasks": {
+        "scene_presence": 128,
+        "region_class": 128
+      },
+      "image_manifest_sha256": "06ff9c5f6f50cb0c1c4df4fb3a9118252c98cb3f19106241a51a064689f6f6c2",
+      "instruction_sha256": "fd9cc9fc9d85dc08ced73c7bb5fb8c3b339f6f5d6cfd5a3c1c72c0ccece509bd"
+    },
+    "teacher_train": {
+      "images": 1000,
+      "states": {
+        "fire_only": 250,
+        "smoke_only": 250,
+        "both": 250,
+        "empty": 250
+      },
+      "instruction_examples": 2000,
+      "tasks": {
+        "scene_presence": 1000,
+        "region_class": 1000
+      },
+      "image_manifest_sha256": "8a250010f041b9505fa6203981a0ac90e8675a1cf8c1eae507c041bfb71d42de",
+      "instruction_sha256": "1cbee6ca404dc846e199670d305cc9248c6b54396ea39773b46b711b8063ac26"
+    },
+    "development_regression": {
+      "images": 64,
+      "states": {
+        "empty": 16,
+        "fire_only": 16,
+        "both": 16,
+        "smoke_only": 16
+      },
+      "instruction_examples": 128,
+      "tasks": {
+        "scene_presence": 64,
+        "region_class": 64
+      },
+      "image_manifest_sha256": "36f68aece1cecbcfcfd1522f694da0c50339c4e2a7dea05d4138b0a2a9d75f94",
+      "instruction_sha256": "a2fd29ad7e21967c01b7e6c8465d9ae6c53e80a0220090165c13691010afa31a"
+    }
+  }
+}

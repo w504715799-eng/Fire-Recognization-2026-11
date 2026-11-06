@@ -1,0 +1,1699 @@
+{
+  "status": "completed",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 6,
+  "batch_size": 4,
+  "samples": [
+    "dfire/train/train/images/AoF04755.jpg",
+    "dfire/train/train/images/PublicDataset00046.jpg",
+    "dfire/train/train/images/WEB04162.jpg",
+    "dfire/train/train/images/AoF04645.jpg",
+    "dfire/train/train/images/AoF05002.jpg",
+    "dfire/train/train/images/AoF04951.jpg",
+    "dfire/train/train/images/PublicDataset00008.jpg",
+    "dfire/train/train/images/WEB05396.jpg",
+    "dfire/train/train/images/AoF04712.jpg",
+    "dfire/train/train/images/WEB03883.jpg",
+    "dfire/train/train/images/WEB04215.jpg",
+    "dfire/train/train/images/AoF04905.jpg",
+    "dfire/train/train/images/WEB03976.jpg",
+    "dfire/train/train/images/AoF04909.jpg",
+    "dfire/train/train/images/WEB04442.jpg",
+    "dfire/train/train/images/WEB05391.jpg",
+    "dfire/train/train/images/WEB06014.jpg",
+    "dfire/train/train/images/WEB06442.jpg",
+    "dfire/train/train/images/AoF06202.jpg",
+    "dfire/train/train/images/WEB08047.jpg",
+    "dfire/train/train/images/WEB08620.jpg",
+    "dfire/train/train/images/WEB08333.jpg",
+    "dfire/train/train/images/WEB09064.jpg",
+    "dfire/train/train/images/WEB09147.jpg",
+    "dfire/train/train/images/PublicDataset00364.jpg",
+    "dfire/train/train/images/WEB08707.jpg",
+    "dfire/train/train/images/PublicDataset00373.jpg",
+    "dfire/train/train/images/WEB08103.jpg",
+    "dfire/train/train/images/AoF05947.jpg",
+    "dfire/train/train/images/WEB08446.jpg",
+    "dfire/train/train/images/AoF05910.jpg",
+    "dfire/train/train/images/WEB06412.jpg",
+    "dfire/train/train/images/WEB07909.jpg",
+    "dfire/train/train/images/WEB05602.jpg",
+    "dfire/train/train/images/AoF04759.jpg",
+    "dfire/train/train/images/WEB06848.jpg",
+    "dfire/train/train/images/WEB06286.jpg",
+    "dfire/train/train/images/WEB04611.jpg",
+    "dfire/train/train/images/WEB03934.jpg",
+    "dfire/train/train/images/WEB08354.jpg",
+    "dfire/train/train/images/WEB04469.jpg",
+    "dfire/train/train/images/WEB04263.jpg",
+    "dfire/train/train/images/WEB08966.jpg",
+    "dfire/train/train/images/WEB08473.jpg",
+    "dfire/train/train/images/WEB05257.jpg",
+    "dfire/train/train/images/WEB05958.jpg",
+    "dfire/train/train/images/WEB05340.jpg",
+    "dfire/train/train/images/WEB04633.jpg",
+    "dfire/train/train/images/WEB03078.jpg",
+    "dfire/train/train/images/WEB00811.jpg",
+    "dfire/train/train/images/WEB02850.jpg",
+    "dfire/train/train/images/WEB03527.jpg",
+    "dfire/train/train/images/WEB00251.jpg",
+    "dfire/train/train/images/AoF02161.jpg",
+    "dfire/train/train/images/AoF01183.jpg",
+    "dfire/train/train/images/WEB03008.jpg",
+    "dfire/train/train/images/WEB03132.jpg",
+    "dfire/train/train/images/WEB00032.jpg",
+    "dfire/train/train/images/AoF00887.jpg",
+    "dfire/train/train/images/AoF00991.jpg",
+    "dfire/train/train/images/WEB00586.jpg",
+    "dfire/train/train/images/WEB00053.jpg",
+    "dfire/train/train/images/PublicDataset00929.jpg",
+    "dfire/train/train/images/AoF01318.jpg"
+  ],
+  "gpu_lock_acquired": false,
+  "batches": [
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 23.54673501709476,
+      "view_sha256_in_input_order": [
+        "2287954da35aea8b4883103b8b6f20bb2c6366962df316151e6cbe8d27bb5070",
+        "8a14c8dfb1fcf4abf61b97fa5683eb66b89ef0ef8cedd5284293c3fda6e7bdd1",
+        "cfb2b57b7caee6c7b420c0a0c0f33110949b38d1f0fa1dca66e942c41913f4e6",
+        "406bb221d600580244aa1b392e5a220f5c69d85cd9b00d45c9f09637567d0026"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 17.40373499598354,
+      "view_sha256_in_input_order": [
+        "2ea6e931b14e5da4cff1d7f2906ddad0cc2aa0268b19081b092951ee5fe11679",
+        "952e2b766c42139d40656d12ea7a8875a0f2c3ac098700553dc42e22b8ee594d",
+        "4dd26c2be9ded6e1e0a27dcc02e83fac40537cea943985c25bf00bcf04370414",
+        "ffaad80c98e3ca44581d9f613b67d9ba82db8789d322700ad611bc1a42f69e32"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        10,
+        10,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.23153494624421,
+      "view_sha256_in_input_order": [
+        "a197dd94c77deeb277068d688211c05e8ddbe0255c44232cd5e2d16d01acb28c",
+        "85c0cf2d140523ee49c6c1e3c1795da3350f79a51d533eb1c7d1c479e36048d9",
+        "3ca4f7de72a47c1e6a6da9ffac4658ec827fc46fe42570f1904b3435241abf14",
+        "65fa0e1b14d98a3959fc28cf98056972d3c21b417c8bb0db82b875fd699e5efd"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.389762920793146,
+      "view_sha256_in_input_order": [
+        "92bdcbd9074b480334351743148b8c62204a1866f1a6946b56eef476aeba84b6",
+        "405ad0c4a43c8a288a0609d8c409ac6db8b7de2229d3e3ccbd4707f83cc88410",
+        "73b6df64b0de136c1b2d6b306c1e4882e4685eac4a54aef6751daffe5148d443",
+        "304469621758a0e4f3f823838d3f7a90ff61fbe74ca38b1d319c412a22fafbaf"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.710703529883176,
+      "view_sha256_in_input_order": [
+        "2ff136e8e29ea6a17590ed84c7c2e0d30487b3d845af143c66bf5de2453f17ff",
+        "7a14f466dbbd2d36809ee223b20d0b380d7d16ca564ee9f3a567a3fcd3156d36",
+        "2d77c9d0827cf02bf2bfb8307e9debdf974ebc519ef641f21e7cfd5e7d5b91c8",
+        "65dc91c85e739446a11ee83c3936e9c341d244e108a50e11df352a76f364ecdd"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 15.86452472768724,
+      "view_sha256_in_input_order": [
+        "81ad88b22c4dd8abbcc7865ec5b36357120d79fdb6e95864fa9e972df3ef7db2",
+        "130b9bb8bab9493b14a56a90b04815a3ddfef3190427f6208a5f532eacf4c1a3",
+        "b45e836d292a398802128e0f614906f220fae8f7158ba97735f0b158d01a9e6c",
+        "ece55f5d0424135cca9d2320784914d7f1e30af07a8a12e0b4f2e540233e2f31"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.97693989891559,
+      "view_sha256_in_input_order": [
+        "f4ee83af63a8bb99bd8287fa4296b9afd5d714e06c60b1e038fc4e7fc943ce35",
+        "a1a859ceb8690460434a7c0a253aa879556c024785afac2138459b4a3a306bce",
+        "dc1a5531867c06f5a4eb4b40a1b1a4660d93378dd79b940948741960e791f9a5",
+        "81c506554fb2cf57c5e34df6ba35e1f0b88a39c8366d24c32bbdffe33739983e"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"uncertain\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}"
+      ],
+      "output_tokens": [
+        37,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.65866029402241,
+      "view_sha256_in_input_order": [
+        "5ddda9ec4ae6a2f23af54b24ce259b63ea8c843c1154e50015e7c4294aec7a3d",
+        "2bff1396e791ca0fd242d5e94cad9b03f5e8dde217526b899b8194557deb5ca3",
+        "2c3bd2882f41af300f6c8ba8ad3efa1e4dc62e39790b4c333a3cb0d32f520cf8",
+        "b7ab85f667f88387c56194bf47bbfb154ab71456350237ef8fa1c8f1e8b2b348"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        11,
+        11,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.443040682934225,
+      "view_sha256_in_input_order": [
+        "590cef072e49aff6ba168b921976864c03701fe1ae225b462bc65677bfd7c8f3",
+        "96fb75cffae30e68ebbf891f1a55266bfced15bd25394df753a658a64acfa20d",
+        "fc9580942af00a53497f1b9d01ae97f1f11124d2f57f442dbeaa9bd2afaa88b5",
+        "78ba23c0ea0d85e287d53438eacfbe0fd092b5dd8c331cc06cac2ac15da5f401"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"uncertain\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        37,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.001954989042133,
+      "view_sha256_in_input_order": [
+        "99e72e5a1c3d5425512f9e08a4fd6c4c02b5933ab5741aa064eb9c79c5a0af72",
+        "65508df93f00bb44c2f6cfc031f25bc98ed9d1ad34c5b034594f4404fb9c49d8",
+        "ee2d93d7fa423109d79febb71d1fca1078db2a46bda6344933106286ecab19e6",
+        "9615decbbd726ba674ece04fc3015eecce8663f8fd241bd7ab19e5de23dc8d04"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.276107031852007,
+      "view_sha256_in_input_order": [
+        "a05a7f0a175506f6207c69fcf0a133bbbca264a166143cdd583d623054c7f247",
+        "7b40beec9248dd43959464376cee365cef205c8b02548018bf93c0bb7fde62a8",
+        "abaa2b0b52d940a6c10c6a0672178261c77a693adca794dec0c455d65831ad63",
+        "80d1ae713f5fe76f04504e61b0bc2a717b4a02c5772d8cf0122075068ccc2a68"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.461036688182503,
+      "view_sha256_in_input_order": [
+        "55cff00c23fdeba7833411bce828b151fdec75bfb60d52d503d12c003ee797bd",
+        "6eec801ab3f0b1ec6af2b31649e875ddfd5b9e9e8a9c8ad1b2da5da4fe392eaa",
+        "5d8ddf045b091f85608987c9868914eed3f414b278b140a9b665b6255d4f60c3",
+        "750159cdac336b40429e8810d6ff941f868c8b6d977187ba378b963a0a96b7e3"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.757865372113883,
+      "view_sha256_in_input_order": [
+        "496d5b58d4f38b72a9e11d8921e283cdeec256e294630f8e82d9736b7a9583f7",
+        "8cc3fb7991b529ad667e7ee56505318b1a8d85cccc0529941f92dbe9bfa91f34",
+        "c139f9db9369655fc6b4e27fb73cf0cf8f5ed11edc13e40f21ce20ac9ae56792",
+        "3de671921b92b71d46aec8cc6f4751f190f9ba59633ce110b180adccfac8def1"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.283638088032603,
+      "view_sha256_in_input_order": [
+        "60142d8084ecaefb7fc0f6882d1c7114c87dcd7dc311ad0d8e57647a0e42e788",
+        "bc93660995216a24658fe1b4b22a068ca44311c721138b2d9afefdf98a70abc5",
+        "e1e7ed7a4456a50761db51228c61ee4899077f5eb9c256c0f3978377a45d098f",
+        "87b8e93b7547f1493f01f77cde5e23d42e132c173abe110b41480a06adc6ab89"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.077715708874166,
+      "view_sha256_in_input_order": [
+        "5c2b7cfb973098d05c8a1ee3d2abc2d8ddce3b694678008ce8c4cb97d341cfa0",
+        "1e9fefd6ab397d50b81ec4aec141b487cf455d4085649aca645f404b80a0c417",
+        "bba4afb21fb0e4c2848479f86c5995aad2945da7c3fdd10a99ef6695ceee5987",
+        "5085d98b2ae5173914d505f2437f7ef5a201f2999b2639537ab5af05bd40eee8"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.251997189130634,
+      "view_sha256_in_input_order": [
+        "c454049b85e73e9678eeb7a7047abb151f093db814a68fb4b25523dba9d1cdfa",
+        "52b14eba188231da0e527455b500d67f5e5254137f132e53b13723fd603a8a79",
+        "cfc95f40f4b55dfafe8d552554488aea69370f1a362da5c28a7aa1167b611f55",
+        "d5d692e308e70cc9caed394fd888b88ab97211a4887cb7113748edc06a36b783"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.470728856977075,
+      "view_sha256_in_input_order": [
+        "f78a8268cb231640c5ab37a7b9c43e14fe251ad7df08504d326061aec9654788",
+        "b5d00f5e8f9160c5f13a05d8271ad77c092800735e3bd315f93ebf82b36199ed",
+        "d9654f15c97198e18aa9f4ef90b650249f220506de2291b13d39b7e10bcb4db9",
+        "0d66958d46063c41feaad6ea6ff65eed54ecb5adb8aba8d7dc86de8f4c8d13cc"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 15.868541822303087,
+      "view_sha256_in_input_order": [
+        "7c5b5d743aeade721f2caceb0741543952ba787aba34c93621a79cf6afeddf75",
+        "8e0f9550ec6d538bf8b19be7346efee3f0f65e86263e1aa3967b658d148abef6",
+        "f149264135b67f777b5bffbd2c54d7aec8325bd7c5c8496a7f52fb49436659f1",
+        "7816fb59e90a89a926f065ec014684451f775970b327a0175607617cd65207de"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 15.860967142973095,
+      "view_sha256_in_input_order": [
+        "7d0c47fc1d03c5b4be09387e24dd75b272ca5540f2d4a80bca38291246631b67",
+        "6dd6cb91b0724a156d2b7ea3dac89b14cb6d4a2fa53a5ad02c59f0d207743335",
+        "b2432ad9fddb32c0baa297a138162026a6ee6ac338ef83fcd9e2cdf3f7aaf90b",
+        "52446e19605c6cee70828fbda864a69d76f4604edf5e65af8206d5f37385a563"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        10,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.76778945978731,
+      "view_sha256_in_input_order": [
+        "6ae5b36d916b2e68c635d92c7dac3c3ae51377b81cf214bc00a8842fd699adec",
+        "2298d25f181ab0c16da6b38828ff6aa91076f131886deb66fe0aa4d95ad84786",
+        "d602024c8acccd5d691833826ee7ff053ab51b9400f9f9c19d806beb3b9ab018",
+        "4dbc7e38c76c737c47fc1066d3b81b9fc92dfd8a9ba2eb908577815197aaee9d"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"uncertain\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"uncertain\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        37,
+        37,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.211951771751046,
+      "view_sha256_in_input_order": [
+        "c77cc0c4b5b90a54823b0ea3d9658255dddea5f36dd2caf0dbaacce0ddf4b7c0",
+        "012d5bdba912af6139191e9709c69d893282a8854a665d6b89f06113456d20f6",
+        "d614de91611f4e90cc66619fb37e19852228a1a8e94685e7146098531d6e279d",
+        "e1bb64b9e574191415b03a60c15644118d1d8d21fedd5c48d6cd68686626966f"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        11,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.455535433720797,
+      "view_sha256_in_input_order": [
+        "404286bb7b898b53ab55fc370b433706facff9f1be00b9a5aa20f39f70485ba2",
+        "85dc017f538915bd7b4a543b355295aa58a1ee53af44af0f67ab33b950b46e00",
+        "978550cd8e55adc13360aa9364d5ff5e5c8f6ae5011db1f4076c24a484bc8b09",
+        "19b9427541c922b576318c57c9eea4aeceada22da39d96f7094ac4997754a368"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        10,
+        11,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.954362160060555,
+      "view_sha256_in_input_order": [
+        "c727e742fbfc13fff42953a97ba3a6221545bc9a51342434f81259c71744154e",
+        "a679b54fc8f3c21c4b7d7e80e1b85b2122a3101ba57f533a0b7aeaf854389ba6",
+        "c34b9d56c5c99305e47881a4834e8b8c7e8372e33e9773f668a90da7bc5895e2",
+        "3cae81d72ef15eb89070e0a70e0e4feecef5af0887b02fa255f5f3d40eddd94f"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 15.942756928969175,
+      "view_sha256_in_input_order": [
+        "39c39f03094e72f931a791c5b58b086da6b2d7883618842d5bd1545fbca28896",
+        "868610af3b3195de2a5ae90bbf308e94388f912bac2a16a4679800119038c3bb",
+        "31704051c2dafaa4be959703343851674d7f016405c606f5c006d1d561b81640",
+        "d77443363ba50bd620ceff162536b1b209aa6f8913ba220e0d5ac8909ad40f7a"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"both\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        11,
+        10,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.71664545405656,
+      "view_sha256_in_input_order": [
+        "e278f8021a878119c9a9b4c840ae71e36b5d59cc38857729e1972c4c403d2f4d",
+        "deb1215a88408566da964e5af6d70ae93c2ce8bafedf1a8967e926afa88704ad",
+        "cd419b4df27190b2027f427713a43bba452c2d62b7168298e9a55d51f7b44ad6",
+        "c6274cf71e9c7f37457f3c81c192b2ecc4f011a9feb4c9a48dd213222264fe14"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        10,
+        10,
+        10,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.313023895956576,
+      "view_sha256_in_input_order": [
+        "228febad7c313cbf84f98b7518846f1ad744438559e865986d30d22e6c690e8f",
+        "c50207417b22f9eef876d93b9dfff000b03c0d2606d668bbda73462a8c1c1f7c",
+        "44464238747155a00669d891c195e2fc0599c83b054ffe1c52dffa5b188270df",
+        "b6b21d80c433ee6bea04456b93f98bd0ca91d5af92ddd03f5263baaecd3b18c3"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"yes\",\"low_visibility\":\"yes\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 16.777766194194555,
+      "view_sha256_in_input_order": [
+        "e7e3df36d71dae50a59b994bb6aa5ab5f72684cc3594f9d937f17348fdec950d",
+        "752e111909373166b8e085a9212ab2ac58e1ddb2f2e91b9fda0be848fc30b161",
+        "0e18dbf772cda393d45fa7d80db9ed4206303681e126465755fe7fef2546c88d",
+        "bbd72a8c48386d242011ac3287029eb7c2d4eb03bbe87d2689535d3f4e1dbdd7"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        10,
+        11,
+        10
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "B",
+      "batch_size": 4,
+      "seconds": 17.685099175199866,
+      "view_sha256_in_input_order": [
+        "e490bc19b795150d425922cbbc1da474e5c43896451b9dd8f5e1646abb290ab3",
+        "f3f8ff7dc16c2f0c611a602bc72a336572168ad3c3da0bef352b95921f9ba605",
+        "4710b7826554f1fdf4756eea0bc04255d1e4f56a5dc0feb7a9a6899ae521ea22",
+        "94d20eefdfce3d01f2fe9f68cd309872043d46d28b58daa1605bc34fa0cea211"
+      ],
+      "input_shape": [
+        4,
+        520
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"content\":\"uncertain\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}",
+        "{\"content\":\"fire\",\"visibility\":\"limited\"}",
+        "{\"content\":\"smoke\",\"visibility\":\"limited\"}"
+      ],
+      "output_tokens": [
+        11,
+        11,
+        10,
+        11
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.748740140814334,
+      "view_sha256_in_input_order": [
+        "45564869f9b6490e8e712080c2dda1590150cf43007bbd9f172140fae5ed9275",
+        "df3e88332b739c606c80cc17e63f3a524beabaf8a3e1aae149b13f10dbe589dd",
+        "bdb7d5f2b40be068d13e54987799b619fe72a225eb4f8d975d8024d3c30f1e88",
+        "a933cdebca2ca91baa5a4577f8ccd7db193ca1f1fa7c7231cc752962ce4ceb8c"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.081398838199675,
+      "view_sha256_in_input_order": [
+        "6f958cf8626a827844186dafb94f69126304cc9a7729fb5f9ff24daee91d0b1a",
+        "5864739a868ca7e8f9b1dd19b3fe3fe78e4479ba976668f453fe63d978e1dfbb",
+        "53a9f5dc64b28fc0a9c7600298e3ee09ab16d1334bc776441b590617eff699e8",
+        "a48c6389f62ca5cee46bcd9a3ef17bfc9d7f8e36844c8e9bda3ab259d5f71c55"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 21.9336592159234,
+      "view_sha256_in_input_order": [
+        "086976bc67ea3f73aba2e29d5acf35d7f657995bb3297a94f4d0eb22541b9015",
+        "277fb5a86e53d615dc0b576e7d81634f832d6c3bc4ea45f736d5ed143904f5de",
+        "20eb16551b9145a7a3a143b70b973991d61fe596606da2cc2b38528ef66d0e13",
+        "38970c5c45b339e00a0c61866c830ff0febc9a977a8bf621c46f284b1823840f"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    },
+    {
+      "task": "A",
+      "batch_size": 4,
+      "seconds": 22.91419423604384,
+      "view_sha256_in_input_order": [
+        "dce2024ac53bfbd45f5099d7a0c837f70c5cd6e07ee3331d2887527ecc3ee0ca",
+        "b49318d4868f11ffe85a36fa1fb4faed983a4ea20df09486ab0aac7d84c92a67",
+        "321ccdd50fcc6e89930b600ecd60fe1a082bb9b68041a61355f0697c6981a316",
+        "cbb7a53f708a1425910e373813e4895dfa3c8f4f92d7184c670c2579367670cc"
+      ],
+      "input_shape": [
+        4,
+        549
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ],
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_responses_in_output_order": [
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}",
+        "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"no\"}"
+      ],
+      "output_tokens": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "peak_rss_kib": 6886004
+    }
+  ],
+  "training_before": {
+    "epochs": 57,
+    "recent_epoch_seconds": [
+      151.94,
+      152.33,
+      147.35
+    ]
+  },
+  "new_downloads": false,
+  "load_seconds": 7.525031321216375,
+  "calls": 128,
+  "parse_ok": 128,
+  "cuda_initialized": false,
+  "total_seconds": 625.6288983640261,
+  "peak_rss_kib": 6886004,
+  "training_after": {
+    "epochs": 61,
+    "recent_epoch_seconds": [
+      153.75,
+      149.38,
+      149.34
+    ]
+  }
+}

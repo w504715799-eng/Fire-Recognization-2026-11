@@ -1,0 +1,8 @@
+{
+  "decision": "stop_this_probability_W_candidate",
+  "reason": "prerecorded meaningful-intervention gate failed: only1 qualifying group, required2",
+  "no_coefficient_or_threshold_retuning": true,
+  "visual_screening": "not_added_because_cannot_change_this_stop_decision",
+  "full_fit_W_started": false,
+  "does_not_disprove_all_data_weighting_methods": true
+}

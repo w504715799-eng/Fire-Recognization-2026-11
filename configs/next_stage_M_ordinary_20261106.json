@@ -1,0 +1,26 @@
+{
+  "queue_id": "after-M-ordinary-20261106",
+  "status_output": "artifacts/methods-20261106/after-M-ordinary-status.json",
+  "baseline_run": "dfire_M_seed17_full_20261106",
+  "baseline_config": "configs/train_dfire_M_20261106.json",
+  "expected_epochs": 100,
+  "max_wait_hours": 13,
+  "stages": [
+    {
+      "name": "ordinary_fusion_full",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_M_ordinary_20261106.json",
+        "--cloud-config",
+        "configs/cloud.student-controls.local.json",
+        "--execute"
+      ],
+      "log": "logs/dfire-M-ordinary-full-20261106.log",
+      "timeout_seconds": null,
+      "expected_training_epochs": 100,
+      "run_name": "dfire_M_ordinary_seed17_full_20261106"
+    }
+  ]
+}

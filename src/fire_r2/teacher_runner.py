@@ -76,10 +76,12 @@ def build_cache(rows,manifest_hash,root,infer,revision,checkpoint=None,initial_s
 
 
 def build_batched_cache(rows,manifest_hash,root,infer_batch,revision,batch_size,checkpoint=None,
-                        initial_samples=None,protocol_version='v2'):
+                        initial_samples=None,protocol_version='v2',tasks=('A','B')):
     """Batch independent queries; split/hash/ROI choices remain identical to serial mode."""
     from .teacher_protocols import protocol
     spec=protocol(protocol_version);samples=dict(initial_samples or {});fit=fit_rows(rows)
+    tasks=tuple(tasks)
+    if not tasks or len(set(tasks))!=len(tasks) or not set(tasks)<={'A','B'}:raise ProjectError('Explicit A/B task scope required')
     if not isinstance(batch_size,int) or batch_size<1:raise ProjectError('Positive teacher batch size required')
     if not set(samples)<={r['sample_id'] for r in fit}:raise ProjectError('Resume includes non-fit samples')
     pending=[]
@@ -92,7 +94,7 @@ def build_batched_cache(rows,manifest_hash,root,infer_batch,revision,batch_size,
     for start in range(0,len(pending),batch_size):
         chunk=pending[start:start+batch_size]
         items={r['sample_id']:{'image_sha256':digest,'semantic':None,'regions':[],'calls':[]} for r,digest in chunk}
-        for task in ('A','B'):
+        for task in tasks:
             jobs=[(r,b) for r,_ in chunk for b in ([None] if task=='A' else selected_regions(r))]
             for offset in range(0,len(jobs),batch_size):
                 group=jobs[offset:offset+batch_size];tick=time.monotonic();error=None;responses=None
@@ -120,8 +122,8 @@ def build_batched_cache(rows,manifest_hash,root,infer_batch,revision,batch_size,
             ident=row['sample_id'];samples[ident]=items[ident]
             if checkpoint is not None:checkpoint(ident,items[ident])
     return {'schema_version':1,'teacher_id':'Qwen/Qwen3.5-0.8B','teacher_revision':revision,
-            'manifest_sha256':manifest_hash,'protocol':protocol_version,
-            'prompt_hashes':{task:hashlib.sha256(spec[task].encode()).hexdigest() for task in ('A','B')},'samples':samples}
+            'manifest_sha256':manifest_hash,'protocol':protocol_version,'tasks':list(tasks),
+            'prompt_hashes':{task:hashlib.sha256(spec[task].encode()).hexdigest() for task in tasks},'samples':samples}
 
 
 def pilot_selection(rows,per_state):
@@ -135,9 +137,12 @@ def pilot_selection(rows,per_state):
 
 
 def teacher_plan(root,config):
+    if config.get('model_id','Qwen/Qwen3.5-0.8B')!='Qwen/Qwen3.5-0.8B':
+        raise ProjectError('Legacy bridge is fixed to Qwen3.5-0.8B; use the isolated candidate model entry')
     manifest=child(root,config['manifest']);model_dir=child(root,config['model_dir'])
     output=output_path(root,config['output'])
     return {'mode':'plan_only','manifest':str(manifest),'model_dir':str(model_dir),'output':str(output),
+            'tasks':list(config.get('tasks',('A','B'))),
             'scope':'pilot_fit_only' if config.get('pilot_per_state') else 'all_source_fit',
             'teacher_revision':config['teacher_revision'],'model_loaded':False,'downloads':False}
 
@@ -149,23 +154,29 @@ def run_teacher(root,config,cloud,execute=False):
     check_remote_environment(root,cloud)
     from .teacher_protocols import protocol,AnswerTrie
     spec=protocol(config.get('protocol','v1'));batch_size=int(config.get('batch_size',1))
+    tasks=tuple(config.get('tasks',('A','B')))
+    if not tasks or len(set(tasks))!=len(tasks) or not set(tasks)<={'A','B'}:raise ProjectError('Invalid teacher task scope')
     manifest=Path(plan['manifest']);model_dir=Path(plan['model_dir']);output=Path(plan['output'])
     if output.exists():raise ProjectError('Completed teacher cache is immutable; choose a new output')
     receipt=read_json(model_dir/'download-receipt.json')
+    if receipt.get('model_id')!='Qwen/Qwen3.5-0.8B':raise ProjectError('Refusing to load a different model with the legacy 0.8B class')
     if receipt.get('hf_revision')!=config['teacher_revision'] or not receipt.get('runtime_content_verified_against_hf'):
         raise ProjectError('Verified fixed teacher revision is required')
     # Verify assets by SHA before loading; no implicit download or trust_remote_code.
     for f in receipt['files']:
         if not f.get('documentation') and sha256(child(model_dir,f['path']))!=f['sha256']:
             raise ProjectError('Teacher runtime file changed: '+f['path'])
-    rows=load_manifest(manifest,roles={'fit'});full_fit_count=len(rows)
-    if config.get('pilot_per_state'):rows=pilot_selection(rows,config['pilot_per_state'])
+    is_pilot=bool(config.get('pilot_per_state'))
+    rows=load_manifest(manifest,roles={'fit'},enrich=not is_pilot);full_fit_count=len(rows)
+    if is_pilot:
+        from .research_data import canonical_row
+        rows=[canonical_row(r) for r in pilot_selection(rows,config['pilot_per_state'])]
     mh=sha256(manifest)
     from .supervision import digest_object
     binding={'manifest_sha256':mh,'teacher_revision':config['teacher_revision'],
              'selection_sha256':digest_object(sorted(r['sample_id'] for r in rows)),
-             'scope':plan['scope'],'protocol':spec['version'],'batch_size':batch_size,
-             'prompt_hashes':[hashlib.sha256(spec[task].encode()).hexdigest() for task in ('A','B')],
+             'scope':plan['scope'],'protocol':spec['version'],'batch_size':batch_size,'tasks':list(tasks),
+             'prompt_hashes':[hashlib.sha256(spec[task].encode()).hexdigest() for task in tasks],
              'parser':'exact_json_or_single_json_fence_v1',
              'generation':{'do_sample':False,'max_new_tokens':192,'enable_thinking':False,'dtype':'float16',
                            'constrained_answer_grammar':spec['constrained']}}
@@ -216,7 +227,7 @@ def run_teacher(root,config,cloud,execute=False):
                 journal.write(json.dumps({'sample_id':ident,'item':item},ensure_ascii=False)+'\n');journal.flush()
                 if time.monotonic()-started>limit:raise ProjectError('Teacher stage budget reached; fit journal retained for exact resume')
             cache=build_batched_cache(rows,mh,'/',infer_batch,config['teacher_revision'],batch_size,
-                                      checkpoint=record,initial_samples=initial,protocol_version=spec['version'])
+                                      checkpoint=record,initial_samples=initial,protocol_version=spec['version'],tasks=tasks)
         calls=[c for item in cache['samples'].values() for c in item['calls']]
         cache.update(scope=plan['scope'],full_fit_count=full_fit_count,selection_sha256=binding['selection_sha256'],
                      generation=binding['generation'],parser=binding['parser'],batch_size=batch_size,

@@ -43,6 +43,9 @@ def main():
                 report=read_json(report_path) if report_path.exists() else {}
                 record.update(last_checked_at=now(),completed_epochs=epochs);write_json(dest,record)
                 if report.get('status')=='completed_or_budget_stopped' and epochs>=cfg['expected_epochs']:
+                    if baseline_process_exists(cfg['baseline_config']):
+                        time.sleep(5)
+                        continue  # Let our completed process release CUDA before a successor takes the GPU.
                     # Nonblocking ownership check: if another service took the GPU, stop.
                     with file_lock(Path(cloud['shared_gpu_lock_root'])/f"gpu-{cloud['gpu_id']}.lock"):pass
                     break

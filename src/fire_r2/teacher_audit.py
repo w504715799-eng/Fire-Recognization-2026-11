@@ -181,7 +181,7 @@ def cpu_diagnostic_cache(report):
         if call['task']=='A':item['semantic']=answer
         else:item['regions'].append({'original_annotation_id':call['original_annotation_id'],'response':answer})
     if set(samples)!=set(report['samples']):raise ProjectError('Incomplete CPU image coverage')
-    return {'schema_version':1,'scope':'pilot_fit_only','teacher_id':'Qwen/Qwen3.5-0.8B',
+    return {'schema_version':1,'scope':'pilot_fit_only','teacher_id':report.get('model_id','Qwen/Qwen3.5-0.8B'),
         'teacher_revision':report['teacher_revision'],'protocol':report['protocol'],
         'manifest_sha256':report['source_manifest_sha256'],'prompt_hashes':prompts,'samples':samples,
         'runtime':{'execution_device':'cpu','dtype':report['dtype'],'threads':report['threads'],

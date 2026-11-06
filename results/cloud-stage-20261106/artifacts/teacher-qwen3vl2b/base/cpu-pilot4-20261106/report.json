@@ -1,0 +1,336 @@
+{
+  "status": "completed",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "execution_device": "cpu",
+  "dtype": "float32",
+  "threads": 6,
+  "interop_threads": 1,
+  "gpu_lock_acquired": false,
+  "new_weights_downloaded": false,
+  "protocol": "v2",
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "constrained_answer_grammar": true
+  },
+  "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "samples": [
+    "dfire/train/train/images/AoF04755.jpg",
+    "dfire/train/train/images/WEB06014.jpg",
+    "dfire/train/train/images/WEB07909.jpg",
+    "dfire/train/train/images/WEB03078.jpg"
+  ],
+  "source_manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "calls": [
+    {
+      "sample_id": "dfire/train/train/images/AoF04755.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "image_sha256": "b2c6ae944753f697248965421ca0be7596af8dd8c2165adcfec0b7d8b0b9f1b1",
+      "view_sha256": "2287954da35aea8b4883103b8b6f20bb2c6366962df316151e6cbe8d27bb5070",
+      "bbox": null,
+      "bbox_format": null,
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "input_shape": [
+        1,
+        545
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "parse_status": "ok",
+      "seconds": 22.316215987782925,
+      "output_tokens": 36,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04755.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "image_sha256": "b2c6ae944753f697248965421ca0be7596af8dd8c2165adcfec0b7d8b0b9f1b1",
+      "view_sha256": "2ea6e931b14e5da4cff1d7f2906ddad0cc2aa0268b19081b092951ee5fe11679",
+      "bbox": [
+        0.011328125000000001,
+        0.3125,
+        0.02109375,
+        0.058333333333333334
+      ],
+      "bbox_format": "cxcywh_normalized",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "input_shape": [
+        1,
+        516
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"content\":\"both\",\"visibility\":\"limited\"}",
+      "parsed": {
+        "content": "both",
+        "visibility": "limited"
+      },
+      "parse_status": "ok",
+      "seconds": 12.934565366245806,
+      "output_tokens": 10,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06014.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "image_sha256": "da018cd21c7be5bdc8ed6aae1153d3f443dc307c10586394719571c29934745f",
+      "view_sha256": "590cef072e49aff6ba168b921976864c03701fe1ae225b462bc65677bfd7c8f3",
+      "bbox": null,
+      "bbox_format": null,
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "input_shape": [
+        1,
+        545
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "yes",
+        "cloud_fog_like": "no",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "parse_status": "ok",
+      "seconds": 20.023242245893925,
+      "output_tokens": 36,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06014.jpg",
+      "task": "B",
+      "original_annotation_id": 1,
+      "image_sha256": "da018cd21c7be5bdc8ed6aae1153d3f443dc307c10586394719571c29934745f",
+      "view_sha256": "99e72e5a1c3d5425512f9e08a4fd6c4c02b5933ab5741aa064eb9c79c5a0af72",
+      "bbox": [
+        0.6046875,
+        0.4222222222222222,
+        0.553125,
+        0.788888888888889
+      ],
+      "bbox_format": "cxcywh_normalized",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "input_shape": [
+        1,
+        516
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"clear\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "clear"
+      },
+      "parse_status": "ok",
+      "seconds": 12.702474331017584,
+      "output_tokens": 11,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "view_sha256": "f78a8268cb231640c5ab37a7b9c43e14fe251ad7df08504d326061aec9654788",
+      "bbox": null,
+      "bbox_format": null,
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "input_shape": [
+        1,
+        545
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"fire_visible\":\"yes\",\"smoke_visible\":\"yes\",\"cloud_fog_like\":\"yes\",\"bright_light_like\":\"no\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "yes",
+        "smoke_visible": "yes",
+        "cloud_fog_like": "yes",
+        "bright_light_like": "no",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "parse_status": "ok",
+      "seconds": 18.249475800897926,
+      "output_tokens": 36,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "task": "B",
+      "original_annotation_id": 2,
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "view_sha256": "7c5b5d743aeade721f2caceb0741543952ba787aba34c93621a79cf6afeddf75",
+      "bbox": [
+        0.16132812500000002,
+        0.6726562500000001,
+        0.014843750000000001,
+        0.026562500000000003
+      ],
+      "bbox_format": "cxcywh_normalized",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "input_shape": [
+        1,
+        516
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"content\":\"other\",\"visibility\":\"unjudgeable\"}",
+      "parsed": {
+        "content": "other",
+        "visibility": "unjudgeable"
+      },
+      "parse_status": "ok",
+      "seconds": 12.544641483109444,
+      "output_tokens": 12,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "task": "B",
+      "original_annotation_id": 3,
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "view_sha256": "8e0f9550ec6d538bf8b19be7346efee3f0f65e86263e1aa3967b658d148abef6",
+      "bbox": [
+        0.5925781250000001,
+        0.33984375,
+        0.55234375,
+        0.6484375
+      ],
+      "bbox_format": "cxcywh_normalized",
+      "prompt_sha256": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c",
+      "input_shape": [
+        1,
+        516
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"content\":\"smoke\",\"visibility\":\"clear\"}",
+      "parsed": {
+        "content": "smoke",
+        "visibility": "clear"
+      },
+      "parse_status": "ok",
+      "seconds": 11.993700074031949,
+      "output_tokens": 11,
+      "peak_rss_kib": 13295208
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03078.jpg",
+      "task": "A",
+      "original_annotation_id": null,
+      "image_sha256": "488fa5792b72d372eda8716236e5dc447c9ff9fe8df6918c0ac2849e53557c0e",
+      "view_sha256": "45564869f9b6490e8e712080c2dda1590150cf43007bbd9f172140fae5ed9275",
+      "bbox": null,
+      "bbox_format": null,
+      "prompt_sha256": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+      "input_shape": [
+        1,
+        545
+      ],
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          40
+        ]
+      ],
+      "raw_response": "{\"fire_visible\":\"no\",\"smoke_visible\":\"no\",\"cloud_fog_like\":\"no\",\"bright_light_like\":\"yes\",\"reflection_like\":\"no\",\"low_visibility\":\"yes\"}",
+      "parsed": {
+        "fire_visible": "no",
+        "smoke_visible": "no",
+        "cloud_fog_like": "no",
+        "bright_light_like": "yes",
+        "reflection_like": "no",
+        "low_visibility": "yes"
+      },
+      "parse_status": "ok",
+      "seconds": 19.213393736165017,
+      "output_tokens": 36,
+      "peak_rss_kib": 13295208
+    }
+  ],
+  "training_before": {
+    "epochs": 100,
+    "recent_epoch_seconds": [
+      147.8,
+      146.8,
+      148.0
+    ]
+  },
+  "cpu_quota": "1200000 100000",
+  "memory_limit_bytes": 62277025792,
+  "interpretation": "CPU semantic diagnostics only; CPU timings are not GPU throughput or student gains.",
+  "model_identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "load_seconds": 7.515551080927253,
+  "torch": "2.12.1+cu130",
+  "actual_torch_threads": 6,
+  "cuda_initialized": false,
+  "total_seconds": 137.61657389625907,
+  "peak_rss_kib": 13295208,
+  "completed_new_calls": 8,
+  "training_after": {
+    "epochs": 100,
+    "recent_epoch_seconds": [
+      147.8,
+      146.8,
+      148.0
+    ]
+  }
+}

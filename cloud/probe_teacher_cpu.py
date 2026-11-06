@@ -19,6 +19,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--cloud-config',required=True)
     p.add_argument('--threads',type=int,default=6);p.add_argument('--per-state',type=int,default=1)
     p.add_argument('--protocol',choices=['v1','v2'],default='v2')
+    p.add_argument('--model-config',help='Explicit separately verified candidate model; never reuse legacy assets')
     p.add_argument('--per-call-seconds',type=int,default=90);p.add_argument('--max-seconds',type=int,default=600)
     p.add_argument('--reuse-report',help='Reuse completed identical CPU queries; never use GPU/other precision answers')
     p.add_argument('--output',default='artifacts/teacher-cpu-probe-20261106');a=p.parse_args()
@@ -33,10 +34,18 @@ def main():
     for state in ('fire_only','smoke_only','both','empty'):
         rows.extend([r for r in metadata['rows'] if r['state']==state][:a.per_state])
     if any(r['role']!='fit' for r in rows):raise ProjectError('CPU probe is source-fit only')
-    model_dir=ROOT/'weights/Qwen3.5-0.8B/2fc06364715b967f1860aea9cf38778875588b17'
+    candidate=read_json(ROOT/a.model_config) if a.model_config else None
+    if candidate:
+        if candidate.get('variant','base')!='base':raise ProjectError('Base candidate probe does not load adapters; do not label base outputs as adapted')
+        from fire_r2.teacher_models import candidate_plan
+        plan=candidate_plan(ROOT,candidate)
+        if plan['issues']:raise ProjectError('Candidate model assets are not ready')
+        model_dir=Path(plan['directory']);model_id=candidate['model_id']
+    else:
+        model_dir=ROOT/'weights/Qwen3.5-0.8B/2fc06364715b967f1860aea9cf38778875588b17';model_id='Qwen/Qwen3.5-0.8B'
     receipt=read_json(model_dir/'download-receipt.json')
-    if not receipt.get('runtime_content_verified_against_hf'):raise ProjectError('Verified existing teacher assets required')
-    report={'status':'loading','execution_device':'cpu','dtype':'float32','threads':a.threads,
+    if receipt.get('model_id')!=model_id or not receipt.get('runtime_content_verified_against_hf'):raise ProjectError('Verified matching teacher assets required')
+    report={'status':'loading','model_id':model_id,'execution_device':'cpu','dtype':'float32','threads':a.threads,
             'interop_threads':1,'gpu_lock_acquired':False,'new_weights_downloaded':False,'protocol':a.protocol,
             'generation':{'do_sample':False,'enable_thinking':False,'constrained_answer_grammar':spec['constrained']},
             'teacher_revision':receipt['hf_revision'],'samples':[r['sample_id'] for r in rows],
@@ -47,6 +56,7 @@ def main():
     completed={}
     if a.reuse_report:
         prior_path=ROOT/a.reuse_report;prior=read_json(prior_path)
+        if prior.get('model_id','Qwen/Qwen3.5-0.8B')!=model_id:raise ProjectError('CPU reuse model ID differs')
         for key in ('execution_device','dtype','threads','protocol','teacher_revision','source_manifest_sha256'):
             if prior.get(key)!=report[key]:raise ProjectError('CPU reuse binding differs: '+key)
         selected={r['sample_id'] for r in rows}
@@ -67,9 +77,15 @@ def main():
         # No CUDA selection, shared GPU lock, or GPU occupancy check in this mode.
         import torch
         torch.set_num_threads(a.threads);torch.set_num_interop_threads(1)
-        from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration
-        processor=AutoProcessor.from_pretrained(model_dir,local_files_only=True)
-        model=Qwen3_5ForConditionalGeneration.from_pretrained(model_dir,local_files_only=True,
+        if candidate:
+            from fire_r2.teacher_models import checked_processor
+            processor,identity=checked_processor(ROOT,candidate,cloud)
+            from transformers import Qwen3VLForConditionalGeneration as Model
+            report['model_identity']=identity
+        else:
+            from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration as Model
+            processor=AutoProcessor.from_pretrained(model_dir,local_files_only=True)
+        model=Model.from_pretrained(model_dir,local_files_only=True,
                 dtype=torch.float32,attn_implementation='sdpa').to('cpu').eval()
         for parameter in model.parameters():parameter.requires_grad_(False)
         if any(p.device.type!='cpu' for p in model.parameters()) or torch.cuda.is_initialized():

@@ -36,7 +36,7 @@ def canonical_row(original):
     return row
 
 
-def load_manifest(path,roles=None):
+def load_manifest(path,roles=None,enrich=True):
     rows=[];seen=set()
     with Path(path).open() as stream:
         for line in stream:
@@ -44,7 +44,8 @@ def load_manifest(path,roles=None):
             original=json.loads(line);ident=original['sample_id']
             if ident in seen:raise ProjectError('Repeated manifest ID; no sample was discarded')
             seen.add(ident)
-            if roles is None or original['role'] in roles:rows.append(canonical_row(original))
+            if roles is None or original['role'] in roles:
+                rows.append(canonical_row(original) if enrich else original)
     return rows
 
 

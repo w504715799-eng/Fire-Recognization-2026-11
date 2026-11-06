@@ -1,0 +1,27 @@
+{
+  "status": "one_bounded_diagnostic_not_training_authorization",
+  "teacher_protocol": "v2_frozen",
+  "sample_scope": "same_development_64_fit_images",
+  "max_seconds": 1200,
+  "threads": 6,
+  "dtype": "float32",
+  "score": "r=1+0.25*mean(P_support-P_opposition); uncertain has zero signed contribution",
+  "normalization": "original_state_x_small_fire_group_mean",
+  "continue_signal": {
+    "all_queries_recorded": true,
+    "minimum_groups_with_at_least_6_images": 2,
+    "minimum_normalized_weight_IQR": 0.05,
+    "all_weights_positive": true,
+    "group_mass_preserved": true,
+    "maximum_visual_screening_images": 8,
+    "screening": "4 lowest and 4 highest normalized weights; ties by sample ID; assistant screening is not independent human truth"
+  },
+  "stop_conditions": [
+    "constant or negligible within-group intervention",
+    "invalid or incomplete conditional score extraction",
+    "obvious wrong weighting of visibly correct targets during bounded screening",
+    "no task-based reliability evidence beyond arbitrary numeric variation"
+  ],
+  "no_coefficient_or_temperature_search": true,
+  "no_full_fit_teacher_or_W_training_from_this_probe": true
+}

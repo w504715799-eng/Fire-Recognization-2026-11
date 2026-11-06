@@ -73,11 +73,13 @@ def main(argv=None):
         elif args.command in ('evaluate','calibrate'):
             from .common import child,sha256
             from .supervision import load_manifest
+            from .research_data import canonical_row
             from .evaluation import evaluation_rows,evaluate,calibrate
             artifact=read_json(child(root,args.predictions))
             if artifact.get('manifest_sha256')!=sha256(child(root,args.manifest)):
                 raise ProjectError('Predictions are bound to another manifest')
-            rows=evaluation_rows(load_manifest(child(root,args.manifest)),artifact['training_source'],artifact['target_source'],artifact['purpose'])
+            selected=evaluation_rows(load_manifest(child(root,args.manifest),enrich=False),artifact['training_source'],artifact['target_source'],artifact['purpose'])
+            rows=[canonical_row(r) for r in selected]
             result=calibrate(rows,artifact,artifact['training_source']) if args.command=='calibrate' else evaluate(rows,artifact,read_json(child(root,args.calibration)) if args.calibration else None)
             target=output_path(root,args.output)
             if target.exists():raise ProjectError('Evaluation output already exists')

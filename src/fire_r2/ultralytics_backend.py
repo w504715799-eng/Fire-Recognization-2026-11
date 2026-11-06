@@ -226,7 +226,7 @@ class ResearchTrainer(DetectionTrainer):
         if mode!='train':return super().get_dataloader(dataset_path,batch_size,rank,mode)
         if self.world_size>1:raise ProjectError('Initial adapter supports a single GPU; DDP scheduling must be explicitly validated')
         base=self.build_dataset(dataset_path,mode,batch_size)
-        rows=load_manifest(self.manifest_file,roles={'fit'});supervision=read_json(self.supervision_file)
+        rows=load_manifest(self.manifest_file,roles={'fit'},enrich=False);supervision=read_json(self.supervision_file)
         dataset=ViewDataset(base,supervision,rows)
         sampler=ViewBatchSampler(len(dataset),batch_size,self.args.seed)
         sampler.epoch=int(getattr(self,'start_epoch',0))

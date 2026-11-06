@@ -1,0 +1,22 @@
+{
+  "reviewer_type": "assistant_visual_inspection_not_independent_human",
+  "scope": "input rendering and qualitative diagnostic only",
+  "independent_review_completed": false,
+  "files": [
+    {
+      "path": "artifacts/teacher-diagnostics-20261106/v1-v2-07440a67dd59bae7.jpg",
+      "bytes": 41028,
+      "sha256": "a71dc4abc7042b585e9072f02aa017af4f0c669dc8737adbd0ac92be1b891ab6"
+    },
+    {
+      "path": "artifacts/teacher-diagnostics-20261106/v1-v2-2002af891dfbde4a.jpg",
+      "bytes": 50043,
+      "sha256": "26940e8375b8d9990e92622e43c18a673c6920ddfb6c332f3bfa76f71426b1ec"
+    }
+  ],
+  "observations": [
+    "Tiny bright-region comparison confirms that v2 removes the enlarged numeric glyph and thick outline while preserving the underlying crop.",
+    "Smoke-column comparison shows visible dark smoke in both versions; the old marker does not hide the main plume. Marker removal alone cannot establish correction of the fire-biased answer."
+  ],
+  "changes_to_gt_or_teacher_cache": false
+}

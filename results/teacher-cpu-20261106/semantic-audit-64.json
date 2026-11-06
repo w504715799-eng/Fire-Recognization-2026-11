@@ -1,0 +1,2486 @@
+{
+  "protocol": "v2",
+  "cache_object_sha256": "3d4444fc5c13a896815f198e3800e128e2f54d6fffde35d310a1b284763d97d7",
+  "raw_cache_unchanged": true,
+  "teacher_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "prompt_hashes": {
+    "A": "952208c42f07e9fa1549d6cbea8a2e3b662604b7c31b12616fd671ad8bdf47d3",
+    "B": "4c51a568ed31dceb48dd15a396638f0954852514799b0210ae1d6eb29ae10f8c"
+  },
+  "runtime": {
+    "execution_device": "cpu",
+    "dtype": "float32",
+    "threads": 6,
+    "current_segment_seconds": 862.3342041159049,
+    "reused_calls": 8,
+    "total_inference_query_seconds": 914.185328333173,
+    "peak_rss_kib": 6138328
+  },
+  "generation": null,
+  "format": {
+    "A": {
+      "calls": 64,
+      "recorded_schema_pass": 64,
+      "answer_distributions_after_syntax_only": {
+        "fire_visible": {
+          "no": 46,
+          "yes": 18
+        },
+        "smoke_visible": {
+          "no": 39,
+          "yes": 25
+        },
+        "cloud_fog_like": {
+          "no": 23,
+          "yes": 41
+        },
+        "bright_light_like": {
+          "yes": 27,
+          "no": 37
+        },
+        "reflection_like": {
+          "no": 52,
+          "yes": 12
+        },
+        "low_visibility": {
+          "no": 42,
+          "uncertain": 4,
+          "yes": 18
+        }
+      },
+      "strict_reparse_pass": 64,
+      "syntax_normalized_pass": 64,
+      "output_tokens": 2308,
+      "median_query_seconds": 8.926834442652762,
+      "batch_sizes": {
+        "1": 64
+      }
+    },
+    "B": {
+      "calls": 64,
+      "recorded_schema_pass": 64,
+      "answer_distributions_after_syntax_only": {
+        "content": {
+          "uncertain": 8,
+          "smoke": 25,
+          "fire": 30,
+          "both": 1
+        },
+        "visibility": {
+          "limited": 64
+        }
+      },
+      "strict_reparse_pass": 64,
+      "syntax_normalized_pass": 64,
+      "output_tokens": 673,
+      "median_query_seconds": 5.229936782503501,
+      "batch_sizes": {
+        "1": 64
+      }
+    }
+  },
+  "overall": {
+    "images": 64,
+    "presence": {
+      "fire_visible": {
+        "denominator": 64,
+        "known": 64,
+        "agree": 50,
+        "agreement_among_known": 0.78125
+      },
+      "smoke_visible": {
+        "denominator": 64,
+        "known": 64,
+        "agree": 49,
+        "agreement_among_known": 0.765625
+      }
+    },
+    "region_class_support": {
+      "fire": {
+        "denominator": 32,
+        "known": 25,
+        "supported": 22,
+        "content_counts": {
+          "uncertain": 7,
+          "fire": 21,
+          "smoke": 3,
+          "both": 1
+        }
+      },
+      "smoke": {
+        "denominator": 32,
+        "known": 31,
+        "supported": 22,
+        "content_counts": {
+          "smoke": 22,
+          "uncertain": 1,
+          "fire": 9
+        }
+      }
+    },
+    "known_context_fields_from_original_cache": 252
+  },
+  "cohorts": {
+    "original_8": {
+      "images": 8,
+      "presence": {
+        "fire_visible": {
+          "denominator": 8,
+          "known": 8,
+          "agree": 6,
+          "agreement_among_known": 0.75
+        },
+        "smoke_visible": {
+          "denominator": 8,
+          "known": 8,
+          "agree": 7,
+          "agreement_among_known": 0.875
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 4,
+          "known": 2,
+          "supported": 2,
+          "content_counts": {
+            "uncertain": 2,
+            "fire": 2
+          }
+        },
+        "smoke": {
+          "denominator": 4,
+          "known": 4,
+          "supported": 3,
+          "content_counts": {
+            "smoke": 3,
+            "fire": 1
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 31
+    },
+    "new_fit": {
+      "images": 56,
+      "presence": {
+        "fire_visible": {
+          "denominator": 56,
+          "known": 56,
+          "agree": 44,
+          "agreement_among_known": 0.7857142857142857
+        },
+        "smoke_visible": {
+          "denominator": 56,
+          "known": 56,
+          "agree": 42,
+          "agreement_among_known": 0.75
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 28,
+          "known": 23,
+          "supported": 20,
+          "content_counts": {
+            "fire": 19,
+            "uncertain": 5,
+            "smoke": 3,
+            "both": 1
+          }
+        },
+        "smoke": {
+          "denominator": 28,
+          "known": 27,
+          "supported": 19,
+          "content_counts": {
+            "smoke": 19,
+            "uncertain": 1,
+            "fire": 8
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 221
+    }
+  },
+  "by_original_state": {
+    "fire_only": {
+      "images": 16,
+      "presence": {
+        "fire_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 8,
+          "agreement_among_known": 0.5
+        },
+        "smoke_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 12,
+          "agreement_among_known": 0.75
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 16,
+          "known": 14,
+          "supported": 12,
+          "content_counts": {
+            "uncertain": 2,
+            "fire": 12,
+            "smoke": 2
+          }
+        },
+        "smoke": {
+          "denominator": 0,
+          "known": 0,
+          "supported": 0,
+          "content_counts": {}
+        }
+      },
+      "known_context_fields_from_original_cache": 63
+    },
+    "smoke_only": {
+      "images": 16,
+      "presence": {
+        "fire_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 16,
+          "agreement_among_known": 1.0
+        },
+        "smoke_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 7,
+          "agreement_among_known": 0.4375
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 0,
+          "known": 0,
+          "supported": 0,
+          "content_counts": {}
+        },
+        "smoke": {
+          "denominator": 16,
+          "known": 15,
+          "supported": 15,
+          "content_counts": {
+            "smoke": 15,
+            "uncertain": 1
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 63
+    },
+    "both": {
+      "images": 16,
+      "presence": {
+        "fire_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 10,
+          "agreement_among_known": 0.625
+        },
+        "smoke_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 14,
+          "agreement_among_known": 0.875
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 16,
+          "known": 11,
+          "supported": 10,
+          "content_counts": {
+            "uncertain": 5,
+            "fire": 9,
+            "smoke": 1,
+            "both": 1
+          }
+        },
+        "smoke": {
+          "denominator": 16,
+          "known": 16,
+          "supported": 7,
+          "content_counts": {
+            "smoke": 7,
+            "fire": 9
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 62
+    },
+    "empty": {
+      "images": 16,
+      "presence": {
+        "fire_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 16,
+          "agreement_among_known": 1.0
+        },
+        "smoke_visible": {
+          "denominator": 16,
+          "known": 16,
+          "agree": 16,
+          "agreement_among_known": 1.0
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 0,
+          "known": 0,
+          "supported": 0,
+          "content_counts": {}
+        },
+        "smoke": {
+          "denominator": 0,
+          "known": 0,
+          "supported": 0,
+          "content_counts": {}
+        }
+      },
+      "known_context_fields_from_original_cache": 64
+    }
+  },
+  "diagnostic_W": {
+    "scope": "hypothetical_pilot_group_normalization_not_training_supervision",
+    "positive_weights": true,
+    "groups": {
+      "fire_only|small_fire=1": {
+        "images": 6,
+        "weight_sum": 6.0,
+        "sum_error": 0.0
+      },
+      "smoke_only|small_fire=0": {
+        "images": 16,
+        "weight_sum": 16.0,
+        "sum_error": 0.0
+      },
+      "both|small_fire=1": {
+        "images": 9,
+        "weight_sum": 9.0,
+        "sum_error": 0.0
+      },
+      "empty|small_fire=0": {
+        "images": 16,
+        "weight_sum": 16.0,
+        "sum_error": 0.0
+      },
+      "fire_only|small_fire=0": {
+        "images": 10,
+        "weight_sum": 10.0,
+        "sum_error": 0.0
+      },
+      "both|small_fire=0": {
+        "images": 7,
+        "weight_sum": 7.0,
+        "sum_error": 0.0
+      }
+    }
+  },
+  "per_image": [
+    {
+      "sample_id": "dfire/train/train/images/AoF04755.jpg",
+      "state": "fire_only",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06014.jpg",
+      "state": "smoke_only",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 3
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB07909.jpg",
+      "state": "both",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03078.jpg",
+      "state": "empty",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00046.jpg",
+      "state": "fire_only",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04162.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04645.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05002.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04951.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00008.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05396.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04712.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03883.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04215.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 5,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04905.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03976.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 3
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04909.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04442.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05391.jpg",
+      "state": "fire_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06442.jpg",
+      "state": "smoke_only",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF06202.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08047.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08620.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08333.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB09064.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB09147.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00364.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08707.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00373.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08103.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05947.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08446.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05910.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06412.jpg",
+      "state": "smoke_only",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05602.jpg",
+      "state": "both",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04759.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06848.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB06286.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 3
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04611.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 4,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 3
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03934.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08354.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04469.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04263.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 4,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "both",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08966.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB08473.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05257.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 5,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05958.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 8,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": false,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB05340.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": false
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "uncertain",
+          "known": false,
+          "original_class_supported": null,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 3,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB04633.jpg",
+      "state": "both",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": true,
+          "answer_after_syntax_only": "yes",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "canonical_class_id": 0,
+          "source_class_id": 1,
+          "content_after_syntax_only": "fire",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        },
+        {
+          "original_annotation_id": 1,
+          "canonical_class_id": 1,
+          "source_class_id": 0,
+          "content_after_syntax_only": "smoke",
+          "known": true,
+          "original_class_supported": true,
+          "visibility": "limited",
+          "normalizations": []
+        }
+      ],
+      "raw_score": 1.0,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00811.jpg",
+      "state": "empty",
+      "cohort": "original_8",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB02850.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03527.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00251.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF02161.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF01183.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03008.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03132.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00032.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF00887.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF00991.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00586.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB00053.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00929.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF01318.jpg",
+      "state": "empty",
+      "cohort": "new_fit",
+      "presence": {
+        "fire_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        },
+        "smoke_visible": {
+          "original_label_present": false,
+          "answer_after_syntax_only": "no",
+          "known": true,
+          "agreement": true
+        }
+      },
+      "regions": [],
+      "raw_score": 1.25,
+      "semantic_known_fields": 4
+    }
+  ],
+  "semantic_accuracy": "unmeasured_until_independent_review",
+  "interpretation": "Original-label agreement/support is diagnostic; it is not independent visual truth, bbox quality, or student gain.",
+  "not_formal_training_supervision": true
+}

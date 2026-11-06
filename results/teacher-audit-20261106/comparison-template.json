@@ -1,0 +1,82 @@
+{
+  "scope": "comparison_ready_not_results",
+  "original_8": [
+    "dfire/train/train/images/AoF04755.jpg",
+    "dfire/train/train/images/PublicDataset00046.jpg",
+    "dfire/train/train/images/WEB00811.jpg",
+    "dfire/train/train/images/WEB03078.jpg",
+    "dfire/train/train/images/WEB05602.jpg",
+    "dfire/train/train/images/WEB06014.jpg",
+    "dfire/train/train/images/WEB06442.jpg",
+    "dfire/train/train/images/WEB07909.jpg"
+  ],
+  "expanded_total": 64,
+  "new_fit_count": 56,
+  "variants": {
+    "v1": {
+      "status": "measured",
+      "required_fields": [
+        "recorded_schema_pass",
+        "syntax_normalized_pass",
+        "old8_presence_agreement",
+        "new56_presence_agreement",
+        "region_class_support",
+        "unknown_rate",
+        "output_tokens",
+        "batch_size",
+        "query_seconds",
+        "peak_allocated_bytes",
+        "independent_review_status"
+      ]
+    },
+    "v2_serial": {
+      "status": "pending",
+      "required_fields": [
+        "recorded_schema_pass",
+        "syntax_normalized_pass",
+        "old8_presence_agreement",
+        "new56_presence_agreement",
+        "region_class_support",
+        "unknown_rate",
+        "output_tokens",
+        "batch_size",
+        "query_seconds",
+        "peak_allocated_bytes",
+        "independent_review_status"
+      ]
+    },
+    "v2_batch4": {
+      "status": "pending",
+      "required_fields": [
+        "recorded_schema_pass",
+        "syntax_normalized_pass",
+        "old8_presence_agreement",
+        "new56_presence_agreement",
+        "region_class_support",
+        "unknown_rate",
+        "output_tokens",
+        "batch_size",
+        "query_seconds",
+        "peak_allocated_bytes",
+        "independent_review_status"
+      ]
+    },
+    "v2_expanded": {
+      "status": "pending",
+      "required_fields": [
+        "recorded_schema_pass",
+        "syntax_normalized_pass",
+        "old8_presence_agreement",
+        "new56_presence_agreement",
+        "region_class_support",
+        "unknown_rate",
+        "output_tokens",
+        "batch_size",
+        "query_seconds",
+        "peak_allocated_bytes",
+        "independent_review_status"
+      ]
+    }
+  },
+  "student_gain_requires_paired_training_results": true
+}

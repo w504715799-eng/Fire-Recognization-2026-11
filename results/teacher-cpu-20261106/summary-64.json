@@ -1,0 +1,128 @@
+{
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 6,
+  "images": 64,
+  "queries": 128,
+  "reused_queries": 8,
+  "new_queries": 120,
+  "initial_segment_seconds": 86.70453514531255,
+  "expanded_segment_seconds": 862.3342041159049,
+  "peak_rss_gib": 5.853965759277344,
+  "cuda_initialized": false,
+  "gpu_lock_acquired": false,
+  "B_training_before": {
+    "epochs": 27,
+    "recent_epoch_seconds": [
+      148.11,
+      157.99,
+      151.74
+    ]
+  },
+  "B_training_after": {
+    "epochs": 32,
+    "recent_epoch_seconds": [
+      152.28,
+      152.96,
+      149.01
+    ]
+  },
+  "queries_by_task": {
+    "A": {
+      "calls": 64,
+      "median_seconds": 8.926834442652762,
+      "sum_output_tokens": 2308,
+      "schema_pass": 64
+    },
+    "B": {
+      "calls": 64,
+      "median_seconds": 5.229936782503501,
+      "sum_output_tokens": 673,
+      "schema_pass": 64
+    }
+  },
+  "original_label_diagnostics": {
+    "original_8": {
+      "images": 8,
+      "presence": {
+        "fire_visible": {
+          "denominator": 8,
+          "known": 8,
+          "agree": 6,
+          "agreement_among_known": 0.75
+        },
+        "smoke_visible": {
+          "denominator": 8,
+          "known": 8,
+          "agree": 7,
+          "agreement_among_known": 0.875
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 4,
+          "known": 2,
+          "supported": 2,
+          "content_counts": {
+            "uncertain": 2,
+            "fire": 2
+          }
+        },
+        "smoke": {
+          "denominator": 4,
+          "known": 4,
+          "supported": 3,
+          "content_counts": {
+            "smoke": 3,
+            "fire": 1
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 31
+    },
+    "new_fit": {
+      "images": 56,
+      "presence": {
+        "fire_visible": {
+          "denominator": 56,
+          "known": 56,
+          "agree": 44,
+          "agreement_among_known": 0.7857142857142857
+        },
+        "smoke_visible": {
+          "denominator": 56,
+          "known": 56,
+          "agree": 42,
+          "agreement_among_known": 0.75
+        }
+      },
+      "region_class_support": {
+        "fire": {
+          "denominator": 28,
+          "known": 23,
+          "supported": 20,
+          "content_counts": {
+            "fire": 19,
+            "uncertain": 5,
+            "smoke": 3,
+            "both": 1
+          }
+        },
+        "smoke": {
+          "denominator": 28,
+          "known": 27,
+          "supported": 19,
+          "content_counts": {
+            "smoke": 19,
+            "uncertain": 1,
+            "fire": 8
+          }
+        }
+      },
+      "known_context_fields_from_original_cache": 221
+    }
+  },
+  "independent_human_accuracy_measured": false,
+  "not_gpu_throughput": true,
+  "total_cpu_probe_wall_seconds_including_initial_segment": 949.0387392612174
+}

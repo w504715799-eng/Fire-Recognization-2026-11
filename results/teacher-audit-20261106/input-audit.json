@@ -1,0 +1,226 @@
+[
+  {
+    "sample_id": "dfire/train/train/images/AoF04755.jpg",
+    "original_annotation_id": 1,
+    "source_image_sha256": "b2c6ae944753f697248965421ca0be7596af8dd8c2165adcfec0b7d8b0b9f1b1",
+    "bbox": [
+      0.011328125000000001,
+      0.3125,
+      0.02109375,
+      0.058333333333333334
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      1280,
+      720
+    ],
+    "display_size": [
+      1280,
+      720
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "0e7d1b5d49674d5119ff6583d9bdb9b6dde98368e1880f0382ec4bc557a331ad",
+    "v2_view_sha256": "2ea6e931b14e5da4cff1d7f2906ddad0cc2aa0268b19081b092951ee5fe11679",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "07440a67dd59bae7.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/PublicDataset00046.jpg",
+    "original_annotation_id": 1,
+    "source_image_sha256": "eca9a6f042ddb1e47b1c90c805c53d0ebddaa82f2f406d13108bf53370d7e199",
+    "bbox": [
+      0.4777777777777778,
+      0.425,
+      0.02962962962962963,
+      0.02777777777777778
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      540,
+      360
+    ],
+    "display_size": [
+      540,
+      360
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "ef28464b05aa3fcbc768e08972611b14e59c3acb2409fe45c43a7450ac9cb277",
+    "v2_view_sha256": "952e2b766c42139d40656d12ea7a8875a0f2c3ac098700553dc42e22b8ee594d",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "9b95ef85fa40b780.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB06014.jpg",
+    "original_annotation_id": 1,
+    "source_image_sha256": "da018cd21c7be5bdc8ed6aae1153d3f443dc307c10586394719571c29934745f",
+    "bbox": [
+      0.6046875,
+      0.4222222222222222,
+      0.553125,
+      0.788888888888889
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      320,
+      180
+    ],
+    "display_size": [
+      320,
+      180
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "2e8a1d1031532b4cbeecbbb2b5bd2a06c1e11f59c7587b22b0eee2e158b37a12",
+    "v2_view_sha256": "99e72e5a1c3d5425512f9e08a4fd6c4c02b5933ab5741aa064eb9c79c5a0af72",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "2002af891dfbde4a.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB06442.jpg",
+    "original_annotation_id": 1,
+    "source_image_sha256": "c86029c2d6bd8662d8c33a0c43db188966266d0a3c5c2ce68169632f04a3f307",
+    "bbox": [
+      0.7057291666666666,
+      0.27734375,
+      0.571875,
+      0.5390625
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      960,
+      1280
+    ],
+    "display_size": [
+      960,
+      1280
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "1bed17d32f1e7e94c40047f5f9fa8c59fdf815c5d4437ebcc4a8674a5e520b9e",
+    "v2_view_sha256": "65508df93f00bb44c2f6cfc031f25bc98ed9d1ad34c5b034594f4404fb9c49d8",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "92bcfd0d4e9a802f.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB07909.jpg",
+    "original_annotation_id": 2,
+    "source_image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+    "bbox": [
+      0.16132812500000002,
+      0.6726562500000001,
+      0.014843750000000001,
+      0.026562500000000003
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      1280,
+      640
+    ],
+    "display_size": [
+      1280,
+      640
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "05136683c955edb2d598f6333e083bd22ad7d93270489063f636cfc54f9f731c",
+    "v2_view_sha256": "7c5b5d743aeade721f2caceb0741543952ba787aba34c93621a79cf6afeddf75",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "beaa959af47e2742.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB07909.jpg",
+    "original_annotation_id": 3,
+    "source_image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+    "bbox": [
+      0.5925781250000001,
+      0.33984375,
+      0.55234375,
+      0.6484375
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      1280,
+      640
+    ],
+    "display_size": [
+      1280,
+      640
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "ff41e1f3ef6175049789c13835ce3f2e7ec6798b08efee62cc2a86c0f6d2bd1c",
+    "v2_view_sha256": "8e0f9550ec6d538bf8b19be7346efee3f0f65e86263e1aa3967b658d148abef6",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "ad9039311ad0947a.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB05602.jpg",
+    "original_annotation_id": 1,
+    "source_image_sha256": "b51ba4fdc3961118c683292fe777b4702b04fcf1c87342e3d26a4b67fa19ef36",
+    "bbox": [
+      0.5869791666666666,
+      0.6208333333333333,
+      0.009375,
+      0.012037037037037037
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      1920,
+      1080
+    ],
+    "display_size": [
+      1920,
+      1080
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "b69b17abff6f6651aff86e7d376330b8ec8b1a14bbc268cb7b7d6fdcc4735787",
+    "v2_view_sha256": "f149264135b67f777b5bffbd2c54d7aec8325bd7c5c8496a7f52fb49436659f1",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "1dbbcc1f74d1c4cd.jpg"
+  },
+  {
+    "sample_id": "dfire/train/train/images/WEB05602.jpg",
+    "original_annotation_id": 3,
+    "source_image_sha256": "b51ba4fdc3961118c683292fe777b4702b04fcf1c87342e3d26a4b67fa19ef36",
+    "bbox": [
+      0.50234375,
+      0.40370370370370373,
+      0.5442708333333334,
+      0.5592592592592592
+    ],
+    "bbox_format": "cxcywh_normalized",
+    "encoded_size": [
+      1920,
+      1080
+    ],
+    "display_size": [
+      1920,
+      1080
+    ],
+    "exif_orientation": 1,
+    "v1_view_sha256": "8789d2f21e72c38c345e636707849bb1a9d7e93b6377c81672399f7d142b74f1",
+    "v2_view_sha256": "7816fb59e90a89a926f065ec014684451f775970b327a0175607617cd65207de",
+    "output_size": [
+      640,
+      640
+    ],
+    "comparison_image": "1587790aef58644d.jpg"
+  }
+]

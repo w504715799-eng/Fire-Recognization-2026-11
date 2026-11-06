@@ -82,3 +82,7 @@ datasets/*/*/raw/*.zip
 
 # Private dataset input audit thumbnails; publish text diagnostics only.
 /artifacts/teacher-diagnostics-20261106/*.jpg
+
+# Keep original/derived visual audit images private; publish metadata only.
+/results/teacher-audit-*/**/*.jpg
+/artifacts/teacher-audit-*/**/*.jpg

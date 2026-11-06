@@ -1,0 +1,10 @@
+{
+  "status": "superseded_by_parallel_remainder",
+  "started_at": "2026-11-06T08:00:59.343003+00:00",
+  "max_extra_seconds": 2700,
+  "max_continuations": 1,
+  "changes_model_or_data": false,
+  "prior_status": "waiting_for_current_segment",
+  "stop_signal": "SIGTERM",
+  "reschedule_receipt": "artifacts/teacher-heldout-20261106/parallel-reschedule.json"
+}

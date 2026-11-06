@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-11-06T08:01:37.230663+00:00",
+  "only_0_8b_is_completed": true,
+  "files": [
+    {
+      "source": "artifacts/teacher-heldout-20261106/base-0.8b/report.json",
+      "export": "artifacts/teacher-heldout-20261106/base-0.8b/report.json.gz",
+      "original_bytes": 337228,
+      "original_sha256": "9a3e9b313e1e638b955bff87e8bb37fecb985e8323de5b82bf188a350dfd4675",
+      "export_sha256": "616d2ca33626476650d140e527b101929b50556929b7be0ffb910cd8aa086db2"
+    },
+    {
+      "source": "artifacts/teacher-heldout-20261106/base-0.8b/responses.jsonl",
+      "export": "artifacts/teacher-heldout-20261106/base-0.8b/responses.jsonl.gz",
+      "original_bytes": 276400,
+      "original_sha256": "6228b52109145660c77663d658dadbc5c3a27fd9ece3b4257a18e1b264daf02e",
+      "export_sha256": "4854f2cd9af069ae0d3c65fdcebeacae9ae07d5a256c00f72ee130a036a03eb8"
+    },
+    {
+      "source": "logs/teacher-heldout-base-0.8b-20261106.log",
+      "export": "logs/teacher-heldout-base-0.8b-20261106.log.gz",
+      "original_bytes": 9877,
+      "original_sha256": "97374dac7823a66c7afe96be48993906bb4723416b2b9ab4a9718e517b5dec9e",
+      "export_sha256": "5859124021491eb0b3327b7f3a42b3276140718ca44a0f8607a549acf0fc1801"
+    },
+    {
+      "source": "artifacts/teacher-heldout-20261106/base-2b/report.json",
+      "export": "artifacts/teacher-heldout-20261106/base-2b/report.json.gz",
+      "original_bytes": 222381,
+      "original_sha256": "baa4aa8e3ae310353b41dd4761fb9df8da3169a555f597f92dc09459fed90bd9",
+      "export_sha256": "f82cae3f5bf82dd4c26dd311da5a7c95de8a1d79f7e9ba20a1fa969c175c6dd5"
+    },
+    {
+      "source": "artifacts/teacher-heldout-20261106/continuation-status.json",
+      "export": "artifacts/teacher-heldout-20261106/continuation-status.json",
+      "original_bytes": 187,
+      "original_sha256": "89bb62eab1678a3d57f0d69fa5001b141384fddb7fa5aa318f6dd8a3e7a27a54",
+      "export_sha256": "89bb62eab1678a3d57f0d69fa5001b141384fddb7fa5aa318f6dd8a3e7a27a54"
+    },
+    {
+      "source": "artifacts/methods-20261106/after-M-ordinary-status.json",
+      "export": "artifacts/methods-20261106/after-M-ordinary-status.json",
+      "original_bytes": 240,
+      "original_sha256": "f074339354c988ec02a7f685691079fdce580ae26dccb86a0b5d594ccb5170bd",
+      "export_sha256": "f074339354c988ec02a7f685691079fdce580ae26dccb86a0b5d594ccb5170bd"
+    },
+    {
+      "source": "runs/dfire_M_seed17_full_20261106/results.csv",
+      "export": "runs/dfire_M_seed17_full_20261106/results.csv",
+      "original_bytes": 9241,
+      "original_sha256": "2cad5f312945d30d948d8f52d67a9d466da38bdeea4b09c636e7e41dd8c5c36e",
+      "export_sha256": "2cad5f312945d30d948d8f52d67a9d466da38bdeea4b09c636e7e41dd8c5c36e"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "captured_at": "2026-11-06T08:12:26.130249+00:00",
+  "parallel_in_progress": true,
+  "files": [
+    {
+      "export": "parallel-reschedule.json",
+      "source": "artifacts/teacher-heldout-20261106/parallel-reschedule.json",
+      "original_sha256": "398de6344e836ddc0d6c7a3516c121c3a54041501e89cda9f6287ac251407961",
+      "export_sha256": "398de6344e836ddc0d6c7a3516c121c3a54041501e89cda9f6287ac251407961",
+      "bytes": 832
+    },
+    {
+      "export": "continuation-status.json",
+      "source": "artifacts/teacher-heldout-20261106/continuation-status.json",
+      "original_sha256": "f5bb25641c8034bd3441c62697a70c5fc6f463631b172ea86f2a9e982c97c1c4",
+      "export_sha256": "f5bb25641c8034bd3441c62697a70c5fc6f463631b172ea86f2a9e982c97c1c4",
+      "bytes": 355
+    },
+    {
+      "export": "base-2b/report.json.gz",
+      "source": "artifacts/teacher-heldout-20261106/base-2b/report.json",
+      "original_sha256": "c99290ac284c0322c9066a5ba6daffef172a7bb4797dae2a696c985a0a075461",
+      "export_sha256": "77b16300cfb54dc0ec7a781d50c80d9c1adb5cc0095d26ba8b6a1a1a05ac5e89",
+      "bytes": 20426
+    },
+    {
+      "export": "base-2b-parallel/status.json",
+      "source": "artifacts/teacher-heldout-20261106/base-2b-parallel/status.json",
+      "original_sha256": "d1773ebdf95a226032cd7e8d5987ba73fae73ea8b082a6131696917abddcf5bc",
+      "export_sha256": "d1773ebdf95a226032cd7e8d5987ba73fae73ea8b082a6131696917abddcf5bc",
+      "bytes": 476
+    },
+    {
+      "export": "base-2b-parallel/early-throughput.json",
+      "source": "artifacts/teacher-heldout-20261106/base-2b-parallel/early-throughput.json",
+      "original_sha256": "48046d8ad37f09bc3cca6accd1ba341eeabce3ef4bf5e0951d6b7c86711e184a",
+      "export_sha256": "48046d8ad37f09bc3cca6accd1ba341eeabce3ef4bf5e0951d6b7c86711e184a",
+      "bytes": 405
+    },
+    {
+      "export": "base-2b-parallel/worker-0/report.json.gz",
+      "source": "artifacts/teacher-heldout-20261106/base-2b-parallel/worker-0/report.json",
+      "original_sha256": "93a15aee0c41bb80dc08db89c6fc51077d88ece6291a740bb9f856ee5387e3a3",
+      "export_sha256": "7c27df235efd32910447d69ab77ca5205956e94eb06b70187983a434fc2e3873",
+      "bytes": 20189
+    },
+    {
+      "export": "base-2b-parallel/worker-1/report.json.gz",
+      "source": "artifacts/teacher-heldout-20261106/base-2b-parallel/worker-1/report.json",
+      "original_sha256": "44289c7852a591c6108ff91be66b95bc0ebced3c0781360bc9ebf1fb53303674",
+      "export_sha256": "e904f8c9b73da092c2561f3bd29653ee2872c6822838c39253878c2f9e946d3c",
+      "bytes": 20191
+    },
+    {
+      "export": "logs/teacher-heldout-base-2b-20261106.log.gz",
+      "source": "logs/teacher-heldout-base-2b-20261106.log",
+      "original_sha256": "aa2de97ec63ac0a17c7e878a00b39e57ee780cbb1051a34372846901a4752aff",
+      "export_sha256": "ee0609b22c482cbfe0745bf50f2fb80a70d3da61f41ac02c16d684674b4286e8",
+      "bytes": 2981
+    },
+    {
+      "export": "logs/teacher-heldout-continuation-controller-20261106.log.gz",
+      "source": "logs/teacher-heldout-continuation-controller-20261106.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "bytes": 20
+    },
+    {
+      "export": "logs/teacher-heldout-parallel-controller-20261106.log.gz",
+      "source": "logs/teacher-heldout-parallel-controller-20261106.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "bytes": 20
+    }
+  ]
+}

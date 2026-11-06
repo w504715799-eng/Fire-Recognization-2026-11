@@ -1,0 +1,18 @@
+{
+  "status": "running",
+  "started_at": "2026-11-06T08:09:12.359760+00:00",
+  "source_report_sha256": "c99290ac284c0322c9066a5ba6daffef172a7bb4797dae2a696c985a0a075461",
+  "reused_queries": 360,
+  "workers": [
+    {
+      "index": 0,
+      "pid": 33940,
+      "output": "artifacts/teacher-heldout-20261106/base-2b-parallel/worker-0"
+    },
+    {
+      "index": 1,
+      "pid": 33941,
+      "output": "artifacts/teacher-heldout-20261106/base-2b-parallel/worker-1"
+    }
+  ]
+}

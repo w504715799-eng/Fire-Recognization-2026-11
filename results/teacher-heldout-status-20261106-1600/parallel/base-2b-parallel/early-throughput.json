@@ -1,0 +1,14 @@
+{
+  "CST": "2026-11-06T16:12:26.129935+08:00",
+  "old_recent_query_seconds": 11.357501089951256,
+  "new_worker_query_seconds": [
+    12.193716147254841,
+    12.349100116291083
+  ],
+  "completed_new_by_worker": [
+    12,
+    12
+  ],
+  "pooled_steady_throughput_ratio": 1.8511251899580952,
+  "scope": "early measured query-time comparison, excludes reload/view verification overhead; same CPU FP32 batch4"
+}

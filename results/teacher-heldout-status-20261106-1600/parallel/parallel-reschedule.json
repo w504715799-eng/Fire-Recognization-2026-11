@@ -1,0 +1,27 @@
+{
+  "reason": "User requested higher CPU concurrency; preserve completed whole batches and run disjoint remainders",
+  "time": "2026-11-06T08:07:28.677783+00:00",
+  "actions": [
+    {
+      "pid": 33757,
+      "sent": "SIGINT"
+    },
+    {
+      "pid": 29906,
+      "sent": "SIGINT"
+    },
+    {
+      "pid": 33757,
+      "sent": "SIGTERM",
+      "reason": "SIGINT inherited as ignored by background shell; teacher existing timeout handler preserves report"
+    },
+    {
+      "pid": 29906,
+      "sent": "SIGALRM",
+      "reason": "SIGINT inherited as ignored by background shell; teacher existing timeout handler preserves report"
+    }
+  ],
+  "terminal_report_sha256": "c99290ac284c0322c9066a5ba6daffef172a7bb4797dae2a696c985a0a075461",
+  "retained_queries": 360,
+  "terminal_error": "Bounded CPU holdout stage/batch timed out"
+}

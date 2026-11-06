@@ -37,6 +37,27 @@ def main():
         try:
             while True:
                 check_remote_environment(ROOT,cloud)
+                if time.monotonic()-started>float(cfg.get('max_wait_hours',6))*3600:
+                    raise ProjectError('Own-baseline waiting bound reached')
+                if cfg.get('prerequisite_queue'):
+                    prerequisite=read_json(ROOT/cfg['prerequisite_queue'])
+                    if prerequisite['status']!='completed':
+                        if prerequisite['status'] not in ('waiting_for_own_baseline','validating'):
+                            raise ProjectError('Prerequisite queue needs attention')
+                        record.update(last_checked_at=now(),prerequisite_queue_status=prerequisite['status']);write_json(dest,record)
+                        time.sleep(30)
+                        continue
+                waiting=[]
+                for prerequisite in cfg.get('prerequisite_reports',[]):
+                    path=ROOT/prerequisite['path'];previous=read_json(path) if path.exists() else {'status':'not_started'}
+                    if previous.get('status')=='failed':raise ProjectError('Prerequisite experiment failed: '+prerequisite['path'])
+                    if previous.get('status')!='completed':waiting.append(prerequisite['path']);continue
+                    if previous.get('completed_updates')!=prerequisite.get('completed_updates'):
+                        raise ProjectError('Prerequisite did not complete the fixed update count')
+                if waiting:
+                    record.update(last_checked_at=now(),waiting_for_reports=waiting);write_json(dest,record)
+                    time.sleep(30)
+                    continue
                 run=ROOT/'runs'/cfg['baseline_run'];csv_file=run/'results.csv'
                 epochs=len(list(csv.DictReader(csv_file.open()))) if csv_file.exists() else 0
                 report_path=ROOT/'artifacts/run-records'/(cfg['baseline_run']+'.json')

@@ -1,0 +1,189 @@
+{
+  "scope": "256-image teacher-internal source-fit holdout; not detector test, human semantic truth or external generalization",
+  "models": {
+    "0.8b": {
+      "identity": {
+        "model_id": "Qwen/Qwen3.5-0.8B",
+        "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+      },
+      "source_report_sha256": "9a3e9b313e1e638b955bff87e8bb37fecb985e8323de5b82bf188a350dfd4675",
+      "tasks": {
+        "scene_presence": {
+          "queries": 256,
+          "agree": 154
+        },
+        "region_class": {
+          "queries": 256,
+          "agree": 145
+        }
+      },
+      "states": {
+        "fire_only": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 4
+          },
+          "region_class": {
+            "queries": 64,
+            "exact_agree": 63
+          }
+        },
+        "smoke_only": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 36
+          },
+          "region_class": {
+            "queries": 64,
+            "exact_agree": 17
+          }
+        },
+        "both": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 55
+          },
+          "region_class": {
+            "queries": 128,
+            "exact_agree": 65
+          }
+        },
+        "empty": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 59
+          },
+          "region_class": {
+            "queries": 0,
+            "exact_agree": 0
+          }
+        }
+      },
+      "seconds": 2730.6731187440455,
+      "parallel_remainder": false,
+      "confusion": {
+        "fire_present": {
+          "yes -> no": 43,
+          "yes -> yes": 85,
+          "no -> no": 126,
+          "no -> yes": 2
+        },
+        "smoke_present": {
+          "no -> no": 94,
+          "no -> yes": 34,
+          "yes -> no": 30,
+          "yes -> yes": 98
+        },
+        "target_class": {
+          "fire -> fire": 127,
+          "fire -> smoke": 1,
+          "smoke -> fire": 110,
+          "smoke -> smoke": 18
+        }
+      },
+      "valid": 512
+    },
+    "2b": {
+      "identity": {
+        "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "vocab_size": 151936,
+        "image_token_id": 151655,
+        "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+      },
+      "source_report_sha256": "b218d049c749ffabd6f3cd393037df07c53da0ff9aa46a0dc252dc77acfd2ba1",
+      "tasks": {
+        "scene_presence": {
+          "queries": 256,
+          "agree": 132
+        },
+        "region_class": {
+          "queries": 256,
+          "agree": 165
+        }
+      },
+      "states": {
+        "fire_only": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 1
+          },
+          "region_class": {
+            "queries": 64,
+            "exact_agree": 57
+          }
+        },
+        "smoke_only": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 17
+          },
+          "region_class": {
+            "queries": 64,
+            "exact_agree": 47
+          }
+        },
+        "both": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 64
+          },
+          "region_class": {
+            "queries": 128,
+            "exact_agree": 61
+          }
+        },
+        "empty": {
+          "scene_presence": {
+            "queries": 64,
+            "exact_agree": 50
+          },
+          "region_class": {
+            "queries": 0,
+            "exact_agree": 0
+          }
+        }
+      },
+      "seconds": 5605.393902772572,
+      "parallel_remainder": true,
+      "confusion": {
+        "fire_present": {
+          "yes -> yes": 117,
+          "yes -> no": 11,
+          "no -> no": 92,
+          "no -> yes": 36
+        },
+        "smoke_present": {
+          "no -> yes": 66,
+          "no -> no": 62,
+          "yes -> no": 11,
+          "yes -> yes": 117
+        },
+        "target_class": {
+          "fire -> fire": 116,
+          "fire -> smoke": 12,
+          "smoke -> smoke": 49,
+          "smoke -> fire": 79
+        }
+      },
+      "valid": 512
+    }
+  },
+  "paired": {
+    "scene_presence": {
+      "both_correct": 110,
+      "only_0_8b_correct": 44,
+      "only_2b_correct": 22,
+      "both_wrong": 80
+    },
+    "region_class": {
+      "both_correct": 133,
+      "only_0_8b_correct": 12,
+      "only_2b_correct": 32,
+      "both_wrong": 79
+    }
+  },
+  "instruction_sha256": "346e88520ebd82c79754a08ef773d5fa34b50a16c65692bc5342e937f9563c80"
+}

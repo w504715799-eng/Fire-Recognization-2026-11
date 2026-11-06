@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-06T08:30:04.674665+00:00",
+  "device": "cpu",
+  "mode": "CPU_one_update_integration_not_research_adapter",
+  "config_sha256": "464abe3cd55e1cb94df415feefe8196c076951515a43afeba8c81b728dfeb5e4",
+  "planned_updates": 1,
+  "completed_updates": 1,
+  "CPU_adapter_saved": false,
+  "base_weights_saved": false,
+  "steps": [
+    {
+      "update": 1,
+      "mean_semantic_loss": 0.48771191588451757,
+      "gradient_norm": 3.8698275089263916,
+      "seconds": 118.64223118778318,
+      "examples": [
+        {
+          "sample_id": "dfire/train/train/images/WEB03734.jpg",
+          "task": "region_class"
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB05990.jpg",
+          "task": "region_class"
+        },
+        {
+          "sample_id": "dfire/train/train/images/AoF03991.jpg",
+          "task": "scene_presence"
+        },
+        {
+          "sample_id": "dfire/train/train/images/AoF03290.jpg",
+          "task": "scene_presence"
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB07684.jpg",
+          "task": "region_class"
+        },
+        {
+          "sample_id": "dfire/train/train/images/AoF04928.jpg",
+          "task": "scene_presence"
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB07314.jpg",
+          "task": "region_class"
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB03982.jpg",
+          "task": "scene_presence"
+        }
+      ],
+      "lr": 3.846153846153847e-06
+    }
+  ],
+  "max_seconds": 900,
+  "identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "instruction_sha256": "1cbee6ca404dc846e199670d305cc9248c6b54396ea39773b46b711b8063ac26",
+  "instruction_order_sha256": "23b19db642b3cd5267106cf70127fc48d161822fde02a6acc9db21c1f14e3cd8",
+  "trainable_parameters": 3211264,
+  "dtype": "torch.float32",
+  "load_seconds": 8.934605484828353,
+  "first_update": {
+    "parameter_delta_L1": 5.2910196594530134,
+    "frozen_base_and_vision": true,
+    "GPU_step_passed": false
+  },
+  "cuda_initialized": false,
+  "peak_gpu_bytes": 0,
+  "seconds": 127.57879531709477,
+  "peak_rss_kib": 13311048
+}

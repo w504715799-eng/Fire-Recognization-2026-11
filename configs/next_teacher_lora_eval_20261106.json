@@ -1,0 +1,45 @@
+{
+  "queue_id": "after-ordinary-lora-eval-20261106",
+  "status_output": "artifacts/methods-20261106/after-ordinary-lora-eval-status.json",
+  "prerequisite_queue": "artifacts/methods-20261106/after-M-ordinary-status.json",
+  "prerequisite_reports": [
+    {
+      "path": "artifacts/qwen3vl2b-task-lora-cpu-v1/report.json",
+      "completed_updates": 250
+    }
+  ],
+  "baseline_run": "dfire_M_ordinary_seed17_full_20261106",
+  "baseline_config": "configs/train_dfire_M_ordinary_20261106.json",
+  "expected_epochs": 100,
+  "max_wait_hours": 16,
+  "stages": [
+    {
+      "name": "base_matched_gpu_evaluation",
+      "args": [
+        "cloud/evaluate_teacher_lora_gpu.py",
+        "--cloud-config",
+        "configs/cloud.student-controls.local.json",
+        "--output",
+        "artifacts/qwen3vl2b-lora-gpu-evaluation/base"
+      ],
+      "log": "logs/qwen3vl2b-lora-base-gpu-eval-20261106.log",
+      "timeout_seconds": 1260
+    },
+    {
+      "name": "adapted_matched_gpu_evaluation",
+      "args": [
+        "cloud/evaluate_teacher_lora_gpu.py",
+        "--cloud-config",
+        "configs/cloud.student-controls.local.json",
+        "--output",
+        "artifacts/qwen3vl2b-lora-gpu-evaluation/adapted",
+        "--adapter",
+        "artifacts/qwen3vl2b-task-lora-cpu-v1/final-adapter",
+        "--baseline-report",
+        "artifacts/qwen3vl2b-lora-gpu-evaluation/base/report.json"
+      ],
+      "log": "logs/qwen3vl2b-lora-adapted-gpu-eval-20261106.log",
+      "timeout_seconds": 1260
+    }
+  ]
+}

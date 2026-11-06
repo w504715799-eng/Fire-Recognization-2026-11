@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "pretrained_weights_loaded": false,
+  "GPU_used": false,
+  "synthetic_small_config": true,
+  "adapter_tensors_verified": 8,
+  "optimizer_tensors_restored": 8,
+  "bytes": 42467
+}

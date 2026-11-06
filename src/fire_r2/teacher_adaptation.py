@@ -77,3 +77,24 @@ def semantic_token_labels(plain_ids,offsets,expanded_ids,value_spans):
         if position<0 or expanded_ids[position]!=plain_ids[i]:raise ProjectError('Semantic token alignment failed')
         labels[position]=expanded_ids[position]
     return labels
+
+
+def instruction_inputs(processor,record,max_length=768):
+    """Real source pixels and teacher-forced values, with next-token positions explicit."""
+    from pathlib import Path
+    from .common import sha256
+    from .teacher_runner import teacher_view
+    if record['detector_role']!='fit':raise ProjectError('Teacher instructions must originate in fit')
+    if sha256(Path(record['image_path']))!=record['image_sha256']:raise ProjectError('Instruction source image changed')
+    box={'bbox':record['bbox'],'format':record['bbox_format']} if record['task']=='region_class' else None
+    view=teacher_view(record['image_path'],box,region_marker='thin_outline_after_resize')
+    message=[{'role':'user','content':[{'type':'image','image':view},{'type':'text','text':record['instruction']}]}]
+    prompt=processor.apply_chat_template(message,tokenize=False,add_generation_prompt=True,enable_thinking=False)
+    target,spans=supervised_value_spans(record['target']);text=prompt+target+processor.tokenizer.eos_token
+    plain=processor.tokenizer(text,add_special_tokens=False,return_offsets_mapping=True)
+    inputs=processor(text=[text],images=[view],return_tensors='pt',add_special_tokens=False)
+    ids=inputs['input_ids'][0].tolist()
+    labels=semantic_token_labels(plain['input_ids'],plain['offset_mapping'],ids,[(len(prompt)+a,len(prompt)+b) for a,b in spans])
+    positions=[i for i,x in enumerate(labels) if x!=-100]
+    if len(ids)>max_length or not positions or min(positions)<1:raise ProjectError('Invalid sequence/semantic loss positions')
+    return inputs,[i-1 for i in positions],[labels[i] for i in positions]

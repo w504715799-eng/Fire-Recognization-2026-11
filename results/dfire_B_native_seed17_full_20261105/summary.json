@@ -1,0 +1,12 @@
+{
+  "completed_epochs": 100,
+  "finished_at": "2026-11-05T11:33:10.578787+00:00",
+  "elapsed_seconds": 15329.630666423123,
+  "best_fire_dev_AP50_95": 0.41604656591529887,
+  "best_dual_dev_epoch": 59,
+  "best_dual_dev_AP50_95": 0.48149,
+  "last_epoch_dual_dev_AP50_95": 0.47571,
+  "evaluation_partition": "dev",
+  "formal_test_completed": false,
+  "checkpoint_policy": "best_fire uses native fire dev AP; native best.pt uses native fitness"
+}

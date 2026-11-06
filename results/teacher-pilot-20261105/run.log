@@ -1,0 +1,22 @@
+[ERROR] `min_frames` is part of Qwen3VLVideoProcessorInitKwargs, but not documented. Make sure to add it to the docstring of the function in /FIRE_R2-runtime/teacher-site-packages/transformers/models/qwen3_vl/video_processing_qwen3_vl.py.
+[ERROR] `max_frames` is part of Qwen3VLVideoProcessorInitKwargs, but not documented. Make sure to add it to the docstring of the function in /FIRE_R2-runtime/teacher-site-packages/transformers/models/qwen3_vl/video_processing_qwen3_vl.py.
+Loading weights:   0%|          | 0/473 [00:00<?, ?it/s]Loading weights:  36%|███▌      | 171/473 [00:00<00:00, 1143.86it/s]Loading weights:  60%|██████    | 286/473 [00:00<00:00, 1078.40it/s]Loading weights:  91%|█████████ | 430/473 [00:00<00:00, 1216.42it/s]Loading weights: 100%|██████████| 473/473 [00:00<00:00, 1228.84it/s]
+/FIRE_R2-runtime/teacher-site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py:1404: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /FIRE_R2-runtime/cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1503.)
+  split_sizes = (image_grid_thw.prod(-1) // self.visual.spatial_merge_size**2).tolist()
+{
+  "output": "/root/rivermind-data/FIRE_R2/artifacts/teacher/dfire-fit-pilot-v1.json",
+  "fit_images": 8,
+  "scope": "pilot_fit_only",
+  "runtime": {
+    "elapsed_seconds": 48.78657695092261,
+    "runner_sha256": "116a868627dc93de64bc329f015959688269434121d545c1c6740ca3154678f3",
+    "peak_allocated_bytes": 1839528960,
+    "calls": 16,
+    "torch": "2.12.1+cu130",
+    "transformers": "5.15.0",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "parse_ok": 7,
+    "technical_failures": 0
+  },
+  "training_started": false
+}

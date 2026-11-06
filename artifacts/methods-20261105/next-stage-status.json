@@ -1,8 +1,26 @@
 {
-  "status": "waiting_for_own_baseline",
+  "status": "completed",
   "started_at": "2026-11-05T09:15:54.420226+00:00",
   "baseline": "dfire_B_native_seed17_full_20261105",
-  "stages": [],
-  "last_checked_at": "2026-11-05T09:31:54.605067+00:00",
-  "completed_epochs": 49
+  "stages": [
+    {
+      "name": "methods_gpu_preflight",
+      "started_at": "2026-11-05T11:33:26.279417+00:00",
+      "log": "logs/methods-gpu-preflight-20261105.log",
+      "finished_at": "2026-11-05T11:33:53.249333+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "teacher_fit_pilot",
+      "started_at": "2026-11-05T11:33:53.250365+00:00",
+      "log": "logs/teacher-pilot-20261105.log",
+      "finished_at": "2026-11-05T11:35:04.904918+00:00",
+      "returncode": 0
+    }
+  ],
+  "last_checked_at": "2026-11-05T11:33:26.277643+00:00",
+  "completed_epochs": 100,
+  "gpu_stage_started_at": "2026-11-05T11:33:26.278629+00:00",
+  "finished_at": "2026-11-05T11:35:04.905939+00:00",
+  "server_powered_off": false
 }

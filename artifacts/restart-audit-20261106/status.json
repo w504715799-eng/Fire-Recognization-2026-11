@@ -1,0 +1,105 @@
+{
+  "checked_on": "2026-11-06",
+  "gpu_idle": true,
+  "gpu_lock_free": true,
+  "new_training_started": false,
+  "new_teacher_inference_started": false,
+  "filesystem": {
+    "root": "overlay30GiB, approximately18GiB free",
+    "data": "ext4 approximately15GiB free",
+    "rivermind_fs": {
+      "mounted": true,
+      "type": "fuse.juicefs",
+      "df_capacity": "200G",
+      "df_available": "200G",
+      "account_quota_verified": false
+    }
+  },
+  "data_checks": [
+    {
+      "dataset": "dfire",
+      "images": 21527,
+      "missing_original_images": 0,
+      "missing_view_images": 0,
+      "manifest_hash_matches": true
+    },
+    {
+      "dataset": "homefire",
+      "images": 6500,
+      "missing_original_images": 0,
+      "missing_view_images": 0,
+      "manifest_hash_matches": true
+    },
+    {
+      "dataset": "fasdd_cv",
+      "images": 95314,
+      "missing_original_images": 0,
+      "missing_view_images": 0,
+      "manifest_hash_matches": true
+    },
+    {
+      "dataset": "fasdd_uav",
+      "images": 25097,
+      "missing_original_images": 0,
+      "missing_view_images": 0,
+      "manifest_hash_matches": true
+    }
+  ],
+  "verification_scope": "path existence plus stored view-manifest SHA; no repeat full pixel decoding or all image hashes",
+  "baseline": {
+    "completed_epochs": 100,
+    "finished_at": "2026-11-05T11:33:10.578787+00:00",
+    "elapsed_seconds": 15329.630666423123,
+    "best_fire_dev_AP50_95": 0.41604656591529887,
+    "best_dual_dev_epoch": 59,
+    "best_dual_dev_AP50_95": 0.48149,
+    "last_epoch_dual_dev_AP50_95": 0.47571,
+    "evaluation_partition": "dev",
+    "formal_test_completed": false,
+    "checkpoint_policy": "best_fire uses native fire dev AP; native best.pt uses native fitness"
+  },
+  "teacher": {
+    "scope": "8_fit_images_16_queries_pilot",
+    "task_results": {
+      "A": {
+        "calls": 8,
+        "schema_pass": 0,
+        "median_seconds": 3.724475519731641
+      },
+      "B": {
+        "calls": 8,
+        "schema_pass": 7,
+        "median_seconds": 1.6577977917622775
+      }
+    },
+    "schema_pass_fraction": 0.4375,
+    "technical_failures": 0,
+    "runtime": {
+      "elapsed_seconds": 48.78657695092261,
+      "runner_sha256": "116a868627dc93de64bc329f015959688269434121d545c1c6740ca3154678f3",
+      "peak_allocated_bytes": 1839528960,
+      "calls": 16,
+      "torch": "2.12.1+cu130",
+      "transformers": "5.15.0",
+      "gpu": "NVIDIA GeForce RTX 2080 Ti",
+      "parse_ok": 7,
+      "technical_failures": 0
+    },
+    "single_image_full_fit_hours_rough_extrapolation": 19.547764225812603,
+    "not_semantic_accuracy": true,
+    "issues": [
+      "A returns singleton arrays; five A outputs also contain unquoted yes/no",
+      "one B content is the invalid neutral-marker string 1",
+      "all seven valid B contents are fire; smoke-region behavior needs review"
+    ],
+    "full_fit_teacher_started": false,
+    "raw_cache_unchanged": true
+  },
+  "environment": {
+    "prefix": "/root/rivermind-data/FIRE_R2/.envs/sci-env",
+    "torch": "2.12.1+cu130",
+    "torchvision": "0.27.1+cu130",
+    "ultralytics": "8.4.183",
+    "pycocotools": "2.0.11"
+  }
+}

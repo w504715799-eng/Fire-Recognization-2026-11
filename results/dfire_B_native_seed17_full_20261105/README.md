@@ -1,7 +1,7 @@
-# D-Fire原生基线（进行中）
+# D-Fire原生基线（100轮完成）
 
-快照UTC：2026-11-05T09:19:41.370016+00:00；已完成44/100轮。配置YOLO26s、seed17、640、batch16、AMP、workers2；fit14122/dev1549，全量覆盖核验通过。
+2026-11-05 19:33北京时间完成，实耗15,329.63秒，约4小时15分。YOLO26s、seed17、640、batch16、AMP、workers2；fit14122/dev1549，全量覆盖检查通过。完整100轮CSV、参数和运行记录已保存。
 
-完整阶段CSV在snapshots/development-stage.csv；它是进行中开发集曲线，不是最终test或方法增益。原生fire dev AP选best_fire；resume_last保留优化器仅在云端。
+最佳fire原生dev AP50:95为0.4160466；双类原生dev AP50:95最高0.48149（第59轮），最后第100轮为0.47571。fire最优与双类最优不是同一选模指标；均不是独立test或跨库结果。
 
-新配对B与W/S/M共同采用原GT COCO fire dev AP选模；与本原生参照的视图/选模差异在总方案披露。两类模型的最终评价统一保留原GT。
+best_fire与含优化器的resume_last等权重留在云端，未下载本机。旧44轮快照保留，完整结果不截取有利轮次。新配对B与W/S/M共同采用原GT COCO fire dev AP，原生参照的视图/选模差异在总方案披露。

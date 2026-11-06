@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "synthetic_inputs": true,
+  "publication_effectiveness_result": false,
+  "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+  "variants": [
+    {
+      "variant": "B",
+      "optimizer_steps": 2,
+      "losses": [
+        15.589235305786133,
+        16.363985061645508
+      ],
+      "loss_items": {
+        "box_loss": 4.204669952392578,
+        "cls_loss": 3.8713650703430176,
+        "l1_loss": 0.10595770180225372,
+        "semantic_loss": 0.0,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 187900416,
+      "seconds": 7.655526478774846
+    },
+    {
+      "variant": "B+W",
+      "optimizer_steps": 2,
+      "losses": [
+        14.166781425476074,
+        14.625894546508789
+      ],
+      "loss_items": {
+        "box_loss": 3.43405818939209,
+        "cls_loss": 3.8007712364196777,
+        "l1_loss": 0.07811757177114487,
+        "semantic_loss": 0.0,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 187900416,
+      "seconds": 1.0909153679385781
+    },
+    {
+      "variant": "B+P",
+      "optimizer_steps": 2,
+      "losses": [
+        15.727804183959961,
+        16.491031646728516
+      ],
+      "loss_items": {
+        "box_loss": 4.180693626403809,
+        "cls_loss": 3.8900327682495117,
+        "l1_loss": 0.10566028952598572,
+        "semantic_loss": 0.06912870705127716,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 187971072,
+      "seconds": 1.155755897052586
+    },
+    {
+      "variant": "B+S",
+      "optimizer_steps": 2,
+      "losses": [
+        15.79545783996582,
+        16.570436477661133
+      ],
+      "loss_items": {
+        "box_loss": 4.211633205413818,
+        "cls_loss": 3.864269495010376,
+        "l1_loss": 0.10630950331687927,
+        "semantic_loss": 0.1030067652463913,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 187971072,
+      "seconds": 1.1027448209933937
+    },
+    {
+      "variant": "M-ordinary",
+      "optimizer_steps": 2,
+      "losses": [
+        15.844243049621582,
+        16.609420776367188
+      ],
+      "loss_items": {
+        "box_loss": 4.200225830078125,
+        "cls_loss": 3.872079372406006,
+        "l1_loss": 0.10611967742443085,
+        "semantic_loss": 0.0,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.1262853443622589
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 188510720,
+      "seconds": 2.713983979076147
+    },
+    {
+      "variant": "M",
+      "optimizer_steps": 2,
+      "losses": [
+        15.905797004699707,
+        16.740020751953125
+      ],
+      "loss_items": {
+        "box_loss": 4.172677040100098,
+        "cls_loss": 3.8999361991882324,
+        "l1_loss": 0.10552632063627243,
+        "semantic_loss": 0.0,
+        "gain_loss": 0.03465735912322998,
+        "smoke_aux_loss": 0.15721361339092255
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 188514816,
+      "seconds": 2.1407773420214653
+    },
+    {
+      "variant": "M+W+S",
+      "optimizer_steps": 2,
+      "losses": [
+        14.691527366638184,
+        15.109280586242676
+      ],
+      "loss_items": {
+        "box_loss": 3.369387626647949,
+        "cls_loss": 3.811762809753418,
+        "l1_loss": 0.0779569000005722,
+        "semantic_loss": 0.10365299880504608,
+        "gain_loss": 0.03465735912322998,
+        "smoke_aux_loss": 0.15722249448299408
+      },
+      "finite_gradients": true,
+      "amp": true,
+      "amp_skipped_overflow_steps": 7,
+      "final_grad_scale": 512.0,
+      "deployment_output_unchanged": true,
+      "peak_allocated_bytes": 188626432,
+      "seconds": 1.9175055460073054
+    }
+  ],
+  "source_sha256": {
+    "supervision.py": "de30e1054fc8ba83b5e9ba48d9caf4e187ceff653f3b35da38eaf43d6e1f6b45",
+    "common.py": "5f8a40d4eee29298252ee79544062c6e51173944c61315d691d519f544a8fd27",
+    "experiments.py": "5cfa90d4ac33866492ccf7c1a3c5d08c2a5d4ee58c07c1e71fab8167f2d3eb65",
+    "cli.py": "9eef9112194a4121034c2a1eb9246533aac98d23bcc2a5f4e4d41674409bf028",
+    "torch_modules.py": "465275445594774652ea7352f2aebc1cbcdf4c52feb4876952bf0545b088ae53",
+    "teacher_runner.py": "116a868627dc93de64bc329f015959688269434121d545c1c6740ca3154678f3",
+    "prediction.py": "0a4c2d4b0e0ecf6c94ff41b6291517c4423af77bf1791f05ddfab565ab2bf452",
+    "runtime.py": "647038f2867182268c6fd227b7ad94e711a5af16c6a5ed600aebce5bb3565655",
+    "cloud.py": "e5800bc189601531c1dcf8f833c3d0361f0c81e262bef3160e3de56ebbfebf21",
+    "unified_validator.py": "079b34f35f48c6947aa78e84c57106e55471e3d7a9a6cc97472060ad0c7399bb",
+    "__init__.py": "acaff4d0eb5674b8ddeb80a7ed99fa35d278bd339a98e10dc6a9d9930c00cbf9",
+    "evaluation.py": "4949877a5f87c30a6716bbf80d58b340d309bea947241ae66b57e729272009b7",
+    "backend_lock.py": "8122d30b669e6152798e2dfb0711266036c79b8a01edef9331c57e826089d367",
+    "train.py": "df9020bf6bcff49b389656a6d27f931516ad1341c6b6d2247842df8faeda2a16",
+    "research_data.py": "c12d6cd136140070c526d3cf1164e279880383e66e84134dede2ffc83ddec89f",
+    "data.py": "b70f74228bfc4a1071513ff5a02168f080bd431442a32e9d1a32bb6ed3e2f547",
+    "ultralytics_backend.py": "c95f6054dfa79652b071c6942b6977a85635d8b85498fb36266150c2f764152e"
+  },
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "torch": "2.12.1+cu130",
+  "elapsed_seconds": 25.812546105124056
+}

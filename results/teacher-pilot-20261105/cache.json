@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "teacher_id": "Qwen/Qwen3.5-0.8B",
+  "teacher_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "prompt_hashes": {
+    "A": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+    "B": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7"
+  },
+  "samples": {
+    "dfire/train/train/images/AoF04755.jpg": {
+      "image_sha256": "b2c6ae944753f697248965421ca0be7596af8dd8c2165adcfec0b7d8b0b9f1b1",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "response": {
+            "content": "fire",
+            "visibility": "limited"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": no,\n    \"smoke_visible\": no,\n    \"cloud_fog_like\": no,\n    \"bright_light_like\": yes,\n    \"reflection_like\": no,\n    \"low_visibility\": yes\n  }\n]\n```\n",
+          "parse_status": "invalid_json",
+          "seconds": 6.105234883259982,
+          "output_tokens": 68,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"limited\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.821729791816324,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 1
+        }
+      ]
+    },
+    "dfire/train/train/images/PublicDataset00046.jpg": {
+      "image_sha256": "eca9a6f042ddb1e47b1c90c805c53d0ebddaa82f2f406d13108bf53370d7e199",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "response": {
+            "content": "fire",
+            "visibility": "clear"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": yes,\n    \"smoke_visible\": yes,\n    \"cloud_fog_like\": yes,\n    \"bright_light_like\": yes,\n    \"reflection_like\": yes,\n    \"low_visibility\": yes\n  }\n]\n```\n",
+          "parse_status": "invalid_json",
+          "seconds": 3.7149033322930336,
+          "output_tokens": 68,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"clear\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.6166689158417284,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 1
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06014.jpg": {
+      "image_sha256": "da018cd21c7be5bdc8ed6aae1153d3f443dc307c10586394719571c29934745f",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "response": {
+            "content": "fire",
+            "visibility": "limited"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n    {\n        \"fire_visible\": no,\n        \"smoke_visible\": yes,\n        \"cloud_fog_like\": yes,\n        \"bright_light_like\": no,\n        \"reflection_like\": no,\n        \"low_visibility\": no\n    }\n]\n```\n",
+          "parse_status": "invalid_json",
+          "seconds": 3.734047707170248,
+          "output_tokens": 68,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"limited\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.6178550538606942,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 1
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB06442.jpg": {
+      "image_sha256": "c86029c2d6bd8662d8c33a0c43db188966266d0a3c5c2ce68169632f04a3f307",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "response": {
+            "content": "fire",
+            "visibility": "limited"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": \"no\",\n    \"smoke_visible\": \"no\",\n    \"cloud_fog_like\": \"no\",\n    \"bright_light_like\": \"no\",\n    \"reflection_like\": \"no\",\n    \"low_visibility\": \"no\"\n  }\n]\n```\n",
+          "parse_status": "invalid_schema",
+          "seconds": 4.08316448982805,
+          "output_tokens": 75,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"limited\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.643308392725885,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 1
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB07909.jpg": {
+      "image_sha256": "d2f1a8e1a0110765124f68ef002fdfa95d5a3ffa9b2c549aa6db81633de18884",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 2,
+          "response": {
+            "content": "fire",
+            "visibility": "clear"
+          }
+        },
+        {
+          "original_annotation_id": 3,
+          "response": {
+            "content": "fire",
+            "visibility": "limited"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\"fire_visible\": \"no\", \"smoke_visible\": \"yes\", \"cloud_fog_like\": \"yes\", \"bright_light_like\": \"no\", \"reflection_like\": \"no\", \"low_visibility\": \"no\"}\n]\n```\n",
+          "parse_status": "invalid_schema",
+          "seconds": 3.2708219457417727,
+          "output_tokens": 59,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"clear\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.6304057203233242,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 2
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"limited\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.67228719079867,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 3
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB05602.jpg": {
+      "image_sha256": "b51ba4fdc3961118c683292fe777b4702b04fcf1c87342e3d26a4b67fa19ef36",
+      "semantic": null,
+      "regions": [
+        {
+          "original_annotation_id": 1,
+          "response": null
+        },
+        {
+          "original_annotation_id": 3,
+          "response": {
+            "content": "fire",
+            "visibility": "limited"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": yes,\n    \"smoke_visible\": yes,\n    \"cloud_fog_like\": yes,\n    \"bright_light_like\": yes,\n    \"reflection_like\": no,\n    \"low_visibility\": yes\n  }\n]\n```\n",
+          "parse_status": "invalid_json",
+          "seconds": 3.6965757999569178,
+          "output_tokens": 68,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"1\",\n  \"visibility\": \"clear\"\n}\n```\n",
+          "parse_status": "invalid_schema",
+          "seconds": 1.6793816019780934,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 1
+        },
+        {
+          "task": "B",
+          "raw_response": "```json\n{\n  \"content\": \"fire\",\n  \"visibility\": \"limited\"\n}\n```\n",
+          "parse_status": "ok",
+          "seconds": 1.748569816350937,
+          "output_tokens": 27,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "71adb0912502f859cc9ce4a5a3c47bf30fc355a5ebc93113152edd4e9ba754b7",
+          "view": "context_crop_1.5_neutral_outline",
+          "original_annotation_id": 3
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB03078.jpg": {
+      "image_sha256": "488fa5792b72d372eda8716236e5dc447c9ff9fe8df6918c0ac2849e53557c0e",
+      "semantic": null,
+      "regions": [],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": \"no\",\n    \"smoke_visible\": \"no\",\n    \"cloud_fog_like\": \"no\",\n    \"bright_light_like\": \"yes\",\n    \"reflection_like\": \"no\",\n    \"low_visibility\": \"yes\"\n  }\n]\n```\n",
+          "parse_status": "invalid_schema",
+          "seconds": 4.166414584964514,
+          "output_tokens": 75,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        }
+      ]
+    },
+    "dfire/train/train/images/WEB00811.jpg": {
+      "image_sha256": "9f650874e12aeb1d04c414acfa935e0a1d75fe3ce7dcba7750b12b4bcd4ee969",
+      "semantic": null,
+      "regions": [],
+      "calls": [
+        {
+          "task": "A",
+          "raw_response": "```json\n[\n  {\n    \"fire_visible\": no,\n    \"smoke_visible\": no,\n    \"cloud_fog_like\": yes,\n    \"bright_light_like\": yes,\n    \"reflection_like\": no,\n    \"low_visibility\": no\n  }\n]\n```\n",
+          "parse_status": "invalid_json",
+          "seconds": 3.6977640013210475,
+          "output_tokens": 68,
+          "attempts": 1,
+          "technical_error": null,
+          "prompt_sha256": "8dcee11ef6cf908a11a0f0671293bd7d4185a76bbf25adbd074c946e0f909439",
+          "view": "letterbox_640",
+          "original_annotation_id": null
+        }
+      ]
+    }
+  },
+  "scope": "pilot_fit_only",
+  "full_fit_count": 14122,
+  "selection_sha256": "42b575ccff2182515366592eaa8c2cfd6a0aa90ba22ca0195fd451dd1f9ba287",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 192,
+    "enable_thinking": false,
+    "dtype": "float16"
+  },
+  "parser": "exact_json_or_single_json_fence_v1",
+  "runtime": {
+    "elapsed_seconds": 48.78657695092261,
+    "runner_sha256": "116a868627dc93de64bc329f015959688269434121d545c1c6740ca3154678f3",
+    "peak_allocated_bytes": 1839528960,
+    "calls": 16,
+    "torch": "2.12.1+cu130",
+    "transformers": "5.15.0",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "parse_ok": 7,
+    "technical_failures": 0
+  }
+}

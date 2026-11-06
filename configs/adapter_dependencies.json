@@ -1,0 +1,20 @@
+{
+  "environment": "cloud sci-env with isolated root-filesystem layer",
+  "target": "/FIRE_R2-runtime/adapter-site-packages",
+  "wheels": "/FIRE_R2-runtime/adapter-wheels",
+  "packages": [
+    {
+      "name": "peft", "version": "0.21.2", "bytes": 835427,
+      "sha256": "106ab6077ff72c54d21577f9af5970e34bac7582cb14209f7b2b511e322a4eae",
+      "url": "https://files.pythonhosted.org/packages/70/0b/59441cdbfdd342ed03c08af90a2fe16173f0cd48ab219f523b39ca059a79/peft-0.21.2-py3-none-any.whl"
+    },
+    {
+      "name": "accelerate", "version": "1.15.0", "bytes": 394295,
+      "sha256": "97eacca0b73e45cb867dbf8c5d5d4dc32219544300e0c8992c7334dc2ef33cec",
+      "url": "https://files.pythonhosted.org/packages/8a/4c/34f0450479d01195027260da68d8a3880683f1640c3ca5adf64acb3185f1/accelerate-1.15.0-py3-none-any.whl"
+    }
+  ],
+  "download_bytes": 1229722,
+  "install_dependencies_automatically": false,
+  "modify_torch_transformers_base": false
+}

@@ -1,0 +1,134 @@
+{
+  "created_at": "2026-11-06T06:54:17.842238+00:00",
+  "M_and_holdout_are_progress_snapshots": true,
+  "files": [
+    {
+      "source": "artifacts/teacher-qwen3vl2b/base/cpu-regression64-20261106/report.json",
+      "export": "artifacts/teacher-qwen3vl2b/base/cpu-regression64-20261106/report.json.gz",
+      "original_bytes": 140877,
+      "original_sha256": "119ea2fe491759fca89a58867f6621a27395bf3595662b1ad43bdac126aeb1a1",
+      "export_bytes": 15065,
+      "export_sha256": "e6557ced08390f61619054d12043b09076401482faf04096ae216ad38457054a"
+    },
+    {
+      "source": "artifacts/teacher-qwen3vl2b/base/cpu-regression64-20261106/responses.jsonl",
+      "export": "artifacts/teacher-qwen3vl2b/base/cpu-regression64-20261106/responses.jsonl",
+      "original_bytes": 98046,
+      "original_sha256": "bc7a49a760163e9c1be672188cada335b844984987fcd0b9b694c6fd6aeb0435",
+      "export_bytes": 98046,
+      "export_sha256": "bc7a49a760163e9c1be672188cada335b844984987fcd0b9b694c6fd6aeb0435"
+    },
+    {
+      "source": "artifacts/teacher-qwen3vl2b/base/comparison64-20261106.json",
+      "export": "artifacts/teacher-qwen3vl2b/base/comparison64-20261106.json.gz",
+      "original_bytes": 275049,
+      "original_sha256": "1d1890686f9f7d570fcbef6d555c7c53706151082371cc4b4a61c1e123a4bcc3",
+      "export_bytes": 9684,
+      "export_sha256": "c839390ff65ce6f4d91fc3d43477ac262534e17a33f1d0da44b70c032a0de5a5"
+    },
+    {
+      "source": "artifacts/qwen3vl-2b-preparation-20261106/input-preflight/report.json",
+      "export": "artifacts/qwen3vl-2b-preparation-20261106/input-preflight/report.json",
+      "original_bytes": 494,
+      "original_sha256": "110f232dafc7c3a22b01b0f3570d051811e82f93b68edadf0f22caceebaf7560",
+      "export_bytes": 494,
+      "export_sha256": "110f232dafc7c3a22b01b0f3570d051811e82f93b68edadf0f22caceebaf7560"
+    },
+    {
+      "source": "artifacts/qwen3vl-2b-preparation-20261106/input-preflight/examples.jsonl",
+      "export": "artifacts/qwen3vl-2b-preparation-20261106/input-preflight/examples.jsonl.gz",
+      "original_bytes": 700096,
+      "original_sha256": "04d7376c0324ee972a571bacddb0c36a5903c371d945ad8f3b9e8f2caaabd6b2",
+      "export_bytes": 132245,
+      "export_sha256": "679753677741c17e9fa7dd06d6c7d1601a3687b22a3bada822092a84a240bdb1"
+    },
+    {
+      "source": "artifacts/qwen3vl-2b-preparation-20261106/adapter-meta-check.json",
+      "export": "artifacts/qwen3vl-2b-preparation-20261106/adapter-meta-check.json",
+      "original_bytes": 279,
+      "original_sha256": "4036838add2c580447fbb10b85136f4e9e7917970b09069c0dbbf1954dbb939d",
+      "export_bytes": 279,
+      "export_sha256": "4036838add2c580447fbb10b85136f4e9e7917970b09069c0dbbf1954dbb939d"
+    },
+    {
+      "source": "artifacts/teacher-heldout-20261106/base-0.8b/report.json",
+      "export": "artifacts/teacher-heldout-20261106/base-0.8b/report.json",
+      "original_bytes": 25928,
+      "original_sha256": "11f26a9f63c52eece7f7c4f05e55268b87d008dc2a2df1f04f1eb93af10e10d7",
+      "export_bytes": 25928,
+      "export_sha256": "11f26a9f63c52eece7f7c4f05e55268b87d008dc2a2df1f04f1eb93af10e10d7"
+    },
+    {
+      "source": "artifacts/teacher-heldout-20261106/base-2b/report.json",
+      "export": "artifacts/teacher-heldout-20261106/base-2b/report.json",
+      "original_bytes": 9248,
+      "original_sha256": "8a5c01221c3a107eb6d51098d2c3bea94d8de59de56c336efac6727c0ba16ff5",
+      "export_bytes": 9248,
+      "export_sha256": "8a5c01221c3a107eb6d51098d2c3bea94d8de59de56c336efac6727c0ba16ff5"
+    },
+    {
+      "source": "artifacts/methods-20261106/after-M-ordinary-status.json",
+      "export": "artifacts/methods-20261106/after-M-ordinary-status.json",
+      "original_bytes": 240,
+      "original_sha256": "5515fc22ebc06fd7da799808da888931493595a2f6e6183e38383c198aac79df",
+      "export_bytes": 240,
+      "export_sha256": "5515fc22ebc06fd7da799808da888931493595a2f6e6183e38383c198aac79df"
+    },
+    {
+      "source": "runs/dfire_M_seed17_full_20261106/results.csv",
+      "export": "runs/dfire_M_seed17_full_20261106/results.csv",
+      "original_bytes": 5970,
+      "original_sha256": "dcfb2ac52c83e29ce8366f85c9294bd31fe79dd3d449c3fea2e6abf7a3a61b42",
+      "export_bytes": 5970,
+      "export_sha256": "dcfb2ac52c83e29ce8366f85c9294bd31fe79dd3d449c3fea2e6abf7a3a61b42"
+    },
+    {
+      "source": "logs/qwen3vl2b-cpu-regression64-20261106.log",
+      "export": "logs/qwen3vl2b-cpu-regression64-20261106.log.gz",
+      "original_bytes": 28365,
+      "original_sha256": "f3d28e3f8dd0979f294684365893ae7632df14fc851b2849751daa346a38b65f",
+      "export_bytes": 2416,
+      "export_sha256": "32974e439d80d21988c50c1f955400a0b470aeaa2ea18ee2325a33a058d9edf2"
+    },
+    {
+      "source": "logs/qwen3vl2b-input-preflight-20261106.log",
+      "export": "logs/qwen3vl2b-input-preflight-20261106.log.gz",
+      "original_bytes": 305406,
+      "original_sha256": "5ae30c68270a198770da0aab21cdba081348f4949d8071f186db042fad8b5f9b",
+      "export_bytes": 1679,
+      "export_sha256": "479bf96d2f5a8b931aa234a0f1039c9bbb897cb2cc4373a30eaa1eb1d7356587"
+    },
+    {
+      "source": "logs/adapter-dependencies-20261106.log",
+      "export": "logs/adapter-dependencies-20261106.log.gz",
+      "original_bytes": 1532,
+      "original_sha256": "9cc5201024211e0c72d53348f1a8b28a1c63285113f3e17d4f70815dd6339054",
+      "export_bytes": 644,
+      "export_sha256": "e9288fb8747fda5dd288483f52507a175a633df20e18401402928026ee9105ee"
+    },
+    {
+      "source": "logs/teacher-heldout-base-0.8b-20261106.log",
+      "export": "logs/teacher-heldout-base-0.8b-20261106.log.gz",
+      "original_bytes": 1484,
+      "original_sha256": "37582d063b27150b3cca348783eeb3db211d8bfd8ab9c0c6ccaf34cca3bb5b39",
+      "export_bytes": 524,
+      "export_sha256": "affdb47e25ee125cbaeaef7fbcea39320c36d21db471a4f9765bc659bb60297f"
+    },
+    {
+      "source": "logs/teacher-heldout-base-2b-20261106.log",
+      "export": "logs/teacher-heldout-base-2b-20261106.log.gz",
+      "original_bytes": 3198,
+      "original_sha256": "8e6ac87a22f90c154609bf3198d1e5585ecb223a193e92d19774218c2d12d975",
+      "export_bytes": 602,
+      "export_sha256": "c595f4cd9a6c8fa556dddb21e9f6b1063f57fc173b727bcca78918b019d97407"
+    },
+    {
+      "source": "/FIRE_R2-runtime/adapter-wheels/install-receipt.json",
+      "export": "runtime/adapter-install-receipt.json",
+      "original_bytes": 1497,
+      "original_sha256": "240accb326acd79d98e69b61b5fe515eccd4d0a564f672d8a7ba7c94b6c3bc40",
+      "export_bytes": 1497,
+      "export_sha256": "240accb326acd79d98e69b61b5fe515eccd4d0a564f672d8a7ba7c94b6c3bc40"
+    }
+  ]
+}

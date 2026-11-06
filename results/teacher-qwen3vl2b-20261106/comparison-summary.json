@@ -1,0 +1,644 @@
+{
+  "scope": "complete fixed64 development regression; original-label diagnostics not independent semantic truth",
+  "models": {
+    "existing_0_8b": {
+      "overall": {
+        "images": 64,
+        "presence": {
+          "fire_visible": {
+            "denominator": 64,
+            "known": 64,
+            "agree": 50,
+            "agreement_among_known": 0.78125
+          },
+          "smoke_visible": {
+            "denominator": 64,
+            "known": 64,
+            "agree": 49,
+            "agreement_among_known": 0.765625
+          }
+        },
+        "region_class_support": {
+          "fire": {
+            "denominator": 32,
+            "known": 25,
+            "supported": 22,
+            "content_counts": {
+              "uncertain": 7,
+              "fire": 21,
+              "smoke": 3,
+              "both": 1
+            }
+          },
+          "smoke": {
+            "denominator": 32,
+            "known": 31,
+            "supported": 22,
+            "content_counts": {
+              "smoke": 22,
+              "uncertain": 1,
+              "fire": 9
+            }
+          }
+        },
+        "known_context_fields_from_original_cache": 252
+      },
+      "cohorts": {
+        "original_8": {
+          "images": 8,
+          "presence": {
+            "fire_visible": {
+              "denominator": 8,
+              "known": 8,
+              "agree": 6,
+              "agreement_among_known": 0.75
+            },
+            "smoke_visible": {
+              "denominator": 8,
+              "known": 8,
+              "agree": 7,
+              "agreement_among_known": 0.875
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 4,
+              "known": 2,
+              "supported": 2,
+              "content_counts": {
+                "uncertain": 2,
+                "fire": 2
+              }
+            },
+            "smoke": {
+              "denominator": 4,
+              "known": 4,
+              "supported": 3,
+              "content_counts": {
+                "smoke": 3,
+                "fire": 1
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 31
+        },
+        "new_fit": {
+          "images": 56,
+          "presence": {
+            "fire_visible": {
+              "denominator": 56,
+              "known": 56,
+              "agree": 44,
+              "agreement_among_known": 0.7857142857142857
+            },
+            "smoke_visible": {
+              "denominator": 56,
+              "known": 56,
+              "agree": 42,
+              "agreement_among_known": 0.75
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 28,
+              "known": 23,
+              "supported": 20,
+              "content_counts": {
+                "fire": 19,
+                "uncertain": 5,
+                "smoke": 3,
+                "both": 1
+              }
+            },
+            "smoke": {
+              "denominator": 28,
+              "known": 27,
+              "supported": 19,
+              "content_counts": {
+                "smoke": 19,
+                "uncertain": 1,
+                "fire": 8
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 221
+        }
+      },
+      "by_original_state": {
+        "fire_only": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 8,
+              "agreement_among_known": 0.5
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 12,
+              "agreement_among_known": 0.75
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 16,
+              "known": 14,
+              "supported": 12,
+              "content_counts": {
+                "uncertain": 2,
+                "fire": 12,
+                "smoke": 2
+              }
+            },
+            "smoke": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            }
+          },
+          "known_context_fields_from_original_cache": 63
+        },
+        "smoke_only": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 7,
+              "agreement_among_known": 0.4375
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            },
+            "smoke": {
+              "denominator": 16,
+              "known": 15,
+              "supported": 15,
+              "content_counts": {
+                "smoke": 15,
+                "uncertain": 1
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 63
+        },
+        "both": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 10,
+              "agreement_among_known": 0.625
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 14,
+              "agreement_among_known": 0.875
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 16,
+              "known": 11,
+              "supported": 10,
+              "content_counts": {
+                "uncertain": 5,
+                "fire": 9,
+                "smoke": 1,
+                "both": 1
+              }
+            },
+            "smoke": {
+              "denominator": 16,
+              "known": 16,
+              "supported": 7,
+              "content_counts": {
+                "smoke": 7,
+                "fire": 9
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 62
+        },
+        "empty": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            },
+            "smoke": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            }
+          },
+          "known_context_fields_from_original_cache": 64
+        }
+      },
+      "runtime": {
+        "execution_device": "cpu",
+        "dtype": "float32",
+        "threads": 6,
+        "current_segment_seconds": 862.3342041159049,
+        "reused_calls": 8,
+        "total_inference_query_seconds": 914.185328333173,
+        "peak_rss_kib": 6138328
+      },
+      "presence_confusion": {
+        "fire_visible": {
+          "TP": 18,
+          "FP": 0,
+          "TN": 32,
+          "FN": 14,
+          "unknown": 0
+        },
+        "smoke_visible": {
+          "TP": 21,
+          "FP": 4,
+          "TN": 28,
+          "FN": 11,
+          "unknown": 0
+        }
+      },
+      "region_exact_original_class": {
+        "fire": 21,
+        "smoke": 22
+      }
+    },
+    "base_2b": {
+      "overall": {
+        "images": 64,
+        "presence": {
+          "fire_visible": {
+            "denominator": 64,
+            "known": 64,
+            "agree": 60,
+            "agreement_among_known": 0.9375
+          },
+          "smoke_visible": {
+            "denominator": 64,
+            "known": 64,
+            "agree": 47,
+            "agreement_among_known": 0.734375
+          }
+        },
+        "region_class_support": {
+          "fire": {
+            "denominator": 32,
+            "known": 32,
+            "supported": 23,
+            "content_counts": {
+              "both": 21,
+              "other": 6,
+              "fire": 2,
+              "smoke": 3
+            }
+          },
+          "smoke": {
+            "denominator": 32,
+            "known": 32,
+            "supported": 31,
+            "content_counts": {
+              "smoke": 20,
+              "other": 1,
+              "both": 11
+            }
+          }
+        },
+        "known_context_fields_from_original_cache": 256
+      },
+      "cohorts": {
+        "original_8": {
+          "images": 8,
+          "presence": {
+            "fire_visible": {
+              "denominator": 8,
+              "known": 8,
+              "agree": 7,
+              "agreement_among_known": 0.875
+            },
+            "smoke_visible": {
+              "denominator": 8,
+              "known": 8,
+              "agree": 7,
+              "agreement_among_known": 0.875
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 4,
+              "known": 4,
+              "supported": 2,
+              "content_counts": {
+                "both": 2,
+                "other": 2
+              }
+            },
+            "smoke": {
+              "denominator": 4,
+              "known": 4,
+              "supported": 4,
+              "content_counts": {
+                "smoke": 3,
+                "both": 1
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 32
+        },
+        "new_fit": {
+          "images": 56,
+          "presence": {
+            "fire_visible": {
+              "denominator": 56,
+              "known": 56,
+              "agree": 53,
+              "agreement_among_known": 0.9464285714285714
+            },
+            "smoke_visible": {
+              "denominator": 56,
+              "known": 56,
+              "agree": 40,
+              "agreement_among_known": 0.7142857142857143
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 28,
+              "known": 28,
+              "supported": 21,
+              "content_counts": {
+                "fire": 2,
+                "both": 19,
+                "other": 4,
+                "smoke": 3
+              }
+            },
+            "smoke": {
+              "denominator": 28,
+              "known": 28,
+              "supported": 27,
+              "content_counts": {
+                "smoke": 17,
+                "other": 1,
+                "both": 10
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 224
+        }
+      },
+      "by_original_state": {
+        "fire_only": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 13,
+              "agreement_among_known": 0.8125
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 3,
+              "agreement_among_known": 0.1875
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 16,
+              "known": 16,
+              "supported": 13,
+              "content_counts": {
+                "both": 12,
+                "other": 2,
+                "fire": 1,
+                "smoke": 1
+              }
+            },
+            "smoke": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            }
+          },
+          "known_context_fields_from_original_cache": 64
+        },
+        "smoke_only": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 15,
+              "agreement_among_known": 0.9375
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 15,
+              "agreement_among_known": 0.9375
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            },
+            "smoke": {
+              "denominator": 16,
+              "known": 16,
+              "supported": 15,
+              "content_counts": {
+                "smoke": 15,
+                "other": 1
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 64
+        },
+        "both": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 16,
+              "known": 16,
+              "supported": 10,
+              "content_counts": {
+                "other": 4,
+                "both": 9,
+                "fire": 1,
+                "smoke": 2
+              }
+            },
+            "smoke": {
+              "denominator": 16,
+              "known": 16,
+              "supported": 16,
+              "content_counts": {
+                "smoke": 5,
+                "both": 11
+              }
+            }
+          },
+          "known_context_fields_from_original_cache": 64
+        },
+        "empty": {
+          "images": 16,
+          "presence": {
+            "fire_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 16,
+              "agreement_among_known": 1.0
+            },
+            "smoke_visible": {
+              "denominator": 16,
+              "known": 16,
+              "agree": 13,
+              "agreement_among_known": 0.8125
+            }
+          },
+          "region_class_support": {
+            "fire": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            },
+            "smoke": {
+              "denominator": 0,
+              "known": 0,
+              "supported": 0,
+              "content_counts": {}
+            }
+          },
+          "known_context_fields_from_original_cache": 64
+        }
+      },
+      "runtime": {
+        "execution_device": "cpu",
+        "dtype": "float32",
+        "threads": 6,
+        "current_segment_seconds": 1707.4306357051246,
+        "reused_calls": 8,
+        "total_inference_query_seconds": 1829.013762962073,
+        "peak_rss_kib": 13294796
+      },
+      "presence_confusion": {
+        "fire_visible": {
+          "TP": 29,
+          "FP": 1,
+          "TN": 31,
+          "FN": 3,
+          "unknown": 0
+        },
+        "smoke_visible": {
+          "TP": 31,
+          "FP": 16,
+          "TN": 16,
+          "FN": 1,
+          "unknown": 0
+        }
+      },
+      "region_exact_original_class": {
+        "fire": 2,
+        "smoke": 20
+      }
+    }
+  },
+  "lora_decision": "worth one bounded task-adaptation pilot, not yet trained",
+  "GPU_priority": "M then ordinary fusion",
+  "costs": {
+    "left_cost": {
+      "queries": 128,
+      "images": 64,
+      "query_wall_seconds": 914.185328333173,
+      "queries_per_second": 0.14001537328692576,
+      "output_tokens": 2981,
+      "schema_pass": 128,
+      "by_task": {
+        "A": {
+          "queries": 64,
+          "median_amortized_query_seconds": 8.926834442652762
+        },
+        "B": {
+          "queries": 64,
+          "median_amortized_query_seconds": 5.229936782503501
+        }
+      },
+      "timing_scope": "sum of query wall times; batch times counted through per-query amortization; excludes model loading"
+    },
+    "right_cost": {
+      "queries": 128,
+      "images": 64,
+      "query_wall_seconds": 1829.013762962073,
+      "queries_per_second": 0.06998307098176508,
+      "output_tokens": 2975,
+      "schema_pass": 128,
+      "by_task": {
+        "A": {
+          "queries": 64,
+          "median_amortized_query_seconds": 17.540143542690203
+        },
+        "B": {
+          "queries": 64,
+          "median_amortized_query_seconds": 10.764766143867746
+        }
+      },
+      "timing_scope": "sum of query wall times; batch times counted through per-query amortization; excludes model loading"
+    }
+  }
+}

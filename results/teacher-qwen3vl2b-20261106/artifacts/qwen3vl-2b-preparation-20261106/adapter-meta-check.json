@@ -1,0 +1,11 @@
+{
+  "status": "passed_meta_structure_only",
+  "peft": "0.21.2",
+  "accelerate": "1.15.0",
+  "weights_loaded": false,
+  "GPU_used": false,
+  "target_modules": 112,
+  "trainable_parameters": 3211264,
+  "all_trainable_are_language_lora": true,
+  "real_training_step_passed": false
+}

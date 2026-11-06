@@ -14,6 +14,13 @@ class CharacterTokenizer:
 
 
 class TeacherProtocolTests(unittest.TestCase):
+    def test_short_task_grammar_contains_all_candidates_independent_of_gt(self):
+        values=['{"target_class":"fire"}','{"target_class":"smoke"}']
+        trie=AnswerTrie(CharacterTokenizer(),'region_class',1,answers=values)
+        self.assertEqual(trie.answer_count,2)
+        for value in values:self.assertEqual(trie.allowed(CharacterTokenizer().encode(value)),[1])
+        with self.assertRaises(ProjectError):AnswerTrie(CharacterTokenizer(),'region_class',1,answers=[])
+
     def test_every_legal_answer_is_reachable_no_invalid_enum_or_marker(self):
         for task,count in [('A',729),('B',15)]:
             trie=AnswerTrie(CharacterTokenizer(),task,1)

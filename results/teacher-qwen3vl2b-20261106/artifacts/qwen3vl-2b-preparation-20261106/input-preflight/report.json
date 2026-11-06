@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "weights_loaded": false,
+  "checked": 2768,
+  "errors": [],
+  "max_length": 460,
+  "identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "seconds": 69.67403738992289,
+  "peak_rss_kib": 979344
+}

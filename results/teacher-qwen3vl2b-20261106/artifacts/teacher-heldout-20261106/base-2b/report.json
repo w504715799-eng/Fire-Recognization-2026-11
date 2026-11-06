@@ -1,0 +1,252 @@
+{
+  "status": "running",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 4,
+  "batch": 4,
+  "instruction_sha256": "346e88520ebd82c79754a08ef773d5fa34b50a16c65692bc5342e937f9563c80",
+  "scope": "teacher holdout within detector fit, not detector test or cross-domain generalization",
+  "responses": [
+    {
+      "sample_id": "dfire/train/train/images/AoF04955.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "7fcaeabf89c4693f4da666e2d5ccf044bd3920c623358f7258b31193dbb29abf",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.875383914797567
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04619.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"no\",\"smoke_present\":\"no\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "no",
+        "smoke_present": "no"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "5c76ae3e37e29ab8ae535cd9d619d78497e2e829d6db72f08a0ff6551be407cb",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.875383914797567
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04661.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "eb419ab22de4f5c34882008432695417f0c874080afe29eff12d97891b3313f8",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.875383914797567
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF05043.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "e4b9e51e5fe194193b6d62713203b29cd0492ef79cd3343fc161804778253c77",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.875383914797567
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00038.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "602cee4e4040dcb4683ccf2945d0890d55584a67c43f2a91bef5459aee239b0a",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.519155497313477
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB03783.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "35a0cce397f856d6b546938480dab7113023b7156623da6585bc07d13abf598d",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.519155497313477
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04574.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "a7ebce4adef6ffee4b7d00eea186296cdc81264a0a540f2ad37297bc94128170",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.519155497313477
+    },
+    {
+      "sample_id": "dfire/train/train/images/WEB09135.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"no\",\"smoke_present\":\"no\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "no",
+        "smoke_present": "no"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "59799f9152fd2295159f05fdf28d77d63326fcd92146f101ff290e781de4aeb8",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.519155497313477
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04497.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"no\",\"smoke_present\":\"no\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "no",
+        "smoke_present": "no"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "fe39bca8ff1dbfad788ed579d25818361f58c88a471b1857c43e9d1ed6a762a3",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.268583318567835
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04812.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "e1eb541d0d4b282b09c4fd36d03eb57f0d9dd745fb2ec721cbb194e9e7975abc",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.268583318567835
+    },
+    {
+      "sample_id": "dfire/train/train/images/AoF04531.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "45a9c243cfa1b4b71d8c1354e97a1afdb9a803a653ad35e0c32ebbb5a1398351",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.268583318567835
+    },
+    {
+      "sample_id": "dfire/train/train/images/PublicDataset00049.jpg",
+      "task": "scene_presence",
+      "annotation_id": null,
+      "raw_response": "{\"fire_present\":\"yes\",\"smoke_present\":\"yes\"}",
+      "target_from_original_annotation": {
+        "fire_present": "yes",
+        "smoke_present": "no"
+      },
+      "answer": {
+        "fire_present": "yes",
+        "smoke_present": "yes"
+      },
+      "valid": true,
+      "agrees_original_annotation": false,
+      "view_sha256": "94664904af1c3391bd053359ae82546f42209ef14b0e5d983270e0279860f478",
+      "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+      "seconds_amortized": 13.268583318567835
+    }
+  ],
+  "context_fields_evaluated": false,
+  "gpu_lock_acquired": false,
+  "max_seconds": 5400,
+  "identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "load_seconds": 7.864546807017177,
+  "completed_queries": 12
+}

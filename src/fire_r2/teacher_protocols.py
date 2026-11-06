@@ -39,15 +39,16 @@ def valid_answers(task):
 
 class AnswerTrie:
     """Constrain syntax/enums without consulting GT; preserve model choice among all valid answers."""
-    def __init__(self,tokenizer,task,eos_token_id):
+    def __init__(self,tokenizer,task,eos_token_id,answers=None):
         self.root={};self.eos=int(eos_token_id);self.pad=getattr(tokenizer,'pad_token_id',None)
         self.answer_count=0;self.max_answer_tokens=0
-        for text in valid_answers(task):
+        for text in (valid_answers(task) if answers is None else answers):
             tokens=tokenizer.encode(text,add_special_tokens=False)
             if self.eos in tokens:raise ProjectError('EOS occurs inside an answer')
             node=self.root
             for token in tokens:node=node.setdefault(int(token),{})
             node[self.eos]={};self.answer_count+=1;self.max_answer_tokens=max(self.max_answer_tokens,len(tokens))
+        if not self.answer_count:raise ProjectError('Answer grammar cannot be empty')
 
     def allowed(self,prefix):
         node=self.root

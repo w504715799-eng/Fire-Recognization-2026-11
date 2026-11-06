@@ -11,7 +11,7 @@
   "trust_remote_code": false,
   "local_files_only": true,
   "variant": "base",
-  "status": "cloud_cpu_pilot_completed_regression_in_progress",
+  "status": "cloud_cpu_regression64_completed_holdout_in_progress",
   "regression_protocol": "v2_frozen_same64",
   "cache_root": "artifacts/teacher-qwen3vl2b/base",
   "max_stage_seconds": 1800

@@ -25,5 +25,12 @@
     "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
     "teacher_variant": "base",
     "adapter_sha256": null
-  }
+  },
+  "validation_stopping": {
+    "patience_epochs": 10,
+    "min_delta": 0.001,
+    "metric": "original_fire_dev_AP50_95",
+    "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+  },
+  "epoch_count_role": "upper cap and LR schedule only; stop on validation plateau or user/budget decision"
 }

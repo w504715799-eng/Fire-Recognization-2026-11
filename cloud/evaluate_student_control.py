@@ -4,6 +4,7 @@ import argparse,csv,json,os,subprocess,sys,time,traceback
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from fire_r2.common import read_json,write_json,sha256,output_path,ProjectError
 from fire_r2.runtime import check_remote_environment
+from fire_r2.stopping import require_evaluable_training
 
 
 def main():
@@ -12,8 +13,13 @@ def main():
     check_remote_environment(ROOT,read_json(ROOT/a.cloud_config));cfg=read_json(ROOT/a.train_config);out=output_path(ROOT,a.output)
     if out.exists():raise ProjectError('Preserve earlier complete predictions/evaluations')
     out.mkdir(parents=True);run=ROOT/'runs'/cfg['run_name'];rows=list(csv.DictReader((run/'results.csv').open()))
-    if len(rows)!=100:raise ProjectError('Evaluate the planned complete 100-epoch run')
+    training=read_json(ROOT/'artifacts/run-records'/(cfg['run_name']+'.json'))
+    # Recovery receipts can finalize a run whose original pre-interruption record stays historical.
+    if cfg['run_name']=='dfire_M_ordinary_seed17_full_20261106' and (ROOT/'artifacts/recovery-20261109/ordinary-resume.json').exists():
+        training=read_json(ROOT/'artifacts/recovery-20261109/ordinary-resume.json')
+    require_evaluable_training(training,len(rows),(run/'weights/best_fire.pt').is_file())
     weights=run/'weights/best_fire.pt';manifest=ROOT/cfg['prepared_view']/'manifest.jsonl';report={'status':'running','run':cfg['run_name'],'checkpoint_sha256':sha256(weights),'device':a.device,'test_accessed':False}
+    report.update(completed_training_epochs=len(rows),training_stop_reason=training.get('stop_reason','user_request' if (ROOT/'artifacts/run-controls'/(cfg['run_name']+'.stop')).exists() else 'historical_terminal_run'),epoch_count_is_not_a_quality_metric=True)
     started=time.monotonic();write_json(out/'status.json',report)
     env=dict(os.environ,OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='1')
     if a.device=='cpu':env['CUDA_VISIBLE_DEVICES']=''

@@ -8,6 +8,7 @@ from fire_r2.teacher_models import checked_processor
 from fire_r2.teacher_runner import teacher_view
 from fire_r2.teacher_protocols import AnswerTrie,protocol,valid_answers
 from fire_r2.supervision import parse_advice
+from fire_r2.stopping import TERMINAL_TRAINING
 
 
 def main():
@@ -31,7 +32,7 @@ def main():
             if a.adapter:
                 from peft import PeftModel
                 adapter=output_path(ROOT,a.adapter);training=read_json(adapter.parent/'report.json')
-                if training['status']!='completed' or training['mode'] not in ('fixed_CPU_task_LoRA','fixed_GPU_task_LoRA') or training['completed_updates']!=250:raise ProjectError('Only a completed fixed task adapter is evaluated as adapted')
+                if training['status'] not in TERMINAL_TRAINING or training['mode'] not in ('fixed_CPU_task_LoRA','fixed_GPU_task_LoRA') or training['completed_updates']<1:raise ProjectError('A finalized task adapter with a saved checkpoint is required')
                 if training['identity']!=identity:raise ProjectError('Adapter base identity differs')
                 for item in training['adapter_files']:
                     if sha256(adapter.parent/item['name'])!=item['sha256']:raise ProjectError('Adapter bytes changed')

@@ -165,10 +165,22 @@ def execute_training(root, config, cloud):
             record_path=Path(root)/"artifacts/run-records"/(config["run_name"]+".json")
             write_json(record_path,record)
             stop_file=Path(root)/'artifacts/run-controls'/(config['run_name']+'.stop')
+            from .stopping import ValidationProgress
+            policy=config.get('validation_stopping',{'patience_epochs':10,'min_delta':.001})
+            progress=ValidationProgress(policy['patience_epochs'],policy['min_delta'])
+            record['validation_stopping']=policy;record['epoch_count_role']='safety_and_schedule_cap_not_required_completion'
             def on_epoch_end(trainer):
                 if time.monotonic()-started>=budget or stop_file.exists():
                     trainer.stop=True
+                    record['stop_reason']='user_request' if stop_file.exists() else 'time_budget'
                     print("USER_NOTICE: Stop request or stage budget reached; save this epoch and retain a resumable checkpoint. Server is not powered off.",flush=True)
+            def on_fit_epoch_end(trainer):
+                original=getattr(trainer.validator,'original_report',None)
+                score=float(original['classes']['fire']['AP50_95'] if original else trainer.validator.metrics.box.maps[0])
+                if progress.observe(int(trainer.epoch)+1,score) and not record.get('stop_reason'):
+                    trainer.stop=True;record['stop_reason']='validation_plateau'
+                record['validation_progress']=progress.snapshot();record['completed_epochs']=int(trainer.epoch)+1
+                write_json(record_path,record)
             def on_model_save(trainer):
                 nonlocal best_fire
                 import shutil
@@ -184,6 +196,7 @@ def execute_training(root, config, cloud):
                     best_fire=score
                     shutil.copy2(trainer.last,Path(trainer.save_dir)/"weights/best_fire.pt")
             model.add_callback("on_train_epoch_end",on_epoch_end)
+            model.add_callback('on_fit_epoch_end',on_fit_epoch_end)
             model.add_callback("on_model_save",on_model_save)
             def verify_image_coverage(trainer):
                 for role,loader in [('fit',trainer.train_loader),('dev',trainer.test_loader)]:
@@ -195,6 +208,8 @@ def execute_training(root, config, cloud):
                 write_json(record_path,record)
             model.add_callback('on_pretrain_routine_end',verify_image_coverage)
             args=dict(config["train"])
+            # The primary fire-dev monitor owns stopping; native mixed-class fitness must not override it.
+            args['patience']=0
             prohibited={"data","device","project","name","resume","pretrained","val","save","exist_ok","amp","plots","seed"}
             if prohibited.intersection(args):raise ProjectError("Training config contains reserved execution fields")
             if config.get('amp_enabled',False):
@@ -206,6 +221,7 @@ def execute_training(root, config, cloud):
                     name=config["run_name"],seed=config["seed"],resume=False,exist_ok=False,
                     val=True,save=True,amp=bool(config.get('amp_enabled',False)),plots=False,**train_extra,**args)
                 record["status"]="completed_or_budget_stopped"
+                record.setdefault('stop_reason','epoch_cap' if record.get('completed_epochs',0)>=args['epochs'] else 'native_validation_early_stop')
             except BaseException as exc:
                 record.update(status="failed_or_interrupted",error=str(exc));raise
             finally:

@@ -26,5 +26,12 @@
     "teacher_variant": "adapted",
     "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
   },
-  "reference_teacher_cache": "artifacts/teacher-transfer-20261109/base/cache.json"
+  "reference_teacher_cache": "artifacts/teacher-transfer-20261109/base/cache.json",
+  "validation_stopping": {
+    "patience_epochs": 10,
+    "min_delta": 0.001,
+    "metric": "original_fire_dev_AP50_95",
+    "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+  },
+  "epoch_count_role": "upper cap and LR schedule only; stop on validation plateau or user/budget decision"
 }

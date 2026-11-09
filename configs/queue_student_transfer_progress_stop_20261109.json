@@ -1,0 +1,151 @@
+{
+  "queue_id": "student-transfer-progress-stop-20261109",
+  "status_output": "artifacts/student-transfer-20261109/progress-stop-queue-status.json",
+  "baseline_run": "dfire_P_control_seed17_20261109",
+  "baseline_config": "configs/train_dfire_P_control_20261109.json",
+  "max_wait_hours": 8,
+  "stages": [
+    {
+      "name": "evaluate_P_control",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_P_control_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-20261109/evaluation/P_control"
+      ],
+      "log": "logs/student-transfer-evaluate_P_control-progress-stop-20261109.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "evaluate_B_reference",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_B_20261106.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-20261109/evaluation/B_reference"
+      ],
+      "log": "logs/student-transfer-evaluate_B_reference-progress-stop-20261109.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "cache_base",
+      "args": [
+        "cloud/cache_teacher_presence.py",
+        "--config",
+        "configs/cache_presence_base_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json"
+      ],
+      "log": "logs/student-transfer-cache_base-progress-stop-20261109.log",
+      "timeout_seconds": 14520
+    },
+    {
+      "name": "prepare_base",
+      "args": [
+        "cloud/prepare_teacher_transfer.py",
+        "--train-config",
+        "configs/train_dfire_T_base_20261109.json",
+        "--cache",
+        "artifacts/teacher-transfer-20261109/base/cache.json"
+      ],
+      "log": "logs/student-transfer-prepare_base-progress-stop-20261109.log",
+      "timeout_seconds": 300
+    },
+    {
+      "name": "cache_adapted",
+      "args": [
+        "cloud/cache_teacher_presence.py",
+        "--config",
+        "configs/cache_presence_adapted_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json"
+      ],
+      "log": "logs/student-transfer-cache_adapted-progress-stop-20261109.log",
+      "timeout_seconds": 14520
+    },
+    {
+      "name": "prepare_adapted",
+      "args": [
+        "cloud/prepare_teacher_transfer.py",
+        "--train-config",
+        "configs/train_dfire_T_adapted_20261109.json",
+        "--cache",
+        "artifacts/teacher-transfer-20261109/adapted/cache.json"
+      ],
+      "log": "logs/student-transfer-prepare_adapted-progress-stop-20261109.log",
+      "timeout_seconds": 300
+    },
+    {
+      "name": "train_T_base",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_T_base_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--execute"
+      ],
+      "log": "logs/student-transfer-train_T_base-progress-stop-20261109.log",
+      "timeout_seconds": null,
+      "run_name": "dfire_T_base_seed17_20261109"
+    },
+    {
+      "name": "evaluate_T_base",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_T_base_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-20261109/evaluation/T_base"
+      ],
+      "log": "logs/student-transfer-evaluate_T_base-progress-stop-20261109.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "train_T_adapted",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_T_adapted_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--execute"
+      ],
+      "log": "logs/student-transfer-train_T_adapted-progress-stop-20261109.log",
+      "timeout_seconds": null,
+      "run_name": "dfire_T_adapted_seed17_20261109"
+    },
+    {
+      "name": "evaluate_T_adapted",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_T_adapted_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-20261109/evaluation/T_adapted"
+      ],
+      "log": "logs/student-transfer-evaluate_T_adapted-progress-stop-20261109.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "compare_all",
+      "args": [
+        "cloud/compare_student_transfer.py"
+      ],
+      "log": "logs/student-transfer-compare_all-progress-stop-20261109.log",
+      "timeout_seconds": 120
+    }
+  ]
+}

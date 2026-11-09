@@ -1,0 +1,13 @@
+{
+  "requested_at": "2026-11-09T09:41:02.402091+00:00",
+  "reason": "User revoked mandatory 100-epoch completion and requested immediate timely stop",
+  "actions": [
+    {
+      "pid": 2183,
+      "action": "stop_future_stages_only"
+    }
+  ],
+  "stop_file": "/root/rivermind-data/FIRE_R2/artifacts/run-controls/dfire_P_control_seed17_20261109.stop",
+  "completed_epochs_at_request": 70,
+  "next_stages_held": true
+}

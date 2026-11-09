@@ -10,6 +10,7 @@ from fire_r2.teacher_models import checked_processor
 from fire_r2.teacher_runner import teacher_view,pilot_selection
 from fire_r2.teacher_transfer import PROTOCOL,score_presence_views
 from fire_r2.teacher_adaptation import SCENE_TASK
+from fire_r2.stopping import TERMINAL_TRAINING
 
 
 def main():
@@ -67,7 +68,7 @@ def run_locked(a,cfg,cloud,out):
             if expected['teacher_variant']=='adapted':
                 from peft import PeftModel
                 adapter=ROOT/cfg['adapter'];training=read_json(adapter.parent/'report.json')
-                if training['status']!='completed' or training['completed_updates']!=250 or training['identity']!=identity:raise ProjectError('Verified completed task adapter required')
+                if training['status'] not in TERMINAL_TRAINING or training['completed_updates']<1 or training['identity']!=identity:raise ProjectError('Verified finalized task adapter required')
                 if sha256(adapter/'adapter_model.safetensors')!=expected['adapter_sha256']:raise ProjectError('Adapter bytes differ')
                 model=PeftModel.from_pretrained(model,adapter,local_files_only=True,is_trainable=False)
                 report['adapter_training_report_sha256']=sha256(adapter.parent/'report.json')

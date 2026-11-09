@@ -1,4 +1,4 @@
-"""Bounded remote task LoRA: CPU one-update integration or exclusive-GPU fixed pilot."""
+"""Bounded remote task LoRA: CPU one-update integration or exclusive-GPU validation-stopped adaptation."""
 from contextlib import nullcontext
 from pathlib import Path
 import argparse,datetime,json,os,random,resource,signal,sys,time,traceback
@@ -7,6 +7,7 @@ from fire_r2.common import ProjectError,read_json,write_json,output_path,sha256
 from fire_r2.runtime import check_remote_environment,cloud_gpu
 from fire_r2.teacher_models import checked_processor
 from fire_r2.teacher_adaptation import instruction_inputs
+from fire_r2.stopping import ValidationProgress
 
 
 def main():
@@ -33,7 +34,7 @@ def main():
     out.mkdir(parents=True);started=time.monotonic();model=None;adapter_saved=False
     updates=1 if cpu_check else spec['optimizer_updates'];limit=a.resume_max_seconds if a.resume_from else 900 if cpu_check else spec['max_training_seconds']
     report={'status':'starting','started_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'device':a.device,
-        'mode':'CPU_one_update_integration_not_research_adapter' if cpu_check else 'fixed_CPU_task_LoRA' if cpu else 'fixed_GPU_task_LoRA',
+        'mode':'CPU_one_update_integration_not_research_adapter' if cpu_check else 'validation_stopped_CPU_task_LoRA' if cpu else 'validation_stopped_GPU_task_LoRA',
         'config_sha256':sha256(ROOT/a.config),'planned_updates':updates,'completed_updates':0,
         'CPU_adapter_saved':False,'base_weights_saved':False,'steps':[],'max_seconds':limit}
     write_json(out/'report.json',report)
@@ -49,6 +50,14 @@ def main():
             if sha256(source)!=receipt['partitions']['teacher_train']['instruction_sha256']:raise ProjectError('Training instructions changed')
             records=[json.loads(line) for line in source.open()]
             if len(records)!=spec['train_instruction_examples'] or any(r['teacher_partition']!='teacher_train' for r in records):raise ProjectError('Wrong teacher training partition')
+            validation=[];validation_policy=spec.get('validation_stopping',{'interval_updates':25,'patience_checks':3,'min_delta':.001})
+            monitor=ValidationProgress(validation_policy['patience_checks'],validation_policy['min_delta'],mode='min')
+            if not cpu_check:
+                validation_path=data/'teacher_dev.instructions.jsonl'
+                if sha256(validation_path)!=receipt['partitions']['teacher_dev']['instruction_sha256']:raise ProjectError('Teacher dev instructions changed')
+                validation=[json.loads(line) for line in validation_path.open()]
+                if not validation or any(r['teacher_partition']!='teacher_dev' for r in validation):raise ProjectError('Teacher stopping must use its dev partition')
+                report.update(validation_stopping=validation_policy,validation_history=[],update_count_role='safety_cap_not_required_completion')
             order=list(range(len(records)));random.Random(spec['seed']).shuffle(order)
             report['instruction_sha256']=sha256(source);report['instruction_order_sha256']=__import__('hashlib').sha256(json.dumps(order).encode()).hexdigest()
             dtype=torch.float32 if fp32 else torch.float16
@@ -89,6 +98,20 @@ def main():
             if updates*accum>len(records):raise ProjectError('Do not silently cycle instruction data')
             report.update(status='training',load_seconds=time.monotonic()-started);write_json(out/'report.json',report)
             if not cpu:torch.cuda.reset_peak_memory_stats()
+            def validation_loss():
+                model.eval();values=[]
+                try:
+                    with torch.inference_mode():
+                        for item in validation:
+                            inputs,positions,labels=instruction_inputs(processor,item,spec['max_sequence_length'])
+                            inputs={k:v.to(a.device) for k,v in inputs.items()}
+                            logits=model(**inputs,logits_to_keep=torch.tensor(positions,device=a.device),use_cache=False).logits[0]
+                            value=torch.nn.functional.cross_entropy(logits.float(),torch.tensor(labels,device=a.device))
+                            if not torch.isfinite(value):raise ProjectError('Nonfinite teacher dev loss')
+                            values.append(float(value))
+                    return sum(values)/len(values)
+                finally:model.train()
+            stop_file=ROOT/'artifacts/run-controls'/(out.name+'.stop')
             for step in range(start_update,updates):
                 tick=time.monotonic();optimizer.zero_grad(set_to_none=True);losses=[];examples=[]
                 ratio=min((step+1)/spec['warmup_updates'],(spec['optimizer_updates']-step)/max(1,spec['optimizer_updates']-spec['warmup_updates']))
@@ -120,16 +143,32 @@ def main():
                                 'torch_rng_state':torch.get_rng_state(),'instruction_sha256':report['instruction_sha256'],
                                 'instruction_order_sha256':report['instruction_order_sha256'],'identity':identity},temporary)
                     temporary.replace(state_path);report['last_recoverable_update']=step+1;write_json(out/'report.json',report)
+                if stop_file.exists():report['stop_reason']='user_request';break
+                if not cpu_check and (step==start_update or (step+1)%validation_policy['interval_updates']==0):
+                    value=validation_loss();report['validation_history'].append({'update':step+1,'mean_dev_semantic_NLL':value})
+                    if value<report.get('best_validation_loss',float('inf')):
+                        report.update(best_validation_loss=value,best_validation_update=step+1)
+                        model.save_pretrained(out/'best-adapter',safe_serialization=True,save_embedding_layers=False)
+                    plateau=monitor.observe(len(report['validation_history']),value);report['validation_progress']=monitor.snapshot();write_json(out/'report.json',report)
+                    if plateau:report['stop_reason']='validation_plateau';break
+            report.setdefault('stop_reason','integration_check_complete' if cpu_check else 'update_cap')
             if not cpu_check:
                 model.save_pretrained(out/'final-adapter',safe_serialization=True,save_embedding_layers=False);adapter_saved=True
                 report['CPU_adapter_saved']=cpu
-                report['adapter_files']=[{'name':str(p.relative_to(out)),'bytes':p.stat().st_size,'sha256':sha256(p)} for p in (out/'final-adapter').iterdir() if p.is_file()]
+                folders=[out/'final-adapter']+([out/'best-adapter'] if (out/'best-adapter').exists() else [])
+                report['adapter_files']=[{'name':str(p.relative_to(out)),'bytes':p.stat().st_size,'sha256':sha256(p)} for folder in folders for p in folder.iterdir() if p.is_file()]
+                report['selected_adapter']='best-adapter' if (out/'best-adapter').exists() else 'final-adapter'
             report.update(status='completed',cuda_initialized=torch.cuda.is_initialized(),peak_gpu_bytes=torch.cuda.max_memory_allocated() if not cpu else 0)
     except BaseException as exc:
         report.update(status='failed',error=str(exc),traceback=traceback.format_exc())
         if not cpu_check and model is not None and hasattr(model,'peft_config') and not adapter_saved:
             try:model.save_pretrained(out/'interrupted-adapter',safe_serialization=True,save_embedding_layers=False)
             except Exception as save_error:report['adapter_save_error']=str(save_error)
+        if isinstance(exc,(TimeoutError,KeyboardInterrupt)) and report['completed_updates']>0 and (out/'best-adapter').exists():
+            report.update(status='budget_stopped' if isinstance(exc,TimeoutError) else 'stopped_by_user',
+                          stop_reason='time_budget' if isinstance(exc,TimeoutError) else 'user_request',selected_adapter='best-adapter')
+            report['adapter_files']=[{'name':str(p.relative_to(out)),'bytes':p.stat().st_size,'sha256':sha256(p)} for p in (out/'best-adapter').iterdir() if p.is_file()]
+            return
         raise
     finally:
         signal.alarm(0);report.update(seconds=time.monotonic()-started,peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss);write_json(out/'report.json',report)

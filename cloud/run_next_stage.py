@@ -9,6 +9,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from fire_r2.common import ProjectError,child,file_lock,read_json,write_json,output_path
 from fire_r2.runtime import check_remote_environment
 from fire_r2.cloud import now
+from fire_r2.stopping import TERMINAL_TRAINING,require_evaluable_training
 
 
 def baseline_process_exists(config_name):
@@ -60,10 +61,10 @@ def main():
                 waiting=[]
                 for prerequisite in cfg.get('prerequisite_reports',[]):
                     path=ROOT/prerequisite['path'];previous=read_json(path) if path.exists() else {'status':'not_started'}
-                    if previous.get('status')=='failed':raise ProjectError('Prerequisite experiment failed: '+prerequisite['path'])
-                    if previous.get('status')!='completed':waiting.append(prerequisite['path']);continue
-                    if previous.get('completed_updates')!=prerequisite.get('completed_updates'):
-                        raise ProjectError('Prerequisite did not complete the fixed update count')
+                    if previous.get('status') in ('failed','failed_or_interrupted'):raise ProjectError('Prerequisite experiment failed: '+prerequisite['path'])
+                    if previous.get('status') not in TERMINAL_TRAINING:waiting.append(prerequisite['path']);continue
+                    if 'completed_updates' in previous and previous['completed_updates']<1:
+                        raise ProjectError('Prerequisite has no completed update')
                     if prerequisite.get('process_tokens') and own_command_exists(prerequisite['process_tokens']):waiting.append(prerequisite['path'])
                 if waiting:
                     record.update(last_checked_at=now(),waiting_for_reports=waiting);write_json(dest,record)
@@ -74,7 +75,7 @@ def main():
                 report_path=ROOT/'artifacts/run-records'/(cfg['baseline_run']+'.json')
                 report=read_json(report_path) if report_path.exists() else {}
                 record.update(last_checked_at=now(),completed_epochs=epochs);write_json(dest,record)
-                if report.get('status')=='completed_or_budget_stopped' and epochs>=cfg['expected_epochs']:
+                if report.get('status') in TERMINAL_TRAINING and epochs>0:
                     if baseline_process_exists(cfg['baseline_config']):
                         time.sleep(5)
                         continue  # Let our completed process release CUDA before a successor takes the GPU.
@@ -99,15 +100,14 @@ def main():
                     stamp.update(finished_at=now(),returncode=result.returncode)
                 except subprocess.TimeoutExpired:
                     stamp.update(finished_at=now(),returncode=None,error='stage_timeout')
-                if stamp['returncode']==0 and stage.get('expected_training_epochs'):
+                if stamp['returncode']==0 and stage.get('run_name'):
                     csv_path=ROOT/'runs'/stage['run_name']/'results.csv'
                     completed=len(list(csv.DictReader(csv_path.open()))) if csv_path.exists() else 0
                     stamp['completed_epochs']=completed
-                    stamp['expected_epochs']=stage['expected_training_epochs']
-                    if completed<stage['expected_training_epochs']:
-                        stamp['error']='training_stopped_before_expected_epochs'
-                        write_json(dest,record)
-                        raise ProjectError('Training checkpoint retained; expected epoch count not completed')
+                    training=read_json(ROOT/'artifacts/run-records'/(stage['run_name']+'.json'))
+                    if stage.get('completion_receipt'):training=read_json(ROOT/stage['completion_receipt'])
+                    require_evaluable_training(training,completed,(ROOT/'runs'/stage['run_name']/'weights/best_fire.pt').is_file())
+                    stamp['stop_reason']=training.get('stop_reason','terminal_run')
                 write_json(dest,record)
                 if stamp['returncode']!=0 and not stage.get('continue_on_failure',False):
                     raise ProjectError('Stage failed; preserve logs and diagnose: '+stage['name'])

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "dfire",
+  "checkpoint_sha256": "9aef8685bfb5f38fc21d24a5e5237beb171a32232ab159ba3051cfd9dd7300f8",
+  "fit_partition": "cal",
+  "rule": "fire_F1_IoU0.5_tie_highest_threshold",
+  "threshold": 0.33745360374450684,
+  "selection_sha256": "f6c4dde1816aa1d246efce63146429e504619c75163059e3f27a73702131aded",
+  "calibration_predictions_sha256": "ac2bce40ba1577e22b7c0ec8051cd31bf2fc06cc26129a38efe759e582719895",
+  "calibration_result": {
+    "threshold": 0.33745360374450684,
+    "tp": 809,
+    "fp": 283,
+    "precision": 0.7408424908424909,
+    "recall": 0.6752921535893155,
+    "f1": 0.7065502183406114,
+    "fp_per_image": 0.18258064516129033,
+    "negative_trigger_rate": 0.0074142724745134385
+  },
+  "calibration_images": 1550
+}

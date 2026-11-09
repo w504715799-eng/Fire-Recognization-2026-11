@@ -1,4 +1,4 @@
-"""Explicit cloud-only resume of the existing Home-fire baseline, not a new run."""
+"""Historical 2026-11-05 Home-fire recovery; retained for audit, not a future training entrypoint."""
 from pathlib import Path
 import datetime
 import os
@@ -17,6 +17,7 @@ import importlib.metadata
 
 
 def main():
+    raise ProjectError('Historical completed recovery entrypoint. Future runs use validation stopping through fire_r2_cli.py; do not replay this fixed historical job.')
     name='homefire_B_native_seed17_full_20261105'
     run=ROOT/'runs'/name
     cloud=read_json(ROOT/'configs/cloud.homefire_full_20261105.local.json')

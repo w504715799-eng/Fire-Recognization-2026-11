@@ -7,6 +7,8 @@ VARIANTS={
     'B':{},'B+RuleW':{'weighting':'rule'},'B+W':{'weighting':'qwen'},
     'B+ShuffleW':{'weighting':'shuffle'},'B+WGlobal':{'weighting':'qwen','normalization':'global'},
     'B+P':{'semantic':'presence'},'B+S':{'semantic':'qwen'},
+    'B+JP':{'semantic':'joint_presence','teacher_joint_mix':0.},
+    'B+TP':{'semantic':'joint_presence','teacher_joint_mix':.25},
     'B+ShuffleS':{'semantic':'qwen','shuffle_semantic':True},
     'B+W+S':{'weighting':'qwen','semantic':'qwen'},
     'M-ordinary':{'m_mode':'ordinary'},'M-split':{'m_mode':'split'},'M-gate':{'m_mode':'gate'},

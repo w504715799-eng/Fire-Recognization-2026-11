@@ -1,0 +1,233 @@
+{
+  "local_initial_failure": "Torch absent locally; no dependency installed; tensor checks run on cloud",
+  "cloud_test_log": "logs/teacher-transfer-tests-20261109.log",
+  "numeric_correction": "mass-normalize FP32 softmax residue only; preserve original pilot outputs",
+  "models": {
+    "base": {
+      "status": "completed",
+      "images": 8,
+      "seconds": 376.1529480307363,
+      "peak_rss_kib": 13293364,
+      "cache_sha256": "6460f2697a0e75ab5915c24918160becfb8b11210c3e3edc722810816013a3f2",
+      "normalized_for_audit": [
+        {
+          "sample_id": "dfire/train/train/images/AoF04755.jpg",
+          "raw_joint_probabilities": [
+            0.996673583984375,
+            0.00023579844855703413,
+            0.0026159044355154037,
+            0.00047469636774621904
+          ],
+          "normalized_presence": [
+            0.003090600855071857,
+            0.0007104948282138509
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/PublicDataset00046.jpg",
+          "raw_joint_probabilities": [
+            2.322389747178022e-07,
+            6.1903615460323635e-06,
+            0.0012464725878089666,
+            0.9987471103668213
+          ],
+          "normalized_presence": [
+            0.9999935773995149,
+            0.998753295180142
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB06014.jpg",
+          "raw_joint_probabilities": [
+            1.4636845069304627e-09,
+            0.001973040634766221,
+            1.1408784139632644e-08,
+            0.9980269074440002
+          ],
+          "normalized_presence": [
+            0.9980269578245045,
+            0.9999999871275308
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB06442.jpg",
+          "raw_joint_probabilities": [
+            5.082170417836096e-08,
+            0.010689185932278633,
+            6.064926765247947e-07,
+            0.9893101453781128
+          ],
+          "normalized_presence": [
+            0.9893107631244247,
+            0.9999993426856119
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB07909.jpg",
+          "raw_joint_probabilities": [
+            1.1435424655814597e-11,
+            5.516342298506061e-06,
+            3.062773090700688e-10,
+            0.9999945163726807
+          ],
+          "normalized_presence": [
+            0.9999944836464483,
+            0.9999999996822873
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB05602.jpg",
+          "raw_joint_probabilities": [
+            3.316109054019023e-10,
+            6.9103531785685846e-09,
+            1.7823250431092674e-08,
+            1.0
+          ],
+          "normalized_presence": [
+            0.9999999927580361,
+            0.999999981845139
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB03078.jpg",
+          "raw_joint_probabilities": [
+            0.9997467398643494,
+            0.00017401039076503366,
+            5.549980778596364e-05,
+            2.373469942540396e-05
+          ],
+          "normalized_presence": [
+            7.923450841871722e-05,
+            0.00019774509320361294
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB00811.jpg",
+          "raw_joint_probabilities": [
+            0.2915169596672058,
+            0.7030467987060547,
+            0.0009806589223444462,
+            0.004455577116459608
+          ],
+          "normalized_presence": [
+            0.00543623606918139,
+            0.707502379775992
+          ]
+        }
+      ]
+    },
+    "adapted": {
+      "status": "completed",
+      "images": 8,
+      "seconds": 376.61845271801576,
+      "peak_rss_kib": 13292500,
+      "cache_sha256": "f5bbb5ddaad22f6626088817fd1fb215077abc3c1efe02d82a0107416ae27f81",
+      "normalized_for_audit": [
+        {
+          "sample_id": "dfire/train/train/images/AoF04755.jpg",
+          "raw_joint_probabilities": [
+            0.08546063303947449,
+            0.0161517895758152,
+            0.8676869869232178,
+            0.030700480565428734
+          ],
+          "normalized_presence": [
+            0.8983875662179038,
+            0.04685227529012457
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/PublicDataset00046.jpg",
+          "raw_joint_probabilities": [
+            0.0010298988781869411,
+            0.006835622247308493,
+            0.48330000042915344,
+            0.5088344216346741
+          ],
+          "normalized_presence": [
+            0.992134478427659,
+            0.5156700731775485
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB06014.jpg",
+          "raw_joint_probabilities": [
+            0.0018844824517145753,
+            0.9961233735084534,
+            0.0004967614077031612,
+            0.0014953766949474812
+          ],
+          "normalized_presence": [
+            0.001992138114478328,
+            0.9976187561264444
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB06442.jpg",
+          "raw_joint_probabilities": [
+            0.012501378543674946,
+            0.9864246845245361,
+            0.0005066992598585784,
+            0.0005672533297911286
+          ],
+          "normalized_presence": [
+            0.0010739525728339072,
+            0.9869919224001451
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB07909.jpg",
+          "raw_joint_probabilities": [
+            0.0013967801351100206,
+            0.5176445841789246,
+            0.05435476824641228,
+            0.4266038239002228
+          ],
+          "normalized_presence": [
+            0.480958613087251,
+            0.9442484491910925
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB05602.jpg",
+          "raw_joint_probabilities": [
+            0.000528306292835623,
+            0.018663398921489716,
+            0.1223345473408699,
+            0.8584737777709961
+          ],
+          "normalized_presence": [
+            0.980808295367686,
+            0.8771371500922568
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB03078.jpg",
+          "raw_joint_probabilities": [
+            0.9370414614677429,
+            0.05276050791144371,
+            0.00961979478597641,
+            0.0005781291401945055
+          ],
+          "normalized_presence": [
+            0.010197925014234879,
+            0.05333864274258563
+          ]
+        },
+        {
+          "sample_id": "dfire/train/train/images/WEB00811.jpg",
+          "raw_joint_probabilities": [
+            0.7269256711006165,
+            0.2608378231525421,
+            0.011142987757921219,
+            0.0010934906313195825
+          ],
+          "normalized_presence": [
+            0.0122364787240015,
+            0.26193132094967414
+          ]
+        }
+      ]
+    }
+  }
+}

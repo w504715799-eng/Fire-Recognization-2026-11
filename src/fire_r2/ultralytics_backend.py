@@ -22,7 +22,7 @@ from ultralytics.utils.tal import make_anchors, bbox2dist
 from .common import ProjectError, read_json, write_json
 from .supervision import load_manifest, consistent_batch, digest_object
 from .torch_modules import (FireSmokeFusion,SemanticHead,positive_weighted_reduction,
-                            no_extra_bn_updates,gain_loss,semantic_loss,smoke_box_mask)
+                            no_extra_bn_updates,gain_loss,semantic_loss,joint_presence_loss,smoke_box_mask)
 
 
 class DecomposedLoss(v8DetectionLoss):
@@ -94,8 +94,11 @@ class ResearchCriterion(E2ELoss):
                 valid=assignment['fg'][:,:count] & (assignment['scores'][:,:count,0]>0)
                 gain=gain_loss(aux['gate_logits'],unweighted[0][:,:count],unweighted[1][:,:count],valid)
         if 'semantic_logits' in aux:
-            semantic,_=semantic_loss(aux['semantic_logits'],batch['r2_targets'],batch['r2_mask'],clean,
-                                     batch.get('r2_warmup',1.),.1,.05 if self.research.get('semantic')=='qwen' else 0.)
+            if self.research.get('semantic')=='joint_presence':
+                semantic,_=joint_presence_loss(aux['semantic_logits'],batch['r2_targets'],batch['r2_mask'],clean,batch.get('r2_warmup',1.))
+            else:
+                semantic,_=semantic_loss(aux['semantic_logits'],batch['r2_targets'],batch['r2_mask'],clean,
+                                         batch.get('r2_warmup',1.),.1,.05 if self.research.get('semantic')=='qwen' else 0.)
         if 'smoke_logits' in aux:
             logits=aux['smoke_logits'];target=smoke_box_mask(batch,*logits.shape[-2:])
             smoke=F.binary_cross_entropy_with_logits(logits,target)

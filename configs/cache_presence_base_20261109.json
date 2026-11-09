@@ -1,0 +1,13 @@
+{
+  "model_spec": "configs/teacher_qwen3vl2b_base.json",
+  "manifest": "artifacts/data/dfire-kaggle-21527-sha65d81b60/manifest.jsonl",
+  "teacher": {
+    "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "teacher_variant": "base",
+    "adapter_sha256": null
+  },
+  "batch_images": 4,
+  "max_seconds": 14400,
+  "output": "artifacts/teacher-transfer-20261109/base"
+}

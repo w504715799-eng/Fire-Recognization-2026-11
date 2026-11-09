@@ -1,0 +1,14 @@
+{
+  "model_spec": "configs/teacher_qwen3vl2b_base.json",
+  "manifest": "artifacts/data/dfire-kaggle-21527-sha65d81b60/manifest.jsonl",
+  "teacher": {
+    "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "teacher_variant": "adapted",
+    "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
+  },
+  "batch_images": 4,
+  "max_seconds": 14400,
+  "output": "artifacts/teacher-transfer-20261109/adapted",
+  "adapter": "artifacts/qwen3vl2b-lora-recovery-20261109/final-adapter"
+}

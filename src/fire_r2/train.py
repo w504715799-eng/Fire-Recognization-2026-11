@@ -120,6 +120,11 @@ def execute_training(root, config, cloud):
         verify_backend(Path(root),config['ultralytics_commit'])
         supervision=read_json(child(root,config['supervision']))
         validate_supervision(supervision,view/'manifest.jsonl',plan['factors'])
+        if plan['factors'].get('teacher_joint_mix'):
+            from .teacher_transfer import validate_transfer
+            from .research_data import load_manifest
+            if not config.get('teacher_expected'):raise ProjectError('Teacher transfer requires an explicit teacher/adapter binding')
+            validate_transfer(supervision,load_manifest(view/'manifest.jsonl',roles={'fit'},enrich=False),config['teacher_expected'])
     run=Path(root)/"runs"/config["run_name"]
     if run.exists():raise ProjectError("Run already exists; do not overwrite another experiment")
     gpu=str(cloud["gpu_id"])

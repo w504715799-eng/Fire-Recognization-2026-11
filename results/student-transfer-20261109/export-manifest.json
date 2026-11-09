@@ -1,0 +1,160 @@
+{
+  "time": "2026-11-09T05:01:08.225535+00:00",
+  "student_training_has_not_started": true,
+  "files": [
+    {
+      "source": "artifacts/recovery-20261109/ordinary-resume.json",
+      "export": "artifacts/recovery-20261109/ordinary-resume.json",
+      "original_bytes": 625,
+      "original_sha256": "7314fdf902596be47d266b7325f3a73bd0e51246c44a0ac2ff8bc3e4d8551daa",
+      "export_sha256": "7314fdf902596be47d266b7325f3a73bd0e51246c44a0ac2ff8bc3e4d8551daa"
+    },
+    {
+      "source": "artifacts/student-transfer-20261109/ordinary-cpu-eval-status.json",
+      "export": "artifacts/student-transfer-20261109/ordinary-cpu-eval-status.json",
+      "original_bytes": 69,
+      "original_sha256": "b169ac625a4dbebd084bce22921e8323169879492aae387c5ff233e5e64fc7b5",
+      "export_sha256": "b169ac625a4dbebd084bce22921e8323169879492aae387c5ff233e5e64fc7b5"
+    },
+    {
+      "source": "artifacts/student-transfer-20261109/queue-status.json",
+      "export": "artifacts/student-transfer-20261109/queue-status.json",
+      "original_bytes": 259,
+      "original_sha256": "d22a61496c5154545e4ba31350b763208439b3cf23ea4f2f6e4b39cd9ed0f4b0",
+      "export_sha256": "d22a61496c5154545e4ba31350b763208439b3cf23ea4f2f6e4b39cd9ed0f4b0"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/P-control-receipt.json",
+      "export": "artifacts/teacher-transfer-20261109/P-control-receipt.json",
+      "original_bytes": 242,
+      "original_sha256": "c5e71ee8c3ab267a966a9775f9d81c96e44c41253644d2d7ac3b36ff494645d0",
+      "export_sha256": "c5e71ee8c3ab267a966a9775f9d81c96e44c41253644d2d7ac3b36ff494645d0"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/binding.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/binding.json",
+      "original_bytes": 624,
+      "original_sha256": "6c263cc526202e622bad838eee291383b466ccfa13475aaef2838c989648868c",
+      "export_sha256": "6c263cc526202e622bad838eee291383b466ccfa13475aaef2838c989648868c"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/cache.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/cache.json",
+      "original_bytes": 5086,
+      "original_sha256": "f5bbb5ddaad22f6626088817fd1fb215077abc3c1efe02d82a0107416ae27f81",
+      "export_sha256": "f5bbb5ddaad22f6626088817fd1fb215077abc3c1efe02d82a0107416ae27f81"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/report.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/report.json",
+      "original_bytes": 1908,
+      "original_sha256": "9627c500acee73a5fef0d38794f09764bab150da2912061ae3173c2473b7aa7d",
+      "export_sha256": "9627c500acee73a5fef0d38794f09764bab150da2912061ae3173c2473b7aa7d"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/samples.jsonl",
+      "export": "artifacts/teacher-transfer-20261109/cpu-adapted-pilot/samples.jsonl",
+      "original_bytes": 3548,
+      "original_sha256": "36eb5413cfa797b7d093f3171abe173f26b3a01036dcc15c2579afa9ea9d143c",
+      "export_sha256": "36eb5413cfa797b7d093f3171abe173f26b3a01036dcc15c2579afa9ea9d143c"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-base-pilot/binding.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-base-pilot/binding.json",
+      "original_bytes": 559,
+      "original_sha256": "3722d38a32396ffb578040a592e63d56e140a30798f3ceea2ead3b1835d3b8ed",
+      "export_sha256": "3722d38a32396ffb578040a592e63d56e140a30798f3ceea2ead3b1835d3b8ed"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-base-pilot/cache.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-base-pilot/cache.json",
+      "original_bytes": 5037,
+      "original_sha256": "6460f2697a0e75ab5915c24918160becfb8b11210c3e3edc722810816013a3f2",
+      "export_sha256": "6460f2697a0e75ab5915c24918160becfb8b11210c3e3edc722810816013a3f2"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-base-pilot/report.json",
+      "export": "artifacts/teacher-transfer-20261109/cpu-base-pilot/report.json",
+      "original_bytes": 1741,
+      "original_sha256": "e0059c14f6faa767e9ee7f2bbb1b6b6aadd0161d770657f28934e8009abb2132",
+      "export_sha256": "e0059c14f6faa767e9ee7f2bbb1b6b6aadd0161d770657f28934e8009abb2132"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/cpu-base-pilot/samples.jsonl",
+      "export": "artifacts/teacher-transfer-20261109/cpu-base-pilot/samples.jsonl",
+      "original_bytes": 3564,
+      "original_sha256": "e89550e8251ec40557e567ce190f8dd27b39219711fa972e8247fc31dfcc7add",
+      "export_sha256": "e89550e8251ec40557e567ce190f8dd27b39219711fa972e8247fc31dfcc7add"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/pilot-comparison.json",
+      "export": "artifacts/teacher-transfer-20261109/pilot-comparison.json",
+      "original_bytes": 6949,
+      "original_sha256": "1fbe66997d55a5136be09b4f3be91a373c0a0bff4161f2b5674446a737ef7fd4",
+      "export_sha256": "1fbe66997d55a5136be09b4f3be91a373c0a0bff4161f2b5674446a737ef7fd4"
+    },
+    {
+      "source": "artifacts/teacher-transfer-20261109/student-cpu-integration.json",
+      "export": "artifacts/teacher-transfer-20261109/student-cpu-integration.json",
+      "original_bytes": 1613,
+      "original_sha256": "2023495e71ccbf34387a28bf84c11e88031cb8932432cb01e0e732b7754fedd3",
+      "export_sha256": "2023495e71ccbf34387a28bf84c11e88031cb8932432cb01e0e732b7754fedd3"
+    },
+    {
+      "source": "logs/student-transfer-cpu-integration-20261109.log",
+      "export": "logs/student-transfer-cpu-integration-20261109.log.gz",
+      "original_bytes": 1489,
+      "original_sha256": "ca096341c197e4d892d712be644188edc6fcfa335c51210955d0414364fdc210",
+      "export_sha256": "5232bd97aef3d84894e4a654295ceafac2c5cd3e99053390f466876d7075054e"
+    },
+    {
+      "source": "logs/student-transfer-queue-20261109.log",
+      "export": "logs/student-transfer-queue-20261109.log.gz",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    {
+      "source": "logs/teacher-transfer-P-control-prepare-20261109.log",
+      "export": "logs/teacher-transfer-P-control-prepare-20261109.log.gz",
+      "original_bytes": 135,
+      "original_sha256": "c74bf534b8cb0ae87e9348dfc06d8ae542ab38f48f7ee8750ff18c0e4a6e1aeb",
+      "export_sha256": "064ee137911252ed5b67a55d992b977ecc7080b02d6d927406df94c3a5b58831"
+    },
+    {
+      "source": "logs/teacher-transfer-cpu-adapted-pilot-20261109.log",
+      "export": "logs/teacher-transfer-cpu-adapted-pilot-20261109.log.gz",
+      "original_bytes": 2970,
+      "original_sha256": "75f14dc57b67313a05d030907e81bc7411202938056903cb523e9082abf2d4f2",
+      "export_sha256": "3a0f2d5d8ec807e2008f0d10ebd44b8c0a5a8241abaa780431a6358652198b45"
+    },
+    {
+      "source": "logs/teacher-transfer-cpu-base-pilot-20261109.log",
+      "export": "logs/teacher-transfer-cpu-base-pilot-20261109.log.gz",
+      "original_bytes": 2886,
+      "original_sha256": "6fd19242417684f9945773762db96d44e64d94caba4300f6ce3cd13116ba086e",
+      "export_sha256": "ecdf86b508c568ab29ede14d66160043a72c9c5ac6c63c1a837354ecc6a858c6"
+    },
+    {
+      "source": "logs/teacher-transfer-joint-tests-20261109.log",
+      "export": "logs/teacher-transfer-joint-tests-20261109.log.gz",
+      "original_bytes": 102,
+      "original_sha256": "fd2886f5186fb21d116ce4461fa848379eea3136d143b617ea0e2c65b7206456",
+      "export_sha256": "14947089ee5888f3290ea98abd46c145593b1c2683511e4a1cad7f2efef545ff"
+    },
+    {
+      "source": "logs/teacher-transfer-tests-20261109.log",
+      "export": "logs/teacher-transfer-tests-20261109.log.gz",
+      "original_bytes": 102,
+      "original_sha256": "c134cd9f8783e5f2c81756a43aa5a824e68cdfa8106bdb027ca846c6cda8bbfe",
+      "export_sha256": "990af2a50f3dc06f25601dc95e1cef4136834f0f6e46fa1142f94d647eae357e"
+    },
+    {
+      "source": "runs/dfire_M_ordinary_seed17_full_20261106/results.csv",
+      "export": "runs/dfire_M_ordinary_seed17_full_20261106/results.csv",
+      "original_bytes": 14582,
+      "original_sha256": "f2a81bf1d2fb6bf7cdccb92b9917ce7b96c66ed14978b8fa399dfba12767cc56",
+      "export_sha256": "f2a81bf1d2fb6bf7cdccb92b9917ce7b96c66ed14978b8fa399dfba12767cc56"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "synthetic_inputs": true,
+  "publication_effectiveness_result": false,
+  "variants": [
+    {
+      "name": "P_control",
+      "loss": 33.710723876953125,
+      "loss_items": {
+        "box_loss": 3.9148716926574707,
+        "cls_loss": 4.251131534576416,
+        "l1_loss": 0.1231088787317276,
+        "semantic_loss": 0.13856860995292664,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "joint_gradient_norm": 0.019840840250253677,
+      "deployment_output_unchanged": true
+    },
+    {
+      "name": "T_base",
+      "loss": 33.711700439453125,
+      "loss_items": {
+        "box_loss": 3.9148716926574707,
+        "cls_loss": 4.251131534576416,
+        "l1_loss": 0.1231088787317276,
+        "semantic_loss": 0.13881292939186096,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "joint_gradient_norm": 0.024701951071619987,
+      "deployment_output_unchanged": true
+    },
+    {
+      "name": "T_adapted",
+      "loss": 33.710723876953125,
+      "loss_items": {
+        "box_loss": 3.9148716926574707,
+        "cls_loss": 4.251131534576416,
+        "l1_loss": 0.1231088787317276,
+        "semantic_loss": 0.13856907188892365,
+        "gain_loss": 0.0,
+        "smoke_aux_loss": 0.0
+      },
+      "joint_gradient_norm": 0.019078213721513748,
+      "deployment_output_unchanged": true
+    }
+  ],
+  "same_initial_state_sha256": "1faf951d88ee944f2a017a08703d768291162ef38000e1b6144565ac79aececc",
+  "original_detection_loss_equal": true,
+  "teacher_changes_joint_gradients": true,
+  "cuda_initialized": false,
+  "seconds": 6.266448400914669
+}

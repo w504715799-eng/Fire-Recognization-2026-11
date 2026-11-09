@@ -33,6 +33,10 @@ def main():
             from fire_r2.unified_validator import UnifiedSelectionMixin
             from fire_r2.supervision import validate_supervision
             verify_backend(ROOT,config['ultralytics_commit']);validate_supervision(read_json(ROOT/config['supervision']),view/'manifest.jsonl',plan['factors'])
+            if plan['factors'].get('teacher_joint_mix'):
+                from fire_r2.teacher_transfer import validate_transfer
+                from fire_r2.research_data import load_manifest
+                validate_transfer(read_json(ROOT/config['supervision']),load_manifest(view/'manifest.jsonl',roles={'fit'},enrich=False),config['teacher_expected'])
             checkpoint=run/'weights/resume_last.pt';ckpt=torch.load(checkpoint,map_location='cpu',weights_only=False)
             start=int(ckpt['epoch'])+1
             if ckpt.get('optimizer') is None or not 0<start<100:raise ProjectError('No resumable optimizer/epoch')

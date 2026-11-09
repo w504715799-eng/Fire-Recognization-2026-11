@@ -1,0 +1,8 @@
+{
+  "bytes": 7046705,
+  "sha256": "1122927b07e01409c8901384c230768a2af0148bf2968a0df813f991abb92098",
+  "images": 14122,
+  "student_protocol": "joint_presence_transfer_v1",
+  "teacher_joint_mix": 0.0,
+  "original_annotations_changed": false
+}

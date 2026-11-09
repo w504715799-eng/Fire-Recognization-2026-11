@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "binding": {
+    "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+    "teacher": {
+      "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "teacher_variant": "adapted",
+      "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
+    },
+    "protocol": "joint_presence_v1",
+    "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+    "device": "cpu",
+    "dtype": "float32",
+    "batch_images": 1,
+    "selection_sha256": "04c461ee81c9db205e3a28204ac0407a6e0490a8e97365a4e5fd665078ed7425"
+  },
+  "full_fit_images": 14122,
+  "selected_images": 8,
+  "reused_images": 0,
+  "completed_images": 8,
+  "batches": [
+    {
+      "images": 1,
+      "seconds": 46.418057387229055
+    },
+    {
+      "images": 1,
+      "seconds": 44.22193695278838
+    },
+    {
+      "images": 1,
+      "seconds": 45.382214657031
+    },
+    {
+      "images": 1,
+      "seconds": 44.19545237021521
+    },
+    {
+      "images": 1,
+      "seconds": 44.609048071317375
+    },
+    {
+      "images": 1,
+      "seconds": 44.48688912624493
+    },
+    {
+      "images": 1,
+      "seconds": 44.14258072106168
+    },
+    {
+      "images": 1,
+      "seconds": 44.329549610149115
+    }
+  ],
+  "adapter_training_report_sha256": "d190d6761685663538cbb13ea8aeb5a9abb820a4f695ae4c57be03cd40726352",
+  "model_identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "load_seconds": 18.37778955185786,
+  "peak_gpu_bytes": 0,
+  "seconds": 376.61845271801576,
+  "peak_rss_kib": 13292500
+}

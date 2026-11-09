@@ -217,6 +217,11 @@ def validate_supervision(advice,manifest,factors):
         raise ProjectError('Semantic shuffle control differs')
     if factors.get('semantic')=='qwen' and not advice.get('teacher_cache_sha256'):
         raise ProjectError('S needs a complete validated teacher cache')
+    if factors.get('semantic')=='joint_presence':
+        from .teacher_transfer import validate_transfer
+        validate_transfer(advice,rows,alpha_expected=factors['teacher_joint_mix'])
+    elif advice.get('student_protocol')=='joint_presence_transfer_v1':
+        raise ProjectError('Teacher targets cannot enter the no-teacher control')
     for item in advice['samples'].values():
         if not math.isfinite(item['weight']) or item['weight']<=0:raise ProjectError('All images require positive finite weights')
         if len(item['targets'])!=6 or len(item['mask'])!=6:raise ProjectError('Six semantic fields required')

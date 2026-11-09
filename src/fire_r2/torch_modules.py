@@ -112,3 +112,13 @@ def semantic_loss(logits,targets,mask,clean,warmup,presence_weight=.1,semantic_w
     p=masked_bce(logits[:,:2],targets[:,:2],effective[:,:2])
     s=masked_bce(logits[:,2:],targets[:,2:],effective[:,2:])
     return warmup*(presence_weight*p+semantic_weight*s),{'presence':p.detach(),'semantic':s.detach()}
+
+
+def joint_presence_loss(logits,targets,mask,clean,warmup,presence_weight=.1,joint_weight=.05):
+    """Same hard-GT presence term and four-state CE capacity for all three student controls."""
+    effective=mask.bool() & clean.bool()[:,None]
+    presence=masked_bce(logits[:,:2],targets[:,:2],effective[:,:2])
+    active=effective[:,2:].all(dim=1)
+    per_image=-(targets[:,2:]*F.log_softmax(logits[:,2:].float(),dim=-1)).sum(dim=-1)
+    joint=(per_image*active.to(per_image.dtype)).sum()/active.sum().clamp_min(1)
+    return warmup*(presence_weight*presence+joint_weight*joint),{'presence':presence.detach(),'joint':joint.detach()}

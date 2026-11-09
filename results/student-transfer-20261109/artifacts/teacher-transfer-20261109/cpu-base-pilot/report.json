@@ -1,0 +1,68 @@
+{
+  "status": "completed",
+  "binding": {
+    "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+    "teacher": {
+      "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "teacher_variant": "base",
+      "adapter_sha256": null
+    },
+    "protocol": "joint_presence_v1",
+    "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+    "device": "cpu",
+    "dtype": "float32",
+    "batch_images": 1,
+    "selection_sha256": "04c461ee81c9db205e3a28204ac0407a6e0490a8e97365a4e5fd665078ed7425"
+  },
+  "full_fit_images": 14122,
+  "selected_images": 8,
+  "reused_images": 0,
+  "completed_images": 8,
+  "batches": [
+    {
+      "images": 1,
+      "seconds": 45.76122874813154
+    },
+    {
+      "images": 1,
+      "seconds": 44.95833390438929
+    },
+    {
+      "images": 1,
+      "seconds": 44.133572584949434
+    },
+    {
+      "images": 1,
+      "seconds": 44.31052495120093
+    },
+    {
+      "images": 1,
+      "seconds": 44.33963296376169
+    },
+    {
+      "images": 1,
+      "seconds": 44.757608846761286
+    },
+    {
+      "images": 1,
+      "seconds": 45.357291812077165
+    },
+    {
+      "images": 1,
+      "seconds": 44.08377913990989
+    }
+  ],
+  "model_identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "load_seconds": 18.218104289844632,
+  "peak_gpu_bytes": 0,
+  "seconds": 376.1529480307363,
+  "peak_rss_kib": 13293364
+}

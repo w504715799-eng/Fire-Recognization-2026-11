@@ -1,0 +1,8 @@
+{
+  "status": "waiting_for_own_baseline",
+  "started_at": "2026-11-09T04:04:53.608872+00:00",
+  "baseline": "dfire_M_seed17_full_20261106",
+  "stages": [],
+  "last_checked_at": "2026-11-09T05:00:56.598927+00:00",
+  "prerequisite_queue_status": "validating"
+}

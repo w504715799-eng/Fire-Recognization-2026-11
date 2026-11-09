@@ -1,0 +1,8 @@
+{
+  "run": "dfire_M_ordinary_seed17_full_20261106",
+  "completed_epochs": 100,
+  "best_human_epoch": 80,
+  "best_original_fire_dev_AP50_95": 0.4082852732462883,
+  "weight_sha256": "676a5f87bddb61e5bce950720b4aa03e89db2e54e13f2fa26a5099d73a73c8f2",
+  "student_P0_in_progress": true
+}

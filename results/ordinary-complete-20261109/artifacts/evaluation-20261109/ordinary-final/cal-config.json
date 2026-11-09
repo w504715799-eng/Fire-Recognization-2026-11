@@ -1,0 +1,15 @@
+{
+  "weights": "runs/dfire_M_ordinary_seed17_full_20261106/weights/best_fire.pt",
+  "weights_sha256": "676a5f87bddb61e5bce950720b4aa03e89db2e54e13f2fa26a5099d73a73c8f2",
+  "manifest": "artifacts/data/dfire-kaggle-21527-sha65d81b60/manifest.jsonl",
+  "ultralytics_commit": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+  "training_source": "dfire",
+  "target_source": "dfire",
+  "seed": 17,
+  "device": "cpu",
+  "cpu_threads": 4,
+  "batch": 4,
+  "half": false,
+  "purpose": "cal",
+  "output": "artifacts/evaluation-20261109/ordinary-final/cal-predictions.json"
+}

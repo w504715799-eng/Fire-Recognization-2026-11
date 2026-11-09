@@ -1,0 +1,16 @@
+{
+  "status": "validating",
+  "started_at": "2026-11-09T04:04:53.608872+00:00",
+  "baseline": "dfire_M_seed17_full_20261106",
+  "stages": [
+    {
+      "name": "train_P_control",
+      "started_at": "2026-11-09T06:35:27.519516+00:00",
+      "log": "logs/student-transfer-train_P_control-20261109.log"
+    }
+  ],
+  "last_checked_at": "2026-11-09T06:35:27.516054+00:00",
+  "prerequisite_queue_status": "validating",
+  "completed_epochs": 100,
+  "gpu_stage_started_at": "2026-11-09T06:35:27.518733+00:00"
+}

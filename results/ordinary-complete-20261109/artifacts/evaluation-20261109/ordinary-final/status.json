@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "run": "dfire_M_ordinary_seed17_full_20261106",
+  "checkpoint_sha256": "676a5f87bddb61e5bce950720b4aa03e89db2e54e13f2fa26a5099d73a73c8f2",
+  "device": "cpu",
+  "test_accessed": false,
+  "metrics_sha256": "109c785291d3f7c53d44c0046d2727afc1c2812b29fbd2a13d0eb5635e481758",
+  "calibration_sha256": "75d85da561e27aae76bfe8d19fdfdf7d42be85c95d66a0d556b8fe8f1eea343a",
+  "seconds": 337.9241759739816
+}

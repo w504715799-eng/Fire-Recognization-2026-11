@@ -1,0 +1,32 @@
+{
+  "status": "validating",
+  "started_at": "2026-11-09T00:43:24.032892+00:00",
+  "baseline": "dfire_M_seed17_full_20261106",
+  "stages": [
+    {
+      "name": "base_teacher_full_evaluation",
+      "started_at": "2026-11-09T00:51:54.409744+00:00",
+      "log": "logs/teacher-base-eval-20261109.log",
+      "finished_at": "2026-11-09T00:55:34.222563+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "adapted_teacher_full_evaluation",
+      "started_at": "2026-11-09T00:55:34.304824+00:00",
+      "log": "logs/teacher-adapted-eval-20261109.log",
+      "finished_at": "2026-11-09T00:59:48.059514+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "resume_ordinary_fusion",
+      "started_at": "2026-11-09T00:59:48.060694+00:00",
+      "log": "logs/ordinary-resume-20261109.log"
+    }
+  ],
+  "last_checked_at": "2026-11-09T00:51:54.407374+00:00",
+  "waiting_for_reports": [
+    "artifacts/qwen3vl2b-lora-recovery-20261109/report.json"
+  ],
+  "completed_epochs": 100,
+  "gpu_stage_started_at": "2026-11-09T00:51:54.409264+00:00"
+}

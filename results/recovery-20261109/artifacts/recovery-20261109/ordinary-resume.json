@@ -1,0 +1,16 @@
+{
+  "status": "running",
+  "original_run": "dfire_M_ordinary_seed17_full_20261106",
+  "started_at": "2026-11-09T01:02:43.980202+00:00",
+  "CSV_time_resets_on_resume": true,
+  "augmentation_rng_bitwise_replay_claimed": false,
+  "restored_epoch": 19,
+  "checkpoint_sha256": "f3d9f6e18b6490bf485a771711de9c855586bf7dabb3c4741fc5038c27436a9f",
+  "prior_best_fire_ap": 0.35169,
+  "prior_csv_sha256": "c9366372fac7d3b78507ec1c991e67f7533889722e45995f2ec8bf0ca1b51d4f",
+  "all_base_and_fusion_tensors_restored": true,
+  "sampler_epoch": 19,
+  "actual_amp": true,
+  "last_completed_epoch": 21,
+  "best_fire_ap": 0.356508696245327
+}

@@ -1,0 +1,15 @@
+{
+  "status": "validating",
+  "started_at": "2026-11-06T05:51:43.138104+00:00",
+  "baseline": "dfire_M_seed17_full_20261106",
+  "stages": [
+    {
+      "name": "ordinary_fusion_full",
+      "started_at": "2026-11-06T11:51:47.416142+00:00",
+      "log": "logs/dfire-M-ordinary-full-20261106.log"
+    }
+  ],
+  "last_checked_at": "2026-11-06T11:51:47.412196+00:00",
+  "completed_epochs": 100,
+  "gpu_stage_started_at": "2026-11-06T11:51:47.415314+00:00"
+}

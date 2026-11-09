@@ -1,0 +1,64 @@
+{
+  "queue_id": "recovery-20261109",
+  "status_output": "artifacts/recovery-20261109/queue-status.json",
+  "prerequisite_reports": [
+    {
+      "path": "artifacts/qwen3vl2b-lora-recovery-20261109/report.json",
+      "completed_updates": 250,
+      "process_tokens": [
+        "cloud/train_teacher_lora.py",
+        "artifacts/qwen3vl2b-lora-recovery-20261109"
+      ]
+    }
+  ],
+  "baseline_run": "dfire_M_seed17_full_20261106",
+  "baseline_config": "configs/train_dfire_M_20261106.json",
+  "expected_epochs": 100,
+  "max_wait_hours": 2,
+  "stages": [
+    {
+      "name": "base_teacher_full_evaluation",
+      "args": [
+        "cloud/evaluate_teacher_lora_gpu.py",
+        "--cloud-config",
+        "configs/cloud.recovery-20261109.local.json",
+        "--output",
+        "artifacts/teacher-evaluation-20261109/base"
+      ],
+      "log": "logs/teacher-base-eval-20261109.log",
+      "timeout_seconds": 1260
+    },
+    {
+      "name": "adapted_teacher_full_evaluation",
+      "args": [
+        "cloud/evaluate_teacher_lora_gpu.py",
+        "--cloud-config",
+        "configs/cloud.recovery-20261109.local.json",
+        "--output",
+        "artifacts/teacher-evaluation-20261109/adapted",
+        "--adapter",
+        "artifacts/qwen3vl2b-lora-recovery-20261109/final-adapter",
+        "--baseline-report",
+        "artifacts/teacher-evaluation-20261109/base/report.json"
+      ],
+      "log": "logs/teacher-adapted-eval-20261109.log",
+      "timeout_seconds": 1260
+    },
+    {
+      "name": "resume_ordinary_fusion",
+      "args": [
+        "cloud/resume_research_detector.py",
+        "--config",
+        "configs/train_dfire_M_ordinary_20261106.json",
+        "--cloud-config",
+        "configs/cloud.recovery-20261109.local.json",
+        "--output",
+        "artifacts/recovery-20261109/ordinary-resume.json"
+      ],
+      "log": "logs/ordinary-resume-20261109.log",
+      "timeout_seconds": null,
+      "expected_training_epochs": 100,
+      "run_name": "dfire_M_ordinary_seed17_full_20261106"
+    }
+  ]
+}

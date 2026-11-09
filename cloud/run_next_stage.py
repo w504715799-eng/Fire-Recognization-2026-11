@@ -21,6 +21,16 @@ def baseline_process_exists(config_name):
     return False
 
 
+def own_command_exists(tokens):
+    for proc in Path('/proc').iterdir():
+        if not proc.name.isdigit() or int(proc.name)==os.getpid():continue
+        try:
+            args=(proc/'cmdline').read_bytes().split(b'\0')
+            if all(token.encode() in args for token in tokens) and (proc/'cwd').resolve()==ROOT:return True
+        except (OSError,PermissionError):pass
+    return False
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--cloud-config',required=True);p.add_argument('--config',required=True);a=p.parse_args()
     cloud=read_json(ROOT/a.cloud_config);cfg=read_json(ROOT/a.config)
@@ -54,6 +64,7 @@ def main():
                     if previous.get('status')!='completed':waiting.append(prerequisite['path']);continue
                     if previous.get('completed_updates')!=prerequisite.get('completed_updates'):
                         raise ProjectError('Prerequisite did not complete the fixed update count')
+                    if prerequisite.get('process_tokens') and own_command_exists(prerequisite['process_tokens']):waiting.append(prerequisite['path'])
                 if waiting:
                     record.update(last_checked_at=now(),waiting_for_reports=waiting);write_json(dest,record)
                     time.sleep(30)

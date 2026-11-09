@@ -1,0 +1,20 @@
+{
+  "time": "2026-11-09T00:55:12.611479+00:00",
+  "versions": {
+    "torch": "2.12.1+cu130",
+    "transformers": "5.15.0",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "ultralytics": "8.4.183",
+    "safetensors": "0.8.0"
+  },
+  "source_sha256": {
+    "cloud/train_teacher_lora.py": "e599e6fc0a73129041bb9d88aec682d21880c60fa609b8e926213bd1d995d5d1",
+    "cloud/resume_research_detector.py": "c404555c124a78740af32a8e92503714c4ac421b476578f0f1c8b4a2c834cc35",
+    "cloud/evaluate_teacher_lora_gpu.py": "d3a8fd132f564486208d705e720b82fdcaf06cc5e64aeb39430f2519e44e8b8b",
+    "cloud/run_next_stage.py": "ea0f1bae98c1065fb117c477036e4ba9779487cb189222026ce090ad28d15298",
+    "src/fire_r2/teacher_adaptation.py": "aa2a2c10a29438984d53d16157e77bbf889d7f4ec06b5b3377905ff79dcfbd38",
+    "src/fire_r2/ultralytics_backend.py": "a24dd5e2d174fbeeb81dad8fcbe9ed91fab4e341ae1e38554b8d468b687ae2f6"
+  },
+  "new_weights_downloaded": false
+}

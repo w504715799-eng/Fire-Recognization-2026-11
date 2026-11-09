@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "tensor_count": 726,
+  "fusion_tensors": 18,
+  "mismatches": [],
+  "no_training_performed": true
+}

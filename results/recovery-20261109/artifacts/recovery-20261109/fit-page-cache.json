@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "threads": 4,
+  "files": 14122,
+  "expected_bytes": 2067435403,
+  "read_bytes": 2067435403,
+  "seconds": 19.16002029692754,
+  "fit_list_sha256": "5416ae24c8c0bc1f2ce030011bd9dfdf343cccaed93eba22ebe74a4f3fdcf4f4",
+  "disk_copies_created": 0,
+  "source_files_modified": false,
+  "cache_location": "Linux-managed OS page cache for existing fit image paths; no new disk cache",
+  "peak_process_rss_kib": 68380
+}

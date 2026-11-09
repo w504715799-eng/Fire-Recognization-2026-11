@@ -1,0 +1,240 @@
+{
+  "scope": "complete matched GPU evaluation, original annotation task alignment; not independent human truth or detector AP",
+  "source_report_sha256": {
+    "base": "08858e37375d6c97e0b714949cb0cd240134cde65f6c5d8dcbed5420c68852db",
+    "adapted": "c67c78e79758665ca027f1a7329b52b012623228c78575d3b2fefc87e3995aef"
+  },
+  "models": {
+    "base": {
+      "heldout_tasks": {
+        "scene_presence": {
+          "queries": 256,
+          "agree": 132
+        },
+        "region_class": {
+          "queries": 256,
+          "agree": 166
+        }
+      },
+      "confusion": {
+        "fire_present": {
+          "yes -> yes": 117,
+          "yes -> no": 11,
+          "no -> no": 92,
+          "no -> yes": 36
+        },
+        "smoke_present": {
+          "no -> yes": 66,
+          "no -> no": 62,
+          "yes -> no": 11,
+          "yes -> yes": 117
+        },
+        "target_class": {
+          "fire -> fire": 116,
+          "fire -> smoke": 12,
+          "smoke -> smoke": 50,
+          "smoke -> fire": 78
+        }
+      },
+      "by_state": {
+        "fire_only": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 1
+          },
+          "region_class": {
+            "queries": 64,
+            "agree": 57
+          }
+        },
+        "smoke_only": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 17
+          },
+          "region_class": {
+            "queries": 64,
+            "agree": 48
+          }
+        },
+        "both": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 64
+          },
+          "region_class": {
+            "queries": 128,
+            "agree": 61
+          }
+        },
+        "empty": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 50
+          },
+          "region_class": {
+            "queries": 0,
+            "agree": 0
+          }
+        }
+      },
+      "v2_original_label_diagnostics": {
+        "fire_visible": {
+          "queries": 64,
+          "agree": 60
+        },
+        "smoke_visible": {
+          "queries": 64,
+          "agree": 47
+        },
+        "fire_region": {
+          "queries": 32,
+          "class_supported_including_both": 23,
+          "exact_class_only": 2
+        },
+        "smoke_region": {
+          "queries": 32,
+          "class_supported_including_both": 31,
+          "exact_class_only": 20
+        }
+      },
+      "schema_valid": 640,
+      "seconds": 218.40931446989998,
+      "peak_gpu_bytes": 4903025664
+    },
+    "adapted": {
+      "heldout_tasks": {
+        "scene_presence": {
+          "queries": 256,
+          "agree": 203
+        },
+        "region_class": {
+          "queries": 256,
+          "agree": 232
+        }
+      },
+      "confusion": {
+        "fire_present": {
+          "yes -> yes": 122,
+          "yes -> no": 6,
+          "no -> no": 124,
+          "no -> yes": 4
+        },
+        "smoke_present": {
+          "no -> no": 97,
+          "no -> yes": 31,
+          "yes -> no": 14,
+          "yes -> yes": 114
+        },
+        "target_class": {
+          "fire -> fire": 123,
+          "fire -> smoke": 5,
+          "smoke -> smoke": 109,
+          "smoke -> fire": 19
+        }
+      },
+      "by_state": {
+        "fire_only": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 43
+          },
+          "region_class": {
+            "queries": 64,
+            "agree": 61
+          }
+        },
+        "smoke_only": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 52
+          },
+          "region_class": {
+            "queries": 64,
+            "agree": 61
+          }
+        },
+        "both": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 58
+          },
+          "region_class": {
+            "queries": 128,
+            "agree": 110
+          }
+        },
+        "empty": {
+          "scene_presence": {
+            "queries": 64,
+            "agree": 50
+          },
+          "region_class": {
+            "queries": 0,
+            "agree": 0
+          }
+        }
+      },
+      "v2_original_label_diagnostics": {
+        "fire_visible": {
+          "queries": 64,
+          "agree": 61
+        },
+        "smoke_visible": {
+          "queries": 64,
+          "agree": 54
+        },
+        "fire_region": {
+          "queries": 32,
+          "class_supported_including_both": 25,
+          "exact_class_only": 4
+        },
+        "smoke_region": {
+          "queries": 32,
+          "class_supported_including_both": 32,
+          "exact_class_only": 31
+        }
+      },
+      "schema_valid": 640,
+      "seconds": 252.27687981026247,
+      "peak_gpu_bytes": 4915379200
+    }
+  },
+  "paired": {
+    "scene_presence": {
+      "both_correct": 124,
+      "only_base_correct": 8,
+      "only_adapted_correct": 79,
+      "both_wrong": 45
+    },
+    "region_class": {
+      "both_correct": 159,
+      "only_base_correct": 7,
+      "only_adapted_correct": 73,
+      "both_wrong": 17
+    }
+  },
+  "context_truth_available": false,
+  "v2_context_changes": {
+    "cloud_fog_like": {
+      "queries": 64,
+      "changed": 6,
+      "correctness_unmeasured": true
+    },
+    "bright_light_like": {
+      "queries": 64,
+      "changed": 4,
+      "correctness_unmeasured": true
+    },
+    "reflection_like": {
+      "queries": 64,
+      "changed": 0,
+      "correctness_unmeasured": true
+    },
+    "low_visibility": {
+      "queries": 64,
+      "changed": 5,
+      "correctness_unmeasured": true
+    }
+  }
+}

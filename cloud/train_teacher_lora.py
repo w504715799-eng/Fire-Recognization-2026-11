@@ -13,10 +13,13 @@ def main():
     signal.signal(signal.SIGINT,signal.default_int_handler)
     p=argparse.ArgumentParser();p.add_argument('--cloud-config',required=True)
     p.add_argument('--device',choices=['cpu','cuda'],required=True);p.add_argument('--output');p.add_argument('--full-cpu',action='store_true')
+    p.add_argument('--resume-from');p.add_argument('--fp32',action='store_true');p.add_argument('--resume-max-seconds',type=int,default=5400)
     p.add_argument('--config',default='configs/qwen3vl2b_lora_pilot.json');a=p.parse_args()
     spec=read_json(ROOT/a.config);cloud=read_json(ROOT/a.cloud_config);check_remote_environment(ROOT,cloud)
     cpu=a.device=='cpu'
     cpu_check=cpu and not a.full_cpu
+    fp32=cpu or a.fp32
+    if a.resume_from and (cpu_check or not a.output):raise ProjectError('Resume requires full training and a new output directory')
     if a.full_cpu and (not cpu or spec.get('training_device')!='cpu' or spec.get('training_dtype')!='float32'):
         raise ProjectError('Full CPU training requires its explicitly recorded FP32 CPU configuration')
     if a.full_cpu:
@@ -28,7 +31,7 @@ def main():
     out=output_path(ROOT,a.output or spec['output_dir'])
     if out.exists():raise ProjectError('Keep prior adapter/run evidence')
     out.mkdir(parents=True);started=time.monotonic();model=None;adapter_saved=False
-    updates=1 if cpu_check else spec['optimizer_updates'];limit=900 if cpu_check else spec['max_training_seconds']
+    updates=1 if cpu_check else spec['optimizer_updates'];limit=a.resume_max_seconds if a.resume_from else 900 if cpu_check else spec['max_training_seconds']
     report={'status':'starting','started_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'device':a.device,
         'mode':'CPU_one_update_integration_not_research_adapter' if cpu_check else 'fixed_CPU_task_LoRA' if cpu else 'fixed_GPU_task_LoRA',
         'config_sha256':sha256(ROOT/a.config),'planned_updates':updates,'completed_updates':0,
@@ -48,7 +51,7 @@ def main():
             if len(records)!=spec['train_instruction_examples'] or any(r['teacher_partition']!='teacher_train' for r in records):raise ProjectError('Wrong teacher training partition')
             order=list(range(len(records)));random.Random(spec['seed']).shuffle(order)
             report['instruction_sha256']=sha256(source);report['instruction_order_sha256']=__import__('hashlib').sha256(json.dumps(order).encode()).hexdigest()
-            dtype=torch.float32 if cpu else torch.float16
+            dtype=torch.float32 if fp32 else torch.float16
             model=Qwen3VLForConditionalGeneration.from_pretrained(directory,local_files_only=True,trust_remote_code=False,dtype=dtype,attn_implementation='sdpa').to(a.device)
             targets=[n for n,m in model.named_modules() if 'language_model.layers.' in n and n.endswith(('self_attn.q_proj','self_attn.k_proj','self_attn.v_proj','self_attn.o_proj'))]
             if len(targets)!=112:raise ProjectError('Expected 112 fixed language attention targets')
@@ -58,19 +61,42 @@ def main():
             report['trainable_parameters']=sum(v.numel() for _,v in trainable);report['dtype']=str(dtype)
             model.config.use_cache=False;model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False});model.enable_input_require_grads();model.train()
             optimizer=torch.optim.AdamW([v for _,v in trainable],lr=spec['learning_rate'],weight_decay=spec['weight_decay'],foreach=False)
-            scaler=torch.amp.GradScaler('cuda',enabled=not cpu,init_scale=1024.)
+            scaler=torch.amp.GradScaler('cuda',enabled=not fp32,init_scale=1024.)
+            start_update=0
+            if a.resume_from:
+                from safetensors.torch import load_file
+                previous=output_path(ROOT,a.resume_from);prior=read_json(previous/'report.json')
+                checkpoint=previous/'last-training-state.pt';adapter=previous/'last-adapter/adapter_model.safetensors'
+                state=torch.load(checkpoint,map_location='cpu',weights_only=True)
+                if checkpoint.stat().st_mtime<adapter.stat().st_mtime:raise ProjectError('Optimizer snapshot predates adapter')
+                for key in ('identity','instruction_sha256','instruction_order_sha256'):
+                    if state[key]!=report[key]:raise ProjectError('Resume identity/data/order mismatch: '+key)
+                start_update=int(state['completed_updates'])
+                if not 0<start_update<updates or start_update>prior['completed_updates']:raise ProjectError('Invalid recovered update count')
+                if any(float(v['step'])!=start_update for v in state['optimizer']['state'].values()):raise ProjectError('Optimizer update counts differ')
+                loaded=peft.set_peft_model_state_dict(model,load_file(str(adapter)))
+                if loaded.unexpected_keys or any('lora_' in n for n in loaded.missing_keys):raise ProjectError('Adapter parameter mapping mismatch')
+                optimizer.load_state_dict(state['optimizer']);scaler.load_state_dict(state['scaler'])
+                torch.set_rng_state(state['torch_rng_state'])
+                report.update(completed_updates=start_update,steps=prior['steps'][:start_update],
+                    resume={'source':str(previous),'restored_update':start_update,'previous_logged_updates':prior['completed_updates'],
+                            'checkpoint_sha256':sha256(checkpoint),'adapter_sha256':sha256(adapter),
+                            'source_report_sha256':sha256(previous/'report.json'),'source_device':prior['device'],
+                            'target_device':a.device,'precision_preserved':fp32 and prior['dtype']=='torch.float32',
+                            'CPU_rng_restored':True,'CUDA_rng_seed':spec['seed'] if not cpu else None,
+                            'cross_device_bitwise_replay_claimed':False})
             reference={n:v.detach().float().cpu().clone() for n,v in trainable};accum=spec['gradient_accumulation_steps']
             if updates*accum>len(records):raise ProjectError('Do not silently cycle instruction data')
             report.update(status='training',load_seconds=time.monotonic()-started);write_json(out/'report.json',report)
             if not cpu:torch.cuda.reset_peak_memory_stats()
-            for step in range(updates):
+            for step in range(start_update,updates):
                 tick=time.monotonic();optimizer.zero_grad(set_to_none=True);losses=[];examples=[]
                 ratio=min((step+1)/spec['warmup_updates'],(spec['optimizer_updates']-step)/max(1,spec['optimizer_updates']-spec['warmup_updates']))
                 for group in optimizer.param_groups:group['lr']=spec['learning_rate']*ratio
                 for micro in range(accum):
                     item=records[order[step*accum+micro]];inputs,positions,labels=instruction_inputs(processor,item,spec['max_sequence_length'])
                     inputs={k:v.to(a.device) for k,v in inputs.items()};pos=torch.tensor(positions,device=a.device);target=torch.tensor(labels,device=a.device)
-                    with torch.autocast(device_type=a.device,dtype=torch.float16,enabled=not cpu):
+                    with torch.autocast(device_type=a.device,dtype=torch.float16,enabled=not fp32):
                         logits=model(**inputs,logits_to_keep=pos,use_cache=False).logits[0]
                         if logits.shape[0]!=len(labels):raise ProjectError('Selected next-token logits do not align')
                         loss=torch.nn.functional.cross_entropy(logits.float(),target)
@@ -81,7 +107,7 @@ def main():
                 norm=torch.nn.utils.clip_grad_norm_([v for _,v in trainable],spec['max_grad_norm'],error_if_nonfinite=True)
                 if not any(v.grad is not None and bool(torch.any(v.grad!=0)) for _,v in trainable):raise ProjectError('No nonzero adapter gradient')
                 scaler.step(optimizer);scaler.update()
-                if step==0:
+                if step==start_update:
                     delta=sum(float((v.detach().float().cpu()-reference[n]).abs().sum()) for n,v in trainable)
                     if delta<=0:raise ProjectError('Optimizer did not change adapter parameters')
                     report['first_update']={'parameter_delta_L1':delta,'frozen_base_and_vision':True,'GPU_step_passed':not cpu};reference.clear()

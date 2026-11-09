@@ -1,0 +1,1 @@
+{"status": "failed_before_model_load", "error": "ModuleNotFoundError: No module named fire_r2", "cause": "direct Python check lacked project src on PYTHONPATH; CLI entry normally adds it"}

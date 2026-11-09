@@ -1,0 +1,28 @@
+{
+  "epoch": 2,
+  "partition": "dev",
+  "fire_AP50_95": 0.18209,
+  "evaluation": {
+    "backend": "pycocotools.COCOeval bbox",
+    "maxDets": [
+      1,
+      10,
+      100
+    ],
+    "classes": {
+      "fire": {
+        "AP50_95": 0.1820870833562948,
+        "AP50": 0.4309663790004991,
+        "AR100": 0.4738241308793456
+      },
+      "smoke": {
+        "AP50_95": 0.13301328434538592,
+        "AP50": 0.31638942435259,
+        "AR100": 0.45380184331797235
+      }
+    },
+    "mAP50_95": 0.15755018385084035,
+    "original_gt_preserved": true,
+    "area_protocol": "original author area"
+  }
+}

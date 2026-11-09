@@ -1,0 +1,79 @@
+{
+  "plan": {
+    "execution": false,
+    "experiment": "M",
+    "factors": {
+      "weighting": "uniform",
+      "semantic": null,
+      "m_mode": "gain",
+      "width": 64,
+      "detail": true,
+      "smoke_aux": true,
+      "gain_weight": 0.05,
+      "smoke_weight": 0.2,
+      "semantic_warmup_epochs": 5,
+      "normalization": "group"
+    },
+    "dataset": "dfire",
+    "view": "/root/rivermind-data/FIRE_R2/artifacts/data/dfire-kaggle-21527-sha65d81b60",
+    "weights": "/root/rivermind-data/FIRE_R2/weights/yolo26s.pt",
+    "remote_project": "/root/rivermind-data/FIRE_R2",
+    "gpu": 0,
+    "notice": "No model import, weight load, network access or training occurs in plan mode",
+    "future_requirements": [
+      "user notified before paid startup/upgrade",
+      "training phase approval",
+      "complete verified data view",
+      "existing locally staged cloud checkpoint with SHA-256",
+      "project-specific sci-env",
+      "shared cooperative GPU lock"
+    ],
+    "train_parameters": {
+      "epochs": 100,
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 2,
+      "patience": 0,
+      "cache": false,
+      "deterministic": true
+    },
+    "checkpoint_policy": "original-GT COCO fire dev AP, earliest exact tie"
+  },
+  "config": {
+    "experiment": "M",
+    "dataset": "dfire",
+    "prepared_view": "artifacts/data/dfire-kaggle-21527-sha65d81b60",
+    "weights": "weights/yolo26s.pt",
+    "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+    "ultralytics_commit": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+    "seed": 17,
+    "run_name": "dfire_M_seed17_full_20261106",
+    "train": {
+      "epochs": 100,
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 2,
+      "patience": 0,
+      "cache": false,
+      "deterministic": true
+    },
+    "ultralytics_archive_sha256": "082f69bd8d8c8223caf5e8fbb33e8610cebde84b2d99d223b0292f5d43e17b05",
+    "amp_enabled": true,
+    "supervision": "artifacts/supervision/dfire-B.json",
+    "checkpoint_selection": "original_dev_fire_ap50_95"
+  },
+  "cloud_server_id": "gpuhome-hz01-30188",
+  "hourly_price": null,
+  "currency": null,
+  "started_at": "2026-11-06T04:55:01.442927+00:00",
+  "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+  "status": "completed_or_budget_stopped",
+  "torch_version": "2.12.1+cu130",
+  "ultralytics_version": "8.4.183",
+  "actual_amp": true,
+  "image_coverage_verified": true,
+  "finished_at": "2026-11-06T11:51:37.388894+00:00",
+  "elapsed_seconds": 24995.946006650105,
+  "best_fire_ap": 0.40735220503419384,
+  "server_powered_off": false
+}

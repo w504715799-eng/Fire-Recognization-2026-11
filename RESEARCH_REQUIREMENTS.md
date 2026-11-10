@@ -74,3 +74,6 @@ P0已17:42:02在71轮保存退出，最佳第60轮；P0与B完整匹配GPU评价
 ## 2026-11-10 seed29配对已授权启动（11:08）
 
 用户明确要求启动P0/T_adapted seed29、按验证早停、完成后结合seed17判断是否扩大并同步完整与失败记录。队列configs/queue_student_transfer_seed29_20261110.json、状态artifacts/student-transfer-seed29-20261110/queue-status.json。复用原环境/全量数据/监督/教师缓存，无新权重/依赖下载。每组6小时仅为安全上限，预计配对4–6小时，正常早停可直接评价；共享GPU不抢占，不自动租机/升级/续租/关机。两seed按同seed角色配对汇总，B/T_base仅seed17参考，不虚增独立图数；完成后再决策扩大，不追加无界参数扫描。
+
+
+2026-11-10 13:52阶段更新：P0_seed29已62轮validation_plateau早停、最佳第57轮并完成完整GPU dev/cal评价；T_adapted_seed29自动接续。P0火AP0.409241/烟AP0.557496等全部指标已归档，不因其与seed17波动而改参数或选最好seed。配对汇总等待适配组完成；当前无新增失败/中断，不追加额外实验。

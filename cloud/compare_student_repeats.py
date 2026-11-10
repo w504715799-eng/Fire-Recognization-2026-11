@@ -16,6 +16,8 @@ def read_run(seed,role):
     suffix='20261109' if seed==17 else 'seed29_20261110'
     config_path=ROOT/f'configs/train_dfire_{role}_{suffix}.json';config=read_json(config_path)
     if status['run']!=config['run_name']:raise ProjectError('Evaluation belongs to another run')
+    executed=read_json(ROOT/'artifacts/run-records'/(status['run']+'.json'))
+    if executed['config']!=config:raise ProjectError('Configuration changed after the recorded training started')
     if any(r.get('seed')!=seed for r in (metrics,predictions,cal_predictions,config)):raise ProjectError('Mislabeled training seed')
     if any(r.get('training_source')!='dfire' or r.get('target_source')!='dfire' for r in (metrics,predictions,cal_predictions)):raise ProjectError('Mislabeled source dataset')
     if metrics['purpose']!='dev' or predictions['purpose']!='dev' or cal_predictions['purpose']!='cal':raise ProjectError('Mislabeled evaluation partition')

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "run": "dfire_T_adapted_seed29_20261110",
+  "checkpoint_sha256": "3df03c1482ab2940cc586f94da95eef3c0f62fcb2c4860eb696825c3fbd82c41",
+  "device": "cuda",
+  "test_accessed": false,
+  "completed_training_epochs": 23,
+  "training_stop_reason": "user_request",
+  "epoch_count_is_not_a_quality_metric": true,
+  "metrics_sha256": "dc38be95afadd5e260dc5b6606acc5e9e623c82a7f7fc6c6931101e5b9276696",
+  "calibration_sha256": "e0ba7303b67f245d36ccc9013cc6f28d794c22626ca99074e0344be2ea035e77",
+  "seconds": 70.74959296220914
+}

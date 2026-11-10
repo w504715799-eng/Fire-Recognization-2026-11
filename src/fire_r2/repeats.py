@@ -4,6 +4,13 @@ import statistics
 from .common import ProjectError
 
 
+def repeat_evidence_status(records,replication_seed=29):
+    stopped=[{'seed':r['seed'],'role':r['role'],'stop_reason':r['stop_reason'],'actual_epochs':r['actual_epochs']}
+             for r in records if r['seed']==replication_seed and r.get('stop_reason') in ('user_request','time_budget')]
+    return {'replication_status':'cost_stopped_incomplete' if stopped else 'completed_as_planned',
+            'method_effect_conclusion_allowed':not stopped,'cost_stopped_runs':stopped}
+
+
 def summarize_pairs(records,expected_seeds=(17,29)):
     roles=('P_control','T_adapted');indexed={}
     for record in records:
@@ -28,7 +35,7 @@ def summarize_pairs(records,expected_seeds=(17,29)):
             result['methods'][role][key]={'values':values,'mean':statistics.mean(values),'sample_std':statistics.stdev(values) if len(values)>1 else None}
     for key in sorted(keys):
         values=[float(indexed[(s,'T_adapted')]['metrics'][key])-float(indexed[(s,'P_control')]['metrics'][key]) for s in expected_seeds]
-        lower=key in ('negative_trigger_rate','fp_per_image','false_positive_boxes') or key.startswith(('FP_at_dev_recall_','alerts_at_dev_recall_'))
+        lower=key in ('negative_trigger_rate','smoke_only_trigger_rate','background_trigger_rate','fp_per_image','false_positive_boxes') or key.startswith(('FP_at_dev_recall_','alerts_at_dev_recall_'))
         favorable=[(-v if lower else v)>0 for v in values]
         result['paired_deltas'][key]={'values':values,'mean':statistics.mean(values),
             'sample_std':statistics.stdev(values) if len(values)>1 else None,

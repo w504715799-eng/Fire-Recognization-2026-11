@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "regions_crop_checked": 510,
+  "option_checks": [
+    {
+      "choices": [
+        "fire",
+        "smoke",
+        "both",
+        "light",
+        "background",
+        "uncertain"
+      ],
+      "token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "choices": [
+        "uncertain",
+        "background",
+        "light",
+        "both",
+        "smoke",
+        "fire"
+      ],
+      "token_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    }
+  ],
+  "input_tokens": 525,
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "seconds": 25.26139596197754
+}

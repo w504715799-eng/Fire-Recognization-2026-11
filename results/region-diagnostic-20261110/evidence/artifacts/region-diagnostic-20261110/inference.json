@@ -1,0 +1,1560 @@
+{
+  "status": "completed",
+  "teacher": {
+    "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "teacher_variant": "adapted",
+    "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
+  },
+  "model_training": false,
+  "regions_sha256": "978cc7c75f73d2c87811b09bf79700f201b4986b7a22f74c06404ecc97b7f07d",
+  "started_at": "2026-11-10T06:55:08.613498+00:00",
+  "completed_queries": 1530,
+  "max_seconds": 1200,
+  "batches": [
+    {
+      "queries": 4,
+      "seconds": 1.8528540041297674
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5656147496774793
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5576363024301827
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5625552227720618
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5470602968707681
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5637688357383013
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5575300413183868
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5594093548133969
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5674708932638168
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5705643449909985
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5613461961038411
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5766686196438968
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5677656270563602
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5844209059141576
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5624959161505103
+    },
+    {
+      "queries": 4,
+      "seconds": 0.565636576153338
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5620512310415506
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5717270188033581
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5909990277141333
+    },
+    {
+      "queries": 4,
+      "seconds": 0.563974937889725
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5613649622537196
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5692531419917941
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5682738530449569
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5618063709698617
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5638224291615188
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5624321410432458
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5735632800497115
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5809922059997916
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5805834112688899
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5806661592796445
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5760561097413301
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5650623091496527
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5562773761339486
+    },
+    {
+      "queries": 4,
+      "seconds": 0.573991262819618
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5574018419720232
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5554769011214375
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5651799938641489
+    },
+    {
+      "queries": 4,
+      "seconds": 0.580432150978595
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5703567108139396
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5682885330170393
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5762689388357103
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5833948641084135
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5641430011019111
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5765130259096622
+    },
+    {
+      "queries": 4,
+      "seconds": 0.583649842068553
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5758496900089085
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5702888630330563
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5766705730929971
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5800318028777838
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5800574896857142
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5779006970115006
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5739853158593178
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5805288581177592
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5688001923263073
+    },
+    {
+      "queries": 4,
+      "seconds": 0.569912884850055
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5839495449326932
+    },
+    {
+      "queries": 4,
+      "seconds": 0.567546437960118
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5917397849261761
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5791980694048107
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5741267860867083
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6052911067381501
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5730531560257077
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5962810372002423
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5877892239950597
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5775863379240036
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5627778880298138
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5751082012429833
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5712394039146602
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5686809360049665
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5681561129167676
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5757377212867141
+    },
+    {
+      "queries": 4,
+      "seconds": 0.571111508179456
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5840903259813786
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5729627958498895
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5673688631504774
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5679288529790938
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5713193430565298
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5627399878576398
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5975090940482914
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5723256268538535
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5783564341254532
+    },
+    {
+      "queries": 4,
+      "seconds": 0.572958349250257
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5768447532318532
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6011876757256687
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5709525318816304
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5758147691376507
+    },
+    {
+      "queries": 4,
+      "seconds": 0.570576686412096
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5822727382183075
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5845412272028625
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5933791636489332
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5825698343105614
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5860050371848047
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5748764155432582
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5641047060489655
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5743287461809814
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5982071897014976
+    },
+    {
+      "queries": 4,
+      "seconds": 0.584744615945965
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5790194580331445
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5862167989835143
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5745969680137932
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5753026260063052
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5770940710790455
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5685393209569156
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5822810670360923
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5841184998862445
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6119842231273651
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6084537249989808
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6130881537683308
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6141412472352386
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5865031909197569
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5892889127135277
+    },
+    {
+      "queries": 4,
+      "seconds": 0.615380538161844
+    },
+    {
+      "queries": 4,
+      "seconds": 0.64688008883968
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6038975804112852
+    },
+    {
+      "queries": 4,
+      "seconds": 0.611632885877043
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6059634862467647
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5996635030023754
+    },
+    {
+      "queries": 4,
+      "seconds": 0.7518252967856824
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5644099451601505
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6095254388637841
+    },
+    {
+      "queries": 4,
+      "seconds": 0.579920856282115
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5977641651406884
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6052103140391409
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5783111630007625
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5960401012562215
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5797912920825183
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5994385690428317
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5894053089432418
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5804854966700077
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5787453278899193
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5636142641305923
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5764374420978129
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5788476937450469
+    },
+    {
+      "queries": 4,
+      "seconds": 0.566847519017756
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5714441002346575
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5789389060810208
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5776338479481637
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5818178122863173
+    },
+    {
+      "queries": 4,
+      "seconds": 0.578156924340874
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5740119563415647
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5992003330029547
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5780093539506197
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5701838699169457
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5639254497364163
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5785657810047269
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5887056440114975
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5734104830771685
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5688173142261803
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5694003398530185
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5795393511652946
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5675517469644547
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5725152320228517
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5704387770965695
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5776250078342855
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5772995296865702
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5822584601119161
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5874469969421625
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5992725887335837
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5714669246226549
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5781983151100576
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5852343309670687
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5718945530243218
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5696086408570409
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5805748570710421
+    },
+    {
+      "queries": 4,
+      "seconds": 0.566534515004605
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5870554689317942
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5789811359718442
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5748855918645859
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5852090488187969
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5748407067731023
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5817448440939188
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5745930750854313
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6020900597795844
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5766379009000957
+    },
+    {
+      "queries": 4,
+      "seconds": 0.577092498075217
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5710606039501727
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5792296081781387
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5999780669808388
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5886397762224078
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5813425057567656
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5722691561095417
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5816216049715877
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5686675612814724
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5844630631618202
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5821356032975018
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5901762503199279
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5838898993097246
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5766815915703773
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5817646528594196
+    },
+    {
+      "queries": 4,
+      "seconds": 0.589541494846344
+    },
+    {
+      "queries": 4,
+      "seconds": 0.592823700979352
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5688162301667035
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5802505123429
+    },
+    {
+      "queries": 4,
+      "seconds": 0.579525604378432
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5691245999187231
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5738952360115945
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5813289759680629
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5752062019892037
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5800320380367339
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5775635899044573
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5864532068371773
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5810689488425851
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5669054458849132
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5767482332885265
+    },
+    {
+      "queries": 4,
+      "seconds": 0.574561944231391
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5794539931230247
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5785491182468832
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5893392232246697
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5708587500266731
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5705029219388962
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5940117603167892
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5869935881346464
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5831522434018552
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5853903070092201
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5816332409158349
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5855871709063649
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5978686353191733
+    },
+    {
+      "queries": 4,
+      "seconds": 0.581238844897598
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5937215117737651
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5767344860360026
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5714768320322037
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5723170372657478
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5824600961059332
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5917409383691847
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5850019231438637
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5917270062491298
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6055844300426543
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5847590630874038
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5846292297355831
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5841238270513713
+    },
+    {
+      "queries": 4,
+      "seconds": 0.588737390935421
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6003099419176579
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6008656793273985
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5986671838909388
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6005716840736568
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6140804099850357
+    },
+    {
+      "queries": 4,
+      "seconds": 0.605412547942251
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5924463020637631
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5908925998955965
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6292423410341144
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6435632626526058
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6096647651866078
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6041088360361755
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6051808218471706
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5634990483522415
+    },
+    {
+      "queries": 4,
+      "seconds": 0.739281945861876
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5962468362413347
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5942669599317014
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5853951638564467
+    },
+    {
+      "queries": 4,
+      "seconds": 0.600794767960906
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5889027300290763
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5750280930660665
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6082533248700202
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6041219243779778
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6161540397442877
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5750782461836934
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5807644450105727
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5757697247900069
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5814394913613796
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5744622331112623
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5799608649685979
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5769365457817912
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5857693520374596
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5968973292037845
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5964086279273033
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5827142968773842
+    },
+    {
+      "queries": 4,
+      "seconds": 0.592838370706886
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5960434498265386
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6086840559728444
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5833923071622849
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5804836340248585
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5761019131168723
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5944789689965546
+    },
+    {
+      "queries": 4,
+      "seconds": 0.604790432844311
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5786856361664832
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5832943879067898
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5841810628771782
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5871766749769449
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5748635702766478
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5746190370991826
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5844698250293732
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5841169380582869
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5876775560900569
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5917727015912533
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6000356837175786
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5972230471670628
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5852325828745961
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5770291481167078
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5907968292012811
+    },
+    {
+      "queries": 4,
+      "seconds": 0.576386182103306
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5764782899059355
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5781361600384116
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5981440390460193
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5785481058992445
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5828279741108418
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5919794836081564
+    },
+    {
+      "queries": 4,
+      "seconds": 0.592706672847271
+    },
+    {
+      "queries": 4,
+      "seconds": 0.594744763802737
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5878461059182882
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6004102169536054
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5849720323458314
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5849808100610971
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5975603652186692
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5851558102294803
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5938098081387579
+    },
+    {
+      "queries": 4,
+      "seconds": 0.603040284011513
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5877259192056954
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5985754518769681
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5858418922871351
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5772656071931124
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5989169827662408
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5821314849890769
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5939486590214074
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5838003889657557
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5815575029700994
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5861326190643013
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5965842232108116
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5988782136701047
+    },
+    {
+      "queries": 4,
+      "seconds": 0.608931568916887
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5856017298065126
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5727841453626752
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5815064590424299
+    },
+    {
+      "queries": 4,
+      "seconds": 0.577874124981463
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5801701359450817
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5755983851850033
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5837175571359694
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5728930002078414
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5927093038335443
+    },
+    {
+      "queries": 4,
+      "seconds": 0.595811084844172
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5733040999621153
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5838024630211294
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5870082159526646
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5669311280362308
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6079147751443088
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5812188987620175
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5844198269769549
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5752654438838363
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5804649828933179
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5947898589074612
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5797453080303967
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5844883862882853
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5793338380753994
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5927429376170039
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5883212112821639
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6157884858548641
+    },
+    {
+      "queries": 4,
+      "seconds": 0.586153179872781
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5815541329793632
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5950400801375508
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5735430512577295
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5800686478614807
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5882074129767716
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5917544201947749
+    },
+    {
+      "queries": 4,
+      "seconds": 0.586378229316324
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5961208790540695
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5791159523651004
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5810401807539165
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5841977777890861
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5753429173491895
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5906872609630227
+    },
+    {
+      "queries": 4,
+      "seconds": 0.606980721000582
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6150966403074563
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5997144267894328
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6043700431473553
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6293877111747861
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5888535366393626
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6022428660653532
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6236005048267543
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6363951889798045
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6098880032077432
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6158121838234365
+    },
+    {
+      "queries": 4,
+      "seconds": 0.584615089930594
+    },
+    {
+      "queries": 4,
+      "seconds": 0.596566607709974
+    },
+    {
+      "queries": 4,
+      "seconds": 0.7298534912988544
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5706905340775847
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6106309690512717
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5865465402603149
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5914545846171677
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6018646890297532
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5740656019188464
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5915803341194987
+    },
+    {
+      "queries": 4,
+      "seconds": 0.5876386500895023
+    },
+    {
+      "queries": 4,
+      "seconds": 0.6214564559049904
+    },
+    {
+      "queries": 2,
+      "seconds": 0.3169474150054157
+    }
+  ],
+  "identity": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "vocab_size": 151936,
+    "image_token_id": 151655,
+    "tokenizer_sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+  },
+  "load_seconds": 44.19851845595986,
+  "peak_gpu_bytes": 4665911296,
+  "scores_sha256": "609a70d5e495e85ffae867d94c13c3363bf3706a50141790122f25ccab0f6481",
+  "seconds": 271.54518173169345
+}

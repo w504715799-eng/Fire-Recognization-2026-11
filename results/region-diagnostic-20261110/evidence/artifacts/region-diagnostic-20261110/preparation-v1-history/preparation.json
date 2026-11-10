@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "regions": 518,
+  "queries": 1554,
+  "regions_sha256": "0b305ed01e2551fadf3eef34f328459df4aefc38480f45a94438cb4882c7d874",
+  "P0_predictions_sha256": "f529c5f918d00e9b9cf1b786f0d5fb7b09a3ef51437cd2ffbf9e655d6d4a734b",
+  "source_manifests_sha256": {
+    "artifacts/data/dfire-kaggle-21527-sha65d81b60/manifest.jsonl": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+    "artifacts/data/homefire-v1/manifest.jsonl": "4d64de97551b15097f091fd63aec71602f6700b1447427cfa9ccd522852c15fd",
+    "artifacts/data/fasdd-cv-v9/manifest.jsonl": "f24fd8a86afe08664dacf329ad1b4606caab6c2abb4a8236f2ef426d18c1d08d"
+  },
+  "selection_counts": {
+    "background_0": {
+      "available": 495,
+      "selected": 32
+    },
+    "background_1": {
+      "available": 157,
+      "selected": 32
+    },
+    "cross_class_0": {
+      "available": 10,
+      "selected": 9
+    },
+    "cross_class_1": {
+      "available": 12,
+      "selected": 10
+    },
+    "duplicate_0": {
+      "available": 198,
+      "selected": 26
+    },
+    "duplicate_1": {
+      "available": 132,
+      "selected": 25
+    },
+    "localization_0": {
+      "available": 511,
+      "selected": 32
+    },
+    "localization_1": {
+      "available": 261,
+      "selected": 32
+    },
+    "tp_0": {
+      "available": 845,
+      "selected": 32
+    },
+    "tp_1": {
+      "available": 783,
+      "selected": 32
+    }
+  },
+  "extra_sources": {
+    "artifacts/data/homefire-v1/manifest.jsonl": {
+      "selected": 48,
+      "role": "fit",
+      "P0_predictions_available": false
+    },
+    "artifacts/data/fasdd-cv-v9/manifest.jsonl": {
+      "selected": 48,
+      "role": "fit",
+      "P0_predictions_available": false
+    }
+  },
+  "unqueryable_records": [],
+  "seconds": 46.83647495787591,
+  "annotation_changes": false,
+  "source_images_deleted": false,
+  "sample_design": "fixed hash per error/class/confidence bin; diagnostic prevalence is not population prevalence",
+  "occlusion_limitation": "No original occlusion labels; small640 is measured, occlusion is not invented",
+  "no_training_data_output": true
+}

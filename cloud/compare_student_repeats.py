@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,csv,json,sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from fire_r2.common import ProjectError,read_json,write_json,sha256,output_path
-from fire_r2.repeats import summarize_pairs
+from fire_r2.repeats import summarize_pairs,repeat_evidence_status
 
 
 def read_run(seed,role):
@@ -46,6 +46,8 @@ def read_run(seed,role):
             'fire_precision':point['precision'],'fire_recall':point['recall'],
             'fire_F1':2*point['tp']/(2*point['tp']+point['fp']+point['fn']),
             'negative_trigger_rate':point['negative_trigger_rate'],'fp_per_image':point['fp_per_image'],
+            'smoke_only_trigger_rate':metrics['groups']['smoke_only']['fire_at_source_cal_threshold']['negative_trigger_rate'],
+            'background_trigger_rate':metrics['groups']['empty']['fire_at_source_cal_threshold']['negative_trigger_rate'],
             'false_positive_boxes':point['fp'],'pure_fire_recall':pure['recall'],
             'pure_fire_AP50_95':metrics['groups']['fire_only']['AP']['classes']['fire']['AP50_95'],
             'coexistence_fire_AP50_95':metrics['groups']['both']['AP']['classes']['fire']['AP50_95']}
@@ -76,16 +78,23 @@ def main():
     common=set.intersection(*(set(r['metrics']) for r in runs))
     unattained=[{'seed':r['seed'],'role':r['role'],'target':target} for r in runs for target,point in r['recall_grid'].items() if point is None]
     summary=summarize_pairs([{**r,'metrics':{k:v for k,v in r['metrics'].items() if k in common}} for r in runs])
+    evidence=repeat_evidence_status(runs);cost_stopped=evidence['cost_stopped_runs'];eligible=evidence['method_effect_conclusion_allowed']
+    summary['eligible_for_replication_effect_claim']=eligible
+    if not eligible:
+        summary['interpretation']='Arithmetic audit only: seed29 includes a user/cost-stopped intermediate model. These means, standard deviations and paired deltas do not establish a completed convergence replication or method failure.'
     historical=read_json(ROOT/'artifacts/student-transfer-complete-20261110/full-analysis.json')['student_analysis']['models']
-    result={'status':'completed','scope':'Two prespecified paired training seeds; original D-Fire dev/cal only; final test untouched',
+    result={'status':'completed','scope':'Complete evaluation of available checkpoints; original D-Fire dev/cal only; final test untouched',
+            'replication_status':'completed_as_planned' if eligible else 'cost_stopped_incomplete',
+            'method_effect_conclusion_allowed':eligible,'cost_stopped_runs':cost_stopped,
             'runs':runs,'summary':summary,'unattained_recall_grid':unattained,'seed17_nonreplicated_reference_only':{name:historical[name] for name in ('B_reference','T_base')},
             'notes':['B and T_base have no seed29 run and are not included in two-seed means.',
                      'Same dev images recur across seeds; do not claim twice as many independent evaluation images.',
-                     'Seed17 P0 was user-stopped and adapted training resumed after interruption; seed29 uses a common stopping policy.',
+                     'Seed17 P0 was user-stopped and adapted training resumed after interruption. Seed29 started with a common policy; actual stop reasons, including later user cost stops, take precedence.',
+                     'A complete evaluation does not imply convergence. If replication_status is cost_stopped_incomplete, retain all numbers for audit and do not use two-seed means to judge method efficacy or failure.',
                      'Recall grids describe dev curves; source-cal F1 thresholds remain the deployed evaluation operating points.',
                      'Unattained recall points remain explicit; their undefined FP counts are not averaged. Direction counts are not practical/significance gates.',
                      'Training length/cost are recorded, not quality criteria; no automatic expansion or parameter sweep follows this report.']}
-    write_json(out,result);print(json.dumps({'status':'completed','fire_AP50_95':summary['paired_deltas']['fire_AP50_95'],
+    write_json(out,result);print(json.dumps({'status':'completed',**evidence,'arithmetic_audit_only':not eligible,'fire_AP50_95':summary['paired_deltas']['fire_AP50_95'],
                                            'fire_F1':summary['paired_deltas']['fire_F1'],'smoke_AP50_95':summary['paired_deltas']['smoke_AP50_95']}))
 
 

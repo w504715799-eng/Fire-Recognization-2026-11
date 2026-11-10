@@ -9,6 +9,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--comparison',required=True);a=p.parse_args()
     source=output_path(ROOT,a.comparison);data=read_json(source)
     if data['status']!='completed':raise ProjectError('Completed paired comparison required')
+    if not data.get('method_effect_conclusion_allowed',False):raise ProjectError('Cost-stopped intermediate runs must not be plotted as a completed replication-effect comparison')
     out=source.parent;targets=[out/(stem+suffix) for stem in ('paired-deltas','paired-PR-FROC') for suffix in ('.png','.svg')]
     if any(p.exists() for p in targets):raise ProjectError('Preserve prior figures')
     import matplotlib

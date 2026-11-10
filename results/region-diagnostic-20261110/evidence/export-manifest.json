@@ -1,0 +1,213 @@
+{
+  "created_at": "2026-11-10T07:09:13.384236+00:00",
+  "files": [
+    {
+      "source": "artifacts/region-diagnostic-20261110/analysis.json",
+      "export": "artifacts/region-diagnostic-20261110/analysis.json",
+      "source_bytes": 56822,
+      "source_sha256": "a82386e7bbcb1589ec43c4d4230b08690a1cef4139ccccb739be03e770d01ead",
+      "export_bytes": 56822,
+      "export_sha256": "a82386e7bbcb1589ec43c4d4230b08690a1cef4139ccccb739be03e770d01ead"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/completion.json",
+      "export": "artifacts/region-diagnostic-20261110/completion.json",
+      "source_bytes": 1145,
+      "source_sha256": "8e0f7cbf5edad5564248bb37f6af576b91182b952328c96f572d8ec38e1980fd",
+      "export_bytes": 1145,
+      "export_sha256": "8e0f7cbf5edad5564248bb37f6af576b91182b952328c96f572d8ec38e1980fd"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/inference.json",
+      "export": "artifacts/region-diagnostic-20261110/inference.json",
+      "source_bytes": 27422,
+      "source_sha256": "74d9086f4d44ee12c3c2cb07c0e79a8d2b70469886890bd78fe452559907cd17",
+      "export_bytes": 27422,
+      "export_sha256": "74d9086f4d44ee12c3c2cb07c0e79a8d2b70469886890bd78fe452559907cd17"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/native-compatibility/analysis.json",
+      "export": "artifacts/region-diagnostic-20261110/native-compatibility/analysis.json",
+      "source_bytes": 17444,
+      "source_sha256": "d72f247314c67985517e5721a8e3a2145424123515b7d287db095eadc827db61",
+      "export_bytes": 17444,
+      "export_sha256": "d72f247314c67985517e5721a8e3a2145424123515b7d287db095eadc827db61"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/native-compatibility/paired-uncertainty.json",
+      "export": "artifacts/region-diagnostic-20261110/native-compatibility/paired-uncertainty.json",
+      "source_bytes": 419,
+      "source_sha256": "dfabb8ed538c8ab5e9363d1f7422d5bcab64eb40cccd18a23d3c0bcf5a4aefe7",
+      "export_bytes": 419,
+      "export_sha256": "dfabb8ed538c8ab5e9363d1f7422d5bcab64eb40cccd18a23d3c0bcf5a4aefe7"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/native-compatibility/report.json",
+      "export": "artifacts/region-diagnostic-20261110/native-compatibility/report.json",
+      "source_bytes": 10509,
+      "source_sha256": "d8e4132fa41893da0b2295e891b3731be6decd7ecf2cd1c45a3f6510c4dea7d6",
+      "export_bytes": 10509,
+      "export_sha256": "d8e4132fa41893da0b2295e891b3731be6decd7ecf2cd1c45a3f6510c4dea7d6"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/native-compatibility/scores.jsonl",
+      "export": "artifacts/region-diagnostic-20261110/native-compatibility/scores.jsonl.gz",
+      "source_bytes": 159387,
+      "source_sha256": "7edc80aa5b3aa5cf01992cb9311ad03dfae4364ec65658efa858192d2811bcbd",
+      "export_bytes": 56055,
+      "export_sha256": "3cce5a5aeda15d234a485d1cc4062d1bafcb4aa9c09010e3ef505dee9ee4a8ef"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/preparation-v1-history/preparation.json",
+      "export": "artifacts/region-diagnostic-20261110/preparation-v1-history/preparation.json",
+      "source_bytes": 2097,
+      "source_sha256": "83d24927332cde6d751e9a7fa7d93f5a58670f6c909229b160119bd07d94b678",
+      "export_bytes": 2097,
+      "export_sha256": "83d24927332cde6d751e9a7fa7d93f5a58670f6c909229b160119bd07d94b678"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/preparation-v1-history/protocol.json",
+      "export": "artifacts/region-diagnostic-20261110/preparation-v1-history/protocol.json",
+      "source_bytes": 2270,
+      "source_sha256": "8edbcbb2f6fe3aa0b1a8258f16246cf7b34ce9b18b688a297b6648d6f8432efb",
+      "export_bytes": 2270,
+      "export_sha256": "8edbcbb2f6fe3aa0b1a8258f16246cf7b34ce9b18b688a297b6648d6f8432efb"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/preparation-v1-history/regions.jsonl",
+      "export": "artifacts/region-diagnostic-20261110/preparation-v1-history/regions.jsonl.gz",
+      "source_bytes": 331796,
+      "source_sha256": "0b305ed01e2551fadf3eef34f328459df4aefc38480f45a94438cb4882c7d874",
+      "export_bytes": 48730,
+      "export_sha256": "0b316cfdd169e64b955c5b9dc3f3381c183cdec4553725bb15abb569b08a88e2"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/preparation.json",
+      "export": "artifacts/region-diagnostic-20261110/preparation.json",
+      "source_bytes": 2097,
+      "source_sha256": "3f59f9c2bbf90bd14ddfb8a3ebaa1bf7df60d881491281abb7fea7f45f5647c0",
+      "export_bytes": 2097,
+      "export_sha256": "3f59f9c2bbf90bd14ddfb8a3ebaa1bf7df60d881491281abb7fea7f45f5647c0"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/processor-preflight.json",
+      "export": "artifacts/region-diagnostic-20261110/processor-preflight.json",
+      "source_bytes": 691,
+      "source_sha256": "a8e3904e1b6895b9265d382c404ee5a300d6a968e8b22b3a0a92f39daf2a185a",
+      "export_bytes": 691,
+      "export_sha256": "a8e3904e1b6895b9265d382c404ee5a300d6a968e8b22b3a0a92f39daf2a185a"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/protocol.json",
+      "export": "artifacts/region-diagnostic-20261110/protocol.json",
+      "source_bytes": 2436,
+      "source_sha256": "5706a05d8750882bff54bbf4eced932971e12e0caa5ea0252f308c89cca34e82",
+      "export_bytes": 2436,
+      "export_sha256": "5706a05d8750882bff54bbf4eced932971e12e0caa5ea0252f308c89cca34e82"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/regions.jsonl",
+      "export": "artifacts/region-diagnostic-20261110/regions.jsonl.gz",
+      "source_bytes": 326406,
+      "source_sha256": "978cc7c75f73d2c87811b09bf79700f201b4986b7a22f74c06404ecc97b7f07d",
+      "export_bytes": 47775,
+      "export_sha256": "6bab269281ecfbfcc6b919ccacc6b638a66e431caf790a316f3b2d07cd63eeaf"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/scores.jsonl",
+      "export": "artifacts/region-diagnostic-20261110/scores.jsonl.gz",
+      "source_bytes": 1005002,
+      "source_sha256": "609a70d5e495e85ffae867d94c13c3363bf3706a50141790122f25ccab0f6481",
+      "export_bytes": 208084,
+      "export_sha256": "01933c6c3b9010ae912f47574de7a9c53d5a8995667a27c36b08b7d4e017405a"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/seed29-safe-stop-receipt.json",
+      "export": "artifacts/region-diagnostic-20261110/seed29-safe-stop-receipt.json",
+      "source_bytes": 1312,
+      "source_sha256": "ab1e0fda980a141aea2b525ce2586f91cf469aee8864f639c770d29aeac9030e",
+      "export_bytes": 1312,
+      "export_sha256": "ab1e0fda980a141aea2b525ce2586f91cf469aee8864f639c770d29aeac9030e"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/seed29-user-stop-request.json",
+      "export": "artifacts/region-diagnostic-20261110/seed29-user-stop-request.json",
+      "source_bytes": 461,
+      "source_sha256": "84d9eb595e6c6fb9a8510896aa4f2a86adb4320dade54764306d714ef8e0d743",
+      "export_bytes": 461,
+      "export_sha256": "84d9eb595e6c6fb9a8510896aa4f2a86adb4320dade54764306d714ef8e0d743"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/student-stop-preserved-artifacts.json",
+      "export": "artifacts/region-diagnostic-20261110/student-stop-preserved-artifacts.json",
+      "source_bytes": 8078,
+      "source_sha256": "b36f10135cf3e495869dda1a077114b47c301803db34eedf80632c2c93a88d8b",
+      "export_bytes": 8078,
+      "export_sha256": "b36f10135cf3e495869dda1a077114b47c301803db34eedf80632c2c93a88d8b"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/view-and-error-summary.json",
+      "export": "artifacts/region-diagnostic-20261110/view-and-error-summary.json",
+      "source_bytes": 22221,
+      "source_sha256": "016d8d4d745f6bfe89c558f420936f4c45d6303bf4a7fc267f789c5bc1ede158",
+      "export_bytes": 22221,
+      "export_sha256": "016d8d4d745f6bfe89c558f420936f4c45d6303bf4a7fc267f789c5bc1ede158"
+    },
+    {
+      "source": "artifacts/region-diagnostic-20261110/wait-status.json",
+      "export": "artifacts/region-diagnostic-20261110/wait-status.json",
+      "source_bytes": 68,
+      "source_sha256": "eb276cf02371b33ce90df210d7af2999e3299e93a6e061dc06192f8b3eb0825c",
+      "export_bytes": 68,
+      "export_sha256": "eb276cf02371b33ce90df210d7af2999e3299e93a6e061dc06192f8b3eb0825c"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-native.log",
+      "export": "logs/region-diagnostic-20261110-native.log",
+      "source_bytes": 63157,
+      "source_sha256": "305cec8e93d663ba67d87d54efcc2706e12a48ec7188df827baf92092f171b8c",
+      "export_bytes": 63157,
+      "export_sha256": "305cec8e93d663ba67d87d54efcc2706e12a48ec7188df827baf92092f171b8c"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-prepare-v2.log",
+      "export": "logs/region-diagnostic-20261110-prepare-v2.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_bytes": 0,
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-prepare.log",
+      "export": "logs/region-diagnostic-20261110-prepare.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_bytes": 0,
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-tests-v2.log",
+      "export": "logs/region-diagnostic-20261110-tests-v2.log",
+      "source_bytes": 101,
+      "source_sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4",
+      "export_bytes": 101,
+      "export_sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-tests.log",
+      "export": "logs/region-diagnostic-20261110-tests.log",
+      "source_bytes": 101,
+      "source_sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4",
+      "export_bytes": 101,
+      "export_sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4"
+    },
+    {
+      "source": "logs/region-diagnostic-20261110-wait-and-infer.log",
+      "export": "logs/region-diagnostic-20261110-wait-and-infer.log.gz",
+      "source_bytes": 199777,
+      "source_sha256": "3ace59317aada6093494511dc232e9231dc6a976ac6e1fd4010a98f75c3dc77d",
+      "export_bytes": 7776,
+      "export_sha256": "9355b296271a12f787b4976e063d62f33ef7e206b48fc758da027e0e4544f030"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "fire": {
+    "replicates": 300,
+    "combined_minus_P0_AUROC_percentile95": [
+      -0.01094276094276092,
+      0.09819121447028417
+    ],
+    "image_clusters": 63,
+    "not_event_independence": true
+  },
+  "smoke": {
+    "replicates": 300,
+    "combined_minus_P0_AUROC_percentile95": [
+      0.00540540540540535,
+      0.13596491228070173
+    ],
+    "image_clusters": 67,
+    "not_event_independence": true
+  }
+}

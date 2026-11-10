@@ -1,0 +1,789 @@
+{
+  "scope": "fixed-region diagnostic, not whole-dataset detector improvement",
+  "view_metrics": {
+    "context1.5|fire": {
+      "P0": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6199324324324325,
+        "retention": {
+          "0.8": {
+            "threshold": 0.18317802250385284,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6756756756756757
+          },
+          "0.9": {
+            "threshold": 0.1286403089761734,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.95": {
+            "threshold": 0.10403002798557281,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 27,
+            "negative_retention": 0.7297297297297297
+          }
+        }
+      },
+      "teacher": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6359797297297297,
+        "retention": {
+          "0.8": {
+            "threshold": 0.12971068173646927,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 24,
+            "negative_retention": 0.6486486486486487
+          },
+          "0.9": {
+            "threshold": 0.019823050126433372,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 32,
+            "negative_retention": 0.8648648648648649
+          },
+          "0.95": {
+            "threshold": 0.00697061384562403,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 36,
+            "negative_retention": 0.972972972972973
+          }
+        }
+      },
+      "combined": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6570945945945946,
+        "retention": {
+          "0.8": {
+            "threshold": 0.13559751596387273,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 24,
+            "negative_retention": 0.6486486486486487
+          },
+          "0.9": {
+            "threshold": 0.09750428017436452,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 28,
+            "negative_retention": 0.7567567567567568
+          },
+          "0.95": {
+            "threshold": 0.04882182934185886,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 34,
+            "negative_retention": 0.918918918918919
+          }
+        }
+      }
+    },
+    "context1.5|smoke": {
+      "P0": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.600328947368421,
+        "retention": {
+          "0.8": {
+            "threshold": 0.16065357625484467,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6578947368421053
+          },
+          "0.9": {
+            "threshold": 0.10278905183076859,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 29,
+            "negative_retention": 0.7631578947368421
+          },
+          "0.95": {
+            "threshold": 0.08567662537097931,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8157894736842105
+          }
+        }
+      },
+      "teacher": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.7738486842105263,
+        "retention": {
+          "0.8": {
+            "threshold": 0.9993790829066711,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 13,
+            "negative_retention": 0.34210526315789475
+          },
+          "0.9": {
+            "threshold": 0.994329763983842,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 20,
+            "negative_retention": 0.5263157894736842
+          },
+          "0.95": {
+            "threshold": 0.9878979735076427,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 25,
+            "negative_retention": 0.6578947368421053
+          }
+        }
+      },
+      "combined": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.6143092105263158,
+        "retention": {
+          "0.8": {
+            "threshold": 0.400791736041805,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 24,
+            "negative_retention": 0.631578947368421
+          },
+          "0.9": {
+            "threshold": 0.3205849555603154,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 28,
+            "negative_retention": 0.7368421052631579
+          },
+          "0.95": {
+            "threshold": 0.2926901277026735,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8157894736842105
+          }
+        }
+      }
+    },
+    "context1.0|fire": {
+      "P0": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6199324324324325,
+        "retention": {
+          "0.8": {
+            "threshold": 0.18317802250385284,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6756756756756757
+          },
+          "0.9": {
+            "threshold": 0.1286403089761734,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.95": {
+            "threshold": 0.10403002798557281,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 27,
+            "negative_retention": 0.7297297297297297
+          }
+        }
+      },
+      "teacher": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6452702702702703,
+        "retention": {
+          "0.8": {
+            "threshold": 0.05290714651346207,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.9": {
+            "threshold": 0.022974513238295913,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 31,
+            "negative_retention": 0.8378378378378378
+          },
+          "0.95": {
+            "threshold": 0.011578904232010245,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 34,
+            "negative_retention": 0.918918918918919
+          }
+        }
+      },
+      "combined": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.674831081081081,
+        "retention": {
+          "0.8": {
+            "threshold": 0.1023262090977998,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6756756756756757
+          },
+          "0.9": {
+            "threshold": 0.08516632984906929,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 28,
+            "negative_retention": 0.7567567567567568
+          },
+          "0.95": {
+            "threshold": 0.04499418819738799,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 33,
+            "negative_retention": 0.8918918918918919
+          }
+        }
+      }
+    },
+    "context1.0|smoke": {
+      "P0": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.600328947368421,
+        "retention": {
+          "0.8": {
+            "threshold": 0.16065357625484467,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6578947368421053
+          },
+          "0.9": {
+            "threshold": 0.10278905183076859,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 29,
+            "negative_retention": 0.7631578947368421
+          },
+          "0.95": {
+            "threshold": 0.08567662537097931,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8157894736842105
+          }
+        }
+      },
+      "teacher": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.7261513157894737,
+        "retention": {
+          "0.8": {
+            "threshold": 0.9926640792400576,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 18,
+            "negative_retention": 0.47368421052631576
+          },
+          "0.9": {
+            "threshold": 0.9729956644587219,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 27,
+            "negative_retention": 0.7105263157894737
+          },
+          "0.95": {
+            "threshold": 0.9610389396548271,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 30,
+            "negative_retention": 0.7894736842105263
+          }
+        }
+      },
+      "combined": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.600328947368421,
+        "retention": {
+          "0.8": {
+            "threshold": 0.4007477240417501,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 24,
+            "negative_retention": 0.631578947368421
+          },
+          "0.9": {
+            "threshold": 0.32055647719482105,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 27,
+            "negative_retention": 0.7105263157894737
+          },
+          "0.95": {
+            "threshold": 0.2926681036735112,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8157894736842105
+          }
+        }
+      }
+    },
+    "context1.5_reversed_options|fire": {
+      "P0": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6199324324324325,
+        "retention": {
+          "0.8": {
+            "threshold": 0.18317802250385284,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6756756756756757
+          },
+          "0.9": {
+            "threshold": 0.1286403089761734,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.95": {
+            "threshold": 0.10403002798557281,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 27,
+            "negative_retention": 0.7297297297297297
+          }
+        }
+      },
+      "teacher": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6790540540540541,
+        "retention": {
+          "0.8": {
+            "threshold": 0.09492260497063398,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.9": {
+            "threshold": 0.0746587049216032,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 26,
+            "negative_retention": 0.7027027027027027
+          },
+          "0.95": {
+            "threshold": 0.0316880801692605,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8378378378378378
+          }
+        }
+      },
+      "combined": {
+        "regions": 69,
+        "positive": 32,
+        "negative": 37,
+        "AUROC": 0.6849662162162162,
+        "retention": {
+          "0.8": {
+            "threshold": 0.1437900844377662,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 24,
+            "negative_retention": 0.6486486486486487
+          },
+          "0.9": {
+            "threshold": 0.11727733155998081,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 24,
+            "negative_retention": 0.6486486486486487
+          },
+          "0.95": {
+            "threshold": 0.08047960889117077,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 32,
+            "negative_retention": 0.8648648648648649
+          }
+        }
+      }
+    },
+    "context1.5_reversed_options|smoke": {
+      "P0": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.600328947368421,
+        "retention": {
+          "0.8": {
+            "threshold": 0.16065357625484467,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 25,
+            "negative_retention": 0.6578947368421053
+          },
+          "0.9": {
+            "threshold": 0.10278905183076859,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 29,
+            "negative_retention": 0.7631578947368421
+          },
+          "0.95": {
+            "threshold": 0.08567662537097931,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 31,
+            "negative_retention": 0.8157894736842105
+          }
+        }
+      },
+      "teacher": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.7162828947368421,
+        "retention": {
+          "0.8": {
+            "threshold": 0.9265577677288093,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 15,
+            "negative_retention": 0.39473684210526316
+          },
+          "0.9": {
+            "threshold": 0.8254202993120998,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 21,
+            "negative_retention": 0.5526315789473685
+          },
+          "0.95": {
+            "threshold": 0.31362447142601013,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 32,
+            "negative_retention": 0.8421052631578947
+          }
+        }
+      },
+      "combined": {
+        "regions": 70,
+        "positive": 32,
+        "negative": 38,
+        "AUROC": 0.6554276315789473,
+        "retention": {
+          "0.8": {
+            "threshold": 0.3660098715569524,
+            "TP_retained": 26,
+            "positive_retention": 0.8125,
+            "FP_retained": 21,
+            "negative_retention": 0.5526315789473685
+          },
+          "0.9": {
+            "threshold": 0.292075661947658,
+            "TP_retained": 29,
+            "positive_retention": 0.90625,
+            "FP_retained": 24,
+            "negative_retention": 0.631578947368421
+          },
+          "0.95": {
+            "threshold": 0.14957529675882028,
+            "TP_retained": 31,
+            "positive_retention": 0.96875,
+            "FP_retained": 33,
+            "negative_retention": 0.868421052631579
+          }
+        }
+      }
+    }
+  },
+  "all_region_groups": {
+    "('dfire', 'prediction_background', 0)": {
+      "regions": 28,
+      "small640": 23,
+      "mean_support": 0.31249509529880015,
+      "support_ge_0.5": 7,
+      "top_choice_counts": {
+        "smoke": 16,
+        "light": 4,
+        "fire": 3,
+        "both": 5
+      }
+    },
+    "('dfire', 'prediction_background', 1)": {
+      "regions": 28,
+      "small640": 12,
+      "mean_support": 0.9674493141101104,
+      "support_ge_0.5": 27,
+      "top_choice_counts": {
+        "smoke": 28
+      }
+    },
+    "('dfire', 'prediction_cross_class', 0)": {
+      "regions": 9,
+      "small640": 1,
+      "mean_support": 0.37868681306918006,
+      "support_ge_0.5": 3,
+      "top_choice_counts": {
+        "both": 3,
+        "smoke": 6
+      }
+    },
+    "('dfire', 'prediction_cross_class', 1)": {
+      "regions": 10,
+      "small640": 0,
+      "mean_support": 0.9293996490297104,
+      "support_ge_0.5": 10,
+      "top_choice_counts": {
+        "smoke": 8,
+        "both": 2
+      }
+    },
+    "('dfire', 'prediction_duplicate', 0)": {
+      "regions": 26,
+      "small640": 8,
+      "mean_support": 0.4627279731346509,
+      "support_ge_0.5": 13,
+      "top_choice_counts": {
+        "smoke": 13,
+        "both": 12,
+        "light": 1
+      }
+    },
+    "('dfire', 'prediction_duplicate', 1)": {
+      "regions": 25,
+      "small640": 2,
+      "mean_support": 0.9962909778482026,
+      "support_ge_0.5": 25,
+      "top_choice_counts": {
+        "smoke": 23,
+        "both": 2
+      }
+    },
+    "('dfire', 'prediction_localization', 0)": {
+      "regions": 32,
+      "small640": 15,
+      "mean_support": 0.4908841380965896,
+      "support_ge_0.5": 16,
+      "top_choice_counts": {
+        "smoke": 15,
+        "both": 16,
+        "light": 1
+      }
+    },
+    "('dfire', 'prediction_localization', 1)": {
+      "regions": 32,
+      "small640": 3,
+      "mean_support": 0.9945424048486302,
+      "support_ge_0.5": 32,
+      "top_choice_counts": {
+        "smoke": 31,
+        "both": 1
+      }
+    },
+    "('dfire', 'prediction_tp', 0)": {
+      "regions": 32,
+      "small640": 18,
+      "mean_support": 0.5126857096256572,
+      "support_ge_0.5": 16,
+      "top_choice_counts": {
+        "smoke": 16,
+        "both": 16
+      }
+    },
+    "('dfire', 'prediction_tp', 1)": {
+      "regions": 32,
+      "small640": 7,
+      "mean_support": 0.9967781359809962,
+      "support_ge_0.5": 32,
+      "top_choice_counts": {
+        "smoke": 30,
+        "both": 2
+      }
+    },
+    "('dfire', 'GT', 0)": {
+      "regions": 64,
+      "small640": 27,
+      "mean_support": 0.5012247439981365,
+      "support_ge_0.5": 31,
+      "top_choice_counts": {
+        "smoke": 29,
+        "both": 31,
+        "light": 3,
+        "fire": 1
+      }
+    },
+    "('dfire', 'GT_missed', 0)": {
+      "regions": 16,
+      "small640": 14,
+      "mean_support": 0.28242449984827545,
+      "support_ge_0.5": 4,
+      "top_choice_counts": {
+        "smoke": 12,
+        "light": 1,
+        "both": 3
+      }
+    },
+    "('dfire', 'GT', 1)": {
+      "regions": 64,
+      "small640": 7,
+      "mean_support": 0.9814456360775381,
+      "support_ge_0.5": 64,
+      "top_choice_counts": {
+        "smoke": 59,
+        "both": 5
+      }
+    },
+    "('dfire', 'GT_missed', 1)": {
+      "regions": 16,
+      "small640": 3,
+      "mean_support": 0.9878814947999217,
+      "support_ge_0.5": 16,
+      "top_choice_counts": {
+        "smoke": 15,
+        "both": 1
+      }
+    },
+    "('homefire', 'external_GT', 0)": {
+      "regions": 16,
+      "small640": 5,
+      "mean_support": 0.8918164002388949,
+      "support_ge_0.5": 15,
+      "top_choice_counts": {
+        "both": 11,
+        "fire": 4,
+        "smoke": 1
+      }
+    },
+    "('homefire', 'external_GT', 1)": {
+      "regions": 16,
+      "small640": 1,
+      "mean_support": 0.994258203523259,
+      "support_ge_0.5": 16,
+      "top_choice_counts": {
+        "smoke": 16
+      }
+    },
+    "('homefire', 'external_empty', None)": {
+      "regions": 16,
+      "small640": 0,
+      "mean_support": 0.33499883915283135,
+      "support_ge_0.5": 3,
+      "top_choice_counts": {
+        "smoke": 12,
+        "light": 3,
+        "background": 1
+      }
+    },
+    "('fasdd_cv', 'external_GT', 0)": {
+      "regions": 16,
+      "small640": 4,
+      "mean_support": 0.3620076881998102,
+      "support_ge_0.5": 6,
+      "top_choice_counts": {
+        "light": 1,
+        "smoke": 10,
+        "fire": 1,
+        "both": 4
+      }
+    },
+    "('fasdd_cv', 'external_GT', 1)": {
+      "regions": 16,
+      "small640": 0,
+      "mean_support": 0.9921310363858282,
+      "support_ge_0.5": 16,
+      "top_choice_counts": {
+        "smoke": 16
+      }
+    },
+    "('fasdd_cv', 'external_empty', None)": {
+      "regions": 16,
+      "small640": 0,
+      "mean_support": 0.4836339531466365,
+      "support_ge_0.5": 8,
+      "top_choice_counts": {
+        "background": 8,
+        "smoke": 7,
+        "light": 1
+      }
+    }
+  },
+  "high_teacher_support_errors": {
+    "context1.5|fire": {
+      "threshold": 0.8,
+      "regions_above_threshold": 18,
+      "false_regions_above_threshold": 5,
+      "diagnostic_prevalence_not_population": true
+    },
+    "context1.5|smoke": {
+      "threshold": 0.8,
+      "regions_above_threshold": 67,
+      "false_regions_above_threshold": 35,
+      "diagnostic_prevalence_not_population": true
+    },
+    "context1.0|fire": {
+      "threshold": 0.8,
+      "regions_above_threshold": 3,
+      "false_regions_above_threshold": 1,
+      "diagnostic_prevalence_not_population": true
+    },
+    "context1.0|smoke": {
+      "threshold": 0.8,
+      "regions_above_threshold": 65,
+      "false_regions_above_threshold": 34,
+      "diagnostic_prevalence_not_population": true
+    },
+    "context1.5_reversed_options|fire": {
+      "threshold": 0.8,
+      "regions_above_threshold": 17,
+      "false_regions_above_threshold": 5,
+      "diagnostic_prevalence_not_population": true
+    },
+    "context1.5_reversed_options|smoke": {
+      "threshold": 0.8,
+      "regions_above_threshold": 50,
+      "false_regions_above_threshold": 21,
+      "diagnostic_prevalence_not_population": true
+    }
+  },
+  "no_model_loaded": true
+}

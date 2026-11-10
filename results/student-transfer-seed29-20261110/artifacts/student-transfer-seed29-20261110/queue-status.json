@@ -1,0 +1,51 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T03:08:27.803520+00:00",
+  "baseline": "dfire_T_base_seed17_20261109",
+  "stages": [
+    {
+      "name": "train_P_control_seed29",
+      "started_at": "2026-11-10T03:08:27.808239+00:00",
+      "log": "logs/student-transfer-train_P_control-seed29-20261110.log",
+      "finished_at": "2026-11-10T05:51:25.014656+00:00",
+      "returncode": 0,
+      "completed_epochs": 62,
+      "stop_reason": "validation_plateau"
+    },
+    {
+      "name": "evaluate_P_control_seed29",
+      "started_at": "2026-11-10T05:51:25.021983+00:00",
+      "log": "logs/student-transfer-evaluate_P_control-seed29-20261110.log",
+      "finished_at": "2026-11-10T05:52:28.766748+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_T_adapted_seed29",
+      "started_at": "2026-11-10T05:52:28.767900+00:00",
+      "log": "logs/student-transfer-train_T_adapted-seed29-20261110.log",
+      "finished_at": "2026-11-10T06:53:35.567351+00:00",
+      "returncode": 0,
+      "completed_epochs": 23,
+      "stop_reason": "user_request"
+    },
+    {
+      "name": "evaluate_T_adapted_seed29",
+      "started_at": "2026-11-10T06:53:35.569338+00:00",
+      "log": "logs/student-transfer-evaluate_T_adapted-seed29-20261110.log",
+      "finished_at": "2026-11-10T06:54:46.632953+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "compare_seed17_seed29",
+      "started_at": "2026-11-10T06:54:46.633690+00:00",
+      "log": "logs/student-transfer-compare-seeds-seed29-20261110.log",
+      "finished_at": "2026-11-10T06:54:48.002158+00:00",
+      "returncode": 0
+    }
+  ],
+  "last_checked_at": "2026-11-10T03:08:27.805403+00:00",
+  "completed_epochs": 65,
+  "gpu_stage_started_at": "2026-11-10T03:08:27.807883+00:00",
+  "finished_at": "2026-11-10T06:54:48.003281+00:00",
+  "server_powered_off": false
+}

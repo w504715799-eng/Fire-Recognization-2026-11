@@ -1,0 +1,9 @@
+{
+  "requested_at": "2026-11-10T06:52:29.953139+00:00",
+  "source": "User explicitly requested safe early termination of current seed29 and switch to prepared region diagnostic; no new training",
+  "run": "dfire_T_adapted_seed29_20261110",
+  "observed_status": "running",
+  "completed_epochs_at_request": 22,
+  "preserve_best_resume_and_logs": true,
+  "completion_interpretation": "user-directed cost stop, not converged replication or implementation failure"
+}

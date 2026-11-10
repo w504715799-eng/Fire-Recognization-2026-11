@@ -1,0 +1,36 @@
+{
+  "status": "safely_stopped",
+  "completed_epochs": 23,
+  "stop_reason": "user_request",
+  "elapsed_seconds": 3659.9118777439,
+  "finished_at": "2026-11-10T06:53:34.233502+00:00",
+  "best_fire_ap": 0.36669702279650024,
+  "weights": [
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/weights/best.pt",
+      "bytes": 20308209,
+      "sha256": "e3c1d0682ed36ae258bb7bff329ed548e0d43e31784b4a9761d4abeb304bd398",
+      "local_downloaded": false
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/weights/best_fire.pt",
+      "bytes": 60262425,
+      "sha256": "3df03c1482ab2940cc586f94da95eef3c0f62fcb2c4860eb696825c3fbd82c41",
+      "local_downloaded": false
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/weights/last.pt",
+      "bytes": 20308209,
+      "sha256": "cd59876fa23463b3cf8784c156f510e96a2f2bb1520fa6af3865052077590821",
+      "local_downloaded": false
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/weights/resume_last.pt",
+      "bytes": 60262809,
+      "sha256": "f8a56ceb3000ffe0454de5c886fbae939d5fc8d31cd66ff7358d52cc1fa44066",
+      "local_downloaded": false
+    }
+  ],
+  "full_logs_preserved": true,
+  "interpretation": "User-requested cost stop before convergence; not a completed convergence replication or method-failure result"
+}

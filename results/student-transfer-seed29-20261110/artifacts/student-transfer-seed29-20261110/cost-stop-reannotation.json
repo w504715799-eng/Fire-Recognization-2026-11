@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "at": "2026-11-10T07:05:28.414120+00:00",
+  "reason": "User-directed cost stop of adapted seed29; evaluations complete but planned convergence replication is incomplete",
+  "old_comparison_sha256": "45c0ba9a7410855b903c4a4249d87ec376fab43f6efd545063e96ba187c8219b",
+  "old_comparison_preserved": "artifacts/student-transfer-seed29-20261110/history/paired-seed-comparison-before-cost-stop-annotation.json",
+  "new_comparison_sha256": "5798bf7e81004895271aac0ca3d003994dca705be072a36b6cd2f6c362acad3e",
+  "all_checkpoint_metrics_and_arithmetic_deltas_unchanged": true,
+  "method_effect_conclusion_allowed": false,
+  "no_model_loaded_or_training_restarted": true
+}

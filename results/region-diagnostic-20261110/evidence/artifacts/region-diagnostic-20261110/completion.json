@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "regions": 510,
+  "six_choice_queries": 1530,
+  "native_region_queries": 510,
+  "native_candidate_sequences": 2040,
+  "teacher_seconds_total": 520.858064731583,
+  "teacher_gpu_hours": 0.14468279575877305,
+  "maximum_peak_gpu_bytes": 5644818432,
+  "seed29_stopped_epochs": 23,
+  "seed29_stopped_training_seconds": 3659.9118777439,
+  "model_training_started": false,
+  "data_or_annotation_edits": false,
+  "new_weights_or_dependencies_downloaded": false,
+  "decision": "Prefer investigating task-compatible region auxiliary supervision over treating these scores as whole-image quality weights; no new training started. Six-choice scoring not suitable for direct weights. Native scoring has limited exploratory incremental ranking signal, high-fire-retention tradeoff retained.",
+  "hourly_price": null,
+  "monetary_cost": "unknown; no price invented",
+  "seed29_P0_training_seconds": 9769.62917258311,
+  "seed29_both_training_seconds": 13429.54105032701,
+  "CPU_preparation_seconds": 7.9062746008858085,
+  "CPU_original_preparation_seconds": 46.83647495787591,
+  "CPU_processor_preflight_seconds": 25.26139596197754
+}

@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "scope": "three already-completed evaluations only; adapted seed29 remains pending",
+  "no_new_model_run": true,
+  "grouped_metrics": [
+    {
+      "seed": 17,
+      "role": "P_control",
+      "smoke_only_trigger_rate": 0.03218390804597701,
+      "background_trigger_rate": 0.0028328611898017
+    },
+    {
+      "seed": 17,
+      "role": "T_adapted",
+      "smoke_only_trigger_rate": 0.022988505747126436,
+      "background_trigger_rate": 0.0028328611898017
+    },
+    {
+      "seed": 29,
+      "role": "P_control",
+      "smoke_only_trigger_rate": 0.041379310344827586,
+      "background_trigger_rate": 0.00141643059490085
+    }
+  ]
+}

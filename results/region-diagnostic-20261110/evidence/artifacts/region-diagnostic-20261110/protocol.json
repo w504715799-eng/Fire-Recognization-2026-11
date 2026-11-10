@@ -1,0 +1,49 @@
+{
+  "output": "artifacts/region-diagnostic-20261110",
+  "P0_predictions": "artifacts/student-transfer-20261109/evaluation/P_control/dev-predictions.json",
+  "P0_checkpoint_sha256": "9aef8685bfb5f38fc21d24a5e5237beb171a32232ab159ba3051cfd9dd7300f8",
+  "dfire_manifest": "artifacts/data/dfire-kaggle-21527-sha65d81b60/manifest.jsonl",
+  "extra_fit_manifests": [
+    "artifacts/data/homefire-v1/manifest.jsonl",
+    "artifacts/data/fasdd-cv-v9/manifest.jsonl"
+  ],
+  "teacher_config": "configs/cache_presence_adapted_20261109.json",
+  "wait_for_queue": "artifacts/student-transfer-seed29-20261110/queue-status.json",
+  "prediction_confidence_floor": 0.05,
+  "background_definition": "No original GT with IoU>=0.1 or intersection/min(region_area,GT_area)>=0.2; partial foreground is localization, not semantic background",
+  "candidate_cap_per_error_class": 32,
+  "dfire_GT_cap_per_class": 64,
+  "dfire_missed_GT_cap_per_class": 16,
+  "extra_fit_GT_cap_per_class": 16,
+  "extra_fit_empty_image_cap": 16,
+  "selection_salt": "region-diagnostic-v1-20261110",
+  "batch_images": 4,
+  "max_gpu_seconds": 1200,
+  "max_wait_hours": 6,
+  "bootstrap_replicates": 300,
+  "views": [
+    "context1.5",
+    "context1.0",
+    "context1.5_reversed_options"
+  ],
+  "choices": [
+    "fire",
+    "smoke",
+    "both",
+    "light",
+    "background",
+    "uncertain"
+  ],
+  "description": {
+    "fire": "visible flames without visible smoke",
+    "smoke": "visible smoke without visible flames",
+    "both": "both visible flames and visible smoke",
+    "light": "artificial light, glare or reflection, without visible flames or smoke",
+    "background": "other background with neither visible flames nor smoke",
+    "uncertain": "insufficient visible evidence to identify the content"
+  },
+  "instruction": "Inspect only the visible content inside the thin white rectangular outline. Ignore the outline itself. Choose the best description of that region. Smoke alone is not a visible flame. Answer with one JSON object containing choice, using exactly one of the option letters. Options: ",
+  "score_interpretation": "Relative next-token probabilities over six fixed options; not calibrated correctness probabilities. Light/background distinction has no independent original GT.",
+  "combination": "sqrt(P0_confidence * teacher_predicted_class_support), no fitted coefficients",
+  "scope": "diagnostic only; no training, relabeling, filtering or test tuning"
+}

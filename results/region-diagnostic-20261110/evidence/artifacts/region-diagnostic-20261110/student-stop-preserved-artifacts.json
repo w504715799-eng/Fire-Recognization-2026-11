@@ -1,0 +1,202 @@
+{
+  "files": [
+    {
+      "path": "artifacts/run-records/dfire_T_adapted_seed29_20261110.json",
+      "bytes": 3894,
+      "sha256": "4735d0825c717b4b7269f4c09481de19cf23368b4c31937be6e25853d49157d5"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/cal-config.json",
+      "bytes": 574,
+      "sha256": "e015698a4e0edca44b3a231bb1aadd655e508eab0b13f2dbc172494196b56ab0"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/cal-predict.log",
+      "bytes": 37039,
+      "sha256": "b117575161dda105f155d0f7ad5c0afdc3facdd3789d9e0c993e42ee2f162bc8"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/cal-predictions.json",
+      "bytes": 10170539,
+      "sha256": "be2e5f8046ae0342efb1f4e35882b14132d9598a6b1f323d6a9e6443f2e077eb"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/cal-predictions.progress.json",
+      "bytes": 87,
+      "sha256": "fef68f8adbcd0c538901f7dcf3eb92a84f012528bb4c6c83902cba54f0f5c32b"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/calibrate.log",
+      "bytes": 146,
+      "sha256": "13b427c01a74867590237239c1d256f2a07d7d0812b82a95c3aa144591c0a4c0"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/calibration.json",
+      "bytes": 762,
+      "sha256": "e0ba7303b67f245d36ccc9013cc6f28d794c22626ca99074e0344be2ea035e77"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-config.json",
+      "bytes": 574,
+      "sha256": "4916bf05e92c868e0ea70e211f86ad824b7c671ab26175aa84ee35105a7ba332"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-metrics.json",
+      "bytes": 5814848,
+      "sha256": "dc38be95afadd5e260dc5b6606acc5e9e623c82a7f7fc6c6931101e5b9276696"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-predict.log",
+      "bytes": 37039,
+      "sha256": "cf2eaa055ca9e4c7ff408b20d327dc02e846be5e0895827792b6be14129aacc8"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-predictions.json",
+      "bytes": 8891674,
+      "sha256": "40b7b3909f4f9991afccf0daf50017a5c5b7bf490162b1ee8862751c42fcb1f1"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-predictions.progress.json",
+      "bytes": 88,
+      "sha256": "1cf991d340eaddc93d6aa0c2e07312e594e1fac54a8453fdffb98040e94827da"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/evaluate.log",
+      "bytes": 146,
+      "sha256": "64530fd0941c9987de002ebfb699889f9fc986a41c98c1131d51f43494a7f8a3"
+    },
+    {
+      "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/status.json",
+      "bytes": 545,
+      "sha256": "eb9e17cdacbeb9b7a303e3370cd3480dbe0a33324cdf218b48bb1fc590ca2b4c"
+    },
+    {
+      "path": "logs/student-transfer-train_T_adapted-seed29-20261110.log",
+      "bytes": 3915417,
+      "sha256": "a2053071d88070b56f599e72a73fc2e0fcacd17f9574279c2f33c449f7a7014a"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0000.json",
+      "bytes": 600,
+      "sha256": "fde6cfc9c2ebd31f48e503c37bf90a1e16b6ac63997a6807e57af583c991e771"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0001.json",
+      "bytes": 602,
+      "sha256": "e5c109dc606f7c172811183ec0af72631319c5c47eb420c605062f3edb2390c4"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0002.json",
+      "bytes": 601,
+      "sha256": "ac4ec8b2b68a4f925b9d3d61f2a9537856d43c737c0c60014fd536f7f1e8f313"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0003.json",
+      "bytes": 598,
+      "sha256": "9007e3e9d0b2f8618c80bf7759278d80b0b05e675706eb6f4bc5afac60bc2a4c"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0004.json",
+      "bytes": 596,
+      "sha256": "9035f7ac55b5fff831ace5a20b78cbf5bd2eef1744bbdb071c5e17decfb59ff2"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0005.json",
+      "bytes": 599,
+      "sha256": "5a0521e341afe1d0732d56e5f65d03643165e09d1f6ffd300cc10d2ecfe939a9"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0006.json",
+      "bytes": 599,
+      "sha256": "d215b629717afbc396db31324b3b31162c0fd970a975afbb1d83138c0032346a"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0007.json",
+      "bytes": 595,
+      "sha256": "b876ccdfa2d9129e78cce6a168ac9f9e78c25c26ddc4244e23a9c7c7eb8cd2b2"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0008.json",
+      "bytes": 598,
+      "sha256": "051ab4cb9b352658fb6c858b06d94391215e8f48614a204cd328771702599841"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0009.json",
+      "bytes": 598,
+      "sha256": "51c86e67a826f4f9ccc6d358efae3861e67c55a80743b43611d6bf3c9dd59221"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0010.json",
+      "bytes": 598,
+      "sha256": "de96cfd749e865d927755c0cb4115649c65359cea5ca4967d840b8b21b6fa6e0"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0011.json",
+      "bytes": 601,
+      "sha256": "bc698f90deb95e33ad026c83f31c44256cc07e5b880d5889d075143b8034de30"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0012.json",
+      "bytes": 599,
+      "sha256": "5958780042dca6276aeb3bc9f9419d97421a21537a71a17d8aee2e2a36b458ed"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0013.json",
+      "bytes": 598,
+      "sha256": "23b53f47344f2984efc310eda26787b31b5aba1959a39ee51b9746db74c0b8ad"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0014.json",
+      "bytes": 599,
+      "sha256": "e6fb4e90c49615a0576bda9f1416ab48dc7315518ab5678f2aa5a537597cd165"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0015.json",
+      "bytes": 595,
+      "sha256": "cfc9e9bbfd9a3c50c2a96575b306f69dffe143b3f5ad255f19ca55bea11c7e34"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0016.json",
+      "bytes": 597,
+      "sha256": "b48846e67e9260b99341baf03f5022a10df17c438120b321410316188eb53d3a"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0017.json",
+      "bytes": 599,
+      "sha256": "9484c0986ed92a58463267257d94c3f0ca2eb9c0765ff34c7450506db67326a0"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0018.json",
+      "bytes": 598,
+      "sha256": "30c9e117779a43898d533998b39595aca9ea85ed3c1a3b7dac957fc407cbb283"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0019.json",
+      "bytes": 599,
+      "sha256": "3558dae88cfff7514d8d5401a3ceb287dfee45b1d25a39ed18454339309887dd"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0020.json",
+      "bytes": 599,
+      "sha256": "9aa80f1cbf2cd51742fc78b0599611efcb0c0c05c9803b8f951ff652cae6b06a"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0021.json",
+      "bytes": 598,
+      "sha256": "47fc274b18684767bf560c0fd9f78dac0caceac5b97e1e989fb72002226b128a"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/original-dev/epoch-0022.json",
+      "bytes": 597,
+      "sha256": "1e27b424667e75d9eb167609f857ddd311d4ba4a7552aaba29f00a395b96b0d5"
+    },
+    {
+      "path": "runs/dfire_T_adapted_seed29_20261110/results.csv",
+      "bytes": 4684,
+      "sha256": "82ffe2d94590298b9f8acfa844a22c44e97a6057c0a5930855cb7f3513ec44a2"
+    }
+  ],
+  "all_preserved_cloud": true,
+  "local_weights_downloaded": false,
+  "no_new_training": true
+}

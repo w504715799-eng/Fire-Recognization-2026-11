@@ -1,0 +1,3067 @@
+{
+  "status": "completed",
+  "scope": "Complete evaluation of available checkpoints; original D-Fire dev/cal only; final test untouched",
+  "replication_status": "cost_stopped_incomplete",
+  "method_effect_conclusion_allowed": false,
+  "cost_stopped_runs": [
+    {
+      "seed": 29,
+      "role": "T_adapted",
+      "stop_reason": "user_request",
+      "actual_epochs": 23
+    }
+  ],
+  "runs": [
+    {
+      "seed": 17,
+      "role": "P_control",
+      "run": "dfire_P_control_seed17_20261109",
+      "checkpoint_sha256": "9aef8685bfb5f38fc21d24a5e5237beb171a32232ab159ba3051cfd9dd7300f8",
+      "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+      "cal_selection_sha256": "f6c4dde1816aa1d246efce63146429e504619c75163059e3f27a73702131aded",
+      "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+      "initial_weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "inference": {
+        "imgsz": 640,
+        "conf_floor": 0.001,
+        "max_det": 300,
+        "iou": 0.7,
+        "half": false
+      },
+      "metrics": {
+        "fire_AP50_95": 0.4124757169319969,
+        "fire_AP50": 0.7617590222370659,
+        "smoke_AP50_95": 0.5496875418285083,
+        "dual_AP50_95": 0.4810816293802526,
+        "small_fire_AP50_95": 0.29385724314822115,
+        "fire_precision": 0.7282157676348547,
+        "fire_recall": 0.7177914110429447,
+        "fire_F1": 0.7229660144181257,
+        "negative_trigger_rate": 0.014022787028921999,
+        "fp_per_image": 0.16914138153647515,
+        "smoke_only_trigger_rate": 0.03218390804597701,
+        "background_trigger_rate": 0.0028328611898017,
+        "false_positive_boxes": 262,
+        "pure_fire_recall": 0.7552447552447552,
+        "pure_fire_AP50_95": 0.4921952619188935,
+        "coexistence_fire_AP50_95": 0.40267106370418154,
+        "FP_at_dev_recall_0.5": 52,
+        "alerts_at_dev_recall_0.5": 6,
+        "FP_at_dev_recall_0.6": 103,
+        "alerts_at_dev_recall_0.6": 10,
+        "FP_at_dev_recall_0.7": 214,
+        "alerts_at_dev_recall_0.7": 15,
+        "FP_at_dev_recall_0.75": 343,
+        "alerts_at_dev_recall_0.75": 22,
+        "FP_at_dev_recall_0.8": 525,
+        "alerts_at_dev_recall_0.8": 28
+      },
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.6189311742782593,
+          "tp": 489,
+          "fp": 52,
+          "precision": 0.9038817005545287,
+          "recall": 0.5,
+          "f1": 0.6438446346280448,
+          "fp_per_image": 0.03357004519044545,
+          "negative_trigger_rate": 0.0052585451358457495
+        },
+        "0.6": {
+          "threshold": 0.5252057909965515,
+          "tp": 587,
+          "fp": 103,
+          "precision": 0.8507246376811595,
+          "recall": 0.6002044989775052,
+          "f1": 0.7038369304556354,
+          "fp_per_image": 0.06649451258876694,
+          "negative_trigger_rate": 0.008764241893076249
+        },
+        "0.7": {
+          "threshold": 0.3781932592391968,
+          "tp": 685,
+          "fp": 214,
+          "precision": 0.7619577308120133,
+          "recall": 0.7004089979550102,
+          "f1": 0.7298881193393714,
+          "fp_per_image": 0.1381536475145255,
+          "negative_trigger_rate": 0.013146362839614373
+        },
+        "0.75": {
+          "threshold": 0.2632177770137787,
+          "tp": 734,
+          "fp": 343,
+          "precision": 0.6815227483751161,
+          "recall": 0.7505112474437627,
+          "f1": 0.7143552311435523,
+          "fp_per_image": 0.22143318269851517,
+          "negative_trigger_rate": 0.019281332164767746
+        },
+        "0.8": {
+          "threshold": 0.15420247614383698,
+          "tp": 783,
+          "fp": 525,
+          "precision": 0.5986238532110092,
+          "recall": 0.8006134969325154,
+          "f1": 0.6850393700787402,
+          "fp_per_image": 0.33892834086507423,
+          "negative_trigger_rate": 0.024539877300613498
+        }
+      },
+      "full_metrics_without_curve": {
+        "schema_version": 1,
+        "images": 1549,
+        "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+        "checkpoint_sha256": "9aef8685bfb5f38fc21d24a5e5237beb171a32232ab159ba3051cfd9dd7300f8",
+        "training_source": "dfire",
+        "target_source": "dfire",
+        "purpose": "dev",
+        "seed": 17,
+        "AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.4124757169319969,
+              "AP50": 0.7617590222370659,
+              "AR100": 0.5616564417177915
+            },
+            "smoke": {
+              "AP50_95": 0.5496875418285083,
+              "AP50": 0.8683880348818432,
+              "AR100": 0.6626728110599078
+            }
+          },
+          "mAP50_95": 0.4810816293802526,
+          "original_gt_preserved": true,
+          "area_protocol": "original author area"
+        },
+        "small640_AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.29385724314822115,
+              "AP50": 0.6502712546426077,
+              "AR100": 0.4658018867924529
+            },
+            "smoke": {
+              "AP50_95": 0.38712663613286163,
+              "AP50": 0.7527411799992977,
+              "AR100": 0.526
+            }
+          },
+          "mAP50_95": 0.34049193964054136,
+          "original_gt_preserved": true,
+          "area_protocol": "bbox area at isotropic 640 canvas"
+        },
+        "groups": {
+          "fire_only": {
+            "images": 76,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.4921952619188935,
+                  "AP50": 0.8003012859041378,
+                  "AR100": 0.6153846153846153
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": 0.4921952619188935,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.33745360374450684,
+              "tp": 108,
+              "fp": 33,
+              "fn": 35,
+              "images": 76,
+              "precision": 0.7659574468085106,
+              "recall": 0.7552447552447552,
+              "fp_per_image": 0.4342105263157895,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "smoke_only": {
+            "images": 435,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": 0.5410402234778846,
+                  "AP50": 0.8768194006947747,
+                  "AR100": 0.6485537190082644
+                }
+              },
+              "mAP50_95": 0.5410402234778846,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.33745360374450684,
+              "tp": 0,
+              "fp": 15,
+              "fn": 0,
+              "images": 435,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.034482758620689655,
+              "original_negative_images": 435,
+              "triggered_negative_images": 14,
+              "negative_trigger_rate": 0.03218390804597701
+            }
+          },
+          "both": {
+            "images": 332,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.40267106370418154,
+                  "AP50": 0.7624656871863984,
+                  "AR100": 0.5524550898203592
+                },
+                "smoke": {
+                  "AP50_95": 0.5918596869349263,
+                  "AP50": 0.8952884671432632,
+                  "AR100": 0.68046875
+                }
+              },
+              "mAP50_95": 0.49726537531955395,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.33745360374450684,
+              "tp": 594,
+              "fp": 212,
+              "fn": 241,
+              "images": 332,
+              "precision": 0.7369727047146402,
+              "recall": 0.7113772455089821,
+              "fp_per_image": 0.6385542168674698,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "empty": {
+            "images": 706,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": null,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.33745360374450684,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "images": 706,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.0028328611898017,
+              "original_negative_images": 706,
+              "triggered_negative_images": 2,
+              "negative_trigger_rate": 0.0028328611898017
+            }
+          },
+          "contains_small_fire": {
+            "images": 217,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.3811127922822584,
+                  "AP50": 0.7444198488273,
+                  "AR100": 0.5286140089418778
+                },
+                "smoke": {
+                  "AP50_95": 0.5852498306119397,
+                  "AP50": 0.8677374991571802,
+                  "AR100": 0.6809090909090909
+                }
+              },
+              "mAP50_95": 0.4831813114470991,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.33745360374450684,
+              "tp": 451,
+              "fp": 152,
+              "fn": 220,
+              "images": 217,
+              "precision": 0.7479270315091211,
+              "recall": 0.6721311475409836,
+              "fp_per_image": 0.7004608294930875,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          }
+        },
+        "fire_at_source_cal_threshold": {
+          "threshold": 0.33745360374450684,
+          "tp": 702,
+          "fp": 262,
+          "fn": 276,
+          "images": 1549,
+          "precision": 0.7282157676348547,
+          "recall": 0.7177914110429447,
+          "fp_per_image": 0.16914138153647515,
+          "original_negative_images": 1141,
+          "triggered_negative_images": 16,
+          "negative_trigger_rate": 0.014022787028921999
+        },
+        "small_fire_definition": "original fire bbox resized isotropically to max-side 640: area < 32^2; group AP includes all GT in selected images",
+        "alarm_interpretation": "Original-label image trigger rate, not field alarms per hour"
+      },
+      "actual_epochs": 71,
+      "best_epoch": 60,
+      "stop_reason": "user_request",
+      "validation_stopping": "historical user-stop run",
+      "CSV_elapsed_segments_seconds": [
+        11155.7
+      ],
+      "CSV_elapsed_sum_seconds": 11155.7,
+      "runtime": {
+        "model_load_seconds": 0.21189881907775998,
+        "prediction_seconds": 21.828177649062127,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291126784,
+        "peak_process_rss_bytes": 1631375360,
+        "deployment_parameters": 9949412
+      },
+      "config_sha256": "72909b41113d518461830302686f2eeba1b246bddba23f9940e662e60ebd419f",
+      "files": {
+        "status.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/P_control/status.json",
+          "sha256": "74e9a97889215a3dd06fdc0e43f7be9f0440e0f3cc59e441fa6dd620b4805e4a"
+        },
+        "dev-metrics.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/P_control/dev-metrics.json",
+          "sha256": "fdb0618e8f5966c5063fa2337f032dac818d6ec899fb3826d5e65c08983fd30e"
+        },
+        "dev-predictions.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/P_control/dev-predictions.json",
+          "sha256": "f529c5f918d00e9b9cf1b786f0d5fb7b09a3ef51437cd2ffbf9e655d6d4a734b"
+        },
+        "cal-predictions.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/P_control/cal-predictions.json",
+          "sha256": "2533db4fc9c4fbcbfdf30bf5fefed023a6fa52c69a4e919af6142e81bbe63160"
+        },
+        "calibration.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/P_control/calibration.json",
+          "sha256": "f06838fdfec183fc8749d61c2f208c862c0613e364e6ddbe7281818d970411ee"
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "role": "T_adapted",
+      "run": "dfire_T_adapted_seed17_20261109",
+      "checkpoint_sha256": "9f9f5c928a85c4003a4ef8f04879608d008e13b0e57e5b3d24dd158d9f592d2c",
+      "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+      "cal_selection_sha256": "f6c4dde1816aa1d246efce63146429e504619c75163059e3f27a73702131aded",
+      "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+      "initial_weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "inference": {
+        "imgsz": 640,
+        "conf_floor": 0.001,
+        "max_det": 300,
+        "iou": 0.7,
+        "half": false
+      },
+      "metrics": {
+        "fire_AP50_95": 0.4132258767476781,
+        "fire_AP50": 0.7603131923503319,
+        "smoke_AP50_95": 0.5409232276866043,
+        "dual_AP50_95": 0.4770745522171412,
+        "small_fire_AP50_95": 0.2949213297956125,
+        "fire_precision": 0.7942925089179548,
+        "fire_recall": 0.6830265848670757,
+        "fire_F1": 0.7344694887300715,
+        "negative_trigger_rate": 0.010517090271691499,
+        "fp_per_image": 0.11168495803744351,
+        "smoke_only_trigger_rate": 0.022988505747126436,
+        "background_trigger_rate": 0.0028328611898017,
+        "false_positive_boxes": 173,
+        "pure_fire_recall": 0.7202797202797203,
+        "pure_fire_AP50_95": 0.48619358500826626,
+        "coexistence_fire_AP50_95": 0.4054453268644098,
+        "FP_at_dev_recall_0.5": 50,
+        "alerts_at_dev_recall_0.5": 5,
+        "FP_at_dev_recall_0.6": 90,
+        "alerts_at_dev_recall_0.6": 8,
+        "FP_at_dev_recall_0.7": 219,
+        "alerts_at_dev_recall_0.7": 13,
+        "FP_at_dev_recall_0.75": 341,
+        "alerts_at_dev_recall_0.75": 19,
+        "FP_at_dev_recall_0.8": 599,
+        "alerts_at_dev_recall_0.8": 27
+      },
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.6378612518310547,
+          "tp": 489,
+          "fp": 50,
+          "precision": 0.9072356215213359,
+          "recall": 0.5,
+          "f1": 0.6446934739617667,
+          "fp_per_image": 0.03227888960619755,
+          "negative_trigger_rate": 0.0043821209465381246
+        },
+        "0.6": {
+          "threshold": 0.5462371706962585,
+          "tp": 587,
+          "fp": 90,
+          "precision": 0.8670605612998523,
+          "recall": 0.6002044989775052,
+          "f1": 0.7093655589123867,
+          "fp_per_image": 0.058102001291155586,
+          "negative_trigger_rate": 0.007011393514460999
+        },
+        "0.7": {
+          "threshold": 0.3682962954044342,
+          "tp": 685,
+          "fp": 219,
+          "precision": 0.7577433628318584,
+          "recall": 0.7004089979550102,
+          "f1": 0.7279489904357067,
+          "fp_per_image": 0.14138153647514526,
+          "negative_trigger_rate": 0.011393514460999123
+        },
+        "0.75": {
+          "threshold": 0.25193920731544495,
+          "tp": 734,
+          "fp": 341,
+          "precision": 0.6827906976744186,
+          "recall": 0.7505112474437627,
+          "f1": 0.7150511446663419,
+          "fp_per_image": 0.22014202711426728,
+          "negative_trigger_rate": 0.016652059596844872
+        },
+        "0.8": {
+          "threshold": 0.13246846199035645,
+          "tp": 783,
+          "fp": 599,
+          "precision": 0.5665701881331404,
+          "recall": 0.8006134969325154,
+          "f1": 0.6635593220338983,
+          "fp_per_image": 0.3867010974822466,
+          "negative_trigger_rate": 0.02366345311130587
+        }
+      },
+      "full_metrics_without_curve": {
+        "schema_version": 1,
+        "images": 1549,
+        "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+        "checkpoint_sha256": "9f9f5c928a85c4003a4ef8f04879608d008e13b0e57e5b3d24dd158d9f592d2c",
+        "training_source": "dfire",
+        "target_source": "dfire",
+        "purpose": "dev",
+        "seed": 17,
+        "AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.4132258767476781,
+              "AP50": 0.7603131923503319,
+              "AR100": 0.5598159509202454
+            },
+            "smoke": {
+              "AP50_95": 0.5409232276866043,
+              "AP50": 0.8511889010269773,
+              "AR100": 0.6485023041474655
+            }
+          },
+          "mAP50_95": 0.4770745522171412,
+          "original_gt_preserved": true,
+          "area_protocol": "original author area"
+        },
+        "small640_AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.2949213297956125,
+              "AP50": 0.6376218908587197,
+              "AR100": 0.45943396226415095
+            },
+            "smoke": {
+              "AP50_95": 0.36430645626564934,
+              "AP50": 0.7336574712822116,
+              "AR100": 0.47400000000000003
+            }
+          },
+          "mAP50_95": 0.32961389303063093,
+          "original_gt_preserved": true,
+          "area_protocol": "bbox area at isotropic 640 canvas"
+        },
+        "groups": {
+          "fire_only": {
+            "images": 76,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.48619358500826626,
+                  "AP50": 0.7826147319007961,
+                  "AR100": 0.6174825174825174
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": 0.48619358500826626,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.4106425642967224,
+              "tp": 103,
+              "fp": 26,
+              "fn": 40,
+              "images": 76,
+              "precision": 0.7984496124031008,
+              "recall": 0.7202797202797203,
+              "fp_per_image": 0.34210526315789475,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "smoke_only": {
+            "images": 435,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": 0.5344648134532342,
+                  "AP50": 0.8695373184204489,
+                  "AR100": 0.6322314049586777
+                }
+              },
+              "mAP50_95": 0.5344648134532342,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.4106425642967224,
+              "tp": 0,
+              "fp": 11,
+              "fn": 0,
+              "images": 435,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.02528735632183908,
+              "original_negative_images": 435,
+              "triggered_negative_images": 10,
+              "negative_trigger_rate": 0.022988505747126436
+            }
+          },
+          "both": {
+            "images": 332,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.4054453268644098,
+                  "AP50": 0.7645844302196403,
+                  "AR100": 0.549940119760479
+                },
+                "smoke": {
+                  "AP50_95": 0.5835219678115763,
+                  "AP50": 0.8692414091861024,
+                  "AR100": 0.6690104166666667
+                }
+              },
+              "mAP50_95": 0.49448364733799305,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.4106425642967224,
+              "tp": 565,
+              "fp": 134,
+              "fn": 270,
+              "images": 332,
+              "precision": 0.8082975679542204,
+              "recall": 0.6766467065868264,
+              "fp_per_image": 0.4036144578313253,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "empty": {
+            "images": 706,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": null,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.4106425642967224,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "images": 706,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.0028328611898017,
+              "original_negative_images": 706,
+              "triggered_negative_images": 2,
+              "negative_trigger_rate": 0.0028328611898017
+            }
+          },
+          "contains_small_fire": {
+            "images": 217,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.37836296273139064,
+                  "AP50": 0.740810947678876,
+                  "AR100": 0.523994038748137
+                },
+                "smoke": {
+                  "AP50_95": 0.5881005755464483,
+                  "AP50": 0.8544394047967583,
+                  "AR100": 0.6759090909090908
+                }
+              },
+              "mAP50_95": 0.4832317691389195,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.4106425642967224,
+              "tp": 423,
+              "fp": 97,
+              "fn": 248,
+              "images": 217,
+              "precision": 0.8134615384615385,
+              "recall": 0.6304023845007451,
+              "fp_per_image": 0.4470046082949309,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          }
+        },
+        "fire_at_source_cal_threshold": {
+          "threshold": 0.4106425642967224,
+          "tp": 668,
+          "fp": 173,
+          "fn": 310,
+          "images": 1549,
+          "precision": 0.7942925089179548,
+          "recall": 0.6830265848670757,
+          "fp_per_image": 0.11168495803744351,
+          "original_negative_images": 1141,
+          "triggered_negative_images": 12,
+          "negative_trigger_rate": 0.010517090271691499
+        },
+        "small_fire_definition": "original fire bbox resized isotropically to max-side 640: area < 32^2; group AP includes all GT in selected images",
+        "alarm_interpretation": "Original-label image trigger rate, not field alarms per hour"
+      },
+      "actual_epochs": 72,
+      "best_epoch": 70,
+      "stop_reason": "validation_plateau",
+      "validation_stopping": {
+        "patience_epochs": 10,
+        "min_delta": 0.001,
+        "metric": "original_fire_dev_AP50_95",
+        "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+      },
+      "CSV_elapsed_segments_seconds": [
+        4198.06,
+        7002.94
+      ],
+      "CSV_elapsed_sum_seconds": 11201.0,
+      "runtime": {
+        "model_load_seconds": 0.2522347164340317,
+        "prediction_seconds": 21.736248023808002,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291126784,
+        "peak_process_rss_bytes": 1643556864,
+        "deployment_parameters": 9949412
+      },
+      "config_sha256": "25424479fd5cf77dfbf03c875338abc97cbc3718796173ce2adaef550bad5960",
+      "files": {
+        "status.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/T_adapted/status.json",
+          "sha256": "e7d8ee66ea3df128aaa094a673342b909081a1dd43ded989364735a395f8b656"
+        },
+        "dev-metrics.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/T_adapted/dev-metrics.json",
+          "sha256": "c84783543e41004cc98d74b1aca207c3038cf758508bcf7d1ac3070a480c20c4"
+        },
+        "dev-predictions.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/T_adapted/dev-predictions.json",
+          "sha256": "0e99d4cd51f4e202c8025e783e7f3325b686d29ed52570d103e5d583c6f8aabe"
+        },
+        "cal-predictions.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/T_adapted/cal-predictions.json",
+          "sha256": "631325d0493b645bc62ed8dc0595b4f366532726ae24f8c44e22aebd1313675b"
+        },
+        "calibration.json": {
+          "path": "artifacts/student-transfer-20261109/evaluation/T_adapted/calibration.json",
+          "sha256": "549cfcccfc910ecb3b768679c2f52de0914a7d802ae75661c84678d1def0fdaf"
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "role": "P_control",
+      "run": "dfire_P_control_seed29_20261110",
+      "checkpoint_sha256": "7d7e6b4c0eba18655479c415716ca7f760c46b41561902b3f10d0ab4cf85632d",
+      "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+      "cal_selection_sha256": "f6c4dde1816aa1d246efce63146429e504619c75163059e3f27a73702131aded",
+      "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+      "initial_weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "inference": {
+        "imgsz": 640,
+        "conf_floor": 0.001,
+        "max_det": 300,
+        "iou": 0.7,
+        "half": false
+      },
+      "metrics": {
+        "fire_AP50_95": 0.40924102727225875,
+        "fire_AP50": 0.756313866168772,
+        "smoke_AP50_95": 0.557495941294827,
+        "dual_AP50_95": 0.4833684842835429,
+        "small_fire_AP50_95": 0.2941156268533467,
+        "fire_precision": 0.7425213675213675,
+        "fire_recall": 0.7106339468302658,
+        "fire_F1": 0.7262277951933125,
+        "negative_trigger_rate": 0.016652059596844872,
+        "fp_per_image": 0.15558424790187217,
+        "smoke_only_trigger_rate": 0.041379310344827586,
+        "background_trigger_rate": 0.00141643059490085,
+        "false_positive_boxes": 241,
+        "pure_fire_recall": 0.7692307692307693,
+        "pure_fire_AP50_95": 0.4879800037974106,
+        "coexistence_fire_AP50_95": 0.4013440434016189,
+        "FP_at_dev_recall_0.5": 51,
+        "alerts_at_dev_recall_0.5": 7,
+        "FP_at_dev_recall_0.6": 97,
+        "alerts_at_dev_recall_0.6": 13,
+        "FP_at_dev_recall_0.7": 229,
+        "alerts_at_dev_recall_0.7": 19,
+        "FP_at_dev_recall_0.75": 335,
+        "alerts_at_dev_recall_0.75": 22,
+        "FP_at_dev_recall_0.8": 591,
+        "alerts_at_dev_recall_0.8": 27
+      },
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.6111035943031311,
+          "tp": 489,
+          "fp": 51,
+          "precision": 0.9055555555555556,
+          "recall": 0.5,
+          "f1": 0.6442687747035574,
+          "fp_per_image": 0.0329244673983215,
+          "negative_trigger_rate": 0.006134969325153374
+        },
+        "0.6": {
+          "threshold": 0.5119582414627075,
+          "tp": 587,
+          "fp": 97,
+          "precision": 0.8581871345029239,
+          "recall": 0.6002044989775052,
+          "f1": 0.7063778580024067,
+          "fp_per_image": 0.06262104583602324,
+          "negative_trigger_rate": 0.011393514460999123
+        },
+        "0.7": {
+          "threshold": 0.3472506105899811,
+          "tp": 685,
+          "fp": 229,
+          "precision": 0.74945295404814,
+          "recall": 0.7004089979550102,
+          "f1": 0.7241014799154334,
+          "fp_per_image": 0.14783731439638476,
+          "negative_trigger_rate": 0.016652059596844872
+        },
+        "0.75": {
+          "threshold": 0.2606617510318756,
+          "tp": 734,
+          "fp": 335,
+          "precision": 0.686623012160898,
+          "recall": 0.7505112474437627,
+          "f1": 0.7171470444553004,
+          "fp_per_image": 0.21626856036152356,
+          "negative_trigger_rate": 0.019281332164767746
+        },
+        "0.8": {
+          "threshold": 0.143193781375885,
+          "tp": 783,
+          "fp": 591,
+          "precision": 0.5698689956331878,
+          "recall": 0.8006134969325154,
+          "f1": 0.6658163265306123,
+          "fp_per_image": 0.381536475145255,
+          "negative_trigger_rate": 0.02366345311130587
+        }
+      },
+      "full_metrics_without_curve": {
+        "schema_version": 1,
+        "images": 1549,
+        "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+        "checkpoint_sha256": "7d7e6b4c0eba18655479c415716ca7f760c46b41561902b3f10d0ab4cf85632d",
+        "training_source": "dfire",
+        "target_source": "dfire",
+        "purpose": "dev",
+        "seed": 29,
+        "AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.40924102727225875,
+              "AP50": 0.756313866168772,
+              "AR100": 0.5621676891615541
+            },
+            "smoke": {
+              "AP50_95": 0.557495941294827,
+              "AP50": 0.8662915835571682,
+              "AR100": 0.668778801843318
+            }
+          },
+          "mAP50_95": 0.4833684842835429,
+          "original_gt_preserved": true,
+          "area_protocol": "original author area"
+        },
+        "small640_AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.2941156268533467,
+              "AP50": 0.6482339954708548,
+              "AR100": 0.46933962264150947
+            },
+            "smoke": {
+              "AP50_95": 0.3812555810198764,
+              "AP50": 0.748169561164607,
+              "AR100": 0.528
+            }
+          },
+          "mAP50_95": 0.3376856039366115,
+          "original_gt_preserved": true,
+          "area_protocol": "bbox area at isotropic 640 canvas"
+        },
+        "groups": {
+          "fire_only": {
+            "images": 76,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.4879800037974106,
+                  "AP50": 0.8145450812537679,
+                  "AR100": 0.6202797202797202
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": 0.4879800037974106,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.32862380146980286,
+              "tp": 110,
+              "fp": 34,
+              "fn": 33,
+              "images": 76,
+              "precision": 0.7638888888888888,
+              "recall": 0.7692307692307693,
+              "fp_per_image": 0.4473684210526316,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "smoke_only": {
+            "images": 435,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": 0.5539179929893235,
+                  "AP50": 0.8805466261695556,
+                  "AR100": 0.6551652892561984
+                }
+              },
+              "mAP50_95": 0.5539179929893235,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.32862380146980286,
+              "tp": 0,
+              "fp": 18,
+              "fn": 0,
+              "images": 435,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.041379310344827586,
+              "original_negative_images": 435,
+              "triggered_negative_images": 18,
+              "negative_trigger_rate": 0.041379310344827586
+            }
+          },
+          "both": {
+            "images": 332,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.4013440434016189,
+                  "AP50": 0.757030681072525,
+                  "AR100": 0.5522155688622754
+                },
+                "smoke": {
+                  "AP50_95": 0.5948776178806023,
+                  "AP50": 0.889001203638265,
+                  "AR100": 0.6859374999999999
+                }
+              },
+              "mAP50_95": 0.4981108306411106,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.32862380146980286,
+              "tp": 585,
+              "fp": 188,
+              "fn": 250,
+              "images": 332,
+              "precision": 0.7567917205692108,
+              "recall": 0.7005988023952096,
+              "fp_per_image": 0.5662650602409639,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "empty": {
+            "images": 706,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": null,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.32862380146980286,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "images": 706,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.00141643059490085,
+              "original_negative_images": 706,
+              "triggered_negative_images": 1,
+              "negative_trigger_rate": 0.00141643059490085
+            }
+          },
+          "contains_small_fire": {
+            "images": 217,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.37418448505091867,
+                  "AP50": 0.7335039586817167,
+                  "AR100": 0.5286140089418778
+                },
+                "smoke": {
+                  "AP50_95": 0.587676799398963,
+                  "AP50": 0.8643938311893682,
+                  "AR100": 0.6809090909090909
+                }
+              },
+              "mAP50_95": 0.48093064222494086,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.32862380146980286,
+              "tp": 445,
+              "fp": 149,
+              "fn": 226,
+              "images": 217,
+              "precision": 0.7491582491582491,
+              "recall": 0.6631892697466468,
+              "fp_per_image": 0.6866359447004609,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          }
+        },
+        "fire_at_source_cal_threshold": {
+          "threshold": 0.32862380146980286,
+          "tp": 695,
+          "fp": 241,
+          "fn": 283,
+          "images": 1549,
+          "precision": 0.7425213675213675,
+          "recall": 0.7106339468302658,
+          "fp_per_image": 0.15558424790187217,
+          "original_negative_images": 1141,
+          "triggered_negative_images": 19,
+          "negative_trigger_rate": 0.016652059596844872
+        },
+        "small_fire_definition": "original fire bbox resized isotropically to max-side 640: area < 32^2; group AP includes all GT in selected images",
+        "alarm_interpretation": "Original-label image trigger rate, not field alarms per hour"
+      },
+      "actual_epochs": 62,
+      "best_epoch": 57,
+      "stop_reason": "validation_plateau",
+      "validation_stopping": {
+        "patience_epochs": 10,
+        "min_delta": 0.001,
+        "metric": "original_fire_dev_AP50_95",
+        "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+      },
+      "CSV_elapsed_segments_seconds": [
+        9736.62
+      ],
+      "CSV_elapsed_sum_seconds": 9736.62,
+      "runtime": {
+        "model_load_seconds": 0.19071066519245505,
+        "prediction_seconds": 22.707182789221406,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291127808,
+        "peak_process_rss_bytes": 1633427456,
+        "deployment_parameters": 9949412
+      },
+      "config_sha256": "996fdefcd2498104e260ba11e18156268881bed1273a3701c438096425f71638",
+      "files": {
+        "status.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/P_control/status.json",
+          "sha256": "3f90764a739ea43d4d9ab7a229d23332d44bbe7445d3a4eb8efe03b3c75d4890"
+        },
+        "dev-metrics.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/P_control/dev-metrics.json",
+          "sha256": "4b29a5a9a745c0c9dd75771923360de55709f236a0fbb925151585f29e848a13"
+        },
+        "dev-predictions.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/P_control/dev-predictions.json",
+          "sha256": "f9741d7323f7ae45470cae5358658daf86b047ca967a9c72a6c540b916fc608f"
+        },
+        "cal-predictions.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/P_control/cal-predictions.json",
+          "sha256": "ae41f1caad0cd06805a0d759b7191c5ec8f91cd4e84d61c621f318c5d4a34204"
+        },
+        "calibration.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/P_control/calibration.json",
+          "sha256": "152d665148bb04c38f8fc53fd15d9262a4bfa506640fdce305612b2c9c5fa3a1"
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "role": "T_adapted",
+      "run": "dfire_T_adapted_seed29_20261110",
+      "checkpoint_sha256": "3df03c1482ab2940cc586f94da95eef3c0f62fcb2c4860eb696825c3fbd82c41",
+      "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+      "cal_selection_sha256": "f6c4dde1816aa1d246efce63146429e504619c75163059e3f27a73702131aded",
+      "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+      "initial_weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "inference": {
+        "imgsz": 640,
+        "conf_floor": 0.001,
+        "max_det": 300,
+        "iou": 0.7,
+        "half": false
+      },
+      "metrics": {
+        "fire_AP50_95": 0.3630301483843382,
+        "fire_AP50": 0.6882013436693158,
+        "smoke_AP50_95": 0.4965170619485319,
+        "dual_AP50_95": 0.42977360516643504,
+        "small_fire_AP50_95": 0.24356753045431476,
+        "fire_precision": 0.6905016008537886,
+        "fire_recall": 0.6615541922290389,
+        "fire_F1": 0.6757180156657964,
+        "negative_trigger_rate": 0.016652059596844872,
+        "fp_per_image": 0.18721755971594578,
+        "smoke_only_trigger_rate": 0.0367816091954023,
+        "background_trigger_rate": 0.00424929178470255,
+        "false_positive_boxes": 290,
+        "pure_fire_recall": 0.7412587412587412,
+        "pure_fire_AP50_95": 0.4508599493649007,
+        "coexistence_fire_AP50_95": 0.35284211967364404,
+        "FP_at_dev_recall_0.5": 112,
+        "alerts_at_dev_recall_0.5": 9,
+        "FP_at_dev_recall_0.6": 212,
+        "alerts_at_dev_recall_0.6": 16,
+        "FP_at_dev_recall_0.7": 371,
+        "alerts_at_dev_recall_0.7": 21,
+        "FP_at_dev_recall_0.75": 669,
+        "alerts_at_dev_recall_0.75": 27,
+        "FP_at_dev_recall_0.8": 1143,
+        "alerts_at_dev_recall_0.8": 35
+      },
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.41326668858528137,
+          "tp": 489,
+          "fp": 112,
+          "precision": 0.8136439267886856,
+          "recall": 0.5,
+          "f1": 0.6193793540215327,
+          "fp_per_image": 0.07230471271788251,
+          "negative_trigger_rate": 0.007887817703768623
+        },
+        "0.6": {
+          "threshold": 0.32610049843788147,
+          "tp": 587,
+          "fp": 212,
+          "precision": 0.7346683354192741,
+          "recall": 0.6002044989775052,
+          "f1": 0.6606640405177265,
+          "fp_per_image": 0.1368624919302776,
+          "negative_trigger_rate": 0.014022787028921999
+        },
+        "0.7": {
+          "threshold": 0.23876523971557617,
+          "tp": 685,
+          "fp": 371,
+          "precision": 0.6486742424242424,
+          "recall": 0.7004089979550102,
+          "f1": 0.6735496558505408,
+          "fp_per_image": 0.2395093608779858,
+          "negative_trigger_rate": 0.018404907975460124
+        },
+        "0.75": {
+          "threshold": 0.16376765072345734,
+          "tp": 734,
+          "fp": 669,
+          "precision": 0.5231646471846044,
+          "recall": 0.7505112474437627,
+          "f1": 0.6165476690466191,
+          "fp_per_image": 0.4318915429309232,
+          "negative_trigger_rate": 0.02366345311130587
+        },
+        "0.8": {
+          "threshold": 0.09925445169210434,
+          "tp": 783,
+          "fp": 1143,
+          "precision": 0.40654205607476634,
+          "recall": 0.8006134969325154,
+          "f1": 0.5392561983471075,
+          "fp_per_image": 0.737895416397676,
+          "negative_trigger_rate": 0.03067484662576687
+        }
+      },
+      "full_metrics_without_curve": {
+        "schema_version": 1,
+        "images": 1549,
+        "selection_sha256": "1889591cead5a5aa57eff15bbb486a46affdc451f339ade214a709e3d635f87b",
+        "checkpoint_sha256": "3df03c1482ab2940cc586f94da95eef3c0f62fcb2c4860eb696825c3fbd82c41",
+        "training_source": "dfire",
+        "target_source": "dfire",
+        "purpose": "dev",
+        "seed": 29,
+        "AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.3630301483843382,
+              "AP50": 0.6882013436693158,
+              "AR100": 0.5570552147239263
+            },
+            "smoke": {
+              "AP50_95": 0.4965170619485319,
+              "AP50": 0.8137025879945882,
+              "AR100": 0.646774193548387
+            }
+          },
+          "mAP50_95": 0.42977360516643504,
+          "original_gt_preserved": true,
+          "area_protocol": "original author area"
+        },
+        "small640_AP": {
+          "backend": "pycocotools.COCOeval bbox",
+          "maxDets": [
+            1,
+            10,
+            100
+          ],
+          "classes": {
+            "fire": {
+              "AP50_95": 0.24356753045431476,
+              "AP50": 0.5556133877199125,
+              "AR100": 0.4408018867924529
+            },
+            "smoke": {
+              "AP50_95": 0.312040888899808,
+              "AP50": 0.6406876018668669,
+              "AR100": 0.503
+            }
+          },
+          "mAP50_95": 0.2778042096770614,
+          "original_gt_preserved": true,
+          "area_protocol": "bbox area at isotropic 640 canvas"
+        },
+        "groups": {
+          "fire_only": {
+            "images": 76,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.4508599493649007,
+                  "AP50": 0.7677287636525612,
+                  "AR100": 0.620979020979021
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": 0.4508599493649007,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.2772420048713684,
+              "tp": 106,
+              "fp": 35,
+              "fn": 37,
+              "images": 76,
+              "precision": 0.75177304964539,
+              "recall": 0.7412587412587412,
+              "fp_per_image": 0.4605263157894737,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "smoke_only": {
+            "images": 435,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": 0.49703163258490657,
+                  "AP50": 0.83186049044815,
+                  "AR100": 0.6429752066115703
+                }
+              },
+              "mAP50_95": 0.49703163258490657,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.2772420048713684,
+              "tp": 0,
+              "fp": 16,
+              "fn": 0,
+              "images": 435,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.0367816091954023,
+              "original_negative_images": 435,
+              "triggered_negative_images": 16,
+              "negative_trigger_rate": 0.0367816091954023
+            }
+          },
+          "both": {
+            "images": 332,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.35284211967364404,
+                  "AP50": 0.6837217370346708,
+                  "AR100": 0.5461077844311377
+                },
+                "smoke": {
+                  "AP50_95": 0.5304492713492727,
+                  "AP50": 0.8438994554164612,
+                  "AR100": 0.6515625
+                }
+              },
+              "mAP50_95": 0.4416456955114584,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.2772420048713684,
+              "tp": 541,
+              "fp": 236,
+              "fn": 294,
+              "images": 332,
+              "precision": 0.6962676962676962,
+              "recall": 0.6479041916167665,
+              "fp_per_image": 0.7108433734939759,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          },
+          "empty": {
+            "images": 706,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                },
+                "smoke": {
+                  "AP50_95": null,
+                  "AP50": null,
+                  "AR100": null
+                }
+              },
+              "mAP50_95": null,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.2772420048713684,
+              "tp": 0,
+              "fp": 3,
+              "fn": 0,
+              "images": 706,
+              "precision": 0.0,
+              "recall": null,
+              "fp_per_image": 0.00424929178470255,
+              "original_negative_images": 706,
+              "triggered_negative_images": 3,
+              "negative_trigger_rate": 0.00424929178470255
+            }
+          },
+          "contains_small_fire": {
+            "images": 217,
+            "AP": {
+              "backend": "pycocotools.COCOeval bbox",
+              "maxDets": [
+                1,
+                10,
+                100
+              ],
+              "classes": {
+                "fire": {
+                  "AP50_95": 0.32970999277215507,
+                  "AP50": 0.6669313239743947,
+                  "AR100": 0.5153502235469449
+                },
+                "smoke": {
+                  "AP50_95": 0.528915389186284,
+                  "AP50": 0.8221762394933387,
+                  "AR100": 0.6504545454545455
+                }
+              },
+              "mAP50_95": 0.42931269097921954,
+              "original_gt_preserved": true,
+              "area_protocol": "original author area"
+            },
+            "fire_at_source_cal_threshold": {
+              "threshold": 0.2772420048713684,
+              "tp": 411,
+              "fp": 166,
+              "fn": 260,
+              "images": 217,
+              "precision": 0.7123050259965338,
+              "recall": 0.6125186289120715,
+              "fp_per_image": 0.7649769585253456,
+              "original_negative_images": 0,
+              "triggered_negative_images": 0,
+              "negative_trigger_rate": null
+            }
+          }
+        },
+        "fire_at_source_cal_threshold": {
+          "threshold": 0.2772420048713684,
+          "tp": 647,
+          "fp": 290,
+          "fn": 331,
+          "images": 1549,
+          "precision": 0.6905016008537886,
+          "recall": 0.6615541922290389,
+          "fp_per_image": 0.18721755971594578,
+          "original_negative_images": 1141,
+          "triggered_negative_images": 19,
+          "negative_trigger_rate": 0.016652059596844872
+        },
+        "small_fire_definition": "original fire bbox resized isotropically to max-side 640: area < 32^2; group AP includes all GT in selected images",
+        "alarm_interpretation": "Original-label image trigger rate, not field alarms per hour"
+      },
+      "actual_epochs": 23,
+      "best_epoch": 21,
+      "stop_reason": "user_request",
+      "validation_stopping": {
+        "patience_epochs": 10,
+        "min_delta": 0.001,
+        "metric": "original_fire_dev_AP50_95",
+        "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+      },
+      "CSV_elapsed_segments_seconds": [
+        3625.73
+      ],
+      "CSV_elapsed_sum_seconds": 3625.73,
+      "runtime": {
+        "model_load_seconds": 0.2093192059546709,
+        "prediction_seconds": 22.765538090839982,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291137536,
+        "peak_process_rss_bytes": 1634062336,
+        "deployment_parameters": 9949412
+      },
+      "config_sha256": "373a45d67517816feacaf5d9b40acfda4b847f350e9dc90154a5572127573510",
+      "files": {
+        "status.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/status.json",
+          "sha256": "eb9e17cdacbeb9b7a303e3370cd3480dbe0a33324cdf218b48bb1fc590ca2b4c"
+        },
+        "dev-metrics.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-metrics.json",
+          "sha256": "dc38be95afadd5e260dc5b6606acc5e9e623c82a7f7fc6c6931101e5b9276696"
+        },
+        "dev-predictions.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/dev-predictions.json",
+          "sha256": "40b7b3909f4f9991afccf0daf50017a5c5b7bf490162b1ee8862751c42fcb1f1"
+        },
+        "cal-predictions.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/cal-predictions.json",
+          "sha256": "be2e5f8046ae0342efb1f4e35882b14132d9598a6b1f323d6a9e6443f2e077eb"
+        },
+        "calibration.json": {
+          "path": "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted/calibration.json",
+          "sha256": "e0ba7303b67f245d36ccc9013cc6f28d794c22626ca99074e0344be2ea035e77"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "seeds": [
+      17,
+      29
+    ],
+    "methods": {
+      "P_control": {
+        "FP_at_dev_recall_0.5": {
+          "values": [
+            52.0,
+            51.0
+          ],
+          "mean": 51.5,
+          "sample_std": 0.7071067811865476
+        },
+        "FP_at_dev_recall_0.6": {
+          "values": [
+            103.0,
+            97.0
+          ],
+          "mean": 100.0,
+          "sample_std": 4.242640687119285
+        },
+        "FP_at_dev_recall_0.7": {
+          "values": [
+            214.0,
+            229.0
+          ],
+          "mean": 221.5,
+          "sample_std": 10.606601717798213
+        },
+        "FP_at_dev_recall_0.75": {
+          "values": [
+            343.0,
+            335.0
+          ],
+          "mean": 339.0,
+          "sample_std": 5.656854249492381
+        },
+        "FP_at_dev_recall_0.8": {
+          "values": [
+            525.0,
+            591.0
+          ],
+          "mean": 558.0,
+          "sample_std": 46.66904755831214
+        },
+        "alerts_at_dev_recall_0.5": {
+          "values": [
+            6.0,
+            7.0
+          ],
+          "mean": 6.5,
+          "sample_std": 0.7071067811865476
+        },
+        "alerts_at_dev_recall_0.6": {
+          "values": [
+            10.0,
+            13.0
+          ],
+          "mean": 11.5,
+          "sample_std": 2.1213203435596424
+        },
+        "alerts_at_dev_recall_0.7": {
+          "values": [
+            15.0,
+            19.0
+          ],
+          "mean": 17.0,
+          "sample_std": 2.8284271247461903
+        },
+        "alerts_at_dev_recall_0.75": {
+          "values": [
+            22.0,
+            22.0
+          ],
+          "mean": 22.0,
+          "sample_std": 0.0
+        },
+        "alerts_at_dev_recall_0.8": {
+          "values": [
+            28.0,
+            27.0
+          ],
+          "mean": 27.5,
+          "sample_std": 0.7071067811865476
+        },
+        "background_trigger_rate": {
+          "values": [
+            0.0028328611898017,
+            0.00141643059490085
+          ],
+          "mean": 0.002124645892351275,
+          "sample_std": 0.0010015676787344867
+        },
+        "coexistence_fire_AP50_95": {
+          "values": [
+            0.40267106370418154,
+            0.4013440434016189
+          ],
+          "mean": 0.4020075535529002,
+          "sample_std": 0.0009383450547142764
+        },
+        "dual_AP50_95": {
+          "values": [
+            0.4810816293802526,
+            0.4833684842835429
+          ],
+          "mean": 0.48222505683189776,
+          "sample_std": 0.0016170506097062639
+        },
+        "false_positive_boxes": {
+          "values": [
+            262.0,
+            241.0
+          ],
+          "mean": 251.5,
+          "sample_std": 14.849242404917497
+        },
+        "fire_AP50": {
+          "values": [
+            0.7617590222370659,
+            0.756313866168772
+          ],
+          "mean": 0.7590364442029189,
+          "sample_std": 0.00385030678050968
+        },
+        "fire_AP50_95": {
+          "values": [
+            0.4124757169319969,
+            0.40924102727225875
+          ],
+          "mean": 0.41085837210212783,
+          "sample_std": 0.002287270993434863
+        },
+        "fire_F1": {
+          "values": [
+            0.7229660144181257,
+            0.7262277951933125
+          ],
+          "mean": 0.724596904805719,
+          "sample_std": 0.002306427304878497
+        },
+        "fire_precision": {
+          "values": [
+            0.7282157676348547,
+            0.7425213675213675
+          ],
+          "mean": 0.7353685675781112,
+          "sample_std": 0.010115586688694712
+        },
+        "fire_recall": {
+          "values": [
+            0.7177914110429447,
+            0.7106339468302658
+          ],
+          "mean": 0.7142126789366052,
+          "sample_std": 0.005061091480885307
+        },
+        "fp_per_image": {
+          "values": [
+            0.16914138153647515,
+            0.15558424790187217
+          ],
+          "mean": 0.16236281471917366,
+          "sample_std": 0.009586341126479993
+        },
+        "negative_trigger_rate": {
+          "values": [
+            0.014022787028921999,
+            0.016652059596844872
+          ],
+          "mean": 0.015337423312883436,
+          "sample_std": 0.0018591764623660315
+        },
+        "pure_fire_AP50_95": {
+          "values": [
+            0.4921952619188935,
+            0.4879800037974106
+          ],
+          "mean": 0.49008763285815204,
+          "sample_std": 0.0029806376021522508
+        },
+        "pure_fire_recall": {
+          "values": [
+            0.7552447552447552,
+            0.7692307692307693
+          ],
+          "mean": 0.7622377622377623,
+          "sample_std": 0.009889605331280443
+        },
+        "small_fire_AP50_95": {
+          "values": [
+            0.29385724314822115,
+            0.2941156268533467
+          ],
+          "mean": 0.2939864350007839,
+          "sample_std": 0.0001827048700423762
+        },
+        "smoke_AP50_95": {
+          "values": [
+            0.5496875418285083,
+            0.557495941294827
+          ],
+          "mean": 0.5535917415616677,
+          "sample_std": 0.005521372212847391
+        },
+        "smoke_only_trigger_rate": {
+          "values": [
+            0.03218390804597701,
+            0.041379310344827586
+          ],
+          "mean": 0.0367816091954023,
+          "sample_std": 0.006502131321255609
+        }
+      },
+      "T_adapted": {
+        "FP_at_dev_recall_0.5": {
+          "values": [
+            50.0,
+            112.0
+          ],
+          "mean": 81.0,
+          "sample_std": 43.840620433565945
+        },
+        "FP_at_dev_recall_0.6": {
+          "values": [
+            90.0,
+            212.0
+          ],
+          "mean": 151.0,
+          "sample_std": 86.2670273047588
+        },
+        "FP_at_dev_recall_0.7": {
+          "values": [
+            219.0,
+            371.0
+          ],
+          "mean": 295.0,
+          "sample_std": 107.48023074035522
+        },
+        "FP_at_dev_recall_0.75": {
+          "values": [
+            341.0,
+            669.0
+          ],
+          "mean": 505.0,
+          "sample_std": 231.93102422918759
+        },
+        "FP_at_dev_recall_0.8": {
+          "values": [
+            599.0,
+            1143.0
+          ],
+          "mean": 871.0,
+          "sample_std": 384.66608896548183
+        },
+        "alerts_at_dev_recall_0.5": {
+          "values": [
+            5.0,
+            9.0
+          ],
+          "mean": 7.0,
+          "sample_std": 2.8284271247461903
+        },
+        "alerts_at_dev_recall_0.6": {
+          "values": [
+            8.0,
+            16.0
+          ],
+          "mean": 12.0,
+          "sample_std": 5.656854249492381
+        },
+        "alerts_at_dev_recall_0.7": {
+          "values": [
+            13.0,
+            21.0
+          ],
+          "mean": 17.0,
+          "sample_std": 5.656854249492381
+        },
+        "alerts_at_dev_recall_0.75": {
+          "values": [
+            19.0,
+            27.0
+          ],
+          "mean": 23.0,
+          "sample_std": 5.656854249492381
+        },
+        "alerts_at_dev_recall_0.8": {
+          "values": [
+            27.0,
+            35.0
+          ],
+          "mean": 31.0,
+          "sample_std": 5.656854249492381
+        },
+        "background_trigger_rate": {
+          "values": [
+            0.0028328611898017,
+            0.00424929178470255
+          ],
+          "mean": 0.0035410764872521247,
+          "sample_std": 0.0010015676787344869
+        },
+        "coexistence_fire_AP50_95": {
+          "values": [
+            0.4054453268644098,
+            0.35284211967364404
+          ],
+          "mean": 0.3791437232690269,
+          "sample_std": 0.03719608451675144
+        },
+        "dual_AP50_95": {
+          "values": [
+            0.4770745522171412,
+            0.42977360516643504
+          ],
+          "mean": 0.45342407869178813,
+          "sample_std": 0.03344682041610014
+        },
+        "false_positive_boxes": {
+          "values": [
+            173.0,
+            290.0
+          ],
+          "mean": 231.5,
+          "sample_std": 82.73149339882606
+        },
+        "fire_AP50": {
+          "values": [
+            0.7603131923503319,
+            0.6882013436693158
+          ],
+          "mean": 0.7242572680098238,
+          "sample_std": 0.05099077720624465
+        },
+        "fire_AP50_95": {
+          "values": [
+            0.4132258767476781,
+            0.3630301483843382
+          ],
+          "mean": 0.38812801256600815,
+          "sample_std": 0.03549373991231553
+        },
+        "fire_F1": {
+          "values": [
+            0.7344694887300715,
+            0.6757180156657964
+          ],
+          "mean": 0.7050937521979339,
+          "sample_std": 0.041543565008447705
+        },
+        "fire_precision": {
+          "values": [
+            0.7942925089179548,
+            0.6905016008537886
+          ],
+          "mean": 0.7423970548858717,
+          "sample_std": 0.07339125491768139
+        },
+        "fire_recall": {
+          "values": [
+            0.6830265848670757,
+            0.6615541922290389
+          ],
+          "mean": 0.6722903885480573,
+          "sample_std": 0.015183274442655919
+        },
+        "fp_per_image": {
+          "values": [
+            0.11168495803744351,
+            0.18721755971594578
+          ],
+          "mean": 0.14945125887669464,
+          "sample_std": 0.05340961484753136
+        },
+        "negative_trigger_rate": {
+          "values": [
+            0.010517090271691499,
+            0.016652059596844872
+          ],
+          "mean": 0.013584574934268186,
+          "sample_std": 0.004338078412187408
+        },
+        "pure_fire_AP50_95": {
+          "values": [
+            0.48619358500826626,
+            0.4508599493649007
+          ],
+          "mean": 0.4685267671865835,
+          "sample_std": 0.024984653367398486
+        },
+        "pure_fire_recall": {
+          "values": [
+            0.7202797202797203,
+            0.7412587412587412
+          ],
+          "mean": 0.7307692307692308,
+          "sample_std": 0.014834407996920547
+        },
+        "small_fire_AP50_95": {
+          "values": [
+            0.2949213297956125,
+            0.24356753045431476
+          ],
+          "mean": 0.26924443012496363,
+          "sample_std": 0.03631261975392487
+        },
+        "smoke_AP50_95": {
+          "values": [
+            0.5409232276866043,
+            0.4965170619485319
+          ],
+          "mean": 0.5187201448175681,
+          "sample_std": 0.03139990091988471
+        },
+        "smoke_only_trigger_rate": {
+          "values": [
+            0.022988505747126436,
+            0.0367816091954023
+          ],
+          "mean": 0.029885057471264367,
+          "sample_std": 0.009753196981883414
+        }
+      }
+    },
+    "paired_deltas": {
+      "FP_at_dev_recall_0.5": {
+        "values": [
+          -2.0,
+          61.0
+        ],
+        "mean": 29.5,
+        "sample_std": 44.54772721475249,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "FP_at_dev_recall_0.6": {
+        "values": [
+          -13.0,
+          115.0
+        ],
+        "mean": 51.0,
+        "sample_std": 90.50966799187809,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "FP_at_dev_recall_0.7": {
+        "values": [
+          5.0,
+          142.0
+        ],
+        "mean": 73.5,
+        "sample_std": 96.87362902255701,
+        "lower_is_better": true,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "FP_at_dev_recall_0.75": {
+        "values": [
+          -2.0,
+          334.0
+        ],
+        "mean": 166.0,
+        "sample_std": 237.58787847867995,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "FP_at_dev_recall_0.8": {
+        "values": [
+          74.0,
+          552.0
+        ],
+        "mean": 313.0,
+        "sample_std": 337.9970414071697,
+        "lower_is_better": true,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "alerts_at_dev_recall_0.5": {
+        "values": [
+          -1.0,
+          2.0
+        ],
+        "mean": 0.5,
+        "sample_std": 2.1213203435596424,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "alerts_at_dev_recall_0.6": {
+        "values": [
+          -2.0,
+          3.0
+        ],
+        "mean": 0.5,
+        "sample_std": 3.5355339059327378,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "alerts_at_dev_recall_0.7": {
+        "values": [
+          -2.0,
+          2.0
+        ],
+        "mean": 0.0,
+        "sample_std": 2.8284271247461903,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "alerts_at_dev_recall_0.75": {
+        "values": [
+          -3.0,
+          5.0
+        ],
+        "mean": 1.0,
+        "sample_std": 5.656854249492381,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "alerts_at_dev_recall_0.8": {
+        "values": [
+          -1.0,
+          8.0
+        ],
+        "mean": 3.5,
+        "sample_std": 6.363961030678928,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "background_trigger_rate": {
+        "values": [
+          0.0,
+          0.0028328611898017003
+        ],
+        "mean": 0.0014164305949008501,
+        "sample_std": 0.0020031353574689738,
+        "lower_is_better": true,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "coexistence_fire_AP50_95": {
+        "values": [
+          0.002774263160228274,
+          -0.04850192372797485
+        ],
+        "mean": -0.022863830283873288,
+        "sample_std": 0.03625773946203716,
+        "lower_is_better": false,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "dual_AP50_95": {
+        "values": [
+          -0.004007077163111439,
+          -0.05359487911710786
+        ],
+        "mean": -0.02880097814010965,
+        "sample_std": 0.0350638710258064,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "false_positive_boxes": {
+        "values": [
+          -89.0,
+          49.0
+        ],
+        "mean": -20.0,
+        "sample_std": 97.58073580374356,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "fire_AP50": {
+        "values": [
+          -0.0014458298867340291,
+          -0.06811252249945621
+        ],
+        "mean": -0.03477917619309512,
+        "sample_std": 0.047140470425734965,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "fire_AP50_95": {
+        "values": [
+          0.0007501598156811617,
+          -0.046210878887920526
+        ],
+        "mean": -0.022730359536119682,
+        "sample_std": 0.03320646891888067,
+        "lower_is_better": false,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "fire_F1": {
+        "values": [
+          0.01150347431194576,
+          -0.05050977952751612
+        ],
+        "mean": -0.01950315260778518,
+        "sample_std": 0.0438499923133262,
+        "lower_is_better": false,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "fire_precision": {
+        "values": [
+          0.06607674128310004,
+          -0.052019766667578904
+        ],
+        "mean": 0.007028487307760567,
+        "sample_std": 0.0835068416063761,
+        "lower_is_better": false,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "fire_recall": {
+        "values": [
+          -0.03476482617586907,
+          -0.04907975460122693
+        ],
+        "mean": -0.041922290388548,
+        "sample_std": 0.010122182961770613,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "fp_per_image": {
+        "values": [
+          -0.05745642349903164,
+          0.03163331181407361
+        ],
+        "mean": -0.012911555842479015,
+        "sample_std": 0.06299595597401135,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "negative_trigger_rate": {
+        "values": [
+          -0.0035056967572304996,
+          0.0
+        ],
+        "mean": -0.0017528483786152498,
+        "sample_std": 0.002478901949821376,
+        "lower_is_better": true,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "pure_fire_AP50_95": {
+        "values": [
+          -0.006001676910627252,
+          -0.037120054432509875
+        ],
+        "mean": -0.021560865671568563,
+        "sample_std": 0.022004015765246236,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "pure_fire_recall": {
+        "values": [
+          -0.03496503496503489,
+          -0.027972027972028024
+        ],
+        "mean": -0.03146853146853146,
+        "sample_std": 0.004944802665640104,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "small_fire_AP50_95": {
+        "values": [
+          0.0010640866473913269,
+          -0.05054809639903193
+        ],
+        "mean": -0.024742004875820303,
+        "sample_std": 0.03649532462396725,
+        "lower_is_better": false,
+        "favorable_seed_count": 1,
+        "favorable_in_every_seed": false
+      },
+      "smoke_AP50_95": {
+        "values": [
+          -0.00876431414190404,
+          -0.060978879346295145
+        ],
+        "mean": -0.03487159674409959,
+        "sample_std": 0.0369212731327321,
+        "lower_is_better": false,
+        "favorable_seed_count": 0,
+        "favorable_in_every_seed": false
+      },
+      "smoke_only_trigger_rate": {
+        "values": [
+          -0.009195402298850575,
+          -0.004597701149425287
+        ],
+        "mean": -0.006896551724137931,
+        "sample_std": 0.0032510656606278047,
+        "lower_is_better": true,
+        "favorable_seed_count": 2,
+        "favorable_in_every_seed": true
+      }
+    },
+    "difference_convention": "T_adapted minus P_control within the same seed",
+    "interpretation": "Arithmetic audit only: seed29 includes a user/cost-stopped intermediate model. These means, standard deviations and paired deltas do not establish a completed convergence replication or method failure.",
+    "eligible_for_replication_effect_claim": false
+  },
+  "unattained_recall_grid": [],
+  "seed17_nonreplicated_reference_only": {
+    "B_reference": {
+      "AP": {
+        "backend": "pycocotools.COCOeval bbox",
+        "maxDets": [
+          1,
+          10,
+          100
+        ],
+        "classes": {
+          "fire": {
+            "AP50_95": 0.4096380332065717,
+            "AP50": 0.7538035323342707,
+            "AR100": 0.5600204498977506
+          },
+          "smoke": {
+            "AP50_95": 0.5498505948570429,
+            "AP50": 0.8604113150471179,
+            "AR100": 0.6579493087557603
+          }
+        },
+        "mAP50_95": 0.4797443140318073,
+        "original_gt_preserved": true,
+        "area_protocol": "original author area"
+      },
+      "small640_AP": {
+        "backend": "pycocotools.COCOeval bbox",
+        "maxDets": [
+          1,
+          10,
+          100
+        ],
+        "classes": {
+          "fire": {
+            "AP50_95": 0.2963041078531394,
+            "AP50": 0.6492107403732967,
+            "AR100": 0.4573113207547171
+          },
+          "smoke": {
+            "AP50_95": 0.37834239727488783,
+            "AP50": 0.7376019077679434,
+            "AR100": 0.522
+          }
+        },
+        "mAP50_95": 0.33732325256401363,
+        "original_gt_preserved": true,
+        "area_protocol": "bbox area at isotropic 640 canvas"
+      },
+      "groups": {
+        "fire_only": {
+          "images": 76,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.48523249149908876,
+                "AP50": 0.7877397167581691,
+                "AR100": 0.6216783216783217
+              },
+              "smoke": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              }
+            },
+            "mAP50_95": 0.48523249149908876,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.35447701811790466,
+            "tp": 104,
+            "fp": 29,
+            "fn": 39,
+            "images": 76,
+            "precision": 0.7819548872180451,
+            "recall": 0.7272727272727273,
+            "fp_per_image": 0.3815789473684211,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        },
+        "smoke_only": {
+          "images": 435,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              },
+              "smoke": {
+                "AP50_95": 0.5424956504238726,
+                "AP50": 0.8705696454870261,
+                "AR100": 0.6421487603305785
+              }
+            },
+            "mAP50_95": 0.5424956504238726,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.35447701811790466,
+            "tp": 0,
+            "fp": 15,
+            "fn": 0,
+            "images": 435,
+            "precision": 0.0,
+            "recall": null,
+            "fp_per_image": 0.034482758620689655,
+            "original_negative_images": 435,
+            "triggered_negative_images": 14,
+            "negative_trigger_rate": 0.03218390804597701
+          }
+        },
+        "both": {
+          "images": 332,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.40121592234881026,
+                "AP50": 0.7572136062675617,
+                "AR100": 0.5494610778443113
+              },
+              "smoke": {
+                "AP50_95": 0.586099271458347,
+                "AP50": 0.8828236000460749,
+                "AR100": 0.6778645833333333
+              }
+            },
+            "mAP50_95": 0.4936575969035786,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.35447701811790466,
+            "tp": 579,
+            "fp": 194,
+            "fn": 256,
+            "images": 332,
+            "precision": 0.7490297542043984,
+            "recall": 0.6934131736526946,
+            "fp_per_image": 0.5843373493975904,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        },
+        "empty": {
+          "images": 706,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              },
+              "smoke": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              }
+            },
+            "mAP50_95": null,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.35447701811790466,
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "images": 706,
+            "precision": 0.0,
+            "recall": null,
+            "fp_per_image": 0.0028328611898017,
+            "original_negative_images": 706,
+            "triggered_negative_images": 2,
+            "negative_trigger_rate": 0.0028328611898017
+          }
+        },
+        "contains_small_fire": {
+          "images": 217,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.3673665571145203,
+                "AP50": 0.7238568552254419,
+                "AR100": 0.5225037257824143
+              },
+              "smoke": {
+                "AP50_95": 0.5940281721793097,
+                "AP50": 0.8721577920177006,
+                "AR100": 0.6845454545454546
+              }
+            },
+            "mAP50_95": 0.48069736464691504,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.35447701811790466,
+            "tp": 432,
+            "fp": 139,
+            "fn": 239,
+            "images": 217,
+            "precision": 0.7565674255691769,
+            "recall": 0.6438152011922503,
+            "fp_per_image": 0.6405529953917051,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        }
+      },
+      "fire_at_source_cal_threshold": {
+        "threshold": 0.35447701811790466,
+        "tp": 683,
+        "fp": 240,
+        "fn": 295,
+        "images": 1549,
+        "precision": 0.7399783315276273,
+        "recall": 0.6983640081799591,
+        "fp_per_image": 0.1549386701097482,
+        "original_negative_images": 1141,
+        "triggered_negative_images": 16,
+        "negative_trigger_rate": 0.014022787028921999
+      },
+      "checkpoint_sha256": "51b6bf1b881d390decc36f921277368eb7dc4d712d3d0d813929d3a74c5f2cbf",
+      "images": 1549,
+      "actual_epochs": 100,
+      "best_epoch": 60,
+      "best_training_dev_fire_AP": 0.41634554438442295,
+      "training_stop_reason": "historical_terminal_run",
+      "CSV_elapsed_segments_seconds": [
+        15181.4
+      ],
+      "CSV_elapsed_sum_seconds": 15181.4,
+      "cost_note": "Sum of completed-epoch elapsed segments; excludes unsaved interrupted work and some setup/final evaluation. Not full billed time.",
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.6113500595092773,
+          "tp": 489,
+          "fp": 58,
+          "precision": 0.8939670932358318,
+          "recall": 0.5,
+          "f1": 0.641311475409836,
+          "fp_per_image": 0.03744351194318916,
+          "negative_trigger_rate": 0.007011393514460999
+        },
+        "0.6": {
+          "threshold": 0.5179230570793152,
+          "tp": 587,
+          "fp": 97,
+          "precision": 0.8581871345029239,
+          "recall": 0.6002044989775052,
+          "f1": 0.7063778580024067,
+          "fp_per_image": 0.06262104583602324,
+          "negative_trigger_rate": 0.009640666082383873
+        },
+        "0.7": {
+          "threshold": 0.350483775138855,
+          "tp": 685,
+          "fp": 241,
+          "precision": 0.7397408207343412,
+          "recall": 0.7004089979550102,
+          "f1": 0.7195378151260504,
+          "fp_per_image": 0.15558424790187217,
+          "negative_trigger_rate": 0.014022787028921999
+        },
+        "0.75": {
+          "threshold": 0.261666476726532,
+          "tp": 734,
+          "fp": 346,
+          "precision": 0.6796296296296296,
+          "recall": 0.7505112474437627,
+          "f1": 0.7133138969873664,
+          "fp_per_image": 0.22336991607488701,
+          "negative_trigger_rate": 0.021034180543382998
+        },
+        "0.8": {
+          "threshold": 0.13529638946056366,
+          "tp": 783,
+          "fp": 628,
+          "precision": 0.554925584691708,
+          "recall": 0.8006134969325154,
+          "f1": 0.6555043951444118,
+          "fp_per_image": 0.4054228534538412,
+          "negative_trigger_rate": 0.024539877300613498
+        }
+      },
+      "prediction_runtime": {
+        "model_load_seconds": 0.21165690990164876,
+        "prediction_seconds": 21.189046342857182,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291127808,
+        "peak_process_rss_bytes": 1624326144,
+        "deployment_parameters": 9949412
+      }
+    },
+    "T_base": {
+      "AP": {
+        "backend": "pycocotools.COCOeval bbox",
+        "maxDets": [
+          1,
+          10,
+          100
+        ],
+        "classes": {
+          "fire": {
+            "AP50_95": 0.4123232175393576,
+            "AP50": 0.7499445218725614,
+            "AR100": 0.5677914110429448
+          },
+          "smoke": {
+            "AP50_95": 0.548997390137276,
+            "AP50": 0.8596762883824918,
+            "AR100": 0.6637096774193548
+          }
+        },
+        "mAP50_95": 0.4806603038383168,
+        "original_gt_preserved": true,
+        "area_protocol": "original author area"
+      },
+      "small640_AP": {
+        "backend": "pycocotools.COCOeval bbox",
+        "maxDets": [
+          1,
+          10,
+          100
+        ],
+        "classes": {
+          "fire": {
+            "AP50_95": 0.2941712266320297,
+            "AP50": 0.6411584727313752,
+            "AR100": 0.4702830188679245
+          },
+          "smoke": {
+            "AP50_95": 0.3811180857728521,
+            "AP50": 0.7656088345782605,
+            "AR100": 0.5079999999999999
+          }
+        },
+        "mAP50_95": 0.3376446562024409,
+        "original_gt_preserved": true,
+        "area_protocol": "bbox area at isotropic 640 canvas"
+      },
+      "groups": {
+        "fire_only": {
+          "images": 76,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.49174778194313457,
+                "AP50": 0.8120028626608974,
+                "AR100": 0.6062937062937063
+              },
+              "smoke": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              }
+            },
+            "mAP50_95": 0.49174778194313457,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.3893069624900818,
+            "tp": 106,
+            "fp": 18,
+            "fn": 37,
+            "images": 76,
+            "precision": 0.8548387096774194,
+            "recall": 0.7412587412587412,
+            "fp_per_image": 0.23684210526315788,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        },
+        "smoke_only": {
+          "images": 435,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              },
+              "smoke": {
+                "AP50_95": 0.546230988378513,
+                "AP50": 0.8711728239119738,
+                "AR100": 0.649793388429752
+              }
+            },
+            "mAP50_95": 0.546230988378513,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.3893069624900818,
+            "tp": 0,
+            "fp": 15,
+            "fn": 0,
+            "images": 435,
+            "precision": 0.0,
+            "recall": null,
+            "fp_per_image": 0.034482758620689655,
+            "original_negative_images": 435,
+            "triggered_negative_images": 14,
+            "negative_trigger_rate": 0.03218390804597701
+          }
+        },
+        "both": {
+          "images": 332,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.4032921282136899,
+                "AP50": 0.7473438263467204,
+                "AR100": 0.5611976047904192
+              },
+              "smoke": {
+                "AP50_95": 0.5849657520982938,
+                "AP50": 0.8858569345372749,
+                "AR100": 0.6812499999999999
+              }
+            },
+            "mAP50_95": 0.49412894015599185,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.3893069624900818,
+            "tp": 543,
+            "fp": 161,
+            "fn": 292,
+            "images": 332,
+            "precision": 0.7713068181818182,
+            "recall": 0.6502994011976048,
+            "fp_per_image": 0.48493975903614456,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        },
+        "empty": {
+          "images": 706,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              },
+              "smoke": {
+                "AP50_95": null,
+                "AP50": null,
+                "AR100": null
+              }
+            },
+            "mAP50_95": null,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.3893069624900818,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "images": 706,
+            "precision": 0.0,
+            "recall": null,
+            "fp_per_image": 0.00141643059490085,
+            "original_negative_images": 706,
+            "triggered_negative_images": 1,
+            "negative_trigger_rate": 0.00141643059490085
+          }
+        },
+        "contains_small_fire": {
+          "images": 217,
+          "AP": {
+            "backend": "pycocotools.COCOeval bbox",
+            "maxDets": [
+              1,
+              10,
+              100
+            ],
+            "classes": {
+              "fire": {
+                "AP50_95": 0.3793931618066247,
+                "AP50": 0.7340769447510873,
+                "AR100": 0.5365126676602086
+              },
+              "smoke": {
+                "AP50_95": 0.5846876347920507,
+                "AP50": 0.8544313418850584,
+                "AR100": 0.6809090909090909
+              }
+            },
+            "mAP50_95": 0.48204039829933765,
+            "original_gt_preserved": true,
+            "area_protocol": "original author area"
+          },
+          "fire_at_source_cal_threshold": {
+            "threshold": 0.3893069624900818,
+            "tp": 409,
+            "fp": 111,
+            "fn": 262,
+            "images": 217,
+            "precision": 0.7865384615384615,
+            "recall": 0.6095380029806259,
+            "fp_per_image": 0.511520737327189,
+            "original_negative_images": 0,
+            "triggered_negative_images": 0,
+            "negative_trigger_rate": null
+          }
+        }
+      },
+      "fire_at_source_cal_threshold": {
+        "threshold": 0.3893069624900818,
+        "tp": 649,
+        "fp": 195,
+        "fn": 329,
+        "images": 1549,
+        "precision": 0.768957345971564,
+        "recall": 0.66359918200409,
+        "fp_per_image": 0.12588766946417043,
+        "original_negative_images": 1141,
+        "triggered_negative_images": 15,
+        "negative_trigger_rate": 0.013146362839614373
+      },
+      "checkpoint_sha256": "344813a0e7550c4e6960abb164243bb011f41405ca3b38e166d9de935438b40f",
+      "images": 1549,
+      "actual_epochs": 65,
+      "best_epoch": 55,
+      "best_training_dev_fire_AP": 0.41608173283350763,
+      "training_stop_reason": "validation_plateau",
+      "CSV_elapsed_segments_seconds": [
+        10066.6
+      ],
+      "CSV_elapsed_sum_seconds": 10066.6,
+      "cost_note": "Sum of completed-epoch elapsed segments; excludes unsaved interrupted work and some setup/final evaluation. Not full billed time.",
+      "recall_grid": {
+        "0.5": {
+          "threshold": 0.5879227519035339,
+          "tp": 489,
+          "fp": 66,
+          "precision": 0.8810810810810811,
+          "recall": 0.5,
+          "f1": 0.6379647749510763,
+          "fp_per_image": 0.04260813428018076,
+          "negative_trigger_rate": 0.006134969325153374
+        },
+        "0.6": {
+          "threshold": 0.47760432958602905,
+          "tp": 587,
+          "fp": 136,
+          "precision": 0.8118948824343015,
+          "recall": 0.6002044989775052,
+          "f1": 0.6901822457378013,
+          "fp_per_image": 0.08779857972885732,
+          "negative_trigger_rate": 0.010517090271691499
+        },
+        "0.7": {
+          "threshold": 0.3472912609577179,
+          "tp": 685,
+          "fp": 235,
+          "precision": 0.7445652173913043,
+          "recall": 0.7004089979550102,
+          "f1": 0.7218124341412012,
+          "fp_per_image": 0.15171078114912848,
+          "negative_trigger_rate": 0.014022787028921999
+        },
+        "0.75": {
+          "threshold": 0.2578597664833069,
+          "tp": 734,
+          "fp": 346,
+          "precision": 0.6796296296296296,
+          "recall": 0.7505112474437627,
+          "f1": 0.7133138969873664,
+          "fp_per_image": 0.22336991607488701,
+          "negative_trigger_rate": 0.018404907975460124
+        },
+        "0.8": {
+          "threshold": 0.15099918842315674,
+          "tp": 783,
+          "fp": 554,
+          "precision": 0.5856394913986537,
+          "recall": 0.8006134969325154,
+          "f1": 0.6764578833693304,
+          "fp_per_image": 0.3576500968366688,
+          "negative_trigger_rate": 0.020157756354075372
+        }
+      },
+      "prediction_runtime": {
+        "model_load_seconds": 0.20451724203303456,
+        "prediction_seconds": 21.794873975683004,
+        "device": "0",
+        "precision": "float32",
+        "cpu_threads": 4,
+        "cuda_initialized": true,
+        "prediction_includes_file_io_and_preprocessing": true,
+        "warmup_excluded": false,
+        "max_allocated_bytes": 291127296,
+        "peak_process_rss_bytes": 1644908544,
+        "deployment_parameters": 9949412
+      }
+    }
+  },
+  "notes": [
+    "B and T_base have no seed29 run and are not included in two-seed means.",
+    "Same dev images recur across seeds; do not claim twice as many independent evaluation images.",
+    "Seed17 P0 was user-stopped and adapted training resumed after interruption. Seed29 started with a common policy; actual stop reasons, including later user cost stops, take precedence.",
+    "A complete evaluation does not imply convergence. If replication_status is cost_stopped_incomplete, retain all numbers for audit and do not use two-seed means to judge method efficacy or failure.",
+    "Recall grids describe dev curves; source-cal F1 thresholds remain the deployed evaluation operating points.",
+    "Unattained recall points remain explicit; their undefined FP counts are not averaged. Direction counts are not practical/significance gates.",
+    "Training length/cost are recorded, not quality criteria; no automatic expansion or parameter sweep follows this report."
+  ]
+}

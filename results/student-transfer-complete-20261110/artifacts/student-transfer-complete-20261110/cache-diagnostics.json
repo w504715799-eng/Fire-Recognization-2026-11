@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "cache_diagnostics": {
+    "scope": "all detector fit, includes teacher adaptation images; descriptive, not an independent accuracy estimate",
+    "original_labels_changed": false,
+    "causal_explanation_proven": false,
+    "models": {
+      "base": {
+        "cache_sha256": "361d279f2c1d149a7af544cee798ad14e58300db9e4ae14c0fcb27bb90072067",
+        "groups": {
+          "all": {
+            "images": 14122,
+            "MAP_correct": 9217,
+            "mean_teacher_GT_mass": 0.6492431977039179,
+            "mean_teacher_entropy_nats": 0.13193964155763593,
+            "mean_mixed_GT_mass": 0.9123107994259798,
+            "mean_mixed_entropy_nats": 0.21813111051180858
+          },
+          "empty": {
+            "images": 6458,
+            "MAP_correct": 5159,
+            "mean_teacher_GT_mass": 0.7947083918958207,
+            "mean_teacher_entropy_nats": 0.15057470118383073,
+            "mean_mixed_GT_mass": 0.9486770979739593,
+            "mean_mixed_entropy_nats": 0.14089287487523156
+          },
+          "fire_only": {
+            "images": 770,
+            "MAP_correct": 27,
+            "mean_teacher_GT_mass": 0.06074266591458787,
+            "mean_teacher_entropy_nats": 0.18231189825057303,
+            "mean_mixed_GT_mass": 0.7651856664786466,
+            "mean_mixed_entropy_nats": 0.5546830377757318
+          },
+          "smoke_only": {
+            "images": 3836,
+            "MAP_correct": 988,
+            "mean_teacher_GT_mass": 0.24964998131159832,
+            "mean_teacher_entropy_nats": 0.18015078528502076,
+            "mean_mixed_GT_mass": 0.8124124953279016,
+            "mean_mixed_entropy_nats": 0.44776781254708153
+          },
+          "both": {
+            "images": 3058,
+            "MAP_correct": 3043,
+            "mean_teacher_GT_mass": 0.9914834735271406,
+            "mean_teacher_entropy_nats": 0.01942499144063748,
+            "mean_mixed_GT_mass": 0.9978708683817843,
+            "mean_mixed_entropy_nats": 0.008442802055459794
+          }
+        }
+      },
+      "adapted": {
+        "cache_sha256": "2e8c137ed7ad2533b7b92f3426d6159c49b07684810eb1d999ab8d0628fe9915",
+        "groups": {
+          "all": {
+            "images": 14122,
+            "MAP_correct": 11594,
+            "mean_teacher_GT_mass": 0.740457312977259,
+            "mean_teacher_entropy_nats": 0.44138797101852556,
+            "mean_mixed_GT_mass": 0.9351143282443137,
+            "mean_mixed_entropy_nats": 0.22176371755687682
+          },
+          "empty": {
+            "images": 6458,
+            "MAP_correct": 5340,
+            "mean_teacher_GT_mass": 0.7526134426067456,
+            "mean_teacher_entropy_nats": 0.4386109209198742,
+            "mean_mixed_GT_mass": 0.9381533606516835,
+            "mean_mixed_entropy_nats": 0.2152030412515631
+          },
+          "fire_only": {
+            "images": 770,
+            "MAP_correct": 570,
+            "mean_teacher_GT_mass": 0.6488572292173206,
+            "mean_teacher_entropy_nats": 0.5835574576862176,
+            "mean_mixed_GT_mass": 0.9122143073043305,
+            "mean_mixed_entropy_nats": 0.29453141631863455
+          },
+          "smoke_only": {
+            "images": 3836,
+            "MAP_correct": 3180,
+            "mean_teacher_GT_mass": 0.7693662963315178,
+            "mean_teacher_entropy_nats": 0.34463053897297286,
+            "mean_mixed_GT_mass": 0.9423415740828777,
+            "mean_mixed_entropy_nats": 0.19031292391838645
+          },
+          "both": {
+            "images": 3058,
+            "MAP_correct": 2504,
+            "mean_teacher_GT_mass": 0.7015864559468595,
+            "mean_teacher_entropy_nats": 0.5328285184775625,
+            "mean_mixed_GT_mass": 0.9253966139867139,
+            "mean_mixed_entropy_nats": 0.25674833623915627
+          }
+        }
+      }
+    }
+  }
+}

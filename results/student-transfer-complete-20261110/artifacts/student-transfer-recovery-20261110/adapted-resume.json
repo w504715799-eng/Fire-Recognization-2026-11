@@ -1,0 +1,27 @@
+{
+  "status": "early_stopped",
+  "original_run": "dfire_T_adapted_seed17_20261109",
+  "started_at": "2026-11-10T00:30:28.275579+00:00",
+  "CSV_time_resets_on_resume": true,
+  "augmentation_rng_bitwise_replay_claimed": false,
+  "restored_epoch": 27,
+  "checkpoint_sha256": "42aaaece290cbd346b2a986633f4cf6e48e2a17cf219705fe5ec551d88dcf739",
+  "prior_best_fire_ap": 0.3855961410198017,
+  "prior_csv_sha256": "fbf9852557bdf0b1cef3f54ca072d5dcdc4ba127eec9d7d62c9cef5f31cbfca7",
+  "all_base_and_fusion_tensors_restored": true,
+  "sampler_epoch": 27,
+  "actual_amp": true,
+  "validation_progress": {
+    "patience": 10,
+    "min_delta": 0.001,
+    "mode": "max",
+    "reference": 0.4156349995669682,
+    "last_improvement": 62,
+    "last_index": 72
+  },
+  "last_completed_epoch": 72,
+  "best_fire_ap": 0.4164865763511163,
+  "stop_reason": "validation_plateau",
+  "completed_epochs": 72,
+  "seconds": 7040.966100257821
+}

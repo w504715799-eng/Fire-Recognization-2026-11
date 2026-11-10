@@ -1,3 +1,6 @@
 
 # Preserve raw runtime logs, including upstream terminal spacing.
 results/**/*.log -whitespace
+
+# Preserve the exact generated SVG and its recorded SHA.
+results/student-transfer-complete-20261110/artifacts/student-transfer-complete-20261110/student-PR-FROC.svg -whitespace

@@ -1,0 +1,19 @@
+{
+  "initial_diff_check_returncode": 2,
+  "cause": "Matplotlib-generated SVG contains valid trailing whitespace in path data",
+  "diagnostic_lines": 13982,
+  "first_diagnostics": [
+    "results/student-transfer-complete-20261110/artifacts/student-transfer-complete-20261110/student-PR-FROC.svg:24: trailing whitespace.",
+    "+   <path d=\"M 0 345.6 ",
+    "results/student-transfer-complete-20261110/artifacts/student-transfer-complete-20261110/student-PR-FROC.svg:25: trailing whitespace.",
+    "+L 828 345.6 ",
+    "results/student-transfer-complete-20261110/artifacts/student-transfer-complete-20261110/student-PR-FROC.svg:26: trailing whitespace.",
+    "+L 828 0 ",
+    "results/student-transfer-complete-20261110/artifacts/student-transfer-complete-20261110/student-PR-FROC.svg:27: trailing whitespace.",
+    "+L 0 0 "
+  ],
+  "experiment_failure": false,
+  "generated_source_file_preserved": true,
+  "resolution": "Exact generated SVG path exempted from Git whitespace lint; credential/model export checks remain unchanged",
+  "final_diff_check_returncode": 0
+}

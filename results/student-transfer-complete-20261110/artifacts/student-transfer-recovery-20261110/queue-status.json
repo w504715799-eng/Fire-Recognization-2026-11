@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T00:30:15.220822+00:00",
+  "baseline": "dfire_T_base_seed17_20261109",
+  "stages": [
+    {
+      "name": "resume_T_adapted",
+      "started_at": "2026-11-10T00:30:15.260532+00:00",
+      "log": "logs/student-transfer-resume_T_adapted-recovery-20261110.log",
+      "finished_at": "2026-11-10T02:27:51.280369+00:00",
+      "returncode": 0,
+      "completed_epochs": 72,
+      "stop_reason": "validation_plateau"
+    },
+    {
+      "name": "evaluate_T_adapted",
+      "started_at": "2026-11-10T02:27:51.282610+00:00",
+      "log": "logs/student-transfer-evaluate_T_adapted-recovery-20261110.log",
+      "finished_at": "2026-11-10T02:29:01.601359+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "compare_all",
+      "started_at": "2026-11-10T02:29:01.602491+00:00",
+      "log": "logs/student-transfer-compare_all-recovery-20261110.log",
+      "finished_at": "2026-11-10T02:29:01.918717+00:00",
+      "returncode": 0
+    }
+  ],
+  "last_checked_at": "2026-11-10T00:30:15.225727+00:00",
+  "completed_epochs": 65,
+  "gpu_stage_started_at": "2026-11-10T00:30:15.260064+00:00",
+  "finished_at": "2026-11-10T02:29:01.919832+00:00",
+  "server_powered_off": false
+}

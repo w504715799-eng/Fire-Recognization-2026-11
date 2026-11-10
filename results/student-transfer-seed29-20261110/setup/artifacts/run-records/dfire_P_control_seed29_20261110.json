@@ -1,0 +1,99 @@
+{
+  "plan": {
+    "execution": false,
+    "experiment": "B+JP",
+    "factors": {
+      "weighting": "uniform",
+      "semantic": "joint_presence",
+      "m_mode": null,
+      "width": 64,
+      "detail": true,
+      "smoke_aux": true,
+      "gain_weight": 0.05,
+      "smoke_weight": 0.2,
+      "semantic_warmup_epochs": 5,
+      "normalization": "group",
+      "teacher_joint_mix": 0.0
+    },
+    "dataset": "dfire",
+    "view": "/root/rivermind-data/FIRE_R2/artifacts/data/dfire-kaggle-21527-sha65d81b60",
+    "weights": "/root/rivermind-data/FIRE_R2/weights/yolo26s.pt",
+    "remote_project": "/root/rivermind-data/FIRE_R2",
+    "gpu": 0,
+    "notice": "No model import, weight load, network access or training occurs in plan mode",
+    "future_requirements": [
+      "user notified before paid startup/upgrade",
+      "training phase approval",
+      "complete verified data view",
+      "existing locally staged cloud checkpoint with SHA-256",
+      "project-specific sci-env",
+      "shared cooperative GPU lock"
+    ],
+    "train_parameters": {
+      "epochs": 100,
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 2,
+      "patience": 0,
+      "cache": false,
+      "deterministic": true
+    },
+    "checkpoint_policy": "original-GT COCO fire dev AP, earliest exact tie"
+  },
+  "config": {
+    "experiment": "B+JP",
+    "dataset": "dfire",
+    "prepared_view": "artifacts/data/dfire-kaggle-21527-sha65d81b60",
+    "weights": "weights/yolo26s.pt",
+    "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+    "ultralytics_commit": "2e241d0336ea7545c385eadd30a2f58eb4c0e2ad",
+    "seed": 29,
+    "run_name": "dfire_P_control_seed29_20261110",
+    "train": {
+      "epochs": 100,
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 2,
+      "patience": 0,
+      "cache": false,
+      "deterministic": true
+    },
+    "ultralytics_archive_sha256": "082f69bd8d8c8223caf5e8fbb33e8610cebde84b2d99d223b0292f5d43e17b05",
+    "amp_enabled": true,
+    "supervision": "artifacts/supervision/dfire-P-joint-control-20261109.json",
+    "checkpoint_selection": "original_dev_fire_ap50_95",
+    "validation_stopping": {
+      "patience_epochs": 10,
+      "min_delta": 0.001,
+      "metric": "original_fire_dev_AP50_95",
+      "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+    },
+    "epoch_count_role": "upper cap and LR schedule only; stop on validation plateau or user/budget decision"
+  },
+  "cloud_server_id": "gpuhome-hz01-30188",
+  "hourly_price": null,
+  "currency": null,
+  "started_at": "2026-11-10T03:08:33.903700+00:00",
+  "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+  "status": "running",
+  "torch_version": "2.12.1+cu130",
+  "ultralytics_version": "8.4.183",
+  "validation_stopping": {
+    "patience_epochs": 10,
+    "min_delta": 0.001,
+    "metric": "original_fire_dev_AP50_95",
+    "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+  },
+  "epoch_count_role": "safety_and_schedule_cap_not_required_completion",
+  "actual_amp": true,
+  "image_coverage_verified": true,
+  "validation_progress": {
+    "patience": 10,
+    "min_delta": 0.001,
+    "mode": "max",
+    "reference": 0.26214103582493925,
+    "last_improvement": 1,
+    "last_index": 4
+  },
+  "completed_epochs": 4
+}

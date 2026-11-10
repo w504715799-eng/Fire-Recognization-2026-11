@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "at": "2026-11-10T03:08:26.469295+00:00",
+  "checks": {
+    "P_control": {
+      "config_sha256": "996fdefcd2498104e260ba11e18156268881bed1273a3701c438096425f71638",
+      "supervision_sha256": "1122927b07e01409c8901384c230768a2af0148bf2968a0df813f991abb92098",
+      "full_fit_images": 14122,
+      "weight_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "validation_stopping": {
+        "patience_epochs": 10,
+        "min_delta": 0.001,
+        "metric": "original_fire_dev_AP50_95",
+        "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+      }
+    },
+    "T_adapted": {
+      "config_sha256": "373a45d67517816feacaf5d9b40acfda4b847f350e9dc90154a5572127573510",
+      "supervision_sha256": "ddcaa6e9ca1022bd328671d7f569ccb3f44d449e17e2362c79005134fffc60cd",
+      "full_fit_images": 14122,
+      "weight_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "validation_stopping": {
+        "patience_epochs": 10,
+        "min_delta": 0.001,
+        "metric": "original_fire_dev_AP50_95",
+        "native_mixed_fitness_stopping": "disabled; primary fire-dev progress monitor owns termination"
+      }
+    }
+  },
+  "cached_teacher_reused": true,
+  "new_downloads": false,
+  "new_environment": false,
+  "original_data_changed": false,
+  "scope": "two fresh seed29 runs; only seed changes, common validation stopping"
+}

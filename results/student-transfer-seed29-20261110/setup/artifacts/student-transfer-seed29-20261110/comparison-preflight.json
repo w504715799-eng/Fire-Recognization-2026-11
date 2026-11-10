@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "existing_seed17_delta_reproduced": true,
+  "seed29_shared_recipe_equal": true,
+  "logic_tests": 3,
+  "teacher_cache_reused": true,
+  "no_model_loaded": true
+}

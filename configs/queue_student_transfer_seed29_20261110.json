@@ -1,0 +1,78 @@
+{
+  "queue_id": "student-transfer-seed29-20261110",
+  "status_output": "artifacts/student-transfer-seed29-20261110/queue-status.json",
+  "baseline_run": "dfire_T_base_seed17_20261109",
+  "baseline_config": "configs/train_dfire_T_base_20261109.json",
+  "prerequisite_queue": "artifacts/student-transfer-recovery-20261110/queue-status.json",
+  "max_wait_hours": 1,
+  "stages": [
+    {
+      "name": "train_P_control_seed29",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_P_control_seed29_20261110.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-seed29-20261110.local.json",
+        "--execute"
+      ],
+      "log": "logs/student-transfer-train_P_control-seed29-20261110.log",
+      "timeout_seconds": 21900,
+      "run_name": "dfire_P_control_seed29_20261110"
+    },
+    {
+      "name": "evaluate_P_control_seed29",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_P_control_seed29_20261110.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-seed29-20261110.local.json",
+        "--output",
+        "artifacts/student-transfer-seed29-20261110/evaluation/P_control"
+      ],
+      "log": "logs/student-transfer-evaluate_P_control-seed29-20261110.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "train_T_adapted_seed29",
+      "args": [
+        "code/fire_r2_cli.py",
+        "train",
+        "--config",
+        "configs/train_dfire_T_adapted_seed29_20261110.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-seed29-20261110.local.json",
+        "--execute"
+      ],
+      "log": "logs/student-transfer-train_T_adapted-seed29-20261110.log",
+      "timeout_seconds": 21900,
+      "run_name": "dfire_T_adapted_seed29_20261110"
+    },
+    {
+      "name": "evaluate_T_adapted_seed29",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_T_adapted_seed29_20261110.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-seed29-20261110.local.json",
+        "--output",
+        "artifacts/student-transfer-seed29-20261110/evaluation/T_adapted"
+      ],
+      "log": "logs/student-transfer-evaluate_T_adapted-seed29-20261110.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "compare_seed17_seed29",
+      "args": [
+        "cloud/compare_student_repeats.py",
+        "--output",
+        "artifacts/student-transfer-seed29-20261110/paired-seed-comparison.json"
+      ],
+      "log": "logs/student-transfer-compare-seeds-seed29-20261110.log",
+      "timeout_seconds": 600
+    }
+  ]
+}

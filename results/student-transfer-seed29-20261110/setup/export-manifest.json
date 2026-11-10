@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-10T03:20:27.781661+00:00",
+  "scope": "startup snapshot, not completed seed29 results",
+  "files": [
+    {
+      "source": "artifacts/student-transfer-seed29-20261110/preflight.json",
+      "export": "artifacts/student-transfer-seed29-20261110/preflight.json",
+      "bytes": 1464,
+      "sha256": "4ba1caeaea712474cc15893307786c8ef27ea839040c5e725c1ef9ef8fdeb7c9"
+    },
+    {
+      "source": "artifacts/student-transfer-seed29-20261110/comparison-preflight.json",
+      "export": "artifacts/student-transfer-seed29-20261110/comparison-preflight.json",
+      "bytes": 189,
+      "sha256": "1bf587769be8c0d05b22161aaf6989430fe89cd9a01557afbd3651fffe40ed60"
+    },
+    {
+      "source": "artifacts/student-transfer-seed29-20261110/queue-status.json",
+      "export": "artifacts/student-transfer-seed29-20261110/queue-status.json",
+      "bytes": 472,
+      "sha256": "0ba6aec3df1736dd5cd58e3a454e18b6323589aa4f5a037e5482c0ca0664c0cc"
+    },
+    {
+      "source": "artifacts/run-records/dfire_P_control_seed29_20261110.json",
+      "export": "artifacts/run-records/dfire_P_control_seed29_20261110.json",
+      "bytes": 3317,
+      "sha256": "6e583ecc29b82f7d1d3e79fe429bdbd31e41cebc820e551319f8f25727b377e4"
+    },
+    {
+      "source": "logs/student-transfer-repeat-tests-20261110.log",
+      "export": "logs/student-transfer-repeat-tests-20261110.log",
+      "bytes": 101,
+      "sha256": "921b60a7fd52e978fbb551cacd29df2d6708879400278e1fcc70fceeb0c6f8e0"
+    }
+  ]
+}

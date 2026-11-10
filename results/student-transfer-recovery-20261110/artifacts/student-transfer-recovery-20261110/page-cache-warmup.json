@@ -1,0 +1,10 @@
+{
+  "files": 14122,
+  "source_bytes": 2067435403,
+  "threads": 4,
+  "persistent_image_cache_created": false,
+  "training_workers_and_order_changed": false,
+  "read_bytes": 2067435403,
+  "status": "completed",
+  "seconds": 25.587465906050056
+}

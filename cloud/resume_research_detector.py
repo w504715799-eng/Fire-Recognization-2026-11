@@ -57,7 +57,7 @@ def main():
             if progress.last_index-progress.last_improvement>=progress.patience:
                 record.update(status='early_stopped',stop_reason='validation_plateau_already_present',completed_epochs=start,best_fire_ap=best_fire,validation_progress=progress.snapshot())
                 return
-            backup=ROOT/'artifacts/recovery-20261109/student-checkpoints'/out.stem;backup.mkdir(parents=True,exist_ok=True)
+            backup=out.parent/'student-checkpoints'/out.stem;backup.mkdir(parents=True,exist_ok=True)
             for name in ('resume_last.pt','best_fire.pt'):
                 if (backup/name).exists():raise ProjectError('Recovery checkpoint backup exists')
                 shutil.copy2(run/'weights'/name,backup/name)
@@ -93,7 +93,7 @@ def main():
                 record['validation_progress']=progress.snapshot()
                 record.update(last_completed_epoch=trainer.epoch+1,best_fire_ap=best_fire);write_json(out,record)
             def end_epoch(trainer):
-                if stop_file.exists() or time.monotonic()-started>8*3600:
+                if stop_file.exists() or time.monotonic()-started>float(cloud['approval']['stage_budget_hours'])*3600:
                     trainer.stop=True;record['stop_reason']='user_request' if stop_file.exists() else 'time_budget'
             model.add_callback('on_pretrain_routine_end',ready);model.add_callback('on_model_save',saved);model.add_callback('on_train_epoch_end',end_epoch)
             old_amp=engine.check_amp;engine.check_amp=lambda current:staged_checkpoint_amp_check(ROOT/config['weights'],current)

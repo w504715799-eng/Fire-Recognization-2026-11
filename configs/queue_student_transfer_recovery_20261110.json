@@ -1,0 +1,49 @@
+{
+  "queue_id": "student-transfer-recovery-20261110",
+  "status_output": "artifacts/student-transfer-recovery-20261110/queue-status.json",
+  "baseline_run": "dfire_T_base_seed17_20261109",
+  "baseline_config": "configs/train_dfire_T_base_20261109.json",
+  "max_wait_hours": 1,
+  "stages": [
+    {
+      "name": "resume_T_adapted",
+      "args": [
+        "cloud/resume_research_detector.py",
+        "--config",
+        "configs/train_dfire_T_adapted_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-recovery-20261110/adapted-resume.json"
+      ],
+      "log": "logs/student-transfer-resume_T_adapted-recovery-20261110.log",
+      "timeout_seconds": null,
+      "run_name": "dfire_T_adapted_seed17_20261109",
+      "completion_receipt": "artifacts/student-transfer-recovery-20261110/adapted-resume.json"
+    },
+    {
+      "name": "evaluate_T_adapted",
+      "args": [
+        "cloud/evaluate_student_control.py",
+        "--train-config",
+        "configs/train_dfire_T_adapted_20261109.json",
+        "--cloud-config",
+        "configs/cloud.student-transfer-20261109.local.json",
+        "--output",
+        "artifacts/student-transfer-20261109/evaluation/T_adapted",
+        "--training-receipt",
+        "artifacts/student-transfer-recovery-20261110/adapted-resume.json"
+      ],
+      "log": "logs/student-transfer-evaluate_T_adapted-recovery-20261110.log",
+      "timeout_seconds": 3900
+    },
+    {
+      "name": "compare_all",
+      "args": [
+        "cloud/compare_student_transfer.py"
+      ],
+      "log": "logs/student-transfer-compare_all-recovery-20261110.log",
+      "timeout_seconds": 120
+    }
+  ]
+}

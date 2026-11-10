@@ -1,0 +1,16 @@
+{
+  "manifest_sha256": "0c8ce2fa3734a0d7e92969bd49f7aec0f10f8864c7521c6257b7e73eaf959167",
+  "teacher": {
+    "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "teacher_variant": "adapted",
+    "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
+  },
+  "protocol": "joint_presence_v1",
+  "prompt_sha256": "c3dc43c2d4423ade4f087d6338bf5aa51dcc326d718b1679b32dd3ec5bce3aa9",
+  "device": "cuda",
+  "dtype": "float16_base",
+  "scoring_source_sha256": "58a224600f9c6cb1070eb29941026ba83e506f8c436f15dc29e0d9444999dc3e",
+  "batch_images": 4,
+  "selection_sha256": "b5459f2abc7814adda074e008f405afc617606a3f2c6355dc469dc1e0b19982c"
+}

@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
-from fire_r2.stopping import ValidationProgress,require_evaluable_training
+from fire_r2.stopping import ValidationProgress,require_evaluable_training,training_validation_epoch
 from fire_r2.common import ProjectError
 
 
@@ -20,3 +20,10 @@ class StoppingTests(unittest.TestCase):
         self.assertTrue(require_evaluable_training({'status':'completed_or_budget_stopped'},37,True))
         with self.assertRaises(ProjectError):require_evaluable_training({'status':'running'},100,True)
         with self.assertRaises(ProjectError):require_evaluable_training({'status':'completed'},0,False)
+
+    def test_final_model_validation_is_not_an_extra_training_epoch(self):
+        from types import SimpleNamespace
+        trainer=SimpleNamespace(epoch=64,validator=SimpleNamespace(training=True))
+        self.assertEqual(training_validation_epoch(trainer),65)
+        trainer.epoch=65;trainer.validator.training=False
+        self.assertIsNone(training_validation_epoch(trainer))

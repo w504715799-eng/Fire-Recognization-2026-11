@@ -1,0 +1,68 @@
+{
+  "scope": "fixed teacher-internal holdout within detector fit",
+  "scoring_protocol": "joint_presence_v1",
+  "not_a_training_gate": true,
+  "probability_metrics_do_not_establish_perfect_calibration": true,
+  "models": {
+    "base": {
+      "images": 256,
+      "joint_MAP_correct": 132,
+      "mean_NLL_nats_floor_1e_12": 3.4174424709736804,
+      "mean_Brier_sum_over_four_classes": 0.8795243566218882,
+      "states": {
+        "fire_only": {
+          "images": 64,
+          "correct": 1
+        },
+        "smoke_only": {
+          "images": 64,
+          "correct": 17
+        },
+        "both": {
+          "images": 64,
+          "correct": 64
+        },
+        "empty": {
+          "images": 64,
+          "correct": 50
+        }
+      },
+      "teacher": {
+        "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "teacher_variant": "base",
+        "adapter_sha256": null
+      }
+    },
+    "adapted": {
+      "images": 256,
+      "joint_MAP_correct": 204,
+      "mean_NLL_nats_floor_1e_12": 0.5370087455066123,
+      "mean_Brier_sum_over_four_classes": 0.31714271220741413,
+      "states": {
+        "fire_only": {
+          "images": 64,
+          "correct": 43
+        },
+        "smoke_only": {
+          "images": 64,
+          "correct": 53
+        },
+        "both": {
+          "images": 64,
+          "correct": 58
+        },
+        "empty": {
+          "images": 64,
+          "correct": 50
+        }
+      },
+      "teacher": {
+        "teacher_id": "Qwen/Qwen3-VL-2B-Instruct",
+        "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "teacher_variant": "adapted",
+        "adapter_sha256": "aed33157cc068c13e58c9b8e0dd2a34d19667e7d555a62ce32b0c7438b5ee855"
+      }
+    }
+  }
+}

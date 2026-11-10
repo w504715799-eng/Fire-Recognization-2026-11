@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-11-10T00:30:15.116684+00:00",
+  "adapted_completed_epochs": 27,
+  "interrupted_epoch": 28,
+  "last_logged_batch": 309,
+  "batches_per_epoch": 883,
+  "interruption_cause": "external interruption; precise cause unconfirmed",
+  "base_actual_completed_epochs": 65,
+  "base_original_record_epochs": 66,
+  "cause_of_base_count_discrepancy": "Ultralytics final_eval triggers on_fit_epoch_end at epoch+1 without another training epoch",
+  "historical_records_preserved": true,
+  "evaluation_uses_CSV_count": true,
+  "resume_recipe_unchanged": true
+}

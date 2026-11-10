@@ -9,7 +9,7 @@ from fire_r2.stopping import require_evaluable_training
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--train-config',required=True);p.add_argument('--cloud-config',required=True);p.add_argument('--output',required=True)
-    p.add_argument('--device',choices=['cpu','cuda'],default='cuda');a=p.parse_args()
+    p.add_argument('--device',choices=['cpu','cuda'],default='cuda');p.add_argument('--training-receipt');a=p.parse_args()
     check_remote_environment(ROOT,read_json(ROOT/a.cloud_config));cfg=read_json(ROOT/a.train_config);out=output_path(ROOT,a.output)
     if out.exists():raise ProjectError('Preserve earlier complete predictions/evaluations')
     out.mkdir(parents=True);run=ROOT/'runs'/cfg['run_name'];rows=list(csv.DictReader((run/'results.csv').open()))
@@ -17,6 +17,9 @@ def main():
     # Recovery receipts can finalize a run whose original pre-interruption record stays historical.
     if cfg['run_name']=='dfire_M_ordinary_seed17_full_20261106' and (ROOT/'artifacts/recovery-20261109/ordinary-resume.json').exists():
         training=read_json(ROOT/'artifacts/recovery-20261109/ordinary-resume.json')
+    if a.training_receipt:
+        training=read_json(output_path(ROOT,a.training_receipt))
+        if training.get('original_run',training.get('run'))!=cfg['run_name']:raise ProjectError('Recovery receipt belongs to another run')
     require_evaluable_training(training,len(rows),(run/'weights/best_fire.pt').is_file())
     weights=run/'weights/best_fire.pt';manifest=ROOT/cfg['prepared_view']/'manifest.jsonl';report={'status':'running','run':cfg['run_name'],'checkpoint_sha256':sha256(weights),'device':a.device,'test_accessed':False}
     report.update(completed_training_epochs=len(rows),training_stop_reason=training.get('stop_reason','user_request' if (ROOT/'artifacts/run-controls'/(cfg['run_name']+'.stop')).exists() else 'historical_terminal_run'),epoch_count_is_not_a_quality_metric=True)

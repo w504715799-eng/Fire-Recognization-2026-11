@@ -59,3 +59,8 @@
 用户明确要求“后续所有训练不要强制要求训练次数”。检测器、LoRA与恢复训练均按验证有效进展、收益与成本及时停止，不要求固定epoch/update数。配置次数只作安全上限/学习率日程；不足上限的正常停止可直接完整评价和接续，不能标为程序失败或自动补跑。保留最佳checkpoint、完整曲线、实际次数和停止原因；历史100轮/250更新记录不改写，不为凑相同次数重跑。当前教师学生共同使用10轮/0.001 AP进展规则；未来LoRA使用teacher_dev定期评价，参数是可执行起点而非最低训练要求。全量数据、缓存和评价范围不缩减。
 
 P0已17:42:02在71轮保存退出，最佳第60轮；P0与B完整匹配GPU评价均完成。当前唯一活跃学生队列为configs/queue_student_transfer_progress_stop_20261109.json，状态artifacts/student-transfer-20261109/progress-stop-queue-status.json，继续基础/适配教师缓存和学生对照。旧学生队列已封存，恢复队列已完成；不重启P0。
+
+
+## 2026-11-10当前恢复状态
+
+两套教师各14122图完整缓存及派生监督均完成，CPU复核通过。T_base已65轮自动早停并完整评价；原回执66为额外最终验证回调计数问题，原件保留、按CSV审计，代码已修复。T_adapted外部中断后从27轮检查点恢复，当前唯一恢复队列configs/queue_student_transfer_recovery_20261110.json、状态artifacts/student-transfer-recovery-20261110/queue-status.json。后续完整评价绑定恢复回执并汇总B/P0/T_base/T_adapted；不重跑P0或完整缓存，不强制固定训练次数。CPU审计与已有图像页缓存预读完成，GPU继续既有实例的适配学生，无新增下载/安装/购买/升级。

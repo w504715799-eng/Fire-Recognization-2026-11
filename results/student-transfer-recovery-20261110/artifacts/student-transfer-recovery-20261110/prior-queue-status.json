@@ -1,0 +1,73 @@
+{
+  "status": "validating",
+  "started_at": "2026-11-09T09:53:36.769598+00:00",
+  "baseline": "dfire_P_control_seed17_20261109",
+  "stages": [
+    {
+      "name": "evaluate_P_control",
+      "started_at": "2026-11-09T09:53:36.774322+00:00",
+      "log": "logs/student-transfer-evaluate_P_control-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T09:54:41.362202+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "evaluate_B_reference",
+      "started_at": "2026-11-09T09:54:41.363374+00:00",
+      "log": "logs/student-transfer-evaluate_B_reference-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T09:55:42.092598+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "cache_base",
+      "started_at": "2026-11-09T09:55:42.093639+00:00",
+      "log": "logs/student-transfer-cache_base-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T11:42:43.571914+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "prepare_base",
+      "started_at": "2026-11-09T11:42:43.576316+00:00",
+      "log": "logs/student-transfer-prepare_base-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T11:42:46.449777+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "cache_adapted",
+      "started_at": "2026-11-09T11:42:46.451110+00:00",
+      "log": "logs/student-transfer-cache_adapted-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T13:35:15.688066+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "prepare_adapted",
+      "started_at": "2026-11-09T13:35:15.690358+00:00",
+      "log": "logs/student-transfer-prepare_adapted-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T13:35:18.663054+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_T_base",
+      "started_at": "2026-11-09T13:35:18.666950+00:00",
+      "log": "logs/student-transfer-train_T_base-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T16:23:42.936585+00:00",
+      "returncode": 0,
+      "completed_epochs": 65,
+      "stop_reason": "validation_plateau"
+    },
+    {
+      "name": "evaluate_T_base",
+      "started_at": "2026-11-09T16:23:42.941094+00:00",
+      "log": "logs/student-transfer-evaluate_T_base-progress-stop-20261109.log",
+      "finished_at": "2026-11-09T16:24:46.340199+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "train_T_adapted",
+      "started_at": "2026-11-09T16:24:46.341547+00:00",
+      "log": "logs/student-transfer-train_T_adapted-progress-stop-20261109.log"
+    }
+  ],
+  "last_checked_at": "2026-11-09T09:53:36.771724+00:00",
+  "completed_epochs": 71,
+  "gpu_stage_started_at": "2026-11-09T09:53:36.773926+00:00"
+}

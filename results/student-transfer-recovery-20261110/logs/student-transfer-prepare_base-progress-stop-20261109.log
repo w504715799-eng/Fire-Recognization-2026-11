@@ -1,0 +1,1 @@
+{"images": 14122, "teacher": {"teacher_id": "Qwen/Qwen3-VL-2B-Instruct", "teacher_revision": "89644892e4d85e24eaac8bacfd4f463576704203", "teacher_variant": "base", "adapter_sha256": null}, "output": "/root/rivermind-data/FIRE_R2/artifacts/supervision/dfire-T-base-20261109.json", "all_original_images_retained": true, "original_annotations_changed": false}

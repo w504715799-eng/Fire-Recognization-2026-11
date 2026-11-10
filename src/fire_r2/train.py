@@ -165,7 +165,7 @@ def execute_training(root, config, cloud):
             record_path=Path(root)/"artifacts/run-records"/(config["run_name"]+".json")
             write_json(record_path,record)
             stop_file=Path(root)/'artifacts/run-controls'/(config['run_name']+'.stop')
-            from .stopping import ValidationProgress
+            from .stopping import ValidationProgress,training_validation_epoch
             policy=config.get('validation_stopping',{'patience_epochs':10,'min_delta':.001})
             progress=ValidationProgress(policy['patience_epochs'],policy['min_delta'])
             record['validation_stopping']=policy;record['epoch_count_role']='safety_and_schedule_cap_not_required_completion'
@@ -175,11 +175,13 @@ def execute_training(root, config, cloud):
                     record['stop_reason']='user_request' if stop_file.exists() else 'time_budget'
                     print("USER_NOTICE: Stop request or stage budget reached; save this epoch and retain a resumable checkpoint. Server is not powered off.",flush=True)
             def on_fit_epoch_end(trainer):
+                completed=training_validation_epoch(trainer)
+                if completed is None:return
                 original=getattr(trainer.validator,'original_report',None)
                 score=float(original['classes']['fire']['AP50_95'] if original else trainer.validator.metrics.box.maps[0])
-                if progress.observe(int(trainer.epoch)+1,score) and not record.get('stop_reason'):
+                if progress.observe(completed,score) and not record.get('stop_reason'):
                     trainer.stop=True;record['stop_reason']='validation_plateau'
-                record['validation_progress']=progress.snapshot();record['completed_epochs']=int(trainer.epoch)+1
+                record['validation_progress']=progress.snapshot();record['completed_epochs']=completed
                 write_json(record_path,record)
             def on_model_save(trainer):
                 nonlocal best_fire

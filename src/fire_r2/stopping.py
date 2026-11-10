@@ -28,3 +28,9 @@ def require_evaluable_training(record,completed_epochs,checkpoint_exists):
     if completed_epochs<1 or not checkpoint_exists:raise ProjectError('A saved evaluated checkpoint is required')
     if record.get('status') not in TERMINAL_TRAINING:raise ProjectError('Training must be finalized or explicitly stopped before this evaluation')
     return True
+
+
+def training_validation_epoch(trainer):
+    """Ultralytics final_eval fires fit-end again at epoch+1, without another training epoch."""
+    if not getattr(trainer.validator,'training',True):return None
+    return int(trainer.epoch)+1

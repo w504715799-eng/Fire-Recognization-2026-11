@@ -1,0 +1,15 @@
+{
+  "status": "validating",
+  "started_at": "2026-11-10T00:30:15.220822+00:00",
+  "baseline": "dfire_T_base_seed17_20261109",
+  "stages": [
+    {
+      "name": "resume_T_adapted",
+      "started_at": "2026-11-10T00:30:15.260532+00:00",
+      "log": "logs/student-transfer-resume_T_adapted-recovery-20261110.log"
+    }
+  ],
+  "last_checked_at": "2026-11-10T00:30:15.225727+00:00",
+  "completed_epochs": 65,
+  "gpu_stage_started_at": "2026-11-10T00:30:15.260064+00:00"
+}
